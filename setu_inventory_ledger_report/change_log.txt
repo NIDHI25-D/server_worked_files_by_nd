@@ -1,0 +1,11 @@
+Date : 28th Nov 2024
+Version : '18.0' (in __manifest__.py)
+Odoo Version : 18
+Done by : Fenil Domadiya
+Changes : Inventory ledger report
+
+Date : 23rd Dec 2024
+Version : '1.0' (in __manifest__.py)
+Odoo Version : 18
+Done by : Ashish G
+Changes : Inventory ledger report Published on App Store

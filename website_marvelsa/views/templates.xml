@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+        <template id="website_marvelsa_recommended_products" inherit_id="website_sale.product" customize_show="True"
+                  name="Alternative Products" priority="15">
+            <xpath expr="//div[@id='product_full_description']" position="after">
+                <div class="container mt32" t-if="product.accessory_product_ids">
+                    <h3>Accesorios:</h3>
+                    <div class="row mt16" style="">
+                        <t t-foreach="product.accessory_product_ids" t-as="accessory">
+                            <div class="col-lg-2"
+                                 style="width: 170px; height:180px; float:left; display:inline; margin-right: 10px; overflow:hidden;">
+                                <div class="mt16 text-center" style="height: 100%;">
+                                    <div t-field="accessory.image_128"
+                                         t-options="{'widget': 'image', 'class': 'rounded shadow o_alternative_product' }"/>
+                                    <h6>
+                                        <a t-attf-href="/shop/product/#{ slug(accessory.product_tmpl_id) }"
+                                           style="display: block">
+                                            <span t-att-title="accessory.name" t-field="accessory.name"
+                                                  class="o_text_overflow" style="display: block;"/>
+                                        </a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                    <hr/>
+                </div>
+                <div class="container mt32" t-if="product.spare_parts_product_ids">
+                    <h3>Refacciones:</h3>
+                    <div class="row mt16" style="">
+                        <t t-foreach="product.spare_parts_product_ids" t-as="spare_product">
+                            <div class="col-lg-2"
+                                 style="width: 170px; height:180px; float:left; display:inline; margin-right: 10px; overflow:hidden;">
+                                <div class="mt16 text-center" style="height: 100%;">
+                                    <t t-set="combination_info" t-value="spare_product._get_combination_info()"/>
+                                    <t t-set="product_variant"
+                                       t-value="spare_product.env['product.product'].browse(combination_info['product_id'])"/>
+                                    <div t-if="product_variant" t-field="product_variant.image_128"
+                                         t-options="{'widget': 'image', 'class': 'rounded shadow o_alternative_product' }"/>
+                                    <div t-else="" t-field="spare_product.image_128"
+                                         t-options="{'widget': 'image', 'class': 'rounded shadow o_alternative_product' }"/>
+                                    <h6>
+                                        <a t-attf-href="/shop/product/#{ slug(spare_product) }" style="display: block">
+                                            <span t-att-title="spare_product.name" t-field="spare_product.name"
+                                                  class="o_text_overflow" style="display: block;"/>
+                                        </a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                    <hr/>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="customer_purchase_goal" inherit_id="portal.side_content">
+            <xpath expr="//div[hasclass('o_my_contact')]" position="after">
+                <div class="o_portal_customer_purchase_goal mt-3">
+                    <t t-set="customer_purchases_goal_website" t-value="request.env.user.partner_id.customer_purchases_goal"/>
+                    <t t-set="customer_monthly_purchases_website" t-value="request.env.user.partner_id.customer_monthly_purchases"/>
+                    <h4>Customer purchases goal</h4>
+                    <t t-esc="customer_purchases_goal_website"/> MXN <br/>
+                    <span style="color:green;">Period from the 1st day to the 28th day of the current month</span>
+                    <br/>
+                    <h4>Customer monthly purchases</h4>
+                    <span t-att-style="'color:red;' if customer_monthly_purchases_website &lt;= customer_purchases_goal_website else 'color:green;'">
+                        <t t-esc="request.env.user.partner_id.customer_monthly_purchases"/> MXN
+                    </span>
+                    <h4>Fulfillment percent</h4>
+                    <span t-att-style="'color:red;' if  request.env.user.partner_id.fulfillment_percent &lt; 100 else 'color:green;'">
+                        <t t-esc="round(request.env.user.partner_id.fulfillment_percent,2)"/>%
+                    </span>
+                    <h4>Electronic Wallet when achieved the purchase goals</h4>
+                    <t t-esc="request.env.user.partner_id.electronic_wallet_purchase_goals"/>
+                </div>
+            </xpath>
+        </template>
+        <template id="terms_and_condition_purchase_goal" inherit_id="website_marvelsa.customer_purchase_goal">
+            <xpath expr="//div[hasclass('o_portal_customer_purchase_goal')]" position="after">
+                <br/><a href="/terms" target="_blank"><u>Terms and Conditions</u></a>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

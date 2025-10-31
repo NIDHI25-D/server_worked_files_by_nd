@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="marvel_product_normal_form_view_inherit">
+        <field name="name">marvel.product.product_normal_form_view.inherit</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="compatible_ids" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="temporary_id" options="{'no_create': True, 'no_open': True}"/>
+            </xpath>
+            <xpath expr="//field[@name='barcode']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="marvel_product_variant_easy_edit_view_inherit">
+        <field name="name">marvel.product.product_variant_easy_edit_view.inherit</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

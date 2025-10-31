@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <record id="group_hr_attendance_use_badge" model="res.groups">-->
+<!--        <field name="name">Enable Badge Scan</field>-->
+<!--        <field name="category_id" ref="base.module_category_hidden"/>-->
+<!--        <field name="comment">The user will scan his badge to check in and out manually at the company screen.-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="group_hr_attendance_use_manual" model="res.groups">-->
+<!--        <field name="name">Enable Manual Attendance</field>-->
+<!--        <field name="category_id" ref="base.module_category_hidden"/>-->
+<!--        <field name="comment">The user will be selected manually  from the list.-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="group_hr_attendance_use_face" model="res.groups">-->
+<!--        <field name="name">Enable Face Recognition</field>-->
+<!--        <field name="category_id" ref="base.module_category_hidden"/>-->
+<!--        <field name="comment">The user will scan his face to check in and out manually at the company screen.-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="group_hr_attendance_use_timer" model="res.groups">-->
+<!--        <field name="name">Employee Face Recognition Fail: User Timer</field>-->
+<!--        <field name="category_id" ref="base.module_category_hidden"/>-->
+<!--        <field name="comment">The user will see a timer running after fail scan.-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

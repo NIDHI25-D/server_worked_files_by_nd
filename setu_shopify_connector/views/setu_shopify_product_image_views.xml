@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="setu_shopify_product_image_form_view" model="ir.ui.view">
+        <field name="name">setu.shopify_product_image_form_view</field>
+        <field name="model">setu.shopify.product.image</field>
+        <field name="arch" type="xml">
+            <form string="Product Images" create="0" readonly="1">
+                <div>
+                    <div class="col-md-6 col-xl-5" invisible="context.get('default_setu_shopify_variant_id',False)">
+                        <field name="setu_shopify_template_id" invisible="1" readonly="1"/>
+                        <label for="setu_shopify_variant_id" string="Product variant"/>
+                        <field name="setu_shopify_variant_id"  domain="[('setu_shopify_template_id','=',setu_shopify_template_id)]" readonly="1"/>
+                    </div>
+                    <div >
+                        <div class="row">
+                            <div class="col">
+                                <field name="image" widget="image" readonly="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="setu_shopify_product_image_kanban_view" model="ir.ui.view">
+        <field name="name">setu.shopify.product.image.kanban.view</field>
+        <field name="model">setu.shopify.product.image</field>
+        <field name="arch" type="xml">
+            <kanban string="Product Images" create="0" default_order="sequence">
+                <field name="id"/>
+                <field name="image"/>
+                <field name="setu_shopify_product_image_id"/>
+                <field name="sequence" widget="handle"/>
+                <templates>
+                    <t t-name="kanban-box">
+                         <div class="card oe_kanban_global_click p-0">
+                            <div class="o_squared_image">
+                                <img class="card-img-top" t-att-src="kanban_image('setu.shopify.product.image', 'image', record.id.raw_value)" t-att-alt="record.value"/>
+                            </div>
+                           <div class="card-body p-0">
+                                <h4 class="card-title p-2 m-0 bg-200">
+                                    <small><field name="setu_shopify_product_image_id"/></small>
+                                </h4>
+                            </div>
+                            <!-- below 100 Kb: good -->
+                            <t t-if="record.image.raw_value.length &lt; 100*1000">
+                                <t t-set="size_status" t-value="'badge-success'"/>
+                                <t t-set="message">Acceptable file size</t>
+                            </t>
+                            <!-- below 1000 Kb: decent -->
+                            <t t-elif="record.image.raw_value.length &lt; 1000*1000">
+                                <t t-set="size_status" t-value="'badge-warning'" />
+                                <t t-set="message">Huge file size. The image should be optimized/reduced.</t>
+                            </t>
+                            <!-- above 1000 Kb: bad -->
+                            <t t-else="1">
+                                <t t-set="size_status" t-value="'badge-danger'"/>
+                                <t t-set="message">Optimization required! Reduce the image size or increase your compression settings.</t>
+                            </t>
+                            <span t-attf-class="badge #{size_status} o_product_image_size" t-esc="record.image.value" t-att-title="message"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

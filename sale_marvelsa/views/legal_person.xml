@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="legal_person_view_tree" model="ir.ui.view">
+            <field name="name">legal person tree view</field>
+            <field name="model">legal.person</field>
+            <field name="arch" type="xml">
+                <list string="Legal Person" editable="bottom">
+                    <field name="name" required="true"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="legal_person_action" model="ir.actions.act_window">
+            <field name="name">Legal Person</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">legal.person</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="legal_person_view_tree"/>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="legal_person_menu"
+                  name="Legal Person"
+                  parent="contacts.res_partner_menu_config"
+                  action="legal_person_action"
+                  sequence="3"
+                  groups="sale_marvelsa.permission_of_legal_person"/>
+    </data>
+</odoo>

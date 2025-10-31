@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="marvelfields_inherited_view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='sales_purchases']//group[@name='sale']"
+                   position="inside">
+                <field name="bonus_type" placeholder="None"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_clasifica_form_inherit" model="ir.ui.view">
+        <field name="name">Clasificaciones Custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="clasificaciones_ids" widget="many2many_tags" options="{'color_field': 'color'}"
+                       domain="[('id', '!=', context.get('active_id'))]"/>
+                <field name="subclases_ids" widget="many2many_tags" options="{'color_field': 'color'}"
+                       domain="[('id', '!=', context.get('active_id'))]"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_nocliente_form_inherit" model="ir.ui.view">
+        <field name="name">Numero de Cliente</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base_vat.view_partner_base_vat_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='vat_vies_container']" position="after">
+                <field name="ncliente" placeholder="Numero de Cliente"/>
+                <field name="billing_general_public_id" options="{'no_create_edit': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_surtido_sugerido_form_inherit" model="ir.ui.view">
+        <field name="name">Surtido Sugerido</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="warehouse_sugerido_id" options="{'no_create': True, 'no_open': True}" required="1"/>
+                <field name="send_product_data_update_template"/>
+            </field>
+            <xpath expr="//field[@name='child_ids']/form/sheet/group/group[2]" position="inside">
+                <field name="warehouse_sugerido_id" options="{'no_create': True, 'no_open': True}" required="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_rutav_form_inherit" model="ir.ui.view">
+        <field name="name">Ruta Vendedor</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="warehouse_sugerido_id" position="after">
+                <field name="rutav" placeholder="Ruta Vendedor de Campo"/>
+                <field name="supplier_rank" invisible="True"/>
+                <field name="freight_cost" invisible="supplier_rank &lt;= 0"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_paymentdays_form_inherit" model="ir.ui.view">
+        <field name="name">Payment days partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='accounting_entries']/field[@name='property_account_payable_id']"
+                   position="after">
+                <field name="payment_days_ids" widget="many2many_tags"
+                       options="{'no_create': True, 'no_open': True}"/>
+                <field name="collection_executive_id" options="{'no_create': True, 'no_open': True}"/>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="zone_id" options="{'no_create': True, 'no_open': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="send_email_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">send.email.res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='child_ids']/form/sheet//field[@name='email']"
+                   position="after">
+                <field name="send_mail_child"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="overdue_invoice_tree_inherit" model="ir.ui.view">
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date']" position="before">
+                <field name="ref"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

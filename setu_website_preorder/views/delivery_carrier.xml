@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+    <record id="is_next_day_shipping_delivery_carrier_view_form" model="ir.ui.view">
+        <field name="name">is.next.day.shipping.delivery.carrier.view.form</field>
+        <field name="model">delivery.carrier</field>
+        <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fixed_margin']" position="after">
+                <field name="is_next_day_shipping"/>
+            </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>

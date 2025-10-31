@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="setu_shopify_payment_report_list_view" model="ir.ui.view">
+        <field name="name">setu.shopify.payment.report.list.view</field>
+        <field name="model">setu.shopify.payment.report</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list create="false">
+                <field name="name"/>
+                <field name="payment_date"/>
+                <field name="payment_reference_id"/>
+                <field name="multi_ecommerce_connector_id"/>
+                <field name="amount"/>
+                <field name="payment_status"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="setu_shopify_payment_report_form_view" model="ir.ui.view">
+        <field name="name">setu.shopify.payment.report.form.view</field>
+        <field name="model">setu.shopify.payment.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form create="false" readonly="1">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,generated,processed,validated"/>
+                </header>
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;"
+                     invisible="is_skip_from_cron == False or state == 'validated'">
+                    <strong>
+                        - Due to some issue in the process, This report is not processed via Automatic Scheduler, Please
+                        process it manually.
+                    </strong>
+                </div>
+                <sheet>
+                    <div class="oe_title" style="width:500px;">
+                        <h1>
+                            <field name="name" class="oe_inline" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="payment_date" readonly="1"/>
+                            <field name="multi_ecommerce_connector_id" readonly="1"/>
+                            <field name="currency_id" readonly="1"/>
+                            <field name="statement_id" readonly="1" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="payment_reference_id" readonly="1"/>
+                            <field name="payment_status" readonly="1"/>
+                            <field name="amount" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="is_skip_from_cron" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Payment Transaction Lines">
+                            <field name="shopify_payment_report_line_ids" nolabel="1">
+                                <list decoration-danger="is_remaining_statement==True" limit="50"
+                                      create="false" >
+                                    <field name="transaction_type" readonly="1"/>
+                                    <field name="transaction_id" readonly="1"/>
+                                    <field name="order_id" readonly="1"/>
+                                    <field name="net_amount" readonly="1"/>
+                                    <field name="fee" readonly="1"/>
+                                    <field name="amount" readonly="1"/>
+                                    <field name="is_remaining_statement" invisible="1"/>
+                                </list>
+                                <form string="Payout Transactions" readonly="1">
+                                    <group>
+                                        <group>
+                                            <field name="shopify_payment_report_id" readonly="1"/>
+                                            <field name="order_id" readonly="1"/>
+                                            <field name="source_order_id" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="net_amount" readonly="1"/>
+                                            <field name="fee" readonly="1"/>
+                                            <field name="amount" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="transaction_id" readonly="1"/>
+                                            <field name="transaction_type" readonly="1"/>
+                                            <field name="currency_id" readonly="1"/>
+                                            <field name="source_type" readonly="1"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Process History Lines">
+                            <field name="process_history_line_ids">
+                                <list create="0" edit="0" >
+                                    <field name="setu_shopify_payment_report_line_id"/>
+                                    <field name="message"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter reload_on_post="True"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="setu_shopify_payment_report_search_view" model="ir.ui.view">
+        <field name="name">setu.shopify.payment.report.form.view</field>
+        <field name="model">setu.shopify.payment.report</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Payment Report">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="multi_ecommerce_connector_id"/>
+                <field name="statement_id"/>
+                <filter name="remaining_reports" string="Remaining Reports" domain="[('state', '!=', 'validated')]"/>
+                <group expand="0" string="Group By...">
+                    <filter name="multi_ecommerce_connector_id" string="e-Commerce"
+                            context="{'group_by':'multi_ecommerce_connector_id'}"/>
+                    <filter name="status" string="Status" context="{'group_by':'state'}"/>
+                    <filter string="Payment Date" name="order_month" context="{'group_by':'payment_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_setu_shopify_payment_report" model="ir.actions.act_window">
+        <field name="name">Shopify Payout Reports</field>
+        <field name="res_model">setu.shopify.payment.report</field>
+        <field name="search_view_id" ref="setu_shopify_connector.setu_shopify_payment_report_search_view"/>
+        <field name="context">{'search_default_remaining_reports': 1}</field>
+    </record>
+
+    <menuitem id="setu_shopify_payment_report_action" name="Payout Reports"
+              parent="setu_shopify_connector.setu_shopify_account_move_main_menu" groups="account.group_account_user"
+              action="action_setu_shopify_payment_report" sequence="9"/>
+</odoo>

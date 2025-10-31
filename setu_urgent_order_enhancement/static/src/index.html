@@ -1,0 +1,35 @@
+<h2 id="Setu_Urgent_Order_Enhancement">Setu Urgent Order Enhancement</h2>
+<h4 id="usage">USAGE</h4>
+<ul>
+    <li>Use to Identify the sale order is urgent or not.</li>
+</ul>
+<h4 id="Configuration">Configuration</h4>
+<ul>
+    <li>Added urgent orders sales team ids into setting to set the sales team Urgent order.</li>
+    <li>Whichever the sales team is selected in configuration it will consider as urgent order.</li>
+</ul>
+<h3 id="Partner">Partner</h3>
+<ul>
+    <li>Add Urgent order Field.</li>
+</ul>
+<h4 id="Sale_Order">Sale Order</h4>
+<ul>
+    <li>Add Urgent Order field.</li>
+    <li>if sale order's customer or selected sales team store in the
+        system parameter (Which are set from the settings-> sales -> Urgent Orders),
+        then is_urgent_order field set to True automatically.
+    </li>
+    <li>After creating the sale order if a partner or sales team was changed,
+        then is_urgent_order fields set automatically according to the setting.
+    </li>
+</ul>
+<h4 id="Sale_Report">Sale Report</h4>
+<ul>
+    <li>Add Urgent order Field.</li>
+    <li>To filter and group sale orders.</li>
+</ul>
+<h4 id="Stock Pickings">Stock Pickings</h4>
+<ul>
+    <li>Add Urgent order Field.</li>
+    <li>If sale orders is an urgent order, then it will be True.</li>
+</ul>

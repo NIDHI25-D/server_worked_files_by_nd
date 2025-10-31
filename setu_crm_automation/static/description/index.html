@@ -1,0 +1,34 @@
+<br/>
+<h2 id="setu-crm-automation">Setu Crm Automation</h2>
+<h5 id="usage">USAGE</h5>
+<ul>
+    <li>This module is mainly related to the CRM records.</li>
+    <li>This module is used to not directly allow, users to change the state of CRM orders.</li>
+    <li>This module also includes a cron named : <strong>Change State Of Opportunity</strong></li>
+    <li>This cron, archives the Pipeline records with Lost state, which are in new state with the Lost reason : <strong>Final
+        del Periodo</strong></li>
+    <li>When Order of CRM are confirmed then stage is changed to <strong>Proposition</strong>.</li>
+    <li>This module, changes the stage to <strong>Shipped</strong> and <strong>Won</strong> stage as per the
+        fulfillments of the dates : <strong>Shipping Date</strong> and <strong>X Studio Fecha De Entrega</strong> in
+        respected Transfers.
+    </li>
+</ul>
+<h5 id="configuration">CONFIGURATION</h5>
+<ul>
+    <li>To allow user to manually change the states of CRM, need to give rigths to particular users.
+        <ul>
+            <li><pre><code>Settings  &gt;  Users &gt; Enable to change CRM Lead stage manually
+</code></pre>
+            </li>
+        </ul>
+    </li>
+    <li>If user, doesn&#39;t want to allow user to change the state manually than disable the right for user and add the
+        message in Settings.
+        <ul>
+            <li><pre><code>Settings &gt; CRM &gt; Message
+</code></pre>
+            </li>
+        </ul>
+    </li>
+    <li>This message will be appeared as an Alert when the user tries to change the state without the rights.</li>
+</ul>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="True">
+        <record id="pos_dummy_user" model="res.partner">
+            <field name="name">POS Dummy User</field>
+            <field name="active" eval="False"/>
+            <field name="street" eval="2"/>
+            <field name="street2" eval="2"/>
+            <field name="zip" eval="360000"/>
+            <field name="country_id" eval="2"/>
+            <field name="state_id" eval="2"/>
+            <field name="l10n_mx_edi_colony" eval="2"/>
+            <field name="city" eval="2"/>
+        </record>
+    </data>
+</odoo>

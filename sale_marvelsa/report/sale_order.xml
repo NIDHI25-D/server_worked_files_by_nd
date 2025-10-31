@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="add_oversized_field_in_sale_report"
+                  inherit_id="sale.report_saleorder_document">
+            <xpath expr="//th[@name='th_description']" position="after">
+                <th name="th_oversized" class="text-start">Oversized</th>
+            </xpath>
+            <xpath expr="//td[@name='td_name']" position="after">
+                <td t-if="line.is_oversized">
+                    <span>Yes</span>
+                </td>
+                <td t-else="">
+                    <span>No</span>
+                </td>
+            </xpath>
+        </template>
+    </data>
+</odoo>

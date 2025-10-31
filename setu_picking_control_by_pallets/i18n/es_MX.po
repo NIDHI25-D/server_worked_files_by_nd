@@ -1,0 +1,404 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_picking_control_by_pallets
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-08 03:50+0000\n"
+"PO-Revision-Date: 2024-08-08 03:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_package_barcode_inherited
+msgid "<b>Customer</b>"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_package_barcode_inherited
+msgid "<b>Effective date</b>"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_package_barcode_inherited
+msgid "<b>Package Barcode</b>"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_package_barcode_inherited
+msgid "<b>Picking Barcode</b>"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_package_barcode_inherited
+msgid "<b>Sale order</b>"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"\n"
+"                        <strong>Delivery Address:</strong>"
+msgstr ""
+"<br/>\n"
+"\n"
+"                        <strong>Direccion de envío:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>Carrier:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Paquetería:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>Comments:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Comentarios:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>Customer name:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Nombre de cliente:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>Pallet count:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Cantidad de tarimas:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>Payment state:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Estado de pago:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>Phone:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Telefono:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>RFC:</strong>"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>Source document:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Documento origen:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>Weight for shipping:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Peso del envío:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid ""
+"<br/>\n"
+"                        <strong>package count:</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Cantidad de paquetes:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.put_in_pack_package_type_wizard_view_form
+msgid "<span>Kg</span>"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid "<strong>Box count:</strong>"
+msgstr "<strong>Cantidad de cajas:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Referencia:</strong>"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.scanned_package_template
+msgid "All packages have been scanned."
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_package_barcode_inherited
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid "Barcode"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__choose_delivery_package__package_type__box
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__put_in_pack_package_type_wizards__package_type__box
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__stock_quant_package__package_type__box
+msgid "Box"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_picking__box_count
+msgid "Box count"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__choose_delivery_package__package_type__bundle_package
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__put_in_pack_package_type_wizards__package_type__bundle_package
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__stock_quant_package__package_type__bundle_package
+msgid "Bundle/Package"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.put_in_pack_package_type_wizard_view_form
+msgid "Create Packages"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_quant_package__customer_id
+msgid "Customer"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model,name:setu_picking_control_by_pallets.model_choose_delivery_package
+msgid "Delivery Package Selection Wizard"
+msgstr "Asistente selección empaquetado"
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid "GSCLI"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_quant_package__has_scanned
+msgid "Has scanned?"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards__id
+msgid "ID"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#. odoo-javascript
+#: code:addons/setu_picking_control_by_pallets/static/src/xml/templates.xml:0
+#, python-format
+msgid "Massive Package"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.view_picking_form_inherited_pallet
+msgid "Massive package"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_picking__package_count
+msgid "Package count"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.actions.act_window,name:setu_picking_control_by_pallets.put_in_pack_package_type_wizard_action
+msgid "Package details"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_choose_delivery_package__package_type
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_product_product__package_type
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_product_template__package_type
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards__package_type
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_quant_package__package_type
+msgid "Package type"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model,name:setu_picking_control_by_pallets.model_stock_quant_package
+msgid "Packages"
+msgstr "Paquetes"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.scanned_package_template
+msgid "Packages left to be scanned:"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid "Paid"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__choose_delivery_package__package_type__pallet
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__put_in_pack_package_type_wizards__package_type__pallet
+#: model:ir.model.fields.selection,name:setu_picking_control_by_pallets.selection__stock_quant_package__package_type__pallet
+msgid "Pallet"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_picking__pallet_count
+msgid "Pallet count"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.actions.report,name:setu_picking_control_by_pallets.action_report_parcel_tracking
+msgid "Parcel tracking label"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_quant_package__picking_id
+msgid "Picking"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#. odoo-python
+#: code:addons/setu_picking_control_by_pallets/models/stock_picking.py:0
+#, python-format
+msgid ""
+"Please add 'Done' quantities to the picking to create a new pack or packages"
+" are present"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model,name:setu_picking_control_by_pallets.model_product_template
+msgid "Product"
+msgstr "Plantilla de producto"
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model,name:setu_picking_control_by_pallets.model_put_in_pack_package_type_wizards
+msgid "PutInPackPackagesTypeWizards"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_quant_package__sale_order_id
+msgid "Sale Order"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.scanned_package_template
+msgid "Scanned successfully"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_stock_picking__is_security_scanned_process
+msgid "Security scanned process"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_put_in_pack_package_type_wizards__packages_shipping_weight
+msgid "Shipping weight"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model,name:setu_picking_control_by_pallets.model_stock_picking
+msgid "StockPicking"
+msgstr "Traslado"
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid "TM"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model_terms:ir.ui.view,arch_db:setu_picking_control_by_pallets.report_parcel_tracking
+msgid "To Pay"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#. odoo-python
+#: code:addons/setu_picking_control_by_pallets/models/stock_picking.py:0
+#, python-format
+msgid ""
+"To continue the Massive Package process, kindly enable the Package Type in "
+"the Product %s. Either Put in Pack the product or remove the done quantity"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#. odoo-python
+#: code:addons/setu_picking_control_by_pallets/models/stock_picking.py:0
+#, python-format
+msgid "You can't create massive packages as packages are already created"
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#. odoo-python
+#: code:addons/setu_picking_control_by_pallets/models/stock_picking.py:0
+#, python-format
+msgid "You can't put in pack for already done packages."
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#. odoo-python
+#: code:addons/setu_picking_control_by_pallets/models/stock_picking.py:0
+#, python-format
+msgid ""
+"You need to establish a quantity to continue or packages are not possible as"
+" package is already."
+msgstr ""
+
+#. module: setu_picking_control_by_pallets
+#: model:ir.model.fields,field_description:setu_picking_control_by_pallets.field_choose_delivery_package__carrier_id
+msgid "carrier"
+msgstr ""

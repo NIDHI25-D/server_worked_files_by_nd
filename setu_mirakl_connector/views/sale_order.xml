@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="setu_mirakl_sale_order_tree_view_extended" model="ir.ui.view">
+        <field name="name">setu.mirakl.sale.order.tree.view.extended</field>
+        <field name="model">sale.order</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <list create="false" default_order="id desc">
+                <field name="name" string="Order Number"/>
+                <field name="date_order"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="setu_mirakl_sale_order_form_view_extended" model="ir.ui.view">
+        <field name="name">setu.mirakl.sale.order.form.view.extended</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Mirakl Info" name="mirakl" invisible="is_mirakl_sale_order == False and ecommerce_connector != 'mirakl_connector'">
+                    <group>
+                        <group>
+                            <field name="is_mirakl_sale_order" readonly="1" force_save="1"/>
+                            <field name="ecommerce_connector"/>
+                            <field name="mirakl_order_status" readonly="1"/>
+                            <field name="mirakl_order_id" readonly="1"/>
+                            <field name="setu_mirakl_payment_gateway_id" readonly="1"/>
+                            <field name="multi_ecommerce_connector_id" readonly="1"
+                                   options="{'no_create':True,'no_create_edit':True}"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="setu_multi_ecommerce_connector_sale_action_mirakl" model="ir.actions.act_window">
+        <field name="name">Mirakl Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_id" ref="setu_mirakl_sale_order_tree_view_extended"/>
+        <field name="domain">
+            [('ecommerce_connector','=','mirakl_connector'),('multi_ecommerce_connector_id','=',active_id)]
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="dealer_request_type" name="Dealer Request">
+        <t t-call="website.layout">
+            <div class="container py-2 dealer_request">
+                <div class="row">
+                    <div class="col-12 col-xl order-xl-1 oe_cart">
+                        <div class="row justify-content-center">
+                            <h2 id="heading" class="dealer_header d-flex justify-content-between">
+                                <span>Dealer Information</span>
+                                <button type="button" class="btn btn-primary help_modal_add" data-bs-toggle="modal"
+                                        data-bs-target="#help_modal">
+                                    Help
+                                </button>
+                            </h2>
+                            <div class="modal fade help_class" id="help_modal" tabindex="-1"
+                                 aria-labelledby="ModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ModalLabel">Important information</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="msg">
+                                                This is the section to make your application for registration as a
+                                                distributor. Before starting the process please verify that your fiscal
+                                                data is correctly captured, we suggest that you have at hand the
+                                                following documents depending on the type of option you choose so that
+                                                your registration will generate in a simple and successful way.
+                                            </div>
+                                            <div class="mt-5">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="dealer_header">Cash Dealer</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Proof of address</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Proof of tax situation</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>INE</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3 Photographs of the business</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="dealer_header">Credit Dealer</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Proof of address</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Proof of tax situation</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>INE of the legal representative</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Formato D32 (opinión positiva)</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Credit registration and credit request</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Promissory note</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Aval INE</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Aval proof of address</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Balance Sheet * If the amount is greater than
+                                                                        500,000.00
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Income Statement * If the amount is greater than
+                                                                        500,000.00
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3 Photographs of the business</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Power of attorney of the legal representative *
+                                                                        If a legal entity
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Constitutive Act * If a legal entity</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                                    id="modal_close">
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="dealer_view">
+                                <div class="type_of_dealer_request">
+                                    <b>Please choose the type of request to be sent :</b>
+                                    <input type="radio" id="cash_dealer" name="type_of_dealer" value="cash_dealer" checked="1"
+                                           t-attf-class="{{ 'd-none' if dealer_partner.dealer_type == 'is_credit_dealer' else '' }}"
+                                    />
+                                    <label t-attf-class="{{ 'd-none' if dealer_partner.dealer_type == 'is_credit_dealer' else '' }}" for="cash_dealer">Cash Dealer</label>
+                                    <input type="radio" id="credit_dealer" name="type_of_dealer" value="credit_dealer"
+                                           t-attf-class="{{ 'd-none' if dealer_partner.dealer_type == 'is_cash_dealer' else '' }}"
+                                    />
+                                    <label t-attf-class="{{ 'd-none' if dealer_partner.dealer_type == 'is_cash_dealer' else '' }}" for="credit_dealer">Credit Dealer</label>
+                                </div>
+                                <div t-attf-class="cash_dealer_view {{ '' if not dealer_partner.dealer_type or dealer_partner.dealer_type == 'is_cash_dealer' else 'd-none' }}">
+                                    <t t-if="dealer_partner.status != 'completed' "/>
+                                    <t t-set="setu_company_type"
+                                       t-value="request.env.user.sudo().partner_id.setu_company_type"/>
+                                    <form id="cash_dealers_information_form" method="post"
+                                          enctype="multipart/form-data">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input type="hidden" name="is_cash_dealer" t-att-value="True"/>
+                                        <t t-foreach="is_cash_dealer" t-as="dealer">
+                                            <t t-foreach="dealer.items()" t-as="items">
+                                                <t t-set="dealer_value" t-value="items[1]"/>
+                                                <t t-set="dealer_key" t-value="items[0]"/>
+                                                <div class="check_box_class mt-3">
+                                                    <label t-att-for="dealer_key" t-att-class="dealer_key">
+                                                          <b><t t-esc="'%s'% dealer_value"/></b>
+                                                    </label>
+                                                    <label for="dealer_key"/>
+                                                    <t t-if="dealer_key in ('proof_of_address','proof_of_tax_situation',
+                                                                                    'ine_front','ine_reverse',
+                                                                                    )">
+                                                        <input type="file" id="cash_jpg_pdf_format"
+                                                               class="form-control s_website_form_input o_resume_inputd-flex gap-2 gap-md-3 py-3 pe-2 px-md-3 h-100 rounded text-decoration-none alert alert-primary align-items-center"
+                                                               t-att-name="dealer_key"
+                                                               accept="image/jpeg,image/jpg ,image/png,application/pdf"
+                                                               required="1"/>
+                                                        (Please Upload jpg/jpeg/png or PDF Documents)<br/>
+                                                    </t>
+                                                    <t t-if="dealer_key in ('business_photography_outdoor',
+                                                                                    'business_photography_indoor_1',
+                                                                                    'business_photography_indoor_2',
+                                                                                    )">
+                                                        <input type="file" id="cash_jpg_format"
+                                                               class="form-control s_website_form_input o_resume_inputd-flex gap-2 gap-md-3 py-3 pe-2 px-md-3 h-100 rounded text-decoration-none alert alert-primary align-items-center"
+                                                               t-att-name="dealer_key"
+                                                               accept="image/jpeg,image/jpg ,image/png"
+                                                               required="1"/>
+                                                        (Please Upload jpg/jpeg/png)<br/>
+                                                    </t>
+                                                    <t t-if="reject_reason">
+                                                        <t t-foreach="reject_reason" t-as="rejected_doc">
+                                                            <t t-if="rejected_doc.is_cash_dealer == dealer_key">
+                                                                <font color="#ff0000">
+                                                                    REJECT REASON :
+                                                                    <t t-esc="rejected_doc.reject_reason.name"/>
+                                                                </font>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </div>
+                                            </t>
+                                        </t>
+                                        <div class="submit_class mt-4">
+                                            <a role="button" href="/my/dealer/submit">
+                                                <input type="submit"/>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div t-attf-class="credit_dealer_view {{ '' if dealer_partner.dealer_type == 'is_credit_dealer' else 'd-none' }}">
+                                    <form id="credit_dealers_information_form" method="post"
+                                          enctype="multipart/form-data">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input type="hidden" name="is_credit_dealer" t-att-value="true"/>
+                                        <div class="row">
+                                            <div class="col-6 row mt-3" style="margin-left:15px;">
+                                                <div class="col-6">
+                                                    <label for="credit_limit_requested">Credit Limit Requested :
+                                                    </label>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select name="credit_limit_requested"
+                                                            id="credit_limit_requested"
+                                                            class="w-100">
+                                                        <t t-esc="dealer_partner.credit_limit_requested_id.name"/>
+                                                        <t t-if="not dealer_partner.credit_limit_requested_id">
+                                                            <t t-foreach="request.env['credit.limit.requested'].sudo().search([])"
+                                                               t-as="clr">
+                                                                <option t-att-value="clr.id">
+                                                                    <t t-esc="'{:,}'.format(clr.name)"/>
+                                                                </option>
+                                                            </t>
+                                                        </t>
+                                                        <t t-if="dealer_partner.credit_limit_requested_id">
+                                                            <t t-foreach="request.env['credit.limit.requested'].sudo().search([('id','=',dealer_partner.credit_limit_requested_id.id)])"
+                                                               t-as="clr">
+                                                                <option t-att-value="clr.id">
+                                                                    <t t-esc="'{:,}'.format(clr.name)"/>
+                                                                </option>
+                                                            </t>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 row mt-3">
+                                                <div class="col-6">
+                                                    <label for="credit_days_requested">Credit Days Requested :
+                                                    </label>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select name="credit_days_requested" id="credit_days_requested"
+                                                            class="w-100">
+                                                        <t t-if="not dealer_partner.credit_days_requested_id">
+                                                            <t t-foreach="request.env['credit.days.requested'].sudo().search([])"
+                                                               t-as="cdr">
+                                                                <option t-att-value="cdr.id">
+                                                                    <t t-esc="cdr.name"/>
+                                                                </option>
+                                                            </t>
+                                                        </t>
+                                                        <t t-if="dealer_partner.credit_days_requested_id">
+                                                            <t t-foreach="request.env['credit.days.requested'].sudo().search([('id','=',dealer_partner.credit_days_requested_id.id)])"
+                                                               t-as="cdr">
+                                                                <option t-att-value="cdr.id">
+                                                                    <t t-esc="cdr.name"/>
+                                                                </option>
+                                                            </t>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <t t-foreach="is_credit_dealer" t-as="credit_dealer">
+                                            <input type="hidden" class="current_login" t-att-value="request.env.user.sudo().partner_id.setu_company_type"/>
+                                            <t t-foreach="credit_dealer.items()" t-as="items">
+                                                <t t-set="credit_dealer_value" t-value="items[1]"/>
+                                                <t t-set="credit_dealer_key" t-value="items[0]"/>
+                                                <div class="check_box_class mt-3">
+                                                    <label t-att-for="credit_dealer_key" t-att-class="credit_dealer_key">
+                                                          <b><t t-esc="credit_dealer_value"/></b>
+                                                    </label>
+                                                    <t t-if="credit_dealer_key in ('proof_of_address','proof_of_tax_situation',
+                                                                                    'ine_front','ine_reverse',
+                                                                                    'credit_registration','credit_request',
+                                                                                    'promissary_note','aval_ine_front',
+                                                                                    'aval_ine_reverse','aval_proof_of_address')">
+                                                        <t t-if="credit_dealer_key == 'credit_registration'">
+                                                            <t t-if="company.credit_registration_doc">
+                                                                <a t-attf-href="/web/content/res.company/{{ company.id }}/credit_registration_doc"
+                                                                   class="button"
+                                                                    download="Credit Registration">
+                                                                    <i class="fa fa-download"/>
+                                                                </a>
+                                                            </t>
+                                                            <t t-if="company.credit_registration_doc_help">
+                                                                <a t-attf-href="/web/content/res.company/{{ company.id }}/credit_registration_doc_help" target="_blank">
+                                                                    <i class="fa fa-question-circle" />
+                                                                </a>
+                                                            </t>
+                                                        </t>
+                                                        <t t-if="credit_dealer_key == 'credit_request'">
+                                                            <t t-if="company.credit_request_doc">
+                                                                <a t-attf-href="/web/content/res.company/{{ company.id }}/credit_request_doc"
+                                                                   class="button"
+                                                                    download="Credit Request">
+                                                                    <i class="fa fa-download"/>
+                                                                </a>
+                                                            </t>
+                                                            <t t-if="company.credit_request_doc_help">
+                                                                <a t-attf-href="/web/content/res.company/{{ company.id }}/credit_request_doc_help" target="_blank">
+                                                                    <i class="fa fa-question-circle"/>
+                                                                </a>
+                                                            </t>
+                                                        </t>
+                                                        <t t-if="credit_dealer_key == 'promissary_note'">
+                                                            <t t-if="company.promissary_note_doc">
+                                                                <a t-attf-href="/web/content/res.company/{{ company.id }}/promissary_note_doc"
+                                                                   class="button"
+                                                                   download="Promissary Note">
+                                                                    <i class="fa fa-download"/>
+                                                                </a>
+                                                            </t>
+                                                            <t t-if="company.promissary_note_doc_help">
+                                                                <a t-attf-href="/web/content/res.company/{{ company.id }}/promissary_note_doc_help" target="_blank">
+                                                                    <i class="fa fa-question-circle" />
+                                                                </a>
+                                                            </t>
+                                                        </t>
+                                                        <input type="file" id="jpg_pdf_format"
+                                                               t-att-class="'credit_dealer_key form-control s_website_form_input o_resume_inputd-flex gap-2 gap-md-3 py-3 pe-2 px-md-3 h-100 rounded text-decoration-none alert alert-primary align-items-center'"
+                                                               t-att-name="credit_dealer_key"
+                                                               accept="image/jpeg,image/jpg ,image/png,application/pdf"
+                                                               required="1">
+                                                        </input>
+                                                        (Please Upload jpg/jpeg/png or PDF Documents)<br/>
+                                                    </t>
+                                                    <t t-if="credit_dealer_key in ('business_photography_outdoor',
+                                                                                   'business_photography_indoor_1',
+                                                                                   'business_photography_indoor_2')">
+                                                        <input type="file" id="jpg_format"
+                                                               class="form-control s_website_form_input o_resume_inputd-flex gap-2 gap-md-3 py-3 pe-2 px-md-3 h-100 rounded text-decoration-none alert alert-primary align-items-center"
+                                                               t-att-name="credit_dealer_key"
+                                                               accept="image/jpeg, image/jpg ,image/png"
+                                                               required="1"/>
+                                                        (Please Upload jpg/jpeg/png Documents)<br/>
+                                                    </t>
+                                                    <t t-if="credit_dealer_key in ('formato_d_32','power_of_attorney',
+                                                                                   'constitutive_act','balance_sheet',
+                                                                                   'income_statements')"  >
+                                                        <input type="file" id="pdf_format"
+                                                               class="form-control s_website_form_input o_resume_inputd-flex gap-2 gap-md-3 py-3 pe-2 px-md-3 h-100 rounded text-decoration-none alert alert-primary align-items-center"
+                                                               t-att-name="credit_dealer_key"
+                                                               accept="application/pdf"
+                                                               required="1"
+                                                               placeholder="(Please Upload PDF Documents)"
+                                                        />
+                                                        <input type="hidden" class="credit_limit_req_value" t-att-value=""/>
+                                                        <span t-att-class="credit_dealer_key">
+                                                            (Please Upload PDF Documents)<br/>
+                                                        </span>
+                                                    </t>
+                                                    <t t-if="reject_reason">
+                                                        <t t-foreach="reject_reason" t-as="rejected_doc_credit">
+                                                            <t t-if="rejected_doc_credit.is_credit_dealer == credit_dealer_key">
+                                                                <font color="#ff0000">
+                                                                    REJECT REASON :
+                                                                    <t t-esc="rejected_doc_credit.reject_reason.name"/>
+                                                                </font>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </div>
+                                            </t>
+                                        </t>
+                                        <div class="submit_class mt-4">
+                                            <a role="button" href="/my/dealer/submit">
+                                                <input type="submit"/>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="dealers_link" inherit_id="portal.side_content">
+        <xpath expr="//div[@name='portal_contact']" position="after">
+            <div class="dealer_request mt-3">
+                <h4>Dealer Request
+                    <a role="button" href="/my/dealer" class="btn btn-sm btn-link">
+                        <i class="fa fa-file-text-o"/>
+                        click here
+                    </a>
+                </h4>
+            </div>
+        </xpath>
+    </template>
+    <template id="dealer_form_submit" name="submit">
+        <t t-call="website.layout">
+            <div class="text-center">
+                <h1 class="display-1 text-center" style="color: #65435c;">Thank You!</h1>
+                <p class="lead">
+                    <strong style="color: #65435c;">Your Document Details Are Successfully Submitted.</strong>
+                </p>
+            </div>
+        </t>
+    </template>
+    <template id="dealer_form_approved_page" name="submit">
+        <t t-call="website.layout">
+            <div class="text-center">
+                <h1 class="display-1 text-center" style="color: #65435c;">Thank You!</h1>
+                <p class="lead">
+                    <t t-if="request.env.user.sudo().partner_id.dealer_type == 'is_cash_dealer'">
+                        <strong style="color: #65435c;">Your Uploaded Documents For Cash Dealer Are Successfully Approved.</strong>
+                    </t>
+                    <t t-if="request.env.user.sudo().partner_id.dealer_type == 'is_credit_dealer'">
+                        <strong style="color: #65435c;">Your Uploaded Documents For Credit Dealer Are Successfully Approved.</strong>
+                    </t>
+                </p>
+            </div>
+             <div style="text-align: center;" t-if="request.env.user.sudo().partner_id.dealer_type == 'is_credit_dealer'">
+                 <t t-esc="company.credit_general_address"/>
+             </div>
+        </t>
+    </template>
+
+</odoo>

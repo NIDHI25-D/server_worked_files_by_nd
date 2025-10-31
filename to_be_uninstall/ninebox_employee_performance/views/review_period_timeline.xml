@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="action_review_period_timeline_form">
+        <field name="name">Review Period Timeline</field>
+        <field name="model">review.period.timeline</field>
+        <field name="arch" type="xml">
+            <form string="Assessment Rating">
+                <header>
+                    <button name="create_employees_performance" type="object"
+                            string="Initiate  Employees Performace" states="not_send"
+                            class="oe_highlight"
+                            groups="hr.group_hr_user,hr.group_hr_manager"/>
+
+                    <button name="reset" type="object"
+                            string="Reset" states="send"
+                            class="oe_highlight"
+                            groups="hr.group_hr_user,hr.group_hr_manager"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="not_send,send"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="assessment_period" readonly="1"/>
+                            <field name="mail_notification"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Employee Assessment Questions">
+                            <field name="emp_assessment_qtn_ids" domain="[('active', '=', True)]">
+                                <tree string="Employee Assessment Questions" create="false" delete="false">
+                                    <field name="assessment_question"/>
+                                    <field name="rating_id" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Manager Assessment Questions">
+                            <field name="mgr_assessment_qtn_ids" domain="[('active', '=', True)]">
+                                <tree string="Manager Assessment Questions" create="false" delete="false">
+                                    <field name="assessment_question"/>
+                                    <field name="rating_id" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

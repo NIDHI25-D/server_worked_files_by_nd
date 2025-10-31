@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="add_oversized_field_in_account_report"
+                  inherit_id="account.report_invoice_document">
+            <xpath expr="//th[@name='th_description']" position="after">
+                <th name="th_oversized">
+                    <span>Oversized</span>
+                </th>
+            </xpath>
+            <xpath expr="//td[@name='account_invoice_line_name']" position="after">
+                <td t-if="line.is_oversized">
+                    <span>Yes</span>
+                </td>
+                <td t-else="">
+                    <span>No</span>
+                </td>
+            </xpath>
+        </template>
+    </data>
+</odoo>

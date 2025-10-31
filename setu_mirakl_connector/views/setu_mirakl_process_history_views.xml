@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="setu_process_history_form_view_extended_mirakl" model="ir.ui.view">
+        <field name="name">setu.process.history,form.view.extended.mirakl</field>
+        <field name="model">setu.process.history</field>
+        <field name="inherit_id" ref="setu_ecommerce_based.setu_process_history_form_view"/>
+        <field name="arch" type="xml">
+            <field name="record_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="setu_mirakl_process_history_action" model="ir.actions.act_window">
+        <field name="name">Process History</field>
+        <field name="res_model">setu.process.history</field>
+        <field name="domain">[('ecommerce_connector','=','mirakl_connector')]</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Not found any process history yet.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="setu_mirakl_process_history_process_main_menu" name="Process History"
+              parent="setu_mirakl_connector.setu_mirakl_process_history_main_menu"
+              action="setu_mirakl_process_history_action" sequence="1"/>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="is_oversized_product_product">
+            <field name="name">is.oversized.product.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='list_price_uom']" position="after">
+                    <label for="is_oversized"/>
+                    <div name="is_oversized">
+                        <field name="is_oversized"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="change_string_product_tags" model="ir.ui.view">
+            <field name="name">change.string.product.tags</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_tag_ids']" position="attributes">
+                    <attribute name="string">Industry</attribute>
+                    <attribute name="options">{'no_create_edit': True,'no_create': True}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

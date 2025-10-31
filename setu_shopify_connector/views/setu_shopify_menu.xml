@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="setu_shopify_main_menu" name="Shopify"  groups="setu_shopify_connector.group_setu_shopify_connector_manager"  web_icon="setu_shopify_connector,static/description/icon.png" sequence="7">
+			<menuitem id="setu_shopify_dashboard_main_menu" name="Dashboard" action="open_setu_shopify_dashboard_dashboard_kanban" sequence="1"/>
+    </menuitem>
+    <menuitem id="setu_shopify_sale_order_main_menu" name="Sales" parent="setu_shopify_connector.setu_shopify_main_menu"  sequence="2"/>
+    <menuitem id="setu_shopify_account_move_main_menu" name="Accounting"  parent="setu_shopify_connector.setu_shopify_main_menu" sequence="3"/>
+    <menuitem id="setu_shopify_product_catalog_main_menu" name="Products" parent="setu_shopify_connector.setu_shopify_main_menu"  sequence="4"/>
+    <menuitem id="setu_shopify_import_export_main_menu" name="Operations" parent="setu_shopify_connector.setu_shopify_main_menu"  sequence="5"/>
+    <menuitem id="setu_shopify_chain_main_menu" name="Process Queue" parent="setu_shopify_connector.setu_shopify_main_menu" sequence="6" />
+    <menuitem id="setu_shopify_process_history_main_menu" name="Process History" parent="setu_shopify_connector.setu_shopify_main_menu"  sequence="7"/>
+    <menuitem id="setu_shopify_configuration_main_menu" name="Configuration" parent="setu_shopify_connector.setu_shopify_main_menu"  sequence="8"/>
+</odoo>

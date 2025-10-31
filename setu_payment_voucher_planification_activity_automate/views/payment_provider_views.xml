@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <record id="payment_voucher_warning_planification" model="ir.ui.view">
+            <field name="name">payment.voucher.warning.planification</field>
+            <field name="model">payment.provider</field>
+            <field name="inherit_id" ref="payment.payment_provider_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position='before'>
+                    <group>
+                        <field name="payment_voucher_warning"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="payment_method_voucher_warning_planification" model="ir.ui.view">
+            <field name="name">payment.voucher.warning.planification</field>
+            <field name="model">payment.method</field>
+            <field name="inherit_id" ref="payment.payment_method_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position='before'>
+                    <group>
+                        <field name="payment_voucher_warning"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

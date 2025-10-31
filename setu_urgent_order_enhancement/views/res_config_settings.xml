@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="sale_order_res_config_settings_inherited" model="ir.ui.view">
+            <field name="name">sale.order.res.config.settings.inherited</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//block[@name='quotation_order_setting_container']" position="after">
+                    <h2>Urgent Orders</h2>
+                    <div class="row mt16 o_settings_container" name="urgent_orders_customers_settings">
+                        <div class="col-6">
+                            <div class="col-12 col-lg-12 o_setting_box" id="sales_team_urgent_orders">
+                                <div class="o_setting_right_pane">
+                                    <label for="urgent_orders_sales_team_ids"/>
+                                    <field name="urgent_orders_sales_team_ids" widget="many2many_tags"/>
+                                    <div class="text-muted">
+                                        Consider Selected platform's sale order as an Urgent order
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

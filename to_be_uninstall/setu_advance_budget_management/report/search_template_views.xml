@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="setu_advance_budget_management_search_template_comparison"
+                  inherit_id="account_reports.search_template_comparison">
+            <xpath expr="//div" position="inside">
+                <t t-if="context.get('report_id', False) == request.env.ref('account_reports.profit_and_loss').id and request.env['setu.advance.budget.forecasted'].search([('state','=','done')])">
+                    <div role="separator" class="dropdown-divider"/>
+                    <a role="menuitem" class="dropdown-item js_foldable_trigger o_closed_menu"
+                       data-filter='setu_advance_budget'>Advance Budget
+                    </a>
+                    <li class="o_foldable_menu o_closed_menu o_account_report_search" data-filter='setu_advance_budget'>
+                        <select class="form-control" name="budget_id">
+                            <t t-foreach="options['budget_ids']" t-as="budget">
+                                <option t-att-value="budget.id">
+                                    <t t-esc="budget.name"/>
+                                </option>
+                            </t>
+                        </select>
+                        <br/>
+                        <button type="button" class="btn btn-primary js_account_report_date_cmp_filter"
+                                data-filter='setu_advance_budget'>Apply
+                        </button>
+                    </li>
+                </t>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

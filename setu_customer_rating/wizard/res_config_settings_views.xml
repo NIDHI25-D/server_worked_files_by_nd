@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View res.config.settings-->
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">customer.score.res.config.settings.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="Customer Rating" id="customer_rating" string="Customer Rating"
+                         name="setu_customer_rating">
+                        <block title="Journals Configuration" id="journals_configuration">
+                            <setting id="customer_score_and_journals_options">
+                                <div id="customer_rating_score_days">
+                                    <div class="o_setting_left_pane" style="width:60px;">
+                                        <field name="customer_score_days"/>
+                                    </div>
+                                    <div class="o_setting_right_pane" style="margin-left:40px;">
+                                        <label for="customer_score_days"/>
+                                        <div class="text-muted">
+                                            Enter past X days of customer's history of Purchasing which will be used in
+                                            the calculation of customer score.
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div id="journal_for_refund_invoice">
+                                    <div class="o_setting_right_pane" style="margin-left:40px;">
+                                        <label for="journal_ids"/>
+                                        <div class="text-muted">
+                                            Select journal for refund invoices.
+                                        </div>
+                                        <field name="journal_ids" widget="many2many_tags"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting id="invoice_journals_and_past_days">
+                                <div id="customer_rating_past_days_for_invoice">
+                                    <div class="o_setting_left_pane" style="width:60px;">
+                                        <field name="past_days_for_invoice"/>
+                                    </div>
+                                    <div class="o_setting_right_pane" style="margin-left:40px;">
+                                        <label for="past_days_for_invoice"/>
+                                        <div class="text-muted">
+                                            Enter past X day's invoices which will be used in the calculation of customer
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div id="journal_for_invoice_journal_ids">
+                                    <div class="o_setting_right_pane" style="margin-left:40px;">
+                                        <label for="invoice_journal_ids"/>
+                                        <div class="text-muted">
+                                            Select journal for invoices.
+                                        </div>
+                                        <field name="invoice_journal_ids" widget="many2many_tags"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting id="grace_days_journals">
+                                <div id="customer_rating_grace_days_to_paid_invoice">
+                                    <div class="o_setting_left_pane" style="width:60px;">
+                                        <field name="grace_days_to_paid_invoice"/>
+                                    </div>
+                                    <div class="o_setting_right_pane" style="margin-left:40px;">
+                                        <label for="grace_days_to_paid_invoice"/>
+                                        <div class="text-muted">
+                                            Enter grace days to consider paid invoice after due date
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div id="journal_for_grace_days_journal_ids">
+                                    <div class="o_setting_right_pane" style="margin-left:40px;">
+                                        <label for="grace_days_journal_ids"/>
+                                        <div class="text-muted">
+                                            Select journal for invoices paid after due date.
+                                        </div>
+                                        <field name="grace_days_journal_ids" widget="many2many_tags"/>
+                                    </div>
+                                </div>
+                            </setting>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Action View-->
+        <record id="customer_score_config_settings" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="res_config_settings_view_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'setu_customer_rating', 'bin_size': False}</field>
+        </record>
+
+    </data>
+</odoo>

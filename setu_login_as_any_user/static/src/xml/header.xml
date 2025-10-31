@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="setu_login_as_any_user.Login" t-inherit="mail.ActivityMenu" t-inherit-mode="extension">
+        <xpath expr="//Dropdown" position="after">
+            <button class="login_with_any_user fa fa-user btn"
+                    groups="setu_login_as_any_user.login_as_any_user_login"
+                    type="button" title="Login as another user"
+                    t-on-click="useOpenWizard">
+            </button>
+        </xpath>
+    </t>
+
+</templates>

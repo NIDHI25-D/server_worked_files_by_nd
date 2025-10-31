@@ -1,0 +1,6 @@
+CREATE MATERIALIZED view IF NOT EXISTS datastudio_reports.materialized_view_of_sale_order_line_invoice_rel as
+
+select * from public.sale_order_line_invoice_rel;
+
+ALTER TABLE datastudio_reports.materialized_view_of_sale_order_line_invoice_rel
+  OWNER TO odoo14_datastudio;

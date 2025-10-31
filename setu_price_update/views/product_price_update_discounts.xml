@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="product_price_update_discounts_view_tree" model="ir.ui.view">
+            <field name="name">product.price.update.discounts.view.tree</field>
+            <field name="model">product.price.update.discounts</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                     <field name="name" required="1"/>
+                </list>
+            </field>
+        </record>
+        <record id="product_price_update_discounts_action" model="ir.actions.act_window">
+            <field name="name">Price update discounts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.price.update.discounts</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="product_price_update_discounts_menu" name="Product price update discounts"
+                  parent="setu_price_update.prod_price_update_menu" action="product_price_update_discounts_action"/>
+    </data>
+</odoo>

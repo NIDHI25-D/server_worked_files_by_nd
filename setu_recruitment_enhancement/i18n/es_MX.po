@@ -1,0 +1,108 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_recruitment_enhancement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-24 15:53+0000\n"
+"PO-Revision-Date: 2023-02-24 10:42-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model,name:setu_recruitment_enhancement.model_hr_applicant
+msgid "Applicant"
+msgstr "Candidato"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_job__close_date
+msgid "Close Date"
+msgstr "Fecha de Cierre"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model,name:setu_recruitment_enhancement.model_hr_department
+msgid "Department"
+msgstr "Departamento"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_recruitment_stage__department_ids
+msgid "Departments"
+msgstr "Departamentos"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_applicant__display_name
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_department__display_name
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_job__display_name
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_recruitment_stage__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model,name:setu_recruitment_enhancement.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: setu_recruitment_enhancement
+#: code:addons/setu_recruitment_enhancement/model/hr_applicant.py:0
+#, python-format
+msgid "Expected New Employees '%d' are fulfilled"
+msgstr "La vacante de ‘%d’ empleados esperados ha sido completada"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_applicant__id
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_department__id
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_employee__id
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_job__id
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_recruitment_stage__id
+msgid "ID"
+msgstr "ID"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model,name:setu_recruitment_enhancement.model_hr_job
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: setu_recruitment_enhancement
+#: code:addons/setu_recruitment_enhancement/model/hr_applicant.py:0
+#, python-format
+msgid "Job you are trying to post has been fulfilled, please create a new one."
+msgstr "La(s) vacante(s) que intentas publicar ya han sido ocupadas, debes crear una nueva publicación."
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_applicant____last_update
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_department____last_update
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_job____last_update
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_recruitment_stage____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model.fields,field_description:setu_recruitment_enhancement.field_hr_job__open_date
+msgid "Open Date"
+msgstr "Fecha de Apertura"
+
+#. module: setu_recruitment_enhancement
+#: model:ir.model,name:setu_recruitment_enhancement.model_hr_recruitment_stage
+msgid "Recruitment Stages"
+msgstr "Etapas de reclutamiento"
+
+#. module: setu_recruitment_enhancement
+#: model:res.groups,name:setu_recruitment_enhancement.supervisior_group_hr_recruitment_applications
+msgid "Recruitment Supervisor"
+msgstr "Supervisor de Reclutamiento"
+
+#. module: setu_recruitment_enhancement
+#: code:addons/setu_recruitment_enhancement/model/hr_applicant.py:0
+#, python-format
+msgid "Requirement for the job is fulfilled"
+msgstr "No puedes mover una postulación al estatus “Contrato Firmado” una vez que las vacantes han sido ocupadas"

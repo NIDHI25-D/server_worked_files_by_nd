@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="associate_pos_invoices_to_bank_statement.BankRecRecordNotebookPOSInvoice">
+        <div class="bank_rec_widget_form_pos_invoice_list" t-if="this.state.bankRecEmbeddedViewsData">
+            <BankRecViewEmbedder viewProps="this.notebookPOSInvoiceListViewProps()" t-key="data.st_line_id[0]"/>
+        </div>
+    </t>
+    <!--change this thing in 18 as compared to 16-->
+    <t t-name="associate_pos_invoices_to_bank_statement.BankRecRecordForm"
+       t-inherit="account_accountant.BankRecRecordForm"
+       t-inherit-mode="extension"
+      >
+        <xpath expr="//t[@t-set-slot='manual_operations_tab']" position="before">
+            <t t-set-slot="pos_invoice_tab"
+               name="'pos_invoice_tab'"
+               title.translate="Pos Invoices"
+               isVisible="true">
+                <t t-call="associate_pos_invoices_to_bank_statement.BankRecRecordNotebookPOSInvoice"/>
+            </t>
+        </xpath>
+    </t>
+</templates>
+

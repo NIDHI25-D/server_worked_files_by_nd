@@ -1,0 +1,370 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_category_hierarchy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-09 12:13+0000\n"
+"PO-Revision-Date: 2024-02-09 12:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_hcategory_form
+msgid ""
+"<br/>The following Pricelists will be visible only to partners from this Partner Category and its\n"
+"                                children recursively."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner__allowed_pricelists
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__pricelist_ids
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_users__allowed_pricelists
+msgid "Allowed Pricelists"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.actions.act_window,name:partner_category_hierarchy.action_partner_category
+#: model:ir.ui.menu,name:partner_category_hierarchy.menu_partner_category
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner__hcategory_id
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_users__hcategory_id
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_form
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_res_partner_filter
+#, python-format
+msgid "Category"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__child_ids
+msgid "Child Categories"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>create another category</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>create new category</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>edit partner</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>group by partner category</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>open another partner</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>open grouping options</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>open partner</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>save new category</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to <b>save partner</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to open <b>Partner Categories</b> configuration."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Click here to open <b>Partners</b> list."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model,name:partner_category_hierarchy.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:product.pricelist,name:partner_category_hierarchy.default_pricelist
+msgid "Default Pricelist"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Enter <b>partner category name</b> (e.g. Basic)."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Enter <b>partner category name</b> (e.g. VIP)."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner__extra_pricelist
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_users__extra_pricelist
+msgid "Extra Pricelist"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_property_form
+msgid "Extra Pricelist for this customer."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Group By"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_hcategory_form
+msgid ""
+"If you are not sure what Pricelists specific partner will be able to see, you can check it on\n"
+"                                partner's form, \"Pricelists\" tab."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__inherited_pricelist_ids
+msgid "Inherited Pricelists"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:res.groups,name:partner_category_hierarchy.group_hcategory
+msgid "Manage Partner Categories"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:res.groups,name:partner_category_hierarchy.group_hcategory_pricelist
+msgid "Manage pricelist visibility by partner categories"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__name
+msgid "Name"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Open the <b>Settings</b> menu."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__parent_id
+msgid "Parent Category"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-python
+#: code:addons/partner_category_hierarchy/models/res_partner_hcategory.py:0
+#, python-format
+msgid "Parent can not be same category!"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model,name:partner_category_hierarchy.model_res_partner_hcategory
+msgid "Partner Category"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_form
+msgid "Partner category settings are managed on"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.ui.menu,name:partner_category_hierarchy.menu_action_res_partners
+#: model:ir.ui.menu,name:partner_category_hierarchy.menu_partners
+msgid "Partners"
+msgstr "Clientes"
+
+#. module: partner_category_hierarchy
+#: model:ir.model,name:partner_category_hierarchy.model_product_pricelist
+msgid "Pricelist"
+msgstr "Tarifa"
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_hcategory_form
+msgid "Pricelist Visibility"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_property_form
+msgid "Pricelists"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_hcategory_form
+msgid "Pricelists that have been inherited from parent Partner Categories."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid ""
+"Ready to try setting up <b>Partners Hierarchy</b>? Configuration can be "
+"found here, under the <b>Settings</b> menu."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model.fields,field_description:partner_category_hierarchy.field_res_partner_hcategory__partner_ids
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_hcategory_form
+msgid "Related Partners"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model,name:partner_category_hierarchy.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Select <b>partner category</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-javascript
+#: code:addons/partner_category_hierarchy/static/src/js/tour.js:0
+#, python-format
+msgid "Select another <b>partner category</b>."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_property_form
+msgid "This partner will be able to see the following Pricelists."
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_property_form
+msgid "Visibility of Pricelists are managed on"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model:ir.model,name:partner_category_hierarchy.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: partner_category_hierarchy
+#. odoo-python
+#: code:addons/partner_category_hierarchy/models/product_pricelist.py:0
+#, python-format
+msgid "You can not change sequence of default pricelist!"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#. odoo-python
+#: code:addons/partner_category_hierarchy/models/product_pricelist.py:0
+#, python-format
+msgid "You can not delete default pricelist!"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_property_form
+msgid "the Partner's Category"
+msgstr ""
+
+#. module: partner_category_hierarchy
+#: model_terms:ir.ui.view,arch_db:partner_category_hierarchy.view_partner_form
+msgid "the parent company"
+msgstr ""

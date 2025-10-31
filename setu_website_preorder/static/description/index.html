@@ -1,0 +1,127 @@
+<br/>
+<h2 id="website-pre-order">Website Pre-Order</h2>
+<h5 id="usage">USAGE</h5>
+<ul>
+    <li><p>This module are mainly used for the Pre-order and Pre-sale, means if the product are not in stock still user
+        are able to made it&#39;s sale or purchase.</p>
+    </li>
+    <li><p>There are user feasible to creates,</p>
+        <ul>
+            <li>National Pre-order</li>
+            <li>International Pre-order</li>
+            <li>Pre-sale</li>
+        </ul>
+    </li>
+    <li><p>There are separate menus are given to the all of these.</p>
+        <ul>
+            <li>purchase --&gt; pre-Order Request --&gt; National Pre-Order Requests</li>
+            <li>purchase --&gt; pre-Order Request --&gt; International Pre-Order Requests</li>
+            <li>purchase --&gt; Pre-Sale Requests</li>
+        </ul>
+    </li>
+    <li><p>Condition to made product as a Pre-order is, the order are creating from the menu <strong>National Pre-Order
+        Requests if need to creates National Pre-Order else creating from International Pre-Order</strong> and set
+        quantity as needed and takes these order as a <strong>Draft order</strong> there are <strong>Expected
+            Arrival</strong> are also takes in a consideration.</p>
+    </li>
+    <li><p>Same procedure follow for International Pre-order.</p>
+    </li>
+    <li><p>For Pre-sale order, creating a order from Pre-Sale Requests and confirm the order for those products and it&#39;s
+        quantity, here <strong>Expected Arrival</strong> are also takes in a consideration, </p>
+    </li>
+    <li><p>For Pre-sale products it also needs to set the presale price, for the calculation of presale price there are
+        two ways, </p>
+        <ul>
+            <li>it could done from particular order where <strong>Presale Price Calculation</strong> button are
+                available to calculate price for only those products which are available in these order.
+            </li>
+            <li>another way to calculate the presale price is there are a Scheduled action(Cron) name is - <strong>Presale
+                Price Update</strong></li>
+        </ul>
+    </li>
+    <li><p>If the order are created from given way then it was reflects as a preorder/presale at the website.</p>
+    </li>
+    <li><p>There are a separate groups given for the products in website to filtered the products as <strong>Instock
+        Product</strong>, <strong>Presale Products</strong>, <strong>National Preorder Products</strong>, <strong>International
+        Preorder Products</strong></p>
+    </li>
+    <li><p>Here one more feature are available for the products at website side which is - <strong>Next Day
+        Shipping</strong>, which is enable if <strong>Next Day Shipping</strong> are checked at product template side
+        and it is visible only if product are not creating as any preorder or presale previously, so if <strong>Next Day
+            Shipping</strong> are checked at product so it is available as <strong>Next Day Shipping</strong> at
+        website, there are also Next Day Shipping group/filter available at website.</p>
+    </li>
+    <li><p>Then in the product page at website there are user feasible to choose a product to Buy It as, as per the
+        product&#39;s availability(From Stock - Standard delivery, As preorder, As presale, As International Preorder,
+        As Next Day Shipping)</p>
+    </li>
+    <li><p>There are a table which conditionality shows a total available quantity of stock, preorder, presale as per
+        the product.</p>
+    </li>
+    <li><p>There are <strong>SKU</strong> are also displayed of the product at the table and the stock are shows
+        warehouse wise.</p>
+    </li>
+    <li><p>There are text(description) are shown conditionality as filled up in the Pre-Sale Message for pre-sale and in
+        International Pre-order Message for international preorder under the settings for national pre-order this text
+        are fixed.</p>
+    </li>
+    <li><p>After cart the product there are extend the product&#39;s description i.e - Stock Type(as per the chosen), it&#39;s
+        Available, Price per product.</p>
+    </li>
+    <li><p>After creating an order if confirm the sale order so it mean these quantity are reserved for those order so
+        linked these order with it&#39;s corresponding order means if order are preorder type then linked with the those
+        preorder in <strong>Pre-order Details</strong> and set Pre-ordered column as per the quantity buy, same
+        fulfilled the Order Fulfilled as shown how many percent order are fulfilled.</p>
+    </li>
+    <li><p>same flow are works for the pre-sale, if the order are creating as presale so, sale order are linked with
+        these particular presale order at the <strong>Pre-sale Details</strong> and Pre-Sale column are set as per the
+        buy quantity and Order Fulfilled are filled as per the order fulfillment.</p>
+    </li>
+</ul>
+<h5 id="configuration">CONFIGURATION</h5>
+<ul>
+    <li>There are an <strong>Enable PreOrder</strong> if it set then only allows to creates a preorder order for the
+        products at website.
+    </li>
+    <li>There are an <strong>Enable PreSale</strong> if it set then only allows to creates a presale order for the
+        products at website.
+    </li>
+    <li>There are an option - <strong>Stock Warehouse</strong> to choose at which warehouse stock needs to be
+        considered, here an option to choose are - All, Specific, Several
+    </li>
+    <li>If here select All then by default all warehouses are consider, if select the Specific then specific one
+        warehouse are allows to choose, if select Several then able to select more then one warehouses.
+    </li>
+    <li>Here are the Pre-sale Pricelist which is set to the sale order.</li>
+    <li>Here are the Excluded Pricelist,which is excluded to allow to choose that pricelist and if both are same(sale
+        order pricelist and Excluded Pricelist) then not allows and raise warning.
+    </li>
+    <li>Here are the <strong>Cash Payment</strong> which value are used to calculate the presale price.</li>
+    <li>Here are the <strong>Available Quantity Multiplier</strong> and <strong>Minimum Amount Quantity</strong> which
+        are used to calculate the <strong>Calulated Quantity</strong></li>
+    <li>Here are the <strong>Configure Days for Calculation</strong> here how much figure are set these consider as a
+        days between these days Calulated Quantity are calculated.
+    </li>
+    <li>Here are the <strong>International Preorder Pricelist</strong> the uses of it is if order are international
+        preorder type then these pricelist are set to these sale order.
+    </li>
+    <li>Here are two configurations for the Next Day Shipping - <strong>Cash Next Day Specific Pricelist</strong> and
+        <strong>Credit Next Day Specific Pricelist</strong>, if the order are next day shipping and pricelist are not
+        from them(Cash Next Day Specific Pricelist and Credit Next Day Specific Pricelist) so it gives an waring and not
+        cart those quantities for these product.
+    </li>
+    <li>Here are the <strong>Config Quantity</strong> and <strong>Activity User</strong> which are use for national
+        preorder notifications means if both of are set and quantity are exceed above the config quantity for any
+        national preorder it sends a mail activity to the User which are set to the Activity User.
+    </li>
+    <li>Here are the <strong>Enable Website sale orders cancellation</strong> if it is checked then another one are
+        visible which is <strong>Time limit to cancel the orders (Hrs)</strong> and between those hours which are set in
+        Time limit to cancel the orders (Hrs) it is able to cancel the order from website feature.
+    </li>
+    <li>Here at the product level there are a Various things as configuration, i.e if the Minimum Quantity, Minimum
+        Exclusivity Quantity and Delivery Estimated Time are set at the product then it reflects as a new table if
+        product are international preorder type also not allows to lesser quantity if Minimum Quantity is set and if
+        <strong>I want the Exclusivity of this product</strong> is checked then not allows to lesser quantity then
+        Minimum Exclusivity Quantity.
+    </li>
+</ul>

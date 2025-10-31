@@ -1,0 +1,6 @@
+Date : 29th Oct 2024
+Version : '1.0' (in __manifest__.py)
+Odoo Version : 18.0
+Done by : Kamlesh Singh
+Tested by : Hardik
+Module : initial release module

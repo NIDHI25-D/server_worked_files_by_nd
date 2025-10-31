@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="inherit_view_partner_form_for_dealer" model="ir.ui.view">
+            <field name="name">inherit.view.partner.form.for.dealer</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='property_delivery_carrier_id']" position="after">
+	                <field name="dealer_type" readonly="1"/>
+	            </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

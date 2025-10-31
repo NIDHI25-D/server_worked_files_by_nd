@@ -1,0 +1,121 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* marvelsa_sepomex
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-23 13:30+0000\n"
+"PO-Revision-Date: 2021-09-23 08:33-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__city_id
+msgid "City"
+msgstr "Ciudad"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__name
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__colony
+msgid "Colony"
+msgstr "Colonia"
+
+#. module: marvelsa_sepomex
+#: model:ir.model,name:marvelsa_sepomex.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: marvelsa_sepomex
+#: model:res.groups,name:marvelsa_sepomex.group_res_colony
+msgid "Crear Colonies SEPOMEX"
+msgstr "Crear colonias SEPOMEX"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__create_uid
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__create_date
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__display_name
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__id
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__id
+msgid "ID"
+msgstr ""
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__l10n_mx_edi_city_id
+msgid "L10N Mx Edi City"
+msgstr ""
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony____last_update
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__write_uid
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__write_date
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: marvelsa_sepomex
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_res_partner__postal_code_id
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_res_users__postal_code_id
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony__postal_code
+#: model:ir.model.fields,field_description:marvelsa_sepomex.field_sepomex_res_colony_csv__postal_code
+#: model_terms:ir.ui.view,arch_db:marvelsa_sepomex.view_colony_partner_form
+msgid "Postal Code"
+msgstr "CP Sepomex"
+
+#. module: marvelsa_sepomex
+#: model:ir.actions.act_window,name:marvelsa_sepomex.marvelsa_sepomex_action_window
+#: model:ir.ui.menu,name:marvelsa_sepomex.marvelsa_sepomex_menu
+msgid "SEPOMEX"
+msgstr ""
+
+#. module: marvelsa_sepomex
+#: model:res.groups,name:marvelsa_sepomex.sepomex_res_colony
+msgid "SEPOMEX Colonies"
+msgstr "Colonias Sepomex"
+
+#. module: marvelsa_sepomex
+#: model_terms:ir.ui.view,arch_db:marvelsa_sepomex.view_colony_partner_form
+msgid "input Postal Code"
+msgstr "Ingrese el CP"
+
+#. module: marvelsa_sepomex
+#: model:ir.model,name:marvelsa_sepomex.model_sepomex_res_colony
+msgid "sepomex.res.colony"
+msgstr ""
+
+#. module: marvelsa_sepomex
+#: model:ir.model,name:marvelsa_sepomex.model_sepomex_res_colony_csv
+msgid "sepomex.res.colony.csv"
+msgstr ""

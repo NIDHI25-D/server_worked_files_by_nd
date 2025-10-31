@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="SetuXYZDashboard" owl="1">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+        <body>
+            <style>
+            div.scroll_tree_view {
+                overflow: auto;
+            }
+            html,body{
+                overflow:auto;
+            }
+            .loader {
+              width: 40px;
+              height: 30px;
+              --c:no-repeat linear-gradient(#000 0 0);
+              background:
+                var(--c) 0    100%/8px 30px,
+                var(--c) 50%  100%/8px 20px,
+                var(--c) 100% 100%/8px 10px;
+              position: absolute;
+              clip-path: inset(-100% 0);
+            }
+            .loader:before{
+              content: "";
+              position: absolute;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background: #000000;
+              left: -16px;
+              top: 0;
+              animation:
+                l5-1 2s   linear infinite,
+                l5-2 0.5s cubic-bezier(0,200,.8,200) infinite;
+            }
+            @keyframes l5-1 {
+              0%   {left:-16px;transform:translateY(-8px)}
+              100% {left:calc(100% + 8px);transform:translateY(22px)}
+            }
+            @keyframes l5-2 {
+              100% {top:-0.1px}
+            }
+            </style>
+            <div class="scrollable-container" id="scrollable-container">
+                <t t-call="SetuDashboardPanel"/>
+                <div class="new-panel" style="width: -webkit-fill-available;">
+                    <div class="dashboard-row">
+                        <div class="dashboard-box box-1">
+                            Total Stock Value <br/>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div style="height:4%;">
+                                        <span class="total_product_count box-content"/>
+                                    </div>
+                                    <div style="margin-top:55%;">Products</div>
+                                </div>
+                                <div class="loader hidden loader_3" style="margin-top:1%;margin-left:9%;"/>
+                                <div class="col-8">
+                                    <div style="height:4%;">
+                                        <span class="currency_name box-content"/>
+                                        <span class="total_stock_value box-content"/>
+                                    </div>
+                                    <div style="margin-top:23%;">Total Value</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-box box-2">
+                            Products in <span class="class_x static-content"/> Classification
+                            <div class="row">
+                                <div class="col-4">
+                                    <div style="height:4%;">
+                                        <span class="x_product_count box-content"/>
+                                    </div>
+                                    <div style="margin-top:55%;">Products</div>
+                                </div>
+                                <div class="loader hidden loader_4" style="margin-top:1%;margin-left:9%;"/>
+                                <div class="col-8">
+                                    <div style="height:4%;">
+                                        <span class="x_currency_name box-content"/>
+                                        <span class="x_stock_value box-content"/>
+                                    </div>
+                                    <div style="margin-top:23%;">Total Value</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-box box-3">
+
+                            Products in <span class="class_y static-content"/> Classification
+                            <div class="row">
+                                <div class="col-4">
+                                    <div style="height:4%;">
+                                        <span class="y_product_count box-content"/>
+                                    </div>
+                                    <div style="margin-top:55%;">Products</div>
+                                </div>
+                                <div class="loader hidden loader_5" style="margin-top:1%;margin-left:9%;"/>
+                                <div class="col-8">
+                                    <div style="height:4%;">
+                                        <span class="y_currency_name box-content"/>
+                                        <span class="y_stock_value box-content"/>
+                                    </div>
+                                    <div style="margin-top:23%;">Total Value</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-box box-4">
+
+                            Products in <span class="class_z static-content"/> Classification
+                            <div class="row">
+                                <div class="col-4">
+                                    <div style="height:4%;">
+                                        <span class="z_product_count box-content"/>
+                                    </div>
+                                    <div style="margin-top:55%;">Products</div>
+                                </div>
+                                <div class="loader hidden loader_6" style="margin-top:1%;margin-left:9%;"/>
+                                <div class="col-8">
+                                    <div style="height:4%;">
+                                        <span class="z_currency_name box-content"/>
+                                        <span class="z_stock_value box-content"/>
+                                    </div>
+                                    <div style="margin-top:23%;">Total Value</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-left:1vw;margin-right:1vw;padding-top:0px;">
+
+                        <div style="height:30vw;width: 100%; border-radius:1vw; background-color: #F0F8FF; text-align: -webkit-center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);">
+                            <div class="loader-container" style="margin-top:12%;position:absolute;margin-left:40%;">
+                                <div class="loader hidden loader_main"/>
+                            </div>
+                            <div style="text-align: left; height: 2vw; font-size: 0.8vw; font-color: #FFF; padding-top:1vw;" class="stock_value_category"><b>Product Category-wise Stock Value in X, Y, Z Classifications</b> <i class="fa fa-info-circle stock_value_category" style="color:blue"/></div>
+                            <div style="height: 92%;">
+                                <div id="productCategoryBarChart" style=" width: 100%;"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-left:1vw;margin-right:1vw;padding-top:1vw;margin-bottom:1vw;">
+
+                        <div style="height:30vw;width: 100%; border-radius:1vw; background-color: #F0F8FF; text-align: -webkit-center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);">
+                            <div class="loader-container" style="margin-top:12%;position:absolute;margin-left:40%;">
+                                <span class="loader hidden loader_2"/>
+                            </div>
+                            <div style="text-align: left; height: 2vw; font-size: 0.8vw; font-color: #FFF; padding-top:1vw;" class="stock_value_company"><b>Stock Value Breakdown across Company</b> <i class="fa fa-info-circle stock_value_company" style="color:blue"/></div>
+                            <div style="height: 92%;">
+                                <div id="companyLineChart" style="width: 100%;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </body>
+
+    </t>
+</templates>

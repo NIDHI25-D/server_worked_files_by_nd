@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="approval_request_form_view" model="ir.ui.view">
+            <field name="name">Approval request custom fields</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <field name="has_currency" invisible="1"/>
+                    <field name="has_payment_limit_date" invisible="1"/>
+                    <field name="has_bank_id" invisible="1"/>
+                    <field name="has_payment_state" invisible="1"/>
+                    <field name="has_department_id" invisible="1"/>
+                    <field name="has_job_id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="currency_id"
+                           invisible="has_currency == 'no'"
+                           required="has_currency == 'required'"
+                           options="{'no_create_edit': True, 'no_open': True}"/>
+                    <field name="payment_limit_date"
+                           invisible="has_payment_limit_date == 'no'"
+                           required="has_payment_limit_date == 'required'"/>
+                    <field name="bank_id"
+                           invisible="has_bank_id == 'no'"
+                           required="has_bank_id == 'required'"
+                           options="{'no_create_edit': True, 'no_open': True}"/>
+                    <field name="payment_state"
+                           invisible="has_payment_state == 'no'"
+                           required="has_payment_state == 'required'"/>
+                    <field name="department_id"
+                           invisible="has_department_id == 'no'"
+                           required="has_department_id == 'required'"
+                           options="{'no_create_edit': True, 'no_open': True}"/>
+                    <field name="job_id"
+                           invisible="has_job_id == 'no'"
+                           required="has_job_id == 'required'"
+                           options="{'no_create_edit': True, 'no_open': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="approval_request_list_view" model="ir.ui.view">
+            <field name="name">Approval request custom fields list</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_tree"/>
+            <field name="arch" type="xml">
+                <field name="request_status" position="before">
+                    <field name="currency_id"/>
+                    <field name="payment_limit_date"/>
+                    <field name="bank_id"/>
+                    <field name="payment_state"/>
+                    <field name="reason"/>
+                    <field name="amount" sum="Total"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

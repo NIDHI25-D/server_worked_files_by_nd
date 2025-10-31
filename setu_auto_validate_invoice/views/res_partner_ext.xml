@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_partner_disable_inv_sign_form_inherit" model="ir.ui.view">
+            <field name="name">res_partner_disable_inv_sign.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='property_account_position_id']" position="after">
+                    <field name="disable_inv_automatic_sign"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

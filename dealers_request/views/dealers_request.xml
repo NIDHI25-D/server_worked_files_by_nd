@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="dealer_request_search" model="ir.ui.view">
+            <field name="name">dealer.request.search</field>
+            <field name="model">dealer.request</field>
+            <field name="arch" type="xml">
+                <search string="Dealer Request">
+                    <field name="name" string="Name"/>
+                    <field name="status" string="Status"/>
+                    <field name="door" string="Door"/>
+                    <field name="house" string="House"/>
+                    <field name="dealer_type" string="Dealer Type"/>
+                    <field name="credit_limit_assigned" string="Credit Limit assigned"/>
+                    <field name="credit_days_requested_id" string="Credit days Requested "/>
+                    <field name="credit_days_assigned_id" string="Credit days Assigned"/>
+                    <!--                            <field name="x_studio_no_suplemento" string="Supplement No."/>-->
+                    <field name="elite" string="Elite"/>
+                    <separator/>
+                    <filter string="Status" name="status"/>
+                    <filter string="Individuals" name="type_person" domain="[('is_company', '=', False)]"/>
+                    <filter string="Companies" name="type_company" domain="[('is_company', '=', True)]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="status" string="status" context="{'group_by':'status'}"/>
+                        <filter name="company_id" string="Company" context="{'group_by':'company_id'}"/>
+                        <filter name="country_id" string="Country" context="{'group_by':'country_id'}"/>
+                        <filter name="category_id" string="Category" context="{'group_by':'category_id'}"/>
+                        <filter name="dealer_type" string="Dealer Type" context="{'group_by':'dealer_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="dealer_request_table" model="ir.ui.view">
+            <field name="name">dealer.request.table</field>
+            <field name="model">dealer.request</field>
+            <field name="arch" type="xml">
+                <list string="Dealer Request">
+                    <field name="refer"/>
+                    <field name="create_date"/>
+                    <field name="name"/>
+                    <field name="dealer_type"/>
+                    <field name="status"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dealer_request_form">
+            <field name="name">dealer.request.form</field>
+            <field name="model">dealer.request</field>
+            <field name="arch" type="xml">
+
+                <form string="Request Dealer">
+                    <header>
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button groups="documents.group_documents_user" name="action_see_documents" type="object"
+                                    class="oe_stat_button" icon="fa-file-text-o">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="document_count"/>
+                                    </span>
+                                    <span class="o_stat_text">Documents</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title mb24">
+                            <h1>
+                                <field id="company" class="text-break" name="refer" default_focus="1"
+                                       placeholder="e.g. Lumber Inc"
+                                />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="partner_id" readonly="1" string="Partner Ref" required="0"/>
+                                <field name="vat" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="zip" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="street" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="street2" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="l10n_mx_edi_colony" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="municipality" readonly="not is_credit_upload_documents_applied"/>
+
+                            </group>
+                            <group>
+
+                                <field name="dealer_type" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="credit_limit_requested_id"
+                                       invisible="dealer_type == 'is_cash_dealer'" readonly="1"
+                                />
+                                <!--                                <field name="credit_limit_assigned" attrs="{'invisible': [('dealer_type','=','is_cash_dealer')]}"/>-->
+                                <field name="credit_days_requested_id"
+                                       invisible="dealer_type == 'is_cash_dealer'"
+                                       readonly="1"/>
+                                <!--                                <field name="credit_days_assigned_id" attrs="{'invisible': [('dealer_type','=','is_cash_dealer')]}"/>-->
+                                <field name="city" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="state_id" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="country_id" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="fiscal_position_id" readonly="not is_credit_upload_documents_applied"/>
+                                <field name="l10n_mx_edi_payment_method_id"
+                                       readonly="not is_credit_upload_documents_applied"/>
+                                <field name="l10n_mx_edi_usage" readonly="not is_credit_upload_documents_applied"/>
+                            </group>
+                            <notebook>
+                                <page name="dealer_other_information" string="Other Information">
+                                    <group>
+                                        <group>
+                                            <field name="is_dealer_fields_modification_applied" invisible="1"/>
+                                            <field name="is_credit_upload_documents_applied" invisible="1"/>
+                                            <field name="ref" readonly="not is_credit_upload_documents_applied"/>
+                                            <!--                                            <field name="x_studio_no_suplemento" attrs="{'readonly': [('is_credit_upload_documents_applied', '=', False)]}"/>-->
+                                            <field name="category_id" widget="many2many_tags"
+                                                   readonly="not is_dealer_fields_modification_applied"/>
+                                            <!--                                            <field name="warehouse_sugerido_id" attrs="{'readonly': [('is_dealer_fields_modification_applied', '=', False)]}"/>-->
+                                            <field name="elite" readonly="not is_credit_upload_documents_applied"/>
+                                        </group>
+                                        <group>
+                                            <!--                                            <field name="team_id" attrs="{'readonly': [('is_dealer_fields_modification_applied', '=', False)]}"/>-->
+                                            <field name="hcategory_id" string="Category"
+                                                   readonly="not is_dealer_fields_modification_applied"/>
+                                            <field name="property_product_pricelist"
+                                                   readonly="not is_dealer_fields_modification_applied"/>
+                                            <field name="property_payment_term_id" string="Payment Terms"
+                                                   readonly="not is_credit_upload_documents_applied"/>
+                                            <field name="credit_limit"
+                                                   readonly="not is_credit_upload_documents_applied"/>
+                                        </group>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </group>
+                     </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="dealer_request_view">
+            <field name="name">Dealer</field>
+            <field name="res_model">dealer.request</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="dealers_menu" name="Dealers"
+                  parent="contacts.menu_contacts"
+                  sequence="9"
+        />
+        <menuitem id="dealers_sub_menu" name="Dealers"
+                  parent="dealers_request.dealers_menu"
+                  sequence="1"
+                  action="dealer_request_view"
+        />
+        <!--                  groups="dealers_request.dealer_fields_modification"-->
+        <!--        />-->
+    </data>
+</odoo>

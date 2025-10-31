@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* marvelmarcas
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-21 08:56+0000\n"
+"PO-Revision-Date: 2023-06-21 10:17-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.3.1\n"
+
+#. module: marvelmarcas
+#: model_terms:ir.ui.view,arch_db:marvelmarcas.product_additional_details
+msgid "Brand"
+msgstr "Marca"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca__color
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal__color
+msgid "Color Index"
+msgstr "Color Index"
+
+#. module: marvelmarcas
+#: model_terms:ir.ui.view,arch_db:marvelmarcas.product_additional_details
+msgid "Compatible"
+msgstr "Compatible"
+
+#. module: marvelmarcas
+#: model_terms:ir.actions.act_window,help:marvelmarcas.marca_list_action
+msgid "Create the first marca"
+msgstr "Crear la primera marca"
+
+#. module: marvelmarcas
+#: model_terms:ir.actions.act_window,help:marvelmarcas.refaoriginal_list_action
+msgid "Create the first refaccion original"
+msgstr "Crear la primera refacción original"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca__create_uid
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca__create_date
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca__display_name
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca__id
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal__id
+msgid "ID"
+msgstr "ID"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca____last_update
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca__write_uid
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca__write_date
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_marca__name
+#: model:ir.ui.menu,name:marvelmarcas.marca_menu
+msgid "Marca"
+msgstr "Marca"
+
+#. module: marvelmarcas
+#: model_terms:ir.ui.view,arch_db:marvelmarcas.marca_tree_view
+msgid "Marca Tree"
+msgstr "Marca Tree"
+
+#. module: marvelmarcas
+#: model:ir.actions.act_window,name:marvelmarcas.marca_list_action
+msgid "Marcas"
+msgstr "Marcas"
+
+#. module: marvelmarcas
+#: model:ir.model.fields,field_description:marvelmarcas.field_product_product__marca_ids
+#: model:ir.model.fields,field_description:marvelmarcas.field_product_template__marca_ids
+#: model_terms:ir.ui.view,arch_db:marvelmarcas.view_marca_form_inherit_new
+msgid "Marcas Compatibles"
+msgstr "Marcas Compatibles"
+
+#. module: marvelmarcas
+#: model:ir.model,name:marvelmarcas.model_product_template
+msgid "Product"
+msgstr "Producto"
+
+#. module: marvelmarcas
+#: model_terms:ir.ui.view,arch_db:marvelmarcas.refaoriginal_tree_view
+msgid "Refaccion Origilan Tree"
+msgstr "Refaccion Original Tree"
+
+#. module: marvelmarcas
+#: model:ir.actions.act_window,name:marvelmarcas.refaoriginal_list_action
+#: model:ir.model.fields,field_description:marvelmarcas.field_marvelmarcas_refaoriginal__name
+#: model:ir.model.fields,field_description:marvelmarcas.field_product_product__refaoriginal_ids
+#: model:ir.model.fields,field_description:marvelmarcas.field_product_template__refaoriginal_ids
+#: model:ir.ui.menu,name:marvelmarcas.refaoriginal_menu
+msgid "Refaccion Original"
+msgstr "Refaccion Original"
+
+#. module: marvelmarcas
+#: model:ir.model,name:marvelmarcas.model_marvelmarcas_marca
+msgid "marvelmarcas.marca"
+msgstr "marvelmarcas.marca"
+
+#. module: marvelmarcas
+#: model:ir.model,name:marvelmarcas.model_marvelmarcas_refaoriginal
+msgid "marvelmarcas.refaoriginal"
+msgstr "marvelmarcas.refaoriginal"

@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+score_conf_user,score.conf.user,model_score_conf,group_setu_customer_rating_user,0,0,0,0
+score_conf_line_price_user,score.conf.line.price.user,model_score_conf_line_price,group_setu_customer_rating_user,0,0,0,0
+score_conf_line_percentage_user,score.conf.line.percentage.user,model_score_conf_line_percentage,group_setu_customer_rating_user,0,0,0,0
+score_conf_line_qty_user,score.conf.line.qty.user,model_score_conf_line_qty,group_setu_customer_rating_user,0,0,0,0
+customer_rating_user,customer.rating.user,model_customer_rating,group_setu_customer_rating_user,0,0,0,0
+customer_score_user,customer.score.user,model_customer_score,group_setu_customer_rating_user,1,0,0,0
+score_conf_manager,score.conf.manager,model_score_conf,group_setu_customer_rating_manager,1,1,1,0
+score_conf_line_price_user_manager,score.conf.line.price.manager,model_score_conf_line_price,group_setu_customer_rating_manager,1,1,1,1
+score_conf_line_percentage_user_manager,score.conf.line.percentage.manager,model_score_conf_line_percentage,group_setu_customer_rating_manager,1,1,1,1
+score_conf_line_qty_user_manager,score.conf.line.qty.manager,model_score_conf_line_qty,group_setu_customer_rating_manager,1,1,1,1
+customer_rating_user_manager,customer.rating.manager,model_customer_rating,group_setu_customer_rating_manager,1,1,1,1
+customer_score_user_manager,customer.score.manager,model_customer_score,group_setu_customer_rating_manager,1,1,1,0
+score_conf_creator_user,score.conf.creator.user,model_score_conf_creator,group_setu_customer_rating_user,1,1,1,1
+score_conf_creator_manager,score.conf.creator.manager,model_score_conf_creator,group_setu_customer_rating_manager,1,1,1,1
+access_setu_partner_rating_history_manager,setu.partner.rating.history.manager,model_setu_partner_rating_history,,1,1,1,1

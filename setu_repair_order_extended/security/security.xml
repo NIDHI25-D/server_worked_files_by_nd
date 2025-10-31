@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data>
+
+        <record id="module_mdh_repair_categ" model="ir.module.category">
+            <field name="name">Custom Permissions for MDH Repairs</field>
+            <field name="description">Manage Custom Permissions for MDH Repairs</field>
+        </record>
+
+		<record id="group_repair_states_ctb_config" model="res.groups">
+            <field name="name">Config Status Repair CTB</field>
+            <field name="category_id" ref="module_mdh_repair_categ"/>
+       </record>
+
+    </data>
+</odoo>

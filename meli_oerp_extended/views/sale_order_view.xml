@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="meli_oerp_extended_inherited_REF_view_sale_order_form_meli">
+        <field name="name">meli.oerp.extended.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='meli_shipment_logistic_type']"
+                   position="after">
+                <label for="confirm_shipment" invisible="meli_shipment_logistic_type != 'custom'"/>
+                <div class="o_row" invisible="meli_shipment_logistic_type != 'custom'">
+                    <field name="confirm_shipment" readonly="True"/>
+                    <button name="set_confirm_shipment"
+                            groups="meli_oerp_extended.group_confirm_shipment"
+                            id="button_set_confirm_shipment"
+                            type="object"
+                            string="Update"
+                            class="btn-link mb-1 px-0" icon="fa-refresh"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_view_search_inherit_quotation_meli" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.quotation.meli</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='meli_shipment_logistic_type_filter']" position="after">
+                <filter string="Confirm Shipment" name="confirm_shipment" domain="[('meli_order_id','!=',False),('confirm_shipment','!=',False)]"/>
+                <filter string='Confirm Shipment' domain="[]"
+                        context="{'group_by' : 'confirm_shipment'}" name="confirm_shipment"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

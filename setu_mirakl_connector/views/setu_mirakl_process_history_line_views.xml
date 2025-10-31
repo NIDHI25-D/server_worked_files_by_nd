@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="setu_mirakl_process_history_line_tree_view" model="ir.ui.view">
+        <field name="name">setu.process.history.form.view.mirakl</field>
+        <field name="model">setu.process.history.line</field>
+        <field name="arch" type="xml">
+            <list create="false">
+                <field name="product_id"/>
+                <field name="order_ref"/>
+                <field name="default_code"/>
+                <field name="message"/>
+                <field name="model_id"/>
+                <field name="record_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="setu_mirakl_process_history_line_action" model="ir.actions.act_window">
+        <field name="name">Process History Lines</field>
+        <field name="res_model">setu.process.history.line</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="setu_mirakl_process_history_line_tree_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Not found any process history lines yet.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="setu_mirakl_process_history_line" name="Process History Lines"
+              parent="setu_mirakl_connector.setu_mirakl_process_history_main_menu"
+              action="setu_mirakl_process_history_line_action" sequence="2"/>
+
+</odoo>

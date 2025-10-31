@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <template id="inline_form">
+            <input type="hidden" name="acquirer_id" t-att-value="id"/>
+
+            <input type="hidden" name="mercado_pago_public_key" t-att-value="provider_sudo.sudo().mercadopago_public_key"/>
+            <input type="hidden" name="mercado_pago_access_token"
+                   t-att-value="provider_sudo.sudo().mercadopago_access_token"/>
+            <input type="hidden" name="acquirers_mode" t-att-value="provider_sudo.sudo().state"/>
+            <input type="hidden" name="currency_id" t-att-value="currency_id"/>
+
+            <input t-if="return_url" type="hidden" name="return_url" t-att-value="return_url"/>
+            <input t-if="partner_id" type="hidden" name="partner_id" t-att-value="partner_id"/>
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <t t-set="pricelist_id" t-value="request.website.sudo().sale_get_order().pricelist_id"/>
+            <div t-attf-class="row mt8 #{'' if bootstrap_formatting else 'o_card_brand_detail'}">
+                <div class="form-group col-lg-12">
+                    <t t-if="pricelist_id.id in provider_sudo.sudo().monthly_installment_ids.filtered(lambda mi:mi.months).pricelist_id.ids">
+                        <select id="form-checkout__installments" name="installments" class="form-control">
+                            <option t-att-value="pricelist_id.id" t-att-selected="pricelist_id.id">
+                                <t t-esc="pricelist_id.name"/>
+                            </option>
+                        </select>
+                    </t>
+                </div>
+                <div class="form-group col-lg-12 mt-3">
+
+                    <input type="text" name="website_order_partner_name" class="form-control"/>
+                </div>
+                <div style="margin-top:15px;position:relative">
+                    <div id="form-checkout__cardNumber" class="form-control" style="height:40px"/>
+                    <div class="card_placeholder" style="margin-top:4px;margin-right:20px"/>
+                    <div class="visa"/>
+                    <input type="hidden" name="cc_brand" value=""/>
+
+                </div>
+                <div style="width:150px;margin-top:15px">
+                    <div id="form-checkout__expirationDate" class="form-control" style="height:40px"/>
+                </div>
+                <div style="width:160px;margin-top:15px">
+                    <div id="form-checkout__securityCode" class="form-control" style="height:40px"/>
+                </div>
+                <div id="cc_number-errors" class="m-3 text-danger"/>
+                <input id="token" name="token" type="hidden"/>
+                <input id="paymentMethodId" name="paymentMethodId" type="hidden"/>
+                <input id="transactionAmount" name="transactionAmount" type="hidden"
+                       t-att-value="request.website.sale_get_order().amount_total"/>
+            </div>
+        </template>
+
+        <template id="payment_form" inherit_id="payment.form">
+            <xpath expr="." position="inside">
+                <t t-call="setu_payment_mercadopago.sdk_assets"/>
+            </xpath>
+            <xpath expr="." position="inside">
+                <t t-call="setu_payment_mercadopago.sdk_assets"/>
+            </xpath>
+
+        </template>
+
+<!--        hide Save my payment details checkbox-->
+        <template id="setu_payment_mercadopago.method_form" inherit_id="payment.method_form">
+                <xpath expr="//div[@name='o_payment_tokenize_container']" position="attributes">
+                    <attribute name="t-if">mode == 'payment' and pm_sudo.support_tokenization and show_tokenize_input_mapping[provider_sudo.id] and provider_sudo.code != 'mercado_pago'</attribute>
+                </xpath>
+        </template>
+
+        <template id="sdk_assets">
+            <!-- As the following link does not end with '.js', it's not loaded when
+                 placed in __manifest__.py. The following declaration fix this problem -->
+            <script type="text/javascript" src="https://sdk.mercadopago.com/js/v2/"/>
+        </template>
+    </data>
+</odoo>

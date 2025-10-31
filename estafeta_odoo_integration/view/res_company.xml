@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_company_estafeta_configuration" model="ir.ui.view">
+        <field name="name">Estafeta Configuration</field>
+        <field name="model">res.company</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[last()]" position="after">
+                <page string="Estafeta Configuration">
+                    <group>
+                        <field name="use_estafeta_shipping_provider"/>
+                    </group>
+                    <group>
+                        <group invisible="use_estafeta_shipping_provider != True" string="Rate">
+                            <field name="estafeta_rate_api_url" required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_rate_api_url_for_multile_packages"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_api_key"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_shared_secret"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_api_token"/>
+                            <button type="object" name="estafeta_generate_token" string="Get Token"
+                                    class="fa fa-arrow-right oe_link"/>
+                        </group>
+                        <group invisible="use_estafeta_shipping_provider != True" string="Labels">
+                            <field name="estafeta_label_api_url"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="rest_estafeta_label_api_url"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_label_api_key"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_label_shared_secret"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_label_api_token"/>
+                            <button type="object" name="estafeta_label_generate_token" string="Get Token"
+                                    class="fa fa-arrow-right oe_link"/>
+                        </group>
+                        <group invisible="use_estafeta_shipping_provider != True"
+                               string="Tracking">
+                            <field name="estafeta_tracking_api_url"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_tracking_api_key"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_tracking_shared_secret"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_tracking_api_token"/>
+                            <button type="object" name="estafeta_tracking_generate_token" string="Get Token"
+                                    class="fa fa-arrow-right oe_link"/>
+                        </group>
+                        <group invisible="use_estafeta_shipping_provider != True"
+                               string="Configuration">
+                            <field name="estafeta_token_api_url"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_suscriber_id"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_customer_number"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_sales_organization"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_id"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_name"
+                                   required="use_estafeta_shipping_provider == True"/>
+                        </group>
+                        <group invisible="use_estafeta_shipping_provider != True"
+                               string="Sender information">
+                            <field name="estafeta_sender_phone"
+                                   required="use_estafeta_shipping_provider == True"/>
+                            <field name="estafeta_sender_email"
+                                   required="use_estafeta_shipping_provider == True"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

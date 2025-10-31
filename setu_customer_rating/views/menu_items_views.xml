@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Main menu item : Customer Score-->
+        <menuitem name="Customer Score"
+                  web_icon="setu_customer_rating,static/description/icon.png"
+                  id="score_table_menu"/>
+
+        <!-- Menu item : Customer Score-->
+        <menuitem sequence="1"
+                  name="Customer Score"
+                  id="customer_score_menu"
+                  parent="setu_customer_rating.score_table_menu"
+                  action="setu_customer_rating.customer_score_act_window"/>
+
+        <!-- Menu item : Reports-->
+        <menuitem id="setu_partner_rating_history_main_menu"
+                  name="Reports" parent="setu_customer_rating.score_table_menu"
+                  sequence="6"/>
+
+        <!-- Child Menu item of Configuration : Reports-->
+        <menuitem id="setu_partner_rating_history_child_menu"
+                  name="Rating History"
+                  action="setu_customer_rating.setu_partner_rating_history_action"
+                  parent="setu_customer_rating.setu_partner_rating_history_main_menu"
+                  sequence="9"/>
+
+        <!-- Menu item : Configuration-->
+        <menuitem name="Configuration"
+                  id="score_conf_menu"
+                  groups="setu_customer_rating.group_setu_customer_rating_manager"
+                  parent="setu_customer_rating.score_table_menu"
+                  sequence="10">
+
+            <!-- Child Menu item of Configuration : Settings-->
+            <menuitem sequence="1"
+                      name="Settings"
+                      id="customer_score_settings_menu"
+                      action="setu_customer_rating.customer_score_config_settings"/>
+
+            <!-- Child Menu item of Configuration : Score Rules-->
+            <menuitem sequence="2"
+                      name="Score Rules"
+                      id="score_rules_menu"
+                      action="setu_customer_rating.score_conf_act_window"/>
+
+            <!-- Child Menu item of Configuration : Rating Table-->
+            <menuitem name="Rating Table"
+                      id="customer_rating_menu"
+                      action="setu_customer_rating.customer_rating_act_window"
+                      sequence="3"/>
+
+            <!-- Child Menu item of Configuration : Score Conf creator-->
+            <menuitem name="Score Conf Creator"
+                      id="score_conf_creator_menu"
+                      action="setu_customer_rating.score_conf_creator_act_window"
+                      sequence="4"/>
+        </menuitem>
+
+
+    </data>
+</odoo>

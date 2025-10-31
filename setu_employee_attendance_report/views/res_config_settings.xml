@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+     <record id="hr_manger_field_in_settings" model="ir.ui.view">
+        <field name="name">res.config.settings.view.hr.manger</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//app[@name='hr']" position="inside">
+                <h2>Hr Manager</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label string="Hr Manger" for="hr_manager_id"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="mt16">
+                                <field name="hr_manager_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <h2>Employees</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label string="Employees" for="hr_employee_ids"/>
+                                <div class="text-muted">
+                                    select employees to exclude from sending mail
+                                </div>
+                                <div class="mt16">
+                                    <field name="hr_employee_ids" widget="many2many_tags"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </xpath>
+            <xpath expr="//block[@name='work_organization_setting_container']" position="inside">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_right_pane">
+                        <label string="Cutover Date" for="cutover_date"/>
+                        <div class="text-muted">
+                            Set the cutover date
+                        </div>
+                        <div class="mt16">
+                            <field name="cutover_date" class="o_light_label" required="1"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

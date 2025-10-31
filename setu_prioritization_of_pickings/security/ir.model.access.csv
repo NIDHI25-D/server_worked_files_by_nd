@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_complexity_levels,complexity.levels,model_complexity_levels,,1,1,1,1
+access_assortment_team,assortment.team,model_assortment_team,,1,1,1,1
+access_assortment_team_types,assortment.team.types,model_assortment_team_types,,1,1,1,1
+access_priority_rules,priority.rules,model_priority_rules,,1,1,1,1
+access_combo_complexity_assortment_team_type,combo.complexity.assortment.team.type,model_combo_complexity_assortment_team_type,,1,1,1,1

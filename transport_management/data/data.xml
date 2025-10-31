@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Delivery Types -->
+        <record id="fast_delivery" model="delivery.type">
+            <field name="name">Fast Delivery</field>
+        </record>
+        <record id="regular_delivery" model="delivery.type">
+            <field name="name">Regular Delivery</field>
+        </record>
+        <!-- Shipment Operation -->
+        <record id="shipment_at_hub" model="shipment.operation">
+            <field name="name">Shipment Arrived at Hub</field>
+        </record>
+        <record id="shipment_arrive" model="shipment.operation">
+            <field name="name">Shipment Arrived</field>
+        </record>
+        <record id="shipment_further_connect" model="shipment.operation">
+            <field name="name">Shipment Further Connected</field>
+        </record>
+        <record id="shipment_destination" model="shipment.operation">
+            <field name="name">Shipment at Destination</field>
+        </record>
+    </data>
+</odoo>

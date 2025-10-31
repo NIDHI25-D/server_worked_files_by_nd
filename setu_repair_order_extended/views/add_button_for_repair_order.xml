@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_button_in_pricelist_repair_order" model="ir.ui.view">
+        <field name="name">agrobolder.repair.extended</field>
+        <field name="model">repair.order</field>
+        <field name="inherit_id" ref="repair.view_repair_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pricelist_id']" position="replace">
+                <label for="pricelist_id" groups="product.group_product_pricelist"/>
+                <div class="o_row">
+                    <field name="pricelist_id" options="{'no_open':True,'no_create': True}"/>
+                    <button name="update_price_for_repair_order" type="object"
+                            string=" Update Prices"
+                            help="Recompute all prices based on this pricelist"
+                            class="btn-link mb-1 px-0" icon="fa-refresh"
+                            confirm="This will update all unit prices based on the currently set pricelist."
+                            attrs="{'invisible': [('state', 'in', ['under_repair', 'ready', '2binvoiced', 'done', 'cancel'])]}"/>
+                </div>
+            </xpath>
+
+            <xpath expr="//form" position="attributes">
+                <attribute name="delete">false</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='tag_ids']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="telephone" string="Customer Phone"/>
+            </xpath>
+
+            <xpath expr="//form/header/button[@name='action_repair_cancel']" position="replace">
+                <button name="action_repair_cancel" string="Cancel Repair" type="object"
+                        confirm="Draft invoices for this order will be cancelled. Do you confirm the action?"
+                        attrs="{'invisible':['|', ('state', '=', 'cancel'), ('invoice_state', 'in', ['posted','draft'])]}"/>
+            </xpath>
+
+            <xpath expr="//form/header/button[last()]" position="replace">
+                <button name="action_repair_cancel" string="Cancel Repair" type="object"
+                        attrs="{'invisible': ['|', ('state','=', 'cancel'), ('invoice_method', 'in', ['b4repair', 'after_repair','none'])]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="repair_order_tree_view_extended" model="ir.ui.view">
+        <field name="name">repair.order.tree.tree.extended</field>
+        <field name="model">repair.order</field>
+        <field name="inherit_id" ref="repair.view_repair_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="delete">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <template id="report_repairorder_inherit" inherit_id="repair.report_repairorder">
+        <xpath expr="//p[@t-field='o.quotation_notes']" position="after">
+            <t t-foreach="o.tag_ids" t-as="tags">
+                <span t-raw="tags.template_note"/>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

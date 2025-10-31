@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="auto_fillup_detailed_operation_form" model="ir.ui.view">
+            <field name="name">Auto Fillup Detailed Operation</field>
+            <field name="model">auto_fillup.detailed_operation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="attachment_xml_file" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="import_csv" string="Import" type="object" class="btn-primary"/>
+                        <button string="Cancel" special="cancel" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="auto_fillup_operation_action" model="ir.actions.act_window">
+            <field name="name">Auto Fillup Operation Action</field>
+            <field name="res_model">auto_fillup.detailed_operation</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="auto_fillip_detailed_operation" name="Auto Fillup Operation" action="setu_auto_fillup_detailed_operation.auto_fillup_operation_action"
+              parent="stock.menu_stock_config_settings"/>
+
+
+
+    </data>
+</odoo>

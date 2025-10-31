@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="setu_product_template_preorder_form_view" model="ir.ui.view">
+            <field name="name">product.template.common.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="public_categ_ids" position="after">
+                    <field name="preorder_minimum_qty"/>
+                    <field name="minimum_exclusivity_quantity"/>
+                    <field name="delivery_estimated_time"/>
+                </field>
+                <xpath expr="//field[@name='crm_tags_ids']" position="after">
+                    <field name="available_for_presale" invisible="1"/>
+                    <field name="available_for_preorder" invisible="1"/>
+                    <field name="is_international_pre_order_product" invisible="1"/>
+                    <field name="next_day_shipping" invisible="available_for_preorder or available_for_presale or is_international_pre_order_product"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="hr_employee_inherit">
+        <field name="name">hr employee marvel</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='personal_information']/group/group/div[@name='div_km_home_work']" position="after">
+                <field name="vat"/>
+                <field name="curp"/>
+                <field name="nss"/>
+                <field name="incom_date"/>
+                <field name="antiquity"/>
+            </xpath>
+            <xpath expr="//field[@name='mobile_phone']" position="before">
+                <field name="work_contact_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="resource.menu_resource_calendar"
+          parent="hr.menu_human_resources_configuration"
+          action="resource.action_resource_calendar_form"
+          groups="hr.group_hr_manager"
+          sequence="1"/>
+</odoo>

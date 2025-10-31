@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="website_field_sale_order_form" model="ir.ui.view">
+        <field name="name">website.field.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="website_sale.sale_order_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='website_id']" position="after">
+                <field name="is_from_website" readonly="1"/>
+                <field name="is_amazon_order_manually" readonly="1" force_save="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_field_sale_order_line_tree" model="ir.ui.view">
+        <field name="name">stock.filed.sale.order.line.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock_qty"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']//list//widget[@name='qty_at_date_widget']" position="after">
+                <widget name="warehouses_stock" width="20px"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

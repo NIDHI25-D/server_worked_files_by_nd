@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_show_pop_up,access_show_pop_up,model_show_pop_up,base.group_user,1,1,1,1
+access_wizard_cancel_reason,wizard_cancel_reason.wizard_cancel_reason,model_wizard_cancel_reason,base.group_user,1,1,1,1
+access_order_fill_error_picking,order.fill.error.picking,model_order_fill_error_picking,base.group_user,1,1,1,1
+access_stock_move_line_user_for_delition,stock.move.line user with delition,model_stock_move_line,stock_inv_ext.group_stock_user_for_deletion,1,1,1,1
+stock.access_stock_move_line_manager,stock.move.line manager,model_stock_move_line,stock.group_stock_manager,1,1,1,0
+stock.access_stock_move_line_user,stock.move.line user,model_stock_move_line,stock.group_stock_user,1,1,1,0
+stock.access_stock_move_line_all,stock.move.line all users,model_stock_move_line,base.group_user,1,1,1,0
+access_order_fill_error_catalog,order.fill.error.catalog,model_order_fill_error_catalog,base.group_user,1,1,1,1

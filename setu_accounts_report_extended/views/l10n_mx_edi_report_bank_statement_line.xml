@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+
+        <!--  Payment report changes-->
+        <template id="report_payment_account_receipt_document_inherited"
+                  inherit_id="account.report_payment_receipt_document">
+            <xpath expr="//td/span[@t-field='inv.invoice_date']/../../../.." position="replace">
+            </xpath>
+        </template>
+
+        <template id="report_payment_receipt_add_account_customer_information"
+                  inherit_id="account.report_payment_receipt_document">
+            <xpath expr="//div[hasclass('page')]" position="before">
+                <t t-set="address">
+                    <div class="address">
+                        <address t-field="o.partner_id" style="margin-bottom: 0 !important;font-size:14px"
+                                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                        <div t-if="o.partner_id.vat" class="mt16">
+                            <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label"
+                               id="inv_tax_id_label"/>
+                            <t t-else="">Tax ID</t>:
+                            <span t-field="o.partner_id.vat"/>
+                            <br/>
+                            <span t-field="o.partner_id.l10n_mx_edi_fiscal_regime"/>
+                        </div>
+                    </div>
+                </t>
+            </xpath>
+            <xpath expr="//div[hasclass('page')]/div[1]/div[3]" position="before">
+                <div class="row">
+                    <div id="exchange_rate" t-if="o.currency_id.id != o.company_id.currency_id.id" name="exchange_rate"
+                         class="col-6">
+                        Exchange Rate:
+                        <span t-field="o.move_id.l10n_mx_currency_rate"/>
+                    </div>
+                </div>
+            </xpath>
+            <!-- Hide payment from and payment to from journal entry payment pdf.-->
+            <xpath expr="//span[@t-field='o.partner_id']/../../div" position="attributes">
+                <attribute name="style">display:none;</attribute>
+            </xpath>
+        </template>
+        <!--  Payment report changes-->
+
+    </data>
+</odoo>

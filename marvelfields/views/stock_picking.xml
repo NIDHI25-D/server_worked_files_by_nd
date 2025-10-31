@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="marvelsa_view_picking_withcarrier_out_form">
+            <field name="name">view_picking_withcarrier_out_form</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock_delivery.view_picking_withcarrier_out_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/div[@name='tracking']" position="after">
+                    <field name="delivery_cost"/>
+                    <field name="payment_state"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="marvelsa_packages_pallets_picking_form">
+            <field name="name">Packages and pallets form</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='backorder_id']" position="after">
+                    <field name="packages_confirmed" groups="marvelfields.group_package_pallets"/>
+                    <field name="pallets_confirmed" groups="marvelfields.group_package_pallets"/>
+                </xpath>
+                <xpath expr="//sheet/group/group/field[@name='date_done']" position="attributes">
+                    <attribute name="string">Fecha de surtido</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_picking_form_inherited" model="ir.ui.view">
+            <field name="name">view.picking.form.inherited</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='owner_id']" position="after">
+                    <field name="x_studio_detener_factura"/>
+                    <field name="cliente_mostrador"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock.action_toggle_is_locked" model="ir.actions.server">
+            <field name="groups_id" eval="[(6, 0, [ref('marvelfields.group_transfer_unlock')])]"/>
+        </record>
+
+        <record id="stock_picking_form_inherit_for_paid_invoice_and_invoice_number" model="ir.ui.view">
+            <field name="name">stock.picking.form.paid.invoice.and.invoice.number</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='other_infos']" position="inside">
+                    <field name="paid_invoice"/>
+                    <field name="invoice_number"/>
+                    <field name="shipping_incident_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    <field name="res_person_id"/>
+                    <label for="authorized_shipment_date"
+                           invisible="picking_type_code != 'outgoing' or x_studio_detener_factura == False"/>
+                    <div class="o_row">
+                        <field name="authorized_shipment_date" readonly="True"
+                               invisible="picking_type_code != 'outgoing' or x_studio_detener_factura == False"/>
+                        <button name="set_authorized_shipment_date"
+                                id="button_authorized_shipment_date"
+                                type="object"
+                                string="Update"
+                                groups="marvelfields.group_authorized_shipment_date"
+                                class="btn-link mb-1 px-0" icon="fa-refresh"
+                                invisible="picking_type_code != 'outgoing' or x_studio_detener_factura == False"
+                        />
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

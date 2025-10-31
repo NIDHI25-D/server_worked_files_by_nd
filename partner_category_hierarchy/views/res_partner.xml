@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="hcategory_id" placeholder="Category" invisible="parent_id != False"
+                       class="partner_category_hierarchy_hcategory_id"/>
+            </field>
+            <xpath expr="//group/group" position="before">
+                <group colspan="4">
+                    <div invisible="parent_id == False">
+                        <span>Partner category settings are managed on
+                            <button name="open_commercial_entity" type="object" string="the parent company"
+                                    class="oe_link"/>
+                        </span>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <search position="inside">
+                <field name="hcategory_id"/>
+            </search>
+            <group position="inside">
+                <filter name="hcategory_id" string="Category" domain="[('parent_id', '=', False)]"
+                        context="{'group_by': 'hcategory_id'}"/>
+            </group>
+        </field>
+    </record>
+
+    <!-- This view is override from the website_sale_pricelist_visibility module-->
+    <record id="view_partner_property_form" model="ir.ui.view">
+        <field name="name">res.partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="product.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <field name="property_product_pricelist" position="before">
+                <field name="allowed_pricelists" invisible="1"/>
+                <field name="extra_pricelist" invisible="1"/>
+            </field>
+            <field name="property_product_pricelist" position="attributes">
+                <attribute name="domain">[('id', 'in', allowed_pricelists),('id', 'in', extra_pricelist)]</attribute>
+            </field>
+
+            <notebook position="inside">
+                <page string="Pricelists" groups="partner_category_hierarchy.group_hcategory_pricelist">
+                    <group>
+                        <div colspan="2">
+                            <p>This partner will be able to see the following Pricelists.</p>
+                            <br/>
+                            <field name="allowed_pricelists" nolabel="1">
+                                <list default_order="name ASC">
+                                    <field name="display_name"/>
+                                </list>
+                            </field>
+                            <p>Extra Pricelist for this customer.</p>
+                            <br/>
+                            <field name="extra_pricelist" nolabel="1">
+                                <list default_order="name ASC">
+                                    <field name="display_name"/>
+                                </list>
+                            </field>
+                            <div invisible="hcategory_id == False">
+                                <span>Visibility of Pricelists are managed on
+                                    <button name="open_partner_category" type="object" string="the Partner's Category"
+                                            class="oe_link"/>
+                                </span>
+                            </div>
+                        </div>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

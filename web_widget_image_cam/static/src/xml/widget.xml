@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-inherit="web.ImageField" t-inherit-mode="extension">
+        <xpath expr="//button[@t-on-click='onFileRemove']" position="before">
+            <button
+
+                    class="o_camera_open btn btn-light border-0 rounded-circle m-1 p-1"
+                    data-tooltip="Capture"
+                    aria-label="Capture"
+                    t-on-click="onCaptureImage">
+                <i class="fa fa-camera  fa-fw"/>
+            </button>
+        </xpath>
+    </t>
+    <!--    <t t-extend="FieldBinaryImage">-->
+    <!--        <t t-jquery=".o_select_file_button" t-operation="after">-->
+    <!--            <span class="fa fa-camera o_camera_open" title="WebCam"/>-->
+    <!--        </t>-->
+    <!--    </t>-->
+
+    <div t-name="web_widget_scan_cam.CameraDialog">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="live_cam_img"/>
+                </div>
+                <div class="col-md-2 mt64"/>
+                <div class="col-md-5">
+                    <div class="webcam_img"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</templates>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_customer_purchases_goal" model="ir.ui.view">
+            <field name="name">view.partner.customer.purchases.goal</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='misc']" position="before">
+                    <group name="customer_purchases_goal_group" string="CUSTOMER PURCHASES GOAL">
+                        <field name="customer_purchases_goal"/>
+                        <field name="customer_monthly_purchases" readonly="1"/>
+                        <field name="fulfillment_percent" readonly="1" widget="percentage"/>
+                        <field name="electronic_wallet_purchase_goals"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

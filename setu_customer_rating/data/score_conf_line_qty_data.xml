@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="store_conf_line_18" model="score.conf.line.qty">
+            <field name="score_conf_id">3</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">0</field>
+            <field name="to_quantity">0</field>
+            <field name="pre_score">15</field>
+        </record>
+
+        <record id="store_conf_line_19" model="score.conf.line.qty">
+            <field name="score_conf_id">3</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">1</field>
+            <field name="to_quantity">5</field>
+            <field name="pre_score">10</field>
+        </record>
+
+        <record id="store_conf_line_20" model="score.conf.line.qty">
+            <field name="score_conf_id">3</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">6</field>
+            <field name="to_quantity">15</field>
+            <field name="pre_score">5</field>
+        </record>
+
+        <record id="store_conf_line_21" model="score.conf.line.qty">
+            <field name="score_conf_id">3</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">16</field>
+            <field name="to_quantity">10000</field>
+            <field name="pre_score">0</field>
+        </record>
+
+        <record id="store_conf_line_22" model="score.conf.line.qty">
+            <field name="score_conf_id">5</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">0</field>
+            <field name="to_quantity">0</field>
+            <field name="pre_score">10</field>
+        </record>
+
+        <record id="store_conf_line_23" model="score.conf.line.qty">
+            <field name="score_conf_id">5</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">1</field>
+            <field name="to_quantity">3</field>
+            <field name="pre_score">5</field>
+        </record>
+        <record id="store_conf_line_24" model="score.conf.line.qty">
+            <field name="score_conf_id">5</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">4</field>
+            <field name="to_quantity">10000</field>
+            <field name="pre_score">0</field>
+        </record>
+
+        <record id="store_conf_line_25" model="score.conf.line.qty">
+            <field name="score_conf_id">7</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">0</field>
+            <field name="to_quantity">0</field>
+            <field name="pre_score">15</field>
+        </record>
+
+        <record id="store_conf_line_26" model="score.conf.line.qty">
+            <field name="score_conf_id">7</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">1</field>
+            <field name="to_quantity">15</field>
+            <field name="pre_score">10</field>
+        </record>
+
+        <record id="store_conf_line_27" model="score.conf.line.qty">
+            <field name="score_conf_id">7</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">16</field>
+            <field name="to_quantity">30</field>
+            <field name="pre_score">5</field>
+        </record>
+
+        <record id="store_conf_line_28" model="score.conf.line.qty">
+            <field name="score_conf_id">7</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="from_quantity">31</field>
+            <field name="to_quantity">1000</field>
+            <field name="pre_score">0</field>
+        </record>
+
+    </data>
+</odoo>

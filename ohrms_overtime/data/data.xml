@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+        <record id="hr_salary_rule_overtime" model="hr.salary.rule">
+            <field name="name">Overtime</field>
+            <field name="code">OT100</field>
+            <field name="sequence" eval="100"/>
+            <field name="category_id" ref="om_hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = inputs.OT100</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = inputs.OT100.amount</field>
+        </record>
+
+        <record id="mail_activity_data_overtime_approval" model="mail.activity.type">
+<!--            <field name="res_model_id" ref="ohrms_overtime.model_hr_overtime"/>-->
+            <field name="name">Overtime</field>
+            <field name="icon">fa-tasks</field>
+            <field name="res_model">hr.overtime</field>
+            <field name="sequence">5</field>
+        </record>
+    </data>
+</odoo>

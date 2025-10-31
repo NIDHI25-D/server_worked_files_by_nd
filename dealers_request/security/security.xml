@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="module_dealer_request" model="ir.module.category">
+            <field name="name">Dealer Request</field>
+            <field name="sequence">5</field>
+        </record>
+        <record id="dealer_fields_modification" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_dealer_request"/>
+        </record>
+        <record id="credit_upload_documents" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="module_dealer_request"/>
+            <field name="implied_ids" eval="[(4, ref('dealers_request.dealer_fields_modification'))]"/>
+        </record>
+    </data>
+</odoo>

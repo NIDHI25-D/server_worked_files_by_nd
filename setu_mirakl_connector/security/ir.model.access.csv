@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_setu_mirakl_order_status_user,access.setu.mirakl.order.status.user,model_setu_mirakl_order_status,setu_mirakl_connector.group_setu_mirakl_connector_user,1,1,1,0
+access_setu_mirakl_order_status_manager,access.setu.mirakl.order.status.manager,model_setu_mirakl_order_status,setu_mirakl_connector.group_setu_mirakl_connector_manager,1,1,1,1
+
+access_setu_mirakl_payment_gateway_user,access.setu.mirakl.payment.gateway.user,model_setu_mirakl_payment_gateway,setu_mirakl_connector.group_setu_mirakl_connector_user,1,1,1,0
+access_setu_mirakl_payment_gateway_manager,access.setu.mirakl.payment.gateway.manager,model_setu_mirakl_payment_gateway,setu_mirakl_connector.group_setu_mirakl_connector_manager,1,1,1,1

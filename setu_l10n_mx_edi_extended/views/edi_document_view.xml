@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <record id="edi_document_tree_view" model="ir.ui.view">
+            <field name="name">l10n_mx_edi.document.tree</field>
+            <field name="model">l10n_mx_edi.document</field>
+            <field name="arch" type="xml">
+                <list create="false" delete="false" edit="false">
+                    <field name="move_id"/>
+                    <field name="state"/>
+                    <field name="sat_state"/>
+                    <field name="datetime"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="edi_document_view_action" model="ir.actions.act_window">
+            <field name="name">Edi document</field>
+            <field name="view_mode">list</field>
+            <field name="res_model">l10n_mx_edi.document</field>
+            <field name="view_id" ref="setu_l10n_mx_edi_extended.edi_document_tree_view"/>
+        </record>
+
+        <menuitem id="edi_document_tree_view_menu" name="Edi Document View" parent="account.account_reports_management_menu"
+                  action="edi_document_view_action"/>
+    </data>
+</odoo>

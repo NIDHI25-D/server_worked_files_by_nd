@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_column_is_oversized" model="ir.ui.view">
+            <field name="name">add.column.is_ordersized</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='invoice_tab']/field/list/field[@name='product_uom_id']" position="after">
+                    <field name="is_oversized" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <menuitem id="menu_asset_characteristics"
+              name="Asset Characteristics"
+              parent="accountant.menu_accounting"
+              groups="setu_assets_module_enhancement.create_asset_equipment" sequence="21">
+
+        <menuitem id="menu_asset_memory_type" name="Ram Memory" sequence="1">
+            <menuitem id="menu_ram_memory_type" name="Type" action="ram_memory_type_action" sequence="1"/>
+            <menuitem id="menu_ram_memory_capacity" name="Capacity" action="ram_memory_capacity_action" sequence="2"/>
+        </menuitem>
+
+        <menuitem id="menu_operative_system" name="Operative System" sequence="2">
+            <menuitem id="menu_operative_system_type" name="Type" action="operative_system_type_action" sequence="1"/>
+            <menuitem id="menu_operative_system_distribution" name="Distribution" action="operative_system_distribution_action" sequence="2"/>
+            <menuitem id="menu_operative_system_version" name="Version" action="operative_system_version_action" sequence="3"/>
+        </menuitem>
+
+        <menuitem id="menu_hard_disk" name="Hard Disk" sequence="3">
+            <menuitem id="menu_hard_disk_type" name="Type" action="hard_disk_type_action" sequence="1"/>
+            <menuitem id="menu_hard_disk_capacity" name="Capacity" action="hard_disk_capacity_action" sequence="2"/>
+        </menuitem>
+
+        <menuitem id="menu_processor" name="Processor" sequence="4">
+            <menuitem id="menu_processor_model" name="Model" action="processor_model_action" sequence="1"/>
+            <menuitem id="menu_processor_speed" name="Speed" action="processor_speed_action" sequence="2"/>
+            <menuitem id="menu_processor_generation" name="Generation" action="processor_generation_action" sequence="3"/>
+        </menuitem>
+
+        <menuitem id="menu_network_card" name="Network Card" sequence="5">
+            <menuitem id="menu_network_card_type" name="Type" action="network_card_type_action" sequence="1"/>
+            <menuitem id="menu_network_card_capacity" name="Mac Address" action="network_card_mac_address_action" sequence="2"/>
+        </menuitem>
+
+    </menuitem>
+</odoo>

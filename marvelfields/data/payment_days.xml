@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">        
+    	<record model="payment.days" id="monday">
+	        <field name="name">Lunes</field>	        
+	    </record>
+	    <record model="payment.days" id="tuesday">
+	        <field name="name">Martes</field>	        
+	    </record>
+	    <record model="payment.days" id="wednesday">
+	        <field name="name">Miercoles</field>	        
+	    </record>
+	    <record model="payment.days" id="thursday">
+	        <field name="name">Jueves</field>	        
+	    </record>
+	    <record model="payment.days" id="friday">
+	        <field name="name">Viernes</field>	        
+	    </record>
+	    <record model="payment.days" id="satusday">
+	        <field name="name">Sabado</field>       
+	    </record>
+	</data>
+</odoo>

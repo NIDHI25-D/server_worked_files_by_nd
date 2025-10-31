@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="email_template_signup_verification" model="mail.template">
+            <field name="name">Signup Verification Email Template</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="subject">Signup Verification</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <div>
+                    Hello
+                    <t t-out="object.name"/>
+                    <br/>
+                    <br/>
+                    We are glad to welcome you. To access our services and purchase product, we need to verify you.
+                    <br/>
+                    <br/>
+                    Please verify your account by clicking link.
+                    <br/>
+                    <a t-att-href="'/web/verify/%s0hb1%s' %(object.partner_id.id, object.partner_id.verification_token)">verify account</a>
+                    <br/>
+                    <br/>Thanks
+                    <br/>
+                    <br/>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

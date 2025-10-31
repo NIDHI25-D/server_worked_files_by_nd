@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!--  Transport Management-->
+    <menuitem id="main_menu_transport_management" name="Transport Management" sequence="3" />
+    <!-- Dashboard-->
+    <menuitem id="menu_transport_shipment_dashboard"
+              name="Dashboard"
+              sequence="1"
+              groups="shipment_manager,shipment_officer"
+              action="action_shipping_dashboard"
+              parent="main_menu_transport_management" />
+     <!--  Shipments-->
+    <menuitem id="menu_transport_shipment"
+              name="Shipments"
+              sequence="2"
+              groups="shipment_manager,shipment_officer"
+              parent="main_menu_transport_management" />
+
+    <!--  Shipping-->
+    <menuitem id="menu_transport_shipping"
+              name="Shipping"
+              sequence="1"
+              groups="shipment_manager,shipment_officer"
+              action="transport_shipment_action"
+              parent="menu_transport_shipment" />
+    <!--  Transporter-->
+    <menuitem id="menu_transport_do"
+              name="Delivery Orders"
+              sequence="2"
+              groups="shipment_manager,shipment_officer"
+              action="transport_delivery_order_action"
+              parent="menu_transport_shipment" />
+
+    <!--  Transporter-->
+    <menuitem id="menu_transporter"
+              name="Transporters"
+              sequence="3"
+              groups="shipment_manager,shipment_officer"
+              action="transporter_details_action"
+              parent="main_menu_transport_management" />
+
+    <!--  Routes-->
+    <menuitem id="menu_transport_routes"
+              name="Routes"
+              sequence="4"
+              groups="shipment_manager,shipment_officer"
+              action="transport_route_action"
+              parent="main_menu_transport_management" />
+
+    <!--  Location-->
+    <menuitem id="menu_transport_location"
+              name="Locations"
+              sequence="5"
+              groups="shipment_manager,shipment_officer"
+              action="transport_location_action"
+              parent="main_menu_transport_management" />
+
+    <!--  Vehicles-->
+    <menuitem id="menu_transport_vehicle"
+              name="Vehicles"
+              sequence="6"
+              groups="shipment_manager,shipment_officer"
+              action="transporter_vehicle_action"
+              parent="main_menu_transport_management" />
+
+    <!--    Transport Management Configuration-->
+    <menuitem id="menu_transport_management_configuration"
+              name="Configurations"
+              sequence="10"
+              groups="shipment_manager"
+              parent="main_menu_transport_management"
+               />
+    <!-- Delivery Type-->
+    <menuitem id="sub_menu_delivery_type"
+              name="Delivery Types"
+              sequence="1"
+              groups="shipment_manager"
+              parent="menu_transport_management_configuration"
+              action="delivery_type_action"/>
+    <!-- Drivers-->
+    <menuitem id="sub_menu_drivers"
+              name="Drivers"
+              sequence="2"
+              groups="shipment_manager"
+              parent="menu_transport_management_configuration"
+              action="res_partner_driver_action" />
+    <!-- Drivers-->
+    <menuitem id="sub_menu_shipment_operation"
+              name="Shipment Operations"
+              sequence="3"
+              groups="shipment_manager"
+              parent="menu_transport_management_configuration"
+              action="shipment_operation_action" />
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="setu_pos_extended.OrderWidget" t-inherit="point_of_sale.OrderWidget" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('order-summary')]" position="after">
+            <t t-if="get_total_articls_count()">
+                <div align="left">
+                    <b>Total Items : </b>
+                    <t t-set="total_articles_count" t-value="get_total_articls_count()"/>
+                    <span t-out="total_articles_count"/>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

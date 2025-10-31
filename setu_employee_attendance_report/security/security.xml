@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="module_setu_employee_employee_attandance_group" model="ir.module.category">
+            <field name="name">Employee Attandance Report</field>
+<!--            <field name="description">Manage Whatsapp Template</field>-->
+            <field name="sequence">100</field>
+        </record>
+        <record id="module_setu_employee_employee_attandance_group_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="setu_employee_attendance_report.module_setu_employee_employee_attandance_group"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="module_setu_employee_employee_attandance_group_manager" model="res.groups">
+            <field name="name">Manager subordinates only to one level</field>
+            <field name="category_id" ref="setu_employee_attendance_report.module_setu_employee_employee_attandance_group"/>
+            <field name="implied_ids" eval="[(4, ref('module_setu_employee_employee_attandance_group_user'))]"/>
+        </record>
+
+        <record id="module_setu_employee_employee_attandance_group_all_users" model="res.groups">
+            <field name="name">All Users</field>
+            <field name="category_id" ref="setu_employee_attendance_report.module_setu_employee_employee_attandance_group"/>
+            <field name="implied_ids" eval="[(4, ref('module_setu_employee_employee_attandance_group_manager'))]"/>
+        </record>
+</odoo>

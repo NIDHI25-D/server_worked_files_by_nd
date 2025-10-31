@@ -1,0 +1,39 @@
+<odoo>
+  <data>
+
+    <record id="location_stock_zero_view_tree" model="ir.ui.view">
+        <field name="name">location.stock.zero.view.tree</field>
+        <field name="model">location.stock.zero.report</field>
+        <field name="arch" type="xml">
+            <list string="location_stock_zero_tree">
+                <field name="name"/>
+                <field name="location"/>
+            </list>
+        </field>
+    </record>
+
+      <record id="location_stock_zero_action" model="ir.actions.act_window">
+          <field name="name">Location Stock Zero</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">location.stock.zero.report</field>
+          <field name="view_mode">list</field>
+      </record>
+
+      <record id="location_stock_zero_search_views" model="ir.ui.view">
+         <field name="name">location.stock.zero.search.views</field>
+         <field name="model">location.stock.zero.report</field>
+          <field name="arch" type="xml">
+              <search>
+                  <field name="name"/>
+                  <field name="location"/>
+                  <group expand='0' string='Group by...'>
+                        <filter string='Warehouse' name="group_warehouse" context="{'group_by': 'name'}"/>
+                        <filter string="Location" name="group_location" context="{'group_by': 'location'}"/>
+                  </group>
+              </search>
+         </field>
+      </record>
+    <menuitem id="setu_stock_location_zero" name="Stock Location Zero" action="location_stock_zero_action"
+                  parent="stock.menu_warehouse_report" sequence="110"/>
+  </data>
+</odoo>

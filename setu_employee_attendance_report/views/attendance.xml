@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="setu_hr_public_holidays_tree" model="ir.ui.view">
+        <field name="name">setu.hr.public.holidays.tree</field>
+        <field name="model">setu.hr.public.holidays</field>
+        <field name="arch" type="xml">
+            <list string="Attendance">
+                <field name="name"/>
+                <field name="holiday_start_date"/>
+                <!--                <field name="holiday_hours"/>-->
+                <field name="leave_type"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="setu_hr_public_holidays_form" model="ir.ui.view">
+        <field name="name">setu.hr.public.holidays.form</field>
+        <field name="model">setu.hr.public.holidays</field>
+        <field name="arch" type="xml">
+            <form string="Attendance">
+                <sheet>
+                    <div>
+                        <span class="o_form_label">Name</span>
+                        <h1 class="mt0">
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Holidays Information">
+                            <field name="holiday_start_date"/>
+                            <!--                            <field name="holiday_hours"/>-->
+                            <field name="leave_type" options="{'no_create': True, 'no_create_edit':True}"/>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="setu_hr_public_holidays_calendar" model="ir.ui.view">
+        <field name="name">setu.hr.public.holidays.calendar</field>
+        <field name="model">setu.hr.public.holidays</field>
+        <field name="arch" type="xml">
+            <calendar string="Holidays" date_start="holiday_start_date" date_stop="holiday_start_date" mode="month"
+                      > <!-- remove quick_add="False" -->
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!--    &lt;!&ndash; Gantt view &ndash;&gt;-->
+    <!--        <record id="setu_hr_public_holidays_gantt" model="ir.ui.view">-->
+    <!--            <field name="name">setu.hr.public.holidays.gantt</field>-->
+    <!--            <field name="model">setu.hr.public.holidays</field>-->
+    <!--            <field name="arch" type="xml">-->
+    <!--                <gantt type="consolidate"-->
+    <!--                       date_start="holiday_start_date"-->
+    <!--                       date_stop="holiday_start_date"-->
+    <!--                       fold_last_level="true"-->
+    <!--                       round_dnd_dates="true"-->
+    <!--                       consolidation="holiday_hours"-->
+    <!--                       string="Day(s)"-->
+    <!--                />-->
+    <!--            </field>-->
+    <!--        </record>-->
+
+    <record id="setu_hr_public_holidays_search" model="ir.ui.view">
+        <field name="name">setu.hr.public.holidays.search</field>
+        <field name="model">setu.hr.public.holidays</field>
+        <field name="arch" type="xml">
+            <search string="Search Attendance">
+                <field name="holiday_start_date"/>
+                <!--                <field name="holiday_hours"/>-->
+                <field name="leave_type"/>
+                <group expand="1" string="Group By">
+                    <filter string="Leave Types" name="leave_type" context="{'group_by':'leave_type'}"/>
+                    <filter string="Holiday Date" name="leave_date"
+                            context="{'group_by':'holiday_start_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_attendance" model="ir.actions.act_window">
+        <field name="name">Manage Holidays</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">setu.hr.public.holidays</field>
+        <field name="view_mode">calendar,list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create holiday!
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="setu_employee_attendance_report_root" parent="hr_attendance.menu_hr_attendance_view_attendances"
+              name="Manage Holidays" sequence="3" action="action_attendance"/>
+
+    <menuitem id="root_menu_hr_attendance_report" name="Reporting" parent="hr_attendance.menu_hr_attendance_root"
+                  sequence="15" groups="hr_attendance.group_hr_attendance_officer"/>
+
+    <menuitem id="hr_attendance.menu_hr_attendance_reporting"
+              name="Reporting"
+              action="hr_attendance.hr_attendance_reporting"
+              parent="root_menu_hr_attendance_report"
+              sequence="15"
+              groups="hr_attendance.group_hr_attendance_officer"/><!-- change action hr_attendance_report_action(V16) to hr_attendance_reporting -->
+
+</odoo>

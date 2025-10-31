@@ -1,0 +1,22 @@
+Date : 24 Feb 205
+Version : '1.2' (in __manifest__.py)
+Odoo Version : 18
+Done by :  Harshit Trivedi
+Tested by : Harshit Trivedi
+Module : Solve the issue regarding Inventory with the method of not found for the sku is more than 250 stock import.
+
+Date : 04 Feb 205
+Version : '1.1' (in __manifest__.py)
+Odoo Version : 18
+Done by : Sagar Pandya
+Tested by : Harshit Trivedi
+Module : Solve the issue regarding product template is not pass in the parameters of method name "search_or_create_shopify_variant".
+
+
+Date : 31th Jan 2024
+Version : '1.0' (in __manifest__.py)
+Odoo Version : 18
+Done by : Kinnari Tank
+Tested by : Sagar Pandya
+Module : initial release module
+

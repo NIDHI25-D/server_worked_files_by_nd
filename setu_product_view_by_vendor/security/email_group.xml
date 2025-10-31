@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="refresh_view_id" model="res.groups">
+        <field name="name">Refresh View</field>
+    </record>
+</odoo>

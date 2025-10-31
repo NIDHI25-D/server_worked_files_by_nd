@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="temporary_form_view">
+        <field name="name">temporary.form</field>
+        <field name="model">product.temporary</field>
+        <field name="arch" type="xml">
+            <form string="Temporary Form">
+                <sheet>
+                    <group>
+                        <field name="name" required="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="temporary_list_view">
+        <field name="name">temporary.list</field>
+        <field name="model">product.temporary</field>
+        <field name="arch" type="xml">
+            <list string="Temporary list" editable="bottom">
+                <field name="name" required="1"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="temporary_action">
+        <field name="name">Temporary</field>
+        <field name="res_model">product.temporary</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="temporary_menu" name="Temporary"
+              parent="sale.menu_sale_config"
+              action="temporary_action"
+              sequence="8"/>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="preorder_forwarder_view_tree" model="ir.ui.view">
+            <field name="name">preorder.forwarder.view.tree</field>
+            <field name="model">preorder.forwarder</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="name" required="1"/>
+                </list>
+            </field>
+        </record>
+        <record id="preorder_forwarder_action" model="ir.actions.act_window">
+            <field name="name">Forwarder</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">preorder.forwarder</field>
+            <field name="view_mode">list</field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="preorder_forwarder_menu" name="Forwarder" parent="purchase.menu_purchase_config"
+                  action="setu_purchase_automation.preorder_forwarder_action"/>
+
+    </data>
+</odoo>

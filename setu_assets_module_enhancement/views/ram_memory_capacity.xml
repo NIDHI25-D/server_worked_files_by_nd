@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="ram_memory_capacity_view_tree" model="ir.ui.view">
+            <field name="name">ram_memory_capacity_view_tree</field>
+            <field name="model">ram.memory.capacity</field>
+            <field name="arch" type="xml">
+                <list string="ram_memory_capacity_tree" editable="bottom">
+                    <field name="name" required="1"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="ram_memory_capacity_action" model="ir.actions.act_window">
+            <field name="name">Ram Memory Capacity</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ram.memory.capacity</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="ram_memory_capacity_view_tree"/>
+        </record>
+    </data>
+</odoo>

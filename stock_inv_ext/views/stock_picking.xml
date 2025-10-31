@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="marvelsa_vpicktree" model="ir.ui.view">
+            <field name="name">marvelsa.stock.picking.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="replace">
+                    <list decoration-bf="urgent_order == True" decoration-it="urgent_order == True"
+                          decoration-muted="state == 'cancel'"
+                          decoration-danger="state not in ('cancel', 'done') and scheduled_date &lt; current_date"
+                          string="Picking list">
+                        <!--Removing default order as per the new requirement https://app.clickup.com/t/865d9yauj-->
+                        <field name="website_id" column_invisible="1"/>
+                        <field name="urgent_order" column_invisible="1"/>
+                        <field name="name"/>
+                        <field name="location_dest_id" groups="stock.group_stock_multi_locations"/>
+                        <field name="partner_id"/>
+                        <field name="date" column_invisible="1"/>
+                        <field name="scheduled_date"/>
+                        <field name="origin"/>
+                        <field name="urgent_order"/>
+                        <field name="x_studio_detener_factura"/>
+                        <field name="cliente_mostrador"/>
+                        <field name="date_done" string="Fecha de surtido"/>
+                        <field name="group_id" column_invisible="1"/>
+                        <field name="backorder_id"/>
+                        <field name="state"/>
+                        <field name="priority" column_invisible="1"/>
+                        <field name="picking_type_id" column_invisible="1"/>
+                    </list>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- From responsible_person_fields_add_in_pickings-->
+        <record id="stock_pickibng_form_views_inherited" model="ir.ui.view">
+            <field name="name">stock.pickibng.form.views.inherited</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="responsible_person"
+                           readonly="state in ['done', 'cancel']"
+                           required="state not in ['done', 'cancel']"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group/group/field[@name='backorder_id']" position="after">
+                    <field name="comentarios_picking"/>
+                </xpath>
+                <xpath expr="///sheet/notebook/page[@name='note']" position="after">
+                    <page string="Warehouse">
+                        <group>
+                            <group string="OPERATION BEGINNING" name="operation_beginning">
+                                <label for="beginning_operation_date"/>
+                                <div class="o_row">
+                                    <field name="beginning_operation_date" readonly="1"/>
+                                    <button name="update_beginning_operation_date" type="object" string="Update" class="btn-link mb-1 px-0"
+                                            icon="fa-refresh"/>
+                                </div>
+                                <field name="operation_responsible"/>
+                                <label for="beginning_of_load_date_and_time"/>
+                                <div class="o_row">
+                                    <field name="beginning_of_load_date_and_time" readonly="1"/>
+                                    <button name="update_beginning_of_load_date_and_time" type="object" string="Update" class="btn-link mb-1 px-0"
+                                            icon="fa-refresh"/>
+                                </div>
+                                <label for="ending_of_load_date_and_time"/>
+                                <div class="o_row">
+                                    <field name="ending_of_load_date_and_time" readonly="1"/>
+                                    <button name="update_ending_of_load_date_and_time" type="object" string="Update" class="btn-link mb-1 px-0"
+                                            icon="fa-refresh"/>
+                                </div>
+                                <field name="load_execution_responsible"/>
+                            </group>
+
+                            <group string="AUDIT" name="beginning_of_operation">
+                                <field name="order_fill_error_id"/>
+                                <field name="order_fill_error_picking_id" readonly="1"/>
+                            </group>
+                            <group string="OPPORTUNITY AREAS" name="beginning_of_operation">
+                                <field name="improvement_points"/>
+                            </group>
+
+                        </group>
+                    </page>
+
+                </xpath>
+
+                <xpath expr="//header/button[@name='button_validate']" position="attributes">
+                    <attribute name="groups">stock_inv_ext.group_stock_inventory_supervisor</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- From responsible_person_fields_add_in_pickings-->
+        <record id="view_transfer_pivot" model="ir.ui.view">
+            <field name="name">Pivot View Transfer</field>
+            <field name="model">stock.picking</field>
+            <field name="arch" type="xml">
+                <pivot>
+                </pivot>
+            </field>
+        </record>
+
+        <!-- From responsible_person_fields_add_in_pickings-->
+        <record id="stock.action_picking_tree_incoming" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form,calendar,pivot,map</field>
+        </record>
+
+        <record id="stock.action_picking_tree_outgoing" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form,calendar,pivot,map</field>
+        </record>
+
+
+        <!-- From responsible_person_fields_add_in_pickings-->
+        <record id="stock.stock_picking_action_picking_type" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form,calendar,pivot</field>
+        </record>
+
+        <!-- From responsible_person_fields_add_in_pickings-->
+        <record id="set_group_by_for_responsible_warehouse" model="ir.ui.view">
+            <field name="name">set.group.by.for.responsible.warehouse</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="track_warehouse_id" string="Warehouse"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter name="responsible_person" domain="[]" context="{'group_by': 'responsible_person'}"/>
+                    <filter string="Warehouse" name="track_warehouse_id" domain="[]"
+                            context="{'group_by': 'track_warehouse_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="purchase_carriers_view_tree" model="ir.ui.view">
+            <field name="name">purchase.carriers.view.tree</field>
+            <field name="model">purchase.carriers</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="name" required="1"/>
+                    <field name="company_id"/>
+                </list>
+            </field>
+        </record>
+        <record id="purchase_carriers_action" model="ir.actions.act_window">
+            <field name="name">Carriers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.carriers</field>
+            <field name="view_mode">list</field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="purchase_carriers_menu" name="Carriers" parent="purchase.menu_purchase_config"
+                  action="setu_purchase_automation.purchase_carriers_action"/>
+
+    </data>
+</odoo>

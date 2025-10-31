@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+     <record id="import_factor_level_view_tree" model="ir.ui.view">
+            <field name="name">import.level.factor.view.tree</field>
+            <field name="model">import.factor.level</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                     <field name="name" required="1"/>
+                </list>
+            </field>
+        </record>
+        <record id="import_factor_level_action" model="ir.actions.act_window">
+            <field name="name">Import Factor Level Action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">import.factor.level</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="import_factor_level_menu" name="Import Factor Level"
+                  parent="setu_price_update.prod_price_update_menu" action="import_factor_level_action"/>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="change_string_product_tag_tree_view" model="ir.ui.view">
+            <field name="name">change.string.product.tag.tree</field>
+            <field name="model">product.tag</field>
+            <field name="inherit_id" ref="product.product_tag_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="attributes">
+                    <attribute name="string">Industry</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="change_string_product_tag_form_view" model="ir.ui.view">
+            <field name="name">change.string.product.tag.form</field>
+            <field name="model">product.tag</field>
+            <field name="inherit_id" ref="product.product_tag_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="string">Industry</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product.product_tag_action" model="ir.actions.act_window">
+            <field name="name">Industry</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.tag</field>
+            <field name="view_mode">list,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem id="website_sale.product_catalog_product_tags"
+                  name="Industry"
+                  action="product.product_tag_action"
+                  parent="website_sale.menu_catalog"
+                  groups="base.group_no_one"
+        />
+
+    </data>
+</odoo>

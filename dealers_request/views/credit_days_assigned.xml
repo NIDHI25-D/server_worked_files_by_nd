@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="credit_days_assigned_tree" model="ir.ui.view">
+            <field name="name">credit.days.assigned.form</field>
+            <field name="model">credit.days.assigned</field>
+            <field name="arch" type="xml">
+                <tree string="Credit Days Requested" editable="bottom">
+                <field name="name" required="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+    <record model="ir.actions.act_window" id="credit_days_assigned_action">
+            <field name="name">Credit Days Assigned</field>
+            <field name="res_model">credit.days.assigned</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="credit_days_assigned_menu" name="Credit Days assigned"
+                  parent="dealers_request.dealers_menu"
+                  action="credit_days_assigned_action"
+                  sequence="5"
+        />
+
+    </data>
+</odoo>

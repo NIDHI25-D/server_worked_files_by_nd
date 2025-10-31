@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_send_receipt_by_email
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-05 11:05+0000\n"
+"PO-Revision-Date: 2024-07-05 11:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_send_receipt_by_email
+#: model:mail.template,body_html:setu_send_receipt_by_email.vendor_payment_receipt_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear\n"
+"                        <t t-out=\"object.partner_id.name or ''\">Azure Interior</t>\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Here is your payment receipt <span style=\"font-weight:bold;\" t-out=\"(object.name or '').replace('/','-') or ''\">\n"
+"                        BNK1-2021-05-0002\n"
+"                    </span> amounting\n"
+"                        to <span style=\"font-weight:bold;\" t-out=\"format_amount(object.amount, object.currency_id) or ''\">$ 10.00\n"
+"                    </span> from <t t-out=\"object.company_id.name or ''\">YourCompany</t>.\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Payment Reference:\n"
+"                        <t t-out=\"object.memo or ''\"></t>\n"
+"                        <br>\n"
+"                        Do not hesitate to contact us if you have any questions.\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Best regards\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Estimado\n"
+"                        <t t-out=\"object.partner_id.name or ''\">Azure Interior</t>\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Aquí está su recibo de pago <span style=\"font-weight:bold;\" t-out=\"(object.name or '').replace('/','-') or ''\">\n"
+"                        BNK1-2021-05-0002\n"
+"                    </span> con un importe total de\n"
+"                         <span style=\"font-weight:bold;\" t-out=\"format_amount(object.amount, object.currency_id) or ''\">$ 10.00\n"
+"                    </span> de <t t-out=\"object.company_id.name or ''\">YourCompany</t>.\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Referencia de pago:\n"
+"                        <t t-out=\"object.memo or ''\"></t>\n"
+"                        <br>\n"
+"                        No dude en contactarnos si tiene alguna duda.\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Saludos\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: setu_send_receipt_by_email
+#: model:mail.template,body_html:setu_send_receipt_by_email.mail_template_data_journal_entry
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear\n"
+"                        <t t-out=\"object.partner_id.name or ''\">Azure Interior</t>\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Thank you for your payment.\n"
+"                        Here is your payment receipt <span style=\"font-weight:bold;\" t-out=\"(object.name or '').replace('/','-') or ''\">\n"
+"                        BNK1-2021-05-0002\n"
+"                    </span> amounting\n"
+"                        to <span style=\"font-weight:bold;\" t-out=\"format_amount(object.amount, object.currency_id) or ''\">$ 10.00\n"
+"                    </span> from <t t-out=\"object.company_id.name or ''\">YourCompany</t>.\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Do not hesitate to contact us if you have any questions.\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Best regards,\n"
+"                        <t t-if=\"not is_html_empty(user.signature)\">\n"
+"                            <br>\n"
+"                            <br>\n"
+"                            <t t-out=\"user.signature or ''\">--<br>Mitchell Admin\n"
+"                            </t>\n"
+"                        </t>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Estimado <t t-out=\"object.partner_id.name\"/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Gracias por el pago.\n"
+"                        Aquí tiene un recibo del mismo <strong><t t-out=\"(object.name or '').replace('/','-')\"/></strong> por un importe de\n"
+"                        <strong><t t-out=\"format_amount(object.amount, object.currency_id)\"/></strong> de\n"
+"                        <t t-out=\"object.company_id.name\"/>.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Si requiere cualquier aclaración, no dude en contactarnos.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Saludos cordiales,\n"
+"                        <t t-if=\"user.signature\">\n"
+"                        <br/>\n"
+"                        <t t-out=\"user.signature\"/>\n"
+"                        </t>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: setu_send_receipt_by_email
+#: model:ir.model.fields,field_description:setu_send_receipt_by_email.field_account_payment__vendor_payment_receipt
+msgid "Attach Document"
+msgstr "Adjuntar Documento"
+
+#. module: setu_send_receipt_by_email
+#: model:ir.model,name:setu_send_receipt_by_email.model_mail_thread
+msgid "Email Thread"
+msgstr "Hilo de mensajes"
+
+#. module: setu_send_receipt_by_email
+#: model:ir.model,name:setu_send_receipt_by_email.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Asistente de redacción de correo electrónico"
+
+#. module: setu_send_receipt_by_email
+#: model:ir.model,name:setu_send_receipt_by_email.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: setu_send_receipt_by_email
+#: model:mail.template,name:setu_send_receipt_by_email.mail_template_data_journal_entry
+msgid "Journal Entry: Send by Email"
+msgstr ""
+
+#. module: setu_send_receipt_by_email
+#: model:ir.model.fields.selection,name:setu_send_receipt_by_email.selection__account_payment__receipt_status__not_sent
+msgid "Not Sent"
+msgstr "No enviado"
+
+#. module: setu_send_receipt_by_email
+#: model:mail.template,name:setu_send_receipt_by_email.vendor_payment_receipt_template
+msgid "Payment: Vendor Payment Receipt"
+msgstr "Pago: Recibo de pago del proveedor"
+
+#. module: setu_send_receipt_by_email
+#: model:ir.model,name:setu_send_receipt_by_email.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: setu_send_receipt_by_email
+#: model:ir.model.fields,field_description:setu_send_receipt_by_email.field_account_payment__receipt_status
+msgid "Receipt Status"
+msgstr "Estado del Comprobante"
+
+#. module: setu_send_receipt_by_email
+#: model:ir.actions.server,name:setu_send_receipt_by_email.action_send_recovery_email_journal
+msgid "Send Receipt From Journal Entry"
+msgstr ""
+
+#. module: setu_send_receipt_by_email
+#: model:ir.actions.server,name:setu_send_receipt_by_email.action_Send_vendor_receipt_by_email
+msgid "Send Vendor Receipt By Email"
+msgstr ""
+
+#. module: setu_send_receipt_by_email
+#: model:ir.model.fields.selection,name:setu_send_receipt_by_email.selection__account_payment__receipt_status__sent
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: setu_send_receipt_by_email
+#: model:mail.template,description:setu_send_receipt_by_email.vendor_payment_receipt_template
+msgid ""
+"Sent manually to customer when clicking on 'Send receipt by email' in payment\n"
+"                action\n"
+"            "
+msgstr ""
+
+#. module: setu_send_receipt_by_email
+#. odoo-python
+#: code:addons/setu_send_receipt_by_email/models/account_move.py:0
+#, python-format
+msgid "This move has no statement line."
+msgstr ""
+
+#. module: setu_send_receipt_by_email
+#: model:mail.template,report_name:setu_send_receipt_by_email.mail_template_data_journal_entry
+#: model:mail.template,report_name:setu_send_receipt_by_email.vendor_payment_receipt_template
+msgid "{{ (object.name or '').replace('/','-') }}"
+msgstr ""
+
+#. module: setu_send_receipt_by_email
+#: model:mail.template,subject:setu_send_receipt_by_email.vendor_payment_receipt_template
+msgid "{{ object.company_id.name }} - Payment Receipt"
+msgstr "{{ object.company_id.name }} - Comprobante de Pago"
+
+#. module: setu_send_receipt_by_email
+#: model:mail.template,subject:setu_send_receipt_by_email.mail_template_data_journal_entry
+msgid ""
+"{{ object.company_id.name }} Payment Receipt (Ref {{ object.name or 'n/a' "
+"}})"
+msgstr ""
+"{{ object.company_id.name }} Recibo de Pago (Ref {{ object.name or 'n/a' }})"

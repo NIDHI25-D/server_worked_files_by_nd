@@ -1,0 +1,14 @@
+.emp_count_circle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid #f14b6a;
+    color: #666;
+    text-align: center;
+    font: 32px Arial, sans-serif;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    vertical-align: middle;
+}

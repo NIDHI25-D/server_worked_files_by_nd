@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!--#Task: Migration from V16 to V18 (added from customs_number_control)*#*-->
+        <!-- https://app.clickup.com/t/865d8xdpn -->
+        <record id="add_field_reserve_used_qty_stock_picking" model="ir.ui.view">
+            <field name="name">add_field_reserve_used_qty_stock_picking</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_stock_move_line_detailed_operation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='quantity']" position="before">
+                    <field name="reserve_used_qty" optional="show" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="add_field_reserve_used_qty_stock_picking_form" model="ir.ui.view">
+            <field name="name">add_field_reserve_used_qty_stock_picking_form</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_move_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lot_id']" position="before">
+                    <field name="reserve_used_qty" readonly="1"/>
+                </xpath>
+                 <xpath expr="//sheet" position="after">
+                    <chatter/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

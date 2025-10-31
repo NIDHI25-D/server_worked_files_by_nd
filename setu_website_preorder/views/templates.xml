@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Filteration for Instock/Preorder/Presale/All Products -->
+    <template id="website_product_type" name='Products To be shown'
+              inherit_id="website_sale.products">
+        <xpath expr="//div[@id='products_grid']/div/t[2]" position="after">
+            <div class="dropdown ml8 mr8 show d-none d-lg-inline ms-3">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button"
+                   id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <t t-if="not stock_type">
+                        <span>All Products</span>
+                    </t>
+                    <t t-if="stock_type == 'instock'">
+                        <span>Instock Product</span>
+                    </t>
+                    <t t-if="stock_type == 'presale'">
+                        <span>Presale Products</span>
+                    </t>
+                    <t t-if="stock_type == 'preorder'">
+                        <span>National Preorder Products</span>
+                    </t>
+                    <t t-if="stock_type == 'international'">
+                        <span>International Preorder Products</span>
+                    </t>
+                    <t t-if="stock_type == 'nextshippingday'">
+                        <span>Next Day Shipping</span>
+                    </t>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/shop">All
+                        Products
+                    </a>
+                    <a class="dropdown-item" t-att-href="keep('/shop',stock_type='instock')">Instock
+                        Products
+                    </a>
+                    <a class="dropdown-item" t-att-href="keep('/shop',stock_type='presale')">Presale Products</a>
+                    <a class="dropdown-item" t-att-href="keep('/shop',stock_type='preorder')">National Preorder Products</a>
+                    <a class="dropdown-item" t-att-href="keep('/shop',stock_type='international')">International Preorder
+                        Products
+                    </a>
+                    <a class="dropdown-item" t-att-href="keep('/shop',stock_type='nextshippingday')">Next Day Shipping Products</a>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- quantity availabe content will be populated here from js on product details page-->
+    <template id="presale_preorder_stock_dropdown" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="attributes">
+            <attribute name="class">d-none flex-wrap align-items-center</attribute>
+        </xpath>
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
+            <div id="preorder_content"/>
+        </xpath>
+    </template>
+
+    <!-- Display Price change message for preorder and presale notification on Cart -->
+<template id="cart_lines_inherit_website_preorder_presale_message"
+              inherit_id="website_sale.cart_lines"
+              name="presale/preorder notification">
+        <xpath expr="//div[@name='o_wsale_cart_line_button_container']" position="before">
+            <div class="flex-grow-1">
+                <span>Stock Type:</span>
+                <t t-if="not (website_sale_order.is_preorder or website_sale_order.is_presale or website_sale_order.is_international_preorder or website_sale_order.is_next_day_shipping)">
+                    <t t-set="stock_type">Stock</t>
+                </t>
+                <t t-elif="website_sale_order.is_preorder">
+                    <t t-set="stock_type">PreOrder</t>
+                </t>
+                <t t-elif="website_sale_order.is_presale">
+                    <t t-set="stock_type">PreSale</t>
+                </t>
+                <t t-elif="website_sale_order.is_international_preorder">
+                    <t t-set="stock_type">InternationalPreorder</t>
+                </t>
+                <t t-elif="website_sale_order.is_next_day_shipping">
+                    <t t-set="stock_type">Next Day Shipping</t>
+                </t>
+                <span t-out="stock_type" class="fw-bold text-primary"/>
+
+                <br/>
+                <span>Available :</span>
+                <t t-set="conf_warehouses"
+                   t-value="request.env['website'].get_current_website()._get_website_location_type()"/>
+                <t t-set="combination_info" t-value="line.product_id.product_tmpl_id._get_combination_info()"/>
+
+                <t name="availability_of_stock"
+                     t-if="not (website_sale_order.is_preorder or website_sale_order.is_presale or website_sale_order.is_international_preorder)">
+                    <t t-if="int(line.product_id.calculated_qty) >= int(line.product_id.with_context(warehouse_id=conf_warehouses).free_qty)">
+                        <span t-out="int(line.product_id.with_context(warehouse_id=conf_warehouses).free_qty)"
+                              class="fw-bold text-primary" style="padding: 15px;"/>
+                    </t>
+                    <t t-else="">
+                        <span t-out="int(line.product_id.calculated_qty)" class="fw-bold text-primary"
+                              />
+                    </t>
+                </t>
+
+                <t name="availability_of_presale" t-if="website_sale_order.is_presale">
+                    <span t-out="int(combination_info.get('presale_qty'))" class="fw-bold text-primary"
+                          />
+                </t>
+
+                <t name="availability_of_preorder" t-if="website_sale_order.is_preorder">
+                    <span t-out="int(line.product_id.preorder_qty)" class="fw-bold text-primary"
+                          style="padding: 15px;"/>
+                </t>
+
+                <t name="availability_of_international_preorder" t-if="website_sale_order.is_international_preorder">
+                    <span t-out="int(line.product_id.international_preorder_qty)" class="fw-bold text-primary"
+                          style="padding: 15px;"/>
+                </t>
+
+                <br/>
+                <span>Price :</span>
+                <t t-if="request.website.show_line_subtotals_tax_selection == 'tax_excluded'">
+                    <span t-field="line.price_reduce_taxexcl" style="white-space: nowrap;"
+                          t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                </t>
+
+                <t t-else="">
+                    <span t-field="line.price_reduce_taxinc" style="white-space: nowrap;"
+                          t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                </t>
+
+                <t t-if="line.discount">
+                    <del t-attf-class="#{'text-danger mr8'}" style="white-space: nowrap;"
+                         t-esc="combination_info['list_price']"
+                         t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                </t>
+
+            </div>
+        </xpath>
+
+
+        <xpath expr="//input[@type='text'][hasclass('quantity')]" position="before">
+<!--            <t t-set="max_qty" t-if="stock_type == 'PreSale'" t-value="int(combination_info.get('presale_qty'))"/>-->
+            <t t-set="max_qty" t-if="stock_type == 'PreSale'" t-value="line.product_id.presale_qty"/>
+            <t t-set="min_qty" t-if="stock_type == 'PreSale'" t-value="line.product_id.preorder_minimum_qty"/>
+            <t t-set="max_qty" t-if="stock_type == 'PreOrder'" t-value="line.product_id.preorder_qty"/>
+            <t t-set="min_qty" t-if="stock_type == 'PreOrder'" t-value="line.product_id.preorder_minimum_qty"/>
+            <t t-set="min_qty" t-if="stock_type == 'InternationalPreorder'" t-value="line.product_id.minimum_exclusivity_quantity if line.is_exclusive else 0"/>
+            <t t-set="max_qty" t-if="stock_type == 'InternationalPreorder'" t-value="line.product_id.international_preorder_qty"/>
+            <t t-set="max_qty" t-if="stock_type == 'Stock'" t-value="line.product_id.with_context(warehouse_id=conf_warehouses).free_qty"/>
+            <t t-set="is_exclusive_line" t-if="stock_type == 'InternationalPreorder'" t-value="True if line.is_exclusive else False"/>
+        </xpath>
+
+        <xpath expr="//input[@type='text'][hasclass('quantity')]" position="attributes">
+            <attribute name='t-att-data-max'>max_qty</attribute>
+            <attribute name='t-att-data-min'>min_qty</attribute>
+            <attribute name='t-att-data-exclusive'>is_exclusive_line</attribute>
+        </xpath>
+
+    </template>
+
+    <!-- Adding SKU on  Product List Page-->
+    <template id="product_add_sku" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('o_wsale_product_information')]/div[hasclass('o_wsale_product_information_text')]"
+               position="inside">
+            <div>
+                <span>SKU:
+                    <span t-out="product.default_code"/>
+                </span>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Adding Quantity Addition control on Product List Page-->
+    <template id="products_add_to_cart" inherit_id="website_sale.products_add_to_cart">
+        <xpath expr="//a[hasclass('a-submit')]" position="attributes">
+            <attribute name="t-attf-class">d-none</attribute>
+        </xpath>
+        <xpath expr="//a[hasclass('a-submit')]" position="before">
+            <t t-if="stock_type == 'presale'">
+                <input type="hidden" name="shop_buy_it_as" class="shop_buy_it_as" value="presale"/>
+            </t>
+            <t t-if="stock_type == 'preorder'">
+                <input type="hidden" name="shop_buy_it_as" class="shop_buy_it_as" value="preorder"/>
+            </t>
+            <t t-if="stock_type == 'instock'">
+                <input type="hidden" name="shop_buy_it_as" class="shop_buy_it_as" value="instock"/>
+            </t>
+            <t t-if="stock_type == 'international'">
+                <input type="hidden" name="shop_buy_it_as" class="shop_buy_it_as" value="international_preorder"/>
+            </t>
+            <t t-if="stock_type == 'nextshippingday'">
+                <input type="hidden" name="shop_buy_it_as" class="shop_buy_it_as" value="is_next_day_shipping"/>
+            </t>
+            <t t-set="order_id" t-value="request.session.get('sale_order_id')"/>
+            <t t-if="order_id" t-set="order_type" t-value="request.env['sale.order'].sudo().browse(order_id)"/>
+            <t t-set="display_true" t-value="False"/>
+            <t t-if="not order_id and stock_type">
+                <t t-set="display_true" t-value="true"/>
+            </t>
+            <t t-if="order_type">
+                <t t-if="len(order_type.order_line) &lt;1 and stock_type">
+                    <t t-set="display_true" t-value="true"/>
+                </t>
+                <t t-if="stock_type == 'presale' and order_type.is_presale">
+                    <t t-set="display_true" t-value="true"/>
+                </t>
+                <t t-if="stock_type == 'preorder' and order_type.is_preorder">
+                    <t t-set="display_true" t-value="true"/>
+                </t>
+                <t t-if="stock_type == 'international' and order_type.is_international_preorder">
+                    <t t-set="display_true" t-value="true"/>
+                </t>
+                <t t-if="stock_type == 'nextshippingday' and order_type.is_next_day_shipping">
+                    <t t-set="display_true" t-value="true"/>
+                </t>
+                <t t-if="stock_type == 'instock' and not (order_type.is_presale or order_type.is_preorder or order_type.is_international_preorder or order_type.is_next_day_shipping)">
+                    <t t-set="display_true" t-value="true"/>
+                </t>
+            </t>
+            <t t-if="display_true">
+                <div t-attf-class="css_quantity input-group mb8" contenteditable="false"
+                     t-if="product._website_show_quick_add()">
+                    <a t-attf-href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one"
+                       title="Remove one">
+                        <i class="fa fa-minus"/>
+                    </a>
+                    <t t-if="stock_type == 'preorder' or stock_type == 'presale'">
+                        <t t-set="product_min_qty" t-value="int(product.preorder_minimum_qty)"/>
+
+                        <input type="text" class="form-control quantity text-center"
+                               t-att-data-min="product_min_qty or 1"
+                               name="add_qty" t-att-value="product_min_qty or 1"/>
+                    </t>
+                    <t t-else="">
+                        <input type="text" class="form-control quantity text-center" data-min="1"
+                               name="add_qty" t-att-value="add_qty or 1"/>
+                    </t>
+
+                    <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json"
+                       aria-label="Add one" title="Add one">
+                        <i class="fa fa-plus"/>
+                    </a>
+                </div>
+                <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+                <t t-set="product_product" t-value="request.env['product.product'].browse(product_variant_id)"/>
+                <t t-if="product_variant_id and template_price_vals['price_reduce'] or not website.prevent_zero_price_sale">
+                    <a t-if="product._website_show_quick_add() and not product_product.available_for_presale"
+                       href="#" role="button" class="btn btn-primary a-submit" aria-label="Shopping cart"
+                       title="Shopping cart">
+                        <span class="fa fa-shopping-cart"/>
+                    </a>
+                    <a t-if="product._website_show_quick_add() and product_product.available_for_presale and product_product.presale_price > 0 "
+                       href="#" role="button" class="btn btn-primary a-submit" aria-label="Shopping cart"
+                       title="Shopping cart">
+                        <span class="fa fa-shopping-cart"/>
+                    </a>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="show_stock_information_in_mobile_view" inherit_id="website_sale.o_wsale_offcanvas">
+        <xpath expr="//div[@t-if='opt_wsale_categories']" position="after">
+            <div id="o_wsale_offcanvas_products" class="accordion-item">
+                <h2 id="o_wsale_offcanvas_products_data" class="accordion-header mb-0">
+                    <button class="o_wsale_offcanvas_title accordion-button border-top rounded-0 collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#o_wsale_offcanvas_product_stock"
+                            aria-expanded="false"
+                            aria-controls="o_wsale_offcanvas_product_stock">
+                        <b>Product Type</b>
+                    </button>
+                </h2>
+                <div id="o_wsale_offcanvas_product_stock" class="accordion-collapse collapse"
+                     aria-labelledby="o_wsale_offcanvas_products_data">
+                    <div class="accordion-body pt-0">
+                        <div class="list-group list-group-flush">
+                            <a class="dropdown-item" href="/shop">All
+                                Products
+                            </a>
+                            <a class="dropdown-item" href="/shop?stock_type=instock">Instock
+                                Products
+                            </a>
+                            <a class="dropdown-item" href="/shop?stock_type=presale">Presale Products</a>
+                            <a class="dropdown-item" href="/shop?stock_type=preorder">Preorder Products</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Adding a presale product price field    -->
+    <template id="inherit_product_price_template_for_presale" inherit_id="website_sale.product_price">
+        <xpath expr="//h3[hasclass('css_editable_mode_hidden')]" position="after">
+            <!-- changes as per the task https://app.clickup.com/t/86dqj0qt6 -->
+            <t t-if="not website.pricelist_id.id == website.excluded_pricelist_id.id">
+                <h3 class="presale_price_tag d-none">
+                    As Pre-Sale *
+                    <t t-nocache="Presale Prices is Always Dynamic" t-nocache-variant="product_variant.id">
+                        <t t-set="variant" t-value="env['product.product'].browse(product_variant.id)"/>
+                        <span class="oe_presale_price" style="white-space: nowrap; color:red;"
+                              t-out="variant.presale_price_incl_tax"
+                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    </t>
+                    <div style="font-size:25px">Cash Payment - 9%, Punctual Credit Payment - 7%</div>
+                </h3>
+            </t>
+        </xpath>
+        <xpath expr="//h3[hasclass('css_editable_mode_hidden')]/span[hasclass('oe_price')]" position="before">
+            <span style="margin-right:53px" class="price_message">In Stock</span>
+        </xpath>
+        <xpath expr="//h3[hasclass('css_editable_mode_hidden')]/span[hasclass('oe_price')]" position="after">
+            <br/>
+            <h6>
+                <div id="exclusivity_procedure"/>
+            </h6>
+        </xpath>
+        <xpath expr="//h3[hasclass('css_editable_mode_hidden')]/span[3]" position="before">
+            <br/>
+            <span t-attf-class=" {{'' if combination_info['has_discounted_price'] else 'd-none'}}">Public Price</span>
+        </xpath>
+    </template>
+
+    <template id="add_field_tentative_arrival_date_at_report"
+              inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table[@class='o_has_total_table table o_main_table table-borderless']//thead/tr/th[2]"
+               position="after">
+            <div t-if="doc.is_presale" class="col-auto col-3 mw-100 mb-2">
+                <th name="th_quantity" class="text-end" style="color:red;">Tentative Arrival Date</th>
+            </div>
+        </xpath>
+        <xpath expr="//table[@class='o_has_total_table table o_main_table table-borderless']//tbody/t[2]/tr/t/td[2]"
+               position="after">
+            <td t-if="doc.is_presale" name="td_tentative_arrival_date">
+                <span t-field="line.tentative_arrival_date" />
+            </td>
+        </xpath>
+        <xpath expr="//t[@t-set='layout_document_title']/span" position="before">
+            <div t-if="doc.is_presale"> PRE-SALE </div>
+        </xpath>
+
+    </template>
+
+    <template id="message_as_per_the_order_type" inherit_id="website_sale.cart">
+        <xpath expr="//div[hasclass('col')]/div[hasclass('alert-info')]" position="before">
+            <div class="alert alert-danger" role="alert" id="presale_auto_changes" t-if="website_sale_order.is_presale">
+                Warning : If any products are now in stock,products will be automatically removed.
+            </div>
+            <div class="alert alert-warning" role="alert" id="preorder_note_message"
+                 t-if="website_sale_order.is_preorder or website_sale_order.is_presale">
+                Note: Prices are estimates and subject to change without notice for Presale/Preorder
+                Products.
+            </div>
+            <div class="alert alert-danger" role="alert" id="exclusive_msg" t-if="website_sale_order.is_international_preorder">
+                Note : Product's will not consider exclusive  if ordered quantities are less than exclusive minimum quantities and cart quantity will be auto reduce to the available quantity.
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='oe_structure_website_sale_cart_1']" position="after">
+            <t t-if="website_sale_order.website_order_line">
+                <div class="alert alert-danger" role="alert" id="check_pricelist">
+                     Remember to check your price list before proceeding to payment.
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- TASK : https://app.clickup.com/t/86drhx44j { Next day shipping. - development/Dev Testing. } -->
+    <!--Comment : https://app.clickup.com/t/86drhx44j?comment=90170029294415-->
+    <template id="warning_message_preorder" inherit_id="website_sale.confirmation" name="warning_message_preorder">
+        <xpath expr="//div[hasclass('justify-content-between')]" position="after">
+            <t t-if="order.is_next_day_shipping">
+            <br/>
+                <p class="preorder_payment_warning_class alert alert-danger" role="alert">You must upload your voucher payment to send you as next day shipping
+                </p>
+            </t>
+        </xpath>
+    </template>
+
+    <!--TASK: Website - enhancement { https://app.clickup.com/t/86dtwa8bt } -->
+    <template id="inherit_sale_order_re_order_btn_for_order_again" inherit_id="website_sale.sale_order_re_order_btn"
+              name="setu_website_preorders_order_again">
+        <xpath expr="//div[@id='portal_sale_content']" position="before">
+            <t t-set="sale_order_cart"
+               t-value="request.env['sale.order'].sudo().browse(request.session.get('sale_order_id', ''))"/>
+            <t t-if="request.website.enabled_portal_reorder_button and sale_order.with_user(request.env.user).sudo()._is_reorder_allowed()">
+                <t t-if="(sale_order_cart.is_presale or sale_order_cart.is_preorder or sale_order_cart.is_international_preorder or sale_order_cart.is_next_day_shipping) and not(sale_order.is_presale or sale_order.is_preorder or sale_order.is_international_preorder or sale_order.is_next_day_shipping)"
+                   class="list-group-item flex-grow-1">
+                    <div class="alert alert-danger alert-dismissible d-print-none" role="alert"
+                         id="order_again_cart_warning">
+                        Your cart contains products that are not available for In Stock. If you need to reorder, please remove these products from your cart or confirm your current order.
+                    </div>
+                </t>
+                <t t-if="sale_order.filtered(lambda x : x.is_presale or x.is_preorder or x.is_international_preorder or x.is_next_day_shipping)"
+                   class="list-group-item flex-grow-1">
+                    <div class="alert alert-danger alert-dismissible d-print-none" role="alert" id="sale_order_not_instock">
+                        <span>Product reordering does not apply to pre-sale and pre-order orders.</span>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//t[contains(@t-if, 'request.website.enabled_portal_reorder_button and sale_order.with_user(request.env.user).sudo()._is_reorder_allowed()')]"
+               position="after">
+            <t class="list-group-item flex-grow-1">
+                <t t-if="request.website.enable_cancellation_sale_order and sale_order.cancel_order_time_limit and (sale_order.state in ['sale'] or sale_order.locked) and not sale_order.picking_ids.filtered(lambda x: x.assortment_start_date) and not(sale_order.is_presale or sale_order.is_preorder or sale_order.is_next_day_shipping or sale_order.is_international_preorder)">
+                    <button class="btn btn-primary w-100 o_wsale_cancel_button"
+                            t-att-data-sale-order-id="sale_order.id"
+                            t-att-data-sale-order-current-time="current_date_sale_order"
+                            t-att-data-sale-order-cancel-limit-time="cancel_order_time_limit_controller">
+                        <i class="fa fa-trash-o me-1"/>
+                        Cancel Order
+                    </button>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

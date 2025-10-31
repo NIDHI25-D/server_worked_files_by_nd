@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <record id="product_form_view_inherited_for_set_journal_product_wise" model="ir.ui.view">
+            <field name="name">product.form.view.inherited.for.set.journal.product.wise</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='properties']" position="after">
+                    <group>
+                        <group string="Journal">
+                            <field name="journal_id"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

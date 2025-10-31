@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="shipping_carrier_view_list" model="ir.ui.view">
+            <field name="name">shipping_carrier_view_list</field>
+            <field name="model">shipping.carrier</field>
+            <field name="arch" type="xml">
+                <list string="carriers" >
+                    <field name="name" required="True"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="shipping_carrier_action" model="ir.actions.act_window">
+            <field name="name">Shipping Carriers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">shipping.carrier</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record id="shipping_carrier_form_view" model="ir.ui.view">
+            <field name="name">shipping.carrier.form.view</field>
+            <field name="model">shipping.carrier</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                invisible="active == True"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_shipping_carrier_search" model="ir.ui.view">
+            <field name="name">shipping.carrier.search</field>
+            <field name="model">shipping.carrier</field>
+            <field name="arch" type="xml">
+                <search string="Shipping Carrier">
+                    <field name="name" string="Carrier"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <menuitem id="shipping_carrier_menu" name="Carriers" parent="sale.menu_sale_config"
+                  action="shipping_carrier_action" sequence="18"/>
+    </data>
+</odoo>

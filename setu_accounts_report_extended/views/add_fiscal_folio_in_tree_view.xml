@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="add_fiscal_folio_in_tree_view" model="ir.ui.view">
+            <field name="name">add.fiscal.folio.in.tree.view</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='invoice_date']" position="before">
+                    <!-- Add new fields here -->
+                    <field name="l10n_mx_edi_cfdi_uuid"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

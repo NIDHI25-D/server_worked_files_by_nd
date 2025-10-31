@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="sale_order_terms_and_condition_view" model="ir.ui.view">
+            <field name="name">sale.order.terms.and.condition</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='sales_person']" position="inside">
+                    <field name="is_terms_and_condition_accepted" readonly="1"
+                           invisible="is_from_website == False or is_terms_and_condition_accepted == False"/>
+
+                    <field name="terms_and_condition_date" readonly="1"
+                           invisible="is_terms_and_condition_accepted == False"/>
+                    <field name="coupon_point_ids" widget="many2many_tags" readonly="1">
+
+
+                    </field>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_field_carrier_id_in_form_view" model="ir.ui.view">
+            <field name="name">add.field.carrier_id.in.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='picking_policy']" position="after">
+                    <field name="carrier_id" readonly="1" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dashboard_sale_order_tree_view">
+            <field name="name">dashboard.sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <list string="Dashboard Sales Tree">
+                    <field name="name" string="Numero de Presupuesto"/>
+                    <field name="opportunity_id"/>
+                    <field name="partner_id"/>
+                    <field name="date_order" string="Fecha de Cotizacion"/>
+                    <!--                TODO: Need to uncomment-->
+                    <!--                    <field name="x_fecha_surtido"/>-->
+                    <!--                    <field name="x_fecha_factura"/>-->
+                    <!--                <field name="x_fecha_envio"/>-->
+                    <field name="user_id"/>
+                    <field name="dfactura"/>
+                    <field name="mostrador"/>
+                    <field name="pickings_counter"/>
+                    <field name="amount_untaxed" string="Subtotal" sum="Total"/>
+                    <field name="state"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="dashboard_sale_order_action">
+            <field name="name">Dashboard Sales</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="dashboard_sale_order_tree_view"/>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="context">{'create': False, 'search_default_my_quotation': 1}</field>
+        </record>
+
+        <menuitem id="dashboard_sale_order_menu" name="Dashboard Sales"
+                  parent="sale.menu_sale_report"
+                  action="dashboard_sale_order_action"
+                  sequence="1"/>
+
+        <record id="view_form_pre_sale_inherit" model="ir.ui.view">
+            <field name="name">Pre-sale</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_shipping_id" position="attributes">
+                    <attribute name="domain">[('parent_id','=',partner_id)]</attribute>
+                    <attribute name="context">{'show_address': 1}</attribute>
+                </field>
+            </field>
+        </record>
+
+        <!--  Add Tracking Reference filter in sale order -->
+        <record id="add_tracking_reference_in_view_sales_order_filter" model="ir.ui.view">
+            <field name="name">Tracking-reference</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="carrier_tracking_ref"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Set the unit price readonly in sale order-->
+        <record id="set_unit_price_non_editable" model="ir.ui.view">
+            <field name="name">set.unit.price.non.editable</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/list/field[@name='price_unit']"
+                       position="after">
+                    <field name="check_product_type" invisible="1"/>
+                </xpath>
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/list/field[@name='price_unit']"
+                       position="attributes">
+                    <attribute name="readonly">check_product_type != 'service'</attribute>
+                </xpath>
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/list/field[@name='purchase_price']"
+                       position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Task Name - https://app.clickup.com/t/865ckvm6c -->
+        <record id="block_discount_column_order_line" model="ir.ui.view">
+            <field name="name">block.discount.column.order.line</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//notebook/page[@name='order_lines']/field[@name='order_line']/list/field[@name='discount']"
+                       position="before">
+                     <field name="is_discount_group_applied" invisible="1"/>
+                 </xpath>
+                <xpath expr="//notebook/page[@name='order_lines']/field[@name='order_line']/list/field[@name='discount']"
+                       position="attributes">
+                    <attribute name="readonly">is_discount_group_applied == False</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!--  https://app.clickup.com/t/86dqmg61g-->
+        <record id="is_oversized_column_order_line" model="ir.ui.view">
+            <field name="name">is_oversized.column.order.line</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//list/field[@name='product_packaging_qty']" position="before">
+                     <field name="is_oversized" force_save="1"/>
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

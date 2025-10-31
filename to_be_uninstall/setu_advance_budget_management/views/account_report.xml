@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="line_caret_options_extended" inherit_id="account_reports.line_caret_options">
+        <xpath expr="//li[1]" position="after">
+            <t t-if="context.get('report_id', False) == request.env.ref('account_reports.profit_and_loss').id">
+                <li t-if="line['caret_options'] == 'account.account'">
+                    <a role="menuitem" tabindex="-1" t-att-data-id="line.get('account_id') or line['id']"
+                       t-att-data-financial_group_line_id="line.get('model') == 'account.financial.html.report' and line.get('parent_id')"
+                       action="open_position_journal_items" class="dropdown-item">Budget Position
+                    </a>
+                </li>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="journal_filter" inherit_id="account_reports.filter_info_template">
+        <xpath expr="//t[@t-set='journal_value']" position="after">
+            <t t-set="journal_value" t-value="[journal.get('title') for journal in options['journals'] if journal.get('selected') and journal.get('title')]"/>
+        </xpath>
+    </template>
+</odoo>

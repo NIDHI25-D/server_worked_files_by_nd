@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="add_field_shipment_logistic_type_in_stock_picking_form_inherit" model="ir.ui.view">
+            <field name="name">add_field_shipment_logistic_type_in_stock_picking</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='backorder_id']" position="after">
+                    <field name="shipment_logistic_type"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- https://app.clickup.com/t/86dt4vwxa -->
+        <record id="action_report_shipping_label_stock_picking_preview" model="ir.actions.server">
+            <field name="name">Shipping Label</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">form</field>
+            <field name="code">
+                action = model.get_shipping_receipt()
+            </field>
+        </record>
+
+        <record id="meli_oerp_extended_inherited_REF_view_stock_picking_form_meli" model="ir.ui.view">
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="meli_oerp_stock.view_stock_picking_form_meli"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sale_id']" position="after">
+                    <field name="confirm_shipment" invisible="confirm_shipment == False"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

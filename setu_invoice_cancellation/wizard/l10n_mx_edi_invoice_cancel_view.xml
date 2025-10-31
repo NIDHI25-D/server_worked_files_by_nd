@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="l10n_mx_edi_invoice_cancel_form_inherited_for_cancel_motive" model="ir.ui.view">
+            <field name="name">l10n_mx_edi_invoice_cancel.form.inherited.for.cancel.motive</field>
+            <field name="model">l10n_mx_edi.invoice.cancel</field>
+            <field name="inherit_id" ref="l10n_mx_edi.l10n_mx_edi_invoice_cancel_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="inside">
+                    <group>
+                        <field name="reason_id" options="{'no_open':True,'no_create': True}" required="1"
+                               domain="[('is_return','=',False)]"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

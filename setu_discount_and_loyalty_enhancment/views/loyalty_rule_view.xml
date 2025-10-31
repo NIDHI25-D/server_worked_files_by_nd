@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="loyalty_rule_view_form_inherit" model="ir.ui.view">
+        <field name="name">loyalty.rule.view.form.inherit</field>
+        <field name="model">loyalty.rule</field>
+        <field name="inherit_id" ref="loyalty.loyalty_rule_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group/field[@name='product_tag_id']" position="after">
+                <field name="sale_domain" groups="base.group_no_one" widget="domain"
+                       options="{'model': 'sale.order', 'in_dialog': true}"/>
+            </xpath>
+            <xpath expr="//sheet/group[1]" position="attributes">
+                <attribute name="invisible">program_type == 'ewallet'</attribute>
+            </xpath>
+            <xpath expr="//sheet/group[2]" position="attributes">
+                <attribute name="invisible">program_type == 'ewallet'</attribute>
+            </xpath>
+            <xpath expr="//sheet/group[last()]" position="after">
+                <group invisible="program_type != 'ewallet'">
+                    <field name="sale_domain" groups="base.group_no_one" widget="domain"
+                           options="{'model': 'sale.order', 'in_dialog': true}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="loyalty_rule_view_kanban_inherit" model="ir.ui.view">
+        <field name="name">loyalty.rule.view.kanban.inherit</field>
+        <field name="model">loyalty.rule</field>
+        <field name="inherit_id" ref="loyalty.loyalty_rule_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_domain']" position="after">
+                <field name="sale_domain"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
+

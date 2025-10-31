@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="bill_type_view_tree" model="ir.ui.view">
+            <field name="name">bill_type_view_tree</field>
+            <field name="model">bill.type</field>
+            <field name="arch" type="xml">
+                <list string="Bill Type">
+                    <field name="name"/>
+                    <field name="currency_id"/>
+                    <field name="journal_id"/>
+                    <field name="product_id"/>
+                    <field name="account_id"/>
+                    <field name="analytic_id"/>
+                    <field name="is_it_tax_type" />
+                </list>
+            </field>
+        </record>
+
+        <record id="bill_type_view_form" model="ir.ui.view">
+            <field name="name">bill_type_view_form</field>
+            <field name="model">bill.type</field>
+            <field name="arch" type="xml">
+                <form string="Bill Type Form">
+                    <sheet>
+                        <group>
+                            <field name="name" required="True"/>
+                            <field name="currency_id" options="{'no_create': True}"/>
+                            <field name="journal_id" options="{'no_create': True}"/>
+                            <field name="product_id" options="{'no_create': True}"/>
+                            <field name="account_id" options="{'no_create': True}"/>
+                            <field name="analytic_id" options="{'no_create': True}"/>
+                            <field name="is_it_tax_type" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="bill_type_action" model="ir.actions.act_window">
+            <field name="name">Bill Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bill.type</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="bill_type_menu" name="Bill Type" parent="account.menu_finance_payables"
+                  action="setu_bill_and_cash_flux_date.bill_type_action" sequence="2"/>
+    </data>
+</odoo>

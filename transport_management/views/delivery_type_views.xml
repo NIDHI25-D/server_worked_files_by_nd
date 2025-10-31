@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="delivery_type_form_view" model="ir.ui.view">
+        <field name="name">delivery.type.form.view</field>
+        <field name="model">delivery.type</field>
+        <field name="arch" type="xml">
+            <form string="Delivery Type">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Fast Delivery"/>
+                        </h1>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="delivery_type_tree_view" model="ir.ui.view">
+        <field name="name">delivery.type.tree.view</field>
+        <field name="model">delivery.type</field>
+        <field name="arch" type="xml">
+            <list string="Delivery Types">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+    <record id="delivery_type_action" model="ir.actions.act_window">
+        <field name="name">Delivery Types</field>
+        <field name="res_model">delivery.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

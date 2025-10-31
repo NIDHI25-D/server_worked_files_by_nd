@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="res_config_settings_inherited">
+            <field name="name">res.config.settings.inherited</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref='purchase.res_config_settings_view_form_purchase'/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@name='purchase_setting_container']" position="inside">
+                    <div class="col-12 col-lg-6 o_setting_box" id="po_tax_paymnet_days_container">
+                        <div class="o_setting_right_pane">
+                            <label for="po_tax_payment_days_configures"/>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="po_tax_payment_days_configures"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="automatic_expected_arrival_date_automation">
+                        <div class="o_setting_right_pane">
+                            <label for="po_expected_arrival_date_automation"/>
+                            <div class="text-muted">
+                                Add days quantity to the ETA date to establish automatically the Expected Arrival date.
+                            </div>
+                            <div class="mt16">
+                                <field name="po_expected_arrival_date_automation"/>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+                <xpath expr="//block[@name='purchase_setting_container']" position="after">
+                    <!--                    <div class="app_settings_block o_documents_block"-->
+                    <!--                         data-string="Henco API"-->
+                    <!--                         string="Henco API"-->
+                    <!--                         data-key="Henco API">-->
+                    <div groups="setu_purchase_automation.henco_api_group">
+                        <h2>Henco API</h2>
+                        <div class="row mt16 o_settings_container" name="henco_api_data">
+                            <div class="col-12 col-lg-6 o_setting_box" id="henco_api_url_data">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Henco API</span>
+                                    <div>
+                                        <field name="henco_api_url"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="henco_customernum_data">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Henco Customernum</span>
+                                    <div>
+                                        <field name="henco_customernum"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="henco_company_data">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Henco Company</span>
+                                    <div>
+                                        <field name="henco_company"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="henco_linetype_data">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Henco LineType</span>
+                                    <div>
+                                        <field name="henco_linetype"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="henco_level_data">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Henco Level</span>
+                                    <div>
+                                        <field name="henco_level"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="henco_x_api_key_data">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Henco x-api-key</span>
+                                    <div>
+                                        <field name="henco_x_api_key"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="henco_username_data">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Henco Username</span>
+                                    <div>
+                                        <field name="henco_username"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="henco_password_data">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Henco Password</span>
+                                    <div>
+                                        <field name="henco_password"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

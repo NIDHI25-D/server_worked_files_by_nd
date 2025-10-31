@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="stock_warehouse_form_view" model="ir.ui.view">
+            <field name="name">Stock warehouse form</field>
+            <field name="model">stock.warehouse</field>
+            <field name="inherit_id" ref="stock.view_warehouse"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='technical_info']" position="after">
+                    <page string="CTB Repairs">
+                        <group>
+<!--                            <field name="repair_location_id" options="{'no_create_edit': True, 'no_open': True}"/>-->
+                        </group>
+                        <group string="Locations by default on Add">
+<!--                            <field name="src_location_add_id" options="{'no_create_edit': True, 'no_open': True}"/>-->
+                            <field name="dest_location_add_id" options="{'no_create_edit': True, 'no_open': True}"/>
+                        </group>
+                        <group string="Locations by default on Delete">
+                            <field name="src_location_delete_id" options="{'no_create_edit': True, 'no_open': True}"/>
+                            <field name="dest_location_delete_id" options="{'no_create_edit': True, 'no_open': True}"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

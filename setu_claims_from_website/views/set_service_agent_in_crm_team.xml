@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="set_service_agent" model="ir.ui.view">
+            <field name="name">Set Service Agent</field>
+            <field name="model">crm.team</field>
+            <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='left']" position="inside">
+                    <field name="serviceagent_id" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_colony_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.colony</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <group>
+                    <group>
+                        <field name="postal_code_id" options="{'no_open': True, 'no_create_edit': True}"
+                               placeholder="Postal Code"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='type']"
+                   position="after">
+                <br/>
+                <field name="postal_code_id"
+                       options="{'no_open': True, 'no_create_edit': True}"
+                       placeholder="input Postal Code"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

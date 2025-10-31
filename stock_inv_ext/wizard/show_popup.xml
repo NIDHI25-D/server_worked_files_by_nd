@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="picking_button_check_availability_view_form" model="ir.ui.view">
+        <field name="name">picking_button_check_availability_view_form</field>
+        <field name="model">show.pop.up</field>
+        <field name="arch" type="xml">
+            <form>
+                <p>
+                    Are you sure to check the availability again?
+                </p>
+                <footer>
+                    <button name="check_again" type="object" string="Yes" class="btn-primary"/>
+                    <button type="object" special="cancel" string="Cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

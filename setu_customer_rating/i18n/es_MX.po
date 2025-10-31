@@ -1,0 +1,780 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_customer_rating
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-26 03:24+0000\n"
+"PO-Revision-Date: 2023-09-26 16:40-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: setu_customer_rating
+#. odoo-python
+#: code:addons/setu_customer_rating/models/score_conf.py:0
+#, python-format
+msgid "'From Percentage' must be less than 'To Percentage'"
+msgstr "El ‘Porcentaje de Origen’ debe ser inferior al ‘Porcentaje de Destino’"
+
+#. module: setu_customer_rating
+#. odoo-python
+#: code:addons/setu_customer_rating/models/score_conf.py:0
+#, python-format
+msgid "'From Price' must be less than 'To Price'"
+msgstr "El ‘Precio de Origen’ debe ser inferior al ‘Precio de Destino’"
+
+#. module: setu_customer_rating
+#. odoo-python
+#: code:addons/setu_customer_rating/models/score_conf.py:0
+#, python-format
+msgid "'From Quantity' must be less than 'To Quantity'"
+msgstr "La ‘Cantidad de Origen’ debe ser inferior a la ‘Cantidad de Destino’"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,help:setu_customer_rating.field_customer_score__avg_monthly_refund_score
+msgid "(Refund amount * 100 /Sales amount)"
+msgstr "(Devoluciones * 100 /Ventas)"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,help:setu_customer_rating.field_customer_score__avg_monthly_sales_score
+msgid "(Sales amount - refund amount)/months)"
+msgstr "(Ventas - Devoluciones)/Meses)"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__due_after_60_amount
+msgid "Amount"
+msgstr "Importe Vencido"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__amount_invoice_paid_score
+msgid "Amount of Invoices paid after the due date"
+msgstr "Importe de facturas pagadas después del vencimiento"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__amount_invoices_due_after_60_days_score
+msgid "Amount of invoices due after X days"
+msgstr "Cantidad de facturas vencidas después de X días"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,help:setu_customer_rating.field_customer_score__amount_invoice_paid_score
+msgid "Amount of invoices paid after due date (including grace days)"
+msgstr "Importe de facturas pagadas después de la fecha de vencimiento"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__avg_monthly_sales_score
+msgid "Average Monthly Sales"
+msgstr "Promedio mensual de ventas"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__average_monthly_amount
+msgid "Average amount"
+msgstr "Importe Promedio"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,help:setu_customer_rating.field_customer_score__average_payment_days_score
+msgid "Average days in paying"
+msgstr "Promedio de días en pagar"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__avg_monthly_refund_score
+msgid "Average monthly sales refunds"
+msgstr "Promedio mensual de devoluciones"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__average_payment_days_score
+msgid "Average payment days in your purchase history"
+msgstr "Días promedio de pago en su historial de compra"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__calculation_based_on
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__calculation_based_on
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__calculation_based_on
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__calculation_based_on
+msgid "Calculation Based On"
+msgstr "Cálculo basado en"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__calculation_formula
+msgid "Calculation Formula"
+msgstr "Fórmula de cálculo"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_creator_company_exists_form_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_creator_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__canceled_pre_orders
+msgid "Canceled Pre Orders"
+msgstr "Pre-Odenes Canceladas"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__company_id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__company_id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__company_id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_creator__company_id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__company_id
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_rating_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.setu_partner_rating_history_search_view
+msgid "Company"
+msgstr "Compañía"
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: setu_customer_rating
+#: model:ir.ui.menu,name:setu_customer_rating.score_conf_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_creator_company_exists_form_view
+msgid "Configuration already exists for the selected company."
+msgstr "La configuración ya existe para la empresa seleccionada."
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_creator_form_view
+msgid "Create"
+msgstr "Crear"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__create_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__create_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__create_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_creator__create_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__create_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__create_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__create_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__create_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__create_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__create_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_creator__create_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__create_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__create_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__create_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__credit_notes
+msgid "Credit Notes"
+msgstr "Notas de crédito"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__current_customer_rating_id
+msgid "Current Customer Rating"
+msgstr "Calificación actual"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__current_total_score
+msgid "Current Total Score"
+msgstr "Puntuación actual"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_partner__rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_users__rating
+#: model:ir.module.category,name:setu_customer_rating.category_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_rating_res_partner_form_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_rating_tree_view
+msgid "Customer Rating"
+msgstr "Calificación del cliente"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+msgid "Customer Rating History"
+msgstr "Historial"
+
+#. module: setu_customer_rating
+#: model:ir.actions.act_window,name:setu_customer_rating.customer_rating_act_window
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_rating_search_view
+msgid "Customer Ratings"
+msgstr "Calificaciones de los clientes"
+
+#. module: setu_customer_rating
+#: model:ir.actions.act_window,name:setu_customer_rating.customer_score_act_window
+#: model:ir.model,name:setu_customer_rating.model_customer_score
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_partner__customer_score_id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_users__customer_score_id
+#: model:ir.ui.menu,name:setu_customer_rating.customer_score_menu
+#: model:ir.ui.menu,name:setu_customer_rating.score_table_menu
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_res_config_settings_form
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_tree_view
+msgid "Customer Score"
+msgstr "Customer Score"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_config_settings__customer_score_days
+msgid "Customer Score Based On Past X Days"
+msgstr "Puntuación del cliente basada en los últimos X días"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_res_config_settings_form
+msgid "Customer Score Configuration"
+msgstr "Puntuación de la calificación de los clientes"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__customer_score_id
+msgid "Customer score"
+msgstr "Puntuación del cliente"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__date_changed
+msgid "Date Change"
+msgstr "Fecha"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__avg_pay_days
+msgid "Days"
+msgstr "Días"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__display_name
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__display_name
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__display_name
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_creator__display_name
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__display_name
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__display_name
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__display_name
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__due_date_amount
+msgid "Due date amount"
+msgstr "Importe pagado después del vencimiento"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__due_qty
+msgid "Due qty"
+msgstr "Facturas pagadas después del vencimiento"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_res_config_settings_form
+msgid ""
+"Enter past X day's invoices which will be used in the calculation of customer\n"
+"                                        score."
+msgstr ""
+"Ingresar los días que se utilizarán para calcular la calificación del cliente\n"
+"                                        después de la fecha de vencimiento en las facturas."
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_res_config_settings_form
+msgid ""
+"Enter past X days of customer's history of Purchasing which will be used in the\n"
+"                                        calculation of customer score."
+msgstr ""
+"Ingresar los días que se utilizarán para calcular el promedio de ventas\n"
+"                                        en los clientes."
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__from_percentage
+msgid "From Percentage"
+msgstr "Desde"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__from_price
+msgid "From Price"
+msgstr "Desde"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__from_quantity
+msgid "From Quantity"
+msgstr "Desde"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__from_score
+msgid "From Score"
+msgstr "Desde"
+
+#. module: setu_customer_rating
+#: model:ir.actions.server,name:setu_customer_rating.get_customer_scores_cron_ir_actions_server
+#: model:ir.cron,cron_name:setu_customer_rating.get_customer_scores_cron
+msgid "Get Customer Scores"
+msgstr "Obtener Puntuación de los Clientes"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_rating_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.setu_partner_rating_history_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_creator__id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__id
+msgid "ID"
+msgstr "ID"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__invoice_done_after_due_date_ids
+msgid "Invoice Done After Due Date"
+msgstr "Factura pagada después de la fecha de vencimiento"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_config_settings__invoice_journal_ids
+msgid "Invoice Journal"
+msgstr "Diarios de Facturación"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__invoices
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+msgid "Invoices Done After Due Date"
+msgstr "Facturas pagadas después del vencimiento"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__invoices_due_after_60_days
+msgid "Invoices Due After 60 Days"
+msgstr "Facturas vencidas"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+msgid "Invoices Due After X Days"
+msgstr "Facturas vencidas"
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_config_settings__journal_ids
+msgid "Journals"
+msgstr "Diarios"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating____last_update
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score____last_update
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf____last_update
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_creator____last_update
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage____last_update
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price____last_update
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty____last_update
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__write_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__write_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__write_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_creator__write_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__write_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__write_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__write_uid
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__write_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__write_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__write_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_creator__write_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__write_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__write_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__write_date
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: setu_customer_rating
+#: model:res.groups,name:setu_customer_rating.group_setu_customer_rating_manager
+msgid "Manager"
+msgstr "Gerente"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,help:setu_customer_rating.field_customer_score__qty_invoice_paid_score
+msgid "Number of invoices paid after the due date (including grace days)"
+msgstr "Cantidad de facturas pagadas después de fecha de vencimiento"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,help:setu_customer_rating.field_customer_score__qty_invoices_due_after_60_days_score
+msgid "Number of overdue invoices outstanding"
+msgstr "Cantidad de facturas vencidas pendientes de pago"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+msgid "POS Orders Ref"
+msgstr "Ordenes del PDV"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__partner_id
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.setu_partner_rating_history_search_view
+msgid "Partner"
+msgstr "Cliente"
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_setu_partner_rating_history
+msgid "Partner Rating History"
+msgstr "Historial de calificación de clientes"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_based_on__percentage
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_form_view
+msgid "Percentage Range Rules"
+msgstr "Reglas"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__pre_sale_orders_canceled_score
+msgid "Percentage of pre-sale orders canceled"
+msgstr "Porcentaje de Pre-Vetas canceladas"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__pos_order_ids
+msgid "Pos Order"
+msgstr "Orden del TPV"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__pre_score
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__pre_score
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__pre_score
+msgid "Pre Score"
+msgstr "Puntuación"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__previous_customer_rating_id
+msgid "Previous Customer Rating"
+msgstr "Calificación anterior"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_setu_partner_rating_history__previous_total_score
+msgid "Previous Total Score"
+msgstr "Puntuación anterior"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_based_on__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_form_view
+msgid "Price Range Rules"
+msgstr "Reglas"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__due_after_60_quantity
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_based_on__quantity
+msgid "Quantity"
+msgstr "Facturas vencidas"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_form_view
+msgid "Quantity Range Rules"
+msgstr "Reglas"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__qty_invoice_paid_score
+msgid "Quantity of Invoices paid after the due date"
+msgstr "Cantidad de facturas pagadas después del vencimiento"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__qty_invoices_due_after_60_days_score
+msgid "Quantity of invoices due after X days"
+msgstr "Cantidad de facturas vencidas"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__partner_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_rating_res_partner_kanban_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_search_view
+msgid "Rating"
+msgstr "Calificación"
+
+#. module: setu_customer_rating
+#: model:ir.actions.act_window,name:setu_customer_rating.setu_partner_rating_history_action
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__customer_rating_history
+#: model:ir.ui.menu,name:setu_customer_rating.setu_partner_rating_history_child_menu
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.setu_partner_rating_history_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.setu_partner_rating_history_tree_view
+msgid "Rating History"
+msgstr "Historial"
+
+#. module: setu_customer_rating
+#: model:ir.ui.menu,name:setu_customer_rating.customer_rating_menu
+msgid "Rating Table"
+msgstr "Calificaciones"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__average_amount_refund_average
+msgid "Refund Amount"
+msgstr "Devoluciones"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+msgid "Refund Ref"
+msgstr "Devoluciones"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__refund_average_for_refund_percentage
+msgid "Refund average"
+msgstr "Promedio de devoluciones"
+
+#. module: setu_customer_rating
+#: model:ir.ui.menu,name:setu_customer_rating.setu_partner_rating_history_main_menu
+msgid "Reports"
+msgstr "Reportes"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__name
+msgid "Rule"
+msgstr "Regla"
+
+#. module: setu_customer_rating
+#. odoo-python
+#: code:addons/setu_customer_rating/models/customer_rating.py:0
+#: code:addons/setu_customer_rating/models/score_conf.py:0
+#, python-format
+msgid "Rule's price range is conflicting with other rules."
+msgstr "El rango de precios de la regla entra en conflicto con otras reglas."
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__sale_ids
+msgid "Sale"
+msgstr "Venta"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__average_amount_sales_average
+msgid "Sales Amount"
+msgstr "Ventas"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+msgid "Sales Ref"
+msgstr "Ventas"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__sales_average_for_refund_percentage
+msgid "Sales average"
+msgstr "Promedio de ventas"
+
+#. module: setu_customer_rating
+#. odoo-python
+#: code:addons/setu_customer_rating/models/score_conf.py:0
+#, python-format
+msgid "Same Pre-Score can not be applied to new rule."
+msgstr "La misma Puntuación no se puede aplicar a una nueva regla."
+
+#. module: setu_customer_rating
+#. odoo-python
+#: code:addons/setu_customer_rating/models/customer_rating.py:0
+#, python-format
+msgid "Same Rating can not be applied to new rule for the same company."
+msgstr "La misma calificación no se puede aplicar a una nueva regla para la misma empresa."
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__partner_score
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_partner__total_score
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_users__total_score
+msgid "Score"
+msgstr "Puntuación"
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_score_conf
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__score_conf_id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__score_conf_id
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__score_conf_id
+msgid "Score Conf"
+msgstr "Configuración de Puntuación"
+
+#. module: setu_customer_rating
+#: model:ir.actions.act_window,name:setu_customer_rating.score_conf_creator_act_window
+#: model:ir.model,name:setu_customer_rating.model_score_conf_creator
+#: model:ir.ui.menu,name:setu_customer_rating.score_conf_creator_menu
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_creator_company_exists_form_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_creator_form_view
+msgid "Score Conf Creator"
+msgstr "Score Conf Creator"
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_score_conf_line_percentage
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__score_conf_line_percentage_ids
+msgid "Score Conf Line Percentage"
+msgstr "Score Conf Line Percentage"
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_score_conf_line_price
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__score_conf_line_price_ids
+msgid "Score Conf Line Price"
+msgstr "Score Conf Line Price"
+
+#. module: setu_customer_rating
+#: model:ir.model,name:setu_customer_rating.model_score_conf_line_qty
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf__score_conf_line_qty_ids
+msgid "Score Conf Line Qty"
+msgstr "Score Conf Line Qty"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+msgid "Score Details"
+msgstr "Detalles de puntuación"
+
+#. module: setu_customer_rating
+#: model:ir.actions.act_window,name:setu_customer_rating.score_conf_act_window
+#: model:ir.ui.menu,name:setu_customer_rating.score_rules_menu
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_form_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_search_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_tree_view
+msgid "Score Rules"
+msgstr "Reglas de puntuación"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_res_config_settings_form
+msgid "Select journal for invoices."
+msgstr "Selecciona el diario para facturas"
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_res_config_settings_form
+msgid "Select journal for refund invoices."
+msgstr "Selecciona el diario pars devoluciones"
+
+#. module: setu_customer_rating
+#: model:ir.actions.act_window,name:setu_customer_rating.customer_score_config_settings
+#: model:ir.ui.menu,name:setu_customer_rating.customer_score_settings_menu
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,help:setu_customer_rating.field_customer_score__amount_invoices_due_after_60_days_score
+msgid "The outstanding amount of overdue invoices"
+msgstr "Importe pendiente de pago sobre facturas vencidas"
+
+#. module: setu_customer_rating
+#: model_terms:ir.actions.act_window,help:setu_customer_rating.customer_score_act_window
+msgid "There is no Customer Score."
+msgstr "No hay puntuación del cliente"
+
+#. module: setu_customer_rating
+#: model_terms:ir.actions.act_window,help:setu_customer_rating.customer_rating_act_window
+msgid "There is no examples click here to add new Rating Rule.."
+msgstr "No hay ejemplos, haga clic aquí para agregar una nueva regla de calificación."
+
+#. module: setu_customer_rating
+#: model_terms:ir.actions.act_window,help:setu_customer_rating.score_conf_act_window
+msgid "There is no examples click here to add new Score Rules."
+msgstr "No hay ejemplos, haga clic aquí para agregar una nueva regla de puntuación."
+
+#. module: setu_customer_rating
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.customer_score_form_view
+#: model_terms:ir.ui.view,arch_db:setu_customer_rating.score_conf_form_view
+msgid "Title"
+msgstr "Titulo"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_percentage__to_percentage
+msgid "To Percentage"
+msgstr "Hasta"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_price__to_price
+msgid "To Price"
+msgstr "Hasta"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_score_conf_line_qty__to_quantity
+msgid "To Quantity"
+msgstr "Hasta"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_rating__to_score
+msgid "To Score"
+msgstr "Hasta"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_customer_score__total_score
+msgid "Total Score"
+msgstr "Puntuación"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields,field_description:setu_customer_rating.field_res_config_settings__past_days_for_invoice
+msgid "Unpaid Invoices Of Past X Days"
+msgstr "Facturas vencidas en los últimos X días"
+
+#. module: setu_customer_rating
+#: model:res.groups,name:setu_customer_rating.group_setu_customer_rating_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_formula__amt_invoice_due
+msgid "amt_invoice_due"
+msgstr "amt_invoice_due"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_formula__amt_invoice_paid
+msgid "amt_invoice_paid"
+msgstr "amt_invoice_paid"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_formula__avg_monthly_refund
+msgid "avg_monthly_refund"
+msgstr "avg_monthly_refund"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_formula__avg_monthly_sales
+msgid "avg_monthly_sales"
+msgstr "avg_monthly_sales"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_formula__avg_payment_days
+msgid "avg_payment_days"
+msgstr "avg_payment_days"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_formula__qty_invoice_due
+msgid "qty_invoice_due"
+msgstr "qty_invoice_due"
+
+#. module: setu_customer_rating
+#: model:ir.model.fields.selection,name:setu_customer_rating.selection__score_conf__calculation_formula__qty_invoice_paid
+msgid "qty_invoice_paid"
+msgstr "qty_invoice_paid"

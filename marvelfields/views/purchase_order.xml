@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record id="purchase_order_view_related_statement" model="ir.ui.view">
+            <field name="name">purchase.order.view.related.statement</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="email_cc"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="purchase_order_view_add_tracking_page" model="ir.ui.view">
+            <field name="name">purchase.order.view.add.tracking.page</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='purchase_delivery_invoice']" position="after">
+                    <page string="Tracking" name="tracking">
+                        <group name="tracking_po_fields">
+                            <group>
+                                <field name="is_ci"/>
+                                <field name="is_pl"/>
+                                <field name="is_telex"/>
+                                <field name="is_mbl"/>
+                                <field name="is_notified"/>
+                                <field name="is_proforma"/>
+                                <field name="is_cot_imp"/>
+                                <field name="is_revalidate"/>
+                            </group>
+                            <group>
+                                <field name="comments"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

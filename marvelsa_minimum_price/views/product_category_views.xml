@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_category_minimum_price_add" model="ir.ui.view">
+            <field name="name">product.category.price.add</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='first']" position="after">
+                    <group name="minimum" string="Minimum Price Configuration">
+                        <field name="minimum_price_option" placeholder="Blank to disable minimum price or follow product setup."/>
+                        <field name="minimum_price_amount" widget="monetary"
+                               invisible="minimum_price_option == False or minimum_price_option in ('percentage')"/>
+                        <field name="minimum_price_percentage"
+                               invisible="minimum_price_option == False or minimum_price_option in ('amount')"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

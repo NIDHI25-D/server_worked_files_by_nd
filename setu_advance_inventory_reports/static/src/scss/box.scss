@@ -1,0 +1,29 @@
+/* Gradient background for different boxes */
+.box-1 {
+    background: rgb(111,225,131); background: linear-gradient(0deg, rgba(111,225,131,1) 21%, rgba(41,186,183,1) 70%);
+}
+.box-2 {
+    background: rgb(33,196,211); background: linear-gradient(0deg, rgba(33,196,211,1) 21%, rgba(55,156,234,1) 80%);
+}
+.box-3 {
+    background: rgb(244,81,108); background: linear-gradient(0deg, rgba(232,76,155,1) 21%, rgba(244,81,108,1) 80%);
+}
+.box-4 {
+    background: rgb(219,157,44); background: linear-gradient(0deg, rgba(219,157,44,1) 21%, rgba(224,117,40,1) 80%);
+}
+.filter-button{
+    background-color: #1188f8;
+    color: white;
+}
+.st_date_label{
+    font-weight: 500;
+}
+.end_date_label{
+    font-weight: 500;
+}
+.start-date{
+    background-color:#f7f7f7;
+}
+.end-date{
+    background-color:#f7f7f7;
+}

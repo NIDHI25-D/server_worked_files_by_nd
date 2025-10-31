@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <t t-name="setu_send_receipt_by_email.DragAndDropWidgetTemplate" owl="1">
+        <div>
+            <div id="dragdropfn"
+                 draggable="true"
+                 t-on-drop="_onDragDropfn"
+                 t-on-click="_onDragClickfn"
+                 t-ref="canvasWrapper"
+                 class="dnd_normal">
+                <span style="margin-left: 80px">Solo archivos con formato .pdf, html, png, jpeg</span>
+                <br/>
+                <br/>
+                <div>
+                    <img src="/setu_send_receipt_by_email/static/src/img/down_aero_image.png" alt="Download Img"
+                         style="width: 140px; height: auto; margin-left: 130px"/>
+                </div>
+                <br/>
+                <span style="margin-left: 120px">Arrastra aqui tu archivo.</span>
+
+                <input type="file" id="files" multiple="multiple" style="display:none;" t-on-change="_onFilesChange"/>
+            </div>
+        </div>
+    </t>
+</template>

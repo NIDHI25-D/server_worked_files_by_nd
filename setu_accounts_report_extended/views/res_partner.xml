@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_partner_property_form_followup">
+            <field name="name">res.partner.property.form.followup</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account_followup.view_partner_property_form_followup"/>
+            <field name="arch" type="xml">
+                <xpath expr="//a[@name='action_open_overdue_entries']" position="after">
+<!--                       invisible="followup_status not in ('in_need_of_action', 'with_overdue_invoices')"-->
+                    <a name="action_view_overdue_moves"
+                       style="width: 50% !important"
+                       class="fw-bold"
+                       type="object"
+                    >
+                        FollowUp
+                    </a>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

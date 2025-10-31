@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_sugerido_form_qoutation_sugerido_inherit" model="ir.ui.view">
+        <field name="name">Qoutation Sugerido Custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="payment_term_id" position="after">
+                <field name="warehouse_sugerido_id" force_save="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_sale_stock_sugerido_inherit" model="ir.ui.view">
+        <field name="name">Warehouse Readonly</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='warehouse_id'][2]" position="attributes">
+                <attribute name="readonly">False</attribute>
+                <attribute name="domain">[('id','=',warehouse_sugerido_id)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_portal_inherit" model="ir.ui.view">
+        <field name="name">Pedido Portal</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="warehouse_sugerido_id" position="after">
+                <field name="portal"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_mostrador_inherit" model="ir.ui.view">
+        <field name="name">Cliente Mostrador</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="portal" position="after">
+                <!--  https://app.clickup.com/t/865d9qqqu made a changes as per the task -->
+                <field name="mostrador" readonly="is_from_website == True or state in ['done']"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_detener_factura_inherit" model="ir.ui.view">
+        <field name="name">Detener Factura</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="mostrador" position="after">
+                <field name="dfactura" string="Detener envio"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="add_field_is_mark_done_order_view" model="ir.ui.view">
+        <field name="name">add.field.is_mark_done</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='activity_ids']" position="before">
+                <field name="is_mark_done" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="add_field_is_mark_done_quotation_view" model="ir.ui.view">
+        <field name="name">add.field.is_mark_done.quotation.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="is_mark_done" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

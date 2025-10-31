@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="approval_category_form_view" model="ir.ui.view">
+            <field name="name">Approval category custom fields</field>
+            <field name="model">approval.category</field>
+            <field name="inherit_id" ref="approvals.approval_category_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='has_location']" position="after">
+                    <field name="has_currency" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_payment_limit_date" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_bank_id" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_payment_state" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_department_id" widget="radio" options="{'horizontal': true}"/>
+                    <field name="has_job_id" widget="radio" options="{'horizontal': true}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

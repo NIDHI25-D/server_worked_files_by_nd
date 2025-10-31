@@ -1,0 +1,13 @@
+<odoo>
+    <data noupdate="1">
+        <record model="ir.cron" id="confirm_bill_on_schedule_date">
+            <field name="name">Confirm bill on schedule date</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.confirm_bill_on_schedule_date()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="False"/>
+        </record>
+    </data>
+</odoo>

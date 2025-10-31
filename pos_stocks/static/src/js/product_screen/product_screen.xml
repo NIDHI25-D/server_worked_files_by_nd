@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ProductScreen" t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension">
+
+        <xpath expr="//div/div/div/div/ProductCard" position="attributes">
+<!--            <t t-if="pos.config.wk_display_stock and props.product.type != 'service'">-->
+            <attribute name="stockQuantity">get_information(product.id)</attribute>
+<!--            </t>-->
+        </xpath>
+    </t>
+</templates>

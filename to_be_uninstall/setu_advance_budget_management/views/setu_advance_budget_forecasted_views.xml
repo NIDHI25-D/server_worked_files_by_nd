@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="setu_advance_budget_forecasted_tree_view" model="ir.ui.view">
+            <field name="name">setu.advance.budget.forecasted.tree.view</field>
+            <field name="model">setu.advance.budget.forecasted</field>
+            <field name="arch" type="xml">
+                <tree string="Advance Budget">
+                    <field name="name"/>
+                    <field name="setu_advance_budget_forecasted_type_id"/>
+                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="setu_advance_budget_forecasted_form_view" model="ir.ui.view">
+            <field name="name">setu.advance.budget.forecasted.form.view</field>
+            <field name="model">setu.advance.budget.forecasted</field>
+            <field name="arch" type="xml">
+                <form string="Advance Budget">
+                    <header>
+                        <button string="Calculate Period" name="action_budget_create_periods"
+                                attrs="{'invisible': [('state', 'in', ['confirm','cancel','validate','done'])]}"
+                                type="object" class="oe_highlight"/>
+                        <button string="Confirm" name="action_budget_confirm"
+                                attrs="{'invisible': [('state', 'in', ['confirm','cancel','validate','done'])]}"
+                                states="draft" type="object" />
+<!--                        <button string="Calculate Budget Forecast" name="action_calculate_budget_forecast"-->
+<!--                                attrs="{'invisible': [('state', 'in', ['draft','confirm','cancel','done'])]}"-->
+<!--                                class="oe_highlight" type="object"/>-->
+                        <button string="Approve" name="action_budget_validate"
+                                attrs="{'invisible': [('state', 'in', ['draft','cancel','validate','done'])]}"
+                                type="object" class="oe_highlight"/>
+                        <button string="Done" name="action_budget_done"
+                                attrs="{'invisible': [('state', 'in', ['draft','confirm','cancel','done'])]}"
+                                type="object" class="oe_highlight"/>
+                        <button string="Reset to Draft" name="action_budget_draft"
+                                attrs="{'invisible': [('state', 'in', ['draft','confirm','validate','done'])]}"
+                                type="object"/>
+                        <button string="Recreation Budget"
+                                name="%(setu_advance_budget_management.setu_advance_budget_forecasted_recreation)d"
+                                attrs="{'invisible': [('state', 'in', ['draft','confirm','validate','cancel'])]}"
+                                class="oe_inline oe_stat_button" type="action"/>
+                        <button string="Cancel Budget" name="action_budget_cancel"
+                                attrs="{'invisible': [('state', 'in', ['draft','done','cancel'])]}" type="object"/>
+                        <button string="Pre-Filled Plan" name="action_pre_filled_plan" type='object'
+                                attrs="{'invisible': [('state', 'in', ['draft','validate','done','cancel'])]}"/>
+                        <button string="Update Actual Data" name="update_actual_data" type='object'/>
+<!--                                attrs="{'invisible': [('state', 'in', ['draft','validate','done','cancel'])]}"-->
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="active_open_reaction_budget" type="object" class="oe_stat_button"
+                                    style="color:#16A085;" icon="fa-cogs"
+                                    attrs="{'invisible': [('number_of_reaction_budget', '=', 0)]}">
+                                <field name="number_of_reaction_budget" widget="statinfo" string="Recreation Budget"/>
+                            </button>
+                            <button name="action_view_forecasted_sheet" type="object" class="oe_stat_button"
+                                    style="color:#5EBEC4;" icon="fa-database"
+                                    attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="total_forecasted_sheet" widget="statinfo" string="Sheet"/>
+                            </button>
+                            <button name="action_view_forecasted_sheet_line" type="object" class="oe_stat_button"
+                                    style="color:#9A341E;" icon="fa-info"
+                                    attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="total_forecasted_sheet_line" widget="statinfo" string="Lines"/>
+                            </button>
+                            <button name="action_view_forecasted_position" type="object" class="oe_stat_button"
+                                    style="color:green;" icon="fa-thumbs-up"
+                                    attrs="{'invisible': [('state', '=', 'draft')]}">
+                                <field name="total_forecasted_position" widget="statinfo" string="Positions"/>
+                            </button>
+                            <button name="action_show_forecasted_position_details" type="object" class="oe_stat_button"
+                                    style="color:red;" icon="fa-chevron-circle-up"
+                                    attrs="{'invisible': [('state', 'in', ['draft','confirm','cancel','validate'])]}">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Reporting</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" attrs="{'readonly':[('state','!=','draft')]}"
+                                       placeholder="Budget Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="setu_advance_budget_forecasted_type_id"/>
+                                <field name="current_budget_forecasted_id"
+                                       attrs="{'invisible': [('current_budget_forecasted_id', '=', False)]}"/>
+                            </group>
+                            <group>
+                                <label for="date_from" string="Period"/>
+                                <div>
+                                    <field name="date_from" class="oe_inline"
+                                           attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    -
+                                    <field name="date_to" class="oe_inline"
+                                           attrs="{'readonly':[('state','!=','draft')]}" nolabel="1"/>
+                                </div>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Budget Sheet" name="budget_sheet"
+                                  attrs="{'invisible': [('setu_advance_budget_forecasted_sheet_ids', '=', [])]}">
+                                <field name="setu_advance_budget_forecasted_sheet_ids" nolabel="1">
+                                    <tree string="Sheet" create="false" edit="false" delete="false">
+                                        <field name="analytic_account_id"/>
+                                        <field name="planned_amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Budget Periods" name="budget_periods">
+                                <field name="setu_advance_budget_forecasted_periods_ids"
+                                       context="{'default_start_date': date_from,'default_start_date': date_to}"
+                                       nolabel="1" attrs="{'readonly':[('state','!=','draft')]}">
+                                    <tree string="Budget Periods" create="false">
+                                        <field name="start_date"/>
+                                        <field name="end_date"/>
+                                        <field name="forecasted_type"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="setu_advance_budget_forecasted_action" model="ir.actions.act_window">
+            <field name="name">Advance Budget</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">setu.advance.budget.forecasted</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Advance Budget.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="setu_advance_budget_forecasted_planing_main_menu" parent="account.menu_finance_entries"
+                  name="Budgets Planing" sequence="60" groups="account.group_account_manager"/>
+        <menuitem id="setu_advance_budget_forecasted_menu" name="Advance Budget"
+                  parent="setu_advance_budget_forecasted_planing_main_menu"
+                  action="setu_advance_budget_forecasted_action"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="setu_multi_ecommerce_connector_tree_view" model="ir.ui.view">
+        <field name="name">setu.multi.ecommerce.connector.tree.view.inherit</field>
+        <field name="model">setu.multi.ecommerce.connector</field>
+        <field name="inherit_id" ref="setu_ecommerce_based.setu_multi_ecommerce_connector_tree_view"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="oracle_connector_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="setu_multi_ecommerce_connector_from_view" model="ir.ui.view">
+        <field name="name">setu.multi.ecommerce.connector.form.view.inherit</field>
+        <field name="model">setu.multi.ecommerce.connector</field>
+        <field name="inherit_id" ref="setu_ecommerce_based.setu_multi_ecommerce_connector_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='common_setup']" position="before">
+                <page string="Store Setup" name="store_information"
+                      attrs="{'invisible': [('ecommerce_connector', '!=', 'oracle_connector')]}">
+                    <group>
+                        <group>
+                            <field name="user_name"/>
+                            <field name="password" password="1"/>
+                            <field name="oracle_authorization" password="1"/>
+                        </group>
+                        <group>
+                            <field name="host"/>
+                            <field name="remember_client"/>
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="setu_multi_ecommerce_connector_oracle_action" model="ir.actions.act_window">
+        <field name="name">Oracle Integration</field>
+        <field name="res_model">setu.multi.ecommerce.connector</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="setu_multi_ecommerce_connector_tree_view"/>
+        <field name="context">{'default_ecommerce_connector': 'oracle_connector'}</field>
+        <field name="domain">[('ecommerce_connector', '=', 'oracle_connector')]</field>
+    </record>
+
+    <menuitem id="setu_multi_ecommerce_connector_oracle_menu" name="Oracle Integration"
+              parent="setu_oracle_configration_main_menu" sequence="2"
+              action="setu_multi_ecommerce_connector_oracle_action"/>
+</odoo>

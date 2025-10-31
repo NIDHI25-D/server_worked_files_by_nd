@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_enable_repair_configuration" model="ir.ui.view">
+            <field name="name">res.config.settings.view.enable_repair_configuration</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='languages']" position="before">
+                    <div id="approvals_settings">
+                        <h2>Default Pricelist RepairOrder</h2>
+                        <div class="col-xs-12 row o_settings_container" name="repair_setting_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="repair_autocomplete">
+                                <div class="o_setting_right_pane border-start-0">
+                                    <div class="content-group">
+                                        <div class="row mt8">
+                                            <label class="col-lg-6" string="Default Pricelist Repair Order"
+                                                   for="website_domain"/>
+                                            <field name="change_pricelist_id"
+                                                   title="Set the default pricelist repair order" options="{'no_create_edit': True, 'no_open': True}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

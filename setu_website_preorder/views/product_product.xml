@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="presale_price_product_product" model="ir.ui.view">
+            <field name="name">product.product.presale.price</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="before">
+                    <field name="presale_price_incl_tax" string="Pre-sale Price" readonly="1"/>
+                    <field name="is_international_pre_order_product" invisible="1"/>
+                    <field name="exclusive_partner_id"/>
+                    <field name="calculated_qty" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

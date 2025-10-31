@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="shipping_order_details_mail_template" model="mail.template">
+            <field name="name">Shipping Order Details Mail Template</field>
+            <field name="model_id" ref="transport_management.model_transport_shipment"/>
+            <field name="subject">Shipment Order Created</field>
+            <field name="email_from">{{object.company_id.email}}</field>
+            <field name="partner_to">{{ object.driver_id.id }}</field>
+            <field name="body_html" type="html">
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            Dear,
+                            <br/>
+                            <h4>
+                                <strong>
+                                    <t t-out="object.driver_id.name"/>
+                                </strong>
+                            </h4>
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    We hope this email finds you well. We are reaching out to inform you about a new shipment order that
+                    has been created and assigned to you. Please review the following details:
+                </p>
+                <hr/>
+                <table>
+                    <tr>
+                        <td>
+                            <strong>
+                                Order Number:
+                            </strong>
+                        </td>
+                        <td>
+                            <t t-out="object.code"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Vehicle:
+                            </strong>
+                        </td>
+                        <td>
+                            <t t-out="object.vehicle_id.brand_id.name"/>&#160;/&#160;
+                            <t t-out="object.vehicle_id.model_id.name"/>&#160;/&#160;
+                            <t t-out="object.vehicle_id.license_plate"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Transport Route:
+                            </strong>
+                        </td>
+                        <td>
+                            <t t-out="object.route_id.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Source Location:
+                            </strong>
+                        </td>
+                        <td>
+                            <t t-out="object.route_id.source_location_id.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Destination Location:
+                            </strong>
+                        </td>
+                        <td>
+                            <t t-out="object.route_id.destination_location_id.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Pickup Date:
+                            </strong>
+                        </td>
+                        <td>
+                            <t t-out="object.shipment_date"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Expected Date of Delivery:
+                            </strong>
+                        </td>
+                        <td>
+                            <t t-out="object.delivery_date"/>
+                        </td>
+                    </tr>
+                </table>
+                <hr/>
+                <p>
+                    Your prompt attention to this shipment is appreciated. Kindly make the necessary arrangements to
+                    fulfill the pickup and delivery as per the provided information. If you have any questions or
+                    require additional instructions, please don't hesitate to contact our customer support team at
+                    <strong>
+                        <t t-out="object.transporter_id.phone"/>
+                    </strong>
+                </p>
+                <p>
+                    We trust in your professionalism and commitment to providing excellent service. We will be
+                    monitoring the progress of this shipment and are available to assist you throughout the process.
+                </p>
+                <p>
+                    Thank you for your dedication to our company and for delivering our customers' orders with care. We
+                    look forward to a successful completion of this shipment.
+                </p>
+                <br/>
+                <h6>
+                    Best regards,
+                </h6>
+                <h5>
+                    <strong>
+                        <t t-out="object.transporter_id.partner_id.name"/>
+                    </strong>
+                </h5>
+                <hr/>
+                <span>
+                    <h6>
+                        <t t-out="object.transporter_id.name"/>
+                    </h6>
+                    <t t-out="object.transporter_id.phone"/>
+                    <br/>
+                    <t t-out="object.transporter_id.email"/>
+                </span>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

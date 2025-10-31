@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="setu_pos_extended_inherit_pos_config_view_form" model="ir.ui.view">
+        <field name="name">setu.pos.extended.inherit.pos.config.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <block id="pos_accounting_section" position="inside">
+                <setting string="Supplier For Invoice Approval"
+                         help="Partner address use at the time of preparing invoice approval file">
+                    <field name="approval_partner_for_invoice"/>
+                </setting>
+            </block>
+            <block id="pos_pricing_section" position="inside">
+                <setting string="Enable Sales Team"
+                         help="Show up sales team in inventory.">
+                    <field name="enable_sale_team"/>
+                </setting>
+            </block>
+            <block id="pos_interface_section" position="inside">
+                <setting string="Default Customer"
+                         help="Select Customer for POS">
+                    <field name="pos_default_partner_id"/>
+                </setting>
+            </block>
+        </field>
+    </record>
+
+</odoo>

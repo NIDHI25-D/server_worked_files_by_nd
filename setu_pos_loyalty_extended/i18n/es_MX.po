@@ -1,0 +1,399 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_pos_loyalty_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-06 10:20+0000\n"
+"PO-Revision-Date: 2022-05-06 10:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#, python-format
+msgid "--Select Payment way--"
+msgstr "--Selección de la manera de pago"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#, python-format
+msgid "--Select Usage--"
+msgstr "--Selección de uso--"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__g01
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__g01
+#, python-format
+msgid "Acquisition of merchandise"
+msgstr "Adquisición de mercancías"
+
+#. module: setu_pos_loyalty_extended
+#: model_terms:ir.ui.view,arch_db:setu_pos_loyalty_extended.pos_config_view_form_pos_loyalty_extends
+msgid "Allow to create automatic credit note."
+msgstr "Permitir crear una nota de crédito automática."
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__i04
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__i04
+#, python-format
+msgid "Computer equipment and accessories"
+msgstr "Equipo de cómputo y accesorios"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__i01
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__i01
+#, python-format
+msgid "Constructions"
+msgstr "Construcciones"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config__create_credit_note
+msgid "Create Automatic Credit Note"
+msgstr "Crear una nota de crédito automática"
+
+#. module: setu_pos_loyalty_extended
+#: model_terms:ir.ui.view,arch_db:setu_pos_loyalty_extended.pos_config_view_form_pos_loyalty_extends
+msgid "Create automatic credit note"
+msgstr "Crear una nota de crédito automática"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config__analytics_account_for_credit_notes
+msgid "Credit notes Analytics account"
+msgstr "Cuenta de análisis de notas de crédito"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config__journal_id_for_credit_notes
+msgid "Credit notes Journal"
+msgstr "Diario de notas de crédito"
+
+#. module: setu_pos_loyalty_extended
+#: code:addons/setu_pos_loyalty_extended/model/pos_order.py:0
+#, python-format
+msgid "Customer Invoice"
+msgstr "Factura del cliente"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config__l10n_mx_edi_payment_method_id_pos
+msgid "Default Payment way"
+msgstr "Forma de pago por defecto"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d09
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d09
+#, python-format
+msgid "Deposits in savings accounts, premiums based on pension plans."
+msgstr "Depósitos en cuentas para el ahorro, primas que tengan como base planes de pensiones"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__i05
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__i05
+#, python-format
+msgid "Dices, dies, molds, matrices and tooling"
+msgstr "Dados, troqueles, moldes, matrices y herramental"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config__display_name
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_order__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d04
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d04
+#, python-format
+msgid "Donations"
+msgstr "Donativos"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d03
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d03
+#, python-format
+msgid "Funeral expenses"
+msgstr "Gastos funerales"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__g03
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__g03
+#, python-format
+msgid "General expenses"
+msgstr "Gastos en general"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#, python-format
+msgid "Hello"
+msgstr "Hola"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config__id
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_order__id
+msgid "ID"
+msgstr "IDENTIFICACIÓN"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#, python-format
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config____last_update
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_order____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d08
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d08
+#, python-format
+msgid "Mandatory School Transportation Expenses"
+msgstr "Gastos de transportación escolar obligatoria"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d02
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d02
+#, python-format
+msgid "Medical expenses for disability"
+msgstr "Gastos médicos por incapacidad o discapacidad"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d07
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d07
+#, python-format
+msgid "Medical insurance premiums"
+msgstr "Primas por seguros de gastos médicos"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d01
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d01
+#, python-format
+msgid "Medical, dental and hospital expenses."
+msgstr "Honorarios médicos, dentales y gastos hospitalarios"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__i02
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__i02
+#, python-format
+msgid "Office furniture and equipment investment"
+msgstr "Mobilario y equipo de oficina por inversiones"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__i08
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__i08
+#, python-format
+msgid "Other machinery and equipment"
+msgstr "Otra maquinaria y equipo"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_order__l10n_mx_edi_payment_method_id
+#, python-format
+msgid "Payment Way"
+msgstr "Forma de pago"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/js/paymentway.js:0
+#, python-format
+msgid "Payment way must be selected"
+msgstr "Se debe seleccionar la forma de pago"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d10
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d10
+#, python-format
+msgid "Payments for educational services (Colegiatura)"
+msgstr "Pagos por servicios educativos (colegiaturas)"
+
+#. module: setu_pos_loyalty_extended
+#: code:addons/setu_pos_loyalty_extended/model/pos_order.py:0
+#, python-format
+msgid "Please provide a partner for the sale."
+msgstr "Proporcione un socio para la venta."
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model,name:setu_pos_loyalty_extended.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración del punto de venta"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model,name:setu_pos_loyalty_extended.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos de punto de venta"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config__product_ids
+msgid "Product"
+msgstr "Producto"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d05
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d05
+#, python-format
+msgid "Real interest effectively paid for mortgage loans (room house)"
+msgstr "Intereses reales efectivamente pagados por créditos hipotecarios (casa habitación)"
+
+#. module: setu_pos_loyalty_extended
+#: code:addons/setu_pos_loyalty_extended/model/pos_order.py:0
+#, python-format
+msgid "Refund invoice is not sign due to %s is not signed."
+msgstr "La factura de reembolso no es un signo debido a %s no está firmada."
+
+#. module: setu_pos_loyalty_extended
+#: code:addons/setu_pos_loyalty_extended/model/pos_order.py:0
+#, python-format
+msgid "Refund invoice is not sign due to the invoice not generated yet."
+msgstr "La factura de reembolso no es un signo debido a la factura aún no se genera."
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__g02
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__g02
+#, python-format
+msgid "Returns, discounts or bonuses"
+msgstr "Devoluciones, descuentos o bonificaciones"
+
+#. module: setu_pos_loyalty_extended
+#: code:addons/setu_pos_loyalty_extended/model/pos_order.py:0
+#, python-format
+msgid "Reversal of: %s"
+msgstr ""
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__i07
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__i07
+#, python-format
+msgid "Satellite communications"
+msgstr "Comunicaciones satelitales"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__i06
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__i06
+#, python-format
+msgid "Telephone communications"
+msgstr "Comunicaciones telefónicas"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__p01
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__p01
+#, python-format
+msgid "To define"
+msgstr "Por definir"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__i03
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__i03
+#, python-format
+msgid "Transportation equipment"
+msgstr "Equipo de transporte"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_config__l10n_mx_edi_usage_id_pos
+#: model:ir.model.fields,field_description:setu_pos_loyalty_extended.field_pos_order__l10n_mx_edi_usage_id
+#, python-format
+msgid "Usage"
+msgstr "Uso"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/js/paymentway.js:0
+#, python-format
+msgid "Usage must be selected"
+msgstr "Se debe seleccionar el uso"
+
+#. module: setu_pos_loyalty_extended
+#: model:ir.model.fields,help:setu_pos_loyalty_extended.field_pos_config__l10n_mx_edi_usage_id_pos
+#: model:ir.model.fields,help:setu_pos_loyalty_extended.field_pos_order__l10n_mx_edi_usage_id
+msgid ""
+"Used in CFDI 3.3 to express the key to the usage that will gives the receiver to this invoice. This value is defined by the customer.\n"
+"Note: It is not cause for cancellation if the key set is not the usage that will give the receiver of the document."
+msgstr ""
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__d06
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__d06
+#, python-format
+msgid "Voluntary contributions to SAR"
+msgstr "Aportaciones voluntarias al SAR"
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/js/paymentway.js:0
+#: code:addons/setu_pos_loyalty_extended/static/src/js/paymentway.js:0
+#, python-format
+msgid "Warning!"
+msgstr "¡Advertencia!"
+
+#. module: setu_pos_loyalty_extended
+#: code:addons/setu_pos_loyalty_extended/model/pos_order.py:0
+#, python-format
+msgid ""
+"You have to select only those products which tax configure in Create "
+"Automatic Credit Note"
+msgstr ""
+
+#. module: setu_pos_loyalty_extended
+#. openerp-web
+#: code:addons/setu_pos_loyalty_extended/static/src/xml/paymentScreen.xml:0
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_config__l10n_mx_edi_usage_id_pos__s01
+#: model:ir.model.fields.selection,name:setu_pos_loyalty_extended.selection__pos_order__l10n_mx_edi_usage_id__s01
+#, python-format
+msgid "Without fiscal effects"
+msgstr "Sin Efectos Fiscales"

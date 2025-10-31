@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="automatic_sign_chanegs" model="ir.ui.view">
+        <field name="name">view.automatic.sign.for.loyalty.program</field>
+        <field name="model">loyalty.program</field>
+        <field name="inherit_id" ref="loyalty.loyalty_program_view_form"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <field name="need_to_exclude_from_automatic_sign"/>
+            </field>
+        </field>
+    </record>
+    <record id="setu_discount_and_loyalty_enhancment_inherited_REF_loyalty_program_gift_ewallet_view_form"
+            model="ir.ui.view">
+        <field name="name">loyalty.program.gift.ewallet.view.form.extended</field>
+        <field name="model">loyalty.program</field>
+        <field name="inherit_id" ref="loyalty.loyalty_program_gift_ewallet_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group[2]/field[last()]" position="after">
+                <group>
+                    <field name="rule_ids" colspan="2" mode="kanban" nolabel="1" add-label="Add a rule"
+                           class="o_loyalty_kanban_inline" widget="loyalty_one2many"
+                           invisible="program_type != 'ewallet'"
+                           context="{'currency_symbol': currency_symbol, 'program_type': program_type}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

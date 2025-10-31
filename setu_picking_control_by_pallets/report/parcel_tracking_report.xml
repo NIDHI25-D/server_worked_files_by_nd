@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="report_parcel_tracking">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+<!--                    <div style="text-align: center !important;">-->
+<!--                        <h2>-->
+<!--                            <b>-->
+<!--                                PARCEL TRACKING-->
+<!--                            </b>-->
+<!--                        </h2>-->
+<!--                    </div>-->
+<!--                    <div style="text-align: center !important;border-top: 1px solid gray;border-bottom: 1px solid gray;">-->
+<!--                        <h3>-->
+<!--                            <b>-->
+<!--                                Destination package-->
+<!--                            </b>-->
+<!--                        </h3>-->
+<!--                    </div>-->
+<!--                    <div style="text-align: center !important;border-bottom: 1px solid gray;">-->
+<!--                        <h1>-->
+<!--                            <t t-esc="o.name"/>-->
+<!--                        </h1>-->
+<!--                    </div>-->
+                    <div style="border-bottom: 1px solid gray;"/>
+                    <br/>
+                    <div style="border-bottom: 1px solid gray; font-size:21px;">
+
+                        <strong>Reference:</strong>
+                        <t t-if="o and o.picking_id">
+                            <strong>
+                                <t t-esc="o.picking_id.name"/>
+                            </strong>
+                        </t>
+
+                        <br/>
+                        <strong>Source document:</strong>
+                        <t t-if="o and o.picking_id ">
+                            <strong>
+                                <t t-esc="o.picking_id.origin"/>
+                            </strong>
+                        </t>
+
+                        <br/>
+                        <strong>Customer name:</strong>
+                        <t t-if="o and o.picking_id.partner_id">
+                            <strong>
+                                <t t-esc="o.picking_id.partner_id.name"/>
+                            </strong>
+                        </t>
+
+                        <br/>
+
+                        <strong>Delivery Address:</strong>
+                        <t t-if="o and o.picking_id.partner_id">
+                            <t t-esc="o.picking_id.partner_id"
+                               t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'/>
+                        </t>
+                        <div style="float: right;">
+                            <t t-set="setu_package_url" t-value="'/setu_package/%s'%(o.id)"/>
+                            <t t-set="package_encoded_url"
+                               t-value="o.get_package_encoded_url(o,o._name,setu_package_url)"/>
+                            <img t-att-src="'/report/barcode/?barcode_type=QR&amp;value=%s&amp;width=%s&amp;height=%s' % (package_encoded_url,250,250)"
+                                 alt="Barcode"/>
+                        </div>
+                        <strong>Box count:</strong>
+                        <strong>
+                            <t t-esc="o.picking_id.box_count"/>
+                        </strong>
+                        <br/>
+                        <strong>package count:</strong>
+                        <t t-if="o and o.picking_id">
+                            <strong>
+                                <t t-esc="o.picking_id.package_count"/>
+                            </strong>
+                        </t>
+                        <br/>
+                        <strong>Pallet count:</strong>
+                        <t t-if="o and o.picking_id">
+                            <strong>
+                                <t t-esc="o.picking_id.pallet_count"/>
+                            </strong>
+                        </t>
+                        <br/>
+                        <strong>Carrier:</strong>
+                        <t t-if="o and o.picking_id">
+                            <strong>
+                                <t t-esc="o.picking_id.shipping_carrier_id.name"/>
+                            </strong>
+                        </t>
+                        <br/>
+                        <strong>RFC:</strong>
+                        <t t-if="o and o.picking_id.partner_id">
+                            <strong>
+                                <t t-esc="o.picking_id.partner_id.vat"/>
+                            </strong>
+                        </t>
+                        <br/>
+                        <strong>Phone:</strong>
+                        <t t-if="o and o.picking_id.partner_id">
+                            <strong>
+                                <t t-esc="o.picking_id.partner_id.phone"/>
+                            </strong>
+                        </t>
+                        <br/>
+                        <strong>Weight for shipping:</strong>
+                        <strong>
+                            <t t-esc="o.shipping_weight"/>
+                        </strong>
+                        <br/>
+                        <strong>Payment state:</strong>
+                        <strong>
+                            <t t-if="o.picking_id.payment_state == 'paid'">Paid</t>
+                        </strong>
+                        <strong>
+                            <t t-if="o.picking_id.payment_state == 'to_pay'">To Pay</t>
+                        </strong>
+                        <strong>
+                            <t t-if="o.picking_id.payment_state == 'tm'">TM</t>
+                        </strong>
+                        <strong>
+                            <t t-if="o.picking_id.payment_state == 'gscli'">GSCLI</t>
+                        </strong>
+                        <br/>
+                        <strong>Comments:</strong>
+                        <t t-if="o and o.picking_id">
+                            <strong>
+                                <t t-esc="o.picking_id.comentarios_picking"/>
+                            </strong>
+                        </t>
+                    </div>
+<!--                    <br/>-->
+<!--                    <br/>-->
+<!--                    <div style="text-align: center !important;">-->
+<!--                        <t t-set="setu_package_url" t-value="'/setu_package/%s'%(o.id)"/>-->
+<!--                        <t t-set="package_encoded_url"-->
+<!--                           t-value="o.get_package_encoded_url(o,o._name,setu_package_url)"/>-->
+
+<!--                        <img t-att-src="'/report/barcode/?barcode_type=QR&amp;value=%s&amp;width=%s&amp;height=%s' % (package_encoded_url,250,250)"-->
+<!--                             alt="Barcode"/>-->
+
+<!--                    </div>-->
+                    <p style="page-break-after: always;"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

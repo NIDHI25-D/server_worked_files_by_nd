@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="True">
+        <record id="website_dummy_user" model="res.partner">
+            <field name="name">Website Dummy User</field>
+            <field name="active" eval="False"/>
+            <field name="street" eval="2"/>
+            <field name="street2" eval="2"/>
+            <field name="zip" eval="360000"/>
+            <field name="country_id" eval="2"/>
+            <field name="state_id" eval="2"/>
+            <field name="l10n_mx_edi_colony" eval="2"/>
+            <field name="city" eval="2"/>
+            <field name="is_company_user" eval="True"/>
+        </record>
+
+        <record id="check_contact_to_create_po" model="ir.cron">
+            <field name="name">Check Contacts</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+<!--            <field name="numbercall">-1</field>-->
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">model.check_contacts()</field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="price_bases_tree_view" model="ir.ui.view">
+        <field name="name">price.bases.tree</field>
+        <field name="model">price.bases</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="day_start"/>
+                <field name="day_end"/>
+                <field name="discount"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="price_bases_form_view" model="ir.ui.view">
+        <field name="name">price.bases.form.view</field>
+        <field name="model">price.bases</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <label for="day_start" string="Date"/>
+                        <div>
+                            From
+                            <field name="day_start" class="oe_inline"/>
+                            to
+                            <field name="day_end" class="oe_inline"/>
+                        </div>
+                        <field name="discount"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+<!--    <record id="action_price_base" model="ir.actions.act_window">-->
+<!--        <field name="name">Price Base</field>-->
+<!--        <field name="res_model">price.base</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+<!--    <menuitem id="menu_price_base" name="Price Base"-->
+<!--              parent="setu_price_update.prod_price_update_menu"-->
+<!--              action="setu_price_update.action_price_base"/>-->
+</odoo>

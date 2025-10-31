@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <template id="website_products_search_by_brand" name='Product brand search' inherit_id="website_sale.products">
+            <xpath expr="//div[hasclass('o_wsale_products_main_row')]/aside[@id='products_grid_before']/div"
+                   position="inside">
+                <form t-if="not new_arrivals" action="/shop" class="js_brand_form">
+                    <input t-if="category" type="hidden" name="category" t-att-value="category.id"/>
+                    <input type="hidden" name="search" t-att-value="search"/>
+                    <input type="hidden" name="order" t-att-value="order"/>
+                    <div>
+                        <p style="background:#116466;color:white;border-radius:5px;padding-left:5px">Brands</p>
+                    </div>
+                    <div style="max-height:500px;overflow-y:auto">
+                        <t t-set="brand_domain" t-value="[('is_published','=',True)]"/>
+                        <t t-if="category">
+                            <t t-esc="brand_domain.append(('public_categ_ids','in',category.get_website_public_category_domain_for_brand()))"/>
+                        </t>
+                        <t t-if="search">
+                            <t t-esc="brand_domain.extend(['|', '|', '|', '|', ('name', 'ilike', search), ('product_variant_ids.default_code', 'ilike', search), ('compatible_ids', 'ilike', search), ('description', 'ilike', search), ('description_sale', 'ilike', search)])"/>
+                        </t>
+                        <t t-foreach="request.env['product.template'].search(brand_domain).mapped('product_brand_id').sorted(key=lambda b:b.name.lower())"
+                           t-as="brand">
+                            <div class="d-flex align-items-center">
+                                <input t-att-id="brand.id" type="checkbox" class="mr-2 js_brand" name="brand"
+                                       t-att-value="brand.id"
+                                       t-att-checked="'checked' if active_brand and brand.id in active_brand else None"/>
+                                <span style="margin-left:5px;">
+                                    <t t-esc="brand.name"/>
+                                </span>
+                            </div>
+                        </t>
+                    </div>
+                    <div style="margin-top:20px">
+                        <p style="background:#116466;color:white;border-radius:5px;padding-left:5px">Product Types</p>
+                    </div>
+                    <t t-foreach="request.env['ir.model.fields'].sudo().search([('name','=','product_type_marvelsa'),('model_id.model','=','product.template')]).selection_ids"
+                       t-as="product_type" style="max-height:100px;overflow-y:auto">
+                        <div class="d-flex align-items-center">
+                            <input t-att-id="product_type.value" type="checkbox" class="mr-2 js_brand"
+                                   name="product_type"
+                                   t-att-value="product_type.value"
+                                   t-att-checked="'checked' if active_product_type and int(product_type.value) in active_product_type else None"/>
+                            <span style="margin-left:5px;">
+                                <p class="m-0" t-field="product_type.name"/>
+                            </span>
+                        </div>
+                    </t>
+                </form>
+            </xpath>
+        </template>
+
+        <template id="website_search_box_size" inherit_id="website.website_search_box">
+            <xpath expr="//div[@role='search']" position="attributes">
+                <attribute name="style">min-width:200px</attribute>
+            </xpath>
+        </template>
+        <!-- TASK  : MVSA - Change the price color - Portal Bolder ::: DISCOUNT COLORS   -->
+        <template id="add_discount_color" inherit_id="website_sale.products_item">
+            <xpath  expr="//div[hasclass('product_price')]/span[hasclass('h6')]" position="attributes">
+                <attribute name="style">color:red;</attribute>
+            </xpath>
+        </template>
+        <template id="inherit_product_price_template" inherit_id="website_sale.product_price">
+            <xpath expr="//h3[hasclass('css_editable_mode_hidden')]/span[hasclass('oe_price')]" position="attributes">
+                <attribute name="style">color:red;</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-attf-class, 'text-muted')]"
+                   position="attributes">
+                <attribute name="t-attf-class">text-dark oe_default_price ms-1 h5 {{'' if
+                    combination_info['has_discounted_price'] else 'd-none'}}
+                </attribute>
+            </xpath>
+        </template>
+    </data>
+</odoo>

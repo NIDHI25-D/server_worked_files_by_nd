@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="shipment_reschedule_wizard_form_view" model="ir.ui.view">
+        <field name="name">shipment.reschedule.wizard.form.view</field>
+        <field name="model">shipment.reschedule</field>
+        <field name="arch" type="xml">
+            <form string="Shipment Reschedule">
+                <group>
+                    <group>
+                        <field name="pickup_date"/>
+                    </group>
+                    <group>
+                        <field name="delivery_date"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Reschedule" name="shipment_reschedule" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="shipment_reschedule_wizard_action" model="ir.actions.act_window">
+        <field name="name">Shipment Reschedule</field>
+        <field name="res_model">shipment.reschedule</field>
+        <field name="view_id" ref="shipment_reschedule_wizard_form_view"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

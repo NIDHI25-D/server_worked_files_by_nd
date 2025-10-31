@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="auth_signup_login_inherited" inherit_id="auth_signup.login">
+            <xpath expr="//p[hasclass('text-center')]" position="replace">
+                <div style="text-align:center;">
+                    <a t-if="signup_enabled" t-attf-href="/web/signup?{{ keep_query() }}">If you are a service workshop, register here!</a>
+                </div>
+                <div style="text-align:center;">
+                    <a t-if="reset_password_enabled" class="btn btn-primary" t-attf-href="/web/reset_password?{{ keep_query() }}">Reset Password</a>
+                </div>
+            </xpath>
+            <xpath expr="//a[@t-if='reset_password_enabled']" position="replace"/>
+        </template>
+    </data>
+</odoo>

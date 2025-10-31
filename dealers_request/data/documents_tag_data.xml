@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="documents_dealer_status_to_validate" model="documents.tag" forcecreate="0">
+            <field name="name">Dealer > To Approve</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="documents_dealer_status_validate" model="documents.tag" forcecreate="0">
+            <field name="name">Dealer > Approved</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record id="documents_dealer_status_reject" model="documents.tag" forcecreate="0">
+            <field name="name">Dealer > Rejected</field>
+            <field name="sequence">3</field>
+        </record>
+    </data>
+</odoo>

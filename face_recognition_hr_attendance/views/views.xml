@@ -1,0 +1,70 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="face_recognition_hr_employee_form_view">
+            <field name="name">face_recognition_hr_attendance form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Images 2">
+                        <group>
+                            <field name="recognition_image_ids" mode="kanban">
+                                <kanban class="o_kanban_mobile">
+                                    <field name="id"/>
+                                    <field name="name"/>
+                                    <field name="image_data"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div t-attf-class="oe_kanban_global_click">
+                                                <div class="o_kanban_image">
+                                                    <img alt="Avatar"
+                                                        t-att-src="kanban_image('hr.employee.image', 'image_data', record.id.raw_value)"/>
+                                                </div>
+                                                <div class="oe_kanban_details">
+                                                    <span>
+                                                        <field name="name"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                                <list>
+                                    <field name="name"/>
+                                    <field name="image_data"/>
+                                </list>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                            </group>
+                                            <group string="Face Image">
+                                                <field name="image_data" class="oe_avatar" widget="image" nolabel="1"
+                                                        options="{'size': [200, 200]}"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                        <group>
+                            <label for="barcode"/>
+                            <div class="o_row">
+                                <field name="barcode"/>
+                                <button string="Generate" class="btn btn-link" type="object"
+                                        name="generate_random_barcode"
+                                        invisible="barcode != False"/>
+                                <button name="%(hr.hr_employee_print_badge)d" string="Print Badge" class="btn btn-link"
+                                        type="action" invisible="barcode == False"/>
+                            </div>
+                        </group>
+                        <button  name="save_encodings" type="object" 
+                                title="Update after adding new images">Update Recognition Model
+                        </button>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

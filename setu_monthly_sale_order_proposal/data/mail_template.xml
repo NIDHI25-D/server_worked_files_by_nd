@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data noupdate="1">
+
+        <!-- Error Email template  -->
+        <record id="mail_template_to_notify_customer_for_proposal" model="mail.template">
+            <field name="name">Send mail to customer for monthly proposal</field>
+            <field name="subject">Proposal based on previous purchases</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="auto_delete" eval="False" />
+            <field name="body_html">
+                <![CDATA[
+                Dear Customer,<br>
+                <p>We have created one proposal base on your previous purchases please check your cart to
+                get great discount !!!<br></p><br>
+                Thank You.
+                ]]>
+            </field>
+        </record>
+
+        <record id="mail_template_to_notify_user_for_proposal" model="mail.template">
+            <field name="name">Send mail to user for monthly proposal</field>
+            <field name="subject">Mail about monthly proposal</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="auto_delete" eval="False" />
+            <field name="body_html">
+                <![CDATA[
+                Dear User,<br>
+                <p>Here is the information about monthly proposal order<br></p><br>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Error Email template -->
+        <record id="mail_template_to_notify_customer_for_interval_proposal" model="mail.template">
+            <field name="name">Send mail to customer for monthly interval proposal</field>
+            <field name="subject">Proposal based on previous monthly interval purchases</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="auto_delete" eval="False" />
+            <field name="body_html">
+                <![CDATA[
+                Dear Customer,<br>
+                <p>We have created one proposal base on previous monthly interval purchases please check your cart to
+                get great discount !!!<br></p><br>
+                Thank You.
+                ]]>
+            </field>
+        </record>
+
+        <record id="mail_template_to_notify_user_for_interval_proposal" model="mail.template">
+            <field name="name">Send mail to user for monthly interval proposal</field>
+            <field name="subject">Mail about monthly interval proposal</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                Dear User,<br>
+                <p>Here is the information about monthly interval proposal order<br></p><br>
+                ]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

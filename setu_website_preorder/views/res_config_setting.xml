@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.website.pre.order</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <block id="website_info_settings" position="after">
+                <h2>Pre-Order/Pre-Sale</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box" id="enable_pre_order">
+                        <div class="o_setting_left_pane">
+                            <field name="enable_pre_order"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="enable_pre_order"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="enable_pre_sale">
+                        <div class="o_setting_left_pane">
+                            <field name="enable_pre_sale"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="enable_pre_sale"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="stock_pick_type">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Stock Warehouse</span>
+                            <div class="text-muted">
+                                Select Warehouse from where stock needs to be considered
+                            </div>
+                            <div class="content-group">
+                                <field name="stock_pick_type"/>
+                            </div>
+                            <div>
+                                <field name="warehouse_default_id"
+                                       invisible="stock_pick_type != 'Specific'"
+                                       required="stock_pick_type == 'Specific'"/>
+                            </div>
+                            <div>
+                                <field name="warehouse_default_ids" widget="many2many_tags"
+                                       invisible="stock_pick_type != 'Several'"
+                                       required="stock_pick_type == 'Several'"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="enable_pre_sale">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Stock Warehouse</span>
+                            <div class="text-muted">
+                                Select Default Warehouse pre-order/pre-sale Orders
+                            </div>
+                            <div>
+                                <field name="warehouse_id"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="pre_sale_exchange_rate">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Pre-sale Exchange Rate</span>
+                            <div class="text-muted">
+                                Set Presale Exchange Rate
+                            </div>
+                            <div>
+                                <field name="presale_exchange_rate"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="pre_sale_pricelist">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Pre-sale Pricelist</span>
+                            <div class="text-muted">
+                                Select Presale Pricelist
+                            </div>
+                            <div>
+                                <field name="presale_pricelist"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- changes as per the task https://app.clickup.com/t/86dqj0qt6 -->
+                    <div class="col-12 col-lg-6 o_setting_box" id="pre_sale_excluded_pricelist">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Excluded Pricelist</span>
+                            <div class="text-muted">
+                                Select Excluded Pricelist
+                            </div>
+                            <div>
+                                <field name="excluded_pricelist_id"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  changes as per the task https://app.clickup.com/t/86dquj6gg -->
+                    <div class="col-12 col-lg-6 o_setting_box" id="presale_price_cash_payment">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Cash Payment</span>
+                            <div class="text-muted">
+                                Set Cash Payment
+                            </div>
+                            <div>
+                                <field name="cash_payment"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="pre_available_qty_multiplier">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Available Quantity Multiplier</span>
+                            <div>
+                                <field name="available_qty_multiplier"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="pre_minimum_amt_qty">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Minimum Amount Quantity</span>
+                            <div>
+                                <field name="minimum_amt_qty"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="pre_days_for_calculation">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Configure Days for Calculation</span>
+                            <div>
+                                <field name="days_for_calculation"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="pre_international_pre_order_msg">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">International Pre-order Message</span>
+                            <div>
+                                <field name="international_preorder_msg" class=" mt-5 w-100" widget="html"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="intl_preorder_pricelist">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">International Preorder Pricelist</span>
+                            <div class="text-muted">
+                                Select International Preorder Pricelist
+                            </div>
+                            <div>
+                                <field name="intl_preorder_pricelist_id"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="cash_next_day_pricelist">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Cash Next Day Specific Pricelist</span>
+                            <div class="text-muted">
+                                Select Cash Next Day Pricelist
+                            </div>
+                            <div>
+                                <field name="cash_next_day_pricelist_id"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="credit_next_day_pricelist">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Credit Next Day Specific Pricelist</span>
+                            <div class="text-muted">
+                                Select Credit Next Day Pricelist
+                            </div>
+                            <div>
+                                <field name="credit_next_day_pricelist_id"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="presale_msg">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Pre-Sale Message</span>
+                            <div>
+                                <field name="presale_msg" class=" mt-5 w-100"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 o_setting_box" id="config_quantity">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Config Quantity</span>
+                            <div class="text-muted">
+                                Configure the quantity for pre-order and when the product are arrived or crossed this
+                                quantity then notify the user which are selected in Activity User.
+                            </div>
+                            <div>
+                                <field name="config_quantity"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="activity_owner_ids">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Activity User</span>
+                            <div class="text-muted">
+                                Select The Users to get notified when preorder quantity are fulfilled and arrived or crossed the Config Quantity.
+                            </div>
+                            <div>
+                                <field name="activity_owner_ids" widget="many2many_tags"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="cancellation_order">
+                        <div class="o_setting_left_pane">
+                            <field name="enable_cancellation_sale_order"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="enable_cancellation_sale_order"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="time_limit_cancel_order"
+                         invisible="enable_cancellation_sale_order == False">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Time limit to cancel the orders (Hrs)</span>
+                            <div>
+                                <field name="time_limit_to_cancel_order"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="reason_of_cancellation_for_picking">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Cancellation Reason for Picking</span>
+                            <div>
+                                <field name="cancellation_reason_for_picking_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </block>
+        </field>
+    </record>
+</odoo>

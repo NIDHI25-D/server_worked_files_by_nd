@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_setu_access_rights,access_setu_access_rights,model_setu_access_rights,base.group_user,1,1,1,1
+access_setu_field_access,access_setu_field_access,model_setu_field_access,base.group_user,1,1,1,1
+access_setu_reports_access,access_setu_reports_access,model_setu_reports_access,base.group_user,1,1,1,1
+access_setu_act_window_access,access_setu_act_window_access,model_setu_act_window_access,base.group_user,1,1,1,1
+access_setu_model_access,access_setu_model_access,model_setu_model_access,base.group_user,1,1,1,1
+access_setu_notebook_access,access_setu_notebook_access,model_setu_notebook_access,base.group_user,1,1,1,1
+access_setu_menu_access,access_setu_menu_access,model_setu_menu_access,base.group_user,1,1,1,1

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="new_claim_form" name="Request for new claims">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Claims</t>
+            </t>
+            <form action="/create-claim/submit" method="post" class="js_claims_form" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <div class="table-responsive-lg">
+                    <table class="table bg-white">
+                        <tr>
+                            <td>
+                                <label for="company_name">Company Name:</label>
+                            </td>
+                            <td>
+                                <t t-if="partner.parent_id">
+                                    <input type="hidden"  name="company_id" t-att-value="partner.parent_id.id" />
+                                    <input class="form-control" type="text" id="company_name" name="company_name" t-att-value="partner.parent_id.name" readonly="1"/>
+                                </t>
+                                <t t-if="not partner.parent_id">
+                                    <input type="hidden"  name="company_id" t-att-value="partner.parent_id.id" />
+                                    <input class="form-control" type="text" id="company_name_character" name="company_name" t-att-value="partner.company_name" readonly="1"/>
+                                </t>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="select_invoice">Invoice:</label>
+                            </td>
+                            <td>
+                                <select class="form-control js_invoice_box" required="1" name="invoices" disabled="'disabled' if partner_invoice else None">
+
+                                    <t t-foreach="partner.invoice_ids.filtered(lambda x:x.state == 'posted' and x.move_type == 'out_invoice')" t-as="invoice">
+                                        <option t-att-data-team-id="invoice.team_id.id" t-att-value="invoice.id" t-att-selected="'selected' if partner_invoice and partner_invoice.id == invoice.id else None">
+                                            <t t-esc="invoice.name"/>
+                                        </option>
+                                    </t>
+                                </select>
+                                <input type="hidden" class="form-control" name="invoice_id" t-att-value="partner_invoice.id"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="name">Customer Name:</label>
+                            </td>
+                            <td>
+                                <input type="hidden"  name="partner_id" t-att-value="partner.id" />
+                                <input class="form-control" type="text" id="name" name="partner_name" t-att-value="partner.name" readonly="1"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="contact_information">Customer Information:</label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" name="contact_info" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="phone">Your Phone Number:</label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="tel" id="phone" name="partner_phone"
+                                       pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" t-att-value="partner.phone" readonly="1"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="email">Your Email:</label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="email" id="email" name="email_from" t-att-value="partner.email" readonly="1"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="agent">Service Agent:</label>
+                            </td>
+                            <td>
+                                <t t-set="all_team_id" t-value="partner.invoice_ids.mapped('team_id')"/>
+                                <t t-foreach="all_team_id" t-as="team_id">
+                                    <span class="d-none set_team" t-att-data-id="team_id.id"><t t-esc="team_id.name" /></span>
+                                </t>
+                                 <input class="form-control js_service_box_id" name="team_id"  type="hidden" />
+                                 <input class="form-control js_service_box" type="text" id="agent" name="team_id_name" readonly="1"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="claim">Claims Category:</label>
+                            </td>
+                            <td required="1">
+                                <t t-set="category" t-value="request.env['crm.case.categ'].sudo().search([('available_on_website', '!=', False)])"/>
+                                <select class="form-control js_claims" name="js_claim" id="claim" required="1">
+                                    <option value="0">--Select Claim--</option>
+                                    <t t-foreach="category" t-as="category_id">
+                                        <option t-esc="category_id.name" t-att-value="category_id.id"/>
+                                    </t>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="claim_desc">Claim Description:</label>
+                            </td>
+                            <td>
+                                <textarea class="form-control" id="claim_desc" required="1" name="desc"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="claims">Models:</label>
+                            </td>
+                            <td>
+                                <select class="form-control js_models" name="js_model" required="1">
+                                    <option value="">--Select Product--</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="serial_no">Serial Number:</label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" id="serial_no" name="serial_number"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="evidence">Evidence:</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="image_upload">&amp;nbsp;Minimum photograph</input>
+                                <span style="color:red; font-size:11px;">(Supports png, jpeg, jpg format)</span>
+                                <br/>
+                                <div id="file_image">
+                                    <input type="file" name="add_evidence_image" class="images" accept="image/*"/>
+                                    <br/>
+                                     <input type="file" name="add_evidence_image_1" class="images" accept="image/*"/>
+                                    <br/>
+                                    <input type="file" name="add_evidence_image_2" class="images" accept="image/*"/>
+                                    <br/>
+                                </div>
+                                <input type="checkbox" name="video">&amp;nbsp;1 video</input>
+                                <span style="color:red; font-size:11px;">(Supports mp4, mkv, webm format)</span>
+                                <br/>
+                                <div id="file_video">
+                                    <input type="file" name="add_evidence_video" class="videos"  accept="video/*"/>
+                                    <br/>
+                                </div>
+                                <input type="checkbox" name="text">&amp;nbsp;1 txt document</input>
+                                <span style="color:red; font-size:11px;">(Supports pdf, docx, txt format)</span>
+                                <br/>
+                                <div id="file_text">
+                                    <input type="file" name="add_evidence_text" class="text_document" accept=".pdf, .docx, .doc, .txt"/>
+                                    <br/>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="text-center">
+                            <td colspan="2">
+                                <button class="btn btn-primary">Save Claims</button>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </form>
+        </t>
+    </template>
+</odoo>

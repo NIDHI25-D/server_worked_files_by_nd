@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_employee_performance">
+        <field name="name">Employee Performance</field>
+        <field name="res_model">employee.performance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create new Performance</p>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_employee_performance_form">
+        <field name="name">Employee Performance</field>
+        <field name="model">employee.performance</field>
+        <field name="arch" type="xml">
+            <form string="Employee Performance">
+                <header>
+                    <button name="action_submit" type="object"
+                            string="Submit" states="draft,reset"
+                            class="oe_highlight"
+                            groups="ninebox_employee_performance.group_ninebox_performance_user"/>
+
+                    <button name="action_completed" type="object"
+                            string="Complete" states="submitted"
+                            class="oe_highlight"
+                            groups="ninebox_employee_performance.group_ninebox_performance_manager"/>
+
+                    <button name="action_reset" type="object"
+                            string="Reset to draft"
+                            states="submitted,completed"
+                            groups="ninebox_employee_performance.group_ninebox_performance_manager"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submitted,completed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id" readonly="1" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="review_schedule_id" options="{'no_create_edit': True, 'no_open': True}"
+                                   invisible="1"/>
+                            <field name="period_id" options="{'no_create_edit': True, 'no_open': True}" readonly="1"/>
+                        </group>
+                        <group invisible="1">
+                            <field name="x_rate"/>
+                            <field name="y_rate"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Self Assessment"
+                              groups="ninebox_employee_performance.group_ninebox_performance_user">
+                            <field name="emp_asses_ques_rev_ids">
+                                <tree string="Self Assessment" editable="bottom" create="false" delete="false">
+                                    <field name="performance_id" invisible="1"/>
+                                    <field name="period_id" invisible="1"/>
+                                    <field name="assessment_period" invisible="1"/>
+                                    <field name="assessment_question_id" readonly="1" force_save="1"/>
+                                    <field name="rating_ids" widget="many2many_tags" invisible="1"/>
+                                    <field name="rating_id" domain="[('id','in',rating_ids)]"
+                                           options="{'no_open': True, 'no_create_edit': True, 'no_quick_create': True}"
+                                           create="0"/>
+                                    <field name="assessment_comment"/>
+                                </tree>
+
+                            </field>
+                        </page>
+                        <page string="Manager Assessment"
+                              groups="ninebox_employee_performance.group_ninebox_performance_manager">
+                            <field name="mgr_asses_ques_rev_ids">
+                                <tree string="Manager Assessment" editable="bottom" create="false" delete="false">
+                                    <field name="performance_id" invisible="1"/>
+                                    <field name="period_id" invisible="1"/>
+                                    <field name="assessment_period" invisible="1"/>
+                                    <field name="assessment_question_id" readonly="1" force_save="1"/>
+                                    <field name="rating_ids" widget="many2many_tags" invisible="1"/>
+                                    <field name="rating_id" domain="[('id','in',rating_ids)]"
+                                           options="{'no_open': True, 'no_create_edit': True , 'no_quick_create': True}" create="0"/>
+                                    <field name="assessment_comment"/>
+                                </tree>
+                                <form string="Manager Assessment">
+                                    <group>
+                                        <field name="assessment_question_id" readonly="1" options="{'no_open': True}"/>
+                                    </group>
+                                    <group>
+                                        <field name="rating_ids" widget="many2many_tags" invisible="1"/>
+                                        <field name="rating_id" readonly="1" options="{'no_open': True}"/>
+                                    </group>
+                                    <group>
+                                        <field name="assessment_comment" readonly="1"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_employee_performance_tree">
+        <field name="name">Employee Performance</field>
+        <field name="model">employee.performance</field>
+        <field name="arch" type="xml">
+            <tree string="Review Schedule">
+                <field name="employee_id"/>
+                <field name="period_id"/>
+                <field name="state"
+                       widget="badge"
+                       decoration-success="state == 'completed'"
+                       decoration-warning="state == 'submitted'"
+                       decoration-info="state == 'draft'"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_employee_performance"
+            name="Performance"
+            parent="ninebox_employee_performance.menu_employee_performance_root"
+            groups="ninebox_employee_performance.group_ninebox_performance_user,ninebox_employee_performance.group_ninebox_performance_manager"
+            sequence="1"/>
+
+    <menuitem
+            id="menu_action_employee_performance"
+            name="Employee Performance"
+            action="action_employee_performance"
+            groups="ninebox_employee_performance.group_ninebox_performance_user,ninebox_employee_performance.group_ninebox_performance_manager"
+            parent="menu_employee_performance"
+            sequence="2"/>
+</odoo>

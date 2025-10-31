@@ -1,0 +1,1557 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_website_preorder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-22 07:25+0000\n"
+"PO-Revision-Date: 2024-03-22 07:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "* Prices subject to change per day, until their arrival at Marvelsa."
+msgstr ""
+"* Los precios en Pre Venta incrementarán por cada día transcurrido hasta su "
+"arribo."
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid ""
+"*Condiciones de pago: No es necesario un deposito en garantia, puedes "
+"utilizar tus condiciones de pago."
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid ""
+"*El tiempo de espera de tu pre orden es de 5 a 18 dias aproximadamente a "
+"partir de la confirmación de tu pedido ya que depende de el tiempo de "
+"fabricacion."
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "*En algunos productos sera necesario cumplir con un minimo de unidades"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid ""
+"*Recuerda que para agregar producto de Pre orden sera necesario no tener "
+"producto bajo ninguna otra condición en tu carrito, en el caso de preventa o"
+" en existencia."
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.show_stock_information_in_mobile_view
+msgid "<b>Product Type</b>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.inherit_sale_order_re_order_btn_for_order_again
+msgid ""
+"<i class=\"fa fa-trash-o me-1\"/>\n"
+"                        Cancel Order"
+msgstr ""
+"<i class=\"fa fa-trash-o me-1\"/>\n"
+"                        Cancelar Pedido"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Available Quantity Multiplier</span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Cancellation Reason for Picking</span>"
+msgstr "<span class=\"o_form_label\">Motivo de Cancelación de Picking</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Cash Payment</span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Configure Days for Calculation </span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Excluded Pricelist</span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">International Pre-order Message</span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">International Preorder Pricelist</span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Minimum Amount Quantity</span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Pre-sale Exchange Rate</span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Pre-sale Pricelist</span>"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Stock Warehouse</span>"
+msgstr "<span class=\"“o_form_label”\">Ubicación de almacén</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Time limit to cancel the orders (Hrs)</span>"
+msgstr "<span class=\"o_form_label\">Tiempo Límite para Cancelar los pedidos (Hrs)</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.inherit_product_price_template_for_presale
+msgid "<span style=\"margin-right:53px\" class=\"price_message\">In Stock </span>"
+msgstr ""
+"<span style=\"margin-right:53px\" class=\"price_message\">En Existencia "
+"</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "<span>All Products</span>"
+msgstr "<span>Todos los Productos </span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "<span>Instock Product</span>"
+msgstr "<span>Productos en Existencia</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "<span>International Preorder Products</span>"
+msgstr "<span>Productos de Pre-Order Internacional</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "<span>National Preorder Products</span>"
+msgstr "<span>Productos de Pre-Order Nacional</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "<span>Next Day Shipping</span>"
+msgstr "<span>Envío Día Siguiente</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "<span>Preorder Products</span>"
+msgstr "<span>Productos en Pre-Orden</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "<span>Presale Products</span>"
+msgstr "<span>Productos en Pre-Venta</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.inherit_sale_order_re_order_btn_for_order_again
+msgid ""
+"<span>Product reordering does not apply to pre-sale and pre-order "
+"orders.</span>"
+msgstr ""
+"<span>El Reordenamiento de productos no aplica para pedidos de pre-venta y pre- "
+"orden</span>"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.products_add_to_cart
+msgid "Add one"
+msgstr "Añadir"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields.selection,name:setu_website_preorder.selection__website__stock_pick_type__all
+msgid "All"
+msgstr "Todo"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.show_stock_information_in_mobile_view
+msgid ""
+"All\n"
+"                                Products"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid ""
+"All\n"
+"                        Products"
+msgstr ""
+"Todos los\n"
+"                        Productos"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.view_wizard_action_form_po
+msgid "Are you sure to confirm the purchase order with currency:"
+msgstr "¿Está seguro de confirmar la orden de compra con la moneda:"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/website_sale_cancel.xml:0
+#, python-format
+msgid "Are you sure you want to cancel this sale order?"
+msgstr "Está seguro de que desea cancelar este pedido de venta? "
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/website_sale_cancel.xml:0
+#, python-format
+msgid "Cancel Sale Order"
+msgstr "Cancelar Pedido de Venta"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "As International Preorder"
+msgstr "En Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "As Next Day Shipping"
+msgstr "Como Envio Dia Siguiente"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.inherit_product_price_template_for_presale
+msgid "As Pre-Sale *"
+msgstr "En Pre Venta *"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "As Preorder"
+msgstr "Como Pre-Orden"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "As Presale"
+msgstr "En Pre Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_stock_picking__assortment_end_date
+msgid "Assortment End Date"
+msgstr "Fecha de Término de surtido"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_stock_picking__assortment_start_date
+msgid "Assortment Start Date"
+msgstr "Fecha de inicio de surtido"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.cart_lines_inherit_website_preorder_presale_message
+msgid "Available"
+msgstr "Disponible"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Available For International Preorder"
+msgstr "Disponible para Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Available For Preorder"
+msgstr "Disponible para Pre-Orden"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Available In Stock"
+msgstr "En existencia"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__available_qty_multiplier
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__available_qty_multiplier
+msgid "Available Quantity Multiplier"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Available as"
+msgstr "Disponible como"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__available_for_presale
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__available_for_presale
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__is_presale_type
+msgid "Available for Pre-Sale"
+msgstr "Disponible para Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__available_for_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__available_for_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__is_preorder_type
+msgid "Available for Pre-order"
+msgstr "Disponible para Pre-Orden"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/presale_products_informations_template.xml:0
+#, python-format
+msgid "Available for Presale"
+msgstr "Disponible para Pre-Venta"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Buy It"
+msgstr "Adquierelo"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Bye it as"
+msgstr "Cómpralo como"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.view_wizard_action_form_po
+msgid "CONFIRMATION"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.actions.server,name:setu_website_preorder.ir_cron_calculate_min_qty_ir_actions_server
+#: model:ir.cron,cron_name:setu_website_preorder.ir_cron_calculate_min_qty
+msgid "Calculate Minimum Quantity"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__calculated_qty
+msgid "Calulated Quantity"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__cash_payment
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__cash_payment
+msgid "Cash Payment"
+msgstr "Pago de contado"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.inherit_product_price_template_for_presale
+msgid "Cash Payment - 9%, Punctual Credit Payment - 7%"
+msgstr "Pago de Contado - 9%, Pago Puntual a Crédito -7%"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Conditions Table"
+msgstr "Tabla de Condiciones"
+
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__days_for_calculation
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__days_for_calculation
+msgid "Configure Days for Website Available Quantity"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.actions.act_window,name:setu_website_preorder.action_confirm
+msgid "Confirm"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.actions.act_window,name:setu_website_preorder.action_confirm_po
+msgid "Confirm Purchase Order"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.view_wizard_action_form
+msgid "Confirm Wizard"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.setu_convert_to_presale_button
+msgid "Convert To Presale"
+msgstr "Convertir en Pre-Venta"
+
+#. module: setu_website_preorder
+#: model_terms:ir.actions.act_window,help:setu_website_preorder.setu_pre_order_purchase_form_action
+msgid "Create a National Pre-order Request."
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.actions.act_window,help:setu_website_preorder.setu_pre_sale_purchase_form_action
+msgid "Create a Pre-sale Request."
+msgstr "Crear una Solicitud de Pre-Venta."
+
+#. module: setu_website_preorder
+#: model_terms:ir.actions.act_window,help:setu_website_preorder.setu_inter_national_pre_order_purchase_form_action
+msgid "Create an International Pre-order Request."
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_confirm_wizard__create_uid
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__create_uid
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__create_uid
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__create_uid
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_confirm_wizard__create_date
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__create_date
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__create_date
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__create_date
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__stock_pick_type
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__stock_pick_type
+msgid "Default Stock Location"
+msgstr "Ubicacion de Existencias por Defecto"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__warehouse_default_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__warehouse_default_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__warehouse_id
+msgid "Default Warehouse"
+msgstr "Almacen por Defecto"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__warehouse_default_ids
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__warehouse_default_ids
+msgid "Default Warehouses"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__delivery_estimated_time
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__delivery_estimated_time
+#, python-format
+msgid "Delivery Estimated Time"
+msgstr "Tiempo de Entrega Estimado en Dias"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_confirm_wizard__display_name
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__display_name
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__display_name
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__display_name
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__display_quantity
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__display_quantity
+msgid "Display Product Quantity On Website"
+msgstr "Mostrar la cantidad de productos en el sitio web"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__enable_pre_order
+msgid "Enable PreOrder"
+msgstr "Habilitar Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__enable_pre_order
+msgid "Enable PreOrder "
+msgstr "Habilitar Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__enable_pre_sale
+msgid "Enable PreSale"
+msgstr "Habilitar Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__enable_pre_sale
+msgid "Enable PreSale "
+msgstr "Habilitar Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__enable_cancellation_sale_order
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__enable_cancellation_sale_order
+msgid "Enable Website sale orders cancellation"
+msgstr "Habilitar Cancelacion de Pedidos desde el Sitio Web"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,help:setu_website_preorder.field_product_product__is_presale_type
+#: model:ir.model.fields,help:setu_website_preorder.field_product_template__is_presale_type
+#: model:ir.model.fields,help:setu_website_preorder.field_purchase_order__is_presale_type
+msgid ""
+"Enabled the field to display the product as pre-Sale once it is below the "
+"specified minimum quantity."
+msgstr ""
+"Habilitó el campo para mostrar el producto como Pre-Venta una vez que esté "
+"por debajo de la cantidad mínima especificada."
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,help:setu_website_preorder.field_product_product__is_preorder_type
+#: model:ir.model.fields,help:setu_website_preorder.field_product_template__is_preorder_type
+#: model:ir.model.fields,help:setu_website_preorder.field_purchase_order__is_preorder_type
+msgid ""
+"Enabled the field to display the product as pre-order once it is below the "
+"specified minimum quantity."
+msgstr ""
+"Habilitó el campo para mostrar el producto como Pre-Orden una vez que esté "
+"por debajo de la cantidad mínima especificada."
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__excluded_pricelist_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__excluded_pricelist_id
+msgid "Excluded Pricelist"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order__is_exclusive_international_preorder
+msgid "Exclusive International Preorder"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__exclusive_partner_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__exclusive_partner_id
+msgid "Exclusive Partner"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order.py:0
+#, python-format
+msgid "Exclusive Partner is already set for this product %s"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order.py:0
+#, python-format
+msgid "Exclusive Partner is set for this product %s"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: code:addons/setu_website_preorder/static/src/xml/presale_products_informations_template.xml:0
+#, python-format
+msgid ""
+"Expected\n"
+"                            Date"
+msgstr ""
+"Fecha\n"
+"                            Prevista"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields.selection,name:setu_website_preorder.selection__website__quantity_type__forecast
+msgid "Forecasted"
+msgstr "Previsto"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "From Stock - Standard delivery"
+msgstr "En Existencia - Envío Estándar"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_ir_http
+msgid "HTTP Routing"
+msgstr "Enrutamiento HTTP "
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "I want the Exclusivity of this product"
+msgstr "Quiero la exclusividad de este producto"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_confirm_wizard__id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid ""
+"In all pre-sales, a down payment of 30% of the value of the order must be "
+"made Regardless of the payment method (cash or credit)."
+msgstr ""
+"En todas las Pre-Ventas, se deberá de realizar un anticipo del 30% del valor"
+" del pedido. Sin importar la forma de pago (contado o crédito)"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/presale_products_informations_template.xml:0
+#, python-format
+msgid "Incoming products"
+msgstr "Productos por recibir"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.show_stock_information_in_mobile_view
+msgid ""
+"Instock\n"
+"                                Products"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid ""
+"Instock\n"
+"                        Products"
+msgstr ""
+"Productos\n"
+"                        en Existencia"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__international_fulfill_percentage
+msgid "International Order Fulfilled"
+msgstr "Cumplimiento de Orden de Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_line__international_pre_order_qty
+msgid "International Pre-Order"
+msgstr "Cant. de Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#: model:ir.actions.act_window,name:setu_website_preorder.setu_inter_national_pre_order_purchase_form_action
+#: model:ir.ui.menu,name:setu_website_preorder.inter_national_menu_pre_order_purchase_action
+msgid "International Pre-Order Requests"
+msgstr "Solicitudes Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__international_preorder_rel_ids
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_line__international_preorder_rel_ids
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.setu_international_preorder_purchase_order_form_view
+msgid "International Pre-order Details"
+msgstr "Detalles de Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/controller/preorder_presale_shop.py:0
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order__is_international_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__is_international_preorder
+#, python-format
+msgid "International Preorder"
+msgstr "Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid ""
+"International Preorder\n"
+"                        Products"
+msgstr ""
+"Productos de Pre-Order\n"
+"                        Internacional"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__international_preorder_msg
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__international_preorder_msg
+msgid "International Preorder Message"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__intl_preorder_pricelist_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__intl_preorder_pricelist_id
+msgid "International Preorder Pricelist"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__international_preorder_qty
+msgid "International Preorder Qty"
+msgstr "Cant de Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_international_preorder_sale_purchase_rel
+msgid "International Preorder Sale Purchase connection"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.cart_lines_inherit_website_preorder_presale_message
+msgid "InternationalPreorder"
+msgstr "Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__is_exclusive
+msgid "Is Exclusive"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__is_international_pre_order
+msgid "Is International pre-order"
+msgstr "Es Pre-Orden Internacional"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__is_international_pre_order_product
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__is_international_pre_order_product
+msgid "Is International pre-order product"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.actions.act_window,help:setu_website_preorder.setu_inter_national_pre_order_purchase_form_action
+#: model_terms:ir.actions.act_window,help:setu_website_preorder.setu_pre_order_purchase_form_action
+#: model_terms:ir.actions.act_window,help:setu_website_preorder.setu_pre_sale_purchase_form_action
+msgid "It will be converted into a purchase order."
+msgstr "Se convertirá en una orden de compra."
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_confirm_wizard____last_update
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel____last_update
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel____last_update
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel____last_update
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_confirm_wizard__write_uid
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__write_uid
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__write_uid
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__write_uid
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_confirm_wizard__write_date
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__write_date
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__write_date
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__write_date
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__minimum_amt_qty
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__minimum_amt_qty
+msgid "Minimum Amount Quantity"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__minimum_exclusivity_quantity
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__minimum_exclusivity_quantity
+#, python-format
+msgid "Minimum Exclusivity Quantity"
+msgstr "Cantidad Minima para la Exclusividad"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__preorder_minimum_qty
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__preorder_minimum_qty
+msgid "Minimum Pre-order/Pre-sale Quantity"
+msgstr "Cantidad Mínima Pre-Orden/Pre-Venta"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Minimum Quantity"
+msgstr "Cantidad Minima"
+
+#. module: setu_website_preorder
+#: model:ir.actions.act_window,name:setu_website_preorder.setu_pre_order_purchase_form_action
+#: model:ir.ui.menu,name:setu_website_preorder.national_menu_pre_order_purchase_action
+msgid "National Pre-Order Requests"
+msgstr "Solicitudes de Pre-Orden"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "National Preorder Products"
+msgstr "Productos de Pre-Order Nacional"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.view_wizard_action_form
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.view_wizard_action_form_po
+msgid "No"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid ""
+"Nota: Las fechas de arribo están sujetos a cambios sin previo aviso para "
+"productos en Pre Orden."
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.message_as_per_the_order_type
+msgid ""
+"Note : Product's will not consider exclusive  if ordered quantities are less"
+" than exclusive minimum quantities and cart quantity will be auto reduce to "
+"the available quantity."
+msgstr ""
+"Nota: Los productos no se considerarán exclusivos si las cantidades pedidas son inferiores a "
+"las cantidades mínimas exclusivas y la cantidad del carrito se reducirá automáticamente a "
+"la cantidad disponible."
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.message_as_per_the_order_type
+#: model:ir.model.fields,field_description:setu_website_preorder.field_account_bank_statement_line__is_next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_account_move__is_next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_account_payment__is_next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_delivery_carrier__is_next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_pricelist__next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order__is_next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__is_next_day_shipping
+#: model:ir.model.fields,field_description:setu_website_preorder.field_stock_picking__is_next_day_shipping
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.cart_lines_inherit_website_preorder_presale_message
+msgid "Next Day Shipping"
+msgstr "Envío Día Siguiente"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "Next Day Shipping Products"
+msgstr "Productos Envío Día Siguiente"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.cart_lines_inherit_website_preorder_presale_message
+msgid ""
+"Note: Prices are estimates and subject to change without notice for Presale/Preorder\n"
+"                Products."
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid ""
+"Note: Prices are estimates and subject to change without notice for "
+"Presale/Preorder Products."
+msgstr ""
+"Nota:  Los precios y fechas de arribo están sujetos a cambios sin previo "
+"aviso para productos en Pre Venta / Pre Orden."
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/presale_products_informations_template.xml:0
+#, python-format
+msgid ""
+"Note: This is a Pre-Sale. Prices are estimates and subject to change without\n"
+"                notice."
+msgstr ""
+"Note: Esta es una orden tipo Pre-Venta. Los precios son estimados y están sujetos a cambios\n"
+"                sin previo aviso."
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__fulfill_percentage
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__presale_fulfill_percentage
+msgid "Order Fulfilled"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.add_field_tentative_arrival_date_at_report
+msgid "PRE-SALE"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Transacción de pago"
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order_line.py:0
+#, python-format
+msgid "Payment terms missing please contact marvelsa team"
+msgstr "Faltan condiciones de pago, comuníquese con el equipo de Marvelsa."
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Pre Orden Producto Nacional"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:res.groups,name:setu_website_preorder.website_preorder_group
+msgid "Pre Order"
+msgstr "Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_presale_purchase_rel
+msgid "Pre Sale Purchase connection"
+msgstr "Conexión de compra Pre-venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order__is_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__is_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_stock_picking__is_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.setu_pre_order_sales_order_search
+msgid "Pre-Order"
+msgstr "Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__preorder_amount
+msgid "Pre-Order Amount"
+msgstr "Monto de Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__preorder_notify
+msgid "Pre-Order Notification"
+msgstr "Notificación de Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__pre_order_qty
+msgid "Pre-Order Quantity"
+msgstr "Cantidad de Pre-Ordenada"
+
+#. module: setu_website_preorder
+#: model:ir.ui.menu,name:setu_website_preorder.menu_pre_order_purchase_action
+msgid "Pre-Order Requests"
+msgstr "Solicitudes de Pre-Orden"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "Pre-Order/Pre-Sale"
+msgstr "Pre-Orden/Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_line__pre_sale_qty
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order__is_presale
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__is_presale
+#: model:ir.model.fields,field_description:setu_website_preorder.field_stock_picking__is_presale
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.setu_pre_order_sales_order_search
+msgid "Pre-Sale"
+msgstr "Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__presale_amount
+msgid "Pre-Sale Amount"
+msgstr "Monto de Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__presale_rel_ids
+msgid "Pre-Sale Details"
+msgstr "Detalles de Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__pre_sale_qty
+msgid "Pre-Sale Quantity"
+msgstr "Cantidad Pre-Vendida"
+
+#. module: setu_website_preorder
+#: model:ir.actions.act_window,name:setu_website_preorder.setu_pre_sale_purchase_form_action
+#: model:ir.ui.menu,name:setu_website_preorder.menu_pre_sale_purchase_action
+msgid "Pre-Sale Requests"
+msgstr "Solicitudes de Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order__preorder_rel_ids
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_line__preorder_rel_ids
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.setu_preorder_purchase_order_form_view
+msgid "Pre-order Details"
+msgstr "Detalles de Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__preorder_note
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__preorder_note
+msgid "Pre-order/Pre-sale Note"
+msgstr "Nota de Pre-Orden/Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_line__pre_ordered_qty
+msgid "Pre-ordered"
+msgstr "Pre-Ordenado"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_line__presale_rel_ids
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.setu_presale_purchase_order_form_view
+msgid "Pre-sale Details"
+msgstr "Detalle de Pre-Venta"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.presale_price_product_product
+msgid "Pre-sale Price"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.cart_lines_inherit_website_preorder_presale_message
+msgid "PreOrder"
+msgstr "Pre-Orden"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.cart_lines_inherit_website_preorder_presale_message
+msgid "PreSale"
+msgstr "Pre-Venta"
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/controller/preorder_presale_shop.py:0
+#, python-format
+msgid "Preorder"
+msgstr "Pre-Orden"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.show_stock_information_in_mobile_view
+msgid "Preorder Products"
+msgstr "Productos en Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__preorder_qty
+msgid "Preorder Qty"
+msgstr "Cantidad Pre-Ordenada"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__international_preorder_qty
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__preorder_qty
+msgid "Preorder Quantity"
+msgstr "Cantidad Pre-Ordenada"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_preorder_sale_purchase_rel
+msgid "Preorder Sale Purchase connection"
+msgstr "Conexión de compra Pre-Orden"
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/controller/preorder_presale_shop.py:0
+#, python-format
+msgid "Presale"
+msgstr "Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__presale_exchange_rate
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__presale_exchange_rate
+msgid "Presale Exchange Rate"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__presale_price
+msgid "Presale Price"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__presale_price_incl_tax
+msgid "Presale Price Inc. Tax"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.actions.server,name:setu_website_preorder.ir_cron_presale_product_price_ir_actions_server
+#: model:ir.cron,cron_name:setu_website_preorder.ir_cron_presale_product_price
+msgid "Presale Price Update"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__presale_pricelist
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__presale_pricelist
+msgid "Presale Pricelist"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.show_stock_information_in_mobile_view
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.website_product_type
+msgid "Presale Products"
+msgstr "Productos en Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__presale_qty
+msgid "Presale Qty"
+msgstr "Cantidad Pre-Vendida"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__presale_qty
+msgid "Presale Quantity"
+msgstr "Cantidad Pre-Vendida"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_product_template
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__product_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__product_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__product_id
+msgid "Product"
+msgstr "Plantilla de producto"
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order.py:0
+#: code:addons/setu_website_preorder/models/sale_order.py:0
+#, python-format
+msgid "Product %s is already available for other customer"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_product_product
+msgid "Product Variant"
+msgstr "Producto"
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/controller/preorder_presale_shop.py:0
+#, python-format
+msgid ""
+"Products are now instock so we removed those products and cancel the sale "
+"order"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.inherit_product_price_template_for_presale
+msgid "Public Price"
+msgstr "Precio Público"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_purchase_order
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__purchase_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__purchase_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__purchase_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_purchase_order_confirm_wizard__purchase_order_id
+msgid "Purchase Order"
+msgstr "Orden de compra"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_purchase_order_confirm_wizard
+msgid "Purchase Order Confirm Wizard"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_purchase_order_line
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__purchase_line_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__purchase_line_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__purchase_line_id
+msgid "Purchase Order Line"
+msgstr "Línea de orden de compra"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#: code:addons/setu_website_preorder/static/src/xml/presale_products_informations_template.xml:0
+#, python-format
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields.selection,name:setu_website_preorder.selection__website__quantity_type__on_hand
+msgid "Quantity On Hand"
+msgstr "Cantidad disponible a la mano"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields.selection,name:setu_website_preorder.selection__website__quantity_type__on_hand_outgoing
+msgid "Quantity On Hand - Outgoing"
+msgstr "Cantidad disponible a la mano - Cantidad reservada"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.message_as_per_the_order_type
+msgid "Remember to check your price list before proceeding to payment."
+msgstr "Recuerda verificar tu lista de precios antes de proceder al pago."
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.products_add_to_cart
+msgid "Remove one"
+msgstr "Remover"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "SKU"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.product_add_sku
+msgid "SKU:"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__sale_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__sale_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__sale_id
+msgid "Sale Order"
+msgstr "Orden de Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__sale_line_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__sale_line_id
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__sale_line_id
+msgid "Sale Order Line"
+msgstr "Linea de la Orden de Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de la orden de venta"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "Select Default Warehouse pre-order/pre-sale Orders"
+msgstr ""
+"Selecciona el almacén por defecto para las ordenes de Pre-Orden / Pre-Venta"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "Select Excluded Pricelist"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "Select International Preorder Pricelist"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "Select Presale Pricelist"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "Select Warehouse from where stock needs to be considered"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "Set Cash Payment"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.res_config_settings_view_form
+msgid "Set Presale Exchange Rate"
+msgstr "Select Presale Exchange Rate"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields.selection,name:setu_website_preorder.selection__website__stock_pick_type__several
+msgid "Several"
+msgstr "Varias"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.products_add_to_cart
+msgid "Shopping cart"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model.fields.selection,name:setu_website_preorder.selection__website__stock_pick_type__specific
+msgid "Specific"
+msgstr "Especifica"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_international_preorder_sale_purchase_rel__international_pre_order_state
+#: model:ir.model.fields,field_description:setu_website_preorder.field_preorder_sale_purchase_rel__pre_order_state
+#: model:ir.model.fields,field_description:setu_website_preorder.field_presale_purchase_rel__pre_sale_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.cart_lines_inherit_website_preorder_presale_message
+msgid "Stock"
+msgstr "En Existencia"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__stock_location
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__default_stock_location
+msgid "Stock Location"
+msgstr "Ubicación de Inventario"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__stock_location_ids
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__default_stock_location_ids
+msgid "Stock Locations"
+msgstr "Ubicaciones de Inventario"
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__quantity_type
+#: model:ir.model.fields,field_description:setu_website_preorder.field_website__quantity_type
+msgid "Stock Out Type"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.cart_lines_inherit_website_preorder_presale_message
+msgid "Stock Type"
+msgstr "Tipo"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_res_config_settings__warehouse_id
+msgid "Stock Warehouse"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_stock_picking
+msgid "StockPicking"
+msgstr "Traslado"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_sale_order_line__tentative_arrival_date
+msgid "Tentative Arrival"
+msgstr ""
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.add_field_tentative_arrival_date_at_report
+msgid "Tentative Arrival Date"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/wizard/action_confirm_wizard.py:0
+#, python-format
+msgid ""
+"The Order Was Confirm Forcefully Even If There Was Pre-order Or Purchase "
+"Order Are Not Found For This Sale Order"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order.py:0
+#, python-format
+msgid ""
+"The Pre-Sale order contains products that have already been received (in "
+"stock). In order to confirm the order, delete the products in stock. "
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/payment_transaction.py:0
+#, python-format
+msgid "The order was not confirmed as %s type of order"
+msgstr "El pedido no ha sido confirmado como %s tipo de pedido"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.view_wizard_action_form
+msgid ""
+"This Order Is Pre-Order Type, But We Can Not Find The Purchase Order For This\n"
+"                        Sale Order Still You Confirm The Order Then Clicked On YES Otherwise Clicked\n"
+"                        On NO"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/website_sale_cancel.xml:0
+#, python-format
+msgid ""
+"This may be because the cancellation time limit has been exceeded or because"
+" your order is already being processed."
+msgstr ""
+"Esto puede deberse a que el límite de tiempo para la cancelación ha sido excedido o porque"
+" tu pedido ya está en proceso de surtido."
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order.py:0
+#, python-format
+msgid ""
+"This order can't be confirmed because the [%s] %s is already exclusive to "
+"another customer."
+msgstr ""
+"Este pedido no puede confirmarse porque el producto [%s] %s ya es exclusivo de"
+"otro cliente."
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "This product is available for Next Day Shipping"
+msgstr "Producto disponible para Envío Día Siguiente"
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid ""
+"This product is available for next day shipping but if you want to add this "
+"kindly delete products present in the cart"
+msgstr ""
+"Este producto está disponible para envío al día siguiente, pero si desea agregarlo "
+"elimine amablemente los productos presentes en el carrito"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.setu_cart_lines_total
+msgid "Total"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Total Available For Presale"
+msgstr "Disponible en Pre-Venta"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__is_preorder_type
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__is_preorder_type
+msgid "Type of Pre-Order?"
+msgstr "Tipo de Pre-Orden"
+
+#. module: setu_website_preorder
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_product__is_presale_type
+#: model:ir.model.fields,field_description:setu_website_preorder.field_product_template__is_presale_type
+msgid "Type of Pre-Sale?"
+msgstr "Tipo de Pre-Venta"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.setu_convert_to_presale_button
+msgid "Update"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/preorder_products_informations_template.xml:0
+#, python-format
+msgid "Warehouse Name"
+msgstr "Almacén"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.message_as_per_the_order_type
+msgid ""
+"Warning : If any products are now in stock,products will be automatically "
+"removed."
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/website_sale_cancel.xml:0
+#, python-format
+msgid "We cannot cancel your order at this time."
+msgstr "No podemos cancelar tu pedido en este momento."
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.view_wizard_action_form
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.view_wizard_action_form_po
+msgid "Yes"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order_line.py:0
+#, python-format
+msgid ""
+"You can not add Next day product with %s. Kindly add Next day Shipping "
+"Pricelist"
+msgstr ""
+"No puedes agregar producto del día siguiente con %s. Por favor agregue Envío al día siguiente "
+"lista de precios"
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order_line.py:0
+#, python-format
+msgid "You can not add Product with %s. Kindly add other Pricelist"
+msgstr "No se puede agregar  un producto con %s. Por favor seleccione la otra lista de precios."
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order_line.py:0
+#, python-format
+msgid "You can not add a product as presale with "
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-python
+#: code:addons/setu_website_preorder/models/sale_order_line.py:0
+#, python-format
+msgid "You can not add instock or preorder products"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/presale_products_informations_template.xml:0
+#, python-format
+msgid "You can not add this product as your cart contains"
+msgstr "No puede agregar este producto ya que su carrito contiene"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.warning_message_preorder
+msgid "You must upload your voucher payment to send you as next day shipping"
+msgstr "Debes cargar tu comprobante de pago para enviarte al día siguiente"
+
+#. module: setu_website_preorder
+#: model_terms:ir.ui.view,arch_db:setu_website_preorder.inherit_sale_order_re_order_btn_for_order_again
+msgid ""
+"Your cart contains products that are not available for In Stock. If you need"
+" to reorder, please remove these products from your cart or confirm your "
+"current order."
+msgstr ""
+"Su carrito contiene productos que no están disponibles para En Existencia - Envío Estándar.Si necesita "
+"reordenar, por favor elimine estos productos del carrito o confirme su "
+"pedido real."
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/website_sale_cancel.xml:0
+#, python-format
+msgid ""
+"Your order cannot be canceled because the time limit has been exceeded or "
+"because your order is already in the fulfillment process"
+msgstr ""
+"Tu pedido no puede cancelarse debido a que el límite de tiempo ha sido excedido o "
+"porque tu pedido ya está en proceso de surtido."
+
+#. module: setu_website_preorder
+#: model:ir.model,name:setu_website_preorder.model_confirm_wizard
+msgid "confirm.wizard"
+msgstr ""
+
+#. module: setu_website_preorder
+#. odoo-javascript
+#: code:addons/setu_website_preorder/static/src/xml/presale_products_informations_template.xml:0
+#, python-format
+msgid "type of product"
+msgstr "Tipo de Producto"

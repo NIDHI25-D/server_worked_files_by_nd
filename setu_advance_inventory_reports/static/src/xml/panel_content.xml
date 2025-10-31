@@ -1,0 +1,165 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="SetuDashboardPanel">
+        <style>
+            .o_spreadsheet_dashboard_search_panel {
+                width: fit-content;
+                max-width: 200px;
+                align-items: center;
+                float: left;
+                background-color: #f7f7f7 !important;
+            }
+
+            .o_search_panel_category_value{
+                background-color: #f7f7f7 !important;
+            }
+
+            .border-end{
+                border-right: 2px groove !important;
+            }
+
+            li::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: #505050;
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                transition: transform 0.3s ease;
+            }
+
+            li:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+
+            li.active {
+                margin: 10px;
+
+                color: white;
+                font-weight: bold;
+
+                /* Gradient background with smooth color transition */
+                background-color: #007bff;
+                border: 2px solid #007bff;
+
+                /* Soft glow effect around the item */
+                box-shadow: 0 4px 15px rgba(146, 146, 146, 0.3), 0 0 10px rgba(146, 146, 146, 0.3);
+
+                /* Rounded corners for smooth edges */
+                border-radius: 10px !important;
+
+                /* Slight scale to make the active item appear larger */
+                transform: scale(1.05);
+
+                transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+
+            }
+
+            li.active > button {
+                /* Subtle text shadow for better readability */
+                text-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+            }
+
+            li:hover {
+                background-color: #f0f8ff;
+                color: #0056b3;
+                transform: scale(1.02);
+            }
+        </style>
+        <body>
+            <div class="outer_div">
+                <div class="o_spreadsheet_dashboard_search_panel o_search_panel flex-grow-0 border-end flex-shrink-0 pe-2 pb-5 ps-4 bg-view"
+                     style="max-width:300px; height:100vh;  position: fixed;" id="sidepanel">
+                    <section class="o_search_panel_section o_search_panel_category">
+                    <header class="o_search_panel_section_header pt-4 pb-2 text-uppercase o_cursor_default user-select-none">
+                        <b>Classification</b>
+                    </header>
+                    <ul class="list-group d-block o_search_panel_field">
+                        <div class="fsn_xyz_dashboard">
+                            <li class="o_search_panel_category_value list-group-item cursor-pointer border-0 d-inline-flex" id="fsn_analysis">
+                                <img width="20" height="20"
+                                     src="https://img.icons8.com/?size=100&amp;id=92652&amp;format=png&amp;color=000000"
+                                     alt="graph-report" style=""/>
+                                <button id="fsn_dashboard" class="context-button" data-option="fsn_dashboard" style="background-color: transparent;border: none;">FSN Analysis</button>
+                                </li>
+                        </div>
+                    </ul>
+                    <ul class="list-group d-block o_search_panel_field">
+                        <div class="turnover_dashboard">
+                            <li class="o_search_panel_category_value list-group-item cursor-pointer border-0 d-inline-flex" id="xyz_analysis">
+                                <img width="20" height="20"
+                                     src="https://img.icons8.com/?size=100&amp;id=92652&amp;format=png&amp;color=000000"
+                                     alt="graph-report" style=""/>
+                                <button id="xyz_dashboard" class="context-button" data-option="xyz_dashboard" style="background-color: transparent;border: none;">XYZ Analysis</button>
+                                </li>
+                        </div>
+                    </ul>
+                    <ul class="list-group d-block o_search_panel_field">
+                        <div class="age_breakdown_analysis_dashboard">
+                            <li class="o_search_panel_category_value list-group-item cursor-pointer border-0 d-inline-flex" id="fsn_xyz_analysis">
+                                <img width="20" height="20"
+                                     src="https://img.icons8.com/?size=100&amp;id=92652&amp;format=png&amp;color=000000"
+                                     alt="graph-report" style=""/>
+                                <button id="fsn_xyz_dashboard" class="context-button" data-option="fsn_xyz_dashboard" style="background-color: transparent;border: none;">FSN-XYZ Analysis</button>
+                                </li>
+                        </div>
+                    </ul>
+                    </section>
+                    <section class="o_search_panel_section o_search_panel_category">
+                     <header class="o_search_panel_section_header pt-4 pb-2 text-uppercase o_cursor_default user-select-none">
+                        <b>Status</b>
+                    </header>
+                        <ul class="list-group d-block o_search_panel_field">
+                        <div class="age_analysis_dashboard">
+                            <li class="o_search_panel_category_value list-group-item cursor-pointer border-0 d-inline-flex" id="overstock_analysis">
+                                <img width="20" height="20"
+                                     src="https://img.icons8.com/?size=100&amp;id=92652&amp;format=png&amp;color=000000"
+                                     alt="graph-report" style=""/>
+                            <button id="overstock_dashboard" class="context-button" data-option="overstock_dashboard" style="background-color: transparent;border: none;">Overstock Analysis</button>
+                            </li>
+                        </div>
+                    </ul>
+                        <ul class="list-group d-block o_search_panel_field">
+                        <div class="age_breakdown_analysis_dashboard">
+                            <li class="o_search_panel_category_value list-group-item cursor-pointer border-0 d-inline-flex" id="out_of_stock_analysis">
+                                <img width="20" height="20"
+                                     src="https://img.icons8.com/?size=100&amp;id=92652&amp;format=png&amp;color=000000"
+                                     alt="graph-report" style=""/>
+                                <button id="outofstock_dashboard" class="context-button" data-option="outofstock_dashboard" style="background-color: transparent;border: none;">Out of Stock Analysis</button>
+                            </li>
+                        </div>
+                    </ul>
+                        <ul class="list-group d-block o_search_panel_field">
+                        <div class="out_of_stock_dashboard">
+                            <li class="o_search_panel_category_value list-group-item cursor-pointer border-0 d-inline-flex" id="movement_analysis">
+                                <img width="20" height="20"
+                                     src="https://img.icons8.com/?size=100&amp;id=92652&amp;format=png&amp;color=000000"
+                                     alt="graph-report" style=""/>
+                                <button id="movement_dashboard" class="context-button" data-option="movement_dashboard" style="background-color: transparent;border: none;">Movement Analysis</button>
+                            </li>
+                        </div>
+                    </ul>
+                    </section>
+                    <section class="o_search_panel_section o_search_panel_category">
+                     <header class="o_search_panel_section_header pt-4 pb-2 text-uppercase o_cursor_default user-select-none">
+                        <b>Aging</b>
+                    </header>
+                        <ul class="list-group d-block o_search_panel_field">
+                            <div class="move_analysis_dashboard">
+                                <li class="o_search_panel_category_value list-group-item cursor-pointer border-0 d-inline-flex" id="age_breakdown_analysis">
+                                    <img width="20" height="20"
+                                         src="https://img.icons8.com/?size=100&amp;id=92652&amp;format=png&amp;color=000000"
+                                         alt="graph-report" style=""/>
+                                    <button id="age_breakdown_dashboard" class="context-button" data-option="age_breakdown_dashboard" style="background-color: transparent;border: none;">Age Breakdown Analysis</button>
+                                </li>
+                            </div>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </body>
+    </t>
+</templates>

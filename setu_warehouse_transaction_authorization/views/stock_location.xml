@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_field_bypass_authorization_for_internal" model="ir.ui.view">
+            <field name="name">add.field.bypass_authorization_for_internal</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='usage']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="bypass_authorization_for_internal"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

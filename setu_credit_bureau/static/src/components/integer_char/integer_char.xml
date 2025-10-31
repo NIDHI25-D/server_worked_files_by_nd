@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="setu_credit_bureau.ValidValues">
+        <span t-if="props.readonly" t-esc="checkValue" />
+        <input
+            t-ref="inputNumber"
+            t-att-id="props.id"
+            t-att-type="props.inputType"
+            t-att-placeholder="props.placeholder"
+            inputmode="numeric"
+            t-att-maxlength="props.maxLength"
+            t-else=""
+            class="o_input"
+            autocomplete="off"
+            t-att-step="props.step" />
+    </t>
+
+</templates>
+

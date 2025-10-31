@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <record id="setu_crm_form_view_for_expected_revenue" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.for.expected.revenue</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name="expected_revenue" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
+            <field name="name" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
+        </field>
+    </record>
+
+
+
+    <record id="setu_crm_form_view" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name="expected_revenue" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </field>
+        </field>
+    </record>
+
+<!-- TASK :     Hide the option to create contacts {  https://app.clickup.com/t/86drj9ump }    -->
+    <record id="setu_crm_form_view_inherit_partner_id" model="ir.ui.view">
+        <field name="name">setu.crm.form.view.inherit.partner.id</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="attributes">
+                <attribute name="options">{'no_create_edit': True,'no_create': True}</attribute>
+            </xpath>
+        </field>
+    </record>
+<!-- TASK :     Hide the option to create contacts {  https://app.clickup.com/t/86drj9ump }  Kanban view   -->
+    <record id="crm_lead_view_kanban_partner_id" model="ir.ui.view">
+            <field name="name">crm.lead.view.kanban.partner.id</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+            <attribute name="options">{'no_create_edit': True,'no_create': True}</attribute>
+        </xpath>
+            </field>
+    </record>
+</odoo>

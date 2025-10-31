@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="shipping_carrier_extended_for_estafeta" model="ir.ui.view">
+            <field name="name">shipping.carrier.extended.for.estafeta</field>
+            <field name="model">shipping.carrier</field>
+            <field name="inherit_id" ref="setu_prefered_delivery_methods.shipping_carrier_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="is_for_estafeta"/>
+                </xpath>
+                <xpath expr="//form/sheet/group" position="after">
+                    <notebook>
+                        <page name="Estafeta Configuration" invisible="is_for_estafeta == False">
+                            <group>
+                                <group name="package_information" string="Package Information">
+                                    <field name="estafeta_provider_package_id"/>
+                                    <field name="estafeta_default_service_type_id"/>
+                                    <field name="estafeta_service_type_id"/>
+                                    <field name="estafeta_parcel_id"/>
+                                    <field name="estafeta_output_type"/>
+                                    <field name="estafeta_output_group"/>
+                                    <field name="estafeta_response_mode"/>
+                                    <field name="estafeta_printing_template"/>
+                                </group>
+                                <group name="pallet_information" string="Pallet Information">
+                                    <field name="estafeta_provider_pallet_id"/>
+                                    <field name="estafeta_pallet_parcel_id"/>
+                                    <field name="estafeta_pallet_service_type_id"/>
+                                    <field name="productservicecode"/>
+                                    <field name="weightunitcode"/>
+                                    <field name="nav"/>
+                                    <field name="platform"/>
+                                    <field name="measurementunitcode"/>
+                                    <field name="costcenter"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

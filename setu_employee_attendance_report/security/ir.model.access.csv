@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_setu_attendance,access.setu_hr_public_holidays,model_setu_hr_public_holidays,,1,1,1,1
+access_hr_attendance_reportwizard,access.hr.attendance.reportwizard ,model_hr_attendance_reportwizard,,1,1,1,1
+access_hr_attendance_bi_report,access.hr.attendance.bi.report ,model_hr_attendance_bi_report,,1,1,1,1
+access_employee_absence_report,access.employee.absence.report,model_employee_absence_report,,1,1,1,1
+access_absence_report,access.absence.report,model_absence_report,,1,1,1,1

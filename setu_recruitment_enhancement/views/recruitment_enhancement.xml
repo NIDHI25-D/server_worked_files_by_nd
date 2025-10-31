@@ -1,0 +1,35 @@
+<odoo>
+        <record id="recruitment_stages_from_enhancement" model="ir.ui.view">
+            <field name="name">hr.recruitment.stage.form.enhancement</field>
+            <field name="model">hr.recruitment.stage</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_recruitment_stage_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='job_ids']" position="after">
+                    <field name="department_ids" widget="many2many_tags" required="True"/>
+                </xpath>
+            </field>
+        </record>
+
+    <record id="inherit_view_hr_job_form_for_date" model="ir.ui.view">
+        <field name="name">inherit.view.hr.job.form.for.date</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="is_published" readonly="True"/>
+                <field name="open_date" readonly="True"/>
+                <field name="close_date" readonly="True"/>
+            </xpath>
+            <xpath expr="//field[@name='no_of_recruitment']" position="attributes">
+                    <attribute name="readonly">open_date !=  False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='website_published']" position="attributes">
+                    <attribute name="readonly">open_date !=  False</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_recruitment.menu_hr_recruitment_stage" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('setu_recruitment_enhancement.supervisior_group_hr_recruitment_applications')])]" />
+        </record>
+</odoo>

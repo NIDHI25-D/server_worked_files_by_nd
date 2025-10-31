@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_monthly_installment,monthly.installment,model_monthly_installment,base.group_user,1,1,1,1

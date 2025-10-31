@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="add_delivery_carrier_id_sale_order" model="ir.ui.view">
+            <field name="name">add_delivery_carrier_id_sale_order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='picking_policy']" position="after">
+                    <field name="shipping_carrier_id" string="Carrier" readonly="delivery_set == False"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

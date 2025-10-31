@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="prepare_picking_view_form" model="ir.ui.view">
+            <field name="name">prepare_picking_view_form</field>
+            <field name="model">prepare.picking</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="stock_pick_type_id" options="{'no_create': True, 'no_edit': True}" required="True"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Save" name="create_picking" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="prepare_picking_action" model="ir.actions.act_window">
+            <field name="name">Duplicate with different operation type</field>
+            <field name="res_model">prepare.picking</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_id" ref="prepare_picking_view_form"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<br/>
+<h2 id="setu-odoo-mirakl-connector">Setu Odoo Mirakl Connector</h2>
+<h5 id="usage">USAGE</h5>
+<ul>
+    <li>This module are mainly used to sync the sale order from <strong>mirakl connector</strong> to odoo.</li>
+    <li>Here are the main menu <strong>Mirakl</strong> and under the menu there are various menus like - <strong>Dashboard,
+        Operations, Process History, Configuration</strong></li>
+    <li>At the <strong>Dashboard</strong> There are Visible the records of Mirakl connector.</li>
+    <li>Under the <strong>Operations</strong> there are a submenu <strong>Mirakl Operations</strong> from the <strong>Mirakl
+        Operations</strong> opened the wizard - <strong>Mirakl Operations</strong> here filled the <strong>Multi
+        e-Commerce Connector</strong> where displayed only fully integrated records and another one is <strong>Operations</strong>
+        here if selects a value Import Specific Order-IDS here visible the new page <strong>Sync Option</strong> at
+        there added a sale order id from connector and Perform Operation then creates a sale order in odoo as per the
+        connector&#39;s order, if the API Key and Host are valid.
+    </li>
+    <li>Here status of sale order are managed from connector&#39;s order status i.e - status are <strong>Awaiting
+        shipment</strong> then confirmed the sale order else in other stages sale order are created in draft state.
+    </li>
+    <li>Here if order are created one time and tried to again sync same order from same connector then not allowed and
+        raise validation like <strong>This Sale order Already exist</strong></li>
+    <li>Here if the product in connector are created in odoo then and only then creates a sale order for these
+        particular products.
+    </li>
+    <li>But if the Partner are not in odoo so as per the e-commerce partner, partner are created in odoo.</li>
+    <li>during creating an sale order there are also attachment are set from the order and attached it to the odoo&#39;s
+        sale order here document are attached only if type are SHIPPING LABEL not takes other documents for it.
+    </li>
+    <li>Here also added Mirakl Payment Gateway, and it creates during creating a sale order and these Payment Gateway
+        are set to those created sale order.
+    </li>
+</ul>
+<h5 id="configuration">CONFIGURATION</h5>
+<ul>
+    <li>There are a category for accessing it, which is - Mirakl and there are a various group for it -
+        <strong>User</strong>, <strong>Manager</strong></li>
+    <li>If the user has manager&#39;s rights then and only then it has visible and accessing the features of <strong>Operations,
+        Process History, Configuration</strong> in mirakl menu.
+    </li>
+    <li>Here only creates a sale order after the date which are set at the <strong>Import Order After Date</strong> in
+        the <strong>Mirakl Setup</strong> page.
+    </li>
+</ul>

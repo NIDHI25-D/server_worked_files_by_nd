@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_field_total_importation_tax" model="ir.ui.view">
+            <field name="name">add_field_total_importation_tax</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="setu_purchase_automation.purchase_orders_form_view_inherited"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='total_igi']" position="after">
+                    <field name="total_importation_tax"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

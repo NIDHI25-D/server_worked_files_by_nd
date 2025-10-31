@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_open_inventory_warehouse_report_wizard" model="ir.actions.act_window">
+            <field name="name">Inventory Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">new</field>
+
+            <field name="view_mode">form</field>
+            <field name="res_model">inventory.warehouse.report</field>
+        </record>
+
+        <record id="view_form_open_inventory_warehouse_report_wizard" model="ir.ui.view">
+            <field name="name">inventory.warehouse.report.wizard</field>
+            <field name="model">inventory.warehouse.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_ids" options="{'no_create_edit': True}" widget="many2many_tags"/>
+                                <field name="warehouse_ids" options="{'no_create_edit': True}" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="company_ids" options="{'no_create_edit': True}" widget="many2many_tags"/>
+                                <field name="product_category_ids" options="{'no_create_edit': True}" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button type="object" class="oe_highlight" name="get_inventory_data" string="Retrieve the inventory valuation"/>
+                        <button special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_product_pivot_view_report" model="ir.ui.view">
+            <field name="name">product.pivot.report</field>
+            <field name="model">inventory.warehouse.report</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="product_id" type="row"/>
+                    <field name="warehouse_id" type="col"/>
+                    <field name="avai_qty" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="view_list_inventory_warehouse_report" model="ir.ui.view">
+            <field name="name">inventory.warehouse.report.list</field>
+            <field name="model">inventory.warehouse.report</field>
+            <field name="arch" type="xml">
+                <list create="false" delete="false">
+                    <field name="product_id" widget="many2one"/>
+                    <field name="warehouse_id" widget="many2one"/>
+                    <field name="company_id" widget="many2one"/>
+                    <field name="qty" sum="Total Stock"/>
+                    <field name="avai_qty" sum="Total Available"/>
+                    <field name="value" sum="Total Value"/>
+                    <field name="uom" widget="many2one"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_search_inventory_valuation_by_warehouse" model="ir.ui.view">
+            <field name="name">inventory.warehouse.report.search</field>
+            <field name="model">inventory.warehouse.report</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="product_id" string="Products"/>
+                    <field name="product_brand_id" />
+                    <field name="categ_id" />
+                    <field name="crm_tags_ids" />
+                    <filter string="Has Valuation" name="has_valuation" domain="[('qty','!=',0)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Product" name="group_by_product_id" domain="[]"
+                                context="{'group_by':'product_id'}"/>
+                        <filter string="Warehouse" name="group_by_warehouse_id" domain="[]"
+                                context="{'group_by':'warehouse_id'}"/>
+
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <menuitem id="menu_inventory_valuation_report_by_warehouse"
+                  name="Inventory Valuation By Warehouse"
+                  parent="stock.menu_warehouse_report" sequence="102"
+                  action="action_open_inventory_warehouse_report_wizard"/>
+
+    </data>
+</odoo>

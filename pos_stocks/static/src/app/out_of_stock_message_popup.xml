@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="OutOfStockMessagePopup" owl="1">
+        <Dialog>
+            <t t-set-slot="default">
+                <div class="popup-content">
+                    <h3><t t-out="props.title || 'Message'"/></h3>
+                    <p><t t-out="props.body || ''"/></p>
+                </div>
+            </t>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="closePopup">OK</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

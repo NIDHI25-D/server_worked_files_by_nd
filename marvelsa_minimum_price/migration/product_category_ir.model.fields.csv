@@ -1,0 +1,5 @@
+"Field Name","Field Label","Model","Field Type","Field Help","Type","Required","Readonly","Stored","Indexed","Copied","Related Field","Selection Options","Dependencies","Compute"
+"x_minimum_price_amount","Minimum Price Parameter (Amount)","Product Category","float","","Custom Field","","","True","","True","","","",""
+"x_minimum_price_option","Minimum Price Option","Product Category","selection","The Minimum Price Calculation Option: Leave blank for no minimum price on this category,Select Amount for minimum_price = cost + x amount, Select Percentage for minimum_price = cost + x percent","Custom Field","True","","True","","True","","Cost + Amount","",""
+"","","","","","","","","","","","","Cost + Percentage","",""
+"x_minimum_price_percentage","Minimum Price Parameter (Percentage 1-100)","Product Category","float","","Custom Field","","","True","","True","","","",""

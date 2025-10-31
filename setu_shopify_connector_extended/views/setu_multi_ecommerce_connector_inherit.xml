@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="setu_multi_ecommerce_connector_shopify_extended_mdh_from_view" model="ir.ui.view">
+            <field name="name">setu.multi.ecommerce.connector.shopify.extended.mdh.from.view</field>
+            <field name="model">setu.multi.ecommerce.connector</field>
+            <field name="inherit_id" ref="setu_ecommerce_based.setu_multi_ecommerce_connector_form_view"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='common_setup']/div[@data-key='common_ecommerce_odoo_configuration']/div[@name='order_ecommerce_configuration_setup']"
+                       postition="inside">
+                    <div name="common_order_setup_set_dem_project" class="col-xs-12 col-md-6 o_setting_box" invisible="ecommerce_connector != 'shopify_connector'">
+                        <div class="o_setting_left_pane">
+                            <field name="is_dem_project"
+                                   readonly="state in ['fully_integrated','error']"
+                                   widget="boolean_toggle"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_dem_project"
+                                   readonly="state in ['fully_integrated','error']"
+                                   string="Is Dem Project"/>
+                        </div>
+                    </div>
+                    <div invisible="is_dem_project == False and ecommerce_connector != 'shopify_connector'"
+                         class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="dem_partner_id"/>
+                            <div class="text-muted">
+                                - DEM Partner
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="dem_partner_id"
+                                           invisible="is_dem_project == False"
+                                            required="is_dem_project != False"
+                                           class="o_light_label"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="discount_percentage"/>
+                            <div class="text-muted">
+                                - DEM Partner Discount Percentage
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="discount_percentage"
+                                           invisible="is_dem_project == False"
+                                            required="is_dem_project != False"
+                                           class="o_light_label"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

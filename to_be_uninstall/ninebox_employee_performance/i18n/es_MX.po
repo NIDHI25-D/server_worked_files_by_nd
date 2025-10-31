@@ -1,0 +1,1007 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ninebox_employee_performance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-21 16:00+0000\n"
+"PO-Revision-Date: 2021-04-21 12:40-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_assessment_rating__color
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_assessment_rating_form
+msgid "0-10"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__0_0
+msgid "0x0"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__1_1
+msgid "1x1"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__1_2
+msgid "1x2"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__1_3
+msgid "1x3"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__2_1
+msgid "2x1"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__2_2
+msgid "2x2"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__2_3
+msgid "2x3"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__3_1
+msgid "3x1"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__3_2
+msgid "3x2"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance_report__pot_per_rate__3_3
+msgid "3x3"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<span>Ninebox Performance Report</span>"
+msgstr "<span>Reporte de Rendimiento</span>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 0X0:</strong>"
+msgstr "<strong>Calificación 0X0:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 1X1:</strong>"
+msgstr "<strong>Valoración 1X1:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 1X2:</strong>"
+msgstr "<strong>Valoración 1X2:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 1X3:</strong>"
+msgstr "<strong>Valoración 1X3:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 2X1:</strong>"
+msgstr "<strong>Valoración 2X1:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 2X2:</strong>"
+msgstr "<strong>Valoración 2X2:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 2X3:</strong>"
+msgstr "<strong>Puntaje 2X3:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 3X1:</strong>"
+msgstr "<strong>Puntaje 3X1:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 3X2:</strong>"
+msgstr "<strong>Puntaje 3X2:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Rating 3X3:</strong>"
+msgstr "<strong>Puntaje 3X3:</strong>"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.report_ninebox
+msgid "<strong>Review Period:</strong>"
+msgstr "<strong>Periodo de Revision:</strong>"
+
+#. module: ninebox_employee_performance
+#. odoo-javascript
+#: code:addons/ninebox_employee_performance/static/src/xml/ninebox_report_view.xml:0
+#, python-format
+msgid "ALL EMPLOYEES"
+msgstr "TODOS LOS EMPLEADOS"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_needaction
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__active
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_ids
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_exception_decoration
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_state
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_type_icon
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_schedule_form
+msgid "Are you sure you want to Create / Recreate Assesment Period?"
+msgstr "¿Está seguro de que desea crear / re-crear un período de evaluación?"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__rating_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__rating_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__rating_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__rating_id
+msgid "Assesment Rating"
+msgstr "Calificación de evaluación"
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/employee_performance.py:0
+#: code:addons/ninebox_employee_performance/models/employee_performance.py:0
+#: code:addons/ninebox_employee_performance/models/employee_performance.py:0
+#, python-format
+msgid "Assesment Rating Should Not Be Blank."
+msgstr "La calificación de evaluación no debe estar en blanco"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__assessment_period
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__assessment_period
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__assessment_period
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__assessment_period
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_schedule_form
+msgid "Assessment Period"
+msgstr "Período de evaluación"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__assessment_question
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__assessment_question_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__assessment_question
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__assessment_question_id
+msgid "Assessment Question"
+msgstr "Pregunta de evaluación"
+
+#. module: ninebox_employee_performance
+#: model:ir.actions.act_window,name:ninebox_employee_performance.action_assessment_rating
+#: model:ir.model,name:ninebox_employee_performance.model_assessment_rating
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_action_assessment_rating
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_assessment_rating_form
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_assessment_rating_tree
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_assessment_questions_form
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_assessment_questions_tree
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_manager_assessment_questions_form
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_manager_assessment_questions_tree
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_period_timeline_form
+msgid "Assessment Rating"
+msgstr "Calificación de evaluación"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_attachment_count
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: ninebox_employee_performance
+#: model:ir.model,name:ninebox_employee_performance.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "Empleado básico"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__color
+msgid "Color Index"
+msgstr "Índice de Colores"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__assessment_comment
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__assessment_comment
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__company_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_performance_form
+msgid "Complete"
+msgstr "Completo"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance__state__completed
+msgid "Completed"
+msgstr "Completado"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_schedule_form
+msgid "Create Assessment Period"
+msgstr "Crear período de evaluación"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.actions.act_window,help:ninebox_employee_performance.action_employee_assessment_questions
+#: model_terms:ir.actions.act_window,help:ninebox_employee_performance.action_manager_assessment_questions
+msgid "Create new Employee Assessment Questions"
+msgstr "Crear nuevas preguntas de evaluación de empleados"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.actions.act_window,help:ninebox_employee_performance.action_employee_performance
+msgid "Create new Performance"
+msgstr "Crear nuevo rendimiento"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.actions.act_window,help:ninebox_employee_performance.action_assessment_rating
+msgid "Create new Rating"
+msgstr "Crear nueva calificación"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.actions.act_window,help:ninebox_employee_performance.action_review_schedule
+msgid "Create new Review Schedule"
+msgstr "Crear un nuevo programa de revisión"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__create_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__create_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__create_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__create_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__create_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__create_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__create_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__create_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__create_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__create_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__create_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__create_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__create_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__create_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__create_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__create_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__display_name
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__display_name
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__display_name
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__display_name
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__display_name
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__display_name
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__display_name
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__display_name
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: ninebox_employee_performance
+#: model:ir.model,name:ninebox_employee_performance.model_hr_employee
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__employee_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__employee_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__employee_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: ninebox_employee_performance
+#: model:ir.actions.act_window,name:ninebox_employee_performance.action_employee_assessment_questions
+#: model:ir.model,name:ninebox_employee_performance.model_employee_assessment_questions
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__emp_assessment_qtn_ids
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_employee_assessment_questions
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_period_timeline_form
+msgid "Employee Assessment Questions"
+msgstr "Preguntas de evaluación de empleados"
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/review_schedule.py:0
+#, python-format
+msgid ""
+"Employee Assessment Questions is not available for this period, Please "
+"create some Questions."
+msgstr "Las preguntas de evaluación de los empleados no están disponibles para este período. Cree algunas preguntas."
+"Las preguntas de evaluación de empleados no están disponibles para este "
+"período. Cree algunas preguntas."
+
+#. module: ninebox_employee_performance
+#: model:ir.model,name:ninebox_employee_performance.model_employee_assessment_questions_review
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__emp_asses_ques_rev_ids
+msgid "Employee Assessment questions Review"
+msgstr "Revisión de preguntas de evaluación de empleados"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__employee_name
+msgid "Employee Name"
+msgstr "Nombre"
+
+#. module: ninebox_employee_performance
+#: model:ir.actions.act_window,name:ninebox_employee_performance.action_employee_performance
+#: model:ir.model,name:ninebox_employee_performance.model_employee_performance
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_action_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_performance_form
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.inherit_employee_performance_report
+msgid "Employee Performance"
+msgstr "Rendimiento de los empleados"
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/review_schedule.py:0
+#, python-format
+msgid ""
+"Employee Performance Record has been created: <a href=# data-oe-"
+"model=employee.performance data-oe-id=%d>%s</a>"
+msgstr "Se ha creado el Registro de desempeño del empleado: <a href="
+"Se ha creado un registro de desempeño de los empleados: <a href=# data-oe-"
+"model=employee.performance data-oe-id=%d>% s </a>"
+
+#. module: ninebox_employee_performance
+#: model:ir.model,name:ninebox_employee_performance.model_employee_performance_report
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_hr_employee__emp_perf_rep_lines
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_hr_employee_base__emp_perf_rep_lines
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_hr_employee_public__emp_perf_rep_lines
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.inherit_employee_performance_report
+msgid "Employee Performance Report"
+msgstr "Informe de desempeño del empleado"
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/hr.py:0
+#, python-format
+msgid "Employee Performance(s)"
+msgstr "Desempeño de los empleados"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__review_schedule__period_frequency__every_1_months
+msgid "Every 1 Months"
+msgstr "Cada 1 mes"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__review_schedule__period_frequency__every_12_months
+msgid "Every 12 Months"
+msgstr "Cada 12 meses"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__review_schedule__period_frequency__every_3_months
+msgid "Every 3 Months"
+msgstr "Cada 3 meses"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__review_schedule__period_frequency__every_6_months
+msgid "Every 6 Months"
+msgstr "Cada 6 meses"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_follower_ids
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_partner_ids
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__activity_type_icon
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__has_message
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__id
+msgid "ID"
+msgstr "identificación"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_exception_icon
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__activity_exception_icon
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__message_needaction
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__message_has_error
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_period_timeline_form
+msgid "Initiate  Employees Performace"
+msgstr "Iniciar el desempeño de los empleados"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_is_follower
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__job_position
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating____last_update
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions____last_update
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review____last_update
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance____last_update
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report____last_update
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions____last_update
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review____last_update
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline____last_update
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__write_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__write_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__write_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__write_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__write_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__write_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__write_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__write_uid
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__write_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__write_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__write_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__write_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__write_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__write_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__write_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__write_date
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__mail_notification
+msgid "Mail Notification"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_main_attachment_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: ninebox_employee_performance
+#: model:res.groups,name:ninebox_employee_performance.group_ninebox_performance_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_performance_form
+msgid "Manager Assessment"
+msgstr "Evaluación del gerente"
+
+#. module: ninebox_employee_performance
+#: model:ir.actions.act_window,name:ninebox_employee_performance.action_manager_assessment_questions
+#: model:ir.model,name:ninebox_employee_performance.model_manager_assessment_questions
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__mgr_assessment_qtn_ids
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_manager_assessment_questions
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_period_timeline_form
+msgid "Manager Assessment Questions"
+msgstr "Preguntas de evaluación del gerente"
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/review_schedule.py:0
+#, python-format
+msgid ""
+"Manager Assessment Questions is not available for this period, Please create"
+" some Questions."
+msgstr ""
+"Las preguntas de evaluación del gerente no están disponibles para este "
+"período. Cree algunas preguntas."
+
+#. module: ninebox_employee_performance
+#: model:ir.model,name:ninebox_employee_performance.model_manager_assessment_questions_review
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__mgr_asses_ques_rev_ids
+msgid "Manager Assessment questions Review"
+msgstr "Revisión de preguntas de evaluación del gerente"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__manager_name
+msgid "Manager Name"
+msgstr "Nombre del gerente"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_has_error
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_ids
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.constraint,message:ninebox_employee_performance.constraint_assessment_rating_name_rate_uniq
+msgid "Name and Rate should be unique!!"
+msgstr "¡El nombre y la tarifa deben ser únicos!"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_calendar_event_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_date_deadline
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_summary
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_type_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: ninebox_employee_performance
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_ninebox_report
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_ninebox_report_root
+msgid "Nine Box Report"
+msgstr "Informe de nueve cajas"
+
+#. module: ninebox_employee_performance
+#: model:ir.module.category,name:ninebox_employee_performance.module_ninebox_employee_performance
+msgid "Ninebox Employee Performance"
+msgstr "Desempeño de los empleados de Ninebox"
+
+#. module: ninebox_employee_performance
+#: model:ir.actions.client,name:ninebox_employee_performance.action_ninebox_report
+msgid "Ninebox Report"
+msgstr "Informe Ninebox"
+
+#. module: ninebox_employee_performance
+#: model:ir.actions.report,name:ninebox_employee_performance.action_report_ninebox
+msgid "Ninebox Report as PDF"
+msgstr "Informe Ninebox como PDF"
+
+#. module: ninebox_employee_performance
+#: model:ir.model,name:ninebox_employee_performance.model_report_ninebox_employee_performance_report_ninebox
+msgid "Ninebox Report as PDF."
+msgstr "Informe Ninebox como PDF"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__review_period_timeline__state__not_send
+msgid "Not Send"
+msgstr "No enviar"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_needaction_counter
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_has_error_counter
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de error"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__message_needaction_counter
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__message_has_error_counter
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: ninebox_employee_performance
+#. odoo-javascript
+#: code:addons/ninebox_employee_performance/static/src/js/ninebox_report.js:0
+#, python-format
+msgid "Ok"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance_report__pot_per_rate
+msgid "Peformance Rating"
+msgstr "Clasificación de Rendimiento"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__performance_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__performance_id
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_employee_performance
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_employee_performance_root
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.inherit_employee_performance_report
+msgid "Performance"
+msgstr "Rendimiento"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_hr_employee__performance_count
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_hr_employee_base__performance_count
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_hr_employee_public__performance_count
+msgid "Performance Count"
+msgstr "Recuento de rendimiento"
+
+#. module: ninebox_employee_performance
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_hr_performance_settings
+msgid "Performance Settings"
+msgstr "Configuración de rendimiento"
+
+#. module: ninebox_employee_performance
+#: model:res.groups,name:ninebox_employee_performance.group_ninebox_performance_supervisor
+msgid "Performance Supervisor"
+msgstr "Supervisora de rendimiento"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions__period_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions__period_id
+msgid "Period"
+msgstr "Período"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.constraint,message:ninebox_employee_performance.constraint_review_period_timeline_period_uniq
+msgid "Period should be unique !"
+msgstr "¡El período debe ser único!"
+
+#. module: ninebox_employee_performance
+#. odoo-javascript
+#: code:addons/ninebox_employee_performance/static/src/xml/control_buttons.xml:0
+#, python-format
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: ninebox_employee_performance
+#. odoo-javascript
+#: code:addons/ninebox_employee_performance/static/src/xml/control_buttons.xml:0
+#, python-format
+msgid "Print Ninebox Report"
+msgstr "Imprimir Reporte Ninebox"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__rate
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__rating_ids
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__rating_ids
+msgid "Rating"
+msgstr "Calificación"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_assessment_rating__name
+msgid "Rating Name"
+msgstr "Nombre de clasificación"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance__state__reset
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_period_timeline_form
+msgid "Reset"
+msgstr "Restablecer"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_performance_form
+msgid "Reset to draft"
+msgstr "Restablecer a borrador"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__resource_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__resource_id
+msgid "Resource"
+msgstr "Recurso"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__activity_user_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_assessment_questions_review__period_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__period_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_manager_assessment_questions_review__period_id
+msgid "Review Period"
+msgstr "Período de revisión"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__period_frequency
+msgid "Review Period Frequency"
+msgstr "Frecuencia del período de revisión"
+
+#. module: ninebox_employee_performance
+#: model:ir.model,name:ninebox_employee_performance.model_review_period_timeline
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__review_period_timelines
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_schedule_form
+msgid "Review Period Timeline"
+msgstr "Cronograma del período de revisión"
+
+#. module: ninebox_employee_performance
+#: model:ir.actions.act_window,name:ninebox_employee_performance.action_review_schedule
+#: model:ir.model,name:ninebox_employee_performance.model_review_schedule
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__review_schedule_id
+#: model:ir.ui.menu,name:ninebox_employee_performance.menu_action_review_schedule
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_performance_tree
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_schedule_form
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_review_schedule_tree
+msgid "Review Schedule"
+msgstr "Horario de revisión"
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/review_schedule.py:0
+#, python-format
+msgid "Review Schedule is already assigned for some of the Employees."
+msgstr ""
+"El programa de revisión ya está asignado para algunos de los empleados"
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/review_schedule.py:0
+#: code:addons/ninebox_employee_performance/models/review_schedule.py:0
+#, python-format
+msgid "Review Schedule is already assigned for the Employees."
+msgstr "El programa de revisión ya está asignado para los empleados"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__review_schedule_id
+msgid "Review Year"
+msgstr "Año de revisión"
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_performance_form
+msgid "Self Assessment"
+msgstr "Auto evaluación"
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/employee_performance.py:0
+#, python-format
+msgid "Self Assessment has been created"
+msgstr "Se ha creado la autoevaluación"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__review_period_timeline__state__send
+msgid "Send"
+msgstr "Enviar"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__state
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__state
+msgid "State"
+msgstr "Estado"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__activity_state
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: ninebox_employee_performance
+#: model_terms:ir.ui.view,arch_db:ninebox_employee_performance.action_employee_performance_form
+msgid "Submit"
+msgstr "Enviar"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance__state__submitted
+msgid "Submitted"
+msgstr "Presentada"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.constraint,message:ninebox_employee_performance.constraint_employee_performance_employee_period_uniq
+msgid "The Period must be unique for an Employee"
+msgstr "El período debe ser único para un empleado"
+
+#. module: ninebox_employee_performance
+#. odoo-javascript
+#: code:addons/ninebox_employee_performance/static/src/js/ninebox_report.js:0
+#, python-format
+msgid "There is no any records to review report."
+msgstr "No hay ningún registro para revisar el informe."
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/employee_performance.py:0
+#, python-format
+msgid "There is not any employee assessment question for the period."
+msgstr "No existe ninguna pregunta de evaluación de los empleados para el período."
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/employee_performance.py:0
+#, python-format
+msgid "There is not any manager assessment question for the period."
+msgstr "No existe ninguna pregunta de evaluación de directivos para el período."
+
+#. module: ninebox_employee_performance
+#. odoo-python
+#: code:addons/ninebox_employee_performance/models/employee_performance.py:0
+#, python-format
+msgid ""
+"This Self Assessment has been created from: <a href=# data-oe-"
+"model=employee.performance data-oe-id=%d>%s</a> (%s)"
+msgstr ""
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__tz
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__tz
+msgid ""
+"This field is used in order to define in which timezone the resources will "
+"work."
+msgstr ""
+"Este campo se utiliza para definir en qué zona horaria funcionarán los "
+"recursos."
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__tz
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__tz
+msgid "Timezone"
+msgstr "Zona horaria"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields.selection,name:ninebox_employee_performance.selection__employee_performance__state__draft
+msgid "To Submit"
+msgstr "Entregar"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,help:ninebox_employee_performance.field_employee_performance__activity_exception_decoration
+#: model:ir.model.fields,help:ninebox_employee_performance.field_review_period_timeline__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: ninebox_employee_performance
+#: model:res.groups,name:ninebox_employee_performance.group_ninebox_performance_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: ninebox_employee_performance
+#. odoo-javascript
+#: code:addons/ninebox_employee_performance/static/src/js/ninebox_report.js:0
+#, python-format
+msgid "Validation Error"
+msgstr "Error de validacion"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__resource_calendar_id
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__resource_calendar_id
+msgid "Working Hours"
+msgstr "Horas laborales"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__x_rate
+msgid "X Rating"
+msgstr "Calificación X"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__y_rate
+msgid "Y Rating"
+msgstr "Calificación Y"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_schedule__year
+msgid "Year"
+msgstr "Año"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.constraint,message:ninebox_employee_performance.constraint_review_schedule_year_uniq
+msgid "Year should be unique !"
+msgstr "¡El año debería ser único!"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_unread
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: ninebox_employee_performance
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_employee_performance__message_unread_counter
+#: model:ir.model.fields,field_description:ninebox_employee_performance.field_review_period_timeline__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"

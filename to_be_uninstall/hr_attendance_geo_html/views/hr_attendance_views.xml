@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherited HR Attendance Tree View. #Varshil -->
+    <record id="view_attendance_tree_inherit_hr_attendance_geo_html" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.inherit.hr_attendance_geo_html</field>
+        <field name="model">hr.attendance</field>
+        <field name="priority" eval="97"/>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='check_out']" position="after">
+                <field name="is_geo_access_check_in" />
+                <field name="is_geo_access_check_out" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherited HR Attendance Form View. #Varshil -->
+    <record id="hr_attendance_view_form_inherit_hr_attendance_geo_html" model="ir.ui.view">
+        <field name="name">hr.attendance.form.inherit.hr_attendance_geo_html</field>
+        <field name="model">hr.attendance</field>
+        <field name="priority" eval="96"/>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='in_location_info']" position="after">
+                <label for="is_geo_access_check_in"/> 
+                <field name="is_geo_access_check_in" nolabel="1"/>
+            </xpath>
+            <xpath expr="//div[@name='out_location_info']" position="after">
+                <label for="is_geo_access_check_out"/> 
+                <field name="is_geo_access_check_out" nolabel="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

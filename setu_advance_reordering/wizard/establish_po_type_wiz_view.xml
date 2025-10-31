@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="view_establish_po_type_wizard" model="ir.ui.view">
+        <field name="name">view.establish.po.type.wizard</field>
+        <field name="model">establish.po.type.wiz</field>
+        <field name="arch" type="xml">
+            <form string="Establish PO Type">
+                <sheet>
+                    <group>
+                        <field name="purchase_order_type"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Establish" class="btn-primary" data-hotkey="q" type="object"
+                            name="action_establish_po_type"/>
+                    <button string="cancel" class="btn-secondary" data-hotkey="z" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_establish_po_type_wizard" model="ir.actions.act_window">
+        <field name="name">Establish PO Type</field>
+        <field name="res_model">establish.po.type.wiz</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

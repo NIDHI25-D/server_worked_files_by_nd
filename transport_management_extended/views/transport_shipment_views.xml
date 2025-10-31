@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="transport_shipment_view_inherit" model="ir.ui.view">
+        <field name="name">transport.shipment.view.inherit</field>
+        <field name="model">transport.shipment</field>
+        <field name="inherit_id" ref="transport_management.transport_shipment_form_view"/>
+        <field name="arch" type="xml">
+<!--as extend the shipment module here we optional show the all fields of Delivery orders tab as per the task https://app.clickup.com/t/86dun2r5x            -->
+            <xpath expr="//sheet/notebook/page/field[@name='transport_do_ids']/list/field[@name='name']"
+                   position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//sheet/notebook/page/field[@name='transport_do_ids']/list/field[@name='so_id']"
+                   position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//sheet/notebook/page/field[@name='transport_do_ids']/list/field[@name='source_location_id']"
+                   position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//sheet/notebook/page/field[@name='transport_do_ids']/list/field[@name='destination_location_id']"
+                   position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//sheet/notebook/page/field[@name='transport_do_ids']/list/field[@name='delivery_address']"
+                   position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//sheet/notebook/page/field[@name='transport_do_ids']/list/field[@name='status']"
+                   position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <!-- Changes of module transport management version16 #Jatin-->
+            <xpath expr="//form/sheet/group[1]/group[2]/field[@name='delivery_date']"
+                   position="after">
+                <field name="cutover_date"/>
+            </xpath>
+
+            <xpath expr="//page[@name='delivery_orders']/field/list/field[@name='name']"
+                   position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='delivery_orders']/field/list/field[@name='so_id']"
+                   position="after">
+                <field name="partner_shipping_id" optional="show"/>
+            </xpath>
+
+            <xpath expr="//page[@name='delivery_orders']/field/list/field[@name='destination_location_id']"
+                   position="after">
+                <field name="shipping_carrier_id" optional="show"/>
+                <field name="package_count" optional="show"/>
+                <field name="pallet_count" optional="show"/>
+                <field name="box_count" optional="show"/>
+                <field name="carrier_tracking_ref" readonly="0" optional="show"/>
+            </xpath>
+
+            <xpath expr="//page[@name='delivery_orders']/field/list/field[@name='status']"
+                   position="after">
+                 <field name="prepared_by_id" optional="show"/>
+            </xpath>
+
+            <xpath expr="//page[@name='ship_track']"
+                   position="after">
+                <page string="Warehouse" name="warehouse_details">
+                    <group style="width:50%;">
+                        <label for="beginning_of_load_date_and_time"/>
+                        <div class="o_row">
+                            <field name="beginning_of_load_date_and_time" readonly="1"/>
+                            <button name="update_beginning_of_load_date_and_time" type="object" string="Update"
+                                    class="btn-link mb-1 px-0"
+                                    icon="fa-refresh"/>
+                        </div>
+                        <label for="ending_of_load_date_and_time"/>
+                        <div class="o_row">
+                            <field name="ending_of_load_date_and_time" readonly="1"/>
+                            <button name="update_ending_of_load_date_and_time" type="object" string="Update"
+                                    class="btn-link mb-1 px-0"
+                                    icon="fa-refresh"/>
+                        </div>
+                        <field name="load_execution_responsible"/>
+                    </group>
+                    <group>
+                    </group>
+                </page>
+                <page string="Signature" name="signature_details">
+                    <group>
+                        <group>
+                            <field name="shipping_staff_signature" widget="signature"/>
+                        </group>
+                         <group>
+                             <field name="delivery_person_signature" widget="signature"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+            <xpath expr="//field[@name='responsible']"
+                   position="after">
+                <field name="freight_responsible_id" readonly="status == 'done'"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

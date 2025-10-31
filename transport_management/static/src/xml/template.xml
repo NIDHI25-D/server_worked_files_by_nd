@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="transport_management.transport_dashboard" owl="1">
+        <section class="section shipment_dashboard">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt32">
+                        <h4 class="tk-primary">All Static</h4>
+                        <hr class="border-primary"/>
+                    </div>
+                    <div class="col-md-2 mb-4 mt8 mb16" t-on-click="() => this.viewShipmentStats('all')">
+                        <div class="card info-bg p-32">
+                            <div class="card-body info-bg tk-card-body">
+                                <img alt="users" width="40"
+                                     src="/transport_management/static/src/img/dashboard/distribution.svg"/>
+                                <h4 class="tk-st-1 info-bg">Shipments</h4>
+                                <h6 class="tk-st-2 info-bg">
+                                    <t t-esc="state.transportStats['all']"/>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mt8 mb16" t-on-click="() => this.viewShipmentStats('draft')">
+                        <div class="card warn-bg p-32">
+                            <div class="card-body warn-bg tk-card-body">
+                                <img alt="users" width="40"
+                                     src="/transport_management/static/src/img/dashboard/pick-list.svg"/>
+                                <h4 class="tk-st-1 warn-bg">Packing</h4>
+                                <h6 class="tk-st-2 warn-bg">
+                                    <t t-esc="state.transportStats['pack']"/>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mt8 mb16" t-on-click="() => this.viewShipmentStats('ship')">
+                        <div class="card purple-bg p-32">
+                            <div class="card-body purple-bg tk-card-body">
+                                <img alt="users" width="40"
+                                     src="/transport_management/static/src/img/dashboard/shipping.svg"/>
+                                <h4 class="tk-st-1 purple-bg">Shipped</h4>
+                                <h6 class="tk-st-2 purple-bg">
+                                    <t t-esc="state.transportStats['ship']"/>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mt8 mb16" t-on-click="() => this.viewShipmentStats('in_transit')">
+                        <div class="card success-bg p-32">
+                            <div class="card-body success-bg tk-card-body">
+                                <img alt="users" width="40"
+                                     src="/transport_management/static/src/img/dashboard/fast-delivery.svg"/>
+                                <h4 class="tk-st-1 success-bg">In Transit</h4>
+                                <h6 class="tk-st-2 success-bg">
+                                    <t t-esc="state.transportStats['transit']"/>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mt8 mb16" t-on-click="() => this.viewShipmentStats('done')">
+                        <div class="card active-bg p-32">
+                            <div class="card-body active-bg tk-card-body">
+                                <img alt="users" width="40"
+                                     src="/transport_management/static/src/img/dashboard/delivery-box.svg"/>
+                                <h4 class="tk-st-1 active-bg">Delivered</h4>
+                                <h6 class="tk-st-2 active-bg">
+                                    <t t-esc="state.transportStats['done']"/>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mt8 mb16" t-on-click="() => this.viewShipmentStats('cancel')">
+                        <div class="card danger-bg p-32">
+                            <div class="card-body danger-bg tk-card-body">
+                                <img alt="users" width="40"
+                                     src="/transport_management/static/src/img/dashboard/cancel.svg"/>
+                                <h4 class="tk-st-1 danger-bg">Cancelled</h4>
+                                <h6 class="tk-st-2 danger-bg">
+                                    <t t-esc="state.transportStats['cancel']"/>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 mt32">
+                        <h4 class="tk-primary">Shipment orders by month</h4>
+                        <hr class="border-primary"/>
+                        <div class="tk-os-chart" t-ref="order_by_months_graph"/>
+                    </div>
+                    <div class="col-md-4 mt32">
+                        <h4 class="tk-primary">Shipment Transporters</h4>
+                        <hr class="border-primary"/>
+                        <div class="tk-os-chart" t-ref="shipment_transporter_graph"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </t>
+</templates>

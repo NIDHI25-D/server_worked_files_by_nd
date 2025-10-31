@@ -1,0 +1,45 @@
+<h2 id="Setu Warehouse Transaction Authorization">Setu Warehouse Transaction Authorization</h2>
+<h4 id="usage">USAGE</h4>
+<ul>
+    <li>This module is used to give restrictions to see the information and department wise applications, jobs and other
+        functionality related to hr.
+    </li>
+</ul>
+<h4 id="hr_applicant">Hr Applicant</h4>
+<ul>
+    <li>Added Some record rules to the model.</li>
+    <li>create an applicant with conditions that contract_signed member matches the count of required
+        employee then it will show respected Validation error while creation of applicant.
+    </li>
+    <li>write an applicant with conditions that if a contract_signed member matches the count
+        of required employee, then it will show respected Validation error while creation of applicant.
+    </li>
+</ul>
+<h4 id="hr_employee">Hr Employee</h4>
+<ul>
+    <li>get departments from the menu.</li>
+</ul>
+<h4 id="hr_department">hr department</h4>
+<ul>
+    <li>Added Some record rules to the model.</li>
+</ul>
+<h4 id="hr_job">Hr Job</h4>
+<ul>
+    <li>Added Some record rules to the model.</li>
+    <li>Added Additional fields Open Date and Close Date to jobs.</li>
+    <li>Upon This it will handel the publication of jobs.</li>
+    <li>for hr job, when all the employees are fulfilled as per the required
+        candidates, then it will give validation error respectively if the user enables the toggle button.
+    </li>
+    <li>give close date with the conditions that when the last applicant assigned in the
+        status: contract signed that date will be assigned in the field of close date and is_published toggle
+        will be close and a message in chatter will be added.
+    </li>
+</ul>
+<h4 id="hr_recruitment_stage">Hr Recruitment Stage</h4>
+<ul>
+    <li>Added Additional field department_ids to Hr Recruitment Stage.</li>
+    <li>if adding the department into department_ids, then it does not have to contain
+        any applications if it has then it will give earning.
+    </li>
+</ul>

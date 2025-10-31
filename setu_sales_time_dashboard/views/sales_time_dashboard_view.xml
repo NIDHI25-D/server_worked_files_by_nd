@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sales_time_dashboard_form" model="ir.ui.view">
+            <field name="name">sales.time.dashboard.form</field>
+            <field name="model">sales.time.dashboard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="Choose date range to generate sales time report">
+                                <field name="start_date" required="1"/>
+                                <field name="end_date" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="get_sales_time_report" string="View" type="object" class="btn-primary"/>
+                        <button string="cancel" class="button-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="sales_time_dashboard_tree" model="ir.ui.view">
+            <field name="name">sales.time.dashboard.tree.view</field>
+            <field name="model">sales.time.dashboard</field>
+            <field name="arch" type="xml">
+                <list create="false" edit="false" delete="false">
+                    <field name="wizard_id" invisible="1"/>
+                    <field name="so_name" widget="many2one"/>
+                    <field name="picking_name" widget="many2one"/>
+                    <field name="is_created_from_website"/>
+                    <field name="actual_hours_to_confirm_so_by_customer" widget="float_time" />
+<!--                    <field name="actual_hours_to_confirm_so_by_customer" widget="float_time"/>-->
+                    <field name="actual_hours_to_confirm_so" widget="float_time" />
+<!--                    <field name="hours_to_confirm_so" widget="float_time"/>-->
+                    <field name="actual_hours_to_create_picking" widget="float_time"/>
+<!--                    <field name="hours_to_create_picking" widget="float_time"/>-->
+                    <field name="actual_hours_to_create_invoice" widget="float_time"/>
+<!--                    <field name="hours_to_create_invoice" widget="float_time"/>-->
+                    <field name="actual_hours_to_prepare_picking" widget="float_time"/>
+<!--                    <field name="hours_to_prepare_picking" widget="float_time"/>-->
+                    <field name="actual_hours_to_delivery" widget="float_time"/>
+<!--                    <field name="hours_to_delivery" widget="float_time"/>-->
+                    <field name="actual_hours_to_send_order" widget="float_time"/>
+                    <field name="actual_total_time_taken" widget="float_time"/>
+<!--                    <field name="total_time_taken" widget="float_time"/>-->
+
+                </list>
+            </field>
+        </record>
+
+        <record id="sales_time_dashboard_search" model="ir.ui.view">
+            <field name="name">sales.time.dashboard.search</field>
+            <field name="model">sales.time.dashboard</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="so_name"/>
+                    <field name="picking_name"/>
+                    <field name="create_sale_order_date"/>
+                    <field name="cliente_mostrador"/>
+                    <field name="partner_id"/>
+                    <field name="team_id"/>
+                    <field name="detener_envio"/>
+                    <field name="carrier_id"/>
+                    <field name="payment_term_id"/>
+                    <field name="payment_status"/>
+                    <field name="payment_state"/>
+                    <separator/>
+                    <filter string="Created from website" context="{'group_by':'is_created_from_website'}" name="is_created_from_website"/>
+                    <filter string="Sale order" context="{'group_by':'so_name'}" name="so_name"/>
+                    <filter string="Creation Date" context="{'group_by':'create_sale_order_date:date'}" name="create_sale_order_date"/>
+                    <filter context="{'group_by':'created_user_id'}" name="created_user_id"/>
+                    <filter string="Cliente Mostrador" context="{'group_by':'cliente_mostrador'}" name="cliente_mostrador"/>
+                    <filter string="Customer" context="{'group_by':'partner_id'}" name="partner_id"/>
+                    <filter string="Sale Team" context="{'group_by':'team_id'}" name="team_id"/>
+                    <filter string="Detener envio" context="{'group_by':'detener_envio'}" name="detener_envio"/>
+                    <filter string="Carrier" context="{'group_by':'carrier_id'}" name="carrier_id"/>
+                    <filter string="Payment Terms" context="{'group_by':'payment_term_id'}" name="payment_term_id"/>
+                </search>
+            </field>
+        </record>
+
+    <record id="action_sales_time_dashboard_wizard" model="ir.actions.act_window">
+        <field name="name">Setu Sales Time Dashboard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sales.time.dashboard</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="setu_sales_time_dashboard.sales_time_dashboard_form"/>
+        <field name="target">new</field>
+    </record>
+
+        <menuitem id="sales_time_dashboard"
+                  name="Sales Time Dashboard"
+                  parent="sale.menu_sale_report"
+                  sequence="5"
+                  action="action_sales_time_dashboard_wizard"
+                  groups="setu_sales_time_dashboard.sales_time_dashboard_report"/>
+    </data>
+</odoo>

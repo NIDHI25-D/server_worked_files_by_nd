@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_partner_hcategory_list" model="ir.ui.view">
+        <field name="name">res.partner.hcategory.list</field>
+        <field name="model">res.partner.hcategory</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="parent_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_partner_hcategory_form" model="ir.ui.view">
+        <field name="name">res.partner.hcategory.form</field>
+        <field name="model">res.partner.hcategory</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" class="partner_category_hierarchy_name"/>
+                        <field name="parent_id" class="partner_category_hierarchy_parent_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Related Partners">
+                            <field name="partner_ids" widget="many2many"
+                                   domain="[('parent_id', '=', False), ('hcategory_id', '=', False)]"/>
+                        </page>
+                        <!-- This page is direct from the module website_sale_pricelist_visibility module.-->
+                        <page string="Pricelist Visibility" groups="partner_category_hierarchy.group_hcategory_pricelist">
+                            <p><br/>The following Pricelists will be visible only to partners from this Partner Category and its
+                                children recursively.
+                            </p>
+                            <field name="pricelist_ids" nolabel="1" domain="[('id', '!=', %(partner_category_hierarchy.default_pricelist)d )]">
+                                <list>
+                                    <field name="name"/>
+                                </list>
+                            </field>
+                            <p>Pricelists that have been inherited from parent Partner Categories.</p>
+                            <field name="inherited_pricelist_ids" nolabel="1" readonly="1"
+                                   domain="[('id', '!=', %(partner_category_hierarchy.default_pricelist)d )]">
+                                <list>
+                                    <field name="name"/>
+                                </list>
+                            </field>
+                            <p>If you are not sure what Pricelists specific partner will be able to see, you can check it on
+                                partner's form, "Pricelists" tab.
+                            </p>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_partner_category" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.hcategory</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_partner_hcategory_list"/>
+    </record>
+
+    <record id="view_partner_hcategory_hierarchy" model="ir.ui.view">
+        <field name="name">res.partner.hcategory.hierarchy</field>
+        <field name="model">res.partner.hcategory</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <menuitem id="menu_partners"
+              name="Partners"
+              parent="sale.sale_menu_root"
+              sequence="32"/>
+    <menuitem action="base.action_partner_form"
+              id="menu_action_res_partners"
+              name="Partners"
+              parent="menu_partners"
+              sequence="0"/>
+    <menuitem action="action_partner_category"
+              id="menu_partner_category"
+              name="Categories"
+              parent="menu_partners"
+              sequence="10"
+              groups="partner_category_hierarchy.group_hcategory"/>
+
+</odoo>

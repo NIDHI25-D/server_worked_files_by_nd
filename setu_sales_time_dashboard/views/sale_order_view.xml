@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_diff_view_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="preparation_date" readonly="1" force_save="1"/>
+                <field name="invoice_ref_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='date_order']" position="after">
+                <label for="customer_confirmation_date"/>
+                <div class="o_row">
+                    <field name="customer_confirmation_date" readonly="True"/>
+                    <button name="set_customer_confirmation_date"
+                            id="button_customer_confirmation"
+                            type="object"
+                            string="Update"
+                            class="btn-link mb-1 px-0" icon="fa-refresh"
+                            groups="setu_sales_time_dashboard.customer_confirmation_date"
+                            invisible="is_from_website != False or state in ['cancel'] or locked != False"/>
+                    <!--   Commented by Smith Ponda need to add this attrs after is_from_website field is available                 -->
+                    <!--                            attrs="{'invisible': ['|',('is_from_website','!=',False),('state', 'in', ['done','cancel'])]}"-->
+
+                </div>
+		<field name="date_order_received"/>
+                <!--        attrs to add (depend on odoo stock per warehouse)attrs="{'invisible': ['|',('website_id','!=',False),('state', 'in', ['done','cancel'])]}"-->
+            </xpath>
+
+
+        </field>
+    </record>
+
+    <record id="calculate_total_processing_hours_action_server" model="ir.actions.server">
+        <field name='groups_id' eval="[(4, ref('setu_sales_time_dashboard.sales_time_dashboard_report'))]"/>
+        <field name="name">Re-calculate Sales Time</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="setu_sales_time_dashboard.model_sale_order"/>
+        <field name="binding_model_id" ref="setu_sales_time_dashboard.model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">records.calculate_total_processing_hours()</field>
+    </record>
+</odoo>

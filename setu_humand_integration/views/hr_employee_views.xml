@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="setu_humand_integration_inherited_view_employee_form" model="ir.ui.view">
+            <field name="name">setu.humand.integration.inherited.view.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                     <button name="create_employee_to_humand" string="Create Humand Employee" type="object" class="oe_highlight" invisible="is_need_to_create_humand_employee"/>
+                </xpath>
+                <xpath expr="//field[@name='work_email']" position="before">
+                     <field name="is_need_to_create_humand_employee" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

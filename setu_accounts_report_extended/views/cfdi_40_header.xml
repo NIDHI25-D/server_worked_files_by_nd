@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <template id="external_layout_cfdi_standard" inherit_id="web.external_layout_striped">
+
+            <xpath expr="//div[@name='company_address']" position="inside">
+                <t t-if="o and o._name in ['account.move', 'account.payment', 'account.bank.statement.line']">
+                    <span t-field="company.partner_id.l10n_mx_edi_fiscal_regime"/>
+                </t>
+            </xpath>
+            <xpath expr="//div[@name='company_address']" position="after">
+                <div class="align-items-right p-4 text-right">
+                    <t t-if="o and o._name in ['account.move', 'account.payment', 'account.bank.statement.line']">
+                        <t t-if="o and o._name in ['account.payment', 'account.bank.statement.line']">
+                            <t t-set="docs_related"
+                               t-value="o.move_id._l10n_mx_edi_get_extra_invoice_report_values()"/>
+                        </t>
+                        <t t-else="">
+                            <t t-set="docs_related"
+                               t-value="o._l10n_mx_edi_get_extra_invoice_report_values()"/>
+                        </t>
+                        <t t-if="docs_related">
+                            <t t-set="cfdi_version"
+                               t-value="docs_related['cfdi_node'].xpath('//cfdi:Comprobante', namespaces={'cfdi': 'http://www.sat.gob.mx/cfd/4'})[0].get('Version')"/>
+                        </t>
+                        <br/>
+                        <br/>
+                        <t t-if="cfdi_version">
+                            <span>Version:
+                                <t t-esc="'CFDI (%s)' % (cfdi_version)"/>
+                            </span>
+                        </t>
+                        <t t-else="">
+                            <span>Version:
+                                <t t-esc="CFDI"/>
+                            </span>
+                        </t>
+                        <br/>
+                        <span>Tipo de comprobante</span>
+                        <br/>
+                        <t t-if="o._name == 'account.move'">
+                            <span t-esc="'I Ingreso' if o.move_type == 'out_invoice' else 'E Egreso'"/>
+                        </t>
+                        <t t-elif="o._name == 'account.payment'">
+                            <span t-esc="'P Pago' if o and o._name == 'account.payment' else ''"/>
+                        </t>
+                        <t t-elif="o._name == 'account.bank.statement.line'">
+                            <span t-esc="'P Pago' if o and o._name == 'account.bank.statement.line' else ''"/>
+                        </t>
+                    </t>
+                </div>
+            </xpath>
+
+        </template>
+
+        <template id="invoice_cfdi_40_custom_header">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+            <t t-if="o and o._name in ['account.move', 'account.payment', 'account.bank.statement.line']">
+                <t t-if="not company">
+                    <!-- Multicompany -->
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                    </t>
+                </t>
+                <t t-call="setu_accounts_report_extended.external_layout_cfdi_standard">
+                    <t t-raw="0"/>
+                </t>
+            </t>
+            <t t-else="">
+                <t t-call="web.external_layout"/>
+            </t>
+        </template>
+    </data>
+</odoo>

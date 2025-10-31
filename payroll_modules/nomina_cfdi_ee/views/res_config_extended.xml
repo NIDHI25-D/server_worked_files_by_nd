@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="res_config_settings_view_automatic_vacation_id">
+            <field name="name">res.config.settings.view.automatic.vacation.id</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref='hr.res_config_settings_view_form'/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@name='integration']" position="after">
+                    <div class="app_settings_block">
+                        <h2>Automatic Validation</h2>
+                        <div class="row mt16 o_settings_container" name="automatic_vacation_id">
+                            <div class="col-12 col-lg-6 o_setting_box" id="automatic_vacation_id">
+                                <div class="o_setting_right_pane">
+                                    <label for="automatic_vacation_id"/>
+                                    <div class="content-group" style="width : 100%;">
+                                        <div class="mt16">
+                                            <field name="automatic_vacation_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

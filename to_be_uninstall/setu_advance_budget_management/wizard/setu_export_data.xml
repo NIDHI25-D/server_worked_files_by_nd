@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="setu_export_data_transient_view" model="ir.ui.view">
+            <field name="name">setu.export.data.transient.view</field>
+            <field name="model">setu.export.sheet.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <footer>
+                        <button name="prepare_excel_report" string="Excel Report" type="object"
+                                class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="setu_export_data_view_action" model="ir.actions.act_window">
+            <field name="name">Export Sheet</field>
+            <field name="res_model">setu.export.sheet.data</field>
+            <field name="binding_model_id" ref="model_setu_advance_budget_forecasted_sheet"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="setu_export_data_transient_view"/>
+            <!--        <field name="groups_id" eval="[(4, ref('setu_shopify_connector.group_setu_shopify_connector_user'))]"/>-->
+        </record>
+        <record id="setu_import_data_transient_view" model="ir.ui.view">
+            <field name="name">setu.import.data.transient.view</field>
+            <field name="model">setu.import.sheet.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="import_xml_file" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="import_report_data" string="Import file" type="object"
+                                class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="setu_import_data_view_action" model="ir.actions.act_window">
+            <field name="name">Import Sheet</field>
+            <field name="res_model">setu.import.sheet.data</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="setu_import_data_transient_view"/>
+        </record>
+        <menuitem id="setu_export_sheet_menu_item"
+                  parent="setu_advance_budget_management.setu_advance_budget_forecasted_planing_main_menu"
+                  action="setu_import_data_view_action"
+                  name="Re-import sheets" groups="account.group_account_manager"/>
+    </data>
+</odoo>

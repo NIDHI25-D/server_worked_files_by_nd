@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">        
+
+        <record id="email_template_auto_confirm_sale" model="mail.template">
+            <field name="name">Auto confirm sale notification</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="email_from">${object.user_id.email_formatted |safe}</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="subject">${object.company_id.name}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    Estimando <b>${object.partner_id.name |safe}</b>
+                    <br/>
+                    Su pedido  <b>${object.name |safe}</b> no pudo ser liberado automaticamente por motivo de
+                    <br/>
+                    ${ctx.get('reason','')}
+                    <br/>
+                    por favor comunicate con la gente de credito y cobranza para mas informacion
+                    <br/>
+                    Gracias
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <record id="email_template_rejected_sale" model="mail.template">
+            <field name="name">rejected sale notification</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="email_from">${object.user_id.email_formatted |safe}</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="subject">${object.company_id.name}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p>
+                    Estimando <b>${object.partner_id.name |safe}</b>
+                    </p>
+                    <p>
+                    Su pedido  <b>${object.name |safe}</b> no pudo ser liberado automaticamente por motivo de
+                    </p>
+                    <b>${ctx.get('reason','')}</b>
+                    <p>
+                    por favor comunicate con la gente de credito y cobranza para mas informacion
+                    </p>
+                    Gracias
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="reject_reason_tree" model="ir.ui.view">
+            <field name="name">reject.reason.tree</field>
+            <field name="model">reject.reason</field>
+            <field name="arch" type="xml">
+                <list string="Reject Reason for Rejected Documents" editable="bottom">
+                <field name="name" required="1"/>
+                </list>
+            </field>
+        </record>
+
+
+    <record model="ir.actions.act_window" id="reject_reason_action">
+            <field name="name">Reject Reason for Rejected Documents</field>
+            <field name="res_model">reject.reason</field>
+            <field name="view_mode">list</field>
+        </record>
+
+        <menuitem id="reject_reson_menu" name="Reject Reason"
+                  parent="dealers_request.dealers_menu"
+                  action="reject_reason_action"
+                  sequence="6"
+                  groups="dealers_request.credit_upload_documents"
+        />
+
+    </data>
+</odoo>

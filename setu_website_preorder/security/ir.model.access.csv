@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_preorder_sale_purchase_rel,preorder_sale_purchase_rel,model_preorder_sale_purchase_rel,,1,1,1,1
+access_presale_sale_purchase_rel,presale_purchase_rel,model_presale_purchase_rel,,1,1,1,1
+access_international_preorder_sale_purchase_rel,international_preorder_sale_purchase_rel,model_international_preorder_sale_purchase_rel,,1,1,1,1
+access_model_mrp,access_model_mrp,mrp.model_mrp_bom,,1,1,1,1
+access_model_uom,access_model_uom,stock.model_uom_uom,,1,1,1,1
+access_model_stock_quant,access_model_stock_quant,stock_account.model_stock_quant,,1,1,1,1
+access_model_stock_move,access_model_stock_move,stock.model_stock_move,,1,1,1,1
+access_model_stock_warehouse,access_model_stock_warehouse,stock.model_stock_warehouse,,1,1,1,1
+access_model_stock_location,access_model_stock_location,stock.model_stock_location,,1,1,1,1
+setu_website_preorder.purchase_order_confirm_wizard,purchase_order_confirm_wizard,setu_website_preorder.model_purchase_order_confirm_wizard,,1,1,1,1

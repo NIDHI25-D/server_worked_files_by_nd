@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="server_actions_inherited" model="ir.ui.view">
+            <field name="name">server.actions.inherited</field>
+            <field name="model">ir.actions.server</field>
+            <field name="inherit_id" ref="mail.view_server_action_form_template"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='activity_user_field_name']" position="replace">
+                    <field name="activity_user_field_name" invisible="activity_user_type in ['specific','sevrals_users']"
+                                    required="state == 'next_activity' and activity_user_type == 'generic'"/>
+                </xpath>
+                <xpath expr="//field[@name='activity_user_id']" position="replace">
+                    <field name="activity_user_id" invisible="activity_user_type in ['generic','sevrals_users']"
+                                    required="state == 'next_activity' and activity_user_type == 'specific'"/>
+                </xpath>
+
+
+                <xpath expr="//field[@name='activity_user_type']" position="after">
+                    <field name="activity_sevral_users_ids"
+                           invisible="activity_user_type in ['generic','specific']"
+                                    required="state == 'next_activity' and activity_user_type == 'sevrals_users'"
+                           widget='many2many_tags'/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

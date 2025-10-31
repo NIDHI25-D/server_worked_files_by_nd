@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="form_price_level_config" model="ir.ui.view">
+            <field name="name">price.level.config.form</field>
+            <field name="model">price.level.config</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="%(action_import_product_to_price_update)d" class="btn-primary"
+                                string="Add multiple products" type="action"
+                                invisible="state in ['validate','original']"/>
+                        <button name="update_price" class="btn-primary"
+                                string="Update Price" type="object"
+                                invisible="state in ['validate1','validate', 'original']"
+                                groups="setu_price_update.group_price_update_user"/>
+                        <button name="update_price_in_odoo" class="btn-primary"
+                                string="Final Approval" type="object"
+                                invisible="state not in ['validate1']"
+                                groups="setu_price_update.group_price_update_manager"/>
+                        <button name="change_price_to_previous" class="btn-primary"
+                                string="Change TO Previous Price" type="object"
+                                invisible="state not in ['validate']"
+                                groups="setu_price_update.group_price_update_manager"/>
+                        <field name="state" widget="statusbar" on_change="1" modifiers="{}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="calculate_marvel_price" string="Calculate New Price" type="object"  icon="fa-usd" invisible="state not in ['draft']"/>
+                            <button name="action_set_levels" string="Generate Levels" icon="fa-level-up" type="object"/>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="level_id" required="True" widget="selection"/>
+                                <field name="first_range" required="True"/>
+                                <field name="second_range" required="True"/>
+                                <field name="level_range"/>
+                            </group>
+                            <group>
+                                <field name="exchange_rate" required="True"/>
+                                <field name="import_factor" required="True"/>
+                                <field name="discount_ids" required="True" widget="many2many_tags"
+                                       options="{'no_create_edit': True,'no_create': True}"/>
+                                <field name="responsible_person_id"/>
+                                <field name="include_negative_increments"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Levels" name="level_ids" colspan="4">
+                                <field name="level_ids">
+                                    <list create="0">
+                                        <field name="name"/>
+                                        <field name="level_Percentage"/>
+                                        <field name="price_complement"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Product Levels" name="product_level_ids" colspan="4">
+                                <field name="product_level_ids">
+                                    <list editable="bottom">
+                                        <field name="level_of_config" invisible='1'/>
+                                        <field name="competition_level_product" readonly="1" force_save="1"/>
+                                        <field name="Vendor_id" required="1"/>
+                                        <field name="product_id"
+                                               domain="[('competition_level_id.level','&lt;=',level_of_config)]"
+                                               required="1"/>
+
+
+                                        <field name="cost_price"/>
+                                        <field name="Price" readonly="1"/>
+                                        <field name="marvel_cost" decoration-bf="1" decoration-it="1"/>
+                                        <field name="marvel_price" decoration-bf="1" decoration-it="1" />
+                                        <field name="increment" decoration-success="increment &gt; 5" decoration-danger="increment &lt; -5" decoration-info="increment == 0" decoration-bf="1" decoration-it="1" optional="hide"/>
+                                        <field name="utility_margin" optional="hide"/>
+                                        <field name="difference" decoration-bf="1" decoration-it="1" optional="hide"/>
+                                        <field name="utility" decoration-bf="1" decoration-it="1" optional="hide"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="tree_price_level_config" model="ir.ui.view">
+            <field name="name">price.level.config.tree</field>
+            <field name="model">price.level.config</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="level_id"/>
+                    <field name="first_range"/>
+                    <field name="second_range"/>
+                    <field name="level_range"/>
+                    <field name="state" widget="badge" decoration-info="state == 'draft'"
+                           decoration-warning="state in ('validate1')" decoration-success="state in ('validate')"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="search_view_price_level_config" model="ir.ui.view">
+            <field name="name">price.level.config.tree</field>
+            <field name="model">price.level.config</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="To Approve" domain="[('state','=', 'validate1')]"
+                            name="To_approve"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="actions_price_level_config" model="ir.actions.act_window">
+            <field name="name">Product Price Update</field>
+            <field name="res_model">price.level.config</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="prod_price_update_menu" name="Price Update" parent="sale.menu_sale_config" sequence="6"
+                  groups="setu_price_update.group_price_update_user"/>
+
+        <menuitem id="menu_price_level_config" name="Product Price Update"
+                  parent="setu_price_update.prod_price_update_menu"
+                  action="setu_price_update.actions_price_level_config"/>
+
+    </data>
+</odoo>

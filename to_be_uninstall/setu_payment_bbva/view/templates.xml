@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+<!--        <template id="website_bbva_payment_acquirer" name="Bbva payment method"-->
+<!--                  inherit_id="payment.checkout">-->
+<!--            <xpath expr="//div[hasclass('card')]/t[@t-foreach='providers']" position="attributes">-->
+<!--                  <attribute name='t-foreach'>website.get_applicable_acquirers(providers)</attribute>-->
+<!--            </xpath>-->
+<!--        </template>-->
+    </data>
+</odoo>

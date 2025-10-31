@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <templates id="template" xml:space="preserve">
+        <t t-name="NineBoxReport">
+            <!-- <div class="o_control_panel">
+                <div class="o_content">
+                    <div class="row" style="margin: 1rem !important;">
+                        <div class="col-3" style="padding-left: 0; padding-right: 0;">
+                            <span class="breadcrumb" style="color: #777777;display: inline-block;vertical-align: middle;font-size: 18px;">Nine Box Report</span>
+                        </div>
+                        <div class="col-6" style="padding-left: 0; padding-right: 0;"></div>
+                        <div class="col-3" style="padding-left: 0; padding-right: 0;">
+                            <select class="form-control pull-right" id="selected_assessment_period_id">
+                                <t t-if="widget.assessment_period">
+                                    <t t-foreach="widget.assessment_period" t-as="period">
+                                        <option t-att-value="period.assessment_period"  t-att-data="period.assessment_period"><t t-esc="period.assessment_period"/></option>
+                                    </t>                 
+                                </t>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+            
+            <div class="o_content" style="background-color: transparent;">
+                <div class="row row_margin">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-spacing: 5px; border-collapse: separate;" class="disableselect disabledrag">
+                    <tr>
+                        <td width="70%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="60" height="30" align="left" valign="top" class="potential-arrow"></td>
+                            <td colspan="2" rowspan="2">                        
+                                <table width="100%" border="0"  cellpadding="0" style="border-spacing: 5px; border-collapse: separate;">
+                                <tr>
+                                    <td height="200" align="center" valign="middle" bgcolor="#f2e60e">
+                                        <t t-if="widget.count_1x3 and widget.count_1x3 !== '00'">
+                                            <span class="emp_count_circle" value="1_3"><t t-esc="widget.count_1x3"/></span>
+                                        </t>
+                                    </td>
+                                    <td align="center" valign="middle" bgcolor="#9ac05d">
+                                        <t t-if="widget.count_2x3 and widget.count_2x3 !== '00'">
+                                            <span class="emp_count_circle" value="2_3"><t t-esc="widget.count_2x3"/></span>
+                                        </t>
+                                    </td>
+                                    <td align="center" valign="middle" bgcolor="#0d8537">
+                                        <t t-if="widget.count_3x3 and widget.count_3x3 !== '00'">
+                                            <span class="emp_count_circle" value="3_3"><t t-esc="widget.count_3x3"/></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="200" align="center" valign="middle" bgcolor="#f7984e">
+                                        <t t-if="widget.count_1x2 and widget.count_1x2 !== '00'">
+                                            <span class="emp_count_circle" value="1_2"><t t-esc="widget.count_1x2"/></span>
+                                        </t>
+                                    </td>
+                                    <td align="center" valign="middle" bgcolor="#f2e60e">
+                                        <t t-if="widget.count_2x2 and widget.count_2x2 !== '00'">
+                                            <span class="emp_count_circle" value="2_2"><t t-esc="widget.count_2x2"/></span>
+                                        </t>
+                                    </td>
+                                    <td align="center" valign="middle" bgcolor="#9ac05d">
+                                        <t t-if="widget.count_3x2 and widget.count_3x2 !== '00'">
+                                            <span class="emp_count_circle" value="3_2"><t t-esc="widget.count_3x2"/></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="28%" height="200" align="center" valign="middle" bgcolor="#e51c21">                                    
+                                        <t t-if="widget.count_1x1 and widget.count_1x1 !== '00'">
+                                            <span class="emp_count_circle" value="1_1"><t t-esc="widget.count_1x1"/></span>
+                                        </t>
+                                    </td>
+                                    <td width="28%" align="center" valign="middle" bgcolor="#f7984e">
+                                        <t t-if="widget.count_2x1 and widget.count_2x1 !== '00'">
+                                            <span class="emp_count_circle" value="2_1"><t t-esc="widget.count_2x1"/></span>
+                                        </t>
+                                    </td>
+                                    <td width="28%" align="center" valign="middle" bgcolor="#f2e60e">
+                                        <t t-if="widget.count_3x1 and widget.count_3x1 !== '00'">
+                                            <span class="emp_count_circle" value="3_1"><t t-esc="widget.count_3x1"/></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60" align="left" valign="top" class="potential-arrow-bg"><img src="/ninebox_employee_performance/static/src/img/potential-label.png" width="60" height="200" /></td>
+                        </tr>
+                        <tr>
+                            <td width="60" height="30" align="center" valign="middle" class="pp_circle"></td>
+                            <td width="738" height="60" align="center" valign="middle" class="performance-arrow-bg"><img src="/ninebox_employee_performance/static/src/img/performance-label.png" width="200" height="60" /></td>
+                            <td width="86" align="right" class="performance-arrow"></td>
+                        </tr>
+                        </table></td>
+                        <td width="70" align="center" valign="top">
+                        <table width="100%" border="0"  cellpadding="0" style="border-spacing: 5px; border-collapse: separate;">
+                        <tr>
+                            <td height="60" bgcolor="#d9d9d9"><table width="100%" border="0"  cellpadding="0" style="border-spacing: 5px; border-collapse: separate;">
+                            <tr class="employee_profile_box_panel">
+                                <td width="3%"><img src="/ninebox_employee_performance/static/src/img/all_employees_icon.png" width="60" height="60" /></td>
+                                <td width="97%" height="60" class="right_p_all_emp_heading">ALL EMPLOYEES</td>
+                            </tr>
+                            </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="100%" valign="top" class="emp_box_list_panel_area" id="emp_box_list_panel">
+                                
+                                <!-- <table width="100%" border="0" style="border-spacing: 2px; border-collapse: separate;" cellpadding="0" class="right_p_emp_box">
+                                    <tr>
+                                        <td width="89%" height="25" class="emp_name">Ananthu Krishna S</td>
+                                        <td width="11%" rowspan="3" align="center" valign="middle"><img src="/ninebox_employee_performance/static/src/img/emp_details_icon_arrow.png" width="19" height="80" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20" class="emp_title">Technical Consultant</td>
+                                        </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" style="border-spacing: 1px; border-collapse: separate;" cellpadding="0">
+                                                <tr>
+                                                    <td width="19%" rowspan="2"><img src="/ninebox_employee_performance/static/src/img/employee.png" width="61" height="61" /></td>
+                                                    <td width="27%" height="30" align="left" bgcolor="#d9d9d9" class="emp_range_label">Potential</td>
+                                                    <td width="20" align="center" valign="middle" bgcolor="#F7984E" class="emp_range_value">1</td>
+                                                    <td width="42%" align="left" bgcolor="#F7984E" class="emp_range">Moderate Potential </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="30" align="left" bgcolor="#D9D9D9" class="emp_range_label">Performance</td>
+                                                    <td width="20" align="center" valign="middle" bgcolor="#9AC05D" class="emp_range_value">3</td>
+                                                    <td align="left" bgcolor="#9AC05D" class="emp_range">Poor Performance</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table> -->
+                
+                            </td>
+                        </tr>
+                        </table></td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+
+        </t>
+    </templates>

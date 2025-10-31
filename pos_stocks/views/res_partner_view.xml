@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_partner_property_form_inherit_pos_stocks" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.pos_stocks</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="property_account_position_id" position="before">
+                    <field name="l10n_mx_edi_cfdi_to_public"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

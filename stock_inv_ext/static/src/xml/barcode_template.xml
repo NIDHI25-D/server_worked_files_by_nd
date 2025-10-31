@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+        <t t-inherit="stock_barcode.MainComponent" t-inherit-mode="extension" owl="1">
+             <xpath expr="//button[hasclass('o_validate_page')]" position="replace">
+                   <button t-if="env.model.displayValidateButton and groups.group_stock_inventory_supervisor"
+                           t-on-click="validate"
+                           class="btn text-uppercase o_validate_page"
+                           t-att-disabled="!env.model.canBeValidate"
+                           t-attf-class="{{highlightValidateButton ? 'btn-success' : 'btn-secondary'}}">
+                    <i class="fa fa-check me-1"/>
+                       Validate
+                </button>
+                 <button t-if="!groups.group_stock_inventory_supervisor and env.model.displayValidateButton"
+                         t-on-click="o_save_record"
+                         class="btn btn-success text-uppercase">Save
+                </button>
+            </xpath>
+             <xpath expr="//button[hasclass('o_apply_page')]" position="replace">
+                 <t t-out="groupss"/>
+                   <button t-if="env.model.displayApplyButton and groups.group_stock_inventory_supervisor" t-on-click="() => this.env.model.apply()"
+                    class="btn text-uppercase o_apply_page"
+                    t-att-disabled="env.model.applyOn === 0"
+                    t-attf-class="{{highlightValidateButton ? 'btn-success' : 'btn-secondary'}}">
+                    <i class="fa fa-check me-1"/> Apply
+                    <span t-attf-class="{{highlightValidateButton ? '' : 'text-muted'}}">
+                        (<t t-out="env.model.applyOn"/>)
+                    </span>
+                </button>
+                 <button t-if="!groups.group_stock_inventory_supervisor and env.model.displayApplyButton"
+                         t-on-click="o_save_record"
+                         class="btn btn-success text-uppercase">Save
+                </button>
+            </xpath>
+
+        </t>
+</templates>

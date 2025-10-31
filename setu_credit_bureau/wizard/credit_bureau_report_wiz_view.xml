@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="credit_bureau_report_form_view" model="ir.ui.view">
+        <field name="name">credit.bureau.report.form.view</field>
+        <field name="model">credit.bureau.report.wiz</field>
+        <field name="arch" type="xml">
+            <form string="Create Credit Bureau Report">
+
+                <footer>
+                    <button string="Download XLSX" class="btn-primary" data-hotkey="q" type="object"
+                            name="create_credit_bureau_report"/>
+                    <button string="Cancel" class="btn-secondary" data-hotkey="z" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_credit_bureau_report">
+        <field name="name">Credit Bureau Report</field>
+        <field name="res_model">credit.bureau.report.wiz</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <menuitem id="credit_bureau_report_menu" name="Credit Bureau Report"
+              parent="contacts.menu_contacts"
+              sequence="101"
+    />
+
+    <menuitem id="credit_bureau_report_submenu"
+              name="Create Credit Bureau Report"
+              parent="setu_credit_bureau.credit_bureau_report_menu"
+              action="action_credit_bureau_report"
+              sequence="1"
+    />
+
+</odoo>

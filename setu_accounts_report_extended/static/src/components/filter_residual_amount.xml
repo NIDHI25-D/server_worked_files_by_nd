@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates>
+    <t t-name="setu_accounts_report_extended.AccountReportFilterResidualAmount">
+        <Dropdown menuClass="'account_report_filter'">
+            <button class="btn btn-secondary">
+                <i class="fa fa-filter me-1"/>Residual Amount
+            </button>
+            <t t-set-slot="content">
+                <DropdownItem
+                        class="{ 'selected': controller.options.residual_amount }"
+                        onSelected="() => this.filterClicked({ optionKey: 'residual_amount', optionValue: controller.options.residual_amount ? false : true, reload: true})"
+                        closingMode="'none'"
+                >
+                    Residual Amount != 0
+                </DropdownItem>
+            </t>
+        </Dropdown>
+    </t>
+
+    <t t-name="setu_accounts_report_extended.PartnerLedgerFiltersResidualAmount"
+       t-inherit="account_reports.PartnerLedgerFilters" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@id='filter_rounding_unit']" position="after">
+            <div>
+                <t t-if="'residual_amount' in controller.options">
+                    <t t-call="setu_accounts_report_extended.AccountReportFilterResidualAmount"/>
+                </t>
+            </div>
+        </xpath>
+    </t>
+
+</templates>
+

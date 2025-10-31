@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="email_template_customer_contact_link_request" model="mail.template">
+            <field name="name">Customer Contact Link Request</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="subject">Customer Contact Link Request</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <div>
+                    Hello
+                    <t t-out="object.name"/>
+                    <br/>
+                    <br/>
+                    <t t-out="user.name"/>
+                    requested to connect with your company.
+                    <a t-att-href="'/my/manage-address/request/{}/approve'.format(object.id, user.partner_id.id)">Allow Request</a>
+                    or
+                    <a t-att-href="'/my/manage-address/request/{}/reject'.format(object.id, user.partner_id.id)">Reject Request</a>
+                    <br/>
+                    <br/>Thanks
+                    <br/>
+                    <br/>
+                </div>
+            </field>
+        </record>
+
+        <record id="email_template_customer_contact_link_request_approve" model="mail.template">
+            <field name="name">Customer Contact Link Request Approve</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="subject">Customer Contact Link Request Approved</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <div>
+                    Hello
+                    <t t-out="object.name"/>
+                    <br/>
+                    <br/>
+
+                    Your request for connect with <b><t t-out="user.partner_id.parent_id.name"/></b> has been approved.
+                    <a t-att-href="'/my/manage-address?steps=2'">Continue With Your Account Details</a>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+            </field>
+        </record>
+
+
+        <record id="email_template_customer_contact_link_request_reject" model="mail.template">
+            <field name="name">Customer Contact Link Request Reject</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="subject">Customer Contact Link Request Reject</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <div>
+                    Hello
+                    <t t-out="object.name"/>
+                    <br/>
+                    <br/>
+                    Your request for connect with <b><t t-out="user.partner_id.parent_id.name"/></b> has been Rejected.
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

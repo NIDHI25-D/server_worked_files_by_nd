@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="marvelsa_view_form_stock_location">
+            <field name="name">view_form_stock_location</field>
+            <field name="model">stock.location</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_location_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='additional_info']" position="inside">
+                    <field name="volume"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

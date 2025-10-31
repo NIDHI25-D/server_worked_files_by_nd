@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+    <t t-name="ProductItem" t-inherit="point_of_sale.ProductCard" t-inherit-mode="extension" owl="1">
+<!--        <xpath expr="//div[hasclass('product-img')]" position="inside">-->
+<!--            <span class="qty-tag" t-att-id="'qty-tag'+props.product.id">-->
+<!--                 <t t-out="stockQuantity"/>-->
+<!--            </span>-->
+<!--        </xpath>-->
+        <xpath expr="//div[hasclass('product-name')]" position="before">
+            <span class="qty-tag" t-att-id="'qty-tag'+props.product.id">
+                 <t t-out="this.stockQuantity || 0"/>
+            </span>
+            <t t-if="props.product.default_code">
+                [<t t-out="props.product.default_code"/>]
+            </t>
+        </xpath>
+    </t>
+</templates>

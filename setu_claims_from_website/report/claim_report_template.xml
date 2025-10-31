@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_claim_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <div>
+                            <h1>
+                                <img t-if="env.company.logo" t-att-src="image_data_uri(env.company.logo)"
+                                     style="float:left; position: relative; max-height: 180px;max-width: 180px;"
+                                     alt="Logo"/>
+                            </h1>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <p style="text-decoration: underline; text-align: right; font-weight:bold;">Creation date:
+                                <t t-esc="o.date.strftime('%d-%m-%Y')"/>
+                            </p>
+                        </div>
+                        <br/>
+                        <div>
+                            <p>
+                                <span style="font-weight:bold;">Claim:</span>
+                                <span>
+                                    <t t-esc="o.name"/>
+                                </span>
+                            </p>
+                            <p>
+                                <span style="font-weight:bold;">Responsible:</span>
+                                <span>
+                                    <t t-esc="o.user_id.name"/>
+                                </span>
+                            </p>
+                            <p>
+                                <p>
+                                    <span style="font-weight:bold;">Client:</span>
+                                    <span>
+                                        <t t-esc="o.partner_id.name"/>
+                                    </span>
+                                </p>
+                                <div style="float: right;">
+                                    <p>
+                                        <span style="text-align: right; font-weight:bold;">Trouble Responsible:</span>
+                                        <span>
+                                            <t t-esc="o.user_fault"/>
+                                        </span>
+                                    </p>
+
+                                    <p>
+                                        <span style="text-align: right; font-weight:bold;">Telephone:</span>
+                                        <span>
+                                            <t t-esc="o.partner_phone"/>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span style="text-align: right; font-weight:bold;">Mail:</span>
+                                        <span>
+                                            <t t-esc="o.email_from"/>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span style="text-align: right; font-weight:bold;">Category:</span>
+                                        <span>
+                                            <t t-esc="o.categ_id.name"/>
+                                        </span>
+                                    </p>
+                                </div>
+                            </p>
+                            <p>
+                                <span style="font-weight:bold;">Contact information:</span>
+                                <span>
+                                    <t t-esc="o.contact_information"/>
+                                </span>
+                            </p>
+
+                            <div>
+                                <p>
+                                    <span style="font-weight:bold;">Product:</span>
+                                    <span>
+                                        <t t-esc="o.product_tmpl_id.display_name"/>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span style="font-weight:bold;">Reference:</span>
+                                    <span>
+                                        <t t-esc="o.ref"/>
+                                    </span>
+                                </p>
+                            </div>
+                            <br/>
+                            <p style="font-weight:bold;">Description of the claim</p>
+                            <p>
+                                <t t-esc="o.description"/>
+                            </p>
+
+                        </div>
+                        <footer>
+                            <div style="text-align: center; font-size: 13px; margin-top: 20px;">
+                                <t t-esc="o.env['ir.config_parameter'].sudo().get_param('setu_claims_from_website.claim_report_address')"/>
+                            </div>
+                        </footer>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

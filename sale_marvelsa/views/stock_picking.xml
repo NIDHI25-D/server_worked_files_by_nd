@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        <record model="ir.ui.view" id="view_picking_preparation_date_form">-->
+<!--            <field name="name">preparation date form</field>-->
+<!--            <field name="model">stock.picking</field>-->
+<!--            <field name="type">form</field>-->
+<!--            <field name="inherit_id" ref="delivery.view_picking_withcarrier_out_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//group/div[@name='tracking']" position="after">-->
+<!--                    <field name="preparation_date" widget="date"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="sale_order_ref_in_bracod_of_transfer" model="ir.ui.view">
+            <field name="name">stock.barcode.sale.order.ref</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.stock_picking_kanban"/>
+            <!--        <field name="mode">primary</field>-->
+            <!--        <field name="priority">100</field>-->
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='picking_type_id']" position="before">
+                    <field name="sale_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_field_sales_team_id" model="ir.ui.view">
+            <field name="name">add.field.sales.team.id</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/sheet/group/group[1]/field[@name='picking_type_id']" position="after">
+                    <field name="x_studio_sales_team" readonly="1"/>
+                </xpath>
+                <xpath expr="//group/group/field[@name='backorder_id']" position="after">
+                    <field name="coupon_point_ids" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="add_filter_for_carrier_tracking_ref_picking" model="ir.ui.view">
+            <field name="name">add.filter.for.carrier.tracking.ref.picking</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="carrier_tracking_ref" string="Tracking Reference"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

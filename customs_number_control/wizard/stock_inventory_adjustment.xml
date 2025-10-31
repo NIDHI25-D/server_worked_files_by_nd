@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="add_attachment_field" model="ir.ui.view">
+        <field name="name">add_attachment_field</field>
+        <field name="model">stock.inventory.adjustment.name</field>
+        <field name="inherit_id" ref="stock.stock_inventory_adjustment_name_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='inventory_adjustment_name']" position="after">
+                <field name="attachment_ids" widget="many2many_binary" required="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

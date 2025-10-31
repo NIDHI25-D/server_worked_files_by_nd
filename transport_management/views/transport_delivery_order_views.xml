@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="transport_delivery_order_form_view" model="ir.ui.view">
+            <field name="name">transport.delivery.order.form.view</field>
+            <field name="model">transport.delivery.order</field>
+            <field name="arch" type="xml">
+                <form string="Delivery Order">
+                    <header>
+                        <field name="status" widget="statusbar" statusbar_visible="ship,in_transit,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="source_location_id" options='{"no_create_edit": True, "no_create": True}'/>
+                                <field name="destination_location_id"
+                                       options='{"no_create_edit": True, "no_create": True}'/>
+                            </group>
+                            <group>
+                                <field name="so_id"/>
+                                <field name="shipment_id" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="transport_delivery_order_tree_view" model="ir.ui.view">
+            <field name="name">transport.delivery.order.tree.view</field>
+            <field name="model">transport.delivery.order</field>
+            <field name="arch" type="xml">
+                <list string="Delivery Orders">
+                    <field name="shipment_id"/>
+                    <field name="name"/>
+                    <field name="so_id"/>
+                    <field name="source_location_id"/>
+                    <field name="destination_location_id"/>
+                    <field name="status" widget="badge"
+                           decoration-info="status == 'info'"
+                           decoration-warning="status == 'in_transit'"
+                           decoration-danger="status == 'cancel'"
+                           decoration-success="status == 'done'"/>
+                </list>
+            </field>
+        </record>
+        <record id="transport_delivery_order_search_view" model="ir.ui.view">
+            <field name="name">transport.delivery.order.search.view</field>
+            <field name="model">transport.delivery.order</field>
+            <field name="arch" type="xml">
+                <search string="Delivery Orders">
+                    <field name="shipment_id"/>
+                    <field name="name"/>
+                    <field name="so_id"/>
+                    <field name="source_location_id"/>
+                    <field name="destination_location_id"/>
+                    <field name="status"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_delivery_order_status" string="Status" context="{'group_by':'status'}"/>
+                        <filter name="group_by_picking_order" string="Delivery Order" context="{'group_by':'name'}"/>
+                        <filter name="group_by_source_location" string="Source Location"
+                                context="{'group_by':'source_location_id'}"/>
+                        <filter name="group_by_destination_location" string="Destination Location"
+                                context="{'group_by':'destination_location_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="transport_delivery_order_kanban_view" model="ir.ui.view">
+            <field name="name">transport.delivery.order.kanban.view</field>
+            <field name="model">transport.delivery.order</field>
+            <field name="arch" type="xml">
+                <kanban sample="1" string="Transport Delivery Orders">
+                    <field name="color"/>
+                    <field name="name"/>
+                    <field name="so_id"/>
+                    <field name="shipment_id"/>
+                    <field name="destination_location_id"/>
+                    <progressbar field="status"
+                                 colors='{"done": "success", "ship": "info", "in_transit": "warning", "cancel": "danger"}'/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <div class="o_kanban_record_top mb-0">
+                                        <div class="o_kanban_record_title oe_kanban_details">
+                                            <strong>
+                                                <field name="name"/>
+                                                :
+                                                <field name="so_id"/>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                    <field name="shipment_id"/>
+                                    <br/>
+                                    <field name="destination_location_id"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="transport_delivery_order_action" model="ir.actions.act_window">
+            <field name="name">Delivery Orders</field>
+            <field name="res_model">transport.delivery.order</field>
+            <field name="context">{'create':False}</field>
+            <field name="view_mode">list,kanban,form</field>
+        </record>
+    </data>
+</odoo>

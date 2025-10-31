@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="hide_loyalty_points_button" inherit_id="website_sale_loyalty.modify_code_form">
+        <xpath expr="//t/div[hasclass('alert-success')]" position="attributes">
+            <attribute name="t-if">
+                request.env['sale.order'].search([('partner_id','=',request.env.user.partner_id.id),('state', 'in',
+                ['sale', 'done'])], limit=1)
+            </attribute>
+        </xpath>
+        <!-- TASK : Modifying PDL texts on the website  -->
+        <xpath expr="//div[hasclass('justify-content-end')]/a/t[@t-else='']" position="replace">
+            <t t-else="">Use electronic wallet</t>
+        </xpath>
+        <xpath expr="//div[hasclass('flex-grow-1')]/select[@name='product_id']" position="replace">
+        </xpath>
+        <xpath expr="//div[hasclass('d-flex')]" position="after">
+            <a href="/terms" target="_blank">
+                <u>Terms and Conditions</u>
+            </a>
+            <br/>
+        </xpath>
+    </template>
+
+    <!--    removing because of for remove dependancy setu_pos_loyalty-->
+    <!--    <template id="electronic_wallet" inherit_id="portal.portal_layout">-->
+    <!--        <xpath expr="//div[hasclass('o_portal_my_security')]" position="after">-->
+    <!--            <div class="o_portal_electronic_wallet mt-3">-->
+    <!--                <t t-set="loyalty_points_partner" t-value="round(request.env.user.partner_id.loyalty_points,2)"/>-->
+    <!--                <t t-if="loyalty_points_partner">-->
+    <!--                <h4>Electronic wallet</h4>-->
+    <!--                 <hr class="mt-1 mb-1"/>-->
+    <!--                    You Have <t t-esc="loyalty_points_partner"/> Points-->
+    <!--                </t>-->
+    <!--            </div>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <!--TEMPALTE : website_sale.cart_lines : TO ADD GREEN COLOR FOR REWARDS APPLIED TO ORDERS IN WEBSITE-->
+    <template id="cart_lines_inherit_setu_discount_and_loyalty_enhancment"
+              inherit_id="website_sale.cart_lines">
+        <xpath expr="//div[@id='cart_products']/div" position="attributes">
+            <attribute name="t-att-style">'background-color:#9ACD32' if line.coupon_id else 'background-color: #FFFFFF'</attribute>
+        </xpath>
+    </template>
+</odoo>

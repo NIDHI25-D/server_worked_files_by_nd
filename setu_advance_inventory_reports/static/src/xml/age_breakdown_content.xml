@@ -1,0 +1,203 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="SetuAgeBreakdownInventoryDashboard">
+        <!-- Link to FontAwesome Icons -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+        <body>
+            <style>
+                /* Ensure the whole page is scrollable */
+                html, body {
+                    overflow: auto;
+                }
+
+                /* Chart and Jobs Section */
+                .chart-recent-jobs-wrapper {
+                    display: flex;
+                    gap: 20px;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                }
+
+                .chart-container {
+                    height: 450px;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                }
+
+                .category-bar-chart-container {
+                    height: 500px;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .chart-canvas {
+                    height: 100% !important;
+                }
+
+                .chart-heading {
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 10px;
+                    color: #333;
+                }
+
+                /* Adjust chart sizes for responsiveness */
+                @media (max-width: 768px) {
+                    .dashboard-row {
+                        flex-direction: column;
+                    }
+                    .chart-container {
+                    }
+                    .category-bar-chart-container {
+                    }
+                    .chart-canvas {
+                        height: 350px !important;
+                    }
+                }
+                .loader {
+              width: 40px;
+              height: 30px;
+              --c:no-repeat linear-gradient(#000 0 0);
+              background:
+                var(--c) 0    100%/8px 30px,
+                var(--c) 50%  100%/8px 20px,
+                var(--c) 100% 100%/8px 10px;
+              position: absolute;
+              clip-path: inset(-100% 0);
+            }
+            .loader:before{
+              content: "";
+              position: absolute;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background: #000000;
+              left: -16px;
+              top: 0;
+              animation:
+                l5-1 2s   linear infinite,
+                l5-2 0.5s cubic-bezier(0,200,.8,200) infinite;
+            }
+            @keyframes l5-1 {
+              0%   {left:-16px;transform:translateY(-8px)}
+              100% {left:calc(100% + 8px);transform:translateY(22px)}
+            }
+            @keyframes l5-2 {
+              100% {top:-0.1px}
+            }
+            </style>
+
+            <div class="scrollable-container" id="scrollable-container">
+                <t t-call="SetuDashboardPanel"/>
+                <div class="new-panel" style="width: -webkit-fill-available;">
+                    <!-- Dashboard Boxes -->
+                    <div class="dashboard-row">
+                        <div class="loader hidden loader_5" style="margin-top:3%;margin-left:13%;"/>
+                        <div class="dashboard-box box-1">
+                            <div><i class="fas fa-box icon" style="padding-right:5px;"/>Total Products</div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="total_products box-content"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-box box-2">
+                            <div ><i style="padding-right:5px;" class="fa fa-building"/>By Company</div>
+                            <div class="row">
+                                <div class="loader hidden loader_6" style="margin-top:1.5%;margin-left:13%;"/>
+                                <div class="col-6">
+                                    <div class="total_current_stock box-content"/>
+                                    Current Stock
+                                </div>
+                                <div class="col-6">
+                                    <div class="total_current_stock_value box-content"/>
+                                    Current Stock Value
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="dashboard-box box-4">
+                            <div><i class="fa fa-building" style="padding-right:5px;"/>By Company</div>
+                            <div class="row">
+                                <div class="loader hidden loader_7" style="margin-top:1.5%;margin-left:13%;"/>
+                                <div class="col-6">
+                                    <div class="total_oldest_stock_qty box-content"/>
+                                    Oldest Stock Qty
+                                </div>
+                                <div class="col-6">
+                                    <div class="total_oldest_stock_value box-content"/>
+                                    Oldest Stock Value
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Chart and Warehouse Section -->
+                    <div class="row" style="padding: 15px;">
+                        <div class="col-4">
+                            <div style="background-color:#F0F8FF; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);height:22vw;">
+                                <div class="chart-heading category_skValue" style="padding-left:15px;padding-top:15px;font-size: 0.8vw; text-align: left; font-weight: normal;"><b>Product Category Wise Stock Value </b><i class="fa fa-info-circle category_skValue" style="color:blue"/></div>
+                                <div class="loader-container" style="margin-top:10%;margin-left:12%;position:absolute;">
+                                    <span class="loader loader_main hidden"/>
+                                </div>
+                                <div style="padding-top: 10px; padding-bottom: 17px;height:90%;">
+                                    <div id="oldestStockValuePieChart" style="width:100%;"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div style="background-color:#F0F8FF; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);height:22vw;">
+                                <div class="chart-heading category_skQty" style="font-size: 0.8vw; text-align:left;padding-left:15px;padding-top:15px; font-weight: normal;"><b>Product Category Wise Stock Quantity </b><i class="fa fa-info-circle category_skQty" style="color:blue"/></div>
+                                <div class="loader-container" style="margin-top:10%;margin-left:25%;position:absolute;">
+                                    <span class="loader hidden loader_2"/>
+                                </div>
+                                <div style="padding: 10px;height:90%;">
+                                    <div id="oldestStockQtyBarChart" style="width:100%;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Chart Section -->
+                    <div class="row" style="padding: 15px;">
+                        <!-- First Graph -->
+                        <div class="col-6">
+                            <div style="background-color:#F0F8FF;  border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);height:25vw;">
+                                <div class="chart-heading skTop20" style="font-size: 0.8vw; text-align:left; padding-left:15px;padding-top:15px; font-weight: normal;">
+                                    <b>Stock Wise Top 20 Products </b><i class="fa fa-info-circle skTop20" style="color:blue"/>
+                                </div>
+                                <div class="loader-container" style="margin-top:10%;margin-left:17%;position:absolute;">
+                                    <span class="loader hidden loader_3"/>
+                                </div>
+                                <div style="height:85%; padding-left: 10px;">
+                                    <div id="top20ProductStackChart" style="width:100%;"/>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Second Graph -->
+                        <div class="col-6">
+                            <div style="background-color:#F0F8FF; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);height:25vw;">
+                                <div class="chart-heading cgBreakdown" style="font-size: 0.8vw; text-align:left;padding-left:15px;padding-top:15px; font-weight: normal;">
+                                    <b>Product Category Breakdown by Age </b><i class="fa fa-info-circle cgBreakdown" style="color:blue"/>
+                                </div>
+                                <div class="loader-container" style="margin-top:10%;margin-left:17%;position:absolute;">
+                                    <span class="loader hidden loader_4"/>
+                                </div>
+                                <div style="height:88%; padding-left: 10px;">
+                                    <div id="breakdownDataByStackChart" style="width:100%;"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </t>
+</templates>

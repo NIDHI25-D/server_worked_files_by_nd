@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="inherit_for_is_next_day_shipping" model="ir.ui.view">
+            <field name="name">inherit.for.is.next.day.shipping</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_reference']" position="after">
+                    <field name="is_next_day_shipping"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

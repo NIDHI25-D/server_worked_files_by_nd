@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="ir_cron_cancel_saleorders_job" model="ir.cron">
+            <field name="name">Auto Cancel and Delete Quotations</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_sale_order" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field eval="False" name="doall"/>-->
+            <field name="state">code</field>
+            <field name="code">model.auto_cancel_and_delete_sale_orders()</field>
+        </record>
+
+        <record id="ir_cron_confirm_saleorders_job" model="ir.cron">
+            <field name="name">Auto Confirm sale orders from website</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="model_sale_order" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field eval="False" name="doall"/>-->
+            <field name="state">code</field>
+            <field name="code">model.auto_confirm_sale_orders()</field>
+        </record>
+
+    </data>
+</odoo>

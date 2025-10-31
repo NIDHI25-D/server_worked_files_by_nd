@@ -1,0 +1,39 @@
+<odoo>
+    <!--  Inherited website.sale.sort template -->
+    <template id="new_arrival_products_menu_inherited_website_sale_sort" inherit_id="website_sale.sort">
+        <!--  Remove new arrival product sort selection -->
+        <xpath expr="//div/div/t" position="before">
+            <t t-if="new_arrivals">
+                <t t-set="website_sale_sortable" t-value="[
+                    ('website_sequence asc', 'Featured'),
+                    ('name asc', 'Name (A-Z)'),
+                    ('list_price asc', 'Price - Low to High'),
+                    ('list_price desc', 'Price - High to Low'),]"/>
+            </t>
+        </xpath>
+
+        <!-- Add Url for new arrival product sorting -->
+        <xpath expr="//div/div/t/a[@class='dropdown-item']" position="attributes">
+            <attribute name="t-att-href">keep("/newarrivals/shop", order=sortby[0]) if new_arrivals else keep("/shop",
+                order=sortby[0])
+            </attribute>
+        </xpath>
+    </template>
+
+    <!--  Inherited website_sale.filmstrip_categories template  -->
+    <template id="new_arrival_products_menu_inherited_website_sale_filmstrip_categories"
+              inherit_id="website_sale.filmstrip_categories">
+        <!--  Set visibility of filmstrip category -->
+        <xpath expr="//div" position="attributes">
+            <attribute name="t-att-style">'display:none !important;' if new_arrivals else ''</attribute>
+        </xpath>
+    </template>
+
+    <!-- Inherited website_sale.products template -->
+    <template id="new_arrival_products_menu_inherited_website_products" inherit_id="website_sale.products">
+        <!--  Set visibility of category product grid  -->X
+        <xpath expr="//t[@t-set='hasLeftColumn']" position="attributes">
+            <attribute name="t-if">not new_arrivals</attribute>
+        </xpath>
+    </template>
+</odoo>

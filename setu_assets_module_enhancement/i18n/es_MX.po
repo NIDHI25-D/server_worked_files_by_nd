@@ -1,0 +1,457 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_assets_module_enhancement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-19 07:04+0000\n"
+"PO-Revision-Date: 2023-01-19 11:39-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity__asset_id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__asset_id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__asset_id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address__asset_id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__asset_id
+msgid "Asset"
+msgstr "Activo"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_asset_characteristics
+msgid "Asset Characteristics"
+msgstr "Características de los activos"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model,name:setu_assets_module_enhancement.model_account_asset
+msgid "Asset/Revenue Recognition"
+msgstr "Aceptación de pagos/Ingresos"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_hard_disk_capacity
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_ram_memory_capacity
+msgid "Capacity"
+msgstr "Capacidad"
+
+#. module: setu_assets_module_enhancement
+#: model:res.groups,name:setu_assets_module_enhancement.create_asset_equipment
+msgid "Create Asset Equipment"
+msgstr "Crear un equipo de activos"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_type__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_generation__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_model__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_speed__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_capacity__create_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_type__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_type__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_generation__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_model__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_speed__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_capacity__create_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_type__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_type__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_generation__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_model__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_speed__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_capacity__display_name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_type__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_operative_system_distribution
+msgid "Distribution"
+msgstr "Distribución"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_processor_generation
+msgid "Generation"
+msgstr "Generación"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_hard_disk
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Hard Disk"
+msgstr "Disco Duro"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.hard_disk_capacity_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_hard_disk_capacity
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__hard_disk_capacity_ids
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type__hard_disk_capacity_ids
+msgid "Hard Disk Capacity"
+msgstr "Disco Duro - Capacidad"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__hard_disk_line_ids
+msgid "Hard Disk Line"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.hard_disk_type_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_hard_disk_type
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__hard_disk_type_id
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Hard Disk Type"
+msgstr "Disco Duro - Tipo"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model,name:setu_assets_module_enhancement.model_hard_disk_line
+msgid "Hard Disk line"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_type__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_generation__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_model__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_speed__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_capacity__id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_type__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_boolean_in_account_asset_model_form
+msgid "Is it computer equipment"
+msgstr "Es equipo de computo"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__is_it_computer_equipment
+msgid "Is it computer equipment?"
+msgstr "Es equipo de computo?"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_type____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_generation____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_model____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_speed____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_capacity____last_update
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_type____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_type__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_generation__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_model__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_speed__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_capacity__write_uid
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_type__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_line__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_type__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_generation__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_model__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_speed__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_capacity__write_date
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_type__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_network_card_capacity
+msgid "Mac Address"
+msgstr "Mac Address"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_processor_model
+msgid "Model"
+msgstr "Modelo"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_capacity__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_hard_disk_type__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_mac_address__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_type__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_generation__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_model__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_processor_speed__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_capacity__name
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_ram_memory_type__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_network_card
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Network Card"
+msgstr "Tarjeta de Red"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model,name:setu_assets_module_enhancement.model_network_card_line
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__network_card_line_ids
+msgid "Network Card Line"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.network_card_mac_address_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_network_card_mac_address
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__network_card_mac_address_ids
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_type__network_card_mac_address_ids
+msgid "Network Card Mac Address"
+msgstr "Mac Address"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.network_card_type_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_network_card_type
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_network_card_line__network_card_type_id
+msgid "Network Card Type"
+msgstr "Tipo"
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Network Cards"
+msgstr "Tarjetas de Red"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_operative_system
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Operative System"
+msgstr "Sistema Operativo"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.operative_system_distribution_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_operative_system_distribution
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__operative_system_distribution_id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_version__operative_system_distribution_id
+msgid "Operative System Distribution"
+msgstr "Sistema Operativo - Distribución"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.operative_system_type_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_operative_system_type
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__operative_system_type_id
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_operative_system_distribution__operative_system_type_id
+msgid "Operative System Type"
+msgstr "Sistema Operativo - Tipo"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.operative_system_version_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_operative_system_version
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__operative_system_version_id
+msgid "Operative System Version"
+msgstr "Sistema Operativo - Version"
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Other Info"
+msgstr "Otra Información"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_processor
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Processor"
+msgstr "Procesador"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.processor_generation_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_processor_generation
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__processor_generation_id
+msgid "Processor Generation"
+msgstr "Procesador - Generación"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.processor_model_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_processor_model
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__processor_model_id
+msgid "Processor Model"
+msgstr "Procesador - Modelo"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.processor_speed_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_processor_speed
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__processor_speed_id
+msgid "Processor Speed"
+msgstr "Procesador - Velocidad"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_asset_memory_type
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Ram Memory"
+msgstr "Memoria RAM"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.ram_memory_capacity_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_ram_memory_capacity
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__ram_memory_capacity_id
+msgid "Ram Memory Capacity"
+msgstr "Memoria RAM - Capacidad"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.actions.act_window,name:setu_assets_module_enhancement.ram_memory_type_action
+#: model:ir.model,name:setu_assets_module_enhancement.model_ram_memory_type
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__ram_memory_type_id
+msgid "Ram Memory Type"
+msgstr "Memoria RAM - Tipo"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.model.fields,field_description:setu_assets_module_enhancement.field_account_asset__score
+msgid "Score"
+msgstr "Clasificación"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_processor_speed
+msgid "Speed"
+msgstr "Velocidad"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_hard_disk_type
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_network_card_type
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_operative_system_type
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_ram_memory_type
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Type"
+msgstr "Tipo"
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.add_page_in_asset_form
+msgid "Velocity"
+msgstr "Velocidad"
+
+#. module: setu_assets_module_enhancement
+#: model:ir.ui.menu,name:setu_assets_module_enhancement.menu_operative_system_version
+msgid "Version"
+msgstr "Version"
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.hard_disk_capacity_view_tree
+msgid "hard_disk_capacity_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.hard_disk_type_view_tree
+msgid "hard_disk_type_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.network_card_mac_address_view_tree
+msgid "network_card_mac_address"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.network_card_type_view_tree
+msgid "network_card_type_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.operative_system_distribution_view_tree
+msgid "operative_system_distribution_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.operative_system_type_view_tree
+msgid "operative_system_type_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.operative_system_version_view_tree
+msgid "operative_system_version_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.processor_generation_view_tree
+msgid "processor_generation_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.processor_model_view_tree
+msgid "processor_model_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.processor_speed_view_tree
+msgid "processor_speed_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.ram_memory_capacity_view_tree
+msgid "ram_memory_capacity_tree"
+msgstr ""
+
+#. module: setu_assets_module_enhancement
+#: model_terms:ir.ui.view,arch_db:setu_assets_module_enhancement.ram_memory_type_view_tree
+msgid "ram_memory_type_tree"
+msgstr ""

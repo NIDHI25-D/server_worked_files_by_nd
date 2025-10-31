@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+    <t t-name="HrAttendanceCardLayout">
+        <div class="o_hr_attendance_kiosk_mode_container o_home_menu_background d-flex flex-column align-items-center justify-content-center h-100 text-center"
+             t-attf-style="background-image: url({{widget.company_image_url_kiosk}})">
+            <span class="o_hr_attendance_kiosk_backdrop position-absolute top-0 start-0 end-0 bottom-0 bg-black-25"/>
+            <div class="o_hr_attendance_clock bg-black-50 p-3 py-md-2 m-0 mt-md-5 me-md-5 h2 text-white font-monospace"/>
+            <div t-attf-class="o_hr_attendance_kiosk_mode flex-grow-1 flex-md-grow-0 card pb-3 px-0 px-lg-5 {{kioskModeClasses ? kioskModeClasses : '' }}">
+                <div class="card-body d-flex flex-column p-0 p-md-4">
+                    <t t-out="bodyContent"></t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+
+    <t t-name="HrAttendanceKioskMode">
+        <t t-call="HrAttendanceCardLayout">
+        <div class="o_hr_attendance_kiosk_mode_container o_home_menu_background">
+        <span class="o_hr_attendance_kiosk_backdrop"/>
+            <t t-set="bodyContent">
+            <div class="text-center"/>
+                <div class="o_hr_attendance_back_screen text-center">
+                    <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                </div>
+                <div class="o_hr_attendance_network_status text-center">Online</div>
+                <div class="o_hr_attendance_kiosk_mode">
+                <div class="row o_hr_attendance_kiosk_welcome_row">
+                    <div class="col-sm-12">
+                         <button class="o_fetch_button_employees btn btn-primary mb16" t-on-click="_onfetch_button_click">
+                            <div class="mb16 mt16">Start Face Recognition</div>
+                        </button>
+                    </div>
+                </div>
+                    <div class="row o_hr_attendance_kiosk_status_row d-none">
+                    <p class="kiosk_status_emp_container" style="text-align:center; margin:auto"></p>
+                        <div class="col-sm-12">
+                         <button class="o_fetch_button_employees btn btn-primary mb16">
+                            <div class="mb16 mt16">Retrieve</div>
+                        </button>
+                            <button class="o_set_button_employees btn btn-primary mb16">
+                            <div class="mb16 mt16">Confirm</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </t>
+        </div>
+        </t>
+    </t>
+</template>

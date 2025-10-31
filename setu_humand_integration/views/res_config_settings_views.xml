@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form_inherit_setu_humand_integration" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.setu.humand.integration</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="100"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="Humand Integration" string="Humand Integration" name="humand_integration"
+                         data-key="setu_humand_integration">
+                        <h2>Humand Integration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <group name="days_to_get_time_off_requests">
+                                <field name="days_to_get_time_off_requests"/>
+                            </group>
+                        </div>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_setu_humand_integration_config_settings" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="setu_humand_integration.res_config_settings_view_form_inherit_setu_humand_integration"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module': 'setu_humand_integration','bin_size': False}</field>
+        </record>
+
+        <menuitem name="Humand Integration" id="setu_humand_integration_menu_root" sequence="220"
+                  groups="hr.group_hr_user"/>
+        <menuitem name="Configuration" parent="setu_humand_integration_menu_root" id="setu_humand_integration_configuration" sequence="100"
+                  groups="hr.group_hr_user"/>
+
+        <menuitem id="setu_humand_integration_config_settings_menu" name="Settings"
+                  parent="setu_humand_integration_configuration" sequence="0"
+                  action="action_setu_humand_integration_config_settings"
+                  groups="hr.group_hr_user"/>
+    </data>
+</odoo>

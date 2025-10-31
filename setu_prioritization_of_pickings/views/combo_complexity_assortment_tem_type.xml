@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_combo_complexity_assortment_team_type_form" model="ir.ui.view">
+            <field name="name">combo.complexity.assortment.team.type.form</field>
+            <field name="model">combo.complexity.assortment.team.type</field>
+            <field name="arch" type="xml">
+                <form string="Complexity Assortment Team Type">
+                    <group>
+                        <field name="complexity_levels_id"/>
+                    </group>
+                    <group>
+                        <field name="stock_picking_ids" widget="many2many_tags"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

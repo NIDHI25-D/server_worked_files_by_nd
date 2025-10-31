@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+
+    <t t-inherit="hr_attendance.public_kiosk_app" t-inherit-mode="extension">
+        <!--TASK: Attendance -> Kiosk mode (MVSA Odoo V18 - Issues):: to hide barcode badge when facial reco [only added xpath]        -->
+        <xpath expr="//KioskBarcodeScanner" position="attributes">
+                <attribute name="t-if">props.kioskMode !== 'facial_recognition'</attribute>
+        </xpath>
+        <xpath expr="//KioskBarcodeScanner/../.." position="after">
+            <div class="row" style="justify-content: center;" t-if="this.props.kioskMode === 'facial_recognition'">
+                <div class="col-5">
+                    <img class="img img-fluid d-block mx-auto w-auto" data-bs-toggle="modal"
+                        data-bs-target="#face_scan_popup" t-on-click="() => this.startCam()"
+                        style="cursor: pointer;" id="start_cam"
+                        src="/face_recognition_hr_attendance/static/src/img/face_scan.png" />
+                    <h5 class="mt8 mb0">Scan your face</h5>
+                </div>
+
+                <div class="modal fade" id="face_scan_popup" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" >
+                    <div class="modal-dialog modal-dialog-centered " style="max-width: 652px;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Scan Your Face</h5>
+                                <button type="button" class="btn-close" aria-label="Close"
+                                        data-bs-dismiss="modal"  t-on-click="() => this._stopVideo()"
+                                        id="stop_video" >
+                                </button>
+                            </div>
+                            <div class="modal-body m-0 p-0">
+                                <div id="video_box">
+                                    <video class="video_el" id="video" autoplay="" muted=""/>
+                                    <canvas id="cam_canvas" class="video_el"
+                                            style="position: absolute;top: 0;left: 0;right: 0;margin: auto;"/>
+
+                                    <div id="web_cam_error" style="display:none;">
+                                        <div class="alert alert-warning" role="alert">Webcam device not
+                                            found!<br/>Connect or reload the Kiosk.
+                                        </div>
+                                    </div>
+                                    <img id="loader_img" class="img mx-auto mb-1 w-auto"
+                                         style="height:33px"
+                                         src="/face_recognition_hr_attendance/static/src/img/load2.gif"/>
+                                </div>
+                                <div id="success_box" style="display:none;">
+                                    <canvas id="canvas_photo" class="video_el"
+                                            style="position: absolute;top: 0;left: 0;right: 0;margin: auto;"/>
+                                    <div class="output">
+                                        <img id="photo"
+                                             alt="The screen capture will appear in this box."/>
+                                    </div>
+                                </div>
+                                <div id="error_message" style="display:none;"
+                                     class="alert alert-warning">
+                                </div>
+                                <div id="scan_again" style="display:none;">
+                                    <button id="scan_again_btn" class="btn btn-primary m-2" t-on-click="() => this.prepareScan()">Scan
+                                        Again
+                                    </button>
+<!--                                    <span t-if="widget.use_timer" id="timer_sec" style="display:none;"-->
+<!--                                          class=" m-2">Scan-->
+<!--                                        again in 05 seconds-->
+<!--                                    </span>-->
+                                </div>
+                            </div>
+
+                            <!-- TASK: Attendance -> Kiosk mode (MVSA Odoo V18 - Issues):: Confirmation step (initially hidden)-->
+                            <div id="photo_action_buttons" class="text-center mt-4 mb-4" style="display: none;">
+                                <button type="button" id="btn_retrieve" class="btn btn-warning me-2">
+                                    Retrieve
+                                </button>
+                                <button type="button" id="btn_confirm" class="btn btn-success">
+                                    Confirm
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </xpath>
+    </t>
+
+<!--    <t t-inherit="hr_attendance.BarcodeScanner" t-inherit-mode="extension">-->
+<!--        <xpath expr="//div[hasclass('o_hr_attendance_kiosk')]" position="replace">-->
+<!--        </xpath>-->
+<!--    </t>-->
+    <!--    xml:space="preserve"-->
+<!--    <t t-extend="HrAttendanceKioskMode">-->
+<!--        <t t-jquery="div.o_hr_attendance_kiosk_welcome_row" t-operation='replace'>-->
+<!--            <div class="row o_hr_attendance_kiosk_welcome_row"-->
+<!--                t-if="! widget.use_badge &amp;&amp; ! widget.use_manual &amp;&amp; !widget.use_face">-->
+<!--                <div class="col alert alert-info">-->
+<!--                    No attendance mode active...-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="row o_hr_attendance_kiosk_welcome_row" style="justify-content: center;">-->
+<!--                <div class="col-sm-5 mt16" t-if="widget.use_badge">-->
+<!--                    <img class="img img-fluid d-block mx-auto"-->
+<!--                        src="/barcodes/static/img/barcode.png" />-->
+<!--                    <h5 class="mt8 mb0 text-muted">Scan your badge</h5>-->
+<!--                </div>-->
+<!--                <div class="col-sm-2 mt32" t-if="(widget.use_badge and widget.use_manual)">-->
+<!--                    <h4 class="mt0 mb8">-->
+<!--                        <i>or</i>-->
+<!--                    </h4>-->
+<!--                </div>-->
+<!--                <div class="col-sm-5 mt16" t-if="widget.use_manual">-->
+<!--                    <button class="o_hr_attendance_button_employees btn btn-primary mb16">-->
+<!--                        <div class="mb16 mt16">Identify Manually</div>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="row o_hr_attendance_kiosk_welcome_row"-->
+<!--                t-if="(widget.use_face and widget.use_manual) or (widget.use_face and widget.use_badge)">-->
+
+<!--                <div class="col-12">-->
+<!--                    <h3 class="mt0 mb8">-->
+<!--                        <i>or</i>-->
+<!--                    </h3>-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--            <div class="row o_hr_attendance_kiosk_welcome_row" t-if="widget.use_face">-->
+<!--                <div class="col-12">-->
+<!--                    <img class="img img-fluid d-block mx-auto w-auto" data-toggle="modal"-->
+<!--                        data-target="#face_scan_popup"-->
+<!--                        style="cursor: pointer;" id="start_cam"-->
+<!--                        src="/face_recognition_hr_attendance/static/src/img/face_scan.png" />-->
+<!--                    <h5 class="mt8 mb0">Scan your face</h5>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div t-if="widget.use_face" class="modal fade" id="face_scan_popup" tabindex="-1"-->
+<!--                role="dialog"-->
+<!--                data-backdrop="false"-->
+<!--                data-keyboard="false">-->
+<!--                <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--                    <div class="modal-content">-->
+<!--                        <div class="modal-header">-->
+<!--                            <h5 class="modal-title" id="exampleModalLongTitle">Scan Your Face</h5>-->
+<!--                            <button type="button" class="close text-dark" aria-label="Close"-->
+<!--                                data-dismiss="modal"-->
+<!--                                id="stop_video">-->
+<!--                                <span>&amp;times;</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <div class="modal-body m-0 p-0">-->
+<!--                            <div id="video_box">-->
+<!--                                <video class="video_el" id="video" autoplay="" muted="" />-->
+<!--                                <canvas id="cam_canvas" class="video_el"-->
+<!--                                    style="position: absolute;top: 0;left: 0;right: 0;margin: auto;" />-->
+
+<!--                                <div id="web_cam_error" style="display:none;">-->
+<!--                                    <div class="alert alert-warning" role="alert">Webcam device not-->
+<!--                                        found!<br />Connect or reload the Kiosk. </div>-->
+<!--                                </div>-->
+<!--                                <img id="loader_img" class="img mx-auto mb-1 w-auto"-->
+<!--                                    style="height:33px"-->
+<!--                                    src="/face_recognition_hr_attendance/static/src/img/load2.gif" />-->
+<!--                            </div>-->
+<!--                            <div id="success_box" style="display:none;">-->
+<!--                                <canvas id="canvas_photo" class="video_el"-->
+<!--                                    style="position: absolute;top: 0;left: 0;right: 0;margin: auto;" />-->
+<!--                                <div class="output">-->
+<!--                                    <img id="photo"-->
+<!--                                        alt="The screen capture will appear in this box." />-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div id="error_message" style="display:none;"-->
+<!--                                class="alert alert-warning">-->
+<!--                            </div>-->
+<!--                            <div id="scan_again" style="display:none;">-->
+<!--                                <button id="scan_again_btn" class="btn btn-primary m-2">Scan-->
+<!--                                    Again-->
+<!--                                </button>-->
+<!--                                <span t-if="widget.use_timer" id="timer_sec" style="display:none;"-->
+<!--                                    class=" m-2">Scan-->
+<!--                                    again in 05 seconds-->
+<!--                                </span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </t>-->
+<!--    </t>-->
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="setu_payment_acqirers.form" inherit_id="payment.form" name="Stripe Payment Form">
+    <xpath expr="//form[@id='o_payment_form']" position="attributes">
+        <attribute name="t-att-data-have-installment">'True' if providers_sudo[:1].enable_monthly_installment and providers_sudo[:1].code == 'stripe' else 'False'
+        </attribute>
+    </xpath>
+  </template>
+</odoo>

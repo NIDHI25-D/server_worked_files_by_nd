@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="portal_my_home_menu_sale" name="Portal layout : claims menu entries"
+                  inherit_id="portal.portal_breadcrumbs" priority="20">
+            <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+                <li t-if="page_name == 'claim'"
+                    t-attf-class="breadcrumb-item #{'active ' if not claim else ''}">
+                    <a t-attf-href="/my/claims?{{ keep_query() }}">Claims</a>
+                </li>
+                <li t-if="page_name == 'create-claim'" t-attf-class="breadcrumb-item #{'active ' if not claim else ''}">
+                    <a t-attf-href="/my/claims?{{ keep_query() }}">Claims</a>
+                </li>
+                <li t-if="page_name == 'create-claim'"
+                    t-attf-class="breadcrumb-item #{'active ' if not claim else ''}">
+                    <a>Create Claims</a>
+                </li>
+            </xpath>
+        </template>
+
+        <template id="claims_management_in_website" name="Show Claims" inherit_id="portal.portal_my_home"
+                  customize_show="True" priority="50">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-if="request.env['ir.config_parameter'].sudo().get_param('setu_claims_from_website.enable_claim')">
+                    <t t-call="portal.portal_docs_entry">
+                        <t t-set="title">Claims</t>
+                        <t t-set="url" t-value="'/my/claims'"/>
+                        <t t-set="placeholder_count" t-value="'claim_counts'"/>
+                        <t t-set="text">Your Claims</t>
+                        <t t-set="icon" t-value="'/setu_claims_from_website/static/description/icon.png'"/>
+                    </t>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="portal_my_orders_of_claims" name="My Claims">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Claims</t>
+                </t>
+                <t t-if="not claims">
+                    <p>There are currently no orders for your account.</p>
+                </t>
+                <t t-if="claims" t-call="portal.portal_table">
+                    <thead>
+                        <tr class="active">
+                            <th class="text-center">Service Number</th>
+                            <th class="text-center">Customer</th>
+                            <th class="text-center">Service Agent</th>
+                            <th class="text-center">Claims Date</th>
+                            <th class="text-center">Stage</th>
+                            <th class="text-center">Next Action Date</th>
+                            <th class="text-center">Next Action</th>
+                            <th class="text-center">Type</th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="claims" t-as="claim">
+                        <tr>
+                            <td class="text-center">
+                                <a t-att-href="'/my/claims/%s' %claim.id">
+                                    <t t-esc="claim.name"/>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="claim.partner_id"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="claim.user_id"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="claim.date"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="claim.stage_id"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="claim.date_action_next"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="claim.action_next"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="claim.categ_id"/>
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

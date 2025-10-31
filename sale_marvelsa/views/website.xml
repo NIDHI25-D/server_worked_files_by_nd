@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template name="Credit Payment Notifications" id="credit_notify_payment">
+            <div class="mt-3">
+                <t t-set="info_credit_limit" t-value="''"/>
+                <t t-set="credit_balance" t-value="0"/>
+                <t t-set="info_total_due" t-value="website_sale_order.validate_total_due()"/>
+                <t t-esc="info_total_due"/>
+
+                <t t-if="website_sale_order.pricelist_id.is_credit">
+                    <t t-set="credit_balance" t-value="website_sale_order.get_balance_by_credit_limit()"/>
+
+                    <t t-if="credit_balance &gt; 0">
+                        <div class="alert alert-info" role="alert">
+                            <strong>Credito Disponible</strong>
+                            <t t-esc="credit_balance"
+                               t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        </div>
+                    </t>
+                    <t t-elif="credit_balance &lt; 0">
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Credito Disponible</strong>
+                            <t t-esc="credit_balance"
+                               t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        </div>
+                        <div class="alert alert-warning" role="alert">
+                            <span class="alert-heading">
+                                <strong>Estimado Cliente</strong>
+                            </span>
+                            <br/>
+                            Le notificamos que su límite de crédito se encuentra excedido.
+                            Favor de contactar a su ejecutivo de cobranza.
+                        </div>
+                    </t>
+                </t>
+                <t t-if="website_sale_order.delivery_auto == False">
+                    <span/>
+                </t>
+                <t t-else="">
+                    <t t-if="website_sale_order.pricelist_id.is_credit">
+                        <t t-set="info_credit_limit" t-value="website_sale_order.validate_credit_limit()"/>
+                    </t>
+                </t>
+
+                <t t-if="info_total_due != ''">
+                    <div class="alert alert-warning" role="alert">
+                        <span class="alert-heading">
+                            <strong>Estimado Cliente</strong>
+                        </span>
+                        <br/>
+                        <t t-esc="info_total_due"/>
+                    </div>
+                </t>
+
+                <t t-if="info_credit_limit != ''">
+                    <div class="alert alert-warning" role="alert">
+                        <span class="alert-heading">
+                            <strong>Estimado Cliente</strong>
+                        </span>
+                        <br/>
+                        <t t-esc="info_credit_limit"/>
+                    </div>
+                </t>
+            </div>
+        </template>
+
+        <template name="Credit Payment Notifications Container" id="credit_notify_payment_container"
+                  inherit_id="payment.form">
+            <xpath expr="//form/div/div[@id='o_payment_methods']" position="after">
+                <div id="js_credit_notify_payment">
+                    <t t-call="sale_marvelsa.credit_notify_payment">
+                        <t t-set="website_sale_order" t-value="request.website.sale_get_order()"/>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+
+        <template name="Payment Notifications" id="credit_notify_cart_summary"
+                  inherit_id="website_sale.navigation_buttons">
+            <xpath expr="//div" position="inside">
+                <t t-set="info_total_due" t-value="''"/>
+                <t t-set="info_credit_limit" t-value="''"/>
+                <t t-set="credit_balance" t-value="0"/>
+                <t t-set="info_total_due" t-value="website_sale_order.validate_total_due()"/>
+                <t t-esc="info_total_due"/>
+
+                <t t-if="website_sale_order.pricelist_id.is_credit">
+                    <t t-set="credit_balance" t-value="website_sale_order.get_balance_by_credit_limit()"/>
+
+                    <t t-if="credit_balance &gt; 0 and show_shorter_cart_summary">
+                        <div class="alert alert-info" role="alert">
+                            <strong>Credito Disponible</strong>
+                            <t t-esc="credit_balance"
+                               t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        </div>
+                    </t>
+                    <t t-elif="credit_balance &lt; 0 and show_shorter_cart_summary">
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Credito Disponible</strong>
+                            <t t-esc="credit_balance"
+                               t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        </div>
+                        <div class="alert alert-warning" role="alert">
+                            <span class="alert-heading">
+                                <strong>Estimado Cliente</strong>
+                            </span>
+                            <br/>
+                            Le notificamos que su límite de crédito se encuentra excedido.
+                            Favor de contactar a su ejecutivo de cobranza.
+                        </div>
+                    </t>
+                </t>
+
+                <t t-if="website_sale_order.delivery_auto == False">
+                    <span/>
+                </t>
+                <t t-else="">
+                    <t t-if="website_sale_order.pricelist_id.is_credit">
+                        <t t-set="info_credit_limit" t-value="website_sale_order.validate_credit_limit()"/>
+                    </t>
+                </t>
+
+                <t t-if="info_total_due != '' and show_shorter_cart_summary">
+                    <div class="alert alert-warning" role="alert">
+                        <span class="alert-heading">
+                            <strong>Estimado Cliente</strong>
+                        </span>
+                        <br/>
+                        <t t-esc="info_total_due"/>
+                    </div>
+                </t>
+
+                <t t-if="info_credit_limit != '' and show_shorter_cart_summary">
+                    <div class="alert alert-warning" role="alert">
+                        <span class="alert-heading">
+                            <strong>Estimado Cliente</strong>
+                        </span>
+                        <br/>
+                        <t t-esc="info_credit_limit"/>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+
+
+        <template id="credit_notify_confirm" inherit_id="website_sale.payment_confirmation_status">
+            <xpath expr="//div[hasclass('oe_website_sale_tx_status')]/div" position="replace"/>
+        </template>
+
+        <template id="delivery_method_inherited" inherit_id="website_sale.delivery_method">
+            <xpath expr="//div/div[1]" position="after">
+                <div class="col col-auto">
+                    <span class="cols" name="msg"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

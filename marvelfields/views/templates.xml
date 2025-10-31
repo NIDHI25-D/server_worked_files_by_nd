@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="add_billing_general_public_boolean" inherit_id="website_sale.payment">
+            <xpath expr="//div[@id='payment_method']" position="inside">
+                <t t-if="request.env.user.partner_id.billing_general_public_id">
+                    <div class="oe_structure clearfix mt-3" id="billing_general_public">
+                        <h3 class="mb24">Billing</h3>
+                        <div class="card border-0" id="billing_selection">
+                            <ul class="list-group">
+                                <li class="list-group-item o_delivery_carrier_select">
+                                    <label>
+                                        <input name="o_partner_bill"
+                                               type="checkbox"
+                                               class="form-check-input"
+                                        />
+                                        <label for="o_partner_bill" class="form-check-label">
+                                            <b>Billing general public</b>
+                                            <br></br>
+                                            <b>You selected the General Public Billing option, please verify this is the
+                                                right
+                                                choice. Once you click the Pay now button, you can't modify data or Save
+                                                my
+                                                payment detailsrebill.
+                                            </b>
+                                        </label>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="template_website_descriptive_products" inherit_id="website_sale.product">
+            <xpath expr="//div[@id='product_option_block']" position="after">
+                <div id="website_descriptive_products" t-esc="product.descriptive_website_products"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

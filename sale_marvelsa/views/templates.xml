@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <template id="website_sale_confirmation_message_oversized" inherit_id="website_sale.confirmation">
+            <xpath expr="//div[hasclass('card')]" position="after">
+                <t t-if="order.order_line.filtered(lambda x:x.product_id.is_oversized)">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <b>
+                                Dear customer, we inform you that your order contains products with excess dimensions,
+                                deliveries regarding these products may take longer than estimated. If you have any
+                                questions,
+                                please
+                                contact your sales agent.
+                            </b>
+                        </div>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

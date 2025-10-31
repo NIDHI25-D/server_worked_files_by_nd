@@ -1,0 +1,196 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_invoice_cancellation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-13 05:06+0000\n"
+"PO-Revision-Date: 2022-12-13 05:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model,name:setu_invoice_cancellation.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr "Revocación de movimiento en cuenta"
+
+#. module: setu_invoice_cancellation
+#: model:res.groups,name:setu_invoice_cancellation.cancel_invoice_group
+msgid "Allow to change in cancellation"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.request_edi_cancel_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.ui.menu,name:setu_invoice_cancellation.cancel_invoice_reasons
+msgid "Cancel Invoice Reasons"
+msgstr "Razones de Cancelación"
+
+#. module: setu_invoice_cancellation
+#: code:addons/setu_invoice_cancellation/models/account_move.py:0
+#, python-format
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_out_refund_cancellation__reason_id
+msgid "Cancellation Motive"
+msgstr "Motivo de cancelación"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move_reversal__reason_id
+msgid "Cancellation Reason"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.add_cancel_reason
+msgid "Cancellation motive"
+msgstr "Motivo de cancelación"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move_reversal__reason_id
+msgid "Cancellation Reason"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_bank_statement_line__invoice_cancel_reason_id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move__invoice_cancel_reason_id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_payment__invoice_cancel_reason_id
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.add_cancel_reason
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.add_cancel_reason_filter
+msgid "Cancellation motive"
+msgstr "Motivo de cancelación"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_bank_statement_line__invoice_cancel_reason_id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move__invoice_cancel_reason_id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_payment__invoice_cancel_reason_id
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.add_cancel_reason
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.add_cancel_reason_filter
+msgid "Cancellation motive"
+msgstr "Motivo de cancelación"
+
+#. module: setu_invoice_cancellation
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.setu_invoice_credit_note_cancel_view_tree
+msgid "Create Credit Notes Reasons"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.setu_invoice_request_edi_cancel_view_tree
+msgid "Create Request Edi Reasons"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_out_refund_cancellation__create_uid
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_out_refund_cancellation__create_date
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.actions.act_window,name:setu_invoice_cancellation.credit_note_cancel_action
+msgid "Credit Note Cancel Reasons"
+msgstr "Razones para Notas de Crédito"
+
+#. module: setu_invoice_cancellation
+#: model:ir.ui.menu,name:setu_invoice_cancellation.credit_note_cancel_reason
+msgid "Credit Note Reasons"
+msgstr "Razones para Notas de Crédito"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move__display_name
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move_reversal__display_name
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_out_refund_cancellation__display_name
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move__id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move_reversal__id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_out_refund_cancellation__id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel__id
+msgid "ID"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_bank_statement_line__invoice_cancel_reason_id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move__invoice_cancel_reason_id
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_payment__invoice_cancel_reason_id
+msgid "Invoice Cancel Reason"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel__is_return
+msgid "Is Return"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model,name:setu_invoice_cancellation.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move____last_update
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_account_move_reversal____last_update
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_out_refund_cancellation____last_update
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_out_refund_cancellation__write_uid
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_out_refund_cancellation__write_date
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model.fields,field_description:setu_invoice_cancellation.field_setu_invoice_cancel__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: setu_invoice_cancellation
+#: model:ir.model,name:setu_invoice_cancellation.model_out_refund_cancellation
+msgid "Out Refund Cancellation"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.actions.act_window,name:setu_invoice_cancellation.request_edi_cancel_action
+#: model:ir.ui.menu,name:setu_invoice_cancellation.request_edi_cancel_reason
+msgid "Request Edi Cancel Reasons"
+msgstr "Razones para Facturas"
+
+#. module: setu_invoice_cancellation
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.request_edi_cancel_view_form
+msgid "Request Edi Cancellation Form"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model_terms:ir.ui.view,arch_db:setu_invoice_cancellation.request_edi_cancel_view_form
+msgid "Reverse"
+msgstr ""
+
+#. module: setu_invoice_cancellation
+#: model:ir.model,name:setu_invoice_cancellation.model_setu_invoice_cancel
+msgid "Setu Invoice Cancel"
+msgstr ""

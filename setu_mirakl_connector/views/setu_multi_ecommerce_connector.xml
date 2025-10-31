@@ -1,0 +1,180 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <!--Store Setup-->
+    <record id="setu_multi_ecommerce_connector_mirakl_extended_tree_view" model="ir.ui.view">
+        <field name="name">setu.multi.ecommerce.connector.mirakl.extended.tree.view</field>
+        <field name="model">setu.multi.ecommerce.connector</field>
+        <field name="inherit_id" ref="setu_ecommerce_based.setu_multi_ecommerce_connector_list_view"/>
+        <field name="arch" type="xml">
+            <list>
+                <field name="mirakl_host" invisible="ecommerce_connector != 'mirakl_connector'"/>
+                <field name="odoo_company_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!--Common Setup-->
+    <record id="setu_multi_ecommerce_connector_mirakl_extended_from_view" model="ir.ui.view">
+        <field name="name">setu.multi.ecommerce.connector.mirakl.extended.form.view</field>
+        <field name="model">setu.multi.ecommerce.connector</field>
+        <field name="inherit_id" ref="setu_ecommerce_based.setu_multi_ecommerce_connector_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='common_setup']" position="before">
+                <page string="Store Setup" name="store_setup_mirakl_information"
+                      invisible="ecommerce_connector != 'mirakl_connector'">
+                    <group>
+                        <group>
+                            <field name="mirakl_api_key"/>
+                        </group>
+                        <group>
+                            <field name="mirakl_host"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//div[@name='common_general_setup_currency']" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'mirakl_connector'</attribute>
+            </xpath>
+            <xpath expr="//div[@name='common_general_setup_lang']" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'mirakl_connector'</attribute>
+            </xpath>
+            <xpath expr="//div[@name='common_product_stock_setup_auto_create']" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'mirakl_connector'</attribute>
+            </xpath>
+            <xpath expr="//div[@name='common_product_stock_setup_product_description']" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'mirakl_connector'</attribute>
+            </xpath>
+            <xpath expr="//div[@name='common_product_stock_setup_odoo_pricelist']//div[hasclass('content-group')]//field[@name='odoo_pricelist_id']" position="attributes">
+                <attribute name="readonly">state in ['fully_integrated', 'error']</attribute>
+                <attribute name="required">0</attribute>
+            </xpath>
+            <xpath expr="//div[@name='common_product_stock_setup_stock_field']" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'mirakl_connector'</attribute>
+            </xpath>
+            <xpath expr="//div[@name='order_ecommerce_configuration_setup']" position="inside">
+                <div name="common_order_setup_sale_person" class="col-xs-12 col-md-6 o_setting_box"
+                     invisible="ecommerce_connector != 'mirakl_connector'">
+                    <div class="o_setting_right_pane" style="margin-left: 35px;">
+                        <label for="user_id" string="Sales Person"/>
+                        <div class="text-muted">
+                            - Set the sales person for e-Commerce orders
+                        </div>
+                        <div class="content-group">
+                            <div class="mt16">
+                                <field name="user_id" class="o_light_label"
+                                       readonly="state in ['fully_integrated', 'error']"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div name="common_order_setup_invoice_address" class="col-xs-12 col-md-6 o_setting_box"
+                     invisible="ecommerce_connector != 'mirakl_connector'">
+                    <div class="o_setting_right_pane" style="margin-left: 35px;">
+                        <label for="partner_invoice_id" string="Invoice Address"/>
+                        <div class="text-muted">
+                            - Set the Invoice Address for e-Commerce orders
+                        </div>
+                        <div class="content-group">
+                            <div class="mt16">
+                                <field name="partner_invoice_id" class="o_light_label"
+                                       readonly="state in ['fully_integrated', 'error']"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//div[@name='common_order_configuration_order_odoo_tax_behavior']" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'mirakl_connector'</attribute>
+            </xpath>
+            <xpath expr="//div[@name='common_product_stock_setup_auto_validate_inventory']" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'mirakl_connector'</attribute>
+            </xpath>
+
+            <!-- Mirakl Setup -->
+            <xpath expr="//page[@name='common_setup']" position="after">
+                <page string="Mirakl Setup" name="mirakl_setup"
+                      invisible="ecommerce_connector != 'mirakl_connector'">
+                    <div class="app_settings_block" data-string="Mirakl" data-key="setu_mirakl_connector">
+                        <h2 style="font-size:20px;text-align:center;color:white;background-color:#875A7B;">Product
+                            Configuration
+                        </h2>
+                        <div class="row mt16 o_settings_container">
+                            <div name="mirakl_product_stock_setup_mapped_with_odoo_product"
+                                 class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="mirakl_mapped_with_odoo_product"/>
+                                    <div class="text-muted">
+                                        - Product sync pattern with odoo products. This fields use to mapped fields
+                                        between any e-Commerce and Odoo.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="mirakl_mapped_with_odoo_product" class="o_light_label"
+                                                    widget="selection"
+                                                    readonly="state in ['fully_integrated', 'error']"
+                                                    required="state ==  'draft' and ecommerce_connector != 'mirakl_connector'"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 style="font-size:20px;text-align:center;color:white;background-color:#875A7B;">Order
+                            Configuration
+                        </h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div name="mirakl_order_configuration_order_status" class="o_setting_right_pane"
+                                     style="margin-left: 35px;">
+                                    <label for="mirakl_order_status_ids" string="Import Order Status"/>
+                                    <div class="text-muted">
+                                        - Select order status which you want to import orders from Mirakl store to
+                                        odoo.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="mirakl_order_status_ids" widget="many2many_tags"
+                                                   options="{'no_create':True,'no_create_edit': True}"
+                                                   readonly="state in ['fully_integrated', 'error']"
+                                                   class="oe_inline"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box">
+                                    <div name="mirakl_order_configuration_import_mirakl_order"
+                                         class="o_setting_right_pane" style="margin-left: 35px;">
+                                        <label for="import_mirakl_order_from" string="Import Order After Date"/>
+                                        <div class="text-muted">
+                                        </div>
+                                        <div class="content-group">
+                                            <div class="mt16">
+                                                <field name="import_mirakl_order_from"
+                                                       required="ecommerce_connector == 'mirakl_connector' and state in ['fully_integrated', 'integrated']"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="setu_multi_ecommerce_connector_mirakl_action" model="ir.actions.act_window">
+        <field name="name">Mirakl Integration</field>
+        <field name="res_model">setu.multi.ecommerce.connector</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="setu_multi_ecommerce_connector_mirakl_extended_tree_view"/>
+        <field name="context">{'default_ecommerce_connector': 'mirakl_connector'}</field>
+        <field name="domain">[('ecommerce_connector', '=', 'mirakl_connector')]</field>
+    </record>
+
+
+    <menuitem id="setu_multi_ecommerce_connector_mirakl_menu" name="Mirakl Integration"
+              parent="setu_mirakl_connector.setu_mirakl_configuration_main_menu" sequence="2"
+              action="setu_multi_ecommerce_connector_mirakl_action"/>
+
+</odoo>

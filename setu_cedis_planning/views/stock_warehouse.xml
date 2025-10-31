@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_cedis_planning_page_stock_warehouse" model="ir.ui.view">
+            <field name="name">add.cedis.planning.page.stock.warehouse</field>
+            <field name="model">stock.warehouse</field>
+            <field name="inherit_id" ref="stock.view_warehouse"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='technical_info']" position="after">
+                    <page string="CEDIS Planning" name="technical_info" groups="base.group_no_one">
+                        <field name="cedis_plan_ids" nolabel="1" widget="section_and_note_one2many">
+                            <list editable="bottom">
+                                <field name="sale_team_id" options="{'no_create': True}"/>
+                                <field name="planning" required="1"/>
+                                <field name="urgent_order"/>
+                                <field name="cliente_mostrador"/>
+                                <field name="detener_factura"/>
+                                <field name="picking_type_id" options="{'no_create': True}" domain="[('warehouse_id','=',parent.id)]"/>
+                                <field name="user_ids" widget="many2many_tags" options="{'no_create': True}" domain="[('share','=',False)]"/>
+                                <field name="activity_type_id" options="{'no_create': True}"/>
+                                <field name="summary" optional="hide"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

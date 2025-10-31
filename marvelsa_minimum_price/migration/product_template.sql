@@ -1,0 +1,6 @@
+update product_template set minimum_price_option=x_minimum_price_option;
+update product_template set minimum_price_amount=x_minimum_price_amount;
+update product_template set minimum_price_percentage=minimum_price_percentage; 
+update product_product set minimum_price_option=x_minimum_price_option;
+update product_product set minimum_price_amount=x_minimum_price_amount;
+update product_product set minimum_price_percentage=minimum_price_percentage;

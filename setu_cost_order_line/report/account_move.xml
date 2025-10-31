@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="add_picking_ids_field_in_account_report"
+                  inherit_id="account.report_invoice_document">
+            <xpath expr="//th[@name='th_description']" position="after">
+                <th name="th_pickings" t-if="o.invoice_line_ids.picking_ids">
+                    <span>Pickings</span>
+                </th>
+            </xpath>
+            <xpath expr="//td[@name='account_invoice_line_name']" position="after">
+                <td>
+                    <t t-if="line.picking_ids">
+                        <t t-foreach="line.picking_ids" t-as="picking">
+                            <span t-field="picking.display_name"/>
+                        </t>
+                    </t>
+                </td>
+            </xpath>
+<!--            task:- Total Amount is not displayed          https://app.clickup.com/t/86dxvr78c?comment=90170150822857-->
+              <xpath expr="//th[@name='th_subtotal']" position="after">
+                <th name="th_total" >
+                    <span>Total with Tax</span>
+                </th>
+            </xpath>
+            <xpath expr="//td[@name='td_subtotal']" position="after">
+                <td>
+                    <span class="text-nowrap" t-field="line.price_total"></span>
+                </td>
+            </xpath>
+        </template>
+    </data>
+</odoo>

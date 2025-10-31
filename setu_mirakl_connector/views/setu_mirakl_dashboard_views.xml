@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+        <record id="setu_mirakl_connector_kanban_dashboard" model="ir.ui.view">
+			<field name="name">setu.mirakl.connector.kanban.dashboard</field>
+			<field name="model">setu.multi.ecommerce.connector</field>
+			<field name="arch" type="xml">
+				<kanban class="o_kanban_dashboard" highlight_color="color" create="false" sample="1" string="Mirakl Overview">
+					<field name="color" widget="kanban_color_picker"/>
+					<templates>
+						<t t-name="kanban-box">
+							<div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+
+								<div class="o_kanban_card_header d-flex justify-content-between">
+									<strong>
+										<field name="name"/>
+									</strong>
+									<div class="dropdown">
+										<a class="dropdown text-muted" role="button" data-bs-toggle="dropdown"
+										   aria-expanded="false">
+											<i class="fa fa-ellipsis-v"/>
+										</a>
+										<div class="dropdown-menu dropdown-menu-end o_dropdown_kanban">
+											<div class="px-2">
+												<field name="color" widget="kanban_color_picker"/>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="o_kanban_card_content mt-3">
+									<div class="row text-center">
+										<div class="col">
+											<a name="action_sale_order_count_mirakl" type="object" class="d-block">
+												<span class="fw-bold">
+													<field name="mirakl_sale_order_count"/>
+												</span>
+												<br/>
+												<span class="text-muted">Sales</span>
+											</a>
+										</div>
+										<div class="col">
+											<a name="action_account_move_account_mirakl" type="object" class="d-block">
+												<span class="fw-bold">
+													<field name="mirakl_account_move_count"/>
+												</span>
+												<br/>
+												<span class="text-muted">Invoices</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+
+		<record id="open_setu_mirakl_dashboard_kanban" model="ir.actions.act_window">
+			<field name="name">Mirakl Dashboard</field>
+			<field name="res_model">setu.multi.ecommerce.connector</field>
+			<field name="view_mode">kanban,form</field>
+			<field name="view_id" ref="setu_mirakl_connector_kanban_dashboard"/>
+			<field name="usage">menu</field>
+			<field name="context">{'search_default_dashboard':1}</field>
+			<field name="domain">[('ecommerce_connector','=','mirakl_connector')]</field>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_neutral_face">
+					This is the Mirakl Dashboard
+				</p>
+			</field>
+		</record>
+
+    </data>
+</odoo>

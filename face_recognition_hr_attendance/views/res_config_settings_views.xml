@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.hr.attendance</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="80"/>
+        <field name="inherit_id" ref="hr_attendance.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='kiosk_mode_setting_container']" position="after">
+                <block title="Check-In/Out Facial Recognition">
+                    <setting help="Update Recognition model after adding new images for employees">
+                        <button type="object" name="action_generate_face_encodings" class="oe_highlight">
+                            Update Recognition Model
+                        </button>
+                        <div class="text-muted">
+                            Update the face recognition model when you add new images for the employees
+                        </div>
+                    </setting>
+
+                    <setting title="Path where you want to save the recognition model">
+                        <p>
+                            <strong>Encoding File Path</strong>
+                        </p>
+                        <field name="file_path" class="w-100"/>
+                        <div class="text-muted">
+                            Path where you want to save the recognition model. Make sure the Odoo user has read/write access.
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

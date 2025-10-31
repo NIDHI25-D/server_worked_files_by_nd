@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="res.groups" id="group_erp_manager_ext">
+            <field name="name">Allow Modification Access Rights</field>
+        </record>
+    </data>
+</odoo>

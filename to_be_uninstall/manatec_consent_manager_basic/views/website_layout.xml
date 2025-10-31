@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="layout" name="Main layout" inherit_id="website.layout">
+        <xpath expr="//script[@id='tracking_code']" position="attributes">
+            <attribute name="type">text/plain</attribute>
+            <attribute name="data-type">application/javascript</attribute>
+            <attribute name="data-name">google-analytics</attribute>
+        </xpath>
+    </template>
+
+    <template id="klaro_settings_layout" inherit_id="web.layout">
+        <xpath expr="//html/head/script[1]" position="inside">
+            <t t-if="website" t-translation="off">
+                window.klaroDefault = {};
+                <t t-if="website.privacy_policy_url">
+                    window.klaroDefault.privacyPolicy = '<t t-esc="website.privacy_policy_url"/>';
+                </t>
+                <t t-else="">
+                    window.klaroDefault.privacyPolicy = '';
+                </t>
+                    window.klaroDefault.domainPath = '/';
+                <t t-if="website.cookie_domain">
+                    window.klaroDefault.domain = '<t t-esc="website.cookie_domain"/>';
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>

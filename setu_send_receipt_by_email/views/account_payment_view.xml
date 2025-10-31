@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_payment_document_extended" inherit_id="l10n_mx_edi.report_payment_document">
+            <!--                    Request changes to not show below details to report-->
+            <xpath expr="//table[@name='table_l10n_mx_edi_invoice_original_info']" position="replace">
+            </xpath>
+            <xpath expr="//div[@name='l10n_mx_edi_payment_method']" position="after">
+                <div id="uso">
+                    <t t-if="cfdi and cfdi.get('usage')">
+                        <strong>Usage:</strong>
+                        <span t-esc="cfdi['usage']"/>
+                    </t>
+                </div>
+                <div class="col-6" t-if="o.partner_id.l10n_mx_edi_fiscal_regime">
+                    <strong>Fiscal Regime:</strong>
+                    (<span t-out="o.partner_id.l10n_mx_edi_fiscal_regime"/>)
+                    <span t-field="o.partner_id.l10n_mx_edi_fiscal_regime"/>
+                </div>
+            </xpath>
+        </template>
+        <record id="setu_send_receipt_by_email_inherited_REF_view_account_supplier_payment_tree" model="ir.ui.view">
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_supplier_payment_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="receipt_status" optional="show"
+                           decoration-success="receipt_status == 'sent'" decoration-info="receipt_status == 'not_sent'"
+                           widget="badge"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="setu_send_receipt_by_email_inherited_REF_view_account_payment_form" model="ir.ui.view">
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='memo']" position="after">
+                    <field name="receipt_status" invisible="1"/>
+                    <field name="vendor_payment_receipt"
+                           widget="drag_and_drop_widget"
+                           invisible="partner_type != 'supplier'"
+                           readonly="receipt_status == 'sent' or state == 'cancel'"/>
+                    <field name="vendor_payment_receipt_name" nolabel="1"
+                           invisible="vendor_payment_receipt_name == False" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="vendor_payment_receipt_template" model="mail.template">
+            <field name="name">Payment: Vendor Payment Receipt</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="subject">{{ object.company_id.name }} - Payment Receipt</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="description">Sent manually to customer when clicking on 'Send receipt by email' in payment
+                action
+            </field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear
+                        <t t-out="object.partner_id.name or ''">Azure Interior</t>
+                        <br/>
+                        <br/>
+                        Here is your payment receipt <span style="font-weight:bold;"
+                                                           t-out="(object.name or '').replace('/','-') or ''">
+                        BNK1-2021-05-0002
+                    </span> amounting
+                        to <span style="font-weight:bold;"
+                                 t-out="format_amount(object.amount, object.currency_id) or ''">$ 10.00
+                    </span> from <t t-out="object.company_id.name or ''">YourCompany</t>.
+                        <br/>
+                        <br/>
+                        Payment Reference:
+                        <t t-out="object.memo or ''"/>
+                        <br/>
+                        Do not hesitate to contact us if you have any questions.
+                        <br/>
+                        <br/>
+                        Best regards
+                    </p>
+                </div>
+            </field>
+            <field name="report_template_ids" eval="[(4, ref('account.action_report_payment_receipt'))]"/>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <record id="action_Send_vendor_receipt_by_email" model="ir.actions.server">
+            <field name="name">Send Vendor Receipt By Email</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="binding_model_id" ref="account.model_account_payment"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.auto_send_vendor_mail()
+            </field>
+        </record>
+    </data>
+</odoo>

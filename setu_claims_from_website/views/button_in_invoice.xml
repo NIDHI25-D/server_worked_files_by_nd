@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="add_button_request_claim" inherit_id="account.portal_my_invoices" name="Create_Claim">
+        <xpath expr="//thead/tr/th[last()]" position="after">
+            <th></th>
+            <th t-if="request.env['ir.config_parameter'].sudo().get_param('setu_claims_from_website.enable_claim')"
+                style="opacity: 0;pointer-events: none;padding: 15px;">Request Claim
+            </th>
+        </xpath>
+        <xpath expr="//td[last()]" position="after">
+            <t t-set="attachment_id" t-value="invoice.l10n_mx_edi_retrieve_last_attachment()"/>
+            <td>
+                <div class="btn-group pull-right">
+                    <a t-att-href="'/web/content/{0}?download=true'.format(attachment_id.id if attachment_id else 0)"
+                       t-att-class="'btn btn-xs btn-primary' if attachment_id else 'btn btn-xs btn-primary disabled'"
+                       title="Download XML" target="_blank">
+                        <i class="fa fa-download"/>
+                    </a>
+                </div>
+            </td>
+        </xpath>
+
+        <xpath expr="//tbody/t/tr" position="inside">
+            <td t-if="request.env['ir.config_parameter'].sudo().get_param('setu_claims_from_website.enable_claim')">
+                <a t-att-class="'btn btn-xs btn-primary' if invoice.partner_id.id == request.env.user.partner_id.id and invoice.move_type == 'out_invoice' and invoice.state == 'posted' else 'btn btn-xs btn-primary  disabled'"
+                   t-att-href="'/my/claims/create-claim/%s'%invoice.id" class="btn btn-xs btn-primary">Request Claim
+                </a>
+            </td>
+        </xpath>
+        <!--        For showing the full invoice name in website invoice list-->
+        <xpath expr="//tbody/t/tr/td" position="replace">
+            <td style="white-space:unset !important; font-size:15px;">
+                <a t-att-href="invoice.get_portal_url()" t-att-title="invoice.name">
+                    <t t-esc="invoice.name" t-if="invoice.name != '/'"/>
+                    <em t-else="">Draft Invoice</em>
+                </a>
+            </td>
+        </xpath>
+    </template>
+</odoo>

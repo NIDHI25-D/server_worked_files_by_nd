@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View res.partner-->
+        <record id="customer_rating_res_partner_form_view" model="ir.ui.view">
+            <field name="name">setu_customer_rating.res_partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Customer Rating" name="customer_rating">
+                        <group>
+                            <field name="total_score" readonly="1"/>
+                            <field name="rating" readonly="1"/>
+                            <field name="customer_score_id" readonly="1"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Inherit Kanban View res.partner-->
+        <record model="ir.ui.view" id="customer_rating_res_partner_kanban_view">
+            <field name="name">customer.rating.res.partner.kanban.view</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <field name="active" position="before">
+                    <field name="rating"/>
+                </field>
+                <xpath expr="//main" position="inside">
+                    <t t-if="record.rating.raw_value">
+                        <div class="o_kanban_inline_block badge-pill badge" style="font-family: auto !important;">
+                            <a string="Rating" name="view_to_customer_score" type="object">
+                                <field name="rating" readonly="1"/>
+                            </a>
+                        </div>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

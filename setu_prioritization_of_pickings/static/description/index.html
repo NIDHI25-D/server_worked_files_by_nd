@@ -1,0 +1,39 @@
+<br/>
+<h2 id="setu-prioritization-of-pickings">Setu Prioritization Of Pickings</h2>
+<h5 id="usage">USAGE</h5>
+<ul>
+    <li>This module is used to prioritize the pickings in a single line for each warehouse based on priority levels.
+    </li>
+    <li>Line complexity and importance levels. This module form a consecutive for assigning pickings to the assortment
+        teams automatically.
+    </li>
+    <li><strong>Problems</strong> - the order in which pickings are assigned to the assortment teams depends on one
+        person, which means that sometimes pickings of lesser importance, or that are very extensive or complex, are
+        assigned to the assortment teams, causing delays in shipments of high importance.
+    </li>
+    <li><strong>Solution</strong> - Create an algorithm to prioritize the pickings in a single line for each warehouse
+        based on priority levels, line complexity and importance levels. This algorithm should form a consecutive for
+        assigning pickings to the assortment teams automatically.
+    </li>
+    <li>There are a menu called <strong>Prioritization of Pickings</strong> and under this menu there are various
+        options and configurations are available which are helps to pickings prioritization.
+    </li>
+    <li>Other options for use in pickings prioritization are :</li>
+    <li><strong>Complexity Levels</strong> - it is use to creates a levels for complexity of the pickings between range
+        of <strong>Initial range of lines</strong> and <strong>End range of lines</strong></li>
+    <li>Here are the <strong>Assortment team</strong> and <strong>Assortment team types</strong> are define under and
+        the menu <strong>Assortment</strong> there are a form a consecutive for assigning pickings to the assortment
+        teams via executing a cron which is <strong>Prioritization Of picking</strong></li>
+    <li>Here are the <strong>Priority Rules</strong> where creates/set a records of Transfer Domain which matches a
+        respective pickings and in this pickings there are a Prioritization Priority are set as per the priority of the
+        rule, if there are a no rule are apply then No rule are set to the respective picking.
+    </li>
+    <li>Here from the <strong>Complexity Assortment Team Types</strong> of the Assortment Team Types if there are a
+        <strong>Pending Transfers</strong> of there respective Complexity Level so in a queue single picking are set the
+        values of <strong>Assortment Team</strong>,<strong>Prioritization Priority</strong>, <strong>Complexity
+            Assigned</strong>,<strong>Responsible Person</strong> and remove these transfer from the Pending Transfers.
+    </li>
+    <li>There are a separate menu are available for the <strong>Prioritization Priorities</strong> under the <strong>Inventory</strong>
+        where only Prioritization pickings are shown as a grouping of Prioritization Priority.
+    </li>
+</ul>

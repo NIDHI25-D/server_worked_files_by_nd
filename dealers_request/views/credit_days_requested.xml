@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="credit_days_requested_tree" model="ir.ui.view">
+            <field name="name">credit.days.requested.form</field>
+            <field name="model">credit.days.requested</field>
+            <field name="arch" type="xml">
+                <list string="Credit Days Requested" editable="bottom">
+                <field name="name"/>
+                </list>
+            </field>
+        </record>
+    </data>
+
+
+    <record model="ir.actions.act_window" id="credit_days_requested_action">
+            <field name="name">Credit Days Requested</field>
+            <field name="res_model">credit.days.requested</field>
+            <field name="view_mode">list</field>
+        </record>
+
+         <menuitem id="credit_days_requested_menu" name="Credit Days Requested"
+                  parent="dealers_request.dealers_menu"
+                  action="credit_days_requested_action"
+                  sequence="4"
+                  groups="dealers_request.credit_upload_documents"
+        />
+
+</odoo>

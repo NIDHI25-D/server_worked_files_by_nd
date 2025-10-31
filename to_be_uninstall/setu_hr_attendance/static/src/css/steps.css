@@ -1,0 +1,66 @@
+span.round-tab {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    text-align: center;
+    font-size: 17px;
+}
+
+span.round-tab i {
+    color: #555555;
+}
+
+.hr-attendance-base-width {
+    width: 3%;
+}
+
+.hr-attendance-base-down-icon {
+    color: #555555;
+    position: absolute;
+    cursor: pointer;
+    right: 20px
+}
+
+.hr-attendance-base-denied {
+    color: #f27474 !important;
+}
+
+.o_hr_attendance_network_status {
+    position: absolute;
+    width: auto;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    font: normal 1.2em SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: white;
+    top: 0px;
+    right: 0px;
+}
+
+@media (max-width: 768px) {
+    .o_hr_attendance_network_status {
+        position: absolute;
+        top: 0px;
+        left: auto;
+        bottom: auto;
+        right: 0px;
+        width: auto;
+        padding: 3px 10px 3px 10px;
+        border-radius: 3px;
+        font-size: 1.5em;
+    }
+}
+
+.o_hr_attendance_back_screen {
+    position: absolute;
+    left: -21px;
+    font-size: 40px;
+    top: -10px;
+    cursor: pointer
+}

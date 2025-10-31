@@ -1,0 +1,6 @@
+/* Corrección de orientación para dispositivos móviles */
+@media (orientation: portrait) {
+    #video, #cam_canvas {
+        transform: rotate(90deg) scale(1.33); /* Ajusta la rotación y el zoom para corregir la imagen */
+    }
+}

@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* meli_oerp_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-17 11:34+0000\n"
+"PO-Revision-Date: 2024-10-17 11:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: meli_oerp_extended
+#: model:ir.model,name:meli_oerp_extended.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: meli_oerp_extended
+#: model:ir.model.fields,field_description:meli_oerp_extended.field_sale_order__confirm_shipment
+#: model:ir.model.fields,field_description:meli_oerp_extended.field_stock_picking__confirm_shipment
+#: model_terms:ir.ui.view,arch_db:meli_oerp_extended.sale_order_view_search_inherit_quotation_meli
+msgid "Confirm Shipment"
+msgstr "Confirmar envío"
+
+#. module: meli_oerp_extended
+#: model:res.groups,name:meli_oerp_extended.group_confirm_shipment
+msgid "Confirm Shipment Date"
+msgstr ""
+
+#. module: meli_oerp_extended
+#: model:ir.model.fields,field_description:meli_oerp_extended.field_res_company__mercadolibre_invoice_address_id
+msgid "Invoice Address"
+msgstr ""
+
+#. module: meli_oerp_extended
+#: model:ir.model.fields,field_description:meli_oerp_extended.field_stock_picking__shipment_logistic_type
+msgid "Logistic Type"
+msgstr ""
+
+#. module: meli_oerp_extended
+#: model:ir.model,name:meli_oerp_extended.model_mercadolibre_orders
+msgid "Pedidos en MercadoLibre"
+msgstr ""
+
+#. module: meli_oerp_extended
+#: model:ir.model,name:meli_oerp_extended.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: meli_oerp_extended
+#: model:ir.actions.server,name:meli_oerp_extended.action_report_shipping_label_stock_picking_preview
+#: model:ir.actions.server,name:meli_oerp_extended.action_report_shipping_sale_preview_server
+#: model:ir.actions.server,name:meli_oerp_extended.action_report_shippingpreview_server
+msgid "Shipping Label"
+msgstr ""
+
+#. module: meli_oerp_extended
+#: model:ir.model,name:meli_oerp_extended.model_stock_picking
+msgid "StockPicking"
+msgstr "Traslado"
+
+#. module: meli_oerp_extended
+#. odoo-python
+#: code:addons/meli_oerp_extended/models/stock_picking.py:0
+#, python-format
+msgid "This transfer does not contain sale order reference."
+msgstr ""
+
+#. module: meli_oerp_extended
+#: model_terms:ir.ui.view,arch_db:meli_oerp_extended.meli_oerp_extended_inherited_REF_view_sale_order_form_meli
+msgid "Update"
+msgstr ""

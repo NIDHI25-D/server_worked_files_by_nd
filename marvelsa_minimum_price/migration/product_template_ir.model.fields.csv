@@ -1,0 +1,23 @@
+"Field Name","Field Label","Model","Field Type","Field Help","Type","Required","Readonly","Stored","Indexed","Copied","Related Field","Selection Options","Dependencies","Compute"
+"x_minimum_price","Minimum Price","Product Template","float","The lowest price allowed for this product to be sold","Custom Field","","True","","","","","","x_minimum_price_option,x_minimum_price_amount,x_minimum_price_percentage,standard_price,categ_id,categ_id.x_minimum_price_option,categ_id.x_minimum_price_amount,categ_id.x_minimum_price_percentage","	for product in self:
+		if product.x_minimum_price_option == 'default':
+			categ = product.categ_id
+			if categ.x_minimum_price_option == 'amount':
+				product.x_minimum_price = product.standard_price + categ.x_minimum_price_amount
+			elif categ.x_minimum_price_option == ""percentage"":
+				product.x_minimum_price = product.standard_price + (product.standard_price * (categ.x_minimum_price_percentage / 100))
+			else:
+				product.x_minimum_price = 0
+
+		elif product.x_minimum_price_option == 'amount':
+			product.x_minimum_price = product.standard_price + product.x_minimum_price_amount
+		elif product.minimum_price_option == 'percentage':
+			product.x_minimum_price = product.standard_price + (product.standard_price * (product.x_minimum_price_percentage / 100))
+		else:
+			product.x_minimum_price = 0"
+"x_minimum_price_amount","Minimum Price Parameter (Amount)","Product Template","float","","Custom Field","","","True","","True","","","",""
+"x_minimum_price_option","Minimum Price Option","Product Template","selection","The 'Minimum Price Calculation Option: ' Leave blank for for following minimum price configuration on its category, Select Amount for minimum_price = cost - x amount, Select Percentage for minimum_price = cost - x percent.","Custom Field","True","","True","","True","","Follow Category\'s configuration","",""
+"","","","","","","","","","","","","Cost + Amount","",""
+"","","","","","","","","","","","","Cost + Percentage","",""
+"","","","","","","","","","","","","Disable minimum price for this product","",""
+"x_minimum_price_percentage","Minimum Price Parameter (Percentage 1-100)","Product Template","float","","Custom Field","","","True","","True","","","",""

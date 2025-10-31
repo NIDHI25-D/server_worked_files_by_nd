@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="stock_inv_ext_inherited_l10n_mx_edi_stock_report_cartaporte"
+              inherit_id="l10n_mx_edi_stock.l10n_mx_edi_stock_report_cartaporte">
+<!--        task:- Improvements to the delivery guide report {https://app.clickup.com/t/86dxwk0z8}-->
+        <xpath expr="//div[@t-foreach=&quot;cartaporte_values['figures']&quot;]" position="after">
+             <t t-if="o.picking_type_code == 'outgoing'">
+                <hr/>
+                <div class="page" style="width: 100%;">
+                    <div class="d-flex" style="font-weight: bold;border-bottom: 1px solid #999999;">
+                        <div class="col-5">Product</div>
+                        <div class="col-3 offset-1">Quantity</div>
+                        <div class="col-3">Unit</div>
+                    </div>
+
+                    <t t-foreach="o.move_ids_without_package" t-as="line">
+                        <div class="d-flex">
+                            <div class="col-5">
+                                <t t-out="line.product_id.display_name"/>
+                            </div>
+                            <div class="col-3 offset-1">
+                                <t t-out="line.quantity"/>
+                            </div>
+                            <div class="col-3">
+                                <t t-out="line.product_uom.name"/>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

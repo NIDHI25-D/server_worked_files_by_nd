@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_parcel_tracking" model="ir.actions.report">
+            <field name="name">Parcel tracking label</field>
+            <field name="model">stock.quant.package</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">setu_picking_control_by_pallets.report_parcel_tracking</field>
+            <field name="report_file">setu_picking_control_by_pallets.report_parcel_tracking</field>
+            <field name="binding_model_id" ref="stock.model_stock_quant_package"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

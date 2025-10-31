@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="transport_route_form_view" model="ir.ui.view">
+        <field name="name">transport.route.form.view</field>
+        <field name="model">transport.route</field>
+        <field name="arch" type="xml">
+            <form string="Route">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" string="Route Name" placeholder="e.g. Route"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="source_location_id" options='{"no_create_edit": True, "no_create": True}'/>
+                            <label for="source_street" string="Source Address"/>
+                            <div class="o_address_format">
+                                <field name="source_street" placeholder="Street..." class="o_address_street"/>
+                                <field name="source_street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="source_city" placeholder="City" class="o_address_city"/>
+                                <field name="source_state_id" class="o_address_state" placeholder="State"
+                                       options="{'no_open': True, 'no_quick_create': True}"
+                                       context="{'default_country_id': source_country_id}"/>
+                                <field name="source_zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="source_country_id" placeholder="Country" class="o_address_country"
+                                       options='{"no_open": True, "no_create": True}'/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="destination_location_id"
+                                   options='{"no_create_edit": True, "no_create": True}'/>
+                            <label for="destination_street" string="Destination Address"/>
+                            <div class="o_address_format">
+                                <field name="destination_street" placeholder="Street..." class="o_address_street"/>
+                                <field name="destination_street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="destination_city" placeholder="City" class="o_address_city"/>
+                                <field name="destination_state_id" class="o_address_state" placeholder="State"
+                                       options="{'no_open': True, 'no_quick_create': True}"
+                                       context="{'default_country_id': destination_country_id}"/>
+                                <field name="destination_zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="destination_country_id" placeholder="Country" class="o_address_country"
+                                       options='{"no_open": True, "no_create": True}'/>
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <label for="distance" class="mt-1" string="Distance"/>
+                            <div name="distance">
+                                <field name="distance" class="oe_inline"/>
+                                in KMs
+                            </div>
+                            <label for="transport_time" class="mt-1" string="Estimation Time"/>
+                            <div name="transport_time">
+                                <field name="transport_time" class="oe_inline" widget="float_time"/>
+                                in Hours
+                            </div>
+                        </group>
+                        <group>
+                            <field name="transporter_ids" widget="many2many_tags"
+                                   options="{'color_field': 'color', 'no_create_edit': True, 'no_create':True}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="transport_route_tree_view" model="ir.ui.view">
+        <field name="name">transport.route.tree.view</field>
+        <field name="model">transport.route</field>
+        <field name="arch" type="xml">
+            <list string="Routes">
+                <field name="name"/>
+                <field name="distance"/>
+                <field name="transport_time" widget="float_time"/>
+                <field name="transporter_ids" widget="many2many_tags"
+                       options="{'color_field': 'color', 'no_create_edit': True}"/>
+            </list>
+        </field>
+    </record>
+    <record id="transport_route_search_view" model="ir.ui.view">
+        <field name="name">transport.route.search.view</field>
+        <field name="model">transport.route</field>
+        <field name="arch" type="xml">
+            <search string="Routes">
+                <field name="name"/>
+                <field name="distance"/>
+                <field name="transport_time"/>
+                <field name="transporter_ids"/>
+                <group expand="0" string="Group By">
+                    <filter name="source_location_id" string="Source Location"
+                            context="{'group_by':'source_location_id'}"/>
+                    <filter name="destination_location_id" string="Destination Location"
+                            context="{'group_by':'destination_location_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="transport_route_action" model="ir.actions.act_window">
+        <field name="name">Transport Routes</field>
+        <field name="res_model">transport.route</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="assets_backend_setu_hr_attendance_base" name="hr_attendance_info assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/setu_hr_attendance/static/src/css/steps.css"/>
+            <link rel="stylesheet" href="/setu_hr_attendance/static/src/css/sweetalert2.css"/>
+            <script type="text/javascript" src="/setu_hr_attendance/static/src/js/lib/sweetalert2.js"></script>
+            <script type="text/javascript" src="/setu_hr_attendance/static/src/js/kiosk_mode_base.js"></script>
+        </xpath>
+    </template>
+  </data>
+</odoo>

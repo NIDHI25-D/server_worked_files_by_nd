@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_inherit_for_ram_registration" model="ir.ui.view">
+        <field name="name">res.config.settings.view.inherit.for.ram.registration</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='partner_autocomplete']" position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="consider_category_for_ram">
+                    <div class="o_setting_right_pane mt16">
+                        <div class="row mt8">
+                            <label for="ram_hcategory_id" class="col-lg-4 o_light_label"/>
+                            <field name="ram_hcategory_id"/>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-12 col-lg-6 o_setting_box" id="consider_category_for_ram">
+
+                    <div class="o_setting_right_pane mt16">
+                        <div class="row mt8">
+                            <label for="partners_to_consider_after_date" class="col-lg-4 o_light_label"/>
+                            <field name="partners_to_consider_after_date"/>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

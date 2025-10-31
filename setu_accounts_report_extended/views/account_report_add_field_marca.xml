@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit template for adding the product barcode column to invoice printing -->
+        <template id="report_invoice_document_extended" inherit_id="account.report_invoice_document">
+
+            <xpath expr="/t/t/div/div/table/thead/tr/th[1]" position="before">
+                <th>
+                    <span>Referencia interna</span>
+                </th>
+            </xpath>
+            <xpath expr="//tbody/t/tr/t/td[@name='account_invoice_line_name']" position="before">
+                <td>
+                    <span t-field="line.product_id.default_code"/>
+                </td>
+            </xpath>
+        </template>
+    </data>
+</odoo>

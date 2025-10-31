@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="is_next_day_shipping_view_picking_form">
+            <field name="name">is.next.day.shipping.view.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group/field[@name='backorder_id']" position="after">
+                    <field name="is_next_day_shipping"/>
+                    <field name="assortment_start_date" readonly="True" force_save="1" />
+                    <field name="assortment_end_date" readonly="True" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

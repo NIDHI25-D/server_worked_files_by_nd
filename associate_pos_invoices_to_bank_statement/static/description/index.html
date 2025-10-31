@@ -1,0 +1,37 @@
+<h2 id="associate-pos-invoice-to-bank-statements">Associate Pos Invoice TO Bank Statements</h2>
+<h5 id="usage">USAGE</h5>
+<ul>
+<li>This module initiates the feature of including POS invoices in respected Bank Reconciliation.</li>
+<li>This module also includes the calculation of the Total Signed Amount such as :<ul>
+<li><pre><code>When an invoice is added, the related balance subtraction operation is
+carried out, so that the person relating the invoices can verify that the total
+amount of the statement corresponds to the amount of the added invoices.
+</code></pre>
+</li>
+</ul>
+</li>
+<li>The total signed amount of POS Invoice added in the statement line is shown in the line. As well as that amount is
+being subtracted from the total amount and that is reflected in the Difference.</li>
+<li>The statement line added in the Bank Reconciliation will be added to the <strong>Tab : Related Statement</strong> of respected POS
+invoice with the details:<ul>
+<li><pre><code>Statement,
+</code></pre>
+</li>
+<li><pre><code>Date,
+</code></pre>
+</li>
+<li><pre><code>Label,
+</code></pre>
+</li>
+<li><pre><code>Partner,
+</code></pre>
+</li>
+<li><pre><code>Total Signed Amount
+</code></pre>
+</li>
+<li><pre><code>Amount
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>

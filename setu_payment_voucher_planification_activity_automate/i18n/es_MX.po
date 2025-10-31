@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_payment_voucher_planification_activity_automate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-26 10:14+0000\n"
+"PO-Revision-Date: 2024-03-26 10:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model_terms:ir.ui.view,arch_db:setu_payment_voucher_planification_activity_automate.res_config_settings_view_form_for_comment
+msgid "<span class=\"o_form_label\">Pricelist</span>"
+msgstr ""
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model_terms:ir.ui.view,arch_db:setu_payment_voucher_planification_activity_automate.sale_order_portal_inherit_template_payment_voucher
+msgid "Attach payment receipt"
+msgstr "Adjunte su comprobante de pago"
+
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model:ir.model,name:setu_payment_voucher_planification_activity_automate.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: setu_payment_voucher_planification_activity_automate
+#. odoo-python
+#: code:addons/setu_payment_voucher_planification_activity_automate/controller/main.py:0
+#, python-format
+msgid ""
+"Contact : %s have not assigned Collection Executive.So kindly add Collection"
+" Executive"
+msgstr ""
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model_terms:ir.ui.view,arch_db:setu_payment_voucher_planification_activity_automate.warning_message_voucher
+msgid "Entendido"
+msgstr ""
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model_terms:ir.ui.view,arch_db:setu_payment_voucher_planification_activity_automate.warning_message_voucher
+msgid ""
+"Favor de adjuntar su comprobante de pago para que su pedido sea liberado"
+msgstr ""
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model:ir.model.fields,field_description:setu_payment_voucher_planification_activity_automate.field_sale_order__is_payment_voucher_warning
+msgid "Is Payment Voucher warning?"
+msgstr ""
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model:ir.model,name:setu_payment_voucher_planification_activity_automate.model_payment_provider
+msgid "Payment Provider"
+msgstr "Método de pago"
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model:ir.model.fields,field_description:setu_payment_voucher_planification_activity_automate.field_payment_provider__payment_voucher_warning
+msgid "Payment Voucher warning"
+msgstr ""
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model:ir.model.fields,field_description:setu_payment_voucher_planification_activity_automate.field_res_config_settings__comment_pricelist_id
+#: model:ir.model.fields,field_description:setu_payment_voucher_planification_activity_automate.field_website__comment_pricelist_id
+msgid "Pricelist"
+msgstr ""
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model:ir.model,name:setu_payment_voucher_planification_activity_automate.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model_terms:ir.ui.view,arch_db:setu_payment_voucher_planification_activity_automate.res_config_settings_view_form_for_comment
+msgid "Schedule acitivty will be done based on the based pricelist"
+msgstr ""
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model:ir.model.fields,field_description:setu_payment_voucher_planification_activity_automate.field_sale_order__is_sent_payment_receipt
+msgid "Sent payment receipt"
+msgstr "Comprobante enviado"
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model_terms:ir.ui.view,arch_db:setu_payment_voucher_planification_activity_automate.sale_order_portal_inherit_template_payment_voucher
+msgid "Submit"
+msgstr "Enviar"
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model_terms:ir.ui.view,arch_db:setu_payment_voucher_planification_activity_automate.add_link_to_attach_payment_voucher
+msgid "Upload your payment voucher HERE."
+msgstr "Cargue su comprobante de pago AQUÍ"
+
+#. module: setu_payment_voucher_planification_activity_automate
+#: model:ir.model,name:setu_payment_voucher_planification_activity_automate.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: setu_payment_voucher_planification_activity_automate
+#. odoo-python
+#: code:addons/setu_payment_voucher_planification_activity_automate/controller/main.py:0
+#, python-format
+msgid "Validate Payment"
+msgstr "VALIDAR PAGO"

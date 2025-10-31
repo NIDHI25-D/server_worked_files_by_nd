@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ram_memory_type,ram_memory_type.ram_memory_type,model_ram_memory_type,,1,1,1,1
+access_ram_memory_capacity,ram_memory_capacity.ram_memory_capacity,model_ram_memory_capacity,,1,1,1,1
+access_processor_speed,processor_speed.processor_speed,model_processor_speed,,1,1,1,1
+access_processor_model,processor_model.processor_model,model_processor_model,,1,1,1,1
+access_processor_generation,processor_generation.processor_generation,model_processor_generation,,1,1,1,1
+access_operative_system_type,operative_system_type.operative_system_type,model_operative_system_type,,1,1,1,1
+access_operative_system_version,operative_system_version.operative_system_version,model_operative_system_version,,1,1,1,1
+access_operative_system_distribution,operative_system_distribution.operative_system_distribution,model_operative_system_distribution,,1,1,1,1
+access_network_card_type,network_card_type.network_card_type,model_network_card_type,,1,1,1,1
+access_network_card_mac_address,network_card_mac_address.network_card_mac_address,model_network_card_mac_address,,1,1,1,1
+access_hard_disk_type,hard_disk_type.hard_disk_type,model_hard_disk_type,,1,1,1,1
+access_hard_disk_capacity,hard_disk_capacity.hard_disk_capacity,model_hard_disk_capacity,,1,1,1,1
+access_hard_disk_line,hard_disk_line.hard_disk_line,model_hard_disk_line,,1,1,1,1
+access_network_card_line,network_card_line.network_card_line,model_network_card_line,,1,1,1,1

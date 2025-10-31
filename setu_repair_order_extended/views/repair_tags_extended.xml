@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="repair_tags_inherit" model="ir.ui.view">
+        <field name="name">repair.tags.inherit</field>
+        <field name="model">repair.tags</field>
+        <field name="inherit_id" ref="repair.view_repair_tag_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">1</attribute>
+                <attribute name="edit">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="repair_tags_form_inherit" model="ir.ui.view">
+        <field name="name">repair.tags.form.inherit</field>
+        <field name="model">repair.tags</field>
+        <field name="inherit_id" ref="repair.view_repair_tag_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="template_note"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_repair_order_tags" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">repair.tags</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new tag
+            </p>
+        </field>
+    </record>
+
+
+
+</odoo>

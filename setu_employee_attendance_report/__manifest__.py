@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Employee attendance report',
+    'version': '18.0.0.0',
+    'category': 'Human Resource',
+    'summary': 'Module for managing attendances of an employees',
+    'depends': ['hr_attendance', 'hr_holidays', 'ohrms_overtime'],
+    'license': 'AGPL-3',
+    'sequence': '20',
+    'author': 'Setu Consulting Services Pvt. Ltd.',
+    'website': 'https://www.setuconsulting.com',
+    'data': [
+        'views/attendance.xml',
+        'views/hr_leave_type.xml',
+        'views/res_config_settings.xml',
+        'wizard/attendace_report_wizard_view.xml',
+        'wizard/absence_report.xml',
+        'security/ir.model.access.csv',
+        'security/security.xml',
+        'db_function/get_employee_attendance_data.sql',
+        'db_function/get_employee_attendance_data_without_cron.sql',
+        'data/attendance_report_weekly.xml',
+        'data/mail_template.xml',
+        'views/hr_employee.xml'
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    # 'pre_init_hook': 'pre_init',
+}

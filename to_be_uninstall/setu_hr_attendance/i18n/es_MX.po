@@ -1,0 +1,773 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_attendance_face_recognition_pro
+# 	* setu_hr_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-27 06:21+0000\n"
+"PO-Revision-Date: 2022-09-27 06:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "0-100, 100 - 100% person, 0 - disable"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_scale_spoofing
+msgid "0-100, 100 - 100% person, 0 - disable, 70 - standart value"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_scale_recognition
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "0-100, 55 - standart value more 55 most stricter match"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_age__20
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_age__20
+msgid "0-20"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_age__30
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_age__30
+msgid "20-30"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_age__40
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_age__40
+msgid "30-40"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_age__50
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_age__50
+msgid "40-50"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_age__60
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_age__60
+msgid "50-60"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_age__70
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_age__70
+msgid "60-any"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/js/my_attendances_face_recognition.js:0
+#, python-format
+msgid "<h2>Welcome</h2><br />"
+msgstr "<h2>Bienvenido</h2><br />"
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.hr_employee_image_view_kanban
+msgid ""
+"<span class=\"badge badge-danger o_product_image_size\" title=\"Descriptor is missing, in order to create it, click on the button to make descriptors.\">\n"
+"                                      Descriptor is missing\n"
+"                                    </span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_image_view_kanban
+msgid ""
+"<span class=\"badge badge-danger o_product_image_size\" title=\"Descriptor is missing, in order to create it, click on the button to make descriptors.\">\n"
+"                                      Descriptor is missing\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.hr_employee_image_view_kanban
+msgid ""
+"<span class=\"badge badge-success o_product_image_size\" title=\"Descriptor is successfully created and the image is involved in face recognition.\">\n"
+"                                      Descriptor created\n"
+"                                    </span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_image_view_kanban
+msgid ""
+"<span class=\"badge badge-success o_product_image_size\" title=\"Descriptor is successfully created and the image is involved in face recognition.\">\n"
+"                                      Descriptor created\n"
+"                                </span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "<span class=\"o_form_label\">Attendance offline</span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "<span class=\"o_form_label\">Face control</span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "<span class=\"o_form_label\">Face kiosk auto</span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "<span class=\"o_form_label\">Face recognition access</span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "<span class=\"o_form_label\">Face security from photo</span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "<span class=\"o_form_label\">Scale of anti-spoofing</span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "<span class=\"o_form_label\">Scale of similafity face</span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.hr_attendance_view_form_face_recognition
+msgid ""
+"<span colspan=\"6\" class=\"o_form_label\" attrs=\"{'invisible': "
+"['|',('face_recognition_image_check_in', '!=', False),('webcam_check_in', "
+"'!=', False)]}\">Disable Face recognition store image</span>"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.hr_employee_image_view_kanban
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_image_view_kanban
+msgid "Acceptable file size"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_hr_employee__face_age
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_users__face_age
+msgid "Age for accessd"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model,name:hr_attendance_face_recognition_pro.model_hr_attendance
+msgid "Attendance"
+msgstr "Asistencia"
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__module_setu_hr_attendance
+msgid "Attendance Offline"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Binary file"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/js/my_attendances_face_recognition.js:0
+#, python-format
+msgid "Check In"
+msgstr "Registrar Entrada"
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/js/my_attendances_face_recognition.js:0
+#, python-format
+msgid "Check Out"
+msgstr "Registrar Salida"
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_kiosk_auto
+msgid "Check in/out click auto when users face finded"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "Check in/out click auto when users face finded in kiosk mode"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "Check in/out only real person, not photo"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_photo_check
+msgid "Check in/out user only if it live/real person not photo"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_access
+msgid "Check in/out user only when face recognition do snapshot"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "Check in/out user only when webcam create snapshot"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/kiosk.xml:0
+#, python-format
+msgid "Company Logo"
+msgstr ""
+
+#. module: setu_hr_attendance
+#. openerp-web
+#: code:addons/setu_hr_attendance/static/src/xml/base.xml:0
+#, python-format
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/js/widget_image_recognition.js:0
+#, python-format
+msgid "Could not display the selected image."
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: code:addons/hr_attendance_face_recognition_pro/controllers/controllers.py:0
+#, python-format
+msgid "Could not select database '%s'"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__create_uid
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__create_date
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_hr_employee_image_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_res_user_image_form
+msgid "Descriptor"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__descriptor
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__descriptor
+msgid "Descriptor FR"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.constraint,message:hr_attendance_face_recognition_pro.constraint_hr_employee_image_check_descriptor
+#: model:ir.model.constraint,message:hr_attendance_face_recognition_pro.constraint_res_users_image_check_descriptor
+msgid "Descriptor length must be more then 50"
+msgstr ""
+
+#. modules: hr_attendance_face_recognition_pro, setu_hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance__display_name
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__display_name
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users__display_name
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__display_name
+#: model:ir.model.fields,field_description:setu_hr_attendance.field_hr_employee__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee__face_emotion
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users__face_emotion
+msgid "Emotion"
+msgstr ""
+
+#. modules: hr_attendance_face_recognition_pro, setu_hr_attendance
+#: model:ir.model,name:setu_hr_attendance.model_hr_employee
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__hr_employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model,name:hr_attendance_face_recognition_pro.model_hr_employee_image
+msgid "Employee Image"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.hr_employee_image_view_kanban
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_hr_employee_image_form
+msgid "Employee Recognition Images"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model,name:hr_attendance_face_recognition_pro.model_res_config_settings
+msgid "Enable PreOrder PreSale"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_access
+msgid "Enable face recognition access"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_photo_check
+msgid "Enable face recognition check real person from photo/image"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee__face_age
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users__face_age
+msgid "Face Age"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_preferences_recognition
+msgid "Face Recognition Preferences"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_form_view_face_recognition
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_preferences_recognition
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_employee_form_face_recognition
+msgid "Face filters"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_form_view_face_recognition
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_employee_form_face_recognition
+#, python-format
+msgid "Face recognition"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance__face_recognition_image_check_in
+msgid "Face recognition check in"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance__face_recognition_image_check_out
+msgid "Face recognition check out"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee__recognition_image_ids
+msgid "Face recognition employee's images"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_kiosk_auto
+msgid "Face recognition kiosk auto check in/out"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Face recognition loading..."
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/js/my_attendances_face_recognition.js:0
+#, python-format
+msgid "Face recognition process"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users__res_users_image_ids
+msgid "Face recognition user's images"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.ui.menu,name:hr_attendance_face_recognition_pro.menu_hr_attendance_view_face_recognition_table
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_tree_face_recognition
+msgid "Face table"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance__face_recognition_access_check_in
+msgid "FaceID in"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance__face_recognition_access_check_out
+msgid "FaceID out"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.actions.act_window,name:hr_attendance_face_recognition_pro.hr_attendance_action_face_recognition
+msgid "Faces"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee__face_gender
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users__face_gender
+msgid "Gender"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_hr_employee__face_gender
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_users__face_gender
+msgid "Gender to be Accessed"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Go back"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Hide faces on images"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.hr_employee_image_view_kanban
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_image_view_kanban
+msgid "Huge file size. The image should be optimized/reduced."
+msgstr ""
+
+#. modules: hr_attendance_face_recognition_pro, setu_hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance__id
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__id
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__id
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users__id
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__id
+#: model:ir.model.fields,field_description:setu_hr_attendance.field_hr_employee__id
+msgid "ID"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/js/widget_image_recognition.js:0
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__image
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__image_1920
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__image
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__image_1920
+#, python-format
+msgid "Image"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__image_1024
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__image_128
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__image_256
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__image_512
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__image_detection
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__image_detection
+msgid "Image Detection"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_hr_employee_image_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_res_user_image_form
+msgid "Image Name"
+msgstr ""
+
+#. modules: hr_attendance_face_recognition_pro, setu_hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance____last_update
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image____last_update
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users____last_update
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image____last_update
+#: model:ir.model.fields,field_description:setu_hr_attendance.field_hr_employee____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__write_uid
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__write_date
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__name
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__name
+msgid "Name"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.actions.act_window,help:hr_attendance_face_recognition_pro.hr_attendance_action_face_recognition
+msgid "No faces addresses found"
+msgstr ""
+
+#. module: setu_hr_attendance
+#. openerp-web
+#: code:addons/setu_hr_attendance/static/src/xml/base.xml:0
+#, python-format
+msgid "Online"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.hr_employee_image_view_kanban
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_image_view_kanban
+msgid ""
+"Optimization required! Reduce the image size or increase your compression "
+"settings."
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/js/my_attendances_face_recognition.js:0
+#, python-format
+msgid "Please click on confirm button to <br/>"
+msgstr "Pulse el botón CONFIRMAR para <br/>"
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_form_view_face_recognition
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_employee_form_face_recognition
+msgid "Recognition images"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "Record attendance offline"
+msgstr ""
+
+#. module: setu_hr_attendance
+#. openerp-web
+#: code:addons/setu_hr_attendance/static/src/xml/base.xml:0
+#, python-format
+msgid "Retrieve"
+msgstr "Reintentar"
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_scale_spoofing
+msgid "Scale of anti-spoofing"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_scale_recognition
+msgid "Scale of similafity face"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/kiosk.xml:0
+#, python-format
+msgid "Select Employee"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_employee_image__sequence
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Show faces on images"
+msgstr ""
+
+#. module: setu_hr_attendance
+#. openerp-web
+#: code:addons/setu_hr_attendance/static/src/xml/base.xml:0
+#, python-format
+msgid "Start Face Recognition Mode"
+msgstr "INICIAR EL MODO RECONOCIMIENTO FACIAL"
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid ""
+"Store snapshot and descriptor of employee when he check in/out in DB for visual control,\n"
+"                                takes up a lot of server space"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_store
+msgid ""
+"Store snapshot and descriptor of employee when he check in/out in DB for "
+"visual control, takes up a lot of server space"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_config_settings__face_recognition_pro_store
+msgid "Store snapshots and descriptors employees?"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_hr_employee__face_emotion
+#: model:ir.model.fields,help:hr_attendance_face_recognition_pro.field_res_users__face_emotion
+msgid "The emotion that must be performed for access"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.actions.act_window,help:hr_attendance_face_recognition_pro.hr_attendance_action_face_recognition
+msgid "The faces addresses of your company will be displayed here."
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.hr_attendance_view_form_face_recognition
+msgid ""
+"To store snapshot and descriptor of employee enable setting face recognition"
+" store"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_config_settings_view_form_face_recognition
+msgid "Use face recognition for access to check in/out"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_res_users_image__res_user_id
+msgid "User"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model,name:hr_attendance_face_recognition_pro.model_res_users_image
+msgid "User Image"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.view_res_user_image_form
+msgid "User Images"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model,name:hr_attendance_face_recognition_pro.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_image_view_kanban
+msgid "Users Images"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance__webcam_check_in
+msgid "Webcam snapshot check in"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields,field_description:hr_attendance_face_recognition_pro.field_hr_attendance__webcam_check_out
+msgid "Webcam snapshot check out"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#. openerp-web
+#: code:addons/hr_attendance_face_recognition_pro/static/src/xml/kiosk.xml:0
+#, python-format
+msgid "Welcome to"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model_terms:ir.ui.view,arch_db:hr_attendance_face_recognition_pro.res_users_preferences_recognition
+msgid "Your faces"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_emotion__angry
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_emotion__angry
+msgid "angry"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_age__any
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_emotion__any
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_gender__any
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_age__any
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_emotion__any
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_gender__any
+msgid "any"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_emotion__disgusted
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_emotion__disgusted
+msgid "disgusted"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_emotion__fearful
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_emotion__fearful
+msgid "fearful"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_gender__female
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_gender__female
+msgid "female"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_emotion__happy
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_emotion__happy
+msgid "happy"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_gender__male
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_gender__male
+msgid "male"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_emotion__neutral
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_emotion__neutral
+msgid "neutral"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_emotion__sad
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_emotion__sad
+msgid "sad"
+msgstr ""
+
+#. module: hr_attendance_face_recognition_pro
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__hr_employee__face_emotion__surprised
+#: model:ir.model.fields.selection,name:hr_attendance_face_recognition_pro.selection__res_users__face_emotion__surprised
+msgid "surprised"
+msgstr ""

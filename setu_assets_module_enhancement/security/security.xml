@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="create_asset_equipment" model="res.groups">
+            <field name="name">Create Asset Equipment</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="show_claim_view_form" name="Claim Form">
+        <t t-call="portal.portal_layout">
+
+            <div t-if="notification and notification==true" class="alert alert-success">
+                <strong>Success!</strong>
+                Your claim register successfully and details are as below.
+            </div>
+            <div class="table-responsive-lg">
+                <table class="table bg-white">
+                    <tr>
+                        <td>
+                            <label for="company_name">Company Name:</label>
+                        </td>
+                        <td>
+                            <t t-if="claim.partner_id.parent_id">
+                                <span class="form-control" type="text" id="company_name" name="company_name"
+                                      t-esc="claim.partner_id.parent_id.name"/>
+                            </t>
+                            <t t-if="not claim.partner_id.parent_id">
+                                <span class="form-control" type="text" id="company_name_character" name="company_name"
+                                      t-esc="claim.partner_id.company_name"/>
+                            </t>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="name">Customer Name:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" id="name" name="partner_name" t-esc="claim.partner_id.name"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="contact_information">Contact Information:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" name="contact_info" t-esc="claim.contact_information"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="phone">Your Phone Number:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" type="tel" id="phone" name="partner_phone"
+                                  t-esc="claim.partner_phone"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="email">Your Email:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" type="email" id="email" name="email_from"
+                                  t-esc="claim.email_from" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="agent">Service Agent:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" name="team_id" t-esc="claim.user_id.name"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="agent">Claims Category:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" name="categ_id" t-esc="claim.categ_id.name"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="agent">Description:</label>
+                        </td>
+                        <td>
+                            <textarea class="form-control" name="description" t-esc="claim.description" readonly="1" style="background-color: white;"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="agent">Invoice Reference:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" name="invoice_id" t-esc="claim.invoice_ids.name"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="agent">Models:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" name="product_id" t-esc="claim.product_id.display_name"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="agent">Serial Number:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" name="team_id" t-esc="claim.ref"/>
+                        </td>
+                    </tr>
+                    <tr t-if="claim.date_closed">
+                        <td>
+                            <label for="agent">Close Date:</label>
+                        </td>
+                        <td>
+                            <span class="form-control" name="close_date" t-field="claim.date_closed" t-options='{"widget": "datetime"}'/>
+                        </td>
+                    </tr>
+                    <tr t-if="claim.cause">
+                        <td>
+                            <label for="agent">Root Causes:</label>
+                        </td>
+                        <td>
+                            <textarea class="form-control" name="root_causes" t-esc="claim.cause" readonly="1" style="background-color: white;"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

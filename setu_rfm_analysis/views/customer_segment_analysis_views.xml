@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="customer_segment_analysis_report_tree" model="ir.ui.view">
+            <field name="name">customer.segment.analysis.tree</field>
+            <field name="model">customer.segment.analysis</field>
+            <field name="arch" type="xml">
+                <list string="Customer Segment Analysis" create="false">
+                    <field name="partner_id" />
+                    <field name="rfm_segment_id" />
+                    <field name="days_from_last_purchase" />
+                    <field name="total_orders" />
+                    <field name="total_revenue" />
+                    <field name="total_order_percentage" />
+                    <field name="total_revenue_percentage" />
+                </list>
+            </field>
+            <footer>
+                <button name="download_report_in_listview" string="View Data" type="object"
+                        class="oe_highlight"/>
+                <button name="download_report_in_listview" string="View Graph" type="object"
+                        class="oe_highlight" context="{'graph_report':True}"/>
+                <button string="Cancel" class="oe_link" special="cancel" />
+            </footer>
+        </record>
+
+        <record id="customer_segment_analysis_report_graph" model="ir.ui.view">
+            <field name="name">customer.segment.analysis.graph</field>
+            <field name="model">customer.segment.analysis</field>
+            <field name="arch" type="xml">
+                <graph string="Customer Segment Analysis" type="bar" stacked="False" disable_linking="1">
+                    <field name="rfm_segment_id" type="col" />
+                    <field name="total_orders" type="measure" />
+                    <field name="total_revenue" type="measure" />
+                </graph>
+            </field>
+        </record>
+
+        <record id="customer_segment_analysis_searchview" model="ir.ui.view">
+            <field name="name">customer.segment.analysis.searchview</field>
+            <field name="model">customer.segment.analysis</field>
+            <field name="arch" type="xml">
+                <search string="Customer Segment Analysis">
+                    <field name="partner_id" />
+                    <field name="rfm_segment_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="actions_customer_segment_analysis" model="ir.actions.act_window">
+            <field name="name">Customer Segment Analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.segment.analysis</field>
+            <field name="binding_view_types">list,graph</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="customer_segment_analysis_reports_menu"
+                  name="Reports"
+                  parent="root_rfm_menu"
+                  sequence="4" />
+
+        <menuitem id="customer_segment_analysis"
+                  name="Customer Segment Analysis"
+                  parent="customer_segment_analysis_reports_menu"
+                  action="actions_customer_segment_analysis"
+                  sequence="1" />
+    </data>
+</odoo>

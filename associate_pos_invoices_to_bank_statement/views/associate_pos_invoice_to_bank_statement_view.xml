@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_account_pos_invoice_list_bank_rec_widget" model="ir.ui.view">
+        <field name="name">account.pos.invoice.list.bank_rec_widget</field>
+        <field name="model">associate.pos.invoice.to.bank.statement</field>
+        <field name="priority">999</field>
+        <field name="arch" type="xml">
+            <list create="false"
+                  edit="false">
+                <field name="invoice_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_account_pos_invoice_search_bank_rec_widget" model="ir.ui.view">
+        <field name="name">account.pos.invoice.search.bank_rec_widget</field>
+        <field name="model">associate.pos.invoice.to.bank.statement</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="invoice_id" string="Invoice"/>
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

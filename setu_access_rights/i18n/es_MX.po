@@ -1,0 +1,498 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_access_rights
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-01 11:07+0000\n"
+"PO-Revision-Date: 2023-12-01 11:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__access_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__access_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__access_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__access_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__access_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__access_id
+msgid "Access"
+msgstr "Acceso"
+
+#. module: setu_access_rights
+#: model:ir.actions.act_window,name:setu_access_rights.action_setu_access_rights
+#: model:ir.ui.menu,name:setu_access_rights.menu_access_management
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights_form
+msgid "Access Management"
+msgstr "Gestión de acceso"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__name
+msgid "Access Right Name"
+msgstr "Nombre del derecho de acceso"
+
+#. module: setu_access_rights
+#: model:ir.ui.menu,name:setu_access_rights.menu_access_management_root
+msgid "Access Rights"
+msgstr "Derechos de acceso"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__act_window_access_ids
+msgid "Act Window Access"
+msgstr "Acceso a la ventana de acción"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: setu_access_rights
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights_form
+msgid "Action Window Access"
+msgstr "Acceso a la ventana de acción"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__act_action_ids
+msgid "Actions"
+msgstr "Acciones"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__all_menu_ids
+msgid "All Menus"
+msgstr "Todos los menús"
+
+#. module: setu_access_rights
+#: model:res.groups,name:setu_access_rights.group_erp_manager_ext
+msgid "Allow Modification Access Rights"
+msgstr "Permitir derechos de acceso de modificación"
+
+#. module: setu_access_rights
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de archivos adjuntos"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__create_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__create_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__create_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__create_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__create_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__create_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__create_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__create_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__create_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__create_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__create_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__create_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__display_name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__display_name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__display_name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__display_name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__display_name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__display_name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__exclude_user_ids
+msgid "Exclude users"
+msgstr "Excluir usuarios"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__field_ids
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__field_ids
+msgid "Fields"
+msgstr "Campos"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__fields_access_ids
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights_form
+msgid "Fields Access"
+msgstr "Acceso a campos"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,help:setu_access_rights.field_setu_access_rights__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de fuente impresionante, p. "
+
+#. module: setu_access_rights
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_field_access__view_type__form
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_notebook_access__view_type__form
+msgid "Form"
+msgstr "Formulario"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__menu_ids
+msgid "Hide Menus"
+msgstr "Ocultar menús"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__id
+msgid "ID"
+msgstr "identificación"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_exception_icon
+msgid "Icon"
+msgstr "icono"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,help:setu_access_rights.field_setu_access_rights__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: setu_access_rights
+#: model:ir.model.fields,help:setu_access_rights.field_setu_access_rights__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
+
+#. module: setu_access_rights
+#: model:ir.model.fields,help:setu_access_rights.field_setu_access_rights__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: setu_access_rights
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_field_access__mode__invisible
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_notebook_access__mode__invisible
+msgid "Invisible"
+msgstr "Invisibles"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights____last_update
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access____last_update
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access____last_update
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access____last_update
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access____last_update
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access____last_update
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__write_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__write_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__write_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__write_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__write_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__write_uid
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__write_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__write_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__write_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__write_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__write_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__write_date
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Accesorio principal"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_ir_ui_menu
+msgid "Menu"
+msgstr "Menú"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__menu_access_ids
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights_form
+msgid "Menu Access"
+msgstr "Acceso al menú"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega de mensaje"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__mode
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__mode
+msgid "Mode"
+msgstr "Modo"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__model_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__model_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_menu_access__name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__model_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__model_id
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_ir_model_access
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__model_access_ids
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights_form
+msgid "Model Access"
+msgstr "Acceso al modelo"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_act_window_access__name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__name
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario de actividades"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Próxima fecha límite para la actividad"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__notebook_access_ids
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights_form
+msgid "Notebook Access"
+msgstr "Acceso al portátil"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,help:setu_access_rights.field_setu_access_rights__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren acción"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,help:setu_access_rights.field_setu_access_rights__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: setu_access_rights
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_field_access__mode__readonly
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_notebook_access__mode__readonly
+msgid "Read Only"
+msgstr "Sólo lectura"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__remove_create_contextual_action_button
+msgid "Remove Create contextual action from the Server action"
+msgstr "Eliminar Crear acción contextual de la acción Servidor"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__disable_chatter
+msgid "Remove chatter"
+msgstr "eliminar charla"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_reports_access__report_action_ids
+msgid "Reports"
+msgstr "Informes"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__reports_access_ids
+#: model_terms:ir.ui.view,arch_db:setu_access_rights.view_setu_access_rights_form
+msgid "Reports Access"
+msgstr "Acceso a informes"
+
+#. module: setu_access_rights
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_field_access__mode__required
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_notebook_access__mode__required
+msgid "Required"
+msgstr "Requerido"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__restrict_create
+msgid "Restrict Create"
+msgstr "Restringir creación"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__restrict_unlink
+msgid "Restrict Delete"
+msgstr "Restringir eliminación"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_model_access__restrict_write
+msgid "Restrict Edit"
+msgstr "Restringir edición"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_setu_access_rights
+msgid "Setu Access Management"
+msgstr "Gestión de acceso a Setu"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_setu_act_window_access
+msgid "Setu Act Window Access Description"
+msgstr "Descripción de acceso a la ventana Setu Act"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_setu_field_access
+msgid "Setu Field Access Description"
+msgstr "Descripción de acceso al campo Setu"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_setu_menu_access
+msgid "Setu Menu Access Description"
+msgstr "Descripción del acceso al menú Setu"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_setu_model_access
+msgid "Setu Model Access Description"
+msgstr "Descripción de acceso al modelo Setu"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_setu_reports_access
+msgid "Setu Reports Access Description"
+msgstr "Descripción del acceso a informes Setu"
+
+#. module: setu_access_rights
+#: model:ir.model,name:setu_access_rights.model_setu_notebook_access
+msgid "SetuNotebookAccess"
+msgstr "Acceso al portátil Setu"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,help:setu_access_rights.field_setu_access_rights__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Estado basado en actividades\nAtrasado: la fecha de vencimiento ya pasó\nHoy: la fecha de la actividad es hoy\nPlanificado: actividades futuras."
+
+#. module: setu_access_rights
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_field_access__view_type__list
+#: model:ir.model.fields.selection,name:setu_access_rights.selection__setu_notebook_access__view_type__list
+msgid "Tree"
+msgstr "Árbol"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,help:setu_access_rights.field_setu_access_rights__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad excepcional registrada."
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__use_exclude_users_ids_field
+msgid "Use Exclude User field"
+msgstr "Usar el campo Excluir usuario"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_access_rights__user_ids
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: setu_access_rights
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_field_access__view_type
+#: model:ir.model.fields,field_description:setu_access_rights.field_setu_notebook_access__view_type
+msgid "View Type"
+msgstr "Tipo de vista"

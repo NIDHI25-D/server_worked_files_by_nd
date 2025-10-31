@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_review_schedule">
+        <field name="name">Review Schedule</field>
+        <field name="res_model">review.schedule</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create new Review Schedule</p>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_review_schedule_form">
+        <field name="name">Review Schedule</field>
+        <field name="model">review.schedule</field>
+        <field name="arch" type="xml">
+            <form string="Review Schedule">
+                <header>
+                    <button name="create_assessment_period" string="Create Assessment Period"
+                            icon="fa-edit" type="object"
+                            confirm="Are you sure you want to Create / Recreate Assesment Period?"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="year" required="True"/>
+                            <field name="period_frequency"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Review Period Timeline">
+                            <field name="review_period_timelines">
+                                <tree string="Assessment Period" create="false" delete="true">
+                                    <field name="assessment_period"/>
+                                    <field name="state"
+                                           widget="badge"
+                                           decoration-success="state == 'send'"
+                                           decoration-info="state == 'not_send'"
+                                    />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_review_schedule_tree">
+        <field name="name">Review Schedule</field>
+        <field name="model">review.schedule</field>
+        <field name="arch" type="xml">
+            <tree string="Review Schedule">
+                <field name="year"/>
+                <field name="period_frequency"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_hr_performance_settings"
+            name="Performance Settings"
+            parent="ninebox_employee_performance.menu_employee_performance_root"
+            groups="ninebox_employee_performance.group_ninebox_performance_manager"
+            sequence="8"/>
+
+    <menuitem
+            id="menu_action_review_schedule"
+            name="Review Schedule"
+            action="action_review_schedule"
+            groups="ninebox_employee_performance.group_ninebox_performance_manager"
+            parent="menu_hr_performance_settings"
+            sequence="9"/>
+
+</odoo>

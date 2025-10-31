@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="set_customs_number_view_form" model="ir.ui.view">
+            <field name="name">set_customs_number_view_form</field>
+            <field name="model">set.customs.number</field>
+            <field name="arch" type="xml">
+                <form string="Create Template Note">
+                    <sheet>
+                        <group>
+                            <field name="line_customs_number" placeholder="15  48  3009  0001234"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="create_line_customs_number" string="Save" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

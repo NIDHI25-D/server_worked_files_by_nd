@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="initial_order_quantity_in_operation_view" model="ir.ui.view">
+            <field name="name">initial.order.quantity.in.operation.view</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='move_ids_without_package']/list" position="inside">
+                    <!-- Add your fields or attributes here -->
+                    <field name="intial_order_quantity" optional="hide"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

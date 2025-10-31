@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+setu_oracle_connector.access_setu_oracle_product_template,access_setu_oracle_product_template,setu_oracle_connector.model_setu_oracle_product_template,,1,1,1,1
+setu_oracle_connector.access_setu_oracle_product_variant,access_setu_oracle_product_variant,setu_oracle_connector.model_setu_oracle_product_variant,,1,1,1,1

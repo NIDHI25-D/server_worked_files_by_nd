@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_invoice_page_inherit_payment_voucher" name="Voucher for Payment on My Invoices"
+              inherit_id="account.portal_invoice_page">
+        <xpath expr="//div[@id='invoice_communication']" position="before">
+            <t t-if="tx and tx.provider_id.payment_voucher_warning">
+                <br/>
+                <h4>Attach payment receipt</h4>
+                <form action="/my/attach_payment_receipt/submit" method="post" id="invoiceformid"
+                      enctype="multipart/form-data">
+
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="invoice_order" t-att-value="invoice.id"/>
+                    <div>
+                        <input t-att-data-file="payment_voucher_invoice" type="file"
+                               id="payment_voucher_receipt_invoice" name="payment_voucher_invoice"
+                               class="form-control" style="width:50%;"
+                               required="1"/>
+                    </div>
+                    <h2>
+                        <button class="btn btn-primary mt-2">
+                            Submit
+                        </button>
+                    </h2>
+                </form>
+            </t>
+        </xpath>
+    </template>
+</odoo>

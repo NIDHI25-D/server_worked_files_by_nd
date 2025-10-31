@@ -1,0 +1,658 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_inv_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-26 10:10+0000\n"
+"PO-Revision-Date: 2024-02-26 10:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.stock_move_lines_barcodes_form_views_inherited
+msgid "<i class=\"fa fa-fw fa-lg fa-user-o text-center mr-3\" title=\"Responsible\"/>"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.res_config_settings_disable_auto_sign_payment
+msgid "<span class=\"o_form_label\">Enable Automatically Sign Payment</span>"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.report_invoice_document_extended
+msgid "<span>Customs Date</span>"
+msgstr "<span>Fecha de Aduana</span>"
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.report_delivery_documents_2
+msgid "<strong>Audit</strong>"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.report_delivery_documents_2
+msgid "<strong>Comentarios:</strong>"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.report_delivery_documents_2
+msgid "<strong>From</strong>"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.report_delivery_documents_2
+msgid "<strong>State:</strong>"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.report_delivery_document_extended
+msgid "<strong>UNSPSC Product Category</strong>"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.stock_pickibng_form_views_inherited
+msgid "AUDIT"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:res.groups,name:stock_inv_ext.group_urgent_order
+msgid "Access of Urgent Order"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: stock_inv_ext
+#. odoo-javascript
+#: code:addons/stock_inv_ext/static/src/xml/barcode_template.xml:0
+#, python-format
+msgid "Apply"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.picking_button_check_availability_view_form
+msgid "Are you sure to check the availability again?"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_bank_rec_widget
+msgid "Bank reconciliation widget for a single statement line"
+msgstr ""
+"Widget de conciliación bancaria para una sola línea del estado de cuenta"
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.report_delivery_document_extended
+msgid "Barcode"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:res.groups,name:stock_inv_ext.group_barcode_owner_access
+msgid "Barcode Owner Access"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__beginning_of_load_date_and_time
+msgid "Beginning Of Load Date And Time"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__beginning_operation_date
+msgid "Beginning Operation Date"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_valuation_layer__product_brand_id
+msgid "Brand"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.picking_button_check_availability_view_form
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.view_wizard_cancel_reason_form
+msgid "Cancel"
+msgstr ""
+
+#. module: stock_inv_ext
+#. odoo-python
+#: code:addons/stock_inv_ext/models/stock_picking.py:0
+#: model:ir.actions.act_window,name:stock_inv_ext.action_wizard_cancel_reason
+#, python-format
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__order_fill_error_picking_id
+#: model:ir.model.fields,field_description:stock_inv_ext.field_wizard_cancel_reason__order_fill_error_picking_id
+msgid "Cancellation Reason"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__check
+msgid "Check"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_res_config_settings__enable_payment_automatic_sign
+msgid "Check this to enable automatically sign Payment."
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__claim_id
+msgid "Claim"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_sale_report__crm_opportunity_tags
+msgid ""
+"Classify and analyze your lead/opportunity categories like: Training, "
+"Service"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__comentarios_picking
+msgid "Comentarios"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_valuation_layer__compatible_ids
+msgid "Compatibles"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.view_wizard_cancel_reason_form
+msgid "Confirm"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_order_fill_error_picking__create_uid
+#: model:ir.model.fields,field_description:stock_inv_ext.field_show_pop_up__create_uid
+#: model:ir.model.fields,field_description:stock_inv_ext.field_wizard_cancel_reason__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_order_fill_error_picking__create_date
+#: model:ir.model.fields,field_description:stock_inv_ext.field_show_pop_up__create_date
+#: model:ir.model.fields,field_description:stock_inv_ext.field_wizard_cancel_reason__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_sale_report__customers_tag_id
+msgid "Customer Tags"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__order_fill_error__damage
+msgid "Damage"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_landed_cost__date_custom_numbers
+msgid "Date Custom Number"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__improvement_points__delivered_order
+msgid "Delivered Order"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__order_fill_error__dirty
+msgid "Dirty"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_order_fill_error_picking__display_name
+#: model:ir.model.fields,field_description:stock_inv_ext.field_show_pop_up__display_name
+#: model:ir.model.fields,field_description:stock_inv_ext.field_wizard_cancel_reason__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: stock_inv_ext
+#. odoo-python
+#: code:addons/stock_inv_ext/models/stock_picking.py:0
+#, python-format
+msgid "Double Confirmation"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__improvement_points__duplicated_order
+msgid "Duplicated Order"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_account_edi_format
+msgid "EDI format"
+msgstr "Formato EDI"
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__ending_of_load_date_and_time
+msgid "Ending Of Load Date And Time"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:res.groups,comment:stock_inv_ext.group_barcode_owner_access
+msgid ""
+"Este access se creo para ocultar el campo de owner dentro de las "
+"transferencias "
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.marvelsa_vpicktree
+msgid "Fecha de surtido"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_order_fill_error_picking__id
+#: model:ir.model.fields,field_description:stock_inv_ext.field_show_pop_up__id
+#: model:ir.model.fields,field_description:stock_inv_ext.field_wizard_cancel_reason__id
+msgid "ID"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_product_pricelist__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_product_pricelist__message_has_error
+#: model:ir.model.fields,help:stock_inv_ext.field_product_pricelist__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__improvement_points
+msgid "Improvement Points"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__order_fill_error__incomplete
+msgid "Incomplete"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__improvement_points__incomplete_invoice
+msgid "Incomplete Invoice"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:res.groups,name:stock_inv_ext.group_stock_inventory_supervisor
+msgid "Inventory Supervisor"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_order_fill_error_picking____last_update
+#: model:ir.model.fields,field_description:stock_inv_ext.field_show_pop_up____last_update
+#: model:ir.model.fields,field_description:stock_inv_ext.field_wizard_cancel_reason____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_order_fill_error_picking__write_uid
+#: model:ir.model.fields,field_description:stock_inv_ext.field_show_pop_up__write_uid
+#: model:ir.model.fields,field_description:stock_inv_ext.field_wizard_cancel_reason__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_order_fill_error_picking__write_date
+#: model:ir.model.fields,field_description:stock_inv_ext.field_show_pop_up__write_date
+#: model:ir.model.fields,field_description:stock_inv_ext.field_wizard_cancel_reason__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__load_execution_responsible
+msgid "Load Execution Responsible"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_quant__manager_id
+msgid "Manager"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__improvement_points__manifest_error
+msgid "Manifest Error"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_valuation_layer__marca_ids
+msgid "Marcas Compatibles"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__improvement_points__non_collected_product
+msgid "Non Collected Product"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_product_pricelist__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_product_pricelist__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.stock_pickibng_form_views_inherited
+msgid "OPERATION BEGINNING"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.stock_pickibng_form_views_inherited
+msgid "OPPORTUNITY AREAS"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__operation_responsible
+msgid "Operation Responsible"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__order_fill_error
+msgid "Order Fill Error"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__order_fill_error__over_filled
+msgid "Over Filled"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_res_config_settings__enable_payment_automatic_sign
+msgid "Payment Automatically signed enable"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.marvelsa_vpicktree
+msgid "Picking list"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_product_pricelist
+msgid "Pricelist"
+msgstr "Tarifa"
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_product_pricelist_item
+msgid "Pricelist Rule"
+msgstr "Item de Lista de precios"
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Movimientos de producto (línea de movimiento de inventario)"
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de compra"
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_stock_quant
+msgid "Quants"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_landed_cost__related_purchase_orders
+msgid "Related Purchase Orders"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_move_line__responsible_person
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_quant__responsible_id
+msgid "Responsible"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__responsible_person
+msgid "Responsible Person"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.stock_move_lines_barcodes_form_views_inherited
+msgid "Responsible person"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.product_template_unspsc
+msgid "SAT Code"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.ui.menu,name:stock_inv_ext.custom_menu_sale_report
+msgid "Sales"
+msgstr "Ventas"
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Informe de análisis de ventas"
+
+#. module: stock_inv_ext
+#. odoo-javascript
+#: code:addons/stock_inv_ext/static/src/xml/barcode_template.xml:0
+#: code:addons/stock_inv_ext/static/src/xml/barcode_template.xml:0
+#, python-format
+msgid "Save"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_stock_valuation_layer__product_brand_id
+msgid "Select a brand for this product"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_stock_landed_cost
+msgid "Stock Landed Cost"
+msgstr "Costo en destino"
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_stock_valuation_layer
+msgid "Stock Valuation Layer"
+msgstr "Capa de valoración de existencias"
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_stock_picking
+msgid "StockPicking"
+msgstr "Traslado"
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_sale_report__crm_opportunity_tags
+msgid "Tags"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.res_config_settings_disable_auto_sign_payment
+msgid "The Parameter is to disable automatic signing Invoices"
+msgstr ""
+
+#. module: stock_inv_ext
+#. odoo-javascript
+#: code:addons/stock_inv_ext/static/src/js/InventoryClientAction.js:0
+#, python-format
+msgid "The Record has been Saved"
+msgstr ""
+
+#. module: stock_inv_ext
+#. odoo-python
+#: code:addons/stock_inv_ext/models/stock_landed_cost.py:0
+#, python-format
+msgid "The custom number for picking (%s) is already created."
+msgstr ""
+
+#. module: stock_inv_ext
+#. odoo-javascript
+#: code:addons/stock_inv_ext/static/src/js/InventoryClientAction.js:0
+#, python-format
+msgid "There is nothing to save!"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.actions.act_window,name:stock_inv_ext.order_fill_error_picking_action
+#: model:ir.model.fields,field_description:stock_inv_ext.field_order_fill_error_picking__name
+#: model:ir.ui.menu,name:stock_inv_ext.order_fill_error_picking_menu
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.order_fill_error_picking_tree
+msgid "Transfer Cancellation Reason"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__order_fill_error__under_filled
+msgid "Under Filled"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.stock_pickibng_form_views_inherited
+msgid "Update"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_move_line__user_id
+msgid "User"
+msgstr ""
+
+#. module: stock_inv_ext
+#. odoo-javascript
+#: code:addons/stock_inv_ext/static/src/xml/barcode_template.xml:0
+#, python-format
+msgid "Validate"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__order_fill_error__validation_error
+msgid "Validation Error"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_picking__track_warehouse_id
+#: model:ir.model.fields,field_description:stock_inv_ext.field_stock_quant__warehouse_id
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.set_group_by_for_responsible_warehouse
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.stock_pickibng_form_views_inherited
+msgid "Warehouse"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,field_description:stock_inv_ext.field_product_pricelist__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_product_pricelist__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields.selection,name:stock_inv_ext.selection__stock_picking__improvement_points__without_document_for_shipping
+msgid "Without Document For Shipping"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_wizard_cancel_reason
+msgid "Wizard to add cancel reason to stock picking"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model_terms:ir.ui.view,arch_db:stock_inv_ext.picking_button_check_availability_view_form
+msgid "Yes"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_order_fill_error_picking
+msgid "order.fill.error.picking"
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model.fields,help:stock_inv_ext.field_stock_quant__manager_id
+msgid "select your manager who will be reviewing this inventory."
+msgstr ""
+
+#. module: stock_inv_ext
+#: model:ir.model,name:stock_inv_ext.model_show_pop_up
+msgid "show.pop.up"
+msgstr ""

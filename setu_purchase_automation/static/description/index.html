@@ -1,0 +1,65 @@
+<br/>
+<h2 id="setu_purchase_automation">setu_purchase_automation</h2>
+<h5 id="usage">USAGE</h5>
+<ul>
+    <li>This module initiates the feature of automation of the purchase.</li>
+    <li>This module are use for multiple usages, the functionality of this module are as follow.</li>
+    <li>there are the button <strong>Associate Purchase Order</strong> in the account bank statement line to clicked on
+        this button opened a wizard and from the wizard shown an option to added the PO for this statement line and if
+        the amount of the PO or we can say total signed field value&#39;s sum in the purchase order tab are extended
+        then the Amount then given an validation error else reduce this amount from the po.
+    </li>
+    <li>this statement line are also reflected to those respected PO which is set to the line in the tab <strong>Related
+        Statement</strong> in purchase order with the details :
+        <ul>
+            <li>Statement,</li>
+            <li>Date,</li>
+            <li>Label,</li>
+            <li>Partner,</li>
+            <li>Po Total Signed</li>
+            <li>Amount</li>
+        </ul>
+    </li>
+    <li>there are the various fields are added to the purchase order under the tab <strong>other information</strong>
+        and from those fields there are the automation of the state of the field <strong>Purchase Status</strong></li>
+    <li>there are various values of the field Purchase Status i.e - In Production, Purchase Order Ready, In Transit, In
+        Custom Clearance, Dispatched, Collected, In Yard, Counting, Received, Waiting For Expenses, Finalized purchase
+        Order, On Hold, Canceled etc. and from the different condition those states are changed.
+    </li>
+    <li>there are various menus are included under the configuration od the purchase order i.e - Custom Agency,
+        Discharge ports, Loading ports, Forwarder, Carriers, and those records are reflected to the dropdown of the
+        fields in purchase order.
+    </li>
+</ul>
+<h5 id="configuration">CONFIGURATION</h5>
+<ul>
+    <li>there are the following configuration in the <strong>order</strong> section in the <strong>purchase</strong> tab
+        in the <strong>settings</strong></li>
+    <li><strong>Expected Arrival Date Automation</strong>
+        <ul>
+            <li>to auto set the Expected Arrival from ETD Date added the days of these.</li>
+        </ul>
+    </li>
+    <li>there are one cron/scheduled action are included <strong>Henco Api Data</strong></li>
+    <li>there are automatic set the values of fields in purchase order from the Henco url which are set to the Henco API
+        in configuration, there are fields are set from henco are like:
+        <ul>
+            <li>Merchandise Ready Date,</li>
+            <li>Vessel,</li>
+            <li>ETD Date,</li>
+            <li>ATD Date,</li>
+            <li>ETA Date,</li>
+            <li>ATA Date,</li>
+            <li>Freight Cost,</li>
+            <li>Container Number,</li>
+            <li>Voyage</li>
+        </ul>
+    </li>
+    <li>there are Company, CustomerNum, LineType and Level are available in the configuration this values are use to the
+        request data from the Henco API.
+    </li>
+    <li>there are the x-api-key field are available in the configuration this value are use to the header for the Henco
+        API.
+    </li>
+    <li>there are Henco Username and Henco Password which are gives as an user name and password in the Henco API.</li>
+</ul>

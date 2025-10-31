@@ -1,0 +1,720 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_marvelsa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-11 04:25+0000\n"
+"PO-Revision-Date: 2024-01-11 04:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_marvelsa
+#: model:mail.template,subject:sale_marvelsa.email_template_auto_confirm_sale
+#: model:mail.template,subject:sale_marvelsa.email_template_rejected_sale
+msgid "${object.company_id.name}"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.website_sale_confirmation_message_oversized
+msgid ""
+"<b>\n"
+"                                Dear customer, we inform you that your order contains products with excess dimensions,\n"
+"                                deliveries regarding these products may take longer than estimated. If you have any\n"
+"                                questions,\n"
+"                                please\n"
+"                                contact your sales agent.\n"
+"                            </b>"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:mail.template,body_html:sale_marvelsa.email_template_rejected_sale
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p>\n"
+"                    Estimando <b>${object.partner_id.name |safe}</b>\n"
+"                    </p>\n"
+"                    <p>\n"
+"                    Su pedido  <b>${object.name |safe}</b> no pudo ser liberado automaticamente por motivo de\n"
+"                    </p>\n"
+"                    <b>${ctx.get('reason','')}</b>\n"
+"                    <p>\n"
+"                    por favor comunicate con la gente de credito y cobranza para mas informacion\n"
+"                    </p>\n"
+"                    Gracias\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:mail.template,body_html:sale_marvelsa.email_template_auto_confirm_sale
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    Estimando <b>${object.partner_id.name |safe}</b>\n"
+"                    <br>\n"
+"                    Su pedido  <b>${object.name |safe}</b> no pudo ser liberado automaticamente por motivo de\n"
+"                    <br>\n"
+"                    ${ctx.get('reason','')}\n"
+"                    <br>\n"
+"                    por favor comunicate con la gente de credito y cobranza para mas informacion\n"
+"                    <br>\n"
+"                    Gracias\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.stock_move_view_kanban
+msgid "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Date\" title=\"Date\"/>"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "<option value=\"\">Country...</option>"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "<option value=\"\">select...</option>"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.credit_notify_cart_summary
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.credit_notify_payment
+msgid ""
+"<span class=\"alert-heading\">\n"
+"                                <strong>Estimado Cliente</strong>\n"
+"                            </span>\n"
+"                            <br/>\n"
+"                            Le notificamos que su límite de crédito se encuentra excedido.\n"
+"                            Favor de contactar a su ejecutivo de cobranza."
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.credit_notify_cart_summary
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.credit_notify_payment
+msgid ""
+"<span class=\"alert-heading\">\n"
+"                            <strong>Estimado Cliente</strong>\n"
+"                        </span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.add_oversized_field_in_account_report
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.add_oversized_field_in_sale_report
+msgid "<span>No</span>"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.add_oversized_field_in_account_report
+msgid "<span>Oversized</span>"
+msgstr "<span>Sobredimensionado</span>"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.add_oversized_field_in_account_report
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.add_oversized_field_in_sale_report
+msgid "<span>Yes</span>"
+msgstr "<span>Si</span>"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.credit_notify_cart_summary
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.credit_notify_payment
+msgid "<strong>Credito Disponible</strong>"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_res_partner__address
+#: model:ir.model.fields,field_description:sale_marvelsa.field_res_users__address
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "Address"
+msgstr "Dirección"
+
+#. module: sale_marvelsa
+#: model:ir.actions.server,name:sale_marvelsa.ir_cron_cancel_saleorders_job_ir_actions_server
+#: model:ir.cron,cron_name:sale_marvelsa.ir_cron_cancel_saleorders_job
+msgid "Auto Cancel and Delete Quotations"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.actions.server,name:sale_marvelsa.ir_cron_confirm_saleorders_job_ir_actions_server
+#: model:ir.cron,cron_name:sale_marvelsa.ir_cron_confirm_saleorders_job
+msgid "Auto Confirm sale orders from website"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:mail.template,name:sale_marvelsa.email_template_auto_confirm_sale
+msgid "Auto confirm sale notification"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__carrier_id
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_sales_order_filter_without_delivery_date
+msgid "Carrier"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:res.groups,name:sale_marvelsa.discount_group
+msgid "Change discount column"
+msgstr "Cambiar columna de descuento"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid ""
+"Changing VAT number is not allowed once document(s)\n"
+"                                    have been issued for your account. Please contact us directly for this operation."
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid ""
+"Changing company name is not allowed once document(s) have been issued for "
+"your account. Please contact us directly for this operation."
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "City"
+msgstr "Ciudad"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "Company Name"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "Contact Name"
+msgstr "Nombre del contacto"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "Country"
+msgstr "País"
+
+#. module: sale_marvelsa
+#: model:res.groups,name:sale_marvelsa.delivery_address_group
+msgid "Create Delivery Addresses"
+msgstr "Crear direcciones de entrega"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_legal_person__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_legal_person__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_res_company__customer_agrobolder_id
+#: model:ir.model.fields,field_description:sale_marvelsa.field_res_config_settings__customer_agrobolder_id
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.res_config_settings_sale_marvelsa
+msgid "Customer Agrobolder"
+msgstr "Cliente Agrobolder"
+
+#. module: sale_marvelsa
+#: model:ir.actions.act_window,name:sale_marvelsa.dashboard_traffic_action
+#: model:ir.ui.menu,name:sale_marvelsa.dashboard_traffic_menu
+msgid "Dasboard Logistics"
+msgstr "Tablero Trafico"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_traffic_tree_view
+msgid "Dasboard Logistics Tree"
+msgstr ""
+
+#. module: sale_marvelsa
+#. odoo-python
+#: code:addons/sale_marvelsa/models/sale.py:0
+#, python-format
+msgid "Dashboard Logistics"
+msgstr "Tablero Trafico"
+
+#. module: sale_marvelsa
+#: model:ir.actions.act_window,name:sale_marvelsa.dashboard_sale_order_action
+#: model:ir.ui.menu,name:sale_marvelsa.dashboard_sale_order_menu
+msgid "Dashboard Sales"
+msgstr "Tablero de Ventas"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_sale_order_tree_view
+msgid "Dashboard Sales Tree"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__date_invoice
+msgid "Date Invoice"
+msgstr "Fecha de Facturacion"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__delivery_address
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "Delivery Address"
+msgstr "Dirección de entrega"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__delivery_auto
+msgid "Delivery Automaticly"
+msgstr "Liberar automaticamente"
+
+#. module: sale_marvelsa
+#: model:ir.actions.act_window,name:sale_marvelsa.action_delivery_address_partner
+#: model:ir.ui.menu,name:sale_marvelsa.menu_delivery_address_partner
+msgid "Delivery addresses"
+msgstr "Direcciones de Entrega"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_report__locality_id
+msgid "Delivery locality"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_report__state_id
+msgid "Delivery state"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__destination_address
+msgid "Destination Address"
+msgstr "Dirección destino"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_legal_person__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "Email"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,help:sale_marvelsa.field_legal_person__name
+msgid "Enter the name of legal Person"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_sale_order_tree_view
+msgid "Fecha de Cotizacion"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,help:sale_marvelsa.field_sale_order__carrier_id
+msgid "Fill this field if you plan to invoice the shipping based on picking."
+msgstr ""
+"Llene este campo si va a facturar el envío basado en el método de entrega."
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_sales_order_filter_without_delivery_date
+msgid "From Website"
+msgstr "Del sitio web"
+
+#. module: sale_marvelsa
+#: model_terms:ir.actions.act_window,help:sale_marvelsa.action_receipt_picking_move
+msgid ""
+"Here you can receive individual products, no matter what\n"
+"                purchase order or picking order they come from. You will find\n"
+"                the list of all products you are waiting for."
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_legal_person__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.actions.act_window,name:sale_marvelsa.action_receipt_picking_move
+msgid "Incoming Products"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_product_product__product_tag_ids
+#: model:ir.model.fields,field_description:sale_marvelsa.field_product_template__product_tag_ids
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.change_string_product_tag_form_view
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.change_string_product_tag_tree_view
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.change_string_product_tags
+msgid "Industry"
+msgstr "Industria"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_product_pricelist__is_credit
+msgid "Is Credit ?"
+msgstr "es a credito ?"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order_line__is_discount_group_applied
+msgid "Is Discount Group Applied"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__is_terms_and_condition_accepted
+msgid "Is Terms And Condition Accepted"
+msgstr "¿Se aceptan los términos y condiciones?"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_legal_person____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_legal_person__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_legal_person__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.actions.act_window,name:sale_marvelsa.legal_person_action
+#: model:ir.model.fields,field_description:sale_marvelsa.field_res_partner__legal_person_id
+#: model:ir.model.fields,field_description:sale_marvelsa.field_res_users__legal_person_id
+#: model:ir.ui.menu,name:sale_marvelsa.legal_person_menu
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.legal_person_view_tree
+msgid "Legal Person"
+msgstr "Persona Juridica"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_legal_person
+msgid "Legal Person in Contacts"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_legal_person__name
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "Name"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__notes_info
+msgid "Note"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_sale_order_tree_view
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_traffic_tree_view
+msgid "Numero de Presupuesto"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.actions.act_window,help:sale_marvelsa.action_receipt_picking_move
+msgid ""
+"Once you receive an order, you can filter based on the name of\n"
+"                the vendor or the purchase order reference. Then you can confirm\n"
+"                all products received using the buttons on the right of each line."
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.actions.server,name:sale_marvelsa.server_action_orderby_order_without_delivery_date
+msgid "Order by Sale Order Whithout delivery date"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__pickings_counter
+msgid "Orders Done"
+msgstr "Pedido Surtido"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_account_move_line__is_oversized
+#: model:ir.model.fields,field_description:sale_marvelsa.field_product_product__is_oversized
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order_line__is_oversized
+#: model:ir.model.fields,field_description:sale_marvelsa.field_stock_move_line__is_oversized
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.add_oversized_field_in_sale_report
+msgid "Oversized"
+msgstr "Sobredimensionado"
+
+#. module: sale_marvelsa
+#. odoo-python
+#: code:addons/sale_marvelsa/models/sale.py:0
+#, python-format
+msgid "Packages:"
+msgstr "Bultos:"
+
+#. module: sale_marvelsa
+#. odoo-python
+#: code:addons/sale_marvelsa/models/sale.py:0
+#, python-format
+msgid "Pallets:"
+msgstr "Tarimas:"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_product_pricelist__payment_term_for_priceslist_id
+msgid "Payment term"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:res.groups,name:sale_marvelsa.permission_of_legal_person
+msgid "Permission of Legal Person"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "Phone"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__x_studio_fecha_de_entrega
+msgid "Picking Delivery Date"
+msgstr "Fecha de Entrega"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__picking_origin
+msgid "Picking Source Document"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__preparation_date
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_sales_order_filter_without_delivery_date
+msgid "Preparation Date"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_product_pricelist
+msgid "Pricelist"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Movimientos de producto (Línea de movimiento de existencias)"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_product_product
+msgid "Product Variant"
+msgstr "Producto"
+
+#. module: sale_marvelsa
+#: model:ir.ui.menu,name:sale_marvelsa.menu_action_picking_tree_in_move
+msgid "Productos a recibir"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order_coupon_points__appiled_promotion_id
+msgid "Program"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,help:sale_marvelsa.field_sale_order__picking_origin
+msgid "Reference of the document"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.actions.act_window,help:sale_marvelsa.action_receipt_picking_move
+msgid "Register a product receipt"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_account_bank_statement_line__rutav
+#: model:ir.model.fields,field_description:sale_marvelsa.field_account_move__rutav
+#: model:ir.model.fields,field_description:sale_marvelsa.field_account_payment__rutav
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_report__rutav
+msgid "Ruta"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_sale_order_coupon_points
+msgid ""
+"Sale Order Coupon Points - Keeps track of how a sale order impacts a coupon"
+msgstr ""
+"Puntos de cupón de la orden de venta - Rastrea cómo una orden de venta "
+"impacta un cupón"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Informe de análisis de ventas"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.res_config_settings_sale_marvelsa
+msgid "Sales Marvelsa"
+msgstr "Configuracion personalizada para Marvelsa"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de la orden de venta"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_stock_picking__x_studio_sales_team
+msgid "Sales Team"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__send_date
+msgid "Shipment Date"
+msgstr "Fecha de Envio"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__shippment_info
+msgid "Shipping Info"
+msgstr "Informacion de envio"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "State"
+msgstr "Estado"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "State / Province"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_stock_quantity_history
+msgid "Stock Quantity History"
+msgstr "Historia de Stock Quant"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_stock_picking
+msgid "StockPicking"
+msgstr "Traslado"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "Street"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "Street 2..."
+msgstr "Calle 2..."
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_sale_order_tree_view
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_traffic_tree_view
+msgid "Subtotal"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__terms_and_condition_date
+msgid "Terms And Condition Accepted Date"
+msgstr "Fecha de TyC aceptados"
+
+#. module: sale_marvelsa
+#. odoo-python
+#: code:addons/sale_marvelsa/controller/main.py:0
+#, python-format
+msgid "The terms and conditions for the order %s are accepted on %s"
+msgstr "Se aceptan los términos y condiciones para la orden %s el dia %s"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_sale_order_tree_view
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_traffic_tree_view
+msgid "Total"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order__carrier_tracking_ref
+msgid "Tracking Reference"
+msgstr "Referencia de seguimiento"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_sales_order_filter_without_delivery_date
+msgid "Tracking Referernce"
+msgstr "Referencia de seguimiento"
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_order_line__check_product_type
+msgid "Type"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "VAT Number"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.dashboard_traffic_tree_view
+msgid "View Pickings"
+msgstr "Ver Transferencias"
+
+#. module: sale_marvelsa
+#: model:ir.model,name:sale_marvelsa.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: sale_marvelsa
+#. odoo-python
+#: code:addons/sale_marvelsa/models/sale.py:0
+#, python-format
+msgid "Weight:"
+msgstr "Peso:"
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "ZIP"
+msgstr "C.P."
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.portal_my_details_inherit
+msgid "Zip / Postal Code"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model:ir.model.fields,field_description:sale_marvelsa.field_account_bank_statement_line__zone_id
+#: model:ir.model.fields,field_description:sale_marvelsa.field_account_move__zone_id
+#: model:ir.model.fields,field_description:sale_marvelsa.field_account_payment__zone_id
+#: model:ir.model.fields,field_description:sale_marvelsa.field_sale_report__zone_id
+msgid "Zone"
+msgstr ""
+
+#. module: sale_marvelsa
+#: model_terms:ir.ui.view,arch_db:sale_marvelsa.view_delivery_address_partner_form
+msgid "internal note..."
+msgstr "Nota interna..."
+
+#. module: sale_marvelsa
+#: model:mail.template,name:sale_marvelsa.email_template_rejected_sale
+msgid "rejected sale notification"
+msgstr ""

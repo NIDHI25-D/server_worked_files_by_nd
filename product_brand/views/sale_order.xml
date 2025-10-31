@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_inherited_for_line" model="ir.ui.view">
+            <field name="name">sale.order.inherited.for.line</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='order_lines']/field[@name='order_line']/list/field[@name='price_unit']"
+                       position="after">
+                    <field name="product_tags_field" invisible="0" widget="many2many_tags"
+                           readonly="1" force_save="1"/>
+                </xpath>
+                <xpath expr="//group/group/field[@name='partner_shipping_id']" position="after">
+                    <field name="product_tags_filter_view" invisible="0" widget="many2many_tags"
+                           readonly="1" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="product_tags_field_in_view_sales_order_filter" model="ir.ui.view">
+            <field name="name">Product Tags</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="product_tags_filter_view" string="Product Tags"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

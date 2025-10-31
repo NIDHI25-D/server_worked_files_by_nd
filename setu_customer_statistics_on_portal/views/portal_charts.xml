@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_charts" name="My Statictics">
+        <div class="content-area" style="background-color: #eff4f7;">
+            <t t-call="website.layout">
+                <script src="https://cdn.jsdelivr.net/npm/apexcharts"/>
+                <div class="container">
+                    <div class="col-md-12 mb-4 mt32 mb16" id="statictics_header">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-5 text-center mx-auto">
+                                <h2 class="section-header fw-bold">My Statictics</h2>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
+
+                <!--  PURCHASE HISTORY   -->
+                    <p class="card-text">
+                        <small class="text-body-secondary">
+                            In this chart you will see a comparison between your purchase
+                            history for the current month in
+                            the last year, the current month in the current year, and your purchases for the last month,
+                            the
+                            values are shown in product quantities and money.
+                        </small>
+                    </p>
+                    <div class="mt-4" style="background-color: #2B2D3E;">
+                        <div id="purchase_history_chart"/>
+                    </div>
+                    <br/>
+                    <p class="card-text">
+                        <small class="text-body-secondary">
+                            This graph displays the percentage of products purchased grouped by Categories. The graphs
+                            show your purchases for the last month and the last quarter.
+                        </small>
+                    </p>
+                    <br/>
+
+                <!--  carousel                  -->
+                    <!--                    <div id="piechartcarousel" class="carousel slide">-->
+                    <!--                        <div class="carousel-inner" style="background-color: #2B2D3E; width: 100%; height:500px;">-->
+                    <!--                            <div class="d-flex justify-content-around">-->
+                    <!--                                <div class="carousel-item active text-center">-->
+                    <!--                                    <div class="mt-4 mb-4 d-block w-100" id="categ_this_month_chart"/>-->
+                    <!--                                </div>-->
+                    <!--                                <div class="carousel-item text-center">-->
+                    <!--                                    <div class="mt-4 mb-4 d-block w-100" id="categ_last_month_chart"/>-->
+                    <!--                                </div>-->
+                    <!--                                <div class="carousel-item text-center">-->
+                    <!--                                    <div class="mt-4 mb-4 d-block w-100" id="categ_last_quater_chart"/>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                        <button class="carousel-control-prev" type="button" data-bs-target="#piechartcarousel"-->
+                    <!--                                data-bs-slide="prev">-->
+                    <!--                            <span class="carousel-control-prev-icon" aria-hidden="true"/>-->
+                    <!--                            <span class="visually-hidden">Previous</span>-->
+                    <!--                        </button>-->
+                    <!--                        <button class="carousel-control-next" type="button" data-bs-target="#piechartcarousel"-->
+                    <!--                                data-bs-slide="next">-->
+                    <!--                            <span class="carousel-control-next-icon" aria-hidden="true"/>-->
+                    <!--                            <span class="visually-hidden">Next</span>-->
+                    <!--                        </button>-->
+                    <!--                    </div>-->
+
+            <!--  PIE CHART     -->
+                    <div class="card">
+                        <div class="col">
+                            <div class="card h-100" id="categ_this_month_chart_main">
+                                <div class="card-body d-flex justify-content-center align-items-center"
+                                     style="background-color: #2B2D3E;">
+                                    <div class="mt-4 mb-4" id="categ_this_month_chart"/>
+                                </div>
+                            </div>
+                            <div class="card h-100" id="categ_last_month_chart_main">
+                                <div class="card-body d-flex justify-content-center align-items-center"
+                                     style="background-color: #2B2D3E;">
+                                    <div id="categ_last_month_chart"/>
+                                </div>
+                            </div>
+                            <div class="card h-100" id="categ_last_quater_chart_main">
+                                <div class="card-body d-flex justify-content-center align-items-center"
+                                     style="background-color: #2B2D3E;">
+                                    <div id="categ_last_quater_chart"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Statistics-->
+                    <div>
+                        <div class="col-md-12 mb-4 mt32 mb16 text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-sm-12 col-md-5">
+                                    <h3 class="section-header">Payment Statistics</h3>
+                                </div>
+                            </div>
+                            <hr/>
+                        </div>
+
+                        <p class="card-text">
+                            <small class="text-body-secondary">
+                                The next table displays the invoices pending payment and the
+                                days remaining to
+                                maturity, those marked in red are invoices that are already past due.
+                            </small>
+                        </p>
+                        <div class="mt-3 text-center" style="background-color: #f2f2f7;">
+                            <t t-set="invoices" t-value="request.env['account.move'].search([('move_type','in',['out_invoice','out_refund']),('partner_id','child_of',request.env.user.partner_id.id),('payment_state', 'in', ['not_paid', 'partial']),
+                        ('state', '=', 'posted')],order='invoice_date_due',limit=150)"/>
+                            <table class="table table-bordered">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">Invoice</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Currency</th>
+                                        <th scope="col">Invoice Date</th>
+                                        <th scope="col">Due Date</th>
+                                        <th scope="col">Due Days</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="invoices" t-as="inv">
+                                        <tr>
+                                            <th>
+                                                <t t-esc="inv.name"/>
+                                            </th>
+                                            <th>
+                                                <t t-esc="'{:,}'.format(inv.amount_residual)"/>
+                                            </th>
+                                            <th>
+                                                <t t-esc="inv.currency_id.name"/>
+                                            </th>
+                                            <th>
+                                                <t t-esc="inv.invoice_date"/>
+                                            </th>
+                                            <th>
+                                                <t t-esc="inv.invoice_date_due"/>
+                                            </th>
+                                            <th t-att-style="'color:red;' if (inv.invoice_date_due - datetime.datetime.now().date()).days &lt; 0 else ''">
+                                                <t t-esc="(inv.invoice_date_due - datetime.datetime.now().date()).days"/>
+                                            </th>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Invoice Paid    -->
+                    <div class="mt-3">
+                        <small class="text-body-secondary">In this section, we display the invoice payment percentages.
+                            These percentages are
+                            calculated considering the invoices paid before and after their due date and reflect the
+                            payments made during the current month.
+                        </small>
+                        <h6 class="mt-3 pb-5" style="font-weight: bold; font-size:20px">
+                            <div class="float-start">Invoice Paid After Due Date :
+                                <span id="invoice_after_due"/>
+                            </div>
+                            <div class="float-end">Invoice Paid On Time :
+                                <span id="invoice_on_time"/>
+                            </div>
+                        </h6>
+                    </div>
+
+                    <!-- Best-selling products in your area   -->
+                    <div>
+                        <div class="col-md-12 mb-4 mt32 mb16 text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-sm-12 col-md-5">
+                                    <h3 class="section-header">Best-selling products in your area</h3>
+                                </div>
+                            </div>
+                            <hr/>
+                        </div>
+                        <div class="mt-5">
+                            <small class="text-body-secondary">In this section, we present the Top 20 best-selling
+                                products in your area. The
+                                information is categorized by product type: Finished Products, Spare Parts, and
+                                Accessories. You can access each product by clicking on the corresponding link.
+                            </small>
+                            <div class="mt-3">
+                                <h5 class="section-header">Finished Products</h5>
+                                <table class="table table-bordered mt-3" id="finished_product_type_1">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">SKU</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Product Link</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="top_prodcts" t-as="prod">
+                                            <t t-if="prod.get('product_type_marvelsa') == '1'">
+                                                <tr>
+                                                    <th>
+                                                        <t t-esc="prod.get('default_code')"/>
+                                                    </th>
+                                                    <th>
+                                                        <t t-esc="prod.get('prod_name')"/>
+                                                    </th>
+                                                    <th>
+                                                        <a t-att-href="'/shop/%s' %prod.get('id')">View Product</a>
+                                                    </th>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-3">
+                                <h5 class="section-header">Spare Part Products</h5>
+                                <table class="table table-bordered mt-3" id="spare_part_product_type_3">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">SKU</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Product Link</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="top_prodcts" t-as="prod">
+                                            <t t-if="prod.get('product_type_marvelsa') == '3'">
+                                                <tr>
+                                                    <th>
+                                                        <t t-esc="prod.get('default_code')"/>
+                                                    </th>
+                                                    <th>
+                                                        <t t-esc="prod.get('prod_name')"/>
+                                                    </th>
+                                                    <th>
+                                                        <a t-att-href="'/shop/%s' %prod.get('id')">View Product</a>
+                                                    </th>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-3">
+                                <h5 class="section-header">Accessory Products</h5>
+                                <table class="table table-bordered mt-3" id="accessory_product_type_2"
+                                       style="background-color: #F5FEFD;">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">SKU</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Product Link</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="top_prodcts" t-as="prod">
+                                            <t t-if="prod.get('product_type_marvelsa') == '2'">
+                                                <tr>
+                                                    <th>
+                                                        <t t-esc="prod.get('default_code')"/>
+                                                    </th>
+                                                    <th>
+                                                        <t t-esc="prod.get('prod_name')"/>
+                                                    </th>
+                                                    <th>
+                                                        <a t-att-href="'/shop/%s' %prod.get('id')">View Product</a>
+                                                    </th>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--   Delivery Time Statistics  -->
+                    <div id="operation_statictics_header" class="col-md-12 mb-4 mt32 mb16 text-center">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-sm-12 col-md-5">
+                                <h3 class="section-header">Delivery Time Statistics</h3>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
+
+                    <small class="text-body-secondary">In this section, you can see the delivery time statistics for
+                        your orders. The results are
+                        distributed according to day ranges, and the graph shows the current and previous month
+                        data.
+                    </small>
+                    <div class="mt-4" style="background-color: #F5FEFD;">
+                        <div id="internal_operation"/>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </template>
+</odoo>

@@ -1,0 +1,23 @@
+<br/>
+<h2 id="setu-api-humand-integration">Setu API Humand Integration</h2>
+<h5 id="usage">USAGE</h5>
+<ul>
+    <li>This module is used to connect with Humand Integration and creates user when employee are creates in odoo.</li>
+    <li>The values of created users in Humand Integration are getting from the employee created in odoo, i.e - email,
+        firstName, lastName, hiringDate, birthdate etc.
+    </li>
+    <li>There are the fields <strong>Access Token</strong> and <strong>Humand Default Password</strong> in companies, it
+        is used to connect with specific Humand Integration.
+    </li>
+    <li>There are the scheduled action(cron) name is - <strong>Time-Off Requests From Humand</strong></li>
+</ul>
+<h5 id="configuration">CONFIGURATION</h5>
+<ul>
+    <li><pre><code>  Settings -&gt; Humand Integration -&gt; Time-Off Requests Days
+</code></pre>
+    </li>
+    <li>There are the field Time-Off Requests Days at configuration where the filled numbers are consider as a days from
+        the current date, and approved the time off under those manager in odoo between the current date and before from
+        the current date which are set in the Time-Off Requests Days.
+    </li>
+</ul>

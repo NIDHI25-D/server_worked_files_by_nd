@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="origin_database_list_view" model="ir.ui.view">
+        <field name="name">origin.database.form</field>
+        <field name="model">origin.database</field>
+        <field name="arch" type="xml">
+            <list string="Origin list" editable="top">
+                <field name="origin"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="origin_action" model="ir.actions.act_window">
+        <field name="name">Origin Database</field>
+        <field name="res_model">origin.database</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem id="origin_menus" name="Origin"
+              parent="stock.menu_stock_config_settings"
+              action="origin_action"
+              sequence="1"
+    />
+
+</odoo>

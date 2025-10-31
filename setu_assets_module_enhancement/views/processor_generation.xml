@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="processor_generation_view_tree" model="ir.ui.view">
+            <field name="name">processor_generation_view_tree</field>
+            <field name="model">processor.generation</field>
+            <field name="arch" type="xml">
+                <list string="processor_generation_tree" editable="bottom">
+                    <field name="name" required="1"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="processor_generation_action" model="ir.actions.act_window">
+            <field name="name">Processor Generation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">processor.generation</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="processor_generation_view_tree"/>
+        </record>
+    </data>
+</odoo>

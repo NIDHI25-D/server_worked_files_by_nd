@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_invoice_document_extended" inherit_id="account.report_invoice_document">
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th>
+                <span>Customs Date</span>
+            </th>
+        </xpath>
+
+        <xpath expr="//tbody/t/tr/t/td[@name='account_invoice_line_name']" position="before">
+            <t t-set="stock_landed_cost" t-if="line.l10n_mx_edi_customs_number"
+               t-value="line.env['stock.landed.cost'].search([('l10n_mx_edi_customs_number', '=', line.l10n_mx_edi_customs_number)])"/>
+            <td>
+                <t t-if="line.l10n_mx_edi_customs_number" t-foreach="stock_landed_cost" t-as="landed_cost">
+                    <t t-if="landed_cost and line.move_id.move_type == 'out_invoice' or line.move_id.move_type == 'out_refund'">
+                        <span t-esc="landed_cost.date"/>
+                    </t>
+                </t>
+            </td>
+        </xpath>
+    </template>
+</odoo>

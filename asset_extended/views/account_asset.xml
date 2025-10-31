@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_account_asset_form_extended" model="ir.ui.view">
+        <field name="name">view.account.asset.form.extended</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/notebook/page/group/group[4]" position="before">
+                <group string="Asset Labels">
+                    <field name="brand"/>
+                    <field name="model"/>
+                    <field name="serial_number"/>
+                    <field name="warranty"/>
+                    <field name="warranty_period" invisible="warranty == False"/>
+                    <field name="status"/>
+                    <field name="employee_id"/>
+                    <field name="subcategories_ids" widget="many2many_tags"/>
+                    <field name="is_responsive_letter" invisible="1"/>
+                    <field name="comments"/>
+                </group>
+            </xpath>
+
+
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[1]" position="after">
+                <group string="Asset Labels" invisible="state != 'model'">
+                    <field name="brand"/>
+                    <field name="model"/>
+                    <field name="serial_number"/>
+                    <field name="warranty"/>
+                    <field name="warranty_period" invisible="warranty == False"/>
+                    <field name="status"/>
+                    <field name="employee_id"/>
+                    <field name="subcategories_ids" widget="many2many_tags"/>
+                    <field name="is_responsive_letter" invisible="1"/>
+                    <field name="comments"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

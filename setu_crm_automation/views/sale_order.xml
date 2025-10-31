@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="sale_order_form_view_for_crm" model="ir.ui.view">
+        <field name="name">sale.order.crm</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='opportunity_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='other_information']/group[1]/group[@name='sales_person']" position="inside">
+                <field name="opportunity_id" help="Log in the chatter from which opportunity the order originates"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

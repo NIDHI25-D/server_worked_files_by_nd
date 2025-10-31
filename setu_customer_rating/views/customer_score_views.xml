@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View-->
+        <record id="customer_score_form_view" model="ir.ui.view">
+            <field name="name">setu_customer_rating.customer_score.form</field>
+            <field name="model">customer.score</field>
+            <field name="arch" type="xml">
+                <form string="Customer Score" create="false" edit="false" delete="false">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="partner_id"/>
+                            <h1>
+                                <field name="partner_id" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="company_id"/>
+                        </group>
+                        <group string="Rating">
+                            <group>
+                                <field name="partner_rating"/>
+
+                            </group>
+                            <group>
+                                <field name="total_score"/>
+                            </group>
+                        </group>
+                        <group string="Score Details">
+                            <group>
+                                <label for="avg_monthly_sales_score" class="label-blue"/>
+                                <div class="o_row">
+                                    <field name="avg_monthly_sales_score"/>
+                                    <button name="avg_monthly_sales_score_for_customer" type="object" string=""
+                                            class="btn-link mb-1 px-0" icon="fa-external-link"/>
+                                    <label for="average_amount_sales_average" class="label-blue"/>
+                                    <field name="average_amount_sales_average"/>
+
+                                    <label for="average_amount_refund_average" class="label-blue"/>
+                                    <field name="average_amount_refund_average"/>
+                                </div>
+                                <label for="avg_monthly_refund_score" class="label-blue"/>
+                                <div class="o_row">
+                                    <field name="avg_monthly_refund_score"/>
+                                    <button name="avg_monthly_refund_score_for_customer" type="object" string=""
+                                            class="btn-link mb-1 px-0" icon="fa-external-link"/>
+                                </div>
+                                <label for="amount_invoice_paid_score" class="label-pink"/>
+                                <div class="o_row">
+                                    <field name="amount_invoice_paid_score"/>
+                                    <button name="amount_invoice_paid_score_for_customer" type="object" string=""
+                                            class="btn-link mb-1 px-0" icon="fa-external-link"/>
+                                    <label for="due_date_amount" class="label-pink"/>
+                                    <field name="due_date_amount"/>
+                                </div>
+                                <label for="qty_invoice_paid_score" class="label-pink"/>
+                                <div class="o_row">
+                                    <field name="qty_invoice_paid_score"/>
+                                    <button name="qty_invoice_paid_score_for_customer" type="object" string=""
+                                            class="btn-link mb-1 px-0" icon="fa-external-link"/>
+                                    <label for="due_qty" class="label-pink"/>
+                                    <field name="due_qty"/>
+                                </div>
+
+                            </group>
+
+                            <group>
+                                <label for="amount_invoices_due_after_60_days_score" class="label-yellow"/>
+                                <div class="o_row">
+                                    <field name="amount_invoices_due_after_60_days_score"/>
+                                    <button name="amount_invoices_due_after_60_days_score_for_customer" type="object"
+                                            string=""
+                                            class="btn-link mb-1 px-0" icon="fa-external-link"/>
+                                    <label for="due_after_60_amount" class="label-yellow"/>
+                                    <field name="due_after_60_amount"/>
+
+                                </div>
+                                <label for="qty_invoices_due_after_60_days_score" class="label-yellow"/>
+                                <div class="o_row">
+                                    <field name="qty_invoices_due_after_60_days_score"/>
+                                    <button name="qty_invoices_due_after_60_days_score_for_customer" type="object"
+                                            string=""
+                                            class="btn-link mb-1 px-0" icon="fa-external-link"/>
+                                    <label for="due_after_60_quantity" class="label-yellow"/>
+                                    <field name="due_after_60_quantity"/>
+                                </div>
+                                <label for="average_payment_days_score"/>
+                                <div class="o_row">
+                                    <field name="average_payment_days_score"/>
+                                    <button name="average_payment_days_score_for_customer" type="object" string=""
+                                            class="btn-link mb-1 px-0" icon="fa-external-link"/>
+                                    <label for="avg_pay_days"/>
+                                    <field name="avg_pay_days"/>
+                                </div>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Sales Ref">
+                                <field name="sale_ids"/>
+                            </page>
+                            <page string="POS Orders Ref">
+                                <field name="pos_order_ids"/>
+                            </page>
+                            <page string="Invoices" class="label-blue">
+                                <field name="invoices"/>
+                            </page>
+                            <page string="Refund Ref" class="label-blue">
+                                <field name="credit_notes"/>
+                            </page>
+                            <page string="Invoices Done After Due Date" class="label-pink">
+                                <field name="invoice_done_after_due_date_ids"/>
+                            </page>
+                            <page string="Invoices Due After X Days" class="label-yellow">
+                                <field name="invoices_due_after_60_days"/>
+                            </page>
+                            <page string="Customer Rating History" class="label-blue">
+                                <field name="customer_rating_history">
+                                    <list>
+                                        <field name="partner_id" widget="many2one_clickable"/>
+                                        <field name="company_id" widget="many2one_clickable"/>
+                                        <field name="previous_customer_rating_id" widget="many2one_clickable"/>
+                                        <field name="previous_total_score"/>
+                                        <field name="current_customer_rating_id" widget="many2one_clickable"/>
+                                        <field name="current_total_score"/>
+                                        <field name="date_changed" widget="date"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View-->
+        <record id="customer_score_list_view" model="ir.ui.view">
+            <field name="name">setu_customer_rating.customer_score.list</field>
+            <field name="model">customer.score</field>
+            <field name="arch" type="xml">
+                <list string="Customer Score" create="false" edit="false" delete="false">
+                    <field name="partner_id"/>
+                    <field name="company_id"/>
+                    <field name="partner_rating"/>
+                    <field name="total_score"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Search View-->
+        <record id="customer_score_search_view" model="ir.ui.view">
+            <field name="name">setu_customer_rating.customer_score.search</field>
+            <field name="model">customer.score</field>
+            <field name="arch" type="xml">
+                <search string="Customer Score">
+                    <field name="partner_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Rating" name="partner_rating" domain="[]"
+                                context="{'group_by':'partner_rating'}"/>
+                        <filter string="Company" name="group_by_company_id" domain="[]"
+                                context="{'group_by':'company_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action View-->
+        <record id="customer_score_act_window" model="ir.actions.act_window">
+            <field name="name">Customer Score</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.score</field>
+            <field name="view_mode">list,form,graph</field>
+            <field name="domain">[('partner_id.customer_rank','&gt;',0),('partner_id.active','!=',False)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no Customer Score.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

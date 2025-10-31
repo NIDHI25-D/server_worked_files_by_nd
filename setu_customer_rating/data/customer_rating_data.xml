@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="customer.rating" id="customer_rating_data_1">
+            <field name="rating">AAA</field>
+            <field name="from_score">90</field>
+            <field name="to_score">100</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record model="customer.rating" id="customer_rating_data_2">
+            <field name="rating">A</field>
+            <field name="from_score">80</field>
+            <field name="to_score">89</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record model="customer.rating" id="customer_rating_data_3">
+            <field name="rating">B</field>
+            <field name="from_score">70</field>
+            <field name="to_score">79</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record model="customer.rating" id="customer_rating_data_4">
+            <field name="rating">C</field>
+            <field name="from_score">0</field>
+            <field name="to_score">69</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>

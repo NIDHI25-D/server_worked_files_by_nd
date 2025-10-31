@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="select_delivery_carrier" name="Delivery Carrier" inherit_id="website_sale.delivery_form">
+        <xpath expr="//t[@t-call='website_sale.delivery_method']" position="after">
+            <br/>
+            <div t-if="dm.is_display_carrier_on_website and dm.shipping_carrier_ids"
+                 class="nav-item dropdown ms-lg-auto o_no_autohide_item" name="carrier_selection">
+                <select name="js_dropdownmenu" class="form-select form-select-sm" id="js_dropdown">
+                    <t t-foreach="dm.shipping_carrier_ids" t-as="sh">
+                        <option t-att-value="sh.id">
+                            <t t-esc="sh.name"/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </xpath>
+    </template>
+</odoo>

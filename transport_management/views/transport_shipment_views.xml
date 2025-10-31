@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--shipment tracking form view-->
+        <record id="shipment_tracking_form_view" model="ir.ui.view">
+            <field name="name">shipment.tracking.form.view</field>
+            <field name="model">shipment.tracking</field>
+            <field name="arch" type="xml">
+                <form string="Shipment Tracking" create="0" edit="0">
+                    <sheet>
+                        <group string="Status &amp; Scans Details">
+                            <group>
+                                <field name="location"/>
+                                <field name="shipment_operation_id"/>
+                            </group>
+                            <group>
+                                <field name="tracking_date"/>
+                                <field name="tracking_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--transport shipment form view-->
+        <record id="transport_shipment_form_view" model="ir.ui.view">
+            <field name="name">transport.shipment.form.view</field>
+            <field name="model">transport.shipment</field>
+            <field name="arch" type="xml">
+                <form string="Transport Shipment">
+                    <header>
+                        <button type="object" string="Shipping" name="shipment_ship" class="oe_highlight"
+                                invisible="status not in ['draft']"/>
+                        <button type="object" string="In Transit" name="shipment_in_transit" class="oe_highlight"
+                                invisible="status not in ['ship']"/>
+                        <button type="object" string="Delivered" name="shipment_delivered" class="oe_highlight"
+                                invisible="status not in ['in_transit']"/>
+                        <button type="object" string="Cancel" name="shipment_cancel" class="btn btn-danger"
+                                invisible="status in ['cancel', 'draft', 'done']"/>
+                        <button type="action" string="Reschedule" name="%(shipment_reschedule_wizard_action)d"
+                                class="oe_highlight" invisible="status not in ['cancel']"/>
+                        <field name="status" widget="statusbar" statusbar_visible="ship,in_transit,done"/>
+                    </header>
+                    <sheet>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active == True"/>
+                        <field name="active" invisible="1"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="code" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group string="Transport Details">
+                                <field name="route_id" options='{"no_create_edit": True, "no_create": True}' readonly="status == 'done'"/>
+                                <field name="transporter_id" options='{"no_create_edit": True, "no_create": True}' readonly="status == 'done'"/>
+                            </group>
+                            <group string="Shipping Datetime">
+                                <field name="shipment_date" readonly="status == 'done'"/>
+                                <field name="delivery_date" readonly="status == 'done'"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Vehicle Info">
+                                <field name="vehicle_id" domain="[('transporter_id', '=', transporter_id)]"
+                                       options='{"no_create_edit": True, "no_create": True}' readonly="status == 'done'"/>
+                                <field name="driver_id" options='{"no_create_edit": True, "no_create": True}' readonly="status == 'done'"/>
+                                <label for="odometer_start" class="mt-1" string="Odometer Start"/>
+                                <div name="odometer_start">
+                                    <field name="odometer_start" style="width:112px !important;"  readonly="1" force_save="1"/>Units
+                                </div>
+                                <label for="odometer_end" class="mt-1" string="Odometer End"/>
+                                <div name="odometer_end">
+                                    <field name="odometer_end" style="width:112px !important;" readonly="status == 'done'"/>Units
+                                </div>
+                            </group>
+                            <group string="Transport Charges">
+                                <field name="currency_id" invisible="1"/>
+                                <label for="rate_per_km" class="mt-1" string="Rate" readonly="status == 'done'"/>
+                                <div name="rate_per_km">
+                                    <field name="rate_per_km" widget="monetary" style="width:112px !important;" readonly="1" force_save="1"
+                                           options="{'currency_field': 'currency_id', 'field_digits': True}"/>per KM
+                                </div>
+                                <label for="distance" class="mt-1" string="Distance"/>
+                                <div name="distance">
+                                    <field name="distance" style="width:112px !important;" readonly="1" force_save="1"/>in KMs
+                                </div>
+                                <field name="total_cost" widget="monetary" class="oe_inline" readonly="1" force_save="1"
+                                       options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Tracking Details">
+                                <field name="tracking_ref_no" readonly="status == 'done'"/>
+                                <field name="reference_no" readonly="status == 'done'"/>
+                            </group>
+                            <group string="Other Info">
+                                <field name="responsible" readonly="status == 'done'"/>
+                                <field name="note" readonly="status == 'done'"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Delivery Orders" name="delivery_orders">
+                                <field name="transport_do_ids" nolabel="1" readonly="status != 'draft'">
+                                    <list editable="bottom">
+                                        <field name="name"
+                                               options='{"no_create_edit": True, "no_create": True}'/>
+                                        <!-- domain="[('sale_id', '!=', False)]" added by 3rd party module-->
+                                        <field name="so_id"/>
+                                        <field name="source_location_id"
+                                               options='{"no_create_edit": True, "no_create": True}'/>
+                                        <field name="destination_location_id"
+                                               options='{"no_create_edit": True, "no_create": True}'/>
+                                        <field name="delivery_address"/>
+                                        <field name="status"
+                                               decoration-info="status == 'info'"
+                                               decoration-warning="status == 'in_transit'"
+                                               decoration-danger="status == 'cancel'"
+                                               decoration-success="status == 'done'"/>
+                                        <!-- widget="badge" remove from above field "status" because onchange call on this field is not working-->
+                                        <!-- when widget badge is applied that time we can't able to edit status-->
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Status &amp; Scans" name="ship_track">
+                                <field name="shipment_tracking_ids" readonly="status == 'done'">
+                                    <list editable="bottom">
+                                        <field name="location"/>
+                                        <field name="shipment_operation_id" string="Details"
+                                               options='{"no_create_edit": True, "no_create": True}'/>
+                                        <field name="tracking_date" string="Date"/>
+                                        <field name="tracking_time" widget="float_time" string="Time"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                        <h4>
+                            Terms &amp; Conditions
+                        </h4>
+                        <field name="terms" placeholder="Terms &amp; Conditions..." readonly="status == 'done'"/>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+        <record id="transport_shipment_tree_view" model="ir.ui.view">
+            <field name="name">transport.shipment.tree.view</field>
+            <field name="model">transport.shipment</field>
+            <field name="arch" type="xml">
+                <list string="Transport Shipments">
+                    <field name="code"/>
+                    <field name="route_id"/>
+                    <field name="transporter_id"/>
+                    <field name="vehicle_id"/>
+                    <field name="responsible" optional="show" widget="many2one_avatar_user"/>
+                    <field name="shipment_date"/>
+                    <field name="delivery_date"/>
+                    <field name="status" widget="badge"
+                           decoration-info="status == 'draft'"
+                           decoration-primary="status == 'ship'"
+                           decoration-warning="status == 'in_transit'"
+                           decoration-danger="status == 'cancel'"
+                           decoration-success="status == 'done'"/>
+                </list>
+            </field>
+        </record>
+        <record id="transport_shipment_search_view" model="ir.ui.view">
+            <field name="name">transport.shipment.search.view</field>
+            <field name="model">transport.shipment</field>
+            <field name="arch" type="xml">
+                <search string="Transport Shipments">
+                    <field name="code"/>
+                    <field name="route_id"/>
+                    <field name="transporter_id"/>
+                    <field name="vehicle_id"/>
+                    <field name="responsible"/>
+                    <field name="shipment_date"/>
+                    <field name="delivery_date"/>
+                    <field name="status"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <filter string="Shipping" name="ship" domain="[('status', '=', 'ship')]"/>
+                    <filter string="In Transit" name="in_transit" domain="[('status', '=', 'in_transit')]"/>
+                    <separator/>
+                    <filter string="Delivered" name="delivered" domain="[('status', '=', 'done')]"/>
+                    <separator/>
+                    <filter string="Cancelled" name="cancel" domain="[('status', '=', 'cancel')]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_route_id" string="Route" context="{'group_by':'route_id'}"/>
+                        <filter name="group_by_transporter_id" string="Transporter"
+                                context="{'group_by':'transporter_id'}"/>
+                        <filter name="group_by_vehicle_id" string="Vehicle" context="{'group_by':'vehicle_id'}"/>
+                        <filter name="group_by_responsible" string="Responsible" context="{'group_by':'responsible'}"/>
+                        <filter name="group_by_status" string="Status" context="{'group_by':'status'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="transport_shipment_kanban_view" model="ir.ui.view">
+            <field name="name">transport.shipment.kanban.view</field>
+            <field name="model">transport.shipment</field>
+            <field name="arch" type="xml">
+                <kanban sample="1" string="Transport Shipments" class="o_kanban_small_column" highlight_color="color">
+                    <field name="color"/>
+                    <field name="code"/>
+                    <field name="status"/>
+                    <field name="route_id"/>
+                    <field name="transporter_id"/>
+                    <field name="vehicle_id"/>
+                    <field name="responsible"/>
+                    <field name="shipment_date"/>
+                    <field name="currency_id"/>
+                    <field name="total_cost"/>
+                    <progressbar field="status"
+                                 colors='{"done": "success", "draft": "info", "ship": "primary", "in_transit": "warning", "cancel": "danger"}'/>
+                    <templates>
+                        <t t-name="card">
+                            <div class="d-flex-row">
+                                <div>
+                                    <strong>
+                                        <field name="code"/>
+                                    </strong>
+                                </div>
+                                <div>
+                                    <field name="route_id"/>
+                                </div>
+                                <div>
+                                    <field name="vehicle_id"/>
+                                </div>
+                                <div class="d-flex">
+                                    <field name="transporter_id"/>
+                                    :
+                                    <field name="total_cost" widget="monetary"
+                                           options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                </div>
+                                <div t-if="record.shipment_date.value">
+                                    Pickup Date:
+                                    <field name="shipment_date"/>
+                                </div>
+                                <div class="d-flex">
+                                    <div>
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <field name="responsible" widget="many2one_avatar_user"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="transport_shipment_action" model="ir.actions.act_window">
+            <field name="name">Transport Shipments</field>
+            <field name="res_model">transport.shipment</field>
+            <field name="view_mode">list,kanban,form,activity</field>
+        </record>
+    </data>
+</odoo>

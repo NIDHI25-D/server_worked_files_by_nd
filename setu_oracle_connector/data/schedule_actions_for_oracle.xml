@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="cron_action_token" model="ir.cron">
+            <field name="name">Oracle Update Token Value</field>
+            <field eval="False" name="active"/>
+            <field name="model_id" ref="model_setu_multi_ecommerce_connector"/>
+            <field name="type">ir.action.server</field>
+            <field name="state">code</field>
+            <field name="code">model.connection_oracle_connector()</field>
+            <field name="interval_number">23</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+        </record>
+
+        <record id="ir_cron_process_oracle_export_stock" model="ir.cron">
+            <field name="name">Oracle Auto Export Stock</field>
+            <field eval="False" name="active"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="state">code</field>
+            <field name="doall">False</field>
+            <field name="model_id" ref="model_setu_ecommerce_import_export_process_wiz"/>
+            <field name="code">model.cron_auto_update_stock_in_oracle()</field>
+        </record>
+
+        <record id="ir_cron_process_oracle_import_orders" model="ir.cron">
+            <field name="name">Oracle Auto Import Orders</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="state">code</field>
+            <field name="doall">False</field>
+            <field name="model_id" ref="model_sale_order"/>
+            <field name="code">model.cron_auto_import_oracle_order()</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="setu_stock_picking_tree_view_extended_for_claim_id" model="ir.ui.view">
+            <field name="name">setu.stock.picking.tree.view.extended.for.claim</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="claim_id"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="setu_stock_pickibng_form_views_inherited_for_claim_id" model="ir.ui.view">
+            <field name="name">setu.stock.pickibng.form.views.inherited.for.claim</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group/field[@name='backorder_id']" position="after">
+                    <field name="claim_id" options="{'no_create': True}" readonly="state in ['done','cancel']"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+

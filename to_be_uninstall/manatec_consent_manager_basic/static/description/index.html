@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<section class="container" style="font-size: 18px;">
+    <div class="row oe_spaced">
+        <div class="col-sm-12">
+            <h1 class="oe_slogan">
+                Cookie - Consent Manager
+            </h1>
+        </div>
+
+        <div class="col-sm-12">
+            <p class="oe_slogan h2">GDPR-compliant privacy settings for your website.</p>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+                <b>Info:</b>
+                If you have questions please have a look at our <a href="#faq">FAQ</a>. If you do not find your answer there, feel free to contact us.
+            </div>
+        </div>
+        <div class="col-sm-12 mt32">
+            <h3>Consent Manager Interface</h3>
+            <p>
+                This module allows your customers to give their consent to various cookies on your website.
+                Without a consent the functionality is disabled and the corresponding cookies deleted as requested by GDPR.
+                The basic version provides an indication of essential cookies that are necessary for the operation of the site and the possibility for your customers to opt-out of google analytics.
+            </p>
+            <p>
+                The main interface (see image below) gives your customers an overview of which personal information is processed. All non-essential settings can be approved or rejected here with a single click.
+            </p>
+        </div>
+        <div class="col-sm-12">
+            <div style="max-height: 1000px;">
+                <a href="screenshots/consent_manager_interface.png">
+                    <img class="oe_picture oe_screenshot mx-auto" src="screenshots/consent_manager_interface.png">
+                </a>
+            </div>
+            <figcaption class="figure-caption text-center">Consent manager main interface</figcaption>
+        </div>
+        <div class="col-sm-12 mt32">
+            <h3>Consent Manager Settings</h3>
+            <p>In the settings interface your customers can manage individual options.</p>
+        </div>
+        <div class="col-sm-12">
+            <div style="max-height: 1000px;">
+                <a href="screenshots/consent_manager_interface.png">
+                    <img class="oe_picture oe_screenshot mx-auto" src="screenshots/consent_manager_settings.png">
+                </a>
+            </div>
+            <figcaption class="figure-caption text-center">Consent manager settings interface</figcaption>
+        </div>
+    </div>
+</section>
+
+<section class="container" style="font-size: 18px;">
+    <div class="row oe_spaced">
+        <div class="col-sm-12 mt16">
+            <h3 id="configuration">Configuration</h3>
+            <p>
+                The web page settings in Odoo can be used to configure basic settings.
+                These include the path to the privacy policy and the domain for the cookies.
+                Both parameters can be set per website, making the module multi-webpage compatible.
+                Furthermore, they can also be used in the context of customizing the module.
+            </p>
+            <p>
+                Please check after configuration if your cookies are really deleted and adjust your configuration again if necessary.
+                You can use the developer console of your browser to find out which domain your cookies are stored with.
+            </p>
+        </div>
+        <div class="col-sm-12">
+            <div style="max-height: 1000px;">
+                <a href="screenshots/consent_manager_configuration_odoo.png">
+                    <img class="oe_picture oe_screenshot mx-auto" src="screenshots/consent_manager_configuration_odoo.png">
+                </a>
+            </div>
+            <figcaption class="figure-caption text-center">Configuration in Odoo</figcaption>
+        </div>
+    </div>
+</section>
+
+<section class="container" style="font-size: 18px;">
+    <div class="row oe_spaced">
+        <div class="col-sm-12 mt16">
+            <h3 id="customization">Customization</h3>
+        </div>
+        <div class="col-sm-12 mt16">
+            <div class="alert alert-warning" role="alert">
+                <b>Warning:</b>
+                The customization of the consent manager requires a certain amount of technical know-how, since incorrect customizations prevent the manager from functioning correctly.
+                Please only carry out adaptations accordingly or <a href="mailto:crm@manatec.de">contact us</a> with your customization wishes and we will provide you with an appropriate offer.
+            </div>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p>
+                In the configuration file (static/src/js/klaro.config.js) the Consent Manager can be adjusted and customized.
+            </p>
+        </div>
+        <div class="col-sm-12">
+            <div style="max-height: 1000px;">
+                <a href="screenshots/consent_manager_configuration.png">
+                    <img class="oe_picture oe_screenshot mx-auto" src="screenshots/consent_manager_configuration.png">
+                </a>
+            </div>
+            <figcaption class="figure-caption text-center">Consent manager customization</figcaption>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p>
+                Here you can, among other things, ...
+            </p>
+            <ul style="list-style-type:none;">
+                <li>... adjust the link to the privacy information.</li>
+                <li>... configure the consent to one or more additional cookie(s).</li>
+                <li>... adjust existing consent configurations for cookies.</li>
+                <li>... change all texts and descriptions.</li>
+                <li>... add or change a (new) language.</li>
+                <li>... add custom css classes for an individual look.</li>
+            </ul>
+            <p>
+                If the settings here are incorrect, it can happen that the Consent Manager is not displayed correctly and/or the cookies are not deleted correctly.
+            </p>
+            <p>
+                To support the individual configuration you can use the additional website dependent parameters "cookie domain" and "privacy url" from the website configuration in Odoo.
+                These parameters can be accessed in the "klaro.config.js" file, making the consent manager multi website compatible.
+            </p>
+        </div>
+        <div class="col-sm-12">
+            <p>
+                A more detailed documentation of the settings and possibilities can be found in the Klaro-Documentation: https://kiprotect.com/docs/klaro/annotated-configuration.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="container" style="font-size: 18px;">
+    <div class="row oe_spaced">
+        <div class="col-sm-12">
+            <h2 id="faq">FAQ</h2>
+        </div>
+        <div class="col-sm-12 mt16" id="faq_support">
+            <p><strong>Do you provide free support for this module?</strong></p>
+            <p>
+                Support for installation, configuration or adjustment is not included in the purchase, only errors of the module will be fixed by us.
+                If you need support please <a href="mailto:crm@manatec.de">contact us</a> and we will be happy to record and discuss your requirements as well as provide you with an individual offer.
+            </p>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p><strong>Why are there different modules?</strong></p>
+            <p>
+                The "Consent Manager Basic" module adds the Cookie Consent Manager to your website with a default configuration for Google Analytics.
+                The Module <a href="https://apps.odoo.com/apps/modules/13.0/manatec_consent_manager_livechat/" target="_blank">"Consent Manager LiveChat"</a> extends the Cookie Consent Manager and adds a default configuration for the Odoo Livechat.
+            </p>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p><strong>Somethings is not working or cookies are not blocked as expected, what can I do?</strong></p>
+            <p>
+                Most problems are caused by a faulty configuration. Please check yours accordingly. Otherwise, please note the answer to the question <a href="#faq_support">"Do you provide free support for this module?"</a>.
+            </p>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p><strong> I need to change the texts/consents/messages/styles/languages/… of the manager/banner/button/…, does this module allow me to do this?</strong></p>
+            <p>
+                Yes, see the section <a href="#customization">"Customization"</a> and specifically the Klaro-Documentation for more details.
+            </p>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p><strong>Is there a limit of questions or consents?</strong></p>
+            <p>
+                There is no limit. You can add or configure as many cookie consents as you like.
+            </p>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p><strong>Is the module multi-website capable?</strong></p>
+            <p>
+                Yes, see the section <a href="#customization">"Customization"</a> for more details.
+            </p>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p><strong>Is it possible to block all cookies first and configure them later?</strong></p>
+            <p>
+                The module can only block cookies that are configured. Not configured cookies are allowed by default.
+            </p>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p><strong>Which "Klaro" version are you using?</strong></p>
+            <p>
+                Currently version 0.6.3
+            </p>
+        </div>
+        <div class="col-sm-12 mt16">
+            <p><strong>Can I upgrade "Klaro" myself?</strong></p>
+            <p>
+                We only provide error and bug fixes for the provided version. If you upgrade "Klaro", you do so at your own risk.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="container" style="font-size: 18px;">
+    <div class="row oe_spaced">
+        <div class="col-sm-12">
+            <h2 id="changelog">Changelog</h2>
+            <div class="row">
+                <div class="col-sm-1">1.1.2</div>
+                <div class="col-sm-11" style="padding: 0 4.16%;">
+                    <ul>
+                        <li>Fixed a problem where web pages could not be translated anymore.</li>
+                    </ul>
+                </div>
+                <div class="col-sm-1">1.1.1</div>
+                <div class="col-sm-11" style="padding: 0 4.16%;">
+                    <ul>
+                        <li>Module description improved.</li>
+                    </ul>
+                </div>
+                <div class="col-sm-1">1.1.0</div>
+                <div class="col-sm-11" style="padding: 0 4.16%;">
+                    <ul>
+                        <li>Klaro updated to version 0.6.3.</li>
+                        <li>Basic configuration added to website settings to enable multi website support.</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-1">1.0.0</div>
+                <div class="col-sm-11" style="padding: 0 4.16%;">
+                    <ul>
+                        <li>Initial release.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container oe_dark" style="background: #EFEFEF;">
+    <div class="row oe_spaced">
+        <div class="col-sm-12 oe_centeralign">
+            <h2 class="oe_slogan">
+                Contact & Support
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-sm-1 col-sm-3 oe_centeralign oe_mb32" style="font-size:18px;">
+            <p>
+                Do you like this module?
+                <br/>
+                <a href="https://www.odoo.com/apps/modules/browse?search=manatec" target="_blank">
+                    Try out our other apps!
+                </a>
+            </p>
+        </div>
+
+        <div class="col-sm-4 oe_centeralign oe_mb32">
+            <p>
+                <a href="https://www.manatec.de" target="_blank">
+                    <img class="img-responsive" src="setu_logo.png" height="75"/>
+                </a>
+            </p>
+        </div>
+
+        <div class="col-sm-3 oe_centeralign oe_mb32" style="font-size:18px;">
+            <p>
+                Challenges with this module, wishes for more functions or questions about Odoo?
+                <a href="mailto:crm@manatec.de">
+                    Contact us!
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+</body>
+
+<footer>
+    <div class="container">
+        <div class="row oe_spaced">
+            <div class="col-sm-4">
+                <h5 class="oe_slogan" style="text-align: left">Version: 1.1.2</h5>
+            </div>
+            <div class="col-sm-4">
+                <h5 class="oe_slogan" style="text-align: center">Last Release Date: 26.11.2020</h5>
+            </div>
+            <div class="col-sm-4">
+                <h5 class="oe_slogan" style="text-align: right">&copy; manaTec</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

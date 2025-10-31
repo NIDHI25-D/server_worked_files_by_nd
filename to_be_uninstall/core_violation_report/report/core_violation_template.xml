@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_core_violation">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <table class="table table-sm o_main_table">
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th class="text-left">Employee</th>
+                                    <th class="text-left">Day</th>
+                                    <th class="text-left">Check in</th>
+                                    <th class="text-left">Check out</th>
+                                    <th class="text-left">Type of violation</th>
+                                    <th class="text-left">Remark</th>
+                                </tr>
+                            </thead>
+
+                            <t t-foreach="o.env.context.get('emp_data')" t-as="emp">
+                                <tr>
+                                    <td class="text-left">
+                                        <t t-esc="emp.get('employee')"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <t t-esc="emp.get('day')"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <t t-esc="emp.get('check_in_violation')"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <t t-esc="emp.get('check_out_violation')"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <t t-esc="emp.get('violation_selection')"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <t t-esc="emp.get('remark_field')"/>
+                                    </td>
+                                </tr>
+                            </t>
+
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="marvelsa_view_form_stock_warehouse_alternative">
+        <field name="name">view_form_stock_warehouse_alternative</field>
+        <field name="model">stock.warehouse</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="stock.view_warehouse"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[2]" position="after">
+                <page string="Alternative Warehouses">
+                  <field name="alternative_warehouse_ids">
+                    <list editable="bottom">
+                      <field name="warehouse_id" column_invisible="True"/>
+                      <field name="warehouse_to_picking_id" options="{'no_create': True, 'no_open': True}"/>
+                      <field name="priority"/>
+                    </list>
+                  </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

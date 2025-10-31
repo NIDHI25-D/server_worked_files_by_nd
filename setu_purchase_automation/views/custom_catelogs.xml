@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="custome_catelogues_view_tree" model="ir.ui.view">
+            <field name="name">custome.catelogues.view.tree</field>
+            <field name="model">custom.cateloges</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="name" required="1"/>
+                    <field name="company_id"/>
+                </list>
+            </field>
+        </record>
+        <record id="custome_catelogues_action" model="ir.actions.act_window">
+            <field name="name">Discharge port name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">custom.cateloges</field>
+            <field name="view_mode">list</field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="custonm_catelogues_menu" name="Discharge ports" parent="purchase.menu_purchase_config"
+                  action="setu_purchase_automation.custome_catelogues_action"/>
+
+    </data>
+</odoo>

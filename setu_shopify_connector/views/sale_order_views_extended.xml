@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="setu_shopify_sale_order_list_view_extended" model="ir.ui.view">
+        <field name="name">setu.shopify.sale.order.list.view.extended</field>
+        <field name="model">sale.order</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <list create="false" default_order="id desc" >
+                <field name="name" string="Order Number"/>
+                <field name="date_order"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+                <field name="amount_total" sum="Total Tax Included" widget="monetary"/>
+                <field name="state"/>
+                <field name="is_shopify_risk_order" invisible="1"/>
+                <field name="is_shopify_order_updated" readonly="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="setu_shopify_res_partner_form_view_extended" model="ir.ui.view">
+        <field name="name">setu.shopify.res.partner.form.view.extended</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Shopify Info" name="shopify"
+                     invisible="multi_ecommerce_connector_id == False or ecommerce_connector != 'shopify_connector'">
+                    <group>
+                        <group>
+                            <field name="shopify_order_id" readonly="True"/>
+                            <field name="shopify_order_number" readonly="True"/>
+                            <field name="shopify_order_status" readonly="True"/>
+                            <field name="setu_shopify_payment_gateway_id" readonly="True"/>
+                            <field name="multi_ecommerce_connector_id" readonly="True"
+                                   options="{'no_create':True,'no_create_edit':True}"/>
+                            <field name="setu_shopify_location_id" readonly="True"/>
+                        </group>
+                        <group>
+                            <field name="is_shopify_risk_order" readonly="True" widget="boolean_toggle"/>
+                            <field name="is_shopify_pos_order" readonly="True" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <group string="Risks Order">
+                        <field name="setu_shopify_risky_order_ids" readonly="1" nolabel="1" colspan="2">
+                            <list >
+                                <field name="original_shopify_order_id"/>
+                                <field name="is_cause_cancel_order"/>
+                                <field name="recommendation_status"/>
+                                <field name="source"/>
+                                <field name="risk_id"/>
+                            </list>
+                        </field>
+                    </group>
+                    <group string="Transaction Order">
+                        <field name="setu_shopify_transaction_order_ids" readonly="1" nolabel="1" colspan="2">
+                            <list >
+                                <field name="original_shopify_order_id"/>
+                                <field name="authorization"/>
+                                <field name="source_name"/>
+                                <field name="status"/>
+                                <field name="message"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+    <record id="shopify_order_search_view" model="ir.ui.view">
+        <field name="name">Shopify Search View</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="shopify_order_id"/>
+                <field name="shopify_order_number"/>
+                <field name="shopify_order_status"/>
+                <filter string="Shopify Fulfilled order" name="shopify_order_status"
+                        domain="[('shopify_order_status','=','fulfilled')]"/>
+                <filter string="Shopify Unfulfilled order" name="shopify_order_status"
+                        domain="[('shopify_order_status','=','unfulfilled')]"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter string="Shopify order status" name="shopify_order_status"
+                        context="{'group_by':'shopify_order_status'}"/>
+                <filter string="Shopify Payment gateway" name="setu_shopify_payment_gateway_id"
+                        context="{'group_by':'setu_shopify_payment_gateway_id'}"/>
+                <filter string="e-Commerce Connector" name="multi_ecommerce_connector_id"
+                        context="{'group_by':'multi_ecommerce_connector_id'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="setu_shopify_quotation_sale_order_action" model="ir.actions.act_window">
+        <field name="name">Shopify Quotations</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('shopify_order_id','!=',False),('state','in',('draft','sent'))]</field>
+        <field name="view_id" ref="setu_shopify_sale_order_list_view_extended"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Not found any shopify quotations yet.
+            </p>
+        </field>
+    </record>
+
+    <record id="setu_shopify_done_sale_order_action" model="ir.actions.act_window">
+        <field name="name">Shopify Sales Order</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('shopify_order_id','!=',False),('state','in',('sale','done'))]</field>
+        <field name="view_id" ref="setu_shopify_sale_order_list_view_extended"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Not found any shopify sales order yet.
+            </p>
+        </field>
+    </record>
+
+    <record id="setu_multi_ecommerce_connector_sale_action" model="ir.actions.act_window">
+        <field name="name">Shopify Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_id" ref="setu_shopify_sale_order_list_view_extended"/>
+        <field name="domain">[('multi_ecommerce_connector_id.ecommerce_connector','=','shopify_connector'),('multi_ecommerce_connector_id','=',active_id)]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Not found any shopify orders yet.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="setu_shopify_quotations_order_main_menu" name="Quotations"
+              parent="setu_shopify_connector.setu_shopify_sale_order_main_menu"
+              action="setu_shopify_quotation_sale_order_action" sequence="1"/>
+    <menuitem id="shopify_menu_item_sales_order" name="Sales Order"
+              parent="setu_shopify_connector.setu_shopify_sale_order_main_menu"
+              action="setu_shopify_done_sale_order_action" sequence="3"/>
+
+</odoo>
+	

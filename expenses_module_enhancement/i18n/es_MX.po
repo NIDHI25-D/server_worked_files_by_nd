@@ -1,0 +1,129 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* expenses_module_enhancement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-15 12:02+0000\n"
+"PO-Revision-Date: 2022-09-15 12:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: expenses_module_enhancement
+#: code:addons/expenses_module_enhancement/models/hr_expense.py:0
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml__dragndrop
+#, python-format
+msgid "Attach XML"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model:ir.model,name:expenses_module_enhancement.model_attach_xml
+msgid "Attach xml"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model_terms:ir.ui.view,arch_db:expenses_module_enhancement.attach_xml_wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml__display_name
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_hr_expense__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: expenses_module_enhancement
+#: model:ir.model,name:expenses_module_enhancement.model_hr_expense
+msgid "Expense"
+msgstr "Gasto"
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml__id
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_hr_expense__id
+msgid "ID"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: code:addons/expenses_module_enhancement/wizard/attach_xml.py:0
+#, python-format
+msgid "Info"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml__key
+msgid "Key"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml____last_update
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_hr_expense____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_attach_xml__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model_terms:ir.ui.view,arch_db:expenses_module_enhancement.attach_xml_wizard_form_view
+msgid "Save"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: code:addons/expenses_module_enhancement/wizard/attach_xml.py:0
+#, python-format
+msgid ""
+"Something went wrong. The parameter for XML files must be a dictionary."
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: code:addons/expenses_module_enhancement/wizard/attach_xml.py:0
+#, python-format
+msgid "The document was successfully uploaded."
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: code:addons/expenses_module_enhancement/wizard/attach_xml.py:0
+#, python-format
+msgid ""
+"This partner was created when invoice %s%s was added from a XML file. Please"
+" verify that the datas of partner are correct."
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: model_terms:ir.ui.view,arch_db:expenses_module_enhancement.add_field_partner_id_in_hr_expense
+msgid "Upload XML File"
+msgstr "Subir XML"
+
+#. module: expenses_module_enhancement
+#: model:ir.model.fields,field_description:expenses_module_enhancement.field_hr_expense__partner_id
+msgid "Vendor"
+msgstr ""
+
+#. module: expenses_module_enhancement
+#: code:addons/expenses_module_enhancement/wizard/attach_xml.py:0
+#, python-format
+msgid "XML created from %s."
+msgstr ""

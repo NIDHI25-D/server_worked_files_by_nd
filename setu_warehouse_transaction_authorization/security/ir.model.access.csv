@@ -1,0 +1,2 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_setu_warehouse_transaction_authorization,setu_warehouse_transaction_authorization,model_warehouse_transaction_authorization,stock.group_adv_location,1,1,1,1

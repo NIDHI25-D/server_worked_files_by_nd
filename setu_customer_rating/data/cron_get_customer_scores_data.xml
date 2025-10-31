@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data >
+        <record id="get_customer_scores_cron" forcecreate='True' model="ir.cron">
+            <field name="name">Get Customer Scores</field>
+            <field name="active">True</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="model_id" ref="model_customer_score"/>
+            <field name="state">code</field>
+            <field name="code">model.run_customer_score_cron()</field>
+        </record>
+    </data>
+</odoo>

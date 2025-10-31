@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="res.groups" id="allow_overtime_module">
+            <field name="name">Allow overtime module</field>
+        </record>
+
+        <record model="res.groups" id="allow_to_be_approver_director">
+            <field name="name">Allow to be an overtime approver director</field>
+        </record>
+
+        <record model="res.groups" id="allow_to_all_overtime_approver">
+            <field name="name">Allow to all overtime approver</field>
+        </record>
+    </data>
+</odoo>

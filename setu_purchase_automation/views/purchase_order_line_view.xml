@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="view_purchase_order_line_form" model="ir.ui.view">
+            <field name="name">purchase.order.line.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page/field/list/field[@name='taxes_id']" position="before">
+                    <field name="last_purchase_price"/>
+                    <field name="percentage_price_difference" avg="Average price difference"/>
+                    <field name="vendor_price" optional="show" readonly="1"/>
+                    <field name="difference_between_vendor_price" optional="show"
+                           decoration-info="difference_between_vendor_price == 0"
+                           decoration-danger="difference_between_vendor_price &gt; 0"
+                           decoration-success="difference_between_vendor_price &lt; 0"/>
+                    <field name="iva"/>
+                    <field name="igi"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

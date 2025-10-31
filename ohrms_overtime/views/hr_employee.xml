@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="hr_employee_base_form_views_inherited" model="ir.ui.view">
+            <field name="name">hr.employee.base.form.views.inherited</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="is_overtime_approve_director" groups="ohrms_overtime.allow_to_be_approver_director"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

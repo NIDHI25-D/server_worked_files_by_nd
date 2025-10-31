@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="ir_cron_refresh_materialized_view" model="ir.cron">
+            <field name="name">Refresh materialized view</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="setu_product_view_by_vendor.model_setu_refresh_materialized_view"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+<!--            <field name="numbercall">-1</field>-->
+            <field name="state">code</field>
+            <field name="code">model.cron_refresh_materialized_view()</field>
+        </record>
+
+        <record id="ir_cron_check_pending_stage_of_que_job" model="ir.cron">
+            <field name="name">Check pending stage for materialized views</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="setu_product_view_by_vendor.model_setu_refresh_materialized_view"/>
+            <field name="interval_number">15</field>
+            <field name="interval_type">minutes</field>
+<!--            <field name="numbercall">-1</field>-->
+            <field name="state">code</field>
+            <field name="code">model.cron_check_pending_stage_of_que_job()</field>
+        </record>
+
+        <record id="ir_cron_refresh_materialized_view_daily" model="ir.cron">
+            <field name="name">Refresh materialized view daily</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model_id" ref="setu_product_view_by_vendor.model_setu_refresh_materialized_view"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+<!--            <field name="numbercall">-1</field>-->
+            <field name="state">code</field>
+            <field name="code">model.cron_refresh_materialized_view_daily()</field>
+        </record>
+    </data>
+</odoo>

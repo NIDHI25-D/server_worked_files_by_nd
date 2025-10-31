@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="server_action_orderby_order_without_delivery_date" model="ir.actions.server">
+        <field name="name">Order by Sale Order Whithout delivery date</field>
+<!--        <field name="condition">True</field>-->
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_sale_order" />
+        <field name="state">code</field>
+        <field name="code">action = model.order_by_saleorder_without_delivery_date()</field>
+    </record>
+
+
+    <record id="view_sales_order_filter_without_delivery_date" model="ir.ui.view">
+        <field name="name">sale.order.without_delivery_date.search.view</field>
+        <field name="model">sale.order</field>
+        <field name="priority">2</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="picking_ids"  string="Tracking Referernce" filter_domain="[('picking_ids.carrier_tracking_ref','ilike', self)]"/>
+                <field name="picking_ids"  string="Preparation Date" filter_domain="[('picking_ids.preparation_date','&gt;=', self), ('picking_ids.preparation_date','&lt;=', self)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='my_sale_orders_filter']" position="before">
+                <filter string="From Website" name="from_website" domain="[('team_id.name', '=', 'website')]"/>
+            </xpath>
+            <xpath expr="//search/group" position="inside">
+                <filter string="Carrier" name="Carrier" domain="[]" context="{'group_by': 'carrier_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+	<record model="ir.ui.view" id="dashboard_traffic_tree_view">
+        <field name="name">dashboard.traffic.tree</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <list decoration-bf="website_id == 1" decoration-info="website_id == 1" string="Dasboard Logistics Tree" default_order="website_id">
+                <field name="website_id" invisible="1"/>
+                <field name="name" string="Numero de Presupuesto"/>
+                <field name="delivery_address"/>
+                <field name="shippment_info"/>
+                <field name="is_urgent_order"/>
+                <field name="date_invoice"/>
+                <field name="preparation_date"/>
+                <field name="send_date"/>
+                <field name="x_studio_fecha_de_entrega"/>
+                <field name="carrier_tracking_ref"/>
+                <field name="carrier_id"/>
+                <field name="user_id" />
+                <field name="pickings_counter"/>
+                <button type="object" name="action_view_delivery_without_refund" icon="fa-list-ul" title="View Pickings"/>
+                <field name="amount_untaxed" string="Subtotal" sum="Total"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="dashboard_traffic_action">
+        <field name="name">Dasboard Logistics</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="dashboard_traffic_tree_view"/>
+        <field name="context">{'create': False}</field>
+    </record>
+
+    <menuitem id="dashboard_traffic_menu" name="Dasboard Logistics"
+        parent="sale.menu_sale_report"
+        action="server_action_orderby_order_without_delivery_date"
+        sequence="2"/>
+
+</odoo>

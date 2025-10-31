@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_manager_assessment_questions">
+        <field name="name">Manager Assessment Questions</field>
+        <field name="res_model">manager.assessment.questions</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create new Employee Assessment Questions</p>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_manager_assessment_questions_form">
+        <field name="name">Manager Assessment Questions</field>
+        <field name="model">manager.assessment.questions</field>
+        <field name="arch" type="xml">
+            <form string="Assessment Rating">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="active"/>
+                            <field name="period_id" required="1"/>
+                            <field name="assessment_question"/>
+                            <field name="rating_id" widget="many2many_tags" required="1"
+                                   options="{'color_field': 'color', 'no_create': True, 'no_open': True}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_manager_assessment_questions_tree">
+        <field name="name">Manager Assessment Questions</field>
+        <field name="model">manager.assessment.questions</field>
+        <field name="arch" type="xml">
+            <tree string="Assessment Rating">
+                <field name="period_id"/>
+                <field name="assessment_question"/>
+                <field name="rating_id" widget="many2many_tags"
+                       options="{'color_field': 'color', 'no_create': True, 'no_open': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_manager_assessment_questions"
+            name="Manager Assessment Questions"
+            action="action_manager_assessment_questions"
+            groups="ninebox_employee_performance.group_ninebox_performance_manager"
+            parent="menu_hr_performance_settings"
+            sequence="9"/>
+</odoo>

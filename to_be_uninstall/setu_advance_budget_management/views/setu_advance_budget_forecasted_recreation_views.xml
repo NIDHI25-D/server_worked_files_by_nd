@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="setu_advance_budget_forecasted_recreation_form_view" model="ir.ui.view">
+            <field name="name">setu.advance.budget.forecasted.recreation.form.view</field>
+            <field name="model">setu.advance.budget.forecasted.recreation</field>
+            <field name="arch" type="xml">
+                <form string="Recreation Budget">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="setu_advance_budget_forecasted_id"  options="{'no_create': True, 'no_open': True}" required="True"/>
+                                <field name="setu_advance_budget_forecasted_type_id" required="True"/>
+                            </group>
+                            <group>
+                                <field name="name" required="True"/>
+                                <field name="is_old_budget_recreation"/>
+                                <field name="is_create_new_periods"/>
+                                <field name="update_budget_periods_count" attrs="{'invisible': [('is_create_new_periods', '=', False)]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="recreation_budget_forecasted_period_type" widget="radio" options="{'vertical': true}"/>
+                            </group>
+                        </group>
+                         <notebook>
+                            <page string="Recreation Budget Periods" name="recreation budget_periods">
+                                 <field name="setu_advance_budget_forecasted_recreation_periods_ids">
+                                    <tree string="Budget Periods" editable="bottom" create="false" delete="false">
+                                        <field name="start_date" readonly="1"/>
+                                        <field name="end_date" readonly="1"/>
+                                        <field name="forecasted_type"/>
+                                    </tree>
+                                 </field>
+                            </page>
+                        </notebook>
+                         <footer>
+                            <button name="prepare_and_create_new_budget_plan"  string="Create New Budget" type="object" class="oe_highlight"/>
+                            <button string="Cancel" class="oe_highlight" special="cancel"/>
+                    </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="setu_advance_budget_forecasted_recreation" model="ir.actions.act_window">
+            <field name="name">Recreation Budget</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">setu.advance.budget.forecasted.recreation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="setu_advance_budget_forecasted_recreation_form_view"/>
+        </record>
+    </data>
+</odoo>

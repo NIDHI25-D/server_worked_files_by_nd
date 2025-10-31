@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+{
+    'name': 'Setu Product Price update',
+    'version': '18.0.0.0',
+    'category': 'sale',
+    'summary': """Update product price based on Range and different level""",
+    'website': 'https://www.setuconsulting.com',
+    'support': 'support@setuconsulting.com',
+    'description': """Update product price based on Range and different level""",
+    'author': 'Setu Consulting Services Pvt. Ltd.',
+    'license': 'OPL-1',
+    'sequence': 25,
+    'depends': ['sale_purchase'],
+    #'images': ['static/description/banner.gif'],
+    'data': [
+        'security/ir.model.access.csv',
+        'security/price_update_security_groups.xml',
+        'data/price_config_sequence.xml',
+        'views/multiple_products_price_update.xml',
+        'views/price_level_config_view.xml',
+        'views/product_price_update_discounts.xml',
+        'views/product_template.xml',
+        'views/competition_level.xml',
+        'views/res_config_settings_view.xml',
+        'views/import_factor_level.xml',
+        'views/price_bases.xml',
+    ],
+    'application': True,
+}

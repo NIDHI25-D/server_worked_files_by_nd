@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="add_field_is_enable_for_create_bill_tree_view" model="ir.ui.view">
+        <field name="name">add_field_is_enable_for_create_bill_tree_view</field>
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.view_partner_category_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='color']" position="before">
+                <field name="is_enable_for_create_bill"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="add_field_is_enable_for_create_bill_form_view" model="ir.ui.view">
+        <field name="name">add_field_is_enable_for_create_bill_form_view</field>
+        <field name="model">res.partner.category</field>
+        <field name="inherit_id" ref="base.view_partner_category_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='active']" position="before">
+                <field name="is_enable_for_create_bill"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

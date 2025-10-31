@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="custom_assortment_team_picking_tree_conditional" model="ir.ui.view">
+            <field name="name">custom.assortment.team.picking.tree.conditional</field>
+            <field name="model">stock.picking</field>
+            <field name="type">list</field>
+            <field name="priority" eval="2000"/>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="partner_id" invisible="not context.get('default_prioritization_rule')"/>
+                    <field name="scheduled_date" invisible="not context.get('default_prioritization_rule')"/>
+                    <field name="location_id" invisible="not context.get('default_prioritization_rule')"/>
+                    <field name="origin" invisible="not context.get('default_prioritization_rule')" optional="hide"/>
+                    <field name="assortment_team_id" invisible="not context.get('default_prioritization_rule')"
+                           optional="hide"/>
+                    <field name="prioritization_priority" invisible="not context.get('default_prioritization_rule')"
+                           optional="hide"/>
+                    <field name="lines_quantity" invisible="not context.get('default_prioritization_rule')"
+                           optional="hide"/>
+                    <field name="complexity_assigned_id" invisible="not context.get('default_prioritization_rule')"
+                           optional="hide"/>
+                    <field name="assignment_date_time" invisible="not context.get('default_prioritization_rule')"
+                           optional="hide"/>
+                    <field name="cliente_mostrador" invisible="not context.get('default_prioritization_rule')"
+                           optional="hide"/>
+                    <field name="x_studio_detener_factura"
+                           invisible="not context.get('default_prioritization_rule')" optional="hide"/>
+                    <field name="state"
+                           invisible="not context.get('default_prioritization_rule')" optional="hide"/>
+                </list>
+            </field>
+        </record>
+        <record id="assortment_team_picking_form" model="ir.ui.view">
+            <field name="name">assortment.team.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='origin']" position="after">
+                    <field name="assortment_team_id" readonly="1"/>
+                    <field name="prioritization_priority" readonly="1"/>
+                    <field name="lines_quantity" invisible="1"/>
+                    <field name="complexity_assigned_id" readonly="1"/>
+                    <field name="assignment_date_time" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_picking_internal_search" model="ir.ui.view">
+            <field name="name">stock.picking.internal.search</field>
+            <field name="model">stock.picking</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="prioritization_priority" string="Prioritization Priority"/>
+                    <filter string="Prioritization Priority" name="prioritization_priority"
+                            domain="[('prioritization_priority', '=', True)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Assortment Team" name="assortment_team_id"
+                                context="{'group_by': 'assortment_team_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="setu_prioritization_view_action" model="ir.actions.act_window">
+            <field name="name">Prioritization Priorities</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_mode">list,form,kanban</field>
+             <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('setu_prioritization_of_pickings.custom_assortment_team_picking_tree_conditional')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('setu_prioritization_of_pickings.assortment_team_picking_form')})
+                ]"/>
+            <field name="domain">[('prioritization_priority','in',('0','1','2','3','4','5','no_rule'))]</field>
+            <field name="context">{'group_by': ['prioritization_priority'],'default_prioritization_rule' : True,}
+            </field>
+            <field name="search_view_id" ref="stock.view_picking_internal_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Hello user,
+                </p>
+                <p>
+                    There are no records for Prioritization
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="setu_prioritization_view_action"
+                  id="menu_prioritization_action"
+                  parent="stock.menu_stock_root"
+                  sequence="99"/>
+    </data>
+</odoo>

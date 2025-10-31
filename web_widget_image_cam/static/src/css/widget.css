@@ -1,0 +1,20 @@
+
+
+.webcam_img img {
+    max-width: 320px;
+    max-height: 240px;
+}
+
+.live_cam_img {
+    width: 320px;
+    height: 240px;
+}
+
+.direction_icon {
+    text-align: center;
+}
+
+.o_field_widget.o_field_image .o_form_image_controls > .fa {
+    padding: 3px;
+    margin: 3px;
+}

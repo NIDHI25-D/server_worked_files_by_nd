@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="loading_port_catelogues_view_tree" model="ir.ui.view">
+            <field name="name">loading.port.catelogues.view.tree</field>
+            <field name="model">loading.port.cateloges</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="name" required="1"/>
+                    <field name="company_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="loading_ports_name_action" model="ir.actions.act_window">
+            <field name="name">Loading port name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loading.port.cateloges</field>
+            <field name="view_mode">list</field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="loading_ports_name_menu" name="Loading ports" parent="purchase.menu_purchase_config"
+                  action="setu_purchase_automation.loading_ports_name_action"/>
+
+    </data>
+</odoo>

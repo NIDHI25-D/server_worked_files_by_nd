@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="inherit_choose_delivery_carrier_view_form" model="ir.ui.view">
+            <field name="name">inherit_choose_delivery_carrier_view_form</field>
+            <field name="model">choose.delivery.carrier</field>
+            <field name="inherit_id" ref="delivery.choose_delivery_carrier_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='carrier_id']" position="attributes">
+                    <attribute name="context">{'default_order_id': order_id}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="add_carrier_in_choose_delivery_carriers" model="ir.ui.view">
+            <field name="name">add_carrier_in_delivery_carriers</field>
+            <field name="model">choose.delivery.carrier</field>
+            <field name="inherit_id" ref="delivery.choose_delivery_carrier_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group" position="after">
+                    <group>
+                        <field name="shipping_carrier_ids" invisible="1"/>
+                        <field name="shipping_carrier_id" domain="[('id', 'in', shipping_carrier_ids)]"
+                               required="shipping_carrier_ids"
+                               context="{'default_order_id': order_id}" options="{'no_create': True}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

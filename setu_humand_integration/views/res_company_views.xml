@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="setu_humand_integration_inherited_REF_view_company_form" model="ir.ui.view">
+            <field name="name">setu.humand.integration.inherited.REF.view.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <notebook>
+                        <page string="Humand" name="humand">
+                            <group>
+                                <field name="humand_access_token"/>
+                                <field name="humand_default_password"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

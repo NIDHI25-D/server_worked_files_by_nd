@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="setu_shopify_stock_location_list_view" model="ir.ui.view">
+        <field name="name">setu.shopify.stock.location.list.view</field>
+        <field name="model">setu.shopify.stock.location</field>
+        <field name="arch" type="xml">
+            <list create="false" duplicate="false">
+                <field name="name"/>
+                <field name="multi_ecommerce_connector_id"/>
+                <field name="odoo_company_id"/>
+                <field name="shopify_location_id"/>
+                <field name="is_stock_primary_location" widget="boolean_toggle"/>
+                <field name="is_fulfillment_stock_legacy_location" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="setu_shopify_stock_location_form_view" model="ir.ui.view">
+        <field name="name">setu.shopify.stock.location.form.view</field>
+        <field name="model">setu.shopify.stock.location</field>
+        <field name="arch" type="xml">
+            <form string="Shopify Locations Data" duplicate="0" create="false" readonly="1">
+                <sheet>
+                    <group name="shopify_locations_id">
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="multi_ecommerce_connector_id" readonly="1"/>
+                            <field name="order_from_warehouse_id" options="{'no_create': True, 'no_create_edit':True}"
+                                   domain="[('company_id', '=', odoo_company_id)]"/>
+                        </group>
+                        <group>
+                            <field name="shopify_location_id" readonly="1"/>
+                            <field name="odoo_company_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Location">
+                            <group>
+                                <group>
+                                <field name="is_stock_primary_location" readonly="1" widget="boolean_toggle"/>
+                                </group>
+                                <group>
+                                <field name="is_fulfillment_stock_legacy_location" readonly="1" widget="boolean_toggle"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Export Stock">
+                            <group>
+                                <field name="export_stock_warehouse_ids" widget="many2many_tags"
+                                       options="{'no_create': True, 'no_create_edit':True}"
+                                       domain="[('company_id', '=', odoo_company_id)]"/>
+                            </group>
+                        </page>
+                        <page string="Import Stock">
+                            <group>
+                                <field name="import_stock_warehouse_id"
+                                       options="{'no_create': True, 'no_create_edit':True}"
+                                       domain="[('company_id', '=', odoo_company_id)]"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="setu_shopify_stock_location_search_view" model="ir.ui.view">
+        <field name="name">setu.shopify.stock.location.search.view</field>
+        <field name="model">setu.shopify.stock.location</field>
+        <field name="arch" type="xml">
+            <search string="Filter Locations Wise">
+                <field name="multi_ecommerce_connector_id"/>
+                <field name="name"/>
+                <field name="shopify_location_id"/>
+                <separator/>
+                <filter name="archived" string="Archived" domain="[('active','=',False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="e-Commerce Connector" name="group_by_instance"
+                            context="{'group_by': 'multi_ecommerce_connector_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="setu_shopify_stock_location_action" model="ir.actions.act_window">
+        <field name="name">Shopify Warehouse Locations</field>
+        <field name="res_model">setu.shopify.stock.location</field>
+        <field name="view_id" ref="setu_shopify_connector.setu_shopify_stock_location_list_view"/>
+        <field name="search_view_id" ref="setu_shopify_connector.setu_shopify_stock_location_search_view"/>
+    </record>
+
+    <menuitem id="setu_shopify_stock_location_main" name="Shopify Locations"
+              parent="setu_shopify_connector.setu_shopify_configuration_main_menu"
+              action="setu_shopify_stock_location_action" sequence="6"/>
+
+</odoo>

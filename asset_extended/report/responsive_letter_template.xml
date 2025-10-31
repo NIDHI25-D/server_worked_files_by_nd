@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="responsive_letter">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page container">
+                        <div class="header">
+                            <div class="oe_inline">
+                                <img t-attf-src="/web/image/res.company/#{o.company_id.id}/logo/120x120"
+                                     class="float-left"/>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <span t-out="o.company_id.city"/>
+                            <span t-out="o.company_id.state_id.name"/>
+                            <span t-out="datetime.date.today().strftime('%d/%m/%Y')"/>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <span class="title">
+                                <h5 class="font o_on_board_heading">
+                                    <b>
+                                        <span t-out="o.company_id.name"/>
+                                    </b>
+                                </h5>
+                            </span>
+                        </div>
+                        <p>
+                            <h5 class="font o_on_board_heading">
+                                <b>Responsiva de equipos</b>
+                            </h5>
+                        </p>
+                        <p>
+                            <h6>
+                                Por este medio hago constar que el equipo que se detalla a continuación se encuentra en
+                                calidad de préstamo a partir del día
+                                <span t-out="datetime.date.today().strftime('%d/%m/%Y')"/>
+                                que está bajo resguardo de
+                                <span t-out="o.name"/>
+                                del departamento de
+                                <span t-out="o.department_id.name"/>
+                                sucursal<span t-out="o.work_location_id.name"/>. El cual se entrega para el mejor
+                                desarrollo de
+                                sus
+                                funciones, quién se compromete a cuidarlo y darle un uso estrictamente laboral.
+                            </h6>
+                            <br/>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="text-start" style="background-color:black;color:white;">EQUIPO</th>
+                                        <th class="text-start" style="background-color:black;color:white;">MARCA</th>
+                                        <th class="text-start" style="background-color:black;color:white;">MODELO</th>
+                                        <th class="text-start" style="background-color:black;color:white;">IMEI / SERIE</th>
+                                        <th class="text-start" style="background-color:black;color:white;">Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.asset_ids" t-as="asset">
+                                        <t t-if="asset.is_responsive_letter">
+                                            <td class="text-left">
+                                                <span t-out="asset.name"/>
+                                            </td>
+                                            <td class="text-left">
+                                                <span t-out="asset.brand"/>
+                                            </td>
+                                            <td class="text-left">
+                                                <span t-out="asset.model"/>
+                                            </td>
+                                            <td class="text-left">
+                                                <span t-out="asset.serial_number"/>
+                                            </td>
+                                            <td class="text-left">
+                                                <span t-out="asset.comments"/>
+                                            </td>
+
+                                        </t>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h6>
+                                Sirva este como comprobante de entrega de dicho equipo, el cual pertenece a la
+                                <span t-out="o.company_id.name"/>, Así mismo, hacemos de su
+                                conocimiento que no podrá modificar la configuración y/o instalar software sin ser
+                                previamente autorizado.
+                            </h6>
+                            <h6>
+                                El usuario deberá responder por los daños ocasionados por mal manejo o
+                                imprudencia, será su responsabilidad devolver el equipo en buenas
+                                condiciones, el usuario asume las consecuencias que esto deriven.
+                            </h6>
+                        </p>
+                        <div class="text-center" style="margin-top:20px;">
+                            <span class="title">
+                                <h6 class="font o_on_board_heading">
+                                    <b>AUTORIZA</b>
+                                </h6>
+                                <t t-if="o.setu_authorizer_id.employee_signature">
+                                    <img t-att-src="image_data_uri(o.setu_authorizer_id.employee_signature)"
+                                         style="max-height: 2cm; max-width: 6cm;"/>
+                                </t>
+                            </span>
+                        </div>
+                        <div class="text-center" style="margin-top:15px;">
+                            <h6>___________________________</h6>
+                            <span class="title">
+                                <h6 class="font o_on_board_heading">
+                                    <b>
+                                        <span t-out="o.setu_authorizer_id.name"/>
+                                    </b>
+                                </h6>
+                            </span>
+                        </div>
+                        <div class="row text-center" style="margin-top:50px;">
+                            <div class="col-auto col-6">
+                                <span>
+                                    <h6 class="font o_on_board_heading">
+                                        <b>RECEPTOR</b>
+                                    </h6>
+                                    <t t-if="o.employee_signature">
+                                        <img t-att-src="image_data_uri(o.employee_signature)"
+                                             style="max-height: 2cm; max-width: 6cm;"/>
+                                    </t>
+                                </span>
+                            </div>
+                            <div class="col-auto col-6">
+                                <span>
+                                    <h6 class="font o_on_board_heading">
+                                        <b>EMISOR</b>
+                                    </h6>
+                                    <t t-if="o.setu_issuer_id.employee_signature">
+                                        <img t-att-src="image_data_uri(o.setu_issuer_id.employee_signature)"
+                                             style="max-height: 2cm; max-width: 6cm;"/>
+                                    </t>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-auto col-6">
+                                <span>
+                                    <h6>___________________________</h6>
+                                    <h6 class="font o_on_board_heading">
+                                        <b>
+                                            <span t-out="o.name"/>
+                                        </b>
+                                    </h6>
+                                </span>
+                            </div>
+                            <div class="col-auto col-6">
+                                <span>
+                                    <h6>______________________________</h6>
+                                    <h6 class="font o_on_board_heading">
+                                        <b>
+                                            <span t-out="o.setu_issuer_id.name"/>
+                                        </b>
+                                    </h6>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="text-center">
+                                <span>
+                                    <h5 class="font o_on_board_heading" style="font-size: 15px;">
+                                        <b>
+                                            <span t-out="o.company_id.name"/>
+                                        </b>
+                                    </h5>
+                                </span>
+                            </div>
+                            <div class="text-center" style="font-size:12px;">
+                                <h5 style="font-size: 13px;">
+                                    <div>
+                                        <span t-out="o.company_id.street2"/>
+                                        <span t-out="o.company_id.l10n_mx_edi_colony"/>
+                                        <span t-out="o.company_id.l10n_mx_edi_colony_code"/>
+                                        <span t-out="o.company_id.l10n_mx_edi_locality_id.name"/>
+                                    </div>
+                                    <div>
+                                        <span t-out="o.company_id.city"/>
+                                        <span t-out="o.company_id.state_id.name"/>
+                                        <span t-out="o.company_id.zip"/>
+                                        <span t-out="o.company_id.country_id.name"/>
+                                    </div>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

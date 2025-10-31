@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--    07/06/23 Clean the view from company in mercadolibre page.-->
+        <record model="ir.ui.view" id="view_company_page_mercadolibre_stock_entended">
+            <field name="name">res.company.form.meli.stock.extended</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="meli_oerp_stock.view_company_page_mercadolibre_stock"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='mercadolibre_cron_get_shipments']" position="replace"/>
+                <xpath expr="//button[@name='cron_meli_shipments']" position="replace">
+                    <label for="mercadolibre_cron_get_shipments"/>
+                    <div class="o_row">
+                        <field name="mercadolibre_cron_get_shipments" invisible="0" groups="base.group_no_one"/>
+                        <button name="cron_meli_shipments" type="object" class="oe_stat_button">
+                            <i class="fa fa-refresh mr-1"/>Cron Meli Shipments
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

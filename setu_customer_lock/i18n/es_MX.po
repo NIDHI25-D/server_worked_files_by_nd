@@ -1,0 +1,123 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* setu_customer_lock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-24 13:10+0000\n"
+"PO-Revision-Date: 2021-06-24 13:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_customer_lock
+#: model:res.groups,name:setu_customer_lock.allow_customer_lock
+msgid "Allow customer lock"
+msgstr "Permitir bloqueo de clientes"
+
+#. module: setu_customer_lock
+#: model:ir.model,name:setu_customer_lock.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: setu_customer_lock
+#: model:ir.actions.act_window,name:setu_customer_lock.customer_lock_action
+#: model_terms:ir.ui.view,arch_db:setu_customer_lock.setu_customer_lock_form
+#: model_terms:ir.ui.view,arch_db:setu_customer_lock.setu_customer_lock_tree
+msgid "Customer Lock"
+msgstr "Bloqueo del cliente"
+
+#. module: setu_customer_lock
+#: model:ir.ui.menu,name:setu_customer_lock.customer_lock_action_menu
+msgid "Customer Lock Reason"
+msgstr "Razon de bloqueo"
+
+#. module: setu_customer_lock
+#: model:ir.model.fields,field_description:setu_customer_lock.field_res_partner_category__is_customer_lock_reason
+msgid "Is it for customer locking?"
+msgstr "¿Es para bloqueo del cliente?"
+
+#. module: setu_customer_lock
+#: model:ir.model.fields,field_description:setu_customer_lock.field_res_partner__is_customer_locked
+#: model:ir.model.fields,field_description:setu_customer_lock.field_res_users__is_customer_locked
+msgid "Locked Customers"
+msgstr "Clientes Bloqueados"
+
+#. module: setu_customer_lock
+#. openerp-web
+#: code:addons/marvelsa_addons/setu_customer_lock/static/src/js/screens.js:19
+#: code:addons/setu_customer_lock/static/src/js/screens.js:19
+#, python-format
+msgid "Locked!"
+msgstr "¡Bloqueado!"
+
+#. module: setu_customer_lock
+#: code:addons/marvelsa_addons/setu_customer_lock/models/res_partner.py:14
+#: code:addons/setu_customer_lock/models/res_partner.py:14
+#, python-format
+msgid "No access right for set customer lock. \n"
+"Please contact to your Administrator"
+msgstr "Sin derecho de acceso para configurar un bloqueo personalizado. \n"
+"Comuníquese con su administrador"
+
+#. module: setu_customer_lock
+#: model:ir.model,name:setu_customer_lock.model_res_partner_category
+msgid "Partner Tags"
+msgstr "Etiquetas de empresa"
+
+#. module: setu_customer_lock
+#: model:ir.model,name:setu_customer_lock.model_sale_order
+msgid "Sale Order"
+msgstr ""
+
+#. module: setu_customer_lock
+#: model:ir.model.fields,help:setu_customer_lock.field_res_partner_category__is_customer_lock_reason
+msgid "Set this True, if you want to lock this customer from creating a sale order"
+msgstr "Establezca esto en Verdadero, si desea evitar que este cliente cree una orden de venta"
+
+#. module: setu_customer_lock
+#: code:addons/marvelsa_addons/setu_customer_lock/models/sale_order.py:17
+#: code:addons/marvelsa_addons/setu_customer_lock/models/sale_order.py:30
+#: code:addons/setu_customer_lock/models/sale_order.py:17
+#: code:addons/setu_customer_lock/models/sale_order.py:30
+#, python-format
+msgid "The client is blocked, please contact the credit and collection area for clarification"
+msgstr "El cliente está bloqueado, por favor contacte con el área de crédito y cobranza para aclaraciones"
+
+#. module: setu_customer_lock
+#. openerp-web
+#: code:addons/marvelsa_addons/setu_customer_lock/static/src/js/screens.js:20
+#: code:addons/setu_customer_lock/static/src/js/screens.js:20
+#, python-format
+msgid "Unable to process the order as this customer has been locked."
+msgstr "No se puede procesar el pedido porque este cliente ha sido bloqueado."
+
+#. module: setu_customer_lock
+#: model:ir.model,name:setu_customer_lock.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: setu_customer_lock
+#: code:addons/marvelsa_addons/setu_customer_lock/controller/main.py:22
+#: code:addons/marvelsa_addons/setu_customer_lock/controller/main.py:39
+#: code:addons/marvelsa_addons/setu_customer_lock/controller/main.py:55
+#: code:addons/setu_customer_lock/controller/main.py:22
+#: code:addons/setu_customer_lock/controller/main.py:39
+#: code:addons/setu_customer_lock/controller/main.py:55
+#, python-format
+msgid "Your user is blocked, please contact the credit and collection area for clarification."
+msgstr "Su usuario está bloqueado, comuníquese con el área de crédito y cobranza para una aclaración"
+
+#. module: setu_customer_lock
+#: code:addons/setu_customer_lock/models/repair.py:0
+#: code:addons/setu_customer_lock/models/repair.py:0
+#, python-format
+msgid "Unable to process the order as this customer has been locked, please contact the credit and collection area for clarification."
+msgstr "No se puede procesar la orden de reparación ya que este cliente ha sido bloqueado, por favor contacte con el área de crédito y cobranza para aclaraciones."
+
+

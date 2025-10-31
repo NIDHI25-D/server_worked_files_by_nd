@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="sale_order_form_view_for_latest_stripe_charge" model="ir.ui.view">
+        <field name="name">sale.order.form.view.for.latest.stripe.charge</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_info']" position="inside">
+                <field name="latest_charge_stripe" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

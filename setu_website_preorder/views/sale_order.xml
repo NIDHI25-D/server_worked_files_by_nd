@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="setu_pre_order_sales_order_search">
+        <field name="name">sale.order.list.select</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter string="Pre-Sale" domain="[('order_line.is_presale','=',True)]" name="pre_sale_filter"/>
+                <filter string="Pre-Order" domain="[('order_line.is_preorder','=',True)]" name="pre_order_filter"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_saleorder_form_inherit" model="ir.ui.view">
+        <field name="name">view.saleorder.form.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[@name='customer_lead']" position="before">
+                <field name="is_presale" column_invisible="1"/>
+                <field name="tentative_arrival_date" readonly="1" column_invisible="not parent.is_presale"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="is_presale" invisible="1"/>
+                <field name="is_preorder" invisible="1"/>
+                <field name="is_international_preorder" invisible="1"/>
+                <field name="is_next_day_shipping"/>
+                <field name="cancel_order_time_limit" readonly="1"
+                       invisible="is_presale or is_preorder or is_international_preorder or is_next_day_shipping or state not in ('sale')"/>
+                <field name="sale_order_cancel_from_website" readonly="True" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

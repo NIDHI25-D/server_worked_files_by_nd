@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_estafeta_shipping_charge,estafeta_shipping_charge,model_estafeta_shipping_charge,,1,1,1,1
+access_estafeta_tracking_status,estafeta_tracking_status,model_estafeta_tracking_status,,1,1,1,1
+
+
+
+
+
+
+
+

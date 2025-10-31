@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherit_employee_performance_report" model="ir.ui.view">
+        <field name="name">hr.employee.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='public']" position="after">
+                <page string="Employee Performance Report" groups="base.group_no_one">
+                    <field name="emp_perf_rep_lines">
+                        <tree string="Employee Performance Report" editable="bottom" create="true" delete="true">
+                            <field name="assessment_period"/>
+                            <field name="pot_per_rate"/>
+                            <field name="employee_name" invisible="1"/>
+                            <field name="manager_name"/>
+                            <field name="job_position"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button name="action_view_performance" type="object" class="oe_stat_button" icon="fa-certificate">
+                    <field name="performance_count" widget="statinfo" string="Performance" help="Employee Performance"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

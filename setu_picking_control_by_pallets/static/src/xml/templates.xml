@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-inherit="stock_barcode.MainComponent" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[hasclass('o_put_in_pack')]" position="after">
+            <button t-on-click="putInPack"
+                     class="o_massive_package btn btn-secondary text-uppercase"
+                    t-attf-context="{'massive_package': true}">
+                    <i class="fa fa-cube me-1"/> Massive Package
+                </button>
+        </xpath>
+    </t>
+</templates>

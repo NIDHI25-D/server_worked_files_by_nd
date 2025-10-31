@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_blacklist_concept_loyalty_program_form" model="ir.ui.view">
+        <field name="name">view.blacklist.concept.loyalty.program.form</field>
+        <field name="model">loyalty.program</field>
+        <field name="inherit_id" ref="loyalty.loyalty_program_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="Blacklisted_partner" string="Blacklisted Customers"
+                      invisible="program_type != 'loyalty'">
+                    <p>Note : Blacklisted Customers will not be eligible to get any type of loyalty points.</p>
+                    <field name="blacklist_partner_ids" nolabel="1" readonly="1">
+                        <list string="Customers">
+                            <field name="name"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

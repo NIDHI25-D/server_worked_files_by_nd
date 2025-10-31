@@ -1,0 +1,461 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_prioritization_of_pickings
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-10 11:08+0000\n"
+"PO-Revision-Date: 2024-10-10 11:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__active
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__active
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: setu_prioritization_of_pickings
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.complexity_levels_search_view
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.priority_rules_search_view
+msgid "Archived"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_stock_picking__assignment_date_time
+msgid "Assignment date and time"
+msgstr "Fecha y Hora de Asignacion"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.menu_assortment_team
+msgid "Assortment"
+msgstr "Surtido"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.actions.act_window,name:setu_prioritization_of_pickings.action_assortment_team
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_stock_picking__assortment_team_id
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.assortment_team_tree_view
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.priority_rules_tree_view
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.view_picking_internal_search
+msgid "Assortment Team"
+msgstr "Equipos de Surtido"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.actions.act_window,name:setu_prioritization_of_pickings.action_assortment_team_types
+msgid "Assortment Team Types"
+msgstr "Tipos de Equipos de Surtido"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.sub_menu_assortment_team
+msgid "Assortment team"
+msgstr "Equipo de Surtido"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.sub_menu_assortment_team_types
+msgid "Assortment team types"
+msgstr "Tipos de Equipos de Surtido"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__available
+msgid "Available"
+msgstr "Disponible"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.actions.server,name:setu_prioritization_of_pickings.ir_cron__ir_actions_server
+#: model:ir.cron,cron_name:setu_prioritization_of_pickings.ir_cron_
+msgid "Calculate Minimum Quantity"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_stock_picking__complexity_assigned_id
+msgid "Complexity Assigned"
+msgstr "Complejidad Asignada"
+
+#. module: setu_prioritization_of_pickings
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.assortment_team_types_form_view
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.view_combo_complexity_assortment_team_type_form
+msgid "Complexity Assortment Team Type"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__complexity_assortment_team_type_ids
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.assortment_team_types_form_view
+msgid "Complexity Assortment Team Types"
+msgstr "Complejidad de Tipos de Equipos de Surtido"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__complexity_levels_id
+msgid "Complexity Level"
+msgstr "Nivel de Complejidad"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.actions.act_window,name:setu_prioritization_of_pickings.action_complexity_levels
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.menu_complexity_levels
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.sub_menu_complexity_levels
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.complexity_levels_tree_view
+msgid "Complexity Levels"
+msgstr "Niveles de Complejidad"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__complexity_sequence
+msgid "Complexity Sequence"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__create_uid
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__create_uid
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__create_uid
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__create_uid
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__create_date
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__create_date
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__create_date
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__create_date
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__display_name
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__display_name
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__display_name
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__display_name
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_crm_team__is_ecommerce_team
+msgid "Ecommerce Related ?"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__end_range_of_lines
+msgid "End range of lines"
+msgstr "Rango final de Lineas"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.view_picking_internal_search
+msgid "Group By"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model_terms:ir.actions.act_window,help:setu_prioritization_of_pickings.setu_prioritization_view_action
+msgid "Hello user,"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__id
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__id
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__id
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__id
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__id
+msgid "ID"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,help:setu_prioritization_of_pickings.field_priority_rules__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,help:setu_prioritization_of_pickings.field_priority_rules__message_has_error
+#: model:ir.model.fields,help:setu_prioritization_of_pickings.field_priority_rules__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__initial_range_of_lines
+msgid "Initial range of lines"
+msgstr "Rango Inicial de Lineas"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team____last_update
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types____last_update
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type____last_update
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels____last_update
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__write_uid
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__write_uid
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__write_uid
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__write_uid
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__write_date
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__write_date
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__write_date
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__write_date
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_stock_picking__lines_quantity
+msgid "Lines Quantity"
+msgstr "Cantidad de Lineas"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__maximum_lines
+msgid "Maximum Lines"
+msgstr "Maximo de lineas"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__members_ids
+msgid "Members"
+msgstr "Integrantes"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__name
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__name
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_complexity_levels__name
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields.selection,name:setu_prioritization_of_pickings.selection__stock_picking__prioritization_priority__no_rule
+msgid "No rule"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields.selection,name:setu_prioritization_of_pickings.selection__stock_picking__prioritization_priority__null
+msgid "None"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,help:setu_prioritization_of_pickings.field_priority_rules__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,help:setu_prioritization_of_pickings.field_priority_rules__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team_types__operation_types_ids
+msgid "Operation Type"
+msgstr "Tipo de Operacion"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__stock_picking_ids
+msgid "Pending Transfers"
+msgstr "Transferencias Pendientes"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.actions.server,name:setu_prioritization_of_pickings.ir_cron_prioritization_of_picking_ir_actions_server
+#: model:ir.cron,cron_name:setu_prioritization_of_pickings.ir_cron_prioritization_of_picking
+msgid "Prioritization Of picking"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.actions.act_window,name:setu_prioritization_of_pickings.setu_prioritization_view_action
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.menu_prioritization_action
+msgid "Prioritization Priorities"
+msgstr "Transferencias Priorizadas"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_stock_picking__prioritization_priority
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.view_picking_internal_search
+msgid "Prioritization Priority"
+msgstr "Prioridad Assignada"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.setu_prioritization_of_pickings_menu
+msgid "Prioritization of Pickings"
+msgstr "Priorizacion de Pickings"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.actions.act_window,name:setu_prioritization_of_pickings.action_priority_rules
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.menu_priority_rules
+#: model:ir.ui.menu,name:setu_prioritization_of_pickings.sub_menu_priority_rules
+msgid "Priority Rules"
+msgstr "Reglas de Prioridades"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__priority
+msgid "Priority set"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model,name:setu_prioritization_of_pickings.model_crm_team
+msgid "Sales Team"
+msgstr "Equipo de ventas"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model,name:setu_prioritization_of_pickings.model_stock_picking
+msgid "StockPicking"
+msgstr "Traslado"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__suggested_complex_id
+msgid "Suggested Complex"
+msgstr "Complejidad Sugerida"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_combo_complexity_assortment_team_type__combo_assortment_team_type_id
+msgid "Team"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__assortment_team_priority
+msgid "Team sequence"
+msgstr "Secuencia de Equipo"
+
+#. module: setu_prioritization_of_pickings
+#: model_terms:ir.actions.act_window,help:setu_prioritization_of_pickings.setu_prioritization_view_action
+msgid "There are no records for Prioritization"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__transfer_domain
+msgid "Transfer Domain"
+msgstr "Dominio de Transferencia"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__warehouse_id
+msgid "Warehouse"
+msgstr "Almacen"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_assortment_team__warehouse_team_type_id
+msgid "Warehouse Team type"
+msgstr "Tipo de Equipo de Almacen"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,field_description:setu_prioritization_of_pickings.field_priority_rules__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model.fields,help:setu_prioritization_of_pickings.field_priority_rules__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#. odoo-python
+#: code:addons/setu_prioritization_of_pickings/models/assortment_team.py:0
+#, python-format
+msgid "You can't add more than 2 members"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#. odoo-python
+#: code:addons/setu_prioritization_of_pickings/models/assortment_team_types.py:0
+#, python-format
+msgid ""
+"You cannot update Maximum Lines as it has transfers left to be validate"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model_terms:ir.ui.view,arch_db:setu_prioritization_of_pickings.assortment_team_types_tree_view
+msgid "assortment Team"
+msgstr "Equipos de Surtido"
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model,name:setu_prioritization_of_pickings.model_assortment_team
+msgid "assortment.team"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model,name:setu_prioritization_of_pickings.model_assortment_team_types
+msgid "assortment.team.types"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model,name:setu_prioritization_of_pickings.model_combo_complexity_assortment_team_type
+msgid "combo.complexity.assortment.team.type"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model,name:setu_prioritization_of_pickings.model_complexity_levels
+msgid "complexity.levels"
+msgstr ""
+
+#. module: setu_prioritization_of_pickings
+#: model:ir.model,name:setu_prioritization_of_pickings.model_priority_rules
+msgid "priority.rules"
+msgstr ""

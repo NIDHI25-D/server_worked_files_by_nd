@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="setu_advance_budget_forecasted_sheet_tree_view" model="ir.ui.view">
+            <field name="name">setu.advance.budget.forecasted.sheet.tree.view</field>
+            <field name="model">setu.advance.budget.forecasted.sheet</field>
+            <field name="arch" type="xml">
+                <tree string="Budget Forecasted Sheet">
+                    <field name="setu_advance_budget_forecasted_id"/>
+                    <field name="analytic_account_id"/>
+                    <field name="planned_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="setu_advance_budget_forecasted_sheet_form_view" model="ir.ui.view">
+            <field name="name">setu.advance.budget.forecasted.sheet.form.view</field>
+            <field name="model">setu.advance.budget.forecasted.sheet</field>
+            <field name="arch" type="xml">
+                <form string="Budget Forecasted Sheet">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="setu_advance_budget_forecasted_id" invisible="True"/>
+                                <field name="analytic_account_id"/>
+                            </group>
+                            <group>
+                                <field name="planned_amount"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Sheet Lines" name="sheet_lines">
+                                 <field name="setu_advance_budget_forecasted_sheet_line_ids" context="{'default_setu_advance_budget_forecasted_id': setu_advance_budget_forecasted_id}" colspan="4"  nolabel="1">
+                                    <tree string="Budget Forecasted Sheet Lines">
+                                        <field name="setu_advance_budget_forecasted_id" invisible="1" force_save="1"/>
+                                        <field name="setu_advance_budget_forecasted_sheet_id"   invisible="1" force_save="1"/>
+                                        <field name="analytic_account_id" readonly="1"/>
+                                        <field name="account_id"/>
+                                        <field name="planned_amount"/>
+                                    </tree>
+                                     <form string="Budget Forecasted Sheet Line">
+                                          <group>
+                                                <group>
+                                                    <field name="setu_advance_budget_forecasted_id" invisible="1" force_save="1"/>
+                                                    <field name="setu_advance_budget_forecasted_sheet_id" invisible="1" force_save="1"/>
+                                                    <field name="analytic_account_id"/>
+                                                </group>
+                                                <group>
+                                                    <field name="account_id" requird="True"/>
+                                                </group>
+                                          </group>
+                                         <notebook>
+                                             <page string="Forecasted Position" name="forecasted_position">
+                                                  <field name="setu_advance_budget_forecasted_position_ids" context="{'default_setu_advance_budget_forecasted_id': setu_advance_budget_forecasted_id,'default_setu_advance_budget_forecasted_sheet_id': setu_advance_budget_forecasted_sheet_id}" colspan="4"  nolabel="1">
+                                                      <tree string="Budget Position" create="0" delete="false" editable="bottom">
+                                                            <field name="start_date" readonly="1"/>
+                                                            <field name="end_date"  readonly="1"/>
+                                                            <field name="forecasted_type"/>
+                                                            <field name="planned_amount"/>
+                                                            <field name="setu_advance_budget_forecasted_id" invisible="1" force_save="1"/>
+                                                            <field name="setu_advance_budget_forecasted_sheet_id" invisible="1" force_save="1"/>
+                                                            <field name="setu_advance_budget_forecasted_sheet_line_id" invisible="1" force_save="1"/>
+                                                        </tree>
+                                                  </field>
+                                             </page>
+                                         </notebook>
+                                     </form>
+
+                                 </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="setu_advance_budget_forecasted_sheet_action" model="ir.actions.act_window">
+            <field name="name">Forecasted Sheet</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">setu.advance.budget.forecasted.sheet</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Budget Forecasted Sheet.
+                </p>
+            </field>
+        </record>
+
+        <record id="setu_advance_budget_forecasted_sheet_action_open" model="ir.actions.act_window">
+            <field name="name">Forecasted Sheet</field>
+            <field name="res_model">setu.advance.budget.forecasted.sheet</field>
+        </record>
+
+        <menuitem id="setu_advance_budget_forecasted_sheet_menu" name="Forecasted Sheet"  parent="setu_advance_budget_forecasted_planing_main_menu" action="setu_advance_budget_forecasted_sheet_action"/>
+
+    </data>
+</odoo>

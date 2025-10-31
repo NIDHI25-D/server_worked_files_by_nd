@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="setu_customer_lock_inherit" model="ir.ui.view">
+            <field name="name">res.partner.category.form</field>
+            <field name="model">res.partner.category</field>
+            <field name="inherit_id" ref="base.view_partner_category_form"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <field name="is_customer_lock_reason"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="setu_customer_lock_form" model="ir.ui.view">
+            <field name="name">res.partner.category.form</field>
+            <field name="model">res.partner.category</field>
+<!--            <field name="inherit_id" ref="base.view_partner_category_form"></field>-->
+            <field name="arch" type="xml">
+                <form string="Customer Lock">
+                    <sheet>
+                        <field name="is_customer_lock_reason"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="setu_customer_lock_inherit_tree" model="ir.ui.view">
+            <field name="name">res.partner.category.tree</field>
+            <field name="model">res.partner.category</field>
+            <field name="inherit_id" ref="base.view_partner_category_list"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="is_customer_lock_reason"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="setu_customer_lock_tree" model="ir.ui.view">
+            <field name="name">res.partner.category.tree</field>
+            <field name="model">res.partner.category</field>
+            <field name="arch" type="xml">
+                <list string="Customer Lock" editable="top">
+                    <field name="is_customer_lock_reason"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="customer_lock_action" model="ir.actions.act_window">
+            <field name="name">Customer Lock</field>
+            <field name="res_model">res.partner.category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem id="customer_lock_action_menu" name="Customer Lock Reason" action="customer_lock_action"
+                  parent="sale.menu_sale_config" sequence="17"/>
+
+    </data>
+</odoo>

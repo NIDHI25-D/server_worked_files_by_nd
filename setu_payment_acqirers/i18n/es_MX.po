@@ -1,0 +1,128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_payment_acqirers
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-09 08:39+0000\n"
+"PO-Revision-Date: 2024-05-09 08:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_payment_provider__enable_monthly_installment
+msgid "Enable Monthly Installment"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__id
+msgid "ID"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_sale_order_line__is_created_from_instalment
+msgid "Is Created From Instalment"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_sale_order__latest_charge_stripe
+msgid "Latest Charge Of Stripe"
+msgstr "Stripe Identificador de Pago"
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__minimum_amount
+msgid "Minimum Amount"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_payment_provider__monthly_installment_ids
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_sale_order__monthly_installment_id
+#: model_terms:ir.ui.view,arch_db:setu_payment_acqirers.provider_for_monthly_installment
+msgid "Monthly Installment"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model,name:setu_payment_acqirers.model_monthly_installment
+msgid "MonthlyInstallment"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__months
+msgid "Months"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__payment_acquirer_id
+msgid "Payment Acquirer"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model,name:setu_payment_acqirers.model_payment_provider
+msgid "Payment Provider"
+msgstr "Método de pago"
+
+#. module: setu_payment_acqirers
+#: model:ir.model,name:setu_payment_acqirers.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Transacción de pago"
+
+#. module: setu_payment_acqirers
+#: model:ir.model,name:setu_payment_acqirers.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: setu_payment_acqirers
+#: model:ir.model.fields,field_description:setu_payment_acqirers.field_monthly_installment__pricelist_id
+msgid "Pricelist"
+msgstr ""
+
+#. module: setu_payment_acqirers
+#: model:ir.model,name:setu_payment_acqirers.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: setu_payment_acqirers
+#: model:ir.model,name:setu_payment_acqirers.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de la orden de venta"
+
+#. module: setu_payment_acqirers
+#: model_terms:ir.ui.view,arch_db:setu_payment_acqirers.inline_form_for_stripe
+msgid "You are inviting a new user."
+msgstr ""

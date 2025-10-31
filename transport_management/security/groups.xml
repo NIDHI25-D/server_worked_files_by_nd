@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data noupdate="0">
+       <record model="ir.module.category" id="transport_management.module_category_transport_management">
+           <field name="name">Transport Management</field>
+           <field name="description">Helps you to manage different shipping operations.</field>
+           <field name="sequence">22</field>
+       </record>
+       <record id="shipment_officer" model="res.groups">
+           <field name="category_id" ref="transport_management.module_category_transport_management"/>
+           <field name="name">Officer</field>
+           <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+       </record>
+       <record id="shipment_manager" model="res.groups">
+           <field name="category_id" ref="transport_management.module_category_transport_management"/>
+           <field name="name">Manager</field>
+           <field name="implied_ids" eval="[(4, ref('shipment_officer'))]"/>
+       </record>
+   </data>
+</odoo>

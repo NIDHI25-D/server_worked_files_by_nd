@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="setu_ecommerce_checkout_extended_form_view" model="ir.ui.view">
+            <field name="name">setu.ecommerce.website.configuration.form.view</field>
+            <field name="model">website</field>
+            <field name="inherit_id" ref="website.view_website_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_lang_id']" position="after">
+                    <field name="hcategory_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

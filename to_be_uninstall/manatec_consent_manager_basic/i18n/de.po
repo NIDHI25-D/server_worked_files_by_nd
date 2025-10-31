@@ -1,0 +1,75 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* manatec_consent_manager_basic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-25 11:13+0000\n"
+"PO-Revision-Date: 2020-08-25 11:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: manatec_consent_manager_basic
+#: model_terms:ir.ui.view,arch_db:manatec_consent_manager_basic.res_config_settings_view_form_inherit
+msgid "/data-policy"
+msgstr "/datenschutz"
+
+#. module: manatec_consent_manager_basic
+#: model_terms:ir.ui.view,arch_db:manatec_consent_manager_basic.res_config_settings_view_form_inherit
+msgid "<span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-specific.\" groups=\"website.group_multi_website\"/>"
+msgstr "<span class=\"fa fa-lg fa-globe\" title=\"Die hier eingestellten Werte sind Website-spezifisch.\" groups=\"website.group_multi_website\"/>"
+
+#. module: manatec_consent_manager_basic
+#: model:ir.model,name:manatec_consent_manager_basic.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguration "
+
+#. module: manatec_consent_manager_basic
+#: model_terms:ir.ui.view,arch_db:manatec_consent_manager_basic.res_config_settings_view_form_inherit
+msgid "Cookie Consent Management"
+msgstr "Cookie-Zustimmungs-Verwaltung"
+
+#. module: manatec_consent_manager_basic
+#: model:ir.model.fields,field_description:manatec_consent_manager_basic.field_res_config_settings__cookie_domain
+#: model:ir.model.fields,field_description:manatec_consent_manager_basic.field_website__cookie_domain
+#: model_terms:ir.ui.view,arch_db:manatec_consent_manager_basic.res_config_settings_view_form_inherit
+msgid "Cookie Domain"
+msgstr ""
+
+#. module: manatec_consent_manager_basic
+#: model_terms:ir.ui.view,arch_db:manatec_consent_manager_basic.res_config_settings_view_form_inherit
+msgid "Domain for the cookies"
+msgstr "Domain für die Cookies"
+
+#. module: manatec_consent_manager_basic
+#: model_terms:ir.ui.view,arch_db:manatec_consent_manager_basic.res_config_settings_view_form_inherit
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+#. module: manatec_consent_manager_basic
+#: model:ir.model.fields,field_description:manatec_consent_manager_basic.field_res_config_settings__privacy_policy_url
+#: model:ir.model.fields,field_description:manatec_consent_manager_basic.field_website__privacy_policy_url
+msgid "URL"
+msgstr ""
+
+#. module: manatec_consent_manager_basic
+#: model_terms:ir.ui.view,arch_db:manatec_consent_manager_basic.res_config_settings_view_form_inherit
+msgid "URL to your website privacy policy"
+msgstr "URL zur Datenschutzrichtlinie Ihrer Website"
+
+#. module: manatec_consent_manager_basic
+#: model:ir.model,name:manatec_consent_manager_basic.model_website
+msgid "Website"
+msgstr "Webseite"
+
+#. module: manatec_consent_manager_basic
+#: model_terms:ir.ui.view,arch_db:manatec_consent_manager_basic.res_config_settings_view_form_inherit
+msgid "odoo.com"
+msgstr ""
+

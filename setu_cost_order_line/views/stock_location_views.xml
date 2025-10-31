@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="setu_cost_order_line_inherited_view_location_form" model="ir.ui.view">
+        <field name="name">setu.cost.order.line.inherited.view.location.form</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='additional_info']//field[@name='company_id']" position="after">
+                <field name="return_location"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

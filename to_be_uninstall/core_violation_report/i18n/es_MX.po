@@ -1,0 +1,252 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* core_violation_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-07 10:45+0000\n"
+"PO-Revision-Date: 2023-12-07 10:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__all_employee
+msgid "All Employee"
+msgstr "Todos los empleados"
+
+#. module: core_violation_report
+#: model:ir.model.fields.selection,name:core_violation_report.selection__core_violation_tree__violation_selection__both
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_time_violation_search
+msgid "Both"
+msgstr "Ambos"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_violation_report_form
+msgid "CREATE"
+msgstr "CREAR"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_violation_report_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__violation_check_in
+#: model_terms:ir.ui.view,arch_db:core_violation_report.report_core_violation
+msgid "Check in"
+msgstr "Registro"
+
+#. module: core_violation_report
+#: model:ir.model.fields.selection,name:core_violation_report.selection__core_violation_tree__violation_selection__check_in_violation
+msgid "Check in Violation"
+msgstr "Infracción de registro"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__violation_check_out
+#: model_terms:ir.ui.view,arch_db:core_violation_report.report_core_violation
+msgid "Check out"
+msgstr "echa un vistazo"
+
+#. module: core_violation_report
+#: model:ir.model.fields.selection,name:core_violation_report.selection__core_violation_tree__violation_selection__check_out_violation
+msgid "Check out violation"
+msgstr "Comprueba la infracción"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_time_violation_search
+msgid "Checkin violation"
+msgstr "Violación de check-in"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_time_violation_search
+msgid "Checkout violation"
+msgstr "Infracción de pago"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_time_violation_search
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_violation_report_tree
+msgid "Core Time Violation"
+msgstr "Violación del tiempo central"
+
+#. module: core_violation_report
+#: model:ir.actions.act_window,name:core_violation_report.core_violation_report_action
+#: model:ir.model,name:core_violation_report.model_core_violation
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_violation_report_form
+msgid "Core Violation Report"
+msgstr "Informe de infracción principal"
+
+#. module: core_violation_report
+#: model:ir.actions.report,name:core_violation_report.core_violation_report_details
+msgid "Core Violation Report as PDF"
+msgstr "Informe de infracción principal en formato PDF"
+
+#. module: core_violation_report
+#: model:ir.model,name:core_violation_report.model_core_violation_tree
+msgid "Core Violation Tree View"
+msgstr "Vista de árbol de violaciones principales"
+
+#. module: core_violation_report
+#. odoo-python
+#: code:addons/core_violation_report/wizard/core_violation.py:0
+#: model:ir.ui.menu,name:core_violation_report.core_violation_action_menu
+#, python-format
+msgid "Core time violation"
+msgstr "violación del tiempo central"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__create_uid
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__create_date
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_time_violation_search
+msgid "Date"
+msgstr "Fecha"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__date
+#: model_terms:ir.ui.view,arch_db:core_violation_report.report_core_violation
+msgid "Day"
+msgstr "Día"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__display_name
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_time_violation_search
+#: model_terms:ir.ui.view,arch_db:core_violation_report.report_core_violation
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__employee_id
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__employee_id
+msgid "Employee Name"
+msgstr "Nombre del empleado"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__end_date
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__end_time
+msgid "End time"
+msgstr "Hora de finalización"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__file_content
+msgid "File Content"
+msgstr "Contenido del archivo"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__id
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__id
+msgid "ID"
+msgstr "identificación"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__boolean_check_in
+msgid "Is boolean check in?"
+msgstr "¿El registro es booleano?"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__boolean_check_out
+msgid "Is boolean out in?"
+msgstr "¿Está el valor booleano?"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation____last_update
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__write_uid
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__write_date
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: core_violation_report
+#: model:ir.model.fields.selection,name:core_violation_report.selection__core_violation_tree__violation_selection__missed
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_time_violation_search
+msgid "Missed"
+msgstr "perdido"
+
+#. module: core_violation_report
+#. odoo-python
+#: code:addons/core_violation_report/wizard/core_violation.py:0
+#: code:addons/core_violation_report/wizard/core_violation.py:0
+#, python-format
+msgid "No records found."
+msgstr "No se encontraron registros."
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__remark_field
+#: model_terms:ir.ui.view,arch_db:core_violation_report.report_core_violation
+msgid "Remark"
+msgstr "Observación"
+
+#. module: core_violation_report
+#: model:ir.ui.menu,name:core_violation_report.inherit_reporting_button
+msgid "Reporting"
+msgstr "Informes"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_violation_report_form
+msgid "Select Employee"
+msgstr "Seleccionar empleado"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_violation_report_form
+msgid "Select time range"
+msgstr "Seleccionar rango de tiempo"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation__start_time
+msgid "Start time"
+msgstr "hora de inicio"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_time_violation_search
+msgid "Type of Violation"
+msgstr "Tipo de infracción"
+
+#. module: core_violation_report
+#: model:ir.model.fields,field_description:core_violation_report.field_core_violation_tree__violation_selection
+#: model_terms:ir.ui.view,arch_db:core_violation_report.report_core_violation
+msgid "Type of violation"
+msgstr "Tipo de infracción"
+
+#. module: core_violation_report
+#: model_terms:ir.ui.view,arch_db:core_violation_report.core_violation_report_form
+msgid "VIEW DATA"
+msgstr "VER DATOS"

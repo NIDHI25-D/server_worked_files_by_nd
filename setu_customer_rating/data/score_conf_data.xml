@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="score_conf_avg_sales_amt" model="score.conf">
+            <field name="id">1</field>
+            <field name="calculation_formula">avg_monthly_sales</field>
+            <field name='name'>Average Sales Amount</field>
+            <field name="calculation_based_on">price</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="score_conf_avg_monthly_sales_refund" model="score.conf">
+            <field name="id">2</field>
+            <field name="calculation_formula">avg_monthly_refund</field>
+            <field name='name'>Average Monthly Sales Refund</field>
+            <field name="calculation_based_on">percentage</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="score_conf_qty_invoice_paid_after_due" model="score.conf">
+            <field name="id">3</field>
+            <field name="calculation_formula">qty_invoice_paid</field>
+            <field name='name'>Quantity Of invoices Paid After Due Date</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="score_conf_amt_invoice_paid_after_due" model="score.conf">
+            <field name="id">4</field>
+            <field name="calculation_formula">amt_invoice_paid</field>
+            <field name='name'>Amount Of Invoices Paid After Due Date</field>
+            <field name="calculation_based_on">price</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="score_conf_qty_invoice_paid_after_x_days" model="score.conf">
+            <field name="id">5</field>
+            <field name="calculation_formula">qty_invoice_due</field>
+            <field name='name'>Quantity of Invoices Due after X Days</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="score_conf_amt_invoices_due_after_x_days" model="score.conf">
+            <field name="id">6</field>
+            <field name="calculation_formula">amt_invoice_due</field>
+            <field name='name'>Amount Of Invoices Due After X Days</field>
+            <field name="calculation_based_on">price</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="score_conf_avg_payment_days" model="score.conf">
+            <field name="id">7</field>
+            <field name="calculation_formula">avg_payment_days</field>
+            <field name='name'>Average Payment Days in Purchase History</field>
+            <field name="calculation_based_on">quantity</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+    </data>
+</odoo>

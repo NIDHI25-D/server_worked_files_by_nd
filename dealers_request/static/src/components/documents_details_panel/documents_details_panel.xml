@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="documents.DocumentsDetailsPanel" t-inherit-mode="extension">
+         <xpath expr="//div[contains(@class, 'o_documents_details_panel')]" position="attributes">
+            <attribute name="t-attf-class">
+            o_documents_details_panel p-3 pb-2 border-bottom border-secondary w-100 overflow-auto
+        </attribute>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'mb-2')]" position="after">
+            <div style="max-height: 200px; overflow-y: auto;">
+            <div t-if="record.data.res_model === 'dealer.request' or record.data.res_model === 'documents.document' and record.data.tag_ids.records[0] and record.data.tag_ids.records[0].data.display_name === 'Dealer > Rejected'" class="mb-2" >
+<!--                <t t-debug="pdb"/>-->
+                <div class="d-flex mx-auto align-items-center">
+                     <span class="fw-bold me-2">Reject Reason</span>
+                     <div class="o_field_widget o_field_many2one">
+                         <Many2OneAvatarField
+                             name="'reject_reason'"
+                             readonly="userPermissionViewOnly"
+                             record="record"
+                             canOpen="false"
+                             canCreate="true"
+                             canQuickCreate="false"
+                             canCreateEdit="false"
+                         />
+                     </div>
+                </div>
+            </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

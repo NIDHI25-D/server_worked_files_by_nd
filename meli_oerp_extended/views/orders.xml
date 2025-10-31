@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_report_shippingpreview_server" model="ir.actions.server">
+        <field name="name">Shipping Label</field>
+        <field name="model_id" ref="meli_oerp.model_mercadolibre_orders"/>
+        <field name="binding_model_id" ref="meli_oerp.model_mercadolibre_orders"/>
+        <field name="state">code</field>
+        <field name="binding_view_types">form</field>
+        <field name="code">action = model.get_shipping_receipt()</field>
+    </record>
+
+    <record id="action_report_shipping_sale_preview_server" model="ir.actions.server">
+        <field name="name">Shipping Label</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="state">code</field>
+        <field name="binding_view_types">form,list</field>
+        <field name="code">
+            action = model.get_shipping_receipt()
+        </field>
+    </record>
+</odoo>

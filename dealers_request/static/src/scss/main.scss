@@ -1,0 +1,24 @@
+.dealer_request{
+    .dealer_header{
+        padding: 8px 15px 8px 15px;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        margin-bottom: 25px;
+        margin-top: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #65435c; //#2C3E50;
+        background-color: #e3dbe1; //#ECEFF1
+        font-size: 16px;
+        letter-spacing: 1px
+    }
+}
+.dealer_request_from_address,input[type=submit],.help_modal_add {
+    background: #714b67; // #02908c;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 18px;
+    padding: 7px 21px;
+}

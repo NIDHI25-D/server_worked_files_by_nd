@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="ir_setting_extend_budget_form">
+            <field name="name">budget_ir_setting_form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref='account.res_config_settings_view_form'/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-key='account']" position="inside">
+                    <div class="app_settings_block" id="budget_accounts">
+                        <h2>Accounts for budget</h2>
+                        <div class="row mt16 o_settings_container" name="budget_configurable_accounts">
+                            <div class="col-12 col-lg-6 o_setting_box" id="budget_configurable_account_ids">
+                                <div class="o_setting_right_pane">
+                                    <label for="account_ids"/>
+                                    <div class="content-group" style="width : 500%;">
+                                        <div class="mt16">
+                                            <field name="account_ids"  widget="many2many_tags" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app_settings_block" id="budget_analytic_accounts">
+                        <h2>Analytic accounts for budget</h2>
+                        <div class="row mt16 o_settings_container" name="budget_configurable_analytic_accounts">
+                            <div class="col-12 col-lg-6 o_setting_box" id="budget_configurable_analytic_account_ids">
+                                <div class="o_setting_right_pane">
+                                    <label for="analytic_account_ids"/>
+                                    <div class="content-group" style="width : 500%;">
+                                        <div class="mt16">
+                                            <field name="analytic_account_ids"  widget="many2many_tags" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

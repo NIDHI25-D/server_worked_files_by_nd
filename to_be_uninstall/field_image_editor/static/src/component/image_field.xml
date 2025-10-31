@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="web.ImageFieldEditor" t-inherit="web.ImageField" t-inherit-mode="extension" owl="1">
+        <xpath expr="//FileUploader" position="after">
+            <button
+                t-on-click="on_magic" 
+                class="btn btn-light border-0 rounded-circle m-1 p-1"
+                data-tooltip="Edit"
+                aria-label="Edit">
+                <i class="fa fa-magic fa-fw"/>
+            </button>
+        </xpath>
+    </t>
+
+</templates>

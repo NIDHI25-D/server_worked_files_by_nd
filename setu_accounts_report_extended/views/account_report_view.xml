@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_financial_report_line_id_form_view" model="ir.ui.view">
+        <field name="name">account.report.form</field>
+        <field name="model">account.report</field>
+        <field name="inherit_id" ref="account_reports.account_report_form"/>
+        <field name="arch" type="xml">
+            <field name="filter_period_comparison" position="after">
+                <field name="report_line_id" domain="[('report_id','=',id)]"/>
+                <field name="filter_residual_amount" />
+            </field>
+        </field>
+    </record>
+</odoo>

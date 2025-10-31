@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hr_employee_form_view_extended_with_working_schedule" model="ir.ui.view">
+        <field name="name">hr.employee.form.view.extended.with_working_schedule</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tz']" position="after">
+                <field name="employee_attendance_report_working_hour_id"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="custom_cateloges_records_rules" model="ir.rule">
+        <field name="name">User can only Create/Delete alloweds Company records</field>
+        <field name="model_id" ref="model_custom_cateloges"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]</field>
+    </record>
+
+    <record id="custom_agency_records_rules" model="ir.rule">
+        <field name="name">User can only Create/Delete alloweds Company records</field>
+        <field name="model_id" ref="model_custom_agency"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]</field>
+    </record>
+
+    <record id="purchase_carriers_records_rules" model="ir.rule">
+        <field name="name">User can only Create/Delete alloweds Company records</field>
+        <field name="model_id" ref="model_purchase_carriers"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]</field>
+    </record>
+
+    <record id="loading_port_cateloges_records_rules" model="ir.rule">
+        <field name="name">User can only Create/Delete alloweds Company records</field>
+        <field name="model_id" ref="model_loading_port_cateloges"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]</field>
+    </record>
+
+     <record id="henco_api_group" model="res.groups">
+            <field name="name">Henco Api</field>
+     </record>
+</odoo>

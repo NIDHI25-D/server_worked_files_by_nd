@@ -1,0 +1,288 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_auto_validate_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-14 04:14+0000\n"
+"PO-Revision-Date: 2022-06-14 04:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Acquisition of merchandise"
+msgstr "Adquisición de mercancías"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.invoice_note_res_config_settings_view_form
+msgid "Add Notes in Invoice for Zero Tax Configured"
+msgstr "Leyenda para IVA Taza 0"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "CFDI Usage"
+msgstr "Uso de CFDI"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Computer equipment and accessories"
+msgstr "Equipo de cómputo y accesorios"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Constructions"
+msgstr "Construcciones"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.actions.server,name:setu_auto_validate_invoice.ir_cron_process_shopify_order_chain_ir_actions_server
+#: model:ir.cron,cron_name:setu_auto_validate_invoice.ir_cron_process_shopify_order_chain
+#: model:ir.cron,name:setu_auto_validate_invoice.ir_cron_process_shopify_order_chain
+msgid "Create invoices for sale order"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_res_config_settings__customer_agrobolder_id
+msgid "Customer Agrobolder"
+msgstr "Cliente Agrobolder"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Deposits in savings accounts, premiums based on pension plans."
+msgstr "Depósitos en cuentas de ahorro, primas basadas en planes de pensiones."
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Dices, dies, molds, matrices and tooling"
+msgstr "Dices, troqueles, moldes, matrices y herramientas"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_account__display_name
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_journal__display_name
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_move__display_name
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_payment_term__display_name
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_product_pricelist__display_name
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_sale_order__display_name
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Donations"
+msgstr "Donaciones"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_res_config_settings
+msgid "Enable PreOrder PreSale"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Funeral expenses"
+msgstr "Gastos de funeral"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "General expenses"
+msgstr "Gastos generales"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_account__id
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_journal__id
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_move__id
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_payment_term__id
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_product_pricelist__id
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_res_config_settings__id
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_sale_order__id
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_sale_order_line__id
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_stock_picking__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,help:setu_auto_validate_invoice.field_account_account__is_default_other_country
+msgid ""
+"If true then this account will be set invoice where customer country is "
+"different then company country"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,help:setu_auto_validate_invoice.field_account_bank_statement_import_journal_creation__is_default_other_country
+#: model:ir.model.fields,help:setu_auto_validate_invoice.field_account_journal__is_default_other_country
+msgid ""
+"If true then this journal will be set invoice where customer country is "
+"different then company country"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_res_config_settings__invoice_note_zero_tax
+msgid "Invoice Notes (For Zero Tax)"
+msgstr "Leyenda para IVA Taza 0"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_account__is_default_other_country
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_bank_statement_import_journal_creation__is_default_other_country
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_journal__is_default_other_country
+msgid "Is Default for Other Country"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_sale_order__is_invoice_create_from_cron
+msgid "Is Invoice Create From Cron"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_product_pricelist__is_promotion
+msgid "Is Promotion ?"
+msgstr "es de promoción ?"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_account_journal
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_product_pricelist__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_account____last_update
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_journal____last_update
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_move____last_update
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_account_payment_term____last_update
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_product_pricelist____last_update
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_sale_order____last_update
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_stock_picking____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Mandatory School Transportation Expenses"
+msgstr "Gastos de transporte escolar obligatorios"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Medical expenses for disability"
+msgstr "Gastos médicos por discapacidad"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Medical insurance premiums"
+msgstr "Primas de seguro médico"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Medical, dental and hospital expenses."
+msgstr "Gastos médicos, dentales y hospitalarios."
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Office furniture and equipment investment"
+msgstr "Inversión de muebles y equipos de oficina"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.sale_order_search_view_to_order_without_signed
+msgid "Orders remain to invoice"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Other machinery and equipment"
+msgstr "Otra maquinaria y equipo"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Plazos de pago"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Payments for educational services (Colegiatura)"
+msgstr "Pagos por servicios educativos (Colegiatura)"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_product_pricelist
+msgid "Pricelist"
+msgstr "Tarifa"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model.fields,field_description:setu_auto_validate_invoice.field_sale_order__processed_for_invoice_background
+msgid "Processed By Invoice Cron"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Real interest effectively paid for mortgage loans (room house)"
+msgstr "Interés real pagado efectivamente por préstamos hipotecarios (casa de la habitación)"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Returns, discounts or bonuses"
+msgstr "Devoluciones, descuentos o bonos"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de la orden de venta"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Satellite communications"
+msgstr "Comunicaciones por satélite"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Telephone communications"
+msgstr "Comunicaciones telefónicas"
+
+#. module: setu_auto_validate_invoice
+#: code:addons/setu_auto_validate_invoice/models/sale_order.py:0
+#, python-format
+msgid ""
+"The Invoice creation process has been processed more than 5 times. Please "
+"review it and do it manually!"
+msgstr ""
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "To define"
+msgstr "Por definir"
+
+#. module: setu_auto_validate_invoice
+#: model:ir.model,name:setu_auto_validate_invoice.model_stock_picking
+msgid "Transfer"
+msgstr "Traslado"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Transportation equipment"
+msgstr "Equipo de transporte"
+
+#. module: setu_auto_validate_invoice
+#: model_terms:ir.ui.view,arch_db:setu_auto_validate_invoice.website_payment_way
+msgid "Voluntary contributions to SAR"
+msgstr "Contribuciones voluntarias a SAR"

@@ -1,0 +1,346 @@
+<odoo>
+    <data>
+        <record id="purchase_orders_form_view_inherited" model="ir.ui.view">
+            <field name="name">purchase.orders.form.view.inherited</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page/group/group/field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet/notebook/page/group/group/field[@name='origin']" position="after">
+                    <field name="user_id" domain="[('share', '=', False)]" widget="many2one_avatar_user"/>
+                    <field name="purchase_company"/>
+                </xpath>
+                <xpath expr="//sheet/notebook/page/group/group/field[@name='payment_term_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet/notebook/page/group/group/field[@name='fiscal_position_id']" position="replace">
+                    <field name="forwarder"/>
+                    <field name="loading_port_related_tp_partner" widget="many2many_tags" string="Loading Ports"/>
+                    <field name="customs"/>
+                    <field name="customs_agency"/>
+                    <field name="carrier"/>
+                    <field name="carrier_type"/>
+                </xpath>
+                <xpath expr="//field[@name='incoterm_id']" position="replace">
+                    <field name="fiscal_position_id" options="{'no_create': True}"
+                           readonly="invoice_status == 'invoiced' or state == 'done'"/>
+                </xpath>
+                <xpath expr="//field[@name='incoterm_location']" position="replace">
+                    <field name="picking_type_id"
+                           domain="[('code','=','incoming'), '|', ('warehouse_id', '=', False), ('warehouse_id.company_id', '=', company_id)]"
+                           options="{'no_create': True}" groups="stock.group_stock_multi_locations"/>
+                    <field name="incoterm_id"/>
+                    <field name="incoterm_location"/>
+                    <field name="payment_term_id"
+                           readonly="invoice_status == 'invoiced' or state == 'done'"
+                           options="{'no_create': True}" />
+                </xpath>
+                <xpath expr="//field[@name='picking_type_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                    <attribute name="domain">[('payment_terms_uses', '=','for_vendor')]</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/group/group[2]/div[@name='date_approve']" position="after">
+                    <field name="extended_state" class="btn o_arrow_button btn-primary disabled" readonly="1"
+                           style="width: fit-content;" force_save="1"/>
+                </xpath>
+                <xpath expr="//field[@name='incoterm_id']" position="before">
+                     <field name="receiving_warehouse_id"/>
+                     <field name="inventory_count_priority"/>
+                </xpath>
+                <xpath expr="//page[@name='purchase_delivery_invoice']" position="inside">
+                    <group>
+                        <group>
+                            <field name="payment_status" readonly="1"/>
+                            <field name="delivery_date" required="1"/>
+                            <field name="vendor_bill_date"/>
+                            <field name="bl_date"/>
+                            <field name="bl_date_at_sight"/>
+                            <field name="date_of_issue_loc"/>
+                            <field name="due_date_of_loc"/>
+                            <field name="ref_of_loc"/>
+                            <field name="bank_of_letter_of_credit"/>
+                            <field name="freight_cost" readonly="1"/>
+                            <label for="cc_procedure_dta"/>
+                            <div class="o_row">
+                                <field name="cc_procedure_dta" readonly="1"/>
+                                <button name="update_cc_procedure_dta" type="object" string="Calculate DTA"
+                                        help="Computation of DTA Value" class="btn-link mb-1 px-0" icon="fa-refresh"/>
+                            </div>
+                            <field name="total_iva"/>
+                            <field name="total_igi"/>
+                        </group>
+                        <group>
+
+                            <field name="merchandise_ready_date" readonly="extended_state not in ['in_prod']"/>
+                            <field name="henco_etd_date"/>
+                            <label for="etd_date"/>
+                            <div class="o_row">
+                                <field name="etd_date" readonly="etd_date_not_edit == True" force_save="1"/>
+                                <field name="etd_date_not_edit" invisible="etd_date_not_edit == True" readonly="state != 'purchase'"/>
+                                <i class="fa fa-lock m-1" invisible="etd_date_not_edit == False"/>
+                                <i class="fa fa-unlock m-1" invisible="etd_date_not_edit == True"/>
+                            </div>
+                            <field name="henco_eta_date"/>
+                            <label for="eta_date"/>
+                            <div class="o_row">
+                                <field name="eta_date" readonly="eta_date_not_edit == True" force_save="1"/>
+                                <field name="eta_date_not_edit" invisible="eta_date_not_edit == True" readonly="etd_date_not_edit == False"/>
+                                <i class="fa fa-lock m-1" invisible="eta_date_not_edit == False"/>
+                                <i class="fa fa-unlock m-1" invisible="eta_date_not_edit == True"/>
+                            </div>
+                            <field name="tax_pay_date"/>
+                            <field name="custom_clearance_date" readonly="extended_state not in ['in_cc']"/>
+                            <field name="container_quantity"/>
+                            <field name="container_type"/>
+                            <field name="cubic_meters"/>
+                            <field name="container_number"/>
+                            <field name="vessela"/>
+                            <field name="voyage" readonly="1"/>
+                            <field name="in_yard_date" readonly="extended_state not in ['dispached']"/>
+                            <label for="collected_date"/>
+                            <div class="o_row">
+                                <field name="collected_date" readonly="collected_date_not_edit == True or extended_state not in ['in_yard']" force_save="1"/>
+                                <field name="collected_date_not_edit" invisible="collected_date_not_edit == True" readonly="state != 'purchase'"/>
+                                <i class="fa fa-lock m-1" invisible="collected_date_not_edit == False"/>
+                                <i class="fa fa-unlock m-1" invisible="collected_date_not_edit == True"/>
+                            </div>
+                            <field name="counting_date" readonly="extended_state not in ['collected']"/>
+                            <field name="received_date" readonly="1"/>
+                            <field name="empty_return_date"/>
+                            <field name="waiting_for_expences"/>
+                            <field name="finalized_purchase_order" readonly="extended_state not in ['received']" force_save="1"/>
+                            <field name="on_hold"/>
+                        </group>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="henco_reference"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="purchase_orders_tree_view_inherited" model="ir.ui.view">
+            <field name="name">purchase.orders.tree.view.inherited</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="extended_state" widget="badge" decoration-success="extended_state == 'received'"
+                           decoration-primary="extended_state not in ['received','in_prod']"
+                           decoration-warning="extended_state == 'in_prod'"/>
+                    <field name="payment_term_id"/>
+                    <field name="bl_date"/>
+                    <field name="payment_status"/>
+                    <field name="last_adv_payment_related_date"/>
+                    <field name="total_adv_related_payment"/>
+                    <field name="qty_adv_related_payment"/>
+                    <field name="balance_amount" widget="monetary"/>
+                    <field name="incoterm_id" optional="hide"/>
+                    <field name="incoterm_location" optional="hide"/>
+                    <field name="purchase_company" optional="hide"/>
+                    <field name="delivery_date" optional="hide"/>
+                    <field name="vendor_bill_date" optional="hide"/>
+                    <field name="merchandise_ready_date" optional="hide"/>
+                    <field name="bl_date" optional="hide"/>
+                    <field name="bl_date_at_sight" optional="hide"/>
+                    <field name="date_of_issue_loc" optional="hide"/>
+                    <field name="due_date_of_loc" optional="hide"/>
+                    <field name="ref_of_loc" optional="hide"/>
+                    <field name="bank_of_letter_of_credit" optional="hide"/>
+                    <field name="customs" optional="hide"/>
+                    <field name="customs_agency" optional="hide"/>
+                    <field name="carrier_type" optional="hide"/>
+                    <field name="carrier" optional="hide"/>
+                    <field name="payment_status" optional="hide"/>
+                    <field name="payment_term_id" optional="hide"/>
+                    <field name="fiscal_position_id" optional="hide"/>
+                    <field name="forwarder" optional="hide"/>
+                    <field name="loading_port" optional="hide"/>
+                    <field name="etd_date" optional="hide"/>
+                    <field name="eta_date" optional="hide"/>
+                    <field name="custom_clearance_date" optional="hide"/>
+                    <field name="tax_pay_date" optional="hide"/>
+                    <field name="sea_freight_amount" optional="hide"/>
+                    <field name="cc_procedure_dta" optional="hide"/>
+                    <field name="cubic_meters" optional="hide"/>
+                    <field name="container_number" optional="hide"/>
+                    <field name="vessela" optional="hide"/>
+                    <field name="in_yard_date" optional="hide"/>
+                    <field name="collected_date" optional="hide"/>
+                    <field name="counting_date" optional="hide"/>
+                    <field name="received_date" optional="hide"/>
+                    <field name="waiting_for_expences" optional="hide"/>
+                    <field name="finalized_purchase_order" optional="hide"/>
+                    <field name="partner_id" optional="hide"/>
+                    <field name="currency_id" optional="hide"/>
+                    <field name="date_order" optional="hide"/>
+                    <field name="extended_state" optional="hide"/>
+                    <field name="date_planned" optional="hide"/>
+                    <field name="picking_type_id" optional="hide"/>
+                    <field name="inventory_count_priority" optional="hide"/>
+                    <field name="henco_reference" optional="hide"/>
+                    <field name="effective_date" optional="hide"/>
+                    <field name="henco_etd_date" optional="hide"/>
+                    <field name="henco_eta_date" optional="hide"/>
+                    <field name="container_type" optional="hide"/>
+                    <field name="container_quantity" optional="hide"/>
+                    <field name="receiving_warehouse_id" optional="hide"/>
+
+                </xpath>
+
+                <xpath expr="//list/field[@name='invoice_status']" position="after">
+                    <field name="average_price_difference"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="purchase_order_view_tree_inherit" model="ir.ui.view">
+            <field name="name">purchase.orders.view.tree.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="extended_state" widget="badge" decoration-success="extended_state == 'received'"
+                           decoration-primary="extended_state not in ['received','in_prod']"
+                           decoration-warning="extended_state == 'in_prod'"/>
+                    <field name="payment_term_id"/>
+                    <field name="bl_date"/>
+                    <field name="payment_status"/>
+                    <field name="last_adv_payment_related_date"/>
+                    <field name="total_adv_related_payment"/>
+                    <field name="qty_adv_related_payment"/>
+                    <field name="balance_amount" widget="monetary"/>
+                    <field name="incoterm_id" optional="hide"/>
+                    <field name="incoterm_location" optional="hide"/>
+                    <field name="purchase_company" optional="hide"/>
+                    <field name="delivery_date" optional="hide"/>
+                    <field name="vendor_bill_date" optional="hide"/>
+                    <field name="merchandise_ready_date" optional="hide"/>
+                    <field name="bl_date" optional="hide"/>
+                    <field name="bl_date_at_sight" optional="hide"/>
+                    <field name="date_of_issue_loc" optional="hide"/>
+                    <field name="due_date_of_loc" optional="hide"/>
+                    <field name="ref_of_loc" optional="hide"/>
+                    <field name="bank_of_letter_of_credit" optional="hide"/>
+                    <field name="customs" optional="hide"/>
+                    <field name="customs_agency" optional="hide"/>
+                    <field name="carrier_type" optional="hide"/>
+                    <field name="carrier" optional="hide"/>
+                    <field name="payment_status" optional="hide"/>
+                    <field name="payment_term_id" optional="hide"/>
+                    <field name="fiscal_position_id" optional="hide"/>
+                    <field name="forwarder" optional="hide"/>
+                    <field name="loading_port" optional="hide"/>
+                    <field name="etd_date" optional="hide"/>
+                    <field name="eta_date" optional="hide"/>
+                    <field name="custom_clearance_date" optional="hide"/>
+                    <field name="tax_pay_date" optional="hide"/>
+                    <field name="sea_freight_amount" optional="hide"/>
+                    <field name="cc_procedure_dta" optional="hide"/>
+                    <field name="cubic_meters" optional="hide"/>
+                    <field name="container_number" optional="hide"/>
+                    <field name="vessela" optional="hide"/>
+                    <field name="in_yard_date" optional="hide"/>
+                    <field name="collected_date" optional="hide"/>
+                    <field name="counting_date" optional="hide"/>
+                    <field name="received_date" optional="hide"/>
+                    <field name="waiting_for_expences" optional="hide"/>
+                    <field name="finalized_purchase_order" optional="hide"/>
+                    <field name="partner_id" optional="hide"/>
+                    <field name="currency_id" optional="hide"/>
+                    <field name="date_order" optional="hide"/>
+                    <field name="extended_state" optional="hide"/>
+                    <field name="date_planned" optional="hide"/>
+                    <field name="picking_type_id" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="purchase_order_view_related_statement" model="ir.ui.view">
+            <field name="name">purchase.order.view.related.statement</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='products']" position="after">
+                    <page string="Related Statements" name="related_statements">
+                        <field name="related_statement_ids" context="{'order': context.get('active_id', False)}">
+                            <list>
+                                <field name="company_id" invisible="1"/>
+                                <field name="state" invisible="1"/>
+                                <field name="is_reconciled" invisible="1"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="partner_bank_id" invisible="1"/>
+                                <field name="country_code" invisible="1"/>
+
+                                <!-- Visible fields -->
+                                <field name="statement_id"/>
+                                <field name="sequence" widget="handle"/>
+                                <field name="date" readonly="parent.state != 'open'"/>
+                                <field name="payment_ref"/>
+                                <field name="partner_id" readonly="parent.state != 'open'"
+                                       domain="['|', ('parent_id','=', False), ('is_company','=',True)]"/>
+                                <field name="ref" optional="hidden"/>
+                                <field name="transaction_type" optional="hidden"/>
+                                <field name="narration" string="Notes" optional="hidden"/>
+                                <field name="po_total_signed"/>
+                                <field name="amount" readonly="parent.state != 'open'"/>
+                                <field name="amount_currency" optional="hidden" groups="base.group_multi_currency"
+                                       readonly="parent.state != 'open'"/>
+                                <field name="account_number" optional="hidden"/>
+                                <field name="foreign_currency_id" optional="hidden" groups="base.group_multi_currency"
+                                       readonly="parent.state != 'open'"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//notebook/page[@name='purchase_delivery_invoice']" position="after">
+                    <page string="Arrival Dates History" name="arrival_dates_history">
+                        <field name="arrival_date_history_ids">
+                            <list editable="bottom" create="false" delete="false">
+                                <field name="update_date" readonly="1"/>
+                                <field name="create_uid" string="User" readonly="1"/>
+                                <field name="last_arrival_date" readonly="1"/>
+                                <field name="change_reason_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+        <record id="setu_purchase_automation_inherited_view_purchase_order_filter" model="ir.ui.view">
+            <field name="name">setu.purchase.automation.inherited.view.purchase.order.filter</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='late_rfqs']" position="after">
+                    <separator/>
+                    <filter string="Henco Reference" name="henco_reference" domain="[('henco_reference', '!=', False)]" />
+                    <filter string="Arrival" name="effective_date" date="effective_date"/>
+                    <filter string="ETD date" name="henco_etd_date" date="henco_etd_date" />
+                    <filter string="ETA date" name="henco_eta_date" date="henco_eta_date" />
+                    <filter string="Receiving warehouse" name="receiving_warehouse_id" domain="[('receiving_warehouse_id', '!=', False)]" />
+                    <filter string="Container Number" name="container_number" domain="[('container_number', '!=', False)]"/>
+                    <separator/>
+                    <filter string="20 Feet Container Type" name="container_type" domain="[('container_type', '=', '20_feet')]"/>
+                    <filter string="40 Feet Container Type" name="container_type" domain="[('container_type', '=', '40_feet')]"/>
+                    <filter string="Consolidated Container Type" name="container_type" domain="[('container_type', '=', 'consolidated')]"/>
+                    <separator/>
+                    <filter string="Low Inventory count priority" name="inventory_count_priority" domain="[('inventory_count_priority', '=', 'low')]"/>
+                    <filter string="Medium Inventory count priority" name="inventory_count_priority" domain="[('inventory_count_priority', '=', 'medium')]"/>
+                    <filter string="High Inventory count priority" name="inventory_count_priority" domain="[('inventory_count_priority', '=', 'high')]"/>
+                    <filter string="Urgent Inventory count priority" name="inventory_count_priority" domain="[('inventory_count_priority', '=', 'urgent')]"/>
+                    <separator/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

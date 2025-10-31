@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="setu_shopify_ecommerce_product_chain_form_view_extended" model="ir.ui.view">
+        <field name="name">setu.shopify.ecommerce.product.chain.form.view.extended</field>
+        <field name="model">setu.ecommerce.product.chain</field>
+        <field name="inherit_id" ref="setu_ecommerce_based.setu_ecommerce_product_chain_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='product_data_line']" position="after">
+                <page string="Process History" name="process_history" invisible="ecommerce_connector != 'shopify_connector'">
+                    <field name="process_history_line_ids">
+                        <list create="false">
+                            <field name="setu_ecommerce_product_chain_line_id"/>
+                            <field name="message"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="setu_shopify_ecommerce_product_chain_action" model="ir.actions.act_window">
+        <field name="name">Product Queue Process</field>
+        <field name="res_model">setu.ecommerce.product.chain</field>
+        <field name="view_id" ref="setu_ecommerce_based.setu_ecommerce_product_chain_list_view"/>
+        <field name="context">{'search_default_draft':1,'search_default_in_progress': 2,'search_default_fail': 3}</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('ecommerce_connector', '=', 'shopify_connector')]</field>
+    </record>
+
+
+    <menuitem id="setu_shopify_product_chain_menu" name="Product Queue"
+              parent="setu_shopify_connector.setu_shopify_chain_main_menu"
+              action="setu_shopify_ecommerce_product_chain_action" sequence="6"/>
+</odoo>

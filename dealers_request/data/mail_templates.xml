@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+                <!--REJECT  MAIL -->
+        <record id="email_template_for_dealer_reject_docs" model="mail.template">
+            <field name="name">Reject Information</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="subject">Reject Information</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="html">
+                <div>
+                    Dear  <b><t t-out="object.name or ''"/></b>  team, <br/>
+                    <br/>
+                    Unfortunately, some documents submitted during the Dealer Request process have <br/>
+                    been rejected. <br/>
+                    Please review the documents and upload them again.<br/>
+                    <br/>
+                    <br/>
+                    Sincerely:
+                    <br/>
+                    Department of credit and collection
+                    <br/>
+                    actualizacion_credito@marvelsa.com
+                    <br/>
+                    Cell: 33 34 59 66 47
+                    <br/>
+                </div>
+            </field>
+        </record>
+                <!--COMPLETED  MAIL -->
+        <record id="email_template_for_dealer_completed_docs" model="mail.template">
+            <field name="name">Dealer request approved</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="subject">Dealer request approved</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="html">
+                <div>
+                    Dear  <b><t t-out="object.name or ''"/></b>  team, <br/>
+                    <br/>
+                    <br/>
+                    Your dealer request has been approved, and we are pleased to welcome you as our preferred customer.
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    Sincerely:
+                    <br/>
+                    Department of credit and collection
+                    <br/>
+                    actualizacion_credito@marvelsa.com
+                    <br/>
+                    Cell: 33 34 59 66 47
+                    <br/>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

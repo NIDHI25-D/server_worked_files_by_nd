@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-inherit="stock_barcode.MainComponent" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[hasclass('o_add_line')]" position="attributes">
+           <attribute name="class">d-none</attribute>
+        </xpath>
+        <xpath expr="//button[hasclass('o_put_in_pack')]" position="attributes">
+            <attribute name="t-if">env.model.record.picking_type_code != 'internal'</attribute>
+        </xpath>
+    </t>
+
+</templates>

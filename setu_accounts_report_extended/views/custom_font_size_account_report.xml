@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--from portal invoice_report invoice address font size-->
+        <template id="report_invoice_document_extended_change_font_size" inherit_id="account.report_invoice_document">
+
+            <xpath expr="//div[hasclass('page')]" position="attributes">
+                <attribute name="style">font-size:12px</attribute>
+            </xpath>
+
+            <xpath expr="//t[@t-set='layout_document_title']" position="attributes">
+                <attribute name="style">font-size:23px; font-weight:bold;</attribute>
+            </xpath>
+
+            <xpath expr="//t[@t-set='information_block']/div" position="attributes">
+                <attribute name="style">font-size:12px</attribute>
+            </xpath>
+
+        </template>
+
+        <!--from portal invoice_report invoice address font size-->
+        <template id="l10n_mx_edi_report_invoice_document_extended_change_font_size"
+                  inherit_id="l10n_mx_edi.report_invoice_document">
+
+            <xpath expr="//div[hasclass('barcode')]/img" position="attributes">
+                <attribute name="style">height:100px;width:100px</attribute>
+            </xpath>
+
+            <xpath expr="//div[hasclass('complement-details')]" position="attributes">
+                <attribute name="style">;display: block;overflow: hidden;font-size:5px</attribute>
+            </xpath>
+
+        </template>
+
+        <!--from portal invoice view address font size-->
+        <template id="address_layout_change_font_size_for_account_invoice" inherit_id="web.address_layout">
+            <xpath expr="//div[@name='address']" position="attributes">
+                <attribute name="style">font-size:12px</attribute>
+            </xpath>
+        </template>
+
+        <!--from portal sale_report invoice address font size-->
+        <template id="address_layout_change_font_size_for_partner_shipping_id"
+                  inherit_id="sale.report_saleorder_document">
+            <xpath expr="//t[@t-set='information_block']/div" position="attributes">
+                <attribute name="style">font-size:12px</attribute>
+            </xpath>
+            <xpath expr="//td[@name='td_subtotal']" position="replace">
+                <td t-if="not line.is_downpayment" name="td_subtotal" class="text-end o_price_total">
+                    <span t-field="line.price_total"/>
+                </td>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hard_disk_capacity_view_tree" model="ir.ui.view">
+            <field name="name">hard_disk_capacity_view_tree</field>
+            <field name="model">hard.disk.capacity</field>
+            <field name="arch" type="xml">
+                <list string="hard_disk_capacity_tree" editable="bottom">
+                    <field name="name" required="1"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="hard_disk_capacity_action" model="ir.actions.act_window">
+            <field name="name">Hard Disk Capacity</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hard.disk.capacity</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="hard_disk_capacity_view_tree"/>
+        </record>
+    </data>
+</odoo>

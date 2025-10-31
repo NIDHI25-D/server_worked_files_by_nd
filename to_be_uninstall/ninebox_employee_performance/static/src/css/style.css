@@ -1,0 +1,175 @@
+.row_margin{
+    margin: 1rem !important;
+}
+.potential-arrow {
+    background-image: url(/ninebox_employee_performance/static/src/img/potential-arrow.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    height: 60px;
+}
+.potential-arrow-bg {
+	background-image: url(/ninebox_employee_performance/static/src/img/potential-arrow-bg.png);
+	background-repeat:repeat-y;
+    height: auto;
+}
+.performance-arrow {
+	background-image: url(/ninebox_employee_performance/static/src/img/performance-arrow.png);
+    background-repeat:no-repeat;
+    background-position: right;
+	height: 60px;
+}
+.performance-arrow-bg {
+	background-image: url(/ninebox_employee_performance/static/src/img/performance-arrow-bg.png);
+	background-repeat:repeat-x;
+	height: 100%;
+}
+.pp_circle{
+	background-image: url(/ninebox_employee_performance/static/src/img/pp_circle.png);
+	background-repeat:no-repeat;
+	width:60px;
+	height:60px;
+}
+.emp_count_circle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid #f14b6a;
+    color: #666;
+    text-align: center;
+    font: 32px Arial, sans-serif;
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+.right_p_all_emp_heading{
+	font-family: arial;
+    font-weight: 500;
+}
+.right_p_emp_box{
+	border: 1px dashed #d9d9d9;
+	font-family: arial;
+	margin-top:5px;
+}
+.right_p_emp_box .emp_name{
+	font-size: large;
+	color: #40bdff;
+}
+.right_p_emp_box .emp_title{
+	font-size: small;
+}
+.right_p_emp_box .emp_potential{
+	font-size: small;
+}
+.right_p_emp_box .emp_performance{
+	font-size: small;
+    color: black;
+}
+.right_p_emp_box .emp_range_label{
+	font-size: small;
+	padding-left:5px;
+	background-color:#d9d9d9;
+	
+}
+.right_p_emp_box .emp_range{
+	font-size: small;
+	padding-left:5px;
+    color: black;
+}
+.right_p_emp_box .emp_range_value{
+	font-size: small;
+    width:20px;
+    min-width: 20px;
+    color: black;
+}
+.emp_box_list_panel_area{
+	overflow-y: auto;
+    overflow-x: hidden;
+    height: 570px;
+    min-height: 568px;
+    display: block;
+    padding-right: 5px;    
+    padding-left: 5px;    
+    border: 1px dashed #d9d9d9;
+}
+#emp_box_list_panel::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+#emp_box_list_panel::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#emp_box_list_panel::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #d9d9d9;
+}
+
+/* Disables the selection */
+        
+.disableselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge*/
+    user-select: none;
+    /* Non-prefixed version, currently 
+                          not supported by any browser */
+}
+/* Disables the drag event 
+(mostly used for images) */
+
+.disabledrag {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.assesment_header{
+    font-size: small;
+    background-color: #d9d9d9;
+    font-weight: bold;
+    line-height: 30px;
+}
+.employee_profile_box{
+    cursor: pointer;
+    position:relative;
+}
+.detailed_profile_arrow_back{
+    cursor: pointer;
+}
+.employee_profile_box_panel{
+    cursor: pointer;
+}
+.employee_profile_box_detailed {
+    display: none;
+}
+.overlay {
+    display:none;
+}
+.employee_profile_box:hover .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    display:inline-block;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    text-align:right;
+    padding: 5%;
+
+}

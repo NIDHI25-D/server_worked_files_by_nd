@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="score_conf_creator_form_view" model="ir.ui.view">
+            <field name="name">score_conf_creator.form</field>
+            <field name="model">score.conf.creator</field>
+            <field name="arch" type="xml">
+                <form string="Score Conf Creator">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="company_id" options='{"no_open": True, "no_create": True}'/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="confirm" string="Create" class="oe_highlight" type="object"/>
+                        <button special="cancel" string="Cancel" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="score_conf_creator_company_exists_form_view" model="ir.ui.view">
+            <field name="name">score_conf_creator.company_exists.form</field>
+            <field name="model">score.conf.creator</field>
+            <field name="arch" type="xml">
+                <form string="Score Conf Creator">
+                    <sheet>
+                        <div>
+                            <p>Configuration already exists for the selected company.</p>
+                        </div>
+                    </sheet>
+                    <footer>
+                        <button special="cancel" string="Cancel" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="score_conf_creator_act_window" model="ir.actions.act_window">
+            <field name="name">Score Conf Creator</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">score.conf.creator</field>
+            <field name="view_id" ref="score_conf_creator_form_view"/>
+            <field name="target">new</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_price_level_config,price.level.config,model_price_level_config,,1,1,1,1
+access_price_level,price.level,model_price_level,,1,1,1,1
+access_product_price_level,price.product.level,model_product_price_level,,1,1,1,1
+access_product_price_update_discounts,access_product_price_update_discounts,model_product_price_update_discounts,base.group_user,1,1,1,1
+access_competition_level,competition.level,model_competition_level,,1,1,1,1
+access_multiple_products_price_update,multiple.products.price.update,model_multiple_products_price_update,,1,1,1,1
+access_import_factor_level,multiple.import.factor.level,model_import_factor_level,,1,1,1,1
+access_price_bases,price.bases,model_price_bases,,1,1,1,1

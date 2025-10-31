@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_api_create_sale_order" model="ir.ui.view">
+            <field name="name">view.api.create.sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='other_information']/group/group[@name='sales_person']" position="inside">
+                   <field name="api_create_sale_order" readonly="True" invisible="not api_create_sale_order"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

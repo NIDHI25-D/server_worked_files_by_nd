@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock_picking_diff_view_form" model="ir.ui.view">
+        <field name="name">stock.picking.diff.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='carrier_id']" position="after">
+                <field name="preparation_date"/>
+                <field name="x_studio_fecha_de_envio"/>
+                <field name="x_studio_fecha_de_entrega"/>
+                <field name="is_cancellation_invoice" invisible="1"/>
+                <field name="confirm_date_done_diff" widget="float_time" readonly="1" force_save="1" invisible="1"/>
+                <field name="date_done_date_invoice_diff" widget="float_time" readonly="1" force_save="1"
+                       invisible="1"/>
+                <field name="date_invoice_preparation_date_diff" widget="float_time" readonly="1" force_save="1"
+                       invisible="1"/>
+                <field name="preparation_date_shipping_date_diff" widget="float_time" readonly="1" force_save="1"
+                       invisible="1"/>
+                <field name="shipping_date_delivery_date_diff" widget="float_time" readonly="1" force_save="1"
+                       invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='carrier_id']" position="before">
+                <field name="date_order_received"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_picking_form_inherited_for_res_person" model="ir.ui.view">
+        <field name="name">view.picking.form.inherited.for.res.person</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="marvelfields.stock_picking_form_inherit_for_paid_invoice_and_invoice_number"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='res_person_id']" position="attributes">
+                <attribute name="required">preparation_date != False and x_studio_fecha_de_envio != False</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

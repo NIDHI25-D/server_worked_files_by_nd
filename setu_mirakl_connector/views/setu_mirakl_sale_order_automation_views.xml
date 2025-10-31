@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="setu_sale_order_automation_mirakl_action" model="ir.actions.act_window">
+        <field name="name">WorkFlow Automation</field>
+        <field name="res_model">setu.sale.order.automation</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="setu_mirakl_sale_order_automation_mirakl_main_menu" name="WorkFlow Automation"
+              parent="setu_mirakl_connector.setu_mirakl_configuration_main_menu"
+              action="setu_sale_order_automation_mirakl_action" sequence="5"/>
+</odoo>

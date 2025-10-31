@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="sepomex_res_colony" model="res.groups">
+            <field name="name">SEPOMEX Colonies</field>
+        </record>
+
+        <record id="group_res_colony" model="res.groups">
+            <field name="name">Crear Colonies SEPOMEX</field>
+        </record>
+        
+    </data>
+</odoo>

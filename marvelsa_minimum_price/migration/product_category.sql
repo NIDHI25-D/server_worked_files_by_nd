@@ -1,0 +1,3 @@
+update product_category set minimum_price_option=x_minimum_price_option;
+update product_category set minimum_price_amount=x_minimum_price_amount;
+update product_category set minimum_price_percentage=x_minimum_price_percentage;

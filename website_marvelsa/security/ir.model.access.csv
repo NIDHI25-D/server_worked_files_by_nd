@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_create,perm_unlink,perm_read,perm_write
+access_model_mrp,access_model_mrp,mrp.model_mrp_bom,,1,1,1,1
+access_model_uom,access_model_uom,product_unspsc.model_uom_uom,,1,1,1,1
+access_model_stock_quant,access_model_stock_quant,stock_account.model_stock_quant,,1,1,1,1

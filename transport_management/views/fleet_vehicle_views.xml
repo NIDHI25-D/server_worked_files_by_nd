@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_vehicle_form_view_inherit" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.view.inherit</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[2]" position="after">
+                <group string="Transporter Details">
+                    <field name="transporter_id" options='{"no_create_edit": True, "no_create": True}'/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_search_view_inherit" model="ir.ui.view">
+        <field name="name">fleet.vehicle.search.view.inherit</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/filter[@name='available']" position="before">
+                <separator/>
+                <filter name="group_transporter_id" string="Transporters" icon="terp-partner"
+                        context="{'group_by':'transporter_id'}"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id='transporter_vehicle_action' model='ir.actions.act_window'>
+        <field name="name">Vehicles</field>
+        <field name="res_model">fleet.vehicle</field>
+        <field name="view_mode">list,form,pivot,activity</field>
+        <field name="context">{'search_default_group_transporter_id': 1}</field>
+    </record>
+</odoo>

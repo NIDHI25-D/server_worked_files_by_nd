@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="add_default_unspsc_code_id_form_inherit" model="ir.ui.view">
+            <field name="name">add_default_unspsc_code_id_form_inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='languages']" position="before">
+                    <div id="default_unspsc_code_settings">
+                        <h2>Loyalty Product SAT Code</h2>
+                        <div class="row mt16 o_settings_container" name="unspsc_setting_container">
+                            <div class="col-xl-12 col-md-6 o_setting_box" id="default_unspsc_code">
+                                <div class="col-12 col-lg-6 o_setting_box" id="loyalty_points">
+
+                                    <div class="o_setting_right_pane">
+                                        <label for="df_unspsc_code_id"/>
+                                        <field name="df_unspsc_code_id"/>
+                                        <div class="text-muted">
+                                            Set default SAT Code for Loyalty Reward Product
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

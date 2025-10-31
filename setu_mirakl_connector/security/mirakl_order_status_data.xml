@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="setu_mirakl_awaiting_shipment_order_status" model="setu.mirakl.order.status">
+            <field name="name">Awaiting shipment</field>
+            <field name="status">awaiting_shipment</field>
+        </record>
+        <record id="setu_mirakl_debit_in_progress_order_status" model="setu.mirakl.order.status">
+            <field name="name">Debit in progress</field>
+            <field name="status">debit_in_progress</field>
+        </record>
+</odoo>

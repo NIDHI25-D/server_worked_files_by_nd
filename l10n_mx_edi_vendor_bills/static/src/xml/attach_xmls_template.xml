@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <t t-name="l10n_mx_edi_vendor_bills.attach_xmls_template" owl="1">
+        <div>
+            <div id="dragandrophandler"
+                 draggable="true"
+                 t-on-drop="_onDragDrop"
+                 t-on-click="_onDragClick"
+                 t-ref="canvasWrapper"
+                class="dnd_normal">
+                <p>Drag and Drop your files here</p>
+                <p>or Click to upload the files</p>
+            </div>
+            <input type="file" id="files" multiple="multiple" style="display:none;" t-on-change="_onFilesChange"/>
+            <div id="alertscontent" stsyle="margin:0;padding:0;">
+                <button class="dnd-alert-button" t-on-click="_onRemoveXML" style="visibility:hidden" tag="remove">Remove XML</button>
+                <button class="dnd-alert-button" t-on-click="_onRemoveXML" style="visibility:hidden" tag="supplier">Create Supplier</button>
+                <button class="dnd-alert-button" t-on-click="_onTryAgain" style="visibility:hidden" tag="tryagain">Try Again</button>
+                <button class="dnd-alert-button" t-on-click="_onForceSave" style="visibility:hidden" tag="forcesave">Force Save</button>
+            </div>
+            <div id="filescontent"></div>
+            <div id="dndfooter">
+                <button id="save" class="btn btn-sm btn-primary"  t-on-click="_onSave">
+                    <span>Save</span>
+                </button>
+                <button id="show" class="btn btn-sm btn-primary" t-on-click="_onShowInvoice" style="display: none;">
+                    <span>Show invoices</span>
+                </button>
+                <button id="close" class="btn btn-sm oe_link" t-on-click="_onCancel">
+                    <span>Cancel</span>
+                </button>
+            </div>
+        </div>
+    </t>
+</template>

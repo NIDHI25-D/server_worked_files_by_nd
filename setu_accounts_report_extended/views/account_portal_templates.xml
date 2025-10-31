@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="portal_my_invoices_payment_inherit" inherit_id="account.portal_my_invoices">
+        <!-- https://app.clickup.com/t/865cwpzec Show the invoice status as per the previous version -->
+        <xpath expr="//td[@name='invoice_status']" position="replace">
+            <td class="tx_status text-center">
+                <t t-if="invoice.state == 'posted' and invoice.payment_state not in ('in_payment', 'paid', 'reversed')">
+                    <span class="badge rounded-pill text-bg-info">
+                        <i class="fa fa-fw fa-clock-o" aria-label="Opened" title="Opened" role="img"></i>
+                        <span class="d-none d-md-inline">Waiting for Payment</span>
+                    </span>
+                </t>
+                <t t-if="invoice.state == 'posted' and invoice.payment_state in ('paid', 'in_payment')">
+                    <span class="badge rounded-pill text-bg-success">
+                        <i class="fa fa-fw fa-check" aria-label="Paid" title="Paid" role="img"></i>
+                        <span class="d-none d-md-inline">Paid</span>
+                    </span>
+                </t>
+                <t t-if="invoice.state == 'posted' and invoice.payment_state == 'reversed'">
+                    <span class="badge rounded-pill text-bg-success">
+                        <i class="fa fa-fw fa-check" aria-label="Reversed" title="Reversed" role="img"></i>
+                        <span class="d-none d-md-inline">Reversed</span>
+                    </span>
+                </t>
+                <t t-if="invoice.state == 'cancel'">
+                    <span class="badge rounded-pill text-bg-warning">
+                        <i class="fa fa-fw fa-remove" aria-label="Cancelled" title="Cancelled" role="img"></i>
+                        <span class="d-none d-md-inline">Cancelled</span>
+                    </span>
+                </t>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_setu_access_rights" model="ir.ui.view">
+            <field name="name">setu.access.rights.tree</field>
+            <field name="model">setu.access.rights</field>
+            <field name="arch" type="xml">
+                <list string="Access Management">
+                    <field name="name"/>
+                    <field name="user_ids" widget="many2many_tags"/>
+                    <field name="exclude_user_ids" widget="many2many_tags"/>
+
+                </list>
+            </field>
+        </record>
+
+        <record id="view_setu_access_rights_form" model="ir.ui.view">
+            <field name="name">setu.access.rights.form</field>
+            <field name="model">setu.access.rights</field>
+            <field name="arch" type="xml">
+                <form string="Access Management">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="disable_chatter"/>
+                                <field name="remove_create_contextual_action_button"/>
+                            </group>
+                            <group>
+                                <field name="use_exclude_users_ids_field"/>
+                                <field name="user_ids" widget="many2many_tags"
+                                       options="{'no_create_edit': True, 'no_quick_create': True}"
+                                       invisible="use_exclude_users_ids_field == True"
+                                       required="use_exclude_users_ids_field == False"
+                                       context="{'from_setu_access_right':True}"/>
+                                <field name="exclude_user_ids" widget="many2many_tags"
+                                       invisible="use_exclude_users_ids_field == False"
+                                       required="use_exclude_users_ids_field == True"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Fields Access" name="field_access">
+                                <field name="fields_access_ids">
+                                    <list editable="top">
+                                        <field name="model_id"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                               domain="[('model','!=','setu.access.rights')]"/>
+                                        <field name="field_ids"
+                                               widget="many2many_tags"
+                                               readonly="model_id == False"
+                                               domain="[('model_id', '=', model_id),('ttype','!=','one2many')]"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                               context="{'access_management': True}"
+                                        />
+                                        <field name="view_type" readonly="model_id == False"/>
+                                        <field name="mode" readonly="model_id == False"/>
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="model_id" readonly="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="mode"/>
+                                            </group>
+                                            <field name="field_ids"
+                                                   widget="many2many_tags"
+                                                   domain="[('model_id', '=', model_id),('ttype','!=','one2many')]"
+                                                   options="{'no_create_edit': True, 'no_quick_create': True}"
+                                                   context="{'access_management': True}"
+                                                   readonly="1"
+                                            />
+
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+
+                            <page string="Model Access" name="model_access">
+                                <field name="model_access_ids">
+                                    <list editable="bottom">
+                                        <field name="model_id"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                               domain="[('model','!=','setu.access.rights')]"/>
+                                        <field name="restrict_create" readonly="model_id == False"/>
+                                        <field name="restrict_write" readonly="model_id == False"/>
+                                        <field name="restrict_unlink" readonly="model_id == False"/>
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <field name="model_id" readonly="1"/>
+                                            <field name="restrict_create" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="restrict_write" readonly="1"/>
+                                            <field name="restrict_unlink" readonly="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+
+                            <page string="Reports Access" name="reports_access">
+                                <field name="reports_access_ids">
+                                    <list editable="bottom">
+                                        <field name="model_id"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                               domain="[('model','!=','setu.access.rights')]"/>
+                                        <field name="report_action_ids"
+                                               widget="many2many_tags"
+                                               readonly="model_id == False"
+                                               domain="[('binding_model_id', '=', model_id)]"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                        />
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <field name="model_id" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="report_action_ids"
+                                                   widget="many2many_tags"
+                                                   domain="[('binding_model_id', '=', model_id)]"
+                                                   options="{'no_create_edit': True, 'no_quick_create': True}"
+                                                   readonly="1"
+                                            />
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+
+                            <page string="Action Window Access" name="act_window_access">
+                                <field name="act_window_access_ids">
+                                    <list editable="bottom">
+                                        <field name="model_id"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                               domain="[('model','!=','setu.access.rights')]"/>
+                                        <field name="act_action_ids"
+                                               widget="many2many_tags"
+                                               readonly="model_id == False"
+                                               domain="[('binding_model_id', '=', model_id)]"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                        />
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="model_id" readonly="1"/>
+                                            </group>
+                                            <group>
+                                            </group>
+                                            <field name="act_action_ids"
+                                                   widget="many2many_tags"
+                                                   domain="[('binding_model_id', '=', model_id)]"
+                                                   options="{'no_create_edit': True, 'no_quick_create': True}"
+                                                   readonly="1"
+                                            />
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+
+                            <page string="Menu Access" name="menu_access">
+                                <field name="menu_access_ids">
+                                    <list editable="bottom">
+                                        <field name="menu_ids"
+                                               widget="many2many_tags"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}" required="1"
+                                        />
+                                    </list>
+                                </field>
+                            </page>
+
+                            <page string="Notebook Access" name="notebook_access">
+                                <field name="notebook_access_ids">
+                                    <list editable="top">
+                                        <field name="model_id"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                               domain="[('model','!=','setu.access.rights')]"/>
+                                        <field name="field_ids"
+                                               widget="many2many_tags"
+                                               readonly="model_id == False"
+                                               domain="[('model_id', '=', model_id),('ttype','=','one2many')]"
+                                               options="{'no_create_edit': True, 'no_quick_create': True}"
+                                               context="{'access_management': True}"
+                                        />
+                                        <field name="view_type" readonly="model_id == False"/>
+                                        <field name="mode" readonly="model_id == False"/>
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="model_id" readonly="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="mode"/>
+                                            </group>
+                                            <field name="field_ids"
+                                                   widget="many2many_tags"
+                                                   domain="[('model_id', '=', model_id),('ttype','=','one2many')]"
+                                                   options="{'no_create_edit': True, 'no_quick_create': True}"
+                                                   context="{'access_management': True}"
+                                                   readonly="1"
+                                            />
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_setu_access_rights_search" model="ir.ui.view">
+            <field name="name">view.setu.access.rights.search</field>
+            <field name="model">setu.access.rights</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="user_ids"/>
+                    <field name="exclude_user_ids"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_setu_access_rights" model="ir.actions.act_window">
+            <field name="name">Access Management</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">setu.access.rights</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="menu_access_management_root"
+                  name="Access Rights"
+                  web_icon="setu_access_rights,static/description/icon.png"
+                  groups="setu_access_rights.group_erp_manager_ext"/>
+
+        <menuitem id="menu_access_management"
+                  name="Access Management"
+                  parent="menu_access_management_root"
+                  action="action_setu_access_rights"
+                  groups="setu_access_rights.group_erp_manager_ext"/>
+    </data>
+</odoo>

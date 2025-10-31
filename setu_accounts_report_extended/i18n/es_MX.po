@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_accounts_report_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-30 09:05+0000\n"
+"PO-Revision-Date: 2023-01-30 09:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.report_invoice_document_extended
+msgid "<span>Marca</span>"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.report_invoice_document_extended
+msgid "<span>Referencia interna</span>"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.hide_customer_and_vendor_name
+msgid "<strong>Customer:</strong>"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.report_payment_receipt_add_account_customer_information
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.report_payment_receipt_add_account_customer_information_l10n_mx_edi
+msgid "<strong>Exchange Rate:</strong>"
+msgstr "<strong>Tipo de cambio</strong>"
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.add_payment_method
+msgid "<strong>Payment Method:</strong>"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.report_payment_receipt_accounting_date
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.report_payment_receipt_add_account_customer_information_l10n_mx_edi
+msgid "<strong>Usage:</strong>"
+msgstr "<strong>Uso</strong>"
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.hide_customer_and_vendor_name
+msgid "<strong>Vendor:</strong>"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model:ir.model,name:setu_accounts_report_extended.model_account_report
+msgid "Account Report"
+msgstr "Informe financiero"
+
+#. module: setu_accounts_report_extended
+#: model:ir.model,name:setu_accounts_report_extended.model_account_financial_html_report
+msgid "Account Report (HTML)"
+msgstr "Informe de cuenta (HTML)"
+
+#. module: setu_accounts_report_extended
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_financial_html_report__display_name
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_move__display_name
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_report__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: setu_accounts_report_extended
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_financial_html_report__report_line_id
+msgid "Dividing Line"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_financial_html_report__dividing_amount
+msgid "Dividing number"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_financial_html_report__id
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_move__id
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_report__id
+msgid "ID"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model:ir.model,name:setu_accounts_report_extended.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento de diario"
+
+#. module: setu_accounts_report_extended
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_financial_html_report____last_update
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_move____last_update
+#: model:ir.model.fields,field_description:setu_accounts_report_extended.field_account_report____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.account_move_forcefully_reconcile_form_inherit
+msgid "POST Forcefully"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.account_move_forcefully_reconcile_form_inherit
+msgid "Reset To Draft Forcefully"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: code:addons/setu_accounts_report_extended/models/sales_commission_report.py:0
+#, python-format
+msgid "Sales And Commission"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.percentage_column
+msgid "Show Percentage"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.report_payment_receipt_add_account_customer_information
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.report_payment_receipt_add_account_customer_information_l10n_mx_edi
+msgid "Tax ID"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: code:addons/setu_accounts_report_extended/models/sales_commission_report.py:0
+#: code:addons/setu_accounts_report_extended/models/sales_commission_report.py:0
+#, python-format
+msgid "There is no record for this input"
+msgstr ""
+
+#. module: setu_accounts_report_extended
+#: model_terms:ir.ui.view,arch_db:setu_accounts_report_extended.percentage_column
+msgid "percentage"
+msgstr ""

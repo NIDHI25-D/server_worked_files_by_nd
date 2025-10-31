@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="setu_inventory_count_settings_view_form" model="ir.ui.view">
+        <field name="name">inventory.count.settings.view.form</field>
+        <field name="model">setu.inventory.count.settings</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false">
+                <sheet>
+                    <div>
+                        <div>
+                            <field name="auto_inventory_adjustment"/>
+                            <label for="auto_inventory_adjustment"/>
+                            <div class="text-muted">
+                                By doing this while the user Validate the inventory, the stock will be automatically
+                                updated Realtime.
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_inventory_count_settings" model="ir.actions.server">
+        <field name="name">Settings - Inventory Count</field>
+        <field name="model_id" ref="model_setu_inventory_count_settings"/>
+        <field name="binding_view_types">form</field>
+        <field name="state">code</field>
+        <field name="code">action = model.open_record_action()</field>
+
+    </record>
+
+    <menuitem sequence="1" name="Settings - Inventory Count"
+              id="inventory_count_settings_menu" parent="setu_inventory_count_management.main_configuration_menu"
+              groups="setu_inventory_count_management.group_setu_inventory_count_manager"
+              action="action_inventory_count_settings"/>
+</odoo>

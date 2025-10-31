@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="operative_system_distribution_view_tree" model="ir.ui.view">
+            <field name="name">operative_system_distribution_view_tree</field>
+            <field name="model">operative.system.distribution</field>
+            <field name="arch" type="xml">
+                <list string="operative_system_distribution_tree" editable="bottom">
+                    <field name="name" required="1"/>
+                    <field name="operative_system_type_id" required="1" options="{'no_create': True, 'no_open': True}"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="operative_system_distribution_action" model="ir.actions.act_window">
+            <field name="name">Operative System Distribution</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">operative.system.distribution</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="operative_system_distribution_view_tree"/>
+        </record>
+    </data>
+</odoo>

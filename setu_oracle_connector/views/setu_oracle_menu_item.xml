@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="setu_oracle_main_menu" name="Oracle" sequence="3" web_icon="setu_oracle_connector,static/description/oracle.jpg">
+        <menuitem id="setu_oracle_dashboard_main_menu" name="Dashboard" action="setu_oracle_connector.open_setu_oracle_dashboard_kanban" sequence="1"/>
+    </menuitem>
+
+    <menuitem id="setu_oracle_product_main_menu" name="Products" parent="setu_oracle_connector.setu_oracle_main_menu" sequence="2"/>
+    <menuitem id="setu_oracle_sale_order_main_menu" name="Sales" parent="setu_oracle_connector.setu_oracle_main_menu"  sequence="3"/>
+    <menuitem id="setu_oracle_process_chain_main_menu" name="Process Chain" parent="setu_oracle_connector.setu_oracle_main_menu" sequence="4"/>
+    <menuitem id="setu_oracle_process_history_main_menu" name="Process History" parent="setu_oracle_connector.setu_oracle_main_menu" sequence="5"/>
+    <menuitem id="setu_oracle_operation_main_menu" name="Operations" parent="setu_oracle_connector.setu_oracle_main_menu" sequence="6"/>
+<!--    <menuitem id="setu_oracle_chain_main_menu" name="Process Queue"   parent="setu_oracle_connector.setu_oracle_main_menu" sequence="7" />-->
+    <menuitem id="setu_oracle_configration_main_menu" name="Configration" parent="setu_oracle_connector.setu_oracle_main_menu" sequence="7"/>
+</odoo>

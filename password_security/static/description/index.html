@@ -1,0 +1,86 @@
+<h4 id="usage">USAGE</h4>
+<ul>
+    <li>This module allows admin to set company-level password security requirements
+        and enforces them on the user.
+    </li>
+    <li>Configure using below instructions for each company that should have password
+        security mandates
+    </li>
+
+</ul>
+<h4 id="pwd_security_key_feature">Key features</h4>
+<h6><li>It contains features such as</li></h6>
+<ul>
+    <li>Password expiration days.</li>
+    <li>Password length requirement.</li>
+    <li>Password minimum number of lowercase letters</li>
+    <li>Password minimum number of uppercase letters</li>
+    <li>Password minimum number of numbers</li>
+    <li>Password minimum number of special characters</li>
+</ul>
+
+<h4 id="pwd_security_configuration">Configuration</h4>
+
+<li>Navigate to General Settings under Configuration
+    Scroll down to the ``Password Policy`` section
+    Set the policies to your liking.
+</li>
+
+<li>
+    Password complexity requirements will be enforced upon next password change for any user in that company.
+</li>
+<br/>
+<h4>**Settings & Defaults**</h4>
+<li>These are defined at the company level:</li>
+
+<table class="table table-borderless">
+    <thead>
+    <th>Name</th>
+    <th>Default</th>
+    <th>Description</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>password_expiration</td>
+        <td>60</td>
+        <td>Days until passwords expire</td>
+    </tr>
+    <tr>
+        <td>password_length</td>
+        <td>12</td>
+        <td>Minimum number of characters in password</td>
+    </tr>
+    <tr>
+        <td>password_lower</td>
+        <td>0</td>
+        <td>Minimum number of lowercase letter in password</td>
+    </tr>
+    <tr>
+        <td>password_upper</td>
+        <td>0</td>
+        <td>Minimum number of uppercase letters in password</td>
+    </tr>
+    <tr>
+        <td>password_numeric</td>
+        <td>0</td>
+        <td>Minimum number of number in password</td>
+    </tr>
+    <tr>
+        <td>password_special</td>
+        <td>0</td>
+        <td>Minimum number of unique special character in password</td>
+    </tr>
+    <tr>
+        <td>password_history</td>
+        <td>30</td>
+        <td>Disallow reuse of this many previous passwords</td>
+    </tr>
+    <tr>
+        <td>password_minimum</td>
+        <td>24</td>
+        <td>Amount of hours that must pass until another reset</td>
+    </tr>
+    </tbody>
+
+</table>
+

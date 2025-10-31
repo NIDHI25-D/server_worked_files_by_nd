@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_invoice_address_mercadolibre" model="ir.ui.view">
+            <field name="name">add_invoice_address_mercadolibre</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="meli_oerp.view_company_page_mercadolibre"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='mercadolibre_seller_team']" position="after">
+                    <field name="mercadolibre_invoice_address_id" options="{'no_create':True,'no_create_edit': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="meli_oerp_extended_inherited_REF_view_company_page_mercadolibre_stock" model="ir.ui.view">
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="meli_oerp_stock.view_company_page_mercadolibre_stock"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='mercadolibre_stock_location_to_post_full']" position="after">
+                    <field name="responsible_person"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

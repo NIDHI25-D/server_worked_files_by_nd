@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Add Other Info page -->
+        <record id="add_page_in_asset_form" model="ir.ui.view">
+            <field name="name">add.page.in.asset.form</field>
+            <field name="model">account.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_depreciation_expense_id']" position="after">
+                    <!-- Add is_it_computer_equipment to asset models and changes it's path due to asset extended dependencies -->
+                    <field name="is_it_computer_equipment" invisible="state != 'model'"/>
+                </xpath>
+                <xpath expr="//field[@name='model_id']" position="attributes">
+                    <attribute name="required">state == 'draft'</attribute>
+                </xpath>
+                <xpath expr="//page[@name='depreciation_board']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <page name="other_info" string="Other Info" invisible="state == 'model' or not is_it_computer_equipment">
+                        <group name="ram_processor">
+                            <group string="Ram Memory" name="ram_memory">
+                                <field name="ram_memory_type_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="ram_memory_capacity_id" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                            <group string="Processor" name="processor">
+                                <field name="processor_model_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="processor_speed_id" string="Velocity" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="processor_generation_id" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                        </group>
+
+                        <group name="score_operative">
+                            <group name="score">
+                                <field name="score" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                            <group name="operative_system" string="Operative System">
+                                <field name="operative_system_type_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="operative_system_distribution_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="operative_system_version_id" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                        </group>
+
+                        <group name="hard_disk_network">
+                            <group name="hard_disk" string="Hard Disk">
+                                <field name="hard_disk_line_ids" widget="one2many" string="Hard Disk Type" context="{'show_attribute': False}">
+                                    <list editable="bottom">
+                                        <field name="hard_disk_type_id" string="Type" options="{'no_create': True, 'no_open': True}"/>
+                                        <field name="hard_disk_capacity_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True}"/>
+                                    </list>
+                                </field>
+                            </group>
+
+                            <group name="network_card" string="Network Card">
+                                <field name="network_card_line_ids" widget="one2many" string="Network Cards" context="{'show_attribute': False}">
+                                    <list editable="bottom">
+                                        <field name="network_card_type_id" string="Type" options="{'no_create': True, 'no_open': True}"/>
+                                        <field name="network_card_mac_address_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True}"/>
+                                    </list>
+                                </field>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

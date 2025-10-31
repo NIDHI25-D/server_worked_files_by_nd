@@ -1,0 +1,684 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_purchase_automation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-12 03:54+0000\n"
+"PO-Revision-Date: 2022-08-12 03:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__stock_picking__container_type__20_feet
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.search_stock_pickings_field_in_filter
+msgid "20 Feet"
+msgstr "20 pies"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__stock_picking__container_type__40_feet
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.search_stock_pickings_field_in_filter
+msgid "40 Feet"
+msgstr "40 pies"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_product_product__additional_taxes_ids
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_product_template__additional_taxes_ids
+msgid "Additional Taxes"
+msgstr "Impuestos Adicionales"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__total_adv_related_payment
+msgid "Adv. related payment"
+msgstr "Suma Total de Anticipos"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__name
+msgid "Agency Name"
+msgstr "Nombre de agencia"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_payment_term__apply_loc
+msgid "Apply Letter of Credit?"
+msgstr "¿Aplicar carta de crédito?"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_arrival_change_reason
+msgid "Arrival Change Reason"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_arrival_date_history
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__arrival_date_history_ids
+msgid "Arrival Date History"
+msgstr "Historial Fechas de arribo"
+
+#. module: setu_purchase_automation
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.purchase_order_view_related_statement
+msgid "Arrival Dates History"
+msgstr "Historial Fechas de arribo"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_arrival_change_reason__name
+msgid "Arrival Late"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__associate_order_ids
+msgid "Associate Order"
+msgstr "Orden asociada"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_bank_statement_line__associate_purchase_order_ids
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.account_bank_statement_line_extended_for_purchase_order
+msgid "Associate Purchase Order"
+msgstr "Orden de compra asociada"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__bl_date
+msgid "BL Date"
+msgstr "Fecha de BL"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__bl_date_at_sight
+msgid "BL Date at Sight"
+msgstr "Fecha de BL a la vista"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__balance_amount
+msgid "Balance Amount"
+msgstr "Monto de Pago Balance"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea de extracto bancario"
+
+#. module: setu_purchase_automation
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.purchase_orders_form_view_inherited
+msgid "Calculate DTA"
+msgstr "Calcular DTA"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__carrier
+msgid "Carrier"
+msgstr "Transportista"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers__name
+msgid "Carrier Name"
+msgstr "Nombre de la compañía"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__carrier_type
+msgid "Carrier Type"
+msgstr "Tipo de Transporte"
+
+#. module: setu_purchase_automation
+#: model:ir.actions.act_window,name:setu_purchase_automation.purchase_carriers_action
+#: model:ir.ui.menu,name:setu_purchase_automation.purchase_carriers_menu
+msgid "Carriers"
+msgstr "Transportistas"
+
+#. module: setu_purchase_automation
+#: model:ir.actions.act_window,name:setu_purchase_automation.arrival_change_reason_action
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_arrival_date_history__change_reason_id
+msgid "Change Reason"
+msgstr "Motivo del cambio"
+
+#. module: setu_purchase_automation
+#: model:ir.ui.menu,name:setu_purchase_automation.arrival_change_reason_main_menu
+#: model:ir.ui.menu,name:setu_purchase_automation.arrival_change_reason_submenu
+msgid "Change reason"
+msgstr "Motivo del cambio"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__collected
+msgid "Collected"
+msgstr "Recolectado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__collected_date
+msgid "Collected Date"
+msgstr "Recolectado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__company_id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges__company_id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges__company_id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers__company_id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__purchase_company
+msgid "Company"
+msgstr "Empresa"
+
+#. module: setu_purchase_automation
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.purchase_orders_form_view_inherited
+msgid "Computation of DTA Value"
+msgstr "Cálculo del valor de DTA"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_config_settings__po_tax_payment_days_configures
+msgid "Configure Tax payment days"
+msgstr "Configurar días de pago de impuestos"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__stock_picking__container_type__consolidated
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.search_stock_pickings_field_in_filter
+msgid "Consolidated"
+msgstr "Consolidado"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_picking__container_ref
+msgid "Container Reference"
+msgstr "Referencia de Contenedor"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_picking__container_type
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.search_stock_pickings_field_in_filter
+msgid "Container Type"
+msgstr "Tipo de Contenedor"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__counting
+msgid "Counting"
+msgstr "En Conteo"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__counting_date
+msgid "Counting Date"
+msgstr "Fecha de En Conteo"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__create_uid
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__create_uid
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges__create_uid
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges__create_uid
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__create_date
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__create_date
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges__create_date
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges__create_date
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_payment_term__credit_days_configure
+msgid "Credit Days"
+msgstr "Días de crédito"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_picking__containers_cubic_meters
+msgid "Cubic meters"
+msgstr "Metros Cubicos"
+
+#. module: setu_purchase_automation
+#: model:ir.actions.act_window,name:setu_purchase_automation.custom_agency_action
+#: model:ir.ui.menu,name:setu_purchase_automation.customs_agency_menu
+msgid "Custom Agency"
+msgstr "Agencia Aduanal"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges__name
+msgid "Custom Name"
+msgstr "Nombre personalizado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__customs_agency
+msgid "Custom agency"
+msgstr "Agencia Aduanal"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_custom_agency
+msgid "CustomAgency"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_custom_cateloges
+msgid "CustomCateloges"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__customs
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__customs
+msgid "Customs"
+msgstr "Aduana"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__custom_clearance_date
+msgid "Customs Clearance Date"
+msgstr "Fecha de Despacho Aduanal"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__cc_procedure_dta
+msgid "Customs clearance procedure(DTA)"
+msgstr "Derecho de Tramite Aduanal (DTA)"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__date_of_issue_loc
+msgid "Date of Issue Letter of Credit"
+msgstr "Fecha de Emision Carta de Crédito"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_bank_statement_line__difference_of_purchase_order_with_statement_line
+msgid "Diferencia de po con declaración"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.actions.act_window,name:setu_purchase_automation.custome_catelogues_action
+msgid "Discharge port name"
+msgstr "Nombre del puerto de descarga"
+
+#. module: setu_purchase_automation
+#: model:ir.ui.menu,name:setu_purchase_automation.custonm_catelogues_menu
+msgid "Discharge ports"
+msgstr "Puertos de descarga"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__dispached
+msgid "Dispatched"
+msgstr "Despachado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_bank_statement_line__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_payment_term__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_product_template__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_partner__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_immediate_transfer__display_name
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__due_date_of_loc
+msgid "Due Date of Letter of Credit"
+msgstr "Fecha de Vencimiento Carta de Crédito"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__eta_date
+msgid "ETA Date"
+msgstr "Fecha de ETA"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__etd_date
+msgid "ETD Date"
+msgstr "Fecha ETD"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__carrier_type__ext_transport
+msgid "External Transport"
+msgstr "Transporte Externo"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__finalized_purchase_order
+msgid "Finalized Purchase Order"
+msgstr "Orden Finalizada"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__payment_status__fully_paid
+msgid "Fully paid"
+msgstr "Totalmente pagado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_bank_statement_line__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_payment_term__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_product_template__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_config_settings__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_partner__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_immediate_transfer__id
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_picking__id
+msgid "ID"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_stock_immediate_transfer
+msgid "Immediate Transfer"
+msgstr "Transferencia inmediata"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__in_cc
+msgid "In Custom Clearance"
+msgstr "en despacho de aduanal"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__in_prod
+msgid "In Production"
+msgstr "En Producción"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__in_transit
+msgid "In Transit"
+msgstr "En Tránsito"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__in_yard
+msgid "In Yard"
+msgstr "En Patio"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__in_yard_date
+msgid "In Yard Date"
+msgstr "En Patio"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__carrier_type__int_transport
+msgid "Internal Transport"
+msgstr "Transporte interno"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__purchase_order_id
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__last_adv_payment_related_date
+msgid "Last Adv. payment Date"
+msgstr "Fecha del Último Anticipo Relacionado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_arrival_date_history__last_arrival_date
+msgid "Last Arrival Date"
+msgstr "Última fecha de arribo esperado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_bank_statement_line____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_payment_term____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_product_template____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_partner____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_immediate_transfer____last_update
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_picking____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__write_uid
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__write_uid
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges__write_uid
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges__write_uid
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__write_date
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_agency__write_date
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_custom_cateloges__write_date
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges__write_date
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_carriers__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__loading_port
+msgid "Loading Port"
+msgstr "Puerto de Salida"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_loading_port_cateloges__name
+msgid "Loading Port Name"
+msgstr "Nombre del puerto de carga"
+
+#. module: setu_purchase_automation
+#: model:ir.actions.act_window,name:setu_purchase_automation.loading_ports_name_action
+msgid "Loading port name"
+msgstr "Nombre del puerto de carga"
+
+#. module: setu_purchase_automation
+#: model:ir.ui.menu,name:setu_purchase_automation.loading_ports_name_menu
+msgid "Loading ports"
+msgstr "Puertos de carga"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_loading_port_cateloges
+msgid "LoadingPortCateloges"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.purchase_order_view_related_statement
+msgid "Notes"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__payment_status__open
+msgid "Open"
+msgstr "Abierta"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__payment_status__part_paid
+msgid "Partially paid"
+msgstr "Parcialmente pagado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__payment_status
+msgid "Payment Status"
+msgstr "Estatus de Pago PO"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Condiciones de Pago"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_payment_term__payment_terms_uses
+msgid "Payment terms uses"
+msgstr "Usos de las condiciones de pago"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_account_bank_statement_line__po_total_signed
+msgid "Po Total Signed"
+msgstr "Anticipo"
+
+#. module: setu_purchase_automation
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.bank_statement_line_form_view_for_purchase_order
+msgid "Pos Invoices"
+msgstr "Facturas pos."
+
+#. module: setu_purchase_automation
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.bank_statement_line_form_view_for_purchase_order
+msgid "Pos invoices"
+msgstr "Pos facturas"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de compra"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__po_ready
+msgid "Purchase Order Ready"
+msgstr "Orden Lista"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__purchase_order_id
+msgid "Purchase Orders"
+msgstr "ordenes de compra"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__extended_state
+msgid "Purchase Status"
+msgstr "Estatus de la Compra"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_stock_picking__container_qty_received
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__qty_adv_related_payment
+msgid "Quantity of advance payments"
+msgstr "Cantidad de Anticipos"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__received
+msgid "Received"
+msgstr "Recepcionado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__received_date
+msgid "Received Date"
+msgstr "Recepcionado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__ref_of_loc
+msgid "Reference of Letter of Credit"
+msgstr "Referencia Carta de Crédito"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__related_statement_ids
+msgid "Related Statement"
+msgstr "Referencia del Pago"
+
+#. module: setu_purchase_automation
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.purchase_order_view_related_statement
+msgid "Related Statements"
+msgstr "Pagos Relacionados"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__sea_freight_amount
+msgid "Sea Freight Amount"
+msgstr "Monto de Flete Maritimo"
+
+#. module: setu_purchase_automation
+#: code:addons/setu_purchase_automation/models/account_bank_statement_line.py:0
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_associate_purchase_order_with_bank_statement__statement_line_id
+#, python-format
+msgid "Statement Line"
+msgstr "Línea de estado de cuenta"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__tax_pay_date
+msgid "Tax Payment Date"
+msgstr "Fecha de Pago de Impuestos"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_stock_picking
+msgid "Transfer"
+msgstr "Traslado"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_arrival_date_history__update_date
+msgid "Update Date"
+msgstr "Fecha de actualización"
+
+#. module: setu_purchase_automation
+#: model_terms:ir.ui.view,arch_db:setu_purchase_automation.purchase_order_view_related_statement
+msgid "User"
+msgstr "Usuario"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__vendor_bill_date
+msgid "Vendor Bill Date"
+msgstr "Fecha Factura de Proveedor"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__purchase_order__extended_state__wait_for_expences
+msgid "Waiting For Expenses"
+msgstr "En Espera de Gastos"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__waiting_for_expences
+msgid "Waiting for Expenses"
+msgstr "En Espera de Gastos"
+
+#. module: setu_purchase_automation
+#: code:addons/setu_purchase_automation/models/stock_picking.py:0
+#, python-format
+msgid "You can't Validate picking until the PO in the Waiting for Expenses"
+msgstr "No se puede Validar picking hasta el PO en la Espera de Gastos"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_associate_purchase_order_with_bank_statement
+msgid "associate.purchase.order.with.bank.statement"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__loading_port_related_tp_partner
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_partner__departure_shipment_ports_ids
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_res_users__departure_shipment_ports_ids
+msgid "departure / shipment ports"
+msgstr "Puertos de Salida / Embarque"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__eta_date_not_edit
+msgid "eta lock/unlock"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__etd_date_not_edit
+msgid "etd lock/unlock"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__account_payment_term__payment_terms_uses__for_customer
+msgid "is Customer payment term?"
+msgstr "es el plazo de pago del cliente?"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields.selection,name:setu_purchase_automation.selection__account_payment_term__payment_terms_uses__for_vendor
+msgid "is Vendor payment term?"
+msgstr "Cuál es el plazo de pago del proveedor?"
+
+#. module: setu_purchase_automation
+#: model:ir.model,name:setu_purchase_automation.model_purchase_carriers
+msgid "purchaseCarriers"
+msgstr ""
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__date_of_collection
+msgid "Date of collection"
+msgstr "Fecha de recolección"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__date_deadline
+msgid "Deadline"
+msgstr "Fecha limite"
+
+#. module: setu_purchase_automation
+#: model:ir.model.fields,field_description:setu_purchase_automation.field_purchase_order__empty_return_date
+msgid "Empty return date"
+msgstr "Fecha de retorno vacío"

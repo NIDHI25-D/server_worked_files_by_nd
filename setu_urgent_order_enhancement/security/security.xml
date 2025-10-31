@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="group_urgent_order" model="res.groups">
+            <field name="name">Access of Urgent Order</field>
+        </record>
+    </data>
+</odoo>

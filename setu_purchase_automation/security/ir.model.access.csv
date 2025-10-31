@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_custom_cateloges,access_custom_cateloges,model_custom_cateloges,base.group_user,1,1,1,1
+access_custom_agency,access_custom_agency,model_custom_agency,base.group_user,1,1,1,1
+access_purchase_carriers,access_purchase_carriers,model_purchase_carriers,base.group_user,1,1,1,1
+access_loading_port_cateloges,access_loading_port_cateloges,model_loading_port_cateloges,base.group_user,1,1,1,1
+access_associate_purchase_order_with_bank_statement,associate.purchase.order.with.bank.statement,model_associate_purchase_order_with_bank_statement,base.group_user,1,1,1,1
+access_loading_port_cateloges,access_loading_port_cateloges,model_loading_port_cateloges,base.group_user,1,1,1,1
+access_preorder_forwarder,access_preorder_forwarder,model_preorder_forwarder,,1,1,1,1
+access_arrival_date_history,arrival.date.history,model_arrival_date_history,,1,1,1,1
+access_arrival_change_reason,arrival.change.reason,model_arrival_change_reason,,1,1,1,1

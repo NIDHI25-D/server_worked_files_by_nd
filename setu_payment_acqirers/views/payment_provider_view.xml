@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="provider_for_monthly_installment" model="ir.ui.view">
+        <field name="name">payment.provider.for.monthly.installment</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position='before'>
+                <group>
+                    <field name="enable_monthly_installment" invisible="module_state != 'installed'"/>
+                </group>
+            </xpath>
+            <xpath expr='//notebook' position='inside'>
+                <page string="Monthly Installment" invisible="enable_monthly_installment == False">
+                    <field name="monthly_installment_ids">
+                        <list editable="bottom">
+                            <field name="pricelist_id" required="1"/>
+                            <field name="months"/>
+                            <field name="minimum_amount"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

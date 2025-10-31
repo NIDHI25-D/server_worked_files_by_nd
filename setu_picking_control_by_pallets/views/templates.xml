@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="scanned_package_template" name="Scan Packages">
+            <t t-call="web.html_container">
+                <!--This Templates is called when token is verified-->
+
+                <div class="text-center">
+                    <h1 class="display-3">
+                        Scanned successfully
+                    </h1>
+                </div>
+                <div>
+                    <t t-if="packages_without_scanned">
+                        <h2>Packages left to be scanned:</h2>
+                        <ul>
+                            <t t-foreach="packages_without_scanned" t-as="package_unscanned">
+                                <li>
+                                    <a t-att-href="'/web#id=%s&amp;model=%s&amp;view_type=form' % (package_unscanned.id,package_unscanned._name)" target="_blank">
+                                        <t t-esc="package_unscanned.name"/>
+                                    </a>
+                                </li>
+                            </t>
+                        </ul>
+                    </t>
+                    <t t-else="">
+                        <h2>All packages have been scanned.</h2>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

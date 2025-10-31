@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="core_violation_report_details" model="ir.actions.report">
+        <field name="name">Core Violation Report as PDF</field>
+        <field name="model">core.violation</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">core_violation_report.report_core_violation</field>
+        <field name="report_file">core_violation_report.report_core_violation</field>
+        <field name="binding_model_id" ref="model_core_violation"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

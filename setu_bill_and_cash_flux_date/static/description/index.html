@@ -1,0 +1,48 @@
+<h2 id="Setu Bill And Cash Flux Date">Setu Bill And Cash Flux Date</h2>
+<h4 id="usage">USAGE</h4>
+<ul>
+    <li>Implemented To Creating the Vendor Bill Dynamically Upon Bill Type, Payment term, Partner Category and purchase
+        payments configuration.
+    </li>
+</ul>
+<h4 id="Purchase Order">Purchase Order</h4>
+<ul>
+    <li> Creating the vendor bill upon purchase payments of payment term Upon the partner tags if the Enable to create
+        a bill is true, then only it will create Bills.
+    </li>
+    <li> filtering the bill types that are going to create the vendor bills.</li>
+    <li> creating the vendor bill for whose currency is same and create bill draft is set to true.</li>
+    <li> after that vendor tax bill for whose tax type is set to true.</li>
+    <li> it only creates a vendor tax bill if not created with the same bill type.</li>
+    <li> Updating the Invoice Due Date Upon some Conditions.</li>
+    <li> Conditions Have to match as follows.</li>
+    <li> If the date updated in PO is mentioned in the payment term, and also a bill type is the same,and its invoice is
+        in draft state.
+    </li>
+</ul>
+<h4 id="Invoice/Bill">Invoice/Bill</h4>
+<ul>
+    <li>added some additional fields.</li>
+</ul>
+<h4 id="Partner Tags">Partner Tags</h4>
+<ul>
+    <li>added some additional fields.</li>
+</ul>
+<h4 id="Payment Term">Payment Term</h4>
+<ul>
+    <li>added some additional fields.</li>
+    <li>You have to configure the purchase payment by adding a bill type, Date Type, Operation Type, Reference, Days to
+        Operate into Bill that are created.
+    </li>
+</ul>
+<h4 id="Bill Type">Bill Type</h4>
+<ul>
+    <li>Creating Bill Type To Create Dynamic Bills.</li>
+</ul>
+<h4 id="Purchase Payment">Purchase Payment</h4>
+<ul>
+    <li>Creating Purchase Payment To Create Dynamic Vendor Bills.</li>
+    <li>Into Payment Term have to create the Purchase Payment with configuration for dates to add or subtract days while
+        creating dynamic bills for vendor purchase order.
+    </li>
+</ul>

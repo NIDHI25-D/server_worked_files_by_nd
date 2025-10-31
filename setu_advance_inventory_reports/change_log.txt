@@ -1,0 +1,23 @@
+Date : 27th Jan 2025
+Version : '18.0.0.3' (in __manifest__.py)
+Odoo Version : 18
+Done by : Devangi Pabari
+Changes : Fixed issue of current stock in Age Analysis and Age Breakdown because of ir_property changes
+
+Date : 9th Jan 2025
+Version : '1.2' (in __manifest__.py)
+Odoo Version : 18
+Done by : Shivam Pandya
+Changes : Remove compute and add domain in xml to filter
+
+Date : 9th January 2025
+Version : '1.1' (in __manifest__.py)
+Odoo Version : 18
+Done by : Vishwa Parmar, Satyam Kapadiya
+Changes : Added dashboard and remove reports menu from inventory module as it was added in separate menu.
+
+Date : 28th Nov 2024
+Version : '1.0' (in __manifest__.py)
+Odoo Version : 18
+Done by : Kamlesh Singh
+Changes : Calculate in_stock days when no sales happen

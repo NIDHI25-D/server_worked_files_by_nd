@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="setu_multi_ecommerce_connector_shopify_extended_from_view" model="ir.ui.view">
+        <field name="name">setu.multi.ecommerce.connector.shopify.extended.form.view</field>
+        <field name="model">setu.multi.ecommerce.connector</field>
+        <field name="inherit_id" ref="setu_ecommerce_based.setu_multi_ecommerce_connector_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'shopify_connector'</attribute>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="attributes">
+                <attribute name="invisible">ecommerce_connector == 'shopify_connector'</attribute>
+            </xpath>
+            <xpath expr="//notebook" position="attributes">
+                <attribute name="readonly">{'readonly': [('ecommerce_connector', '=', 'shopify_connector')]}</attribute>
+            </xpath>
+            <xpath expr="//page[@name='common_setup']" position="before">
+                <page string="Store Setup" name="store_setup_information"
+                      invisible="ecommerce_connector != 'shopify_connector'">
+                    <group>
+                        <group>
+                            <field name="shopify_api_key"
+                                   required="ecommerce_connector == 'shopify_connector'"
+                                   readonly="state in ['fully_integrated','integrated','error']"/>
+                            <field name="shopify_password" password="1"
+                                   required="ecommerce_connector == 'shopify_connector'"
+                                   readonly="state in ['fully_integrated','integrated','error']"/>
+                            <field name="shopify_shared_secret"
+                                   required="ecommerce_connector == 'shopify_connector'"
+                                   readonly="state in ['fully_integrated','integrated','error']"/>
+                        </group>
+                        <group>
+                            <field name="shopify_host"
+                                   required="ecommerce_connector == 'shopify_connector'"
+                                   readonly="state in ['fully_integrated','integrated','error']"/>
+                            <field name="version_control" placeholder="API Version 2021-07"
+                                   required="ecommerce_connector == 'shopify_connector'"
+                                   readonly="state in ['fully_integrated','integrated','error']"/>
+                            <field name="shopify_store_time_zone" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//page[@name='common_setup']" position="after">
+                <page string="Shopify Setup" name="shopify_setup"
+                      invisible="ecommerce_connector != 'shopify_connector'">
+                    <div class="app_settings_block" data-string="Shopify" data-key="setu_shopify_connector">
+                        <h2 style="font-size:20px;text-align:center;color:white;background-color:#875A7B;">Product
+                            Configuration
+                        </h2>
+                        <div class="row mt16 o_settings_container">
+                            <div name="shopify_product_configuration_sync_product_image"
+                                 class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="is_sync_shopify_product_images"
+                                           readonly="state in ['fully_integrated','error']"
+                                           style="text-align: center;" widget="boolean_toggle"/>
+                                </div>
+                                <div class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="is_sync_shopify_product_images"
+                                           readonly="state in ['fully_integrated','error']"/>
+                                    <div class="text-muted">
+                                        - This configuration helps you import shopify images on odoo and mapped with
+                                        product pages.
+                                    </div>
+                                </div>
+                            </div>
+                            <div name="shopify_product_configuration_fulfill_gift_card_order"
+                                 class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="is_auto_fulfill_gift_card_order"
+                                           readonly="state in ['fully_integrated','error']"
+                                           widget="boolean_toggle"/>
+                                </div>
+                                <div class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="is_auto_fulfill_gift_card_order"
+                                           readonly="state in ['fully_integrated','error']"/>
+                                    <div class="text-muted">
+                                        - If unchecked, It will fulfill qty from Odoo to Shopify in update order status
+                                        process.
+                                    </div>
+                                </div>
+                            </div>
+                            <div name="shopify_product_configuration_import_shopify_cost"
+                                 class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="is_auto_import_shopify_cost"
+                                           readonly="state in ['fully_integrated','error']"
+                                           style="text-align: center;" widget="boolean_toggle"/>
+                                </div>
+                                <div class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="is_auto_import_shopify_cost"
+                                           readonly="state in ['fully_integrated','error']"/>
+                                    <div class="text-muted">
+                                        - This option is only manage the Auto Create Product true and only new product
+                                        is create in odoo then cost price(Standard Price) is update.
+                                    </div>
+                                </div>
+                            </div>
+                            <div name="shopify_product_configuration_is_auto_assigned_category_configuration"
+                                 class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="is_auto_assigned_category_configuration"
+                                           readonly="state in ['fully_integrated','error']"
+                                           style="text-align: center;" widget="boolean_toggle"/>
+                                </div>
+                                <div class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="is_auto_assigned_category_configuration"
+                                           readonly="state in ['fully_integrated','error']"/>
+                                    <div class="text-muted">
+                                        - New category with the Costing Method and Inventory Valuation Setup.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box"
+                                 invisible="is_auto_assigned_category_configuration == False">
+                                <div name="shopify_product_configuration_property_cost_method"
+                                     class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="property_cost_method"
+                                           string="Costing Method"/>
+                                    <div class="text-muted">
+                                        - Costing Method is applied to create new category only.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="property_cost_method"
+                                                   readonly="state in ['fully_integrated','error']"
+                                                   required="is_auto_assigned_category_configuration == True"
+                                                   class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 o_setting_box"
+                                 invisible="is_auto_assigned_category_configuration == False">
+                                <div name="shopify_product_configurationproperty_valuation"
+                                     class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="property_valuation"
+                                           string="Inventory Valuation"/>
+                                    <div class="text-muted">
+                                        - Inventory Valuation is applied to create new category only.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="property_valuation"
+                                                   readonly="state in ['fully_integrated','error']"
+                                                   required="is_auto_assigned_category_configuration == True"
+                                                   class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div name="shopify_product_stock_setup_mapped_with_odoo_product"
+                                 class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="shopify_mapped_with_odoo_product"/>
+                                    <div class="text-muted">
+                                        - Product sync pattern with odoo products. This fields use to mapped fields
+                                        between any e-Commerce and Odoo.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="shopify_mapped_with_odoo_product" class="o_light_label"
+                                                   widget="selection"
+                                                   required="state == 'draft', ecommerce_connector != 'shopify_connector'"
+                                                   readonly="state in ['fully_integrated','error']"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 style="font-size:20px;text-align:center;color:white;background-color:#875A7B;">Order
+                            Configuration
+                        </h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div name="shopify_order_configuration_order_status" class="o_setting_right_pane"
+                                     style="margin-left: 35px;">
+                                    <label for="shopify_order_status_ids" string="Import Order Status"/>
+                                    <div class="text-muted">
+                                        - Select order status which you want to import orders from Shopify store to
+                                        odoo.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="shopify_order_status_ids" widget="many2many_tags"
+                                                   options="{'no_create':True,'no_create_edit': True}"
+                                                   readonly="state in ['fully_integrated','error']"
+                                                   class="oe_inline"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div name="shopify_order_configuration_default_pos_customer"
+                                     class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="shopify_default_pos_customer_id"/>
+                                    <div class="text-muted">
+                                        - This customer will be set in POS order not having any customer.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="shopify_default_pos_customer_id"
+                                                   readonly="state in ['fully_integrated','error']"
+                                                   class="o_light_label"
+                                                   options="{'no_create':True,'no_create_edit': True}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div name="shopify_order_configuration_import_shopify_order"
+                                     class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="import_shopify_order_from" string="Import Order After Date"/>
+                                    <div class="text-muted">
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="import_shopify_order_from"
+                                                   required="ecommerce_connector == 'shopify_connector', state in ['integrated','fully_integrated']"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 style="font-size:20px;text-align:center;color:white;background-color:#875A7B;">Payout Report
+                            Configuration
+                        </h2>
+                        <div class="row mt16 o_settings_container">
+                            <div name="shopify_payout_configuration_settlement_report_journal"
+                                 class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane" style="margin-left: 35px;">
+                                    <label for="shopify_settlement_report_journal_id"/>
+                                    <div class="text-muted">
+                                        - Payout report journal helps you to manage the shopify payout report process.
+                                        This journal will be set to all the transaction from coming and set as the
+                                        shopify payout methods.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="shopify_settlement_report_journal_id" class="o_light_label"
+                                                   readonly="state in ['fully_integrated','error']"
+                                                   options="{'no_create':True,'no_open':True}"
+                                                   domain="[('type','in',['cash','bank']),('is_shopify_payout_journal','=',True)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </page>
+                <page string="Payout Setup" name="payout_setup"
+                      invisible="ecommerce_connector != 'shopify_connector'">
+                    <group name="payout_configurations">
+                        <field name="shopify_payment_account_configuration_ids" colspan="2" nolabel="1">
+                            <list nolabel="1">
+                                <field name="transaction_type" required="1"/>
+                                <field name="account_id" required="1"
+                                       options="{'no_create':True,'no_create_edit': True}"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+                <page string="Order Process Setup" name="Order_Process_setup"
+                      invisible="ecommerce_connector != 'shopify_connector'">
+                    <group>
+                        <field name="shopify_sale_order_process_ids" nolabel="1" colspan="2">
+                            <list>
+                                <field name="account_payment_term_id"/>
+                                <field name="setu_shopify_payment_gateway_id"
+                                       options="{'no_create':True,'no_create_edit': True}"
+                                       domain="[('multi_ecommerce_connector_id' ,'=', parent.id)]"/>
+
+                                <field name="shopify_order_financial_status"/>
+                                <field name="setu_sale_order_automation_id"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+                <page string="Webhook Setup" name="webhook_setup"
+                      invisible="ecommerce_connector != 'shopify_connector'">
+                    <group>
+                        <field name="shopify_webhook_ids" nolabel="1" colspan="2">
+                            <list readonly="1" decoration-success="state=='active'">
+                                <field name="name" required="1"/>
+                                <field name="operations" required="1"/>
+                                <field name="state" required="1"/>
+                                <field name="base_url" readonly="1"/>
+                            </list>
+                        </field>
+                    </group>
+                    <div class="alert alert-info" role="alert" style="margin-bottom:0px;">
+                        <h3>Note :-</h3>
+                        <ul>
+                            <li>
+                                Shopify has implemented a five-second timeout period and a retry period for webhook
+                                subscriptions.
+                            </li>
+                            <li>
+                                If there's no response, or an error is returned, then Shopify retries the connection 19
+                                times over the next 48 hours. If there are 19 consecutive failures, then the webhook
+                                subscription is automatically deleted.
+                            </li>
+                            <li>
+                                To avoid timeouts and errors, consider deferring app processing until after the webhook
+                                response has been successfully sent.
+                            </li>
+                            <li>
+                                Shopify verifies SSL certificates when delivering payloads to HTTPS webhook addresses.
+                                Make sure your server is correctly configured to support HTTPS with a valid SSL
+                                certificate
+                            </li>
+                        </ul>
+                    </div>
+                </page>
+                <page string="Data Sync Setup" name="data_sync_setup"
+                      invisible="ecommerce_connector != 'shopify_connector'">
+                    <group>
+                        <group>
+                            <field name="shopify_last_update_product_stock"/>
+                            <field name="shopify_last_customer_import"/>
+                            <field name="last_unshipped_order_import"/>
+                        </group>
+                        <group>
+                            <field name="last_shipped_order_import"/>
+                            <field name="shopify_last_product_import"/>
+                            <field name="last_payment_report_import"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="setu_multi_ecommerce_connector_shopify_action" model="ir.actions.act_window">
+        <field name="name">Shopify Integration</field>
+        <field name="res_model">setu.multi.ecommerce.connector</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'default_ecommerce_connector': 'shopify_connector'}</field>
+        <field name="domain">[('ecommerce_connector', '=', 'shopify_connector')]</field>
+    </record>
+
+    <menuitem id="setu_multi_ecommerce_connector_shopify_menu" name="Shopify Integration"
+              parent="setu_shopify_connector.setu_shopify_configuration_main_menu" sequence="2"
+              action="setu_multi_ecommerce_connector_shopify_action"/>
+</odoo>

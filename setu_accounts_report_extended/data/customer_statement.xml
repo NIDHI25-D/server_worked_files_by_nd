@@ -1,0 +1,12 @@
+<odoo>
+    <record id="account_reports.customer_statement_report" model="account.report">
+        <field name="filter_residual_amount" eval="True"/>
+        <field name="column_ids">
+            <record id="customer_statement_report_residual_amount" model="account.report.column">
+                <field name="name">Residual Amount</field>
+                <field name="expression_label">amount_residual</field>
+                <field name="sequence">55</field>
+            </record>
+        </field>
+    </record>
+</odoo>

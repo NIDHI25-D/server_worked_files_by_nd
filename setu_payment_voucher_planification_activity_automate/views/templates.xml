@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="warning_message_voucher" inherit_id="website_sale.accept_terms_and_conditions" name="warning_message_Setu">
+        <!-- <xpath expr="//input[@id='website_sale_tc_checkbox']" position="attributes">
+            <attribute name="t-att-readonly">true</attribute>
+        </xpath> -->
+        <xpath expr="//div[@name='website_sale_terms_and_conditions_checkbox']" position="replace">
+             <br/>
+             <p class="payment_voucher_warning_class alert alert-warning text-start d-none" role="alert">Favor de adjuntar su comprobante de pago para que su pedido sea liberado</p>
+             <div id="understood_entendido" class="d-none">
+                <input type="checkbox" id="entendido" name="warning_message_understood" class="form-check-input"/> Entendido
+            </div>
+            <div name="website_sale_terms_and_conditions_checkbox" class="form-check mb-2">
+                <input type="checkbox" id="website_sale_tc_checkbox" class="form-check-input"/>
+                <label for="website_sale_tc_checkbox" class="form-check-label">
+                    I agree to the <a target="_BLANK" href="/terms">terms &amp; conditions</a>
+                </label>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="payment_method_form_planification" inherit_id="payment.method_form">
+        <xpath expr="//input[@name='o_payment_radio']" position="attributes">
+            <attribute name="t-att-data-provider-payment-voucher-warning">provider_sudo.payment_voucher_warning</attribute>
+        </xpath>
+    </template>
+
+    <template id="add_link_to_attach_payment_voucher" inherit_id="website_sale.confirmation">
+        <xpath expr="//div[@id='oe_structure_website_sale_confirmation_2']" position="after">
+            <div class="col-lg-12">
+                <center>
+                    <a t-att-href="order.access_url+'?access_token=%s' %order.access_token" class="btn btn-link btn-lg">Upload your payment voucher HERE.</a>
+                </center>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- TASK : https://app.clickup.com/t/86dtbhyt4 { Shipping method description tab functionality bug} -->
+    <!-- To see the message mentioned in the 'Shipping method details to be included' of Shipping method -->
+    <!-- Note: not to write message in 'Description displayed on the ecommerce'-->
+<!--    <template id="carrier_description_payment_delivery_method" name="Carrier description Delivery Carrier"-->
+<!--              inherit_id="website_sale_delivery.payment_delivery_methods">-->
+<!--        <xpath expr="//t[@t-if='delivery.website_description']" position="before">-->
+<!--            <t t-if="delivery.carrier_description">-->
+<!--                <div t-field="delivery.carrier_description" class="shipping_planification text-muted mt8"/>-->
+<!--            </t>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

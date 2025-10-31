@@ -1,0 +1,1 @@
+from . import setu_abc_sales_analysis_report

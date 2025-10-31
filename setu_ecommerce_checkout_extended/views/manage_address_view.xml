@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="setu_ecommerce_checkout_extended.form_details">
+            <input type="hidden" name="company_name" class="company_name" t-att-value="comapny_name"/>
+        </template>
+        <template id="edit_new_link" inherit_id="portal.side_content">
+            <xpath expr="//div[2]/a" position="attributes">
+                <attribute name="href">/my/manage-address</attribute>
+            </xpath>
+        </template>
+        <template id="setu_ecommerce_checkout_extended_portal_docs_entry" inherit_id="portal.portal_docs_entry">
+            <xpath expr="//a[@t-att-href='url']" position="attributes">
+                <attribute name="t-if">request.env.user.partner_id.get_permission_status(url)</attribute>
+            </xpath>
+        </template>
+        <template id="portal_layout" name="Portal layout: contacts menu entry" inherit_id="portal.portal_breadcrumbs"
+                  priority="35">
+
+            <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+                <li t-if="page_name == 'contacts' or contacts"
+                    t-attf-class="breadcrumb-item #{'active' if not contacts else ''}">
+                    <t>Contacts</t>
+                </li>
+                <li t-if="page_name == 'add_contacts'"
+                    t-attf-class="breadcrumb-item #{'active' if not add_contacts else ''}">
+                    <t>Add Contacts</t>
+                </li>
+                <li t-if="page_name == 'edit_contacts'"
+                    t-attf-class="breadcrumb-item #{'active' if not edit_contacts else ''}">
+                    <t>Edit Contacts</t>
+                </li>
+            </xpath>
+        </template>
+
+        <template id="portal_my_home_contact" name="Contacts" customize_show="True" inherit_id="portal.portal_my_home">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-esc="contacts_count"/>
+                <t t-call="portal.portal_docs_entry"
+                   t-if="request.env.user.partner_id.company_type == 'company' or (request.env.user.partner_id.parent_id.company_type == 'company' and request.env.user.partner_id.is_main_partner)">
+                    <t t-set="title">Contacts</t>
+                    <t t-set="url" t-value="'/my/contacts'"/>
+                    <t t-set="placeholder_count" t-value="'contacts_count'"/>
+                    <t t-set="show_count" t-value="True"/>
+                    <t t-set="icon" t-value="'/setu_ecommerce_checkout_extended/static/src/img/contact.svg'"/>
+<!--                    <t t-set="count" t-value="'contacts_count'"/>-->
+<!--                    <t t-set="placeholder_count" t-value="'contacts_count'"/>-->
+                </t>
+            </xpath>
+            <xpath expr="//div[hasclass('o_portal_my_home')]" position="after">
+                <t t-set="category_id" t-value="request.env['ir.config_parameter'].sudo().get_param('setu_ecommerce_checkout_extended.ram_hcategory_id')"/>
+                <t t-if="request.env.user.partner_id.hcategory_id.id == int(category_id) and request.env.user.partner_id.sale_order_count &lt; 1">
+                    <p>Dear distributor, thank you for being part of Marvelsa family, we remind you that in case of not
+                        registering any purchase in the next seven business days your new account will be removed</p>
+
+                </t>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <t t-if="request.env.user.partner_id.hcategory_id.id == int(category_id)">
+                    <div class="o_portal_attachment">
+                        <h4>Attach your Fiscal situation certificate.</h4>
+                        <form action="/portal/upload_attachment" method="post" id="fiscal_certificate"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="partner" t-att-value="request.env.user.partner_id.id"/>
+                            <div>
+                                <input type="file" id="fiscal_situation_certificate"
+                                       name="attach_fiscal_situation_certificate"
+                                       class="form-control" style="width:50%;"
+                                       required="1"/>
+                            </div>
+
+                            <h4>
+                                <button class="btn btn-primary mt-2">
+                                    Submit
+                                </button>
+                            </h4>
+
+                        </form>
+                    </div>
+                    <br/>
+                    <p>To have your account updated and active, it is required to upload your fiscal situation
+                        certificate with an antiquity minor than two months.
+                    </p>
+                </t>
+
+
+            </xpath>
+
+        </template>
+
+        <template id="portal.my_account_link" inherit_id="portal.user_dropdown">
+            <xpath expr="//*[@id='o_logout_divider']" position="before">
+                <a href="/my/home" role="menuitem" class="dropdown-item">Tus pedidos
+                    <br/>
+                </a>
+                <a href="/my/manage-address" role="menuitem" class="dropdown-item">My Account</a>
+            </xpath>
+        </template>
+
+
+        <template id="portal_my_contacts" name="My Contacts">
+            <div class="container oe_website_sale py-2 manage_contacts"
+                 t-if="partner_sudo.is_owner">
+                <div id="toasts"></div>
+                <div class="row no-gutters">
+                    <div class="col-12 col-xl order-xl-1 oe_cart">
+                        <div class="row justify-content-center no-gutters mt-3">
+                            <div class="col-7 p-0 d-flex justify-content-center flex-column">
+                                <h2 id="heading" class="f-22 text-primary">Manage Contacts</h2>
+                            </div>
+                            <div class="col-5 p-0">
+                                <h2 class="steps" style="display: flex;justify-content: end;">
+                                    <form action="/my/contacts/edit" method="post">
+                                        <input type="hidden" name="partner_id"
+                                               t-att-value="request.env.user.partner_id.id"/>
+                                        <input type="hidden" name="mode" value="edit"/>
+                                        <input type="hidden" name="origin" t-att-value="origin"/>
+                                        <input type="hidden" name="csrf_token"
+                                               t-att-value="request.csrf_token()"/>
+                                        <button type="submit" class="edit_my_contact"
+                                                data-toggle="tooltip" data-placement="top" title="Edit Your Account"
+                                                t-att-value="request.env.user.partner_id.id"
+                                                t-att-origin="origin">
+                                            <i class="fa fa-edit"/>
+                                        </button>
+                                    </form>
+                                    <a href="/my/contacts/add">
+                                        <button class="add_contact_btn">Add A Contact</button>
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="px-0 pb-0 mt-3 mb-3 col-12 table-responsive bg-white">
+                                <t t-set="data"
+                                   t-value="data.filtered(lambda x:x.parent_id and x.type in ['other','contact'])"/>
+                                <t t-if="data">
+                                    <table class="table manage-contacts">
+                                        <thead class="btn-primary">
+                                            <tr>
+                                                <th scope="col">Member</th>
+                                                <th scope="col">Permits</th>
+                                                <th scope="col">Last Login</th>
+                                                <th scope="col">Edit / Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="data" t-as="data">
+
+                                                <tr t-att-tr_data="data.id" t-if="data.type in ['other','contact']">
+                                                    <td>
+                                                        <t t-esc="data.name"/>
+                                                    </td>
+                                                    <td class="permissions_td">
+                                                        <t t-if="data.is_budgets_permission">
+                                                            <span class="badge bg-success">Budgets</span>
+                                                        </t>
+                                                        <t t-if="data.is_sale_orders_permission">
+                                                            <span class="badge bg-success">Sale Orders</span>
+                                                        </t>
+                                                        <t t-if="data.is_purchase_permission">
+                                                            <span class="badge bg-success">Purchase Orders</span>
+                                                        </t>
+                                                        <t t-if="data.is_invoices_permission">
+                                                            <span class="badge bg-success">Invoices</span>
+                                                        </t>
+                                                        <t t-if="data.is_claims_permission">
+                                                            <span class="badge bg-success">Claims</span>
+                                                        </t>
+                                                        <t t-if="data.is_consume_loyalty_points">
+                                                            <span class="badge bg-success">Consume Loyalty Points
+                                                            </span>
+                                                        </t>
+                                                    </td>
+                                                    <td>
+                                                        <t t-set="user_data"
+                                                           t-value=" request.env['res.users'].sudo().search([('partner_id', '=', data.id)])"/>
+                                                        <t t-esc="user_data.login_date"/>
+                                                    </td>
+                                                    <td class="edit_delete d-flex justify-content-end" align="right">
+                                                        <form action="/my/contacts/edit" method="post">
+                                                            <input type="hidden" name="partner_id"
+                                                                   t-att-value="data.id"/>
+                                                            <input type="hidden" name="mode" value="edit"/>
+                                                            <input type="hidden" name="csrf_token"
+                                                                   t-att-value="request.csrf_token()"/>
+                                                            <button type="submit" t-att-value="data.id">
+                                                                <i class="fa fa-edit"/>
+                                                            </button>
+                                                        </form>
+                                                        <button class="delete_person mar_l2" t-att-value="data.id">
+                                                            <i class="fa fa-trash"/>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </t>
+                                <t t-else="">
+                                    <div class="alert alert-info" role="alert">
+                                        Currently there are not any contacts available.
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template id="portal_my_contacts_from_portal" name="My Portal Contacts">
+            <t t-call="portal.portal_layout">
+                <div class="container oe_website_sale py-2 manage_contacts"
+                     t-if="request.env.user.partner_id.company_type == 'company' or (request.env.user.partner_id.parent_id.company_type == 'company' and request.env.user.partner_id.is_main_partner)">
+                    <div id="toasts"></div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-xl order-xl-1 oe_cart">
+                            <div class="row justify-content-center g-0 mt-3">
+                                <div class="col-7 p-0 d-flex justify-content-center flex-column">
+                                    <h2 id="heading" class="f-22 text-primary">Manage Contacts</h2>
+                                </div>
+                                <div class="col-5 p-0">
+                                    <h2 class="steps" style="display: flex;justify-content: end;">
+                                        <form action="/my/contacts/edit" method="post">
+                                            <input type="hidden" name="partner_id"
+                                                   t-att-value="request.env.user.partner_id.id"/>
+                                            <input type="hidden" name="mode" value="edit"/>
+                                            <input type="hidden" name="origin" t-att-value="origin"/>
+                                            <input type="hidden" name="csrf_token"
+                                                   t-att-value="request.csrf_token()"/>
+                                            <button type="submit" class="mr-2 edit_my_contact"
+                                                    data-toggle="tooltip" data-placement="top" title="Edit Your Account"
+                                                    t-att-value="request.env.user.partner_id.id"
+                                                    t-att-origin="origin">
+                                                <i class="fa fa-edit"/>
+                                            </button>
+                                        </form>
+                                        <form action="/my/contacts/add" method="post">
+                                            <input type="hidden" name="origin" t-att-value="origin"/>
+                                            <input type="hidden" name="csrf_token"
+                                                   t-att-value="request.csrf_token()"/>
+
+                                            <button type="submit" class="add_contact_btn" t-att-origin="origin">Add A
+                                                Contact
+                                            </button>
+                                        </form>
+                                    </h2>
+                                </div>
+                                <div class="px-0 pb-0 mt-3 mb-3 col-12 table-responsive bg-white">
+                                    <t t-set="data"
+                                       t-value="data.filtered(lambda x:x.parent_id and x.type in ['other','contact'])"/>
+                                    <t t-if="data">
+                                        <table class="table manage-contacts">
+                                            <thead class="btn-primary">
+                                                <tr>
+                                                    <th scope="col">Member</th>
+                                                    <th scope="col">Permits</th>
+                                                    <th scope="col">Last Login</th>
+                                                    <th scope="col">Edit / Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-foreach="data" t-as="data">
+
+                                                    <tr t-att-tr_data="data.id" t-if="data.type in ['other','contact']">
+                                                        <td>
+                                                            <t t-esc="data.name"/>
+                                                        </td>
+                                                        <td class="permissions_td">
+                                                            <t t-if="data.is_budgets_permission">
+                                                                <span class="badge bg-success">Budgets</span>
+                                                            </t>
+                                                            <t t-if="data.is_sale_orders_permission">
+                                                                <span class="badge bg-success">Sales Orders</span>
+                                                            </t>
+                                                            <t t-if="data.is_purchase_permission">
+                                                                <span class="badge bg-success">Purchase Orders</span>
+                                                            </t>
+                                                            <t t-if="data.is_invoices_permission">
+                                                                <span class="badge bg-success">Invoices</span>
+                                                            </t>
+                                                            <t t-if="data.is_claims_permission">
+                                                                <span class="badge bg-success">Claims</span>
+                                                            </t>
+                                                            <t t-if="data.is_consume_loyalty_points">
+                                                                <span class="badge bg-success">Consume Loyalty Points
+                                                                </span>
+                                                            </t>
+                                                        </td>
+                                                        <td>
+                                                            <t t-set="user_data"
+                                                               t-value=" request.env['res.users'].sudo().search([('partner_id', '=', data.id)])"/>
+                                                            <t t-esc="user_data.login_date"/>
+                                                        </td>
+                                                        <td class="edit_delete d-flex justify-content-end"
+                                                            align="right">
+                                                            <form action="/my/contacts/edit" method="post">
+                                                                <input type="hidden" name="partner_id"
+                                                                       t-att-value="data.id"/>
+                                                                <input type="hidden" name="mode" value="edit"/>
+                                                                <input type="hidden" name="origin"
+                                                                       t-att-value="origin"/>
+                                                                <input type="hidden" name="csrf_token"
+                                                                       t-att-value="request.csrf_token()"/>
+                                                                <button type="submit" t-att-value="data.id"
+                                                                        t-att-origin="origin">
+                                                                    <i class="fa fa-edit"/>
+                                                                </button>
+                                                            </form>
+                                                            <button class="delete_person mar_l2" t-att-value="data.id">
+                                                                <i class="fa fa-trash"/>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="alert alert-info" role="alert">
+                                            Currently there are not any contacts available.
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="add_contacts" name="Add Contacts">
+            <t t-call="portal.portal_layout">
+                <t t-set="no_breadcrumbs" t-value="1"/>
+                <div class="container oe_website_sale py-2 mt-3 manage_contacts"
+                >
+                    <t t-set="partner" t-value="request.env['res.partner']"/>
+                    <t t-set="is_edit" t-value="False"/>
+                    <t t-if="partner_id">
+                        <t t-set="partner" t-value="request.env['res.partner'].sudo().search([('id','=',partner_id)])"/>
+                    </t>
+
+                    <t t-if="mode">
+                        <t t-set="is_edit" t-value="mode"/>
+                    </t>
+
+                    <t t-if="error">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <t t-esc="error"/>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <t class="fa fa-close"/>
+                            </button>
+                        </div>
+                    </t>
+                    <div id="toasts"></div>
+                    <div class="row no-gutters">
+                        <div class="col-12 col-xl order-xl-1">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Invitar a los miembros del equipo</h5>
+                                </div>
+                                <form class="add_contact_form" action="/my/contacts/add_contact_data"
+                                      t-att-id="'validate_contact' if not is_edit else ''" method="post">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>Ingresa la direccion de correo electrónico del nuevo contacto.</p>
+                                                <input type="hidden" name="mode" t-att-value="is_edit"/>
+                                                <input type="hidden" name="origin" t-att-value="origin"/>
+                                                <input class="col-12 form-control" type="text" placeholder="Name"
+                                                       t-att-value="partner.name if partner.name  else ''"
+                                                       name="name"/>
+
+                                                <input class="col-12 form-control mt-2" type="email" placeholder="Email"
+                                                       t-att-readonly="'readonly' if partner.email else 'notreadonly'"
+                                                       t-att-value="partner.email if partner.email else ''"
+                                                       id="person_email"
+                                                       name="email"/>
+                                                <div class="table-responsive">
+                                                    <table class="table manage-contacts mt-4">
+                                                        <thead class="btn-primary">
+                                                            <tr>
+                                                                <th scope="col border-0">Permits</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="d-flex">
+                                                                    <input class="form-check-input position-relative contact_input"
+                                                                           type="checkbox"
+                                                                           t-att-checked="partner.is_budgets_permission"
+                                                                           name="is_budgets_permission"/>
+                                                                    Budgets
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="d-flex">
+                                                                    <input class="form-check-input position-relative contact_input"
+                                                                           type="checkbox"
+                                                                           t-att-checked="partner.is_sale_orders_permission"
+                                                                           name="is_sale_orders_permission"/>
+                                                                    Sale Orders
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="d-flex">
+                                                                    <input class="form-check-input position-relative contact_input"
+                                                                           type="checkbox"
+                                                                           t-att-checked="partner.is_purchase_permission"
+                                                                           name="is_purchase_permission"/>
+                                                                    Purchase Orders
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="d-flex">
+                                                                    <input class="form-check-input position-relative contact_input"
+                                                                           type="checkbox"
+                                                                           t-att-checked="partner.is_invoices_permission"
+                                                                           name="is_invoices_permission"/>
+                                                                    Invoices
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="d-flex">
+                                                                    <input class="form-check-input position-relative contact_input"
+                                                                           type="checkbox"
+                                                                           t-att-checked="partner.is_claims_permission"
+                                                                           name="is_claims_permission"/>
+                                                                    Claims
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="d-flex">
+                                                                    <input class="form-check-input position-relative contact_input"
+                                                                           type="checkbox"
+                                                                           t-att-checked="partner.is_consume_loyalty_points"
+                                                                           name="is_consume_loyalty_points"/>
+                                                                    Consume the global points of the master company
+                                                                </td>
+                                                            </tr>
+                                                            <tr t-if="is_edit">
+                                                                <td class="d-flex">
+                                                                    <input class="form-check-input position-relative contact_input"
+                                                                           type="checkbox"
+                                                                           t-att-checked="partner.is_main_partner"
+                                                                           name="is_main_partner"/>
+                                                                    Set As Admin User
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Descripción del permiso</h3>
+                                                <p>
+                                                    <b>Acumular y consumir los puntos globales de la cuenta maestra</b>
+                                                    <br/>
+                                                    Esta función es para que todos los puntos generados de las compras
+                                                    se
+                                                    agrupen en la cuenta maestra
+                                                    <br/>
+                                                    <br/>
+                                                    <b>IMPORTANTE:</b>
+                                                    Esta función une todos los puntos del contacto con la cuenta
+                                                    maestra,
+                                                    ésta acción no se puede deshacer.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a t-att-href="'/my/manage-address' if not origin else origin"
+                                           class="text-white">
+                                            <button type="button" class="btn btn-primary">
+                                                Cancel
+                                            </button>
+                                        </a>
+                                        <button type="submit" class="btn btn-primary">
+                                            <t t-if="is_edit">
+                                                Edit Contact
+                                            </t>
+                                            <t t-else="">
+                                                Enviar invitacion
+                                            </t>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </template>
+
+
+        <template id="setu_ecommerce_checkout_extended.manage_address" inherit_id="website_sale.address">
+            <xpath expr="//div[@id='wrap']" position="replace">
+                <t t-set="additional_title">Shop - Checkout</t>
+                <t t-set="no_footer" t-value="0"/>
+                <div id="wrap" class="setu_ecommerce_checkout_extended">
+                    <div id="toasts"></div>
+                    <div class="setu_loader_class">
+                        <div id="setu_loader"></div>
+                    </div>
+                    <div t-if="request.website.sale_get_order().state == 'draft' and request.website.sale_get_order().website_order_line"
+                         class="alert alert-info rounded-0 ">
+                        <div class="container">
+                            <div class="text-center">
+                                You have active order in your cart to continue
+                                <a href="/shop/payment">
+                                    <i class="fa fa-arrow-right mr-1"/>
+                                    Click Here
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <t t-call="setu_ecommerce_checkout_extended.portal_my_contacts"/>
+                    <div class="container oe_website_sale py-2">
+                        <div class="row">
+                            <div class="col-12 col-xl order-xl-1 oe_cart">
+                                <div class="row justify-content-center">
+                                    <div class="card px-0 pt-4 pb-0 mt-3 mb-3 col-12">
+                                        <h2 id="heading">Manage Address</h2>
+                                        <div id="msform">
+                                            <ul id="progressbar" class="p-0">
+                                                <li class="active step_link cursor-pointer" id="account" data-step="1"
+                                                    data-id="account_information_form">
+                                                    <strong>Account Information</strong>
+                                                </li>
+                                                <li id="company" class="step_link cursor-pointer" data-step="2">
+                                                    <strong>The Company Information</strong>
+                                                </li>
+                                                <li id="billing" class="step_link cursor-pointer" data-step="3">
+                                                    <strong>Billing Information</strong>
+                                                </li>
+                                                <li id="shipping" class="step_link cursor-pointer" data-step="4">
+                                                    <strong>Shipping Address</strong>
+                                                </li>
+                                            </ul>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                     role="progressbar" aria-valuemin="0"
+                                                     aria-valuemax="100"/>
+                                            </div>
+                                            <fieldset>
+                                                <form class="account_information_form" method="post">
+                                                    <div class="form-card">
+                                                        <div class="row">
+                                                            <div class="col-7 title-col">
+                                                                <h2 class="fs-title">Account Information:</h2>
+                                                            </div>
+                                                            <div class="col-5">
+                                                                <h2 class="steps">Step 1 - 4</h2>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" name="csrf_token"
+                                                               t-att-value="request.csrf_token()"/>
+                                                        <input type="hidden" name="step" value="account_info"/>
+                                                        <input type="hidden" name="partner_id"
+                                                               t-att-value="partner_id if partner_id else ''"/>
+                                                        <input type="hidden" name="partner_sudo"
+                                                               t-att-value="partner_sudo.id if partner_sudo else ''"/>
+
+                                                        <input type="hidden" name="address_type"
+                                                               t-att-value="address_type if address_type else ''"/>
+
+                                                        <label class="fieldlabels">Name: *</label>
+                                                        <input type="text" name="name" placeholder="Name"
+                                                               t-att-readonly="1 if partner_sudo.name else 0"
+                                                               t-att-value="partner_sudo.name"/>
+
+                                                        <label class="fieldlabels">Email: *</label>
+                                                        <input type="text" name="email" placeholder="Email"
+                                                               t-att-readonly="1 if user_id.email else 0"
+                                                               t-att-value="user_id.email"/>
+
+                                                        <label class="fieldlabels">Telephone: *</label>
+                                                        <input type="text" name="phone"
+                                                               t-att-readonly="1 if user_id.phone else 0"
+                                                               placeholder="Telephone" t-att-value="user_id.phone"/>
+                                                    </div>
+                                                    <button type="button" name="next" class="next action-button"
+                                                            data-id="account_information_form"
+                                                            value="Next">Next
+                                                    </button>
+                                                </form>
+                                            </fieldset>
+                                            <fieldset>
+
+                                                <form class="company_information_form" method="post">
+                                                    <div class="form-card">
+                                                        <div class="row">
+                                                            <div class="col-7 title-col">
+                                                                <h2 class="fs-title">Company Details:</h2>
+                                                            </div>
+                                                            <div class="col-5">
+                                                                <h2 class="steps">Step 2 - 4</h2>
+                                                            </div>
+                                                        </div>
+                                                        <t t-set="is_website_dale_order"
+                                                           t-value="request.website.sale_get_order().fiscal_position_id.id and request.website.sale_get_order().l10n_mx_edi_usage and request.website.sale_get_order().l10n_mx_edi_payment_method_id.id"/>
+                                                        <t t-set="not_website_dale_order"
+                                                           t-value=" request.env.user.partner_id.fiscal_position_id.id and  request.env.user.partner_id.l10n_mx_edi_usage and  request.env.user.partner_id.l10n_mx_edi_payment_method_id.id"/>
+                                                        <t t-set="is_required_invoice_checkbox" t-value="False"/>
+                                                        <t t-set="fiscal_position" t-value="False"/>
+                                                        <t t-set="use_of_cfdi" t-value="False"/>
+                                                        <t t-set="payment_way" t-value="False"/>
+                                                        <t t-if="is_website_dale_order">
+                                                            <t t-set="is_required_invoice_checkbox"
+                                                               t-value="is_website_dale_order"/>
+                                                            <t t-set="fiscal_position"
+                                                               t-value="request.website.sale_get_order().fiscal_position_id.id"/>
+                                                            <t t-set="use_of_cfdi"
+                                                               t-value="request.website.sale_get_order().l10n_mx_edi_usage"/>
+                                                            <t t-set="payment_way"
+                                                               t-value="request.website.sale_get_order().l10n_mx_edi_payment_method_id.id"/>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <t t-set="is_required_invoice_checkbox"
+                                                               t-value="not_website_dale_order"/>
+                                                            <t t-set="fiscal_position"
+                                                               t-value="request.env.user.partner_id.fiscal_position_id.id"/>
+                                                            <t t-set="use_of_cfdi"
+                                                               t-value="request.env.user.partner_id.l10n_mx_edi_usage"/>
+                                                            <t t-set="payment_way"
+                                                               t-value="request.env.user.partner_id.l10n_mx_edi_payment_method_id.id"/>
+                                                        </t>
+                                                        <t t-set="company"
+                                                           t-value="request.env.user.partner_id if request.env.user.partner_id.company_type == 'company' else ''"/>
+                                                        <t t-set="individual"
+                                                           t-value="request.env.user.partner_id.parent_id if request.env.user.partner_id.parent_id.company_type == 'company' else ''"/>
+                                                        <t t-if="company">
+                                                            <t t-set="company_data"
+                                                               t-value="request.env.user.partner_id"/>
+                                                        </t>
+                                                        <t t-if="individual">
+                                                            <t t-set="company_data"
+                                                               t-value="request.env.user.partner_id.parent_id"/>
+                                                        </t>
+                                                        <t t-if="not individual">
+                                                            <t t-set="company_data"
+                                                               t-value="request.env.user.partner_id"/>
+                                                        </t>
+                                                        <div class="alert alert-info info_requested_company d-none"
+                                                             role="alert">
+                                                            You already requested for some company.If you
+                                                            think anything wrong please contact info@bolder.com
+                                                        </div>
+
+                                                        <div>
+                                                            <t t-if="request.env.user.partner_id.is_company_user">
+                                                                <div class="alert alert-info "
+                                                                     role="alert">
+                                                                    Your data has been saved, if you need to modify it
+                                                                    please contact to <a href="tel:+52 (33) 3283 4940">
+                                                                    33
+                                                                    3283 4940
+                                                                </a> or send an email
+                                                                    <a href="mailto:contacto@marvelsa.com">
+                                                                        contacto@marvelsa.com
+                                                                    </a>
+                                                                </div>
+                                                            </t>
+                                                            <div t-att-class="'d-flex align-items-center py-4'if not request.env.user.partner_id.is_company_user and (not(request.env.user.partner_id.is_company_data and not (is_required_invoice_checkbox or request.env.user.partner_id.is_required_invoice))) else 'd-none'">
+                                                                <label class="fieldlabels m-0">Did You Required an
+                                                                    invoice:
+                                                                    *
+                                                                </label>
+                                                                <input type="checkbox" name="required_invoice"
+                                                                       class="w-auto m-0 mr-2 ml-2"
+                                                                       id="required_invoice"
+                                                                       t-att-readonly="'readonly' if request.env.user.partner_id.is_company_data else 'notdisabled'"
+                                                                       t-att-checked="'checked' if not request.env.user.partner_id.is_company_user and (is_required_invoice_checkbox or request.env.user.partner_id.is_required_invoice) else 'False'"
+                                                                       placeholder="First Name"/>
+                                                            </div>
+
+                                                            <div class="required_invoice d-none">
+                                                                <label class="fieldlabels">Fiscal Position: *</label>
+                                                                <select name="tax_position">
+                                                                    <t t-foreach="request.env['account.fiscal.position'].sudo().search([('company_id','=',request.env.user.company_id.id)])"
+                                                                       t-as="fp">
+                                                                        <option t-att-value="fp.id"
+                                                                                t-att-selected="fp.id == fiscal_position"
+                                                                        >
+                                                                            <t t-esc="fp.name"/>
+                                                                        </option>
+                                                                    </t>
+                                                                </select>
+
+                                                                <label class="fieldlabels">Use Of CFDI: *</label>
+                                                                <select name="use_of_cfdi">
+                                                                    <t t-foreach="request.env['res.partner'].fields_get(['l10n_mx_edi_usage'])['l10n_mx_edi_usage']['selection']"
+                                                                       t-as="cu">
+                                                                        <option t-att-value="cu[0]"
+                                                                                t-att-selected="cu[0] == use_of_cfdi">
+                                                                            <t t-esc="cu[1]"/>
+                                                                        </option>
+                                                                    </t>
+                                                                </select>
+
+                                                                <label class="fieldlabels">Payment Way: *</label>
+                                                                <select name="to_define">
+                                                                    <t t-foreach="request.env['l10n_mx_edi.payment.method'].sudo().search([('active','=','True')])"
+                                                                       t-as="pw">
+                                                                        <option t-att-value="pw.id"
+                                                                                t-att-selected="pw.id == payment_way"
+                                                                        >
+                                                                            <t t-esc="pw.name"/>
+                                                                        </option>
+                                                                    </t>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" name="partner_id"
+                                                               t-att-value="partner_id if partner_id else ''"/>
+                                                        <input type="hidden" name="partner_sudo"
+                                                               t-att-value="partner_sudo.id if partner_sudo else ''"/>
+
+                                                        <input type="hidden" name="address_type"
+                                                               t-att-value="address_type if address_type else ''"/>
+                                                        <input type="hidden" name="step" value="company_info"/>
+                                                        <input type="hidden" name="csrf_token"
+                                                               t-att-value="request.csrf_token()"/>
+                                                        <div id="rfc_form">
+                                                            <label class="fieldlabels">Company type: *</label>
+                                                            <select name="setu_company_type"
+                                                                    t-att-class="'pe-none' if company_data.setu_company_type else ''">
+                                                                <t t-foreach="request.env['res.partner'].fields_get(['setu_company_type'])['setu_company_type']['selection']"
+                                                                   t-as="ct">
+                                                                    <option t-att-value="ct[0]"
+                                                                            t-att-selected="ct[0] == company_data.setu_company_type">
+                                                                        <t t-esc="ct[1]"/>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                            <label class="fieldlabels">RFC : *</label>
+                                                            <input type="text" name="rfc" required="1"
+                                                                   placeholder="RFC" data-id="company_information_form"
+                                                                   class="rfc_box"
+                                                                   t-att-readonly="'readonly' if request.env.user.partner_id.is_company_data and company_data.vat else 'notdisabled'"
+                                                                   t-att-value="company_data.vat if individual or company else ''"
+                                                            />
+                                                            <label class="fieldlabels">Company Name: *</label>
+                                                            <input type="text" name="company_name" required="1"
+                                                                   placeholder="Company Name" class="company_box"
+                                                                   t-att-readonly="'readonly' if request.env.user.partner_id.is_company_data and company_data.name else 'notdisabled'"
+                                                                   t-att-value="company_data.name if individual or company else '' "/>
+                                                            <div class="alert alert-info d-none contact_alert"
+                                                                 role="alert">
+                                                                This RFC and related company already exists in our
+                                                                portal,
+                                                                <span id="request_as_user" t-att-value="company_data.id"
+                                                                      class="cursor-pointer">
+                                                                    <i class="fa fa-arrow-right mr-1"></i>
+                                                                    Click here for request
+                                                                </span>
+                                                                connection.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" name="next" data-id="company_information_form"
+                                                            class="next action-button"
+                                                            t-att-class="'next action-button ddd' if company_data.vat and company_data.name else 'next action-button'"
+                                                            value="Next">Next
+                                                    </button>
+                                                    <button type="button" name="previous"
+                                                            class="previous action-button-previous"
+                                                            value="Previous">Previous
+                                                    </button>
+                                                </form>
+                                            </fieldset>
+                                            <fieldset>
+                                                <t t-set="readonly_form"
+                                                   t-value="false"/>
+                                                <t t-if="not request.env.user.partner_id.is_required_invoice">
+                                                    <t t-set="readonly_form"
+                                                       t-value="true"/>
+                                                </t>
+                                                <form class="billing_information_form"
+                                                      onsubmit="document.getElementsByTagName('select')disabled = false;">
+                                                    <div t-att-class="'form-card billing pe-none' if readonly_form else 'form-card billing'">
+                                                        <div class="row">
+                                                            <div class="col-7 title-col">
+                                                                <h2 class="fs-title">Billing Details:</h2>
+                                                            </div>
+                                                            <div class="col-5">
+                                                                <h2 class="steps">Step 3 - 4</h2>
+                                                            </div>
+                                                        </div>
+
+                                                        <input type="hidden" name="step" value="billing_info"/>
+                                                        <input type="hidden" name="partner_id"
+                                                               t-att-value="partner_id if partner_id else ''"/>
+                                                        <input type="hidden" name="partner_sudo"
+                                                               t-att-value="partner_sudo.id if partner_sudo else ''"/>
+
+                                                        <input type="hidden" name="address_type"
+                                                               t-att-value="address_type if address_type else ''"/>
+
+                                                        <t t-set="company"
+                                                           t-value="request.env.user.partner_id if request.env.user.partner_id.company_type == 'company' else ''"/>
+                                                        <t t-set="individual"
+                                                           t-value="request.env.user.partner_id.parent_id if request.env.user.partner_id.parent_id.company_type == 'company' else ''"/>
+                                                        <t t-if="company">
+                                                            <t t-set="company_data"
+                                                               t-value="request.env.user.partner_id"/>
+                                                            <t t-set="company_details"
+                                                               t-value="request.env.user.partner_id"/>
+                                                        </t>
+                                                        <t t-if="individual">
+                                                            <t t-set="company_data"
+                                                               t-value="request.env.user.partner_id"/>
+                                                            <t t-set="company_details"
+                                                               t-value="request.env.user.partner_id.parent_id"/>
+                                                        </t>
+                                                        <t t-set="readonly"
+                                                           t-value="true if not company_data.is_owner and request.env.user.partner_id.parent_id else false"/>
+
+                                                        <input type="hidden" name="readonly" t-att-value="readonly"/>
+
+                                                        <t t-if="readonly" t-set="company_data"
+                                                           t-value="request.env.user.partner_id.parent_id"/>
+                                                        <t t-if="readonly">
+                                                            <div class="alert alert-info" role="alert">
+                                                                Your account link under company and set billing details
+                                                                as
+                                                                per company address, you can't modify billing address.If
+                                                                you
+                                                                face any issue please contact info@marvelsa.com
+                                                            </div>
+                                                        </t>
+                                                        <t t-if="is_required_invoice_checkbox or request.env.user.partner_id.is_required_invoice">
+                                                            <label class="fieldlabels">RFC : *</label>
+                                                            <input type="text" name="rfc" readonly="1"
+                                                                   t-att-value="company_details.vat if company_details else ''"
+                                                                   placeholder="RFC"/>
+
+                                                            <label class="fieldlabels">Company Name: *</label>
+                                                            <input type="text" name="company_name" readonly="1"
+                                                                   t-att-value="company_details.name if company_details else '' "
+                                                                   placeholder="First Name"/>
+
+                                                        </t>
+                                                        <label class="fieldlabels">Postal Code: *</label>
+                                                        <input type="text" name="postal_code" id="billing_zip"
+                                                               t-att-readonly="'1' if company_data.zip else None"
+                                                               t-att-value="company_data.zip if company_data else ''"
+                                                               placeholder="Postal Code"/>
+
+                                                        <label class="fieldlabels">Street And Number: *</label>
+                                                        <t t-set="billing_street" t-value=""/>
+                                                        <t t-if="company_data.street_name">
+                                                            <t t-set="billing_street" t-att-readonly="readonly"
+                                                               t-value="company_data.street_name"/>
+                                                        </t>
+                                                        <t t-if="company_data.street_number">
+                                                            <t t-set="billing_street" t-att-readonly="readonly"
+                                                               t-value="company_data.street_number"/>
+                                                        </t>
+                                                        <t t-if="company_data.street_name and company_data.street_number">
+                                                            <t t-set="billing_street"
+                                                               t-value="company_data.street_name + ' ' + company_data.street_number"/>
+                                                        </t>
+                                                        <input t-att-readonly="'1' if billing_street else none"
+                                                               type="text"
+                                                               name="street_and_number"
+                                                               t-att-value="billing_street if company_data else ''"
+                                                               placeholder="Street And Number"/>
+
+                                                        <label class="fieldlabels">Street #2:</label>
+                                                        <input t-att-readonly="'1' if company_data.street2 else none"
+                                                               type="text" name="street2"
+                                                               t-att-value="company_data.street2 if company_data else ''"
+                                                               placeholder="Street #2"/>
+
+                                                        <label class="fieldlabels">City: *</label>
+                                                        <input t-att-readonly="'1' if company_data.city else none"
+                                                               type="text" name="city"
+                                                               id="billing_city"
+                                                               t-att-value="company_data.city if company_data else ''"
+                                                               placeholder="City"/>
+
+                                                        <t t-set="colonys"
+                                                           t-value=" request.env['sepomex.res.colony'].sudo().search([('postal_code', '=', company_data.zip)])"/>
+                                                        <label class="fieldlabels">Colony: *</label>
+                                                        <select t-att-disabled="company_data.l10n_mx_edi_colony and '1' or None"
+                                                                name="colony" id="billing_colony"
+                                                                t-att-class="'d-block' if colonys else 'd-none'"
+                                                        >
+                                                            <t t-foreach="colonys" t-as="c_data">
+                                                                <option t-att-value="c_data.name"
+                                                                        t-att-selected="c_data.name == company_data.l10n_mx_edi_colony">
+                                                                    <t t-esc="c_data.name"/>
+                                                                </option>
+                                                            </t>
+                                                        </select>
+
+                                                        <input type="text" name="colony_text" id="billing_colony_text"
+                                                               t-att-class="'d-none' if colonys else ''"
+                                                               t-att-value="company_data.l10n_mx_edi_colony if company_data.l10n_mx_edi_colony else ''"
+                                                               placeholder="Colony"/>
+
+                                                        <label class="fieldlabels">Country: *</label>
+                                                        <select id="billing_country_id"
+                                                                t-att-disabled="company_data.country_id and '1' or None"
+                                                                name="country_id">
+                                                            <t t-foreach="countries" t-as="c">
+                                                                <option t-att-value="c.id"
+                                                                        t-att-selected="c.id == (country.id if country.id else company_data.country_id.id)">
+                                                                    <t t-esc="c.name"/>
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                        <t t-if="company_data.country_id">
+                                                            <input type="hidden" name="country_id"
+                                                                   t-att-value="company_data.country_id.id"/>
+                                                        </t>
+
+                                                        <label class="fieldlabels billing_states">State: *</label>
+                                                        <select id="country_states_id"
+                                                                name="country_states_id"
+                                                                t-att-disabled="company_data.state_id and '1' or None"
+                                                                t-att-style="(not country or not country.state_ids) and 'display: none'">
+                                                            <option value="">State / Province...</option>
+                                                            <t t-foreach="country_states" t-as="s">
+                                                                <option t-att-value="s.id"
+                                                                        t-att-states="s.country_id.id"
+                                                                        t-att-selected="s.id == company_data.state_id.id">
+                                                                    <t t-esc="s.name"
+                                                                    />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                        <t t-if="company_data.state_id">
+                                                            <input type="hidden" name="country_states_id"
+                                                                   t-att-value="company_data.state_id.id"/>
+                                                        </t>
+                                                    </div>
+                                                    <button type="button" name="next" class="next action-button"
+                                                            data-id="billing_information_form"
+                                                            value="Next">Next
+                                                    </button>
+                                                    <button type="button" name="previous"
+                                                            class="previous action-button-previous"
+                                                            value="Previous">Previous
+                                                    </button>
+                                                </form>
+                                            </fieldset>
+                                            <fieldset>
+                                                <div class="row address_row mb-4">
+                                                    <div class="col-7 title-col">
+                                                        <h2 class="fs-title">Shipping Address :</h2>
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <h2 class="steps">Step 4 - 4</h2>
+                                                    </div>
+                                                    <div class="col-md-6 all_address text-left card-pad-0 mt-3">
+                                                        <t t-set='selected'
+                                                           t-value="request.website.sale_get_order().partner_shipping_id==request.env.user.partner_id"/>
+                                                        <div class="card"
+                                                             t-att-style="'' if not selected else 'background: #FFF;color: #3e6343;'">
+                                                            <div class="card_header">
+                                                                <form action="/shop/checkout" method="POST">
+                                                                    <t t-if="selected">
+                                                                        <button class="btn text-white"
+                                                                                style="background: #3e6343;">
+                                                                            Default Address
+                                                                        </button>
+                                                                    </t>
+                                                                    <t t-else="">
+                                                                        <button class="btn btn-default-address text-white">
+                                                                            Set As Default Address
+                                                                        </button>
+                                                                    </t>
+                                                                    <input type="hidden" name="csrf_token"
+                                                                           t-att-value="request.csrf_token()"/>
+                                                                    <input type="hidden" name="partner_id"
+                                                                           t-att-value="request.env.user.partner_id.id"/>
+                                                                    <input type="hidden" name="xhr" value="1"/>
+                                                                </form>
+                                                            </div>
+                                                            <address class="show_address"
+                                                                     t-field="request.env.user.partner_id"
+                                                                     t-options="{'widget': 'contact'}"/>
+                                                        </div>
+                                                    </div>
+                                                    <t t-set="shipping_address"
+                                                       t-value="request.env.user.partner_id.search([('id', 'child_of', request.env.user.partner_id.commercial_partner_id.ids)])"/>
+                                                    <t t-foreach="shipping_address"
+                                                       t-as="shipping_addresses">
+                                                        <t t-if="shipping_addresses">
+                                                            <t t-if="shipping_addresses.type == 'delivery'">
+                                                                <t t-set='selected'
+                                                                   t-value="request.website.sale_get_order().partner_shipping_id.id==shipping_addresses.id"/>
+                                                                <div class="col-md-6 all_address card-pad-0 mt-3">
+                                                                    <div class="card"
+                                                                         t-att-style="'' if not selected else 'background: #FFF;color: #3e6343;'">
+                                                                        <div class="card_header">
+
+                                                                            <form action="/shop/checkout" method="POST">
+
+                                                                                <t t-if="selected">
+                                                                                    <button class="btn text-white"
+                                                                                            style="background: #3e6343;">
+                                                                                        Default Address
+                                                                                    </button>
+                                                                                </t>
+                                                                                <t t-else="">
+                                                                                    <button class="btn btn-default-address text-white">
+                                                                                        Set As Default Address
+                                                                                    </button>
+                                                                                </t>
+
+                                                                                <input type="hidden" name="csrf_token"
+                                                                                       t-att-value="request.csrf_token()"/>
+                                                                                <input type="hidden" name="partner_id"
+                                                                                       t-att-value="shipping_addresses.id"/>
+                                                                                <input type="hidden" name="xhr"
+                                                                                       value="1"/>
+                                                                            </form>
+                                                                            <i t-attf-class="fa fa-trash #{'d-none' if selected else 'delete_address'}"
+                                                                               data-toggle="tooltip"
+                                                                               t-att-data-value="shipping_addresses.id"
+                                                                               data-placement="top" title="Remove"/>
+                                                                            <i class="fa fa-edit edit_address"
+                                                                               data-toggle="tooltip"
+                                                                               t-att-data-value="shipping_addresses.id"
+                                                                               data-placement="top" title="Edit"/>
+                                                                        </div>
+                                                                        <t t-esc="shipping_addresses"
+                                                                           t-options="dict(widget='contact', fields=['name', 'address'], no_marker=True)"/>
+                                                                    </div>
+                                                                </div>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                    <div class="col-md-6 card-pad-0 mt-3">
+                                                        <div class="card h-100 d-flex align-items-center justify-content-center card-btn btn-add-address">
+                                                            <i class="fa fa-plus"/>
+                                                            <span>Add Address</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 p-0 btn-last-previous">
+                                                    <a href="/shop/payment" class="btn-cart"
+                                                       t-if="request.website.sale_get_order().state == 'draft' and request.website.sale_get_order().website_order_line">
+                                                        Continue To Cart
+                                                    </a>
+                                                    <a class="confirm_button" href="/my"
+                                                       t-if="not (request.website.sale_get_order().state == 'draft' and request.website.sale_get_order().website_order_line)">
+                                                        Confirm
+                                                    </a>
+                                                    <button type="button" name="previous"
+                                                            class="previous action-button-previous"
+                                                            value="Previous">Previous
+                                                    </button>
+                                                </div>
+
+                                                <form class="d-none form-shipping shipping_information_form">
+                                                    <div class="form-card shipping">
+                                                        <div class="row">
+                                                            <div class="col-7 title-col">
+                                                                <h2 class="fs-title">New Shipping Address:</h2>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" name="partner_id"
+                                                               t-att-value="partner_id if partner_id else ''"/>
+                                                        <input type="hidden" name="partner_sudo"
+                                                               t-att-value="partner_sudo.id if partner_sudo else ''"/>
+
+                                                        <input type="hidden" name="address_type"
+                                                               t-att-value="address_type if address_type else ''"/>
+                                                        <input type="hidden" name="step" value="shipping_info"/>
+                                                        <input type="hidden" name="shipping_partner_id"
+                                                               value="shipping_partner_id" id="shipping_partner_id"/>
+
+                                                        <label class="fieldlabels">Name: *</label>
+                                                        <input type="text" name="name" placeholder="Name"
+                                                               id="shipping_name"
+                                                        />
+
+                                                        <label class="fieldlabels">Email: *</label>
+                                                        <input type="text" name="email" placeholder="Email"
+                                                               id="shipping_email"
+                                                        />
+
+                                                        <label class="fieldlabels">Telephone: *</label>
+                                                        <input type="text" name="phone" id="shipping_telephone"
+                                                               placeholder="Telephone"/>
+
+                                                        <label class="fieldlabels">Postal Code: *</label>
+                                                        <input type="text" name="postal_code" id="shipping_postal_code"
+                                                               placeholder="Postal Code"/>
+
+
+                                                        <label class="fieldlabels">Street And Number: *</label>
+                                                        <input type="text" name="street_and_number"
+                                                               id="shipping_street_and_number"
+                                                               placeholder="Street And Number"/>
+
+                                                        <label class="fieldlabels">Street2 :</label>
+                                                        <input type="text" name="street2" id="shipping_street2"
+                                                               placeholder="street2"/>
+
+                                                        <label class="fieldlabels">Colony: *</label>
+                                                        <t t-set="colonys"
+                                                           t-value=" request.env['sepomex.res.colony']"/>
+                                                        <select name="colony" id="shipping_colony"
+                                                                t-att-class="'d-block' if colonys else 'd-none'"
+                                                        >
+                                                            <t t-foreach="colonys" t-as="c_data">
+                                                                <option t-att-value="c_data.name">
+                                                                    <t t-esc="c_data.name"/>
+                                                                </option>
+                                                            </t>
+                                                        </select>
+
+                                                        <input type="text" name="shipping_colony_text"
+                                                               id="shipping_colony_text"
+                                                               t-att-class="'d-none' if colonys else ''"
+                                                               placeholder="Colony"/>
+
+                                                        <label class="fieldlabels">City: *</label>
+                                                        <input type="text" name="city" id="shipping_city"
+                                                               placeholder="City"/>
+
+
+                                                        <label class="fieldlabels">Country: *</label>
+                                                        <select id="country_id" name="country_id">
+                                                            <t t-foreach="countries" t-as="c">
+                                                                <option t-att-value="c.id"
+                                                                        t-att-selected="c.id == country.id">
+                                                                    <t t-esc="c.name"/>
+                                                                </option>
+                                                            </t>
+                                                        </select>
+
+                                                        <label class="fieldlabels shipping_states">State: *</label>
+                                                        <select id="country_states_id" name="country_states_id"
+                                                                t-att-style="(not country or not country.state_ids) and 'display: none'">
+                                                            <option value="">State / Province...</option>
+                                                            <t t-foreach="country_states" t-as="s">
+                                                                <option t-att-value="s.id"
+                                                                        t-att-states="s.country_id.id"
+                                                                        t-att-selected="s.id == user_id.parent_id.state_id.id">
+                                                                    <t t-esc="s.name"
+                                                                    />
+                                                                </option>
+                                                            </t>
+                                                        </select>
+
+                                                    </div>
+                                                    <a href="/shop/payment" class="btn-cart"
+                                                       t-if="request.website.sale_get_order().state == 'draft' and request.website.sale_get_order().website_order_line">
+                                                        Continue To Cart
+                                                    </a>
+                                                    <button type="button" name="next" class="next action-button"
+                                                            data-id="shipping_information_form"
+                                                            value="Submit">Submit
+                                                    </button>
+                                                    <button type="button" name="previous"
+                                                            class="previous action-button-previous"
+                                                            value="Previous">Previous
+                                                    </button>
+                                                    <a class="confirm_button" href="/my"
+                                                       t-if="not (request.website.sale_get_order().state == 'draft' and request.website.sale_get_order().website_order_line)">
+                                                        Confirm
+                                                    </a>
+                                                </form>
+                                            </fieldset>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="address_row" inherit_id="website_sale.address_row" name="Remove Add Address from Billing">
+            <xpath expr="//div/div[2]" position="replace">
+                <t t-if="not is_invoice">
+                    <!-- Show Add button only for delivery addresses -->
+                    <div class="one_kanban col-md">
+                        <t t-set="new_address_href"
+                           t-valuef="/shop/address?address_type=delivery&amp;use_delivery_as_billing={{use_delivery_as_billing}}"/>
+                        <a
+                                role="button"
+                                t-att-href="new_address_href"
+                                t-att-data-address-type="'delivery'"
+                                class="o_wsale_add_address d-flex align-items-center justify-content-center h-100 px-4 border rounded mx-auto no-decoration"
+                        >
+                            <i class="fa fa-plus me-md-2"/>
+                            <span class="d-none d-md-inline">Add address</span>
+                        </a>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="address_kanban_inherit" inherit_id="website_sale.address_kanban">
+            <xpath expr="//div[hasclass('card-body')]/t[2]/a[hasclass('js_edit_address')]" position="replace">
+                <t t-if="contact.id == request.env.user.partner_id.id and address_type == 'delivery'">
+                    <t t-set="new_address_href" t-value="'/shop/address?address_type=' + address_type"/>
+                    <a
+                            t-att-href="new_address_href + '&amp;partner_id=' + str(contact.id)"
+                            class="js_edit_address btn btn-link p-0 mt-auto"
+                            role="button"
+                            title="Edit this address"
+                            aria-label="Edit this address">
+                        <i class="fa fa-pencil me-1"/>Edit
+                    </a>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="l10n_mx_edi_invoicing_info_inherited_for_readonly" inherit_id="l10n_mx_edi_website_sale.l10n_mx_edi_invoicing_info">
+<!--            <xpath expr="//t[@t-foreach='l10n_mx_edi_fields']//select[@t-att-name='field.name']" position="attributes">-->
+<!--                <attribute name="t-att-disabled">True if field.name == 'l10n_mx_edi_fiscal_regime' else False</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//t[@t-foreach='l10n_mx_edi_fields']//select[@t-att-name='field.name']" position="after">-->
+<!--                <t t-if="field.name == 'l10n_mx_edi_fiscal_regime'">-->
+<!--                    <input type="hidden" name="l10n_mx_edi_fiscal_regime" t-att-value="val"/>-->
+<!--                </t>-->
+<!--            </xpath>-->
+<!--            ==================== optional for readonly =============================-->
+            <xpath expr="//t[@t-foreach='l10n_mx_edi_fields']//select[@t-att-name='field.name']" position="attributes">
+                <attribute name="t-att-style">"pointer-events: none;color: #909294;" if field.name == 'l10n_mx_edi_fiscal_regime' else None
+                </attribute>
+                <attribute name="t-att-onfocus">"this.blur()" if field.name == 'l10n_mx_edi_fiscal_regime' else None
+                </attribute>
+            </xpath>
+
+            <xpath expr="//t[@t-foreach='l10n_mx_edi_fields']//input[@type='checkbox']" position="attributes">
+                <attribute name="disabled">disabled</attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="setu_oracle_sale_order_tree_view_extended" model="ir.ui.view">
+        <field name="name">setu.oracle.sale.order.tree.view.extended</field>
+        <field name="model">sale.order</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <tree create="false" default_order="id desc">
+                <field name="name" string="Order Number"/>
+                <field name="date_order"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+                <field name="amount_total" sum="Total Tax Included" widget="monetary"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="setu_oracle_sale_order_form_view_extended" model="ir.ui.view">
+        <field name="name">setu.oracle.res.partner.form.view.extended</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Oracle Info" name="Oracle"
+                      attrs="{'invisible':['|', ('multi_ecommerce_connector_id','=',False), ('ecommerce_connector','!=','oracle_connector')]}">
+                    <group>
+                        <group>
+                            <field name="ecommerce_connector" invisible="1"/>
+                            <field name="is_oracle_order" readonly="True"/>
+                            <field name="oracle_internal_id" readonly="True"/>
+                            <field name="oracle_transaction_id" readonly="True"/>
+                            <field name="oracle_order_status" readonly="True"/>
+                            <field name="multi_ecommerce_connector_id" readonly="True"
+                                   options="{'no_create':True,'no_create_edit':True}"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="oracle_order_search_view" model="ir.ui.view">
+        <field name="name">Oracle Search View</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="oracle_internal_id"/>
+                <field name="oracle_transaction_id"/>
+                <field name="oracle_order_status"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter string="Oracle order status" name="oracle_order_status"
+                        context="{'group_by':'oracle_order_status'}"/>
+                <filter string="e-Commerce Connector" name="multi_ecommerce_connector_id"
+                        context="{'group_by':'multi_ecommerce_connector_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="setu_oracle_quotation_sale_order_action" model="ir.actions.act_window">
+        <field name="name">Oracle Quotations</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_oracle_order','=',True),('state','in',('draft','sent'))]</field>
+        <field name="view_id" ref="setu_oracle_sale_order_tree_view_extended"/>
+    </record>
+
+    <record id="setu_multi_ecommerce_connector_sale_action" model="ir.actions.act_window">
+        <field name="name">Oracle Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_id" ref="setu_oracle_sale_order_tree_view_extended"/>
+        <field name="domain">
+            [('ecommerce_connector','=','oracle_connector'),('multi_ecommerce_connector_id','=',active_id)]
+        </field>
+    </record>
+
+    <menuitem id="setu_oracle_quotations_order_main_menu" name="Quotations"
+              parent="setu_oracle_connector.setu_oracle_sale_order_main_menu"
+              action="setu_oracle_quotation_sale_order_action" sequence="2"/>
+    <!--    <menuitem id="oracle_menu_item_sales_order" name="Sales Order"-->
+    <!--              parent="setu_oracle_connector.setu_oracle_sale_order_main_menu"-->
+    <!--              action="setu_oracle_done_sale_order_action" sequence="3"/>-->
+
+</odoo>
+	

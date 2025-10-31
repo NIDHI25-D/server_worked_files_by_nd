@@ -1,0 +1,237 @@
+<!--<?xml version="1.0" encoding="UTF-8" ?>-->
+<!--<odoo>-->
+<templates>
+    <t t-name="preorderProductsInformation">
+        <div class="mt8 mb8" id="buy_it_as_div" style="display:none">
+            <span>Buy It</span>
+<!--            <t t-debug="pdb"/>-->
+            <select class="form-select buy_it_as" aria-label="Buy it as" id="buy_it_as" name="buy_it_as">
+                <t t-if="quantity_available['free_qty']">
+                    <t t-if="window.localStorage.getItem('stock_type') == 'stock'">
+                        <option selected="1" value="stock">From Stock - Standard delivery</option>
+                    </t>
+                    <t t-else="">
+                        <option value="stock">From Stock - Standard delivery</option>
+                    </t>
+                </t>
+
+                <t t-if="quantity_available['preorder_qty']">
+                    <t t-if="window.localStorage.getItem('stock_type') == 'preorder'">
+                        <option selected="1" value="preorder">As Preorder</option>
+                    </t>
+                    <t t-else="">
+                        <option value="preorder">As Preorder</option>
+                    </t>
+                </t>
+
+                <t t-if="quantity_available['presale_qty']">
+                    <t t-if="window.localStorage.getItem('stock_type') == 'presale'">
+                        <option selected="1" value="presale">As Presale</option>
+                    </t>
+                    <t t-else="">
+                        <option value="presale">As Presale</option>
+                    </t>
+                </t>
+
+                <t t-if="quantity_available['international_preorder_qty']">
+                    <t t-if="window.localStorage.getItem('stock_type') == 'international_preorder'">
+                        <option selected="1" value="international_preorder">As International Preorder</option>
+                    </t>
+                    <t t-else="">
+                        <option value="international_preorder">As International Preorder</option>
+                    </t>
+                </t>
+
+                <t t-if="is_next_day_shipping and quantity_available['free_qty']">
+                    <t t-if="window.localStorage.getItem('stock_type') == 'is_next_day_shipping'">
+                        <option selected="1" value="is_next_day_shipping">As Next Day Shipping</option>
+                    </t>
+                    <t t-else="">
+                        <option value="is_next_day_shipping">As Next Day Shipping</option>
+                    </t>
+                </t>
+            </select>
+        </div>
+        <div t-if="quantity_available['international_preorder_qty']">
+            <table class="table table table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="2" style="text-align:center;">Conditions Table</th>
+                    </tr>
+                    <tr>
+                        <th class="table-dark" style="color:#FF9C00; padding:15px; text-align:left;">
+                            Minimum Quantity
+                        </th>
+                        <td style="padding:15px; text-align:right;">
+                            <t t-esc="minimum_qty_for_preorder_presale"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="table-dark" style="color:#FF9C00; padding:15px; text-align:left;">
+                            Minimum Exclusivity Quantity
+                        </th>
+                        <td style="padding:15px; text-align:right;">
+                            <t t-esc="minimum_exclusivity_quantity"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="table-dark" style="color:#FF9C00; padding:15px; text-align:left;">
+                            Delivery Estimated Time
+                        </th>
+                        <td style="padding:15px; text-align:right;">
+                            <t t-esc="delivery_estimated_time"/>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="alert alert-danger d-none" role="alert" id="prevent_stock">
+            <span t-esc="msg"/>
+        </div>
+        <div class="alert alert-danger d-none" role="alert" id="next_day_shipping_alert">
+            <span>This product is available for next day shipping but if you want to add this kindly delete products present in the cart</span>
+        </div>
+        <div class="alert alert-warning" role="alert" id="preorder_note_message"
+             t-if="quantity_available['presale_qty'] || quantity_available['preorder_qty'] || quantity_available['international_preorder_qty']">
+            <t t-if="quantity_available['preorder_qty']">
+                <div>Pre Orden Producto Nacional</div><br/>
+                <div>*Recuerda que para agregar producto de Pre orden sera necesario no tener producto bajo ninguna otra condición en tu carrito, en el caso de preventa o en existencia.</div><br/>
+                <div>*En algunos productos sera necesario cumplir con un minimo de unidades</div><br/>
+                <div>*El tiempo de espera de tu pre orden es de 5 a 18 dias aproximadamente a partir de la confirmación de tu pedido ya que depende de el tiempo de fabricacion.</div><br/>
+                <div>*Condiciones de pago: No es necesario un deposito en garantia, puedes utilizar tus condiciones de pago.</div><br/>
+                <div>Nota: Las fechas de arribo están sujetos a cambios sin previo aviso para productos en Pre Orden.</div>
+            </t>
+            <t t-if="quantity_available['international_preorder_qty']">
+                <div t-raw="intl_preorder_msg"/>
+            </t>
+        </div>
+        <div id="products_arrivals_info">
+            <table class="table table table-bordered">
+                <thead>
+                    <tr t-if="quantity_available['calculated_qty']">
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:left;">
+                            Available In Stock
+                        </th>
+                        <td style="padding:15px; text-align:right;">
+                            <t t-out="quantity_available['calculated_qty']"/>
+                        </td>
+                    </tr>
+
+                    <tr t-if="default_code">
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:left;">
+                            SKU
+                        </th>
+
+                        <td style="padding:15px; text-align:left;">
+                            <t t-out="default_code"/>
+                        </td>
+                    </tr>
+                    <tr t-if="quantity_available['presale_qty']">
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:left;">
+                            Total Available For Presale
+                        </th>
+
+                        <td style="padding:15px; text-align:right;">
+                            <t t-out="quantity_available['presale_qty']"/>
+                        </td>
+                    </tr>
+
+                    <tr t-if="quantity_available['preorder_qty']">
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:left;">
+                            Available For Preorder
+                        </th>
+
+                        <td style="padding:15px; text-align:right;">
+                            <t t-out="quantity_available['preorder_qty']"/>
+                        </td>
+                    </tr>
+                    <tr t-if="quantity_available['international_preorder_qty']">
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:left;">
+                            Available For International Preorder
+                        </th>
+
+                        <td style="padding:15px; text-align:right;">
+                            <t t-out="quantity_available['international_preorder_qty']"/>
+                        </td>
+                    </tr>
+
+
+                </thead>
+            </table>
+            <table class="table table table-bordered"
+                   t-if="quantity_available['order_line'].length > 0">
+                <thead>
+                    <tr id="rcorners1" style="height:50px">
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:center;">
+                            Available as
+                        </th>
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:center;">
+                            Expected
+                            Date
+                        </th>
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:center;">
+                            Quantity
+                        </th>
+                    </tr>
+                    <tbody>
+                        <t t-foreach="quantity_available['order_line']" t-as="order_line" t-key="order_line.id">
+                            <tr>
+                                <td style="padding-top:5px; width:150px;text-align:center;">
+                                    <t t-out="order_line.type"/>
+                                </td>
+                                <td style="padding-top:5px; width:150px;text-align:center;"
+                                    t-if="order_line.date_planned">
+                                    <t t-out="order_line.date_planned_mx"/>
+                                </td>
+                                <td style="padding-top:5px; width:100px; text-align:center;border-right:1px solid black;">
+                                    <t t-out="order_line.product_uom_qty"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </thead>
+            </table>
+            <table class="table table-striped table-sm table-bordered" t-if="quantity_available['free_qty']">
+                <thead>
+                    <tr>
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:center;">Warehouse Name
+                        </th>
+                        <th class="table-dark"
+                            style="color:#FF9C00; padding:15px; text-align:center;">Quantity
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="quantity_available['warehouse_dict']" t-as="warehouse_data" t-key="warehouse_data.id">
+                        <tr>
+                            <td style="padding-top:5px; width:150px;text-align:left;">
+                                <t t-out="warehouse_data.name"/>
+                            </td>
+                            <td style="padding-top:5px; width:150px;text-align:right;">
+                                <t t-out="warehouse_data.qty"/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+
+        </div>
+    </t>
+    <t t-name="exclusive_preorder_information">
+        <t t-if="minimum_exclusivity_quantity > 0">
+            <div class="exclusivity_product d-none">
+                <input type="checkbox" id="international_exclusivity" name="preorder_international_exclusivity"/>
+                I want the Exclusivity of this product
+            </div>
+        </t>
+    </t>
+</templates>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Add field in form view -->
+        <record id="stock_picking_form_view_inherited" model="ir.ui.view">
+            <field name="name">stock.picking.form.view.inherited</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='owner_id']" position="after">
+                    <field name="location_id_usage" invisible="1"/>
+                    <field name="container_type" invisible="picking_type_code not in ['incoming'] and location_id_usage != 'supplier'"/>
+                    <field name="container_qty_received" required="container_type == 'consolidated'"/>
+                    <field name="containers_cubic_meters" invisible="container_type != 'consolidated'" required="container_type == 'consolidated'"/>
+                    <field name="container_ref" invisible="picking_type_code not in ['incoming'] and location_id_usage != 'supplier'" required="picking_type_code == 'incoming'"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add filter in list view-->
+        <record id="search_stock_pickings_field_in_filter" model="ir.ui.view">
+            <field name="name">search.stock.pickings.field.in.filter</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <filter string="20 Feet" name="container_type" domain="[('container_type','=','20_feet')]"/>
+                    <filter string="40 Feet" name="container_type" domain="[('container_type','=','40_feet')]"/>
+                    <filter string="Consolidated" name="container_type"
+                            domain="[('container_type','=','consolidated')]"/>
+                </xpath>
+                <xpath expr="//search/group" position="inside">
+                    <filter string="Container Type" name="container_type" domain="[]"
+                            context="{'group_by': 'container_type'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="is_ecommerce_team_inherit" model="ir.ui.view">
+            <field name="name">is.ecommerce.team.inherit</field>
+            <field name="model">crm.team</field>
+            <field name="inherit_id" ref="crm.sales_team_form_view_in_crm"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options_active']" position="inside">
+                    <div class="o_row">
+                        <span name="ecommerce_team">
+                            <field name="is_ecommerce_team"/>
+                            <label for="is_ecommerce_team"/>
+                        </span>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

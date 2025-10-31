@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="portal_templated_extended_for_my_statistics" inherit_id="portal.my_account_link">
+        <xpath expr="//*[@id='o_logout_divider']" position="before">
+            <a href="/my/statistics" role="menuitem" class="dropdown-item">My Statistics</a>
+        </xpath>
+    </template>
+</odoo>

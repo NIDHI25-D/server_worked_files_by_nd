@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="cancel_monthly_proposal_order" inherit_id="website_sale.cart">
+            <xpath expr="//div[@id='oe_structure_website_sale_cart_1']" position="before">
+                <a role="button"
+                   t-if="website_sale_order and website_sale_order.website_order_line and website_sale_order.is_monthly_proposal"
+                   class="btn btn-danger float-right d-none d-xl-inline-block p-1" href="/shop/cancel?express=1"
+                   style="margin-right: 8px;">
+                    <span class="">Cancel Order</span>
+                </a>
+            </xpath>
+        </template>
+
+
+<!--        <template id="load_more_in_suggested"-->
+<!--                  inherit_id="website_sale.cart_lines"-->
+<!--                  name="monthly proposal message">-->
+<!--            <xpath expr="//div[@id='cart_products']" position="before">-->
+<!--                <t t-set="message"-->
+<!--                       t-value="request.env['ir.default'].sudo()._get('res.config.settings','message_for_customer_in_monthly_proposal', company_id=request.env.company.id)"/>-->
+<!--                <div class="alert alert-warning" role="alert" id="monthly_proposal_message"-->
+<!--                     t-if="website_sale_order.is_monthly_proposal and message">-->
+
+<!--                    <t t-esc="message"/>-->
+<!--                </div>-->
+<!--            </xpath>-->
+<!--        </template>-->
+        <template id="cart_load_more_in_suggested"
+                  inherit_id="website_sale.cart"
+                  name="monthly proposal message Cart">
+            <xpath expr="//t[@t-call='website_sale.cart_lines']" position="before">
+                <t t-set="message"
+                       t-value="request.env['ir.default'].sudo()._get('res.config.settings','message_for_customer_in_monthly_proposal', company_id=request.env.company.id)"/>
+                <div class="alert alert-warning" role="alert" id="monthly_proposal_message"
+                     t-if="website_sale_order.is_monthly_proposal and message">
+                    <t t-esc="message"/>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

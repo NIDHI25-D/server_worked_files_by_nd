@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="marvelfields_inherited_view_account_move_reversal" model="ir.ui.view">
+            <field name="model">account.move.reversal</field>
+            <field name="inherit_id" ref="account.view_account_move_reversal"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='available_journal_ids']" position="after">
+                    <field name="wallet_type" invisible="1"/>
+                    <div invisible="wallet_type != 'marvelsa_wallet'"
+                         colspan="2">
+                        <field name="is_marvelsa_wallet" no_label="1"/>
+                        <span style="font-weight:bold; font-size: 15px;">
+                        Are you sure you want to add a credit note to the customer with the bonus type Marvelsa
+                        Wallet assigned?
+                        </span>
+                    </div>
+                </xpath>
+                <xpath expr="//button[@name='refund_moves']" position="attributes">
+                    <attribute name="invisible">wallet_type == 'marvelsa_wallet' and is_marvelsa_wallet != True</attribute>
+                </xpath>
+                <xpath expr="//button[@name='modify_moves']" position="attributes">
+                    <attribute name="invisible">wallet_type == 'marvelsa_wallet' and is_marvelsa_wallet != True</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

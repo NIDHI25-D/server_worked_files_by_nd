@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_delivery_documents_2" inherit_id="stock.report_delivery_document">
+        <!-- This path works for picking operation report        -->
+        <xpath expr="//table[@name='stock_move_table']" position="before">
+            <div>
+                <p t-if="o.partner_id">
+                    <span style="font-weight:bold;">Contact</span>
+                    <span>
+                        <t t-esc="o.partner_id.name"/>
+                    </span>
+                </p>
+<!--                inherit and added this view in claim module as this field are define there. -->
+<!--                <p t-if="o.claim_id">-->
+<!--                    <span style="font-weight:bold;">Claim</span>-->
+<!--                    <span>-->
+<!--                        <t t-esc="o.claim_id.name"/>-->
+<!--                    </span>-->
+<!--                </p>-->
+                <p t-if="o.create_uid">
+                    <span style="font-weight:bold;">Responsible</span>
+                    <span>
+                        <t t-esc="o.create_uid.name"/>
+                    </span>
+                </p>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='partner_header']" position="inside">
+            <div class="row justify-content-end" t-if="o.sudo().sale_id.x_studio_comentarios">
+                <div class="col-auto">
+                    <strong>Comentarios:</strong>
+                    <p t-field="o.sudo().sale_id.x_studio_comentarios"/>
+                    <br/>
+                </div>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@name='div_sched_date']" position="after">
+            <t t-if="o.picking_type_id.code == 'internal' and o.sale_id">
+                <div class="col-auto" t-if="o.origin" name="div_state">
+                    <strong>State:</strong>
+                    <p t-field="o.state"/>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//th[@name='th_sml_qty_ordered']" position="replace"/>
+        <xpath expr="//th[@name='lot_serial']" position="replace"/>
+        <xpath expr="//table[@name='stock_move_line_table']/thead/tr/th[last()]" position="after">
+            <t t-if="o.picking_type_id.code == 'internal' and o.sale_id">
+                <th name="th_sml_from" class="text-center">
+                    <strong>From</strong>
+                </th>
+                <th name="th_smml_audit">
+                    <strong>Audit</strong>
+                </th>
+            </t>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/thead/tr/th[@name='th_sm_quantity']" position="attributes">
+            <attribute name="t-if">not o.picking_type_id.code == 'internal'</attribute>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[3]" position="attributes">
+            <attribute name="t-if">not o.picking_type_id.code == 'internal'</attribute>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/thead/tr/th[last()]" position="after">
+            <t t-set="lines" t-value="o.move_ids.filtered(lambda x: x.product_uom_qty)"/>
+            <t t-if="o.picking_type_id.code == 'internal' and o.sale_id">
+                <t t-if="lines.move_line_ids">
+                    <th name="th_smml_from">
+                        <strong>From</strong>
+                    </th>
+                </t>
+                <th name="th_smml_audit">
+                    <strong>Audit</strong>
+                </th>
+            </t>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[last()]" position="after">
+            <t t-if="o.picking_type_id.code == 'internal' and o.sale_id">
+                <td>
+                    <t t-set="location_names" t-value="[]"/>
+                    <t t-foreach="move.move_line_ids" t-as="move_line">
+                        <t t-if="move_line">
+                            <t t-set="location_names" t-value="location_names + [move_line.location_id.complete_name]"/>
+                        </t>
+                    </t>
+                    <t t-esc="', '.join(location_names)"/>
+                </td>
+            </t>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_line_table']" position="after">
+            <div class="row" t-if="o.sudo().sale_id.x_studio_comentarios">
+                <div class="col-auto">
+                    <p t-field="o.sudo().sale_id.x_studio_comentarios"/>
+                    <br/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="inherit_stock_report_delivery_aggregated_move_lines"
+              inherit_id="stock.stock_report_delivery_aggregated_move_lines">
+        <xpath expr="//td[@name='move_line_aggregated_qty_ordered']" position="replace"/>
+        <xpath expr="//td[@name='move_line_aggregated_quantity']" position="after">
+            <t t-if="o.picking_type_id.code == 'internal' and o.sale_id and aggregated_lines[line]['location_id']">
+                <td class="text-center" name="move_line_aggregated_from">
+                    <span t-esc="aggregated_lines[line]['location_id'].complete_name"/>
+                </td>
+                <td class="text-center" name="move_line_aggregated_audit">
+                    <hr style="width:50%;text-align:right;margin_right:5"/>
+                </td>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+transport_management_extended.access_create_tms_shipment_wiz,access_create_tms_shipment_wiz,transport_management_extended.model_create_tms_shipment_wiz,base.group_user,1,1,1,1

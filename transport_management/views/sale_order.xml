@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="ir_actions_server_sale_create_shipping" model="ir.actions.server">
+        <field name="name">Create Shipping</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action = records.action_create_shipping()
+        </field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+    <record id="shipment_sale_order_form_view_inherit" model="ir.ui.view">
+        <field name="name">shipment.sale.order.form.view.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_invoice']" position="after">
+                <button type="object" name="get_shipments" class="oe_stat_button" icon="fa-th-large"
+                        groups="transport_management.shipment_manager,transport_management.shipment_officer">
+                    <field name="shipment_count" widget="statinfo" string="Shipments"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

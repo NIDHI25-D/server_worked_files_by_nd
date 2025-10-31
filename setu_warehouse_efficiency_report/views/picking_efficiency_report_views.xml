@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="picking_efficiency_report_view_tree" model="ir.ui.view">
+            <field name="name">picking.efficiency.report.view.tree</field>
+            <field name="model">warehouse.picking.efficiency.report</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="picking_reference"/>
+                    <field name="picking_total_lines"/>
+                    <field name="warehouse_id"/>
+                    <field name="product_type"/>
+                    <field name="picking_product_uom_qty"/>
+                    <field name="picking_qty_delivered"/>
+                    <field name="picking_scheduled_date"/>
+                    <field name="picking_done_date"/>
+                    <field name="total_time_difference"/>
+                    <field name="owner"/>
+                    <field name="responsible_person_id"/>
+                </list>
+            </field>
+        </record>
+
+    <record id="picking_efficiency_reports_pivot_view" model="ir.ui.view">
+        <field name="name">picking.efficiency.pivots.view</field>
+        <field name="model">warehouse.picking.efficiency.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Picking Efficiency Report">
+                <field name="product_type" type="row"/>
+                <field name="picking_total_lines" type="measure"/>
+                <field name="picking_product_uom_qty" type="measure"/>
+                <field name="picking_qty_delivered" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+     <record id="picking_efficiency_report_search" model="ir.ui.view">
+        <field name="name">picking.efficiency.report.search</field>
+        <field name="model">warehouse.picking.efficiency.report</field>
+        <field name="arch" type="xml">
+            <search string="Picking Efficiency Report">
+                <field name="warehouse_id"/>
+                <field name="picking_reference"/>
+                <group expand="1" string="Group By">
+                    <filter string="Warehouse" name="warehouse" context="{'group_by':'warehouse_id'}"/>
+                    <filter string="Owner" name="Customer" context="{'group_by':'owner'}"/>
+                    <filter string="Product Type" name="producttype" context="{'group_by':'product_type'}"/>
+                    <filter string="Responsible Person" name="responsible_person_id" context="{'group_by':'responsible_person_id'}"/>
+                    <separator/>
+                    <filter string="Assortment start date" name="picking_scheduled_date" context="{'group_by':'picking_scheduled_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="picking_efficiency_report_action" model="ir.actions.act_window">
+        <field name="name">Picking Efficiency Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">warehouse.picking.efficiency.report</field>
+        <field name="view_mode">pivot,list</field>
+       	<field name="context">{'search_default_responsible_person_id':1}</field>
+       	<field name="view_id" ref="picking_efficiency_report_view_tree"/>
+       	<field name="search_view_id" ref="picking_efficiency_report_search"/>
+    </record>
+
+
+    <menuitem id="picking_efficiency_report_child_menu" name="Picking Efficiency Report" parent="stock.menu_warehouse_report" action="picking_efficiency_report_action"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<template>
+    <t t-name="ninebox_employee_performance.ControlButtons">
+        <div class="o_report_buttons">
+            <button type="button" class="btn btn-primary o_report_print" title="Print">Print Ninebox Report</button>  
+        </div>
+        <div class="o_report_buttons">                      
+            <t t-if="widget.assessment_period.length > 0">
+                <select class="form-control selected_assessment_period_id" id="selected_assessment_period_id">                
+                    <t t-foreach="widget.assessment_period" t-as="period">
+                        <option t-att-value="period.assessment_period"  t-att-data="period.assessment_period">
+                            <t t-esc="period.assessment_period"/>
+                        </option>
+                    </t>
+                </select>
+            </t>  
+        </div>
+    </t>
+</template>

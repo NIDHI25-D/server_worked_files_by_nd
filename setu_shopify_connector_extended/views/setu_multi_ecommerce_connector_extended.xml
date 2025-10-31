@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="setu_multi_ecommerce_connector_shopify_extended_mvsa_from_view" model="ir.ui.view">
+            <field name="name">setu.multi.ecommerce.connector.shopify.extended.mvsa.from.view</field>
+            <field name="model">setu.multi.ecommerce.connector</field>
+            <field name="inherit_id" ref="setu_ecommerce_based.setu_multi_ecommerce_connector_form_view"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" readonly="ecommerce_connector == 'shopify_connector'">
+                </xpath>
+                <xpath expr="//div[@name='common_product_stock_setup_stock_field']" position="replace">
+                     <div name='common_product_stock_setup_stock_field' class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="stock_field_id"/>
+                            <div class="text-muted">
+                                - Select inventory field for e-Commerce products.
+                                <br/>
+                                Forecast Quantity = Quantity On Hand - Outgoing + Incoming
+                                <br/>
+                                Quantity On Hand = Current quantity of products.
+                                <br/>
+                                Outgoing=  Quantity On Hand - Outgoing
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="stock_field_id" class="o_light_label"  widget="selection"  domain="[('model_id.model','=','product.product'),('name','in',['qty_available','virtual_available','outgoing_qty'])]" required="state == 'integrated'" readonly="state in ['fully_integrated','error']"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

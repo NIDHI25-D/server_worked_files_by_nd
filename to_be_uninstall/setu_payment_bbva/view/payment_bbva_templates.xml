@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <template  id="bbva_form">
+            <form t-att-action="api_url" method="post">
+                <input type="hidden" name="mp_account" t-att-value="mp_account"/>
+                <input type="hidden" name="mp_order" t-att-value="mp_order"/>
+                <input type="hidden" name="mp_reference" t-att-value="mp_reference"/>
+                <input type="hidden" name="mp_product" t-att-value="mp_product"/>
+                <input type="hidden" name="mp_node" t-att-value="mp_node"/>
+                <input type="hidden" name="mp_concept" t-att-value="mp_concept"/>
+                <input type="hidden" name="mp_amount" t-att-value="mp_amount"/>
+                <input type="hidden" name="mp_currency" t-att-value="mp_currency"/>
+                <input type="hidden" name="mp_email" t-att-value="mp_email"/>
+                <input type="hidden" name="mp_phone" t-att-value="mp_phone"/>
+                <input type="hidden" name="mp_urlsuccess" t-att-value="mp_urlsuccess"/>
+                <input type="hidden" name="mp_urlfailure" t-att-value="mp_urlfailure"/>
+                <input type="hidden" name="mp_signature" t-att-value="mp_signature"/>
+                <input type="hidden" name="mp_promo" t-att-value="mp_promo"/>
+                <input type="hidden" name="mp_promo_msi" t-att-value="mp_promo_msi"/>
+                 <input type="hidden" name="mp_paymentmethod" t-att-value="mp_paymentmethod"/>
+            </form>
+        </template>
+    </data>
+</odoo>

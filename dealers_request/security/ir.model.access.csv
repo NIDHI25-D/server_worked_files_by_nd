@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dealer_request_users,dealer_request_user,model_dealer_request,dealers_request.dealer_fields_modification,1,1,0,0
+access_dealer_request_manager,dealer_request_manager,model_dealer_request,dealers_request.credit_upload_documents,1,1,1,1
+access_credit_days_assigned,credit.days.assigned,model_credit_days_assigned,base.group_user,1,1,1,1
+access_credit_days_requested,credit.days.requested,model_credit_days_requested,base.group_user,1,1,1,1
+access_credit_limit_requested,credit.limit.requested,model_credit_limit_requested,base.group_user,1,1,1,1
+access_reject_reason,reject.reason,model_reject_reason,base.group_user,1,1,1,1

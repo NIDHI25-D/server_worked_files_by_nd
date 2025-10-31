@@ -1,0 +1,55 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_sale_order_status
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-25 04:18+0000\n"
+"PO-Revision-Date: 2023-08-25 04:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_sale_order_status
+#: model_terms:ir.ui.view,arch_db:setu_sale_order_status.setu_pre_orders_portal_order_page
+msgid "Delivered"
+msgstr ""
+
+#. module: setu_sale_order_status
+#: model_terms:ir.ui.view,arch_db:setu_sale_order_status.setu_pre_orders_portal_order_page
+msgid "In Transit"
+msgstr ""
+
+#. module: setu_sale_order_status
+#: model_terms:ir.ui.view,arch_db:setu_sale_order_status.setu_pre_orders_portal_order_page
+msgid "Order Status"
+msgstr ""
+
+#. module: setu_sale_order_status
+#: model_terms:ir.ui.view,arch_db:setu_sale_order_status.setu_pre_orders_portal_order_page
+msgid "Picking"
+msgstr ""
+
+#. module: setu_sale_order_status
+#: model_terms:ir.ui.view,arch_db:setu_sale_order_status.setu_pre_orders_portal_order_page
+msgid "Preparation"
+msgstr ""
+
+#. module: setu_sale_order_status
+#: model_terms:ir.ui.view,arch_db:setu_sale_order_status.setu_pre_orders_portal_order_page
+msgid ""
+"<br/>\n"
+"                        <strong>Tracking Reference : </strong>"
+msgstr ""
+"<br>\n"
+"                        <strong>Referencia de rastreo : </strong>"
+
+#. module: setu_sale_order_status
+#: model_terms:ir.ui.view,arch_db:setu_sale_order_status.setu_pre_orders_portal_order_page
+msgid "<strong>Carrier : </strong>"
+msgstr "<strong>Transportista : </strong>"

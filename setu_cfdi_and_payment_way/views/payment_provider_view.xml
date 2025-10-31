@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="payment_method_in_payment_provider" model="ir.ui.view">
+        <field name="name">payment.provider.for.payment.method</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='payment_state']/field[@name='company_id']" position='after'>
+                    <field name="l10n_mx_edi_payment_method_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

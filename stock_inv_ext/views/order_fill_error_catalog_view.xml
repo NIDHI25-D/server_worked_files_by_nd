@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="order_fill_error_catalog_tree" model="ir.ui.view">
+            <field name="name">order.fill.error.catalog.tree</field>
+            <field name="model">order.fill.error.catalog</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+    </data>
+
+
+    <record id="order_fill_error_catalog_action"  model="ir.actions.act_window">
+            <field name="name">Order Fill Error Catalog</field>
+            <field name="res_model">order.fill.error.catalog</field>
+            <field name="view_mode">list</field>
+        </record>
+
+         <menuitem id="order_fill_error_catalog_menu" name="Order Fill Error"
+                   parent="stock.menu_stock_config_settings"
+                  action="order_fill_error_catalog_action"
+        />
+
+</odoo>

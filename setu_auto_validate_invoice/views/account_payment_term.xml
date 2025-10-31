@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+	<record id="account_payment_term_inherit_payment_way" model="ir.ui.view">
+            <field name="name">account.payment.term.inherit.payment.way.form</field>
+            <field name="model">account.payment.term</field>
+            <field name="inherit_id" ref="account.view_payment_term_form"/>
+            <field name="arch" type="xml">
+                <data>
+                   <field name="name" position="after">
+                       <div class="oe_title">
+                            <label for="name" string="Payment Way"/>
+                            <h1><field name="payment_way_id"/></h1>
+                        </div>
+                        <field name="payment_way_id"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+	</data>
+</odoo>

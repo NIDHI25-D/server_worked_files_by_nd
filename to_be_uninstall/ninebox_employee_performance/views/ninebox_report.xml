@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="action_ninebox_report" model="ir.actions.client">
+            <field name="name">Ninebox Report</field>
+            <field name="tag">ninebox_employee_performance.ninebox_report</field>
+        </record>
+
+        <menuitem
+                id="menu_employee_performance_root"
+                name="Performance"
+                groups="ninebox_employee_performance.group_ninebox_performance_manager"
+                web_icon="employee_performance,static/description/icon.png"
+                sequence="76"/>
+
+        <menuitem
+                id="menu_ninebox_report_root"
+                name="Nine Box Report"
+                parent="ninebox_employee_performance.menu_employee_performance_root"
+                groups="ninebox_employee_performance.group_ninebox_performance_manager"
+                sequence="4"/>
+
+        <menuitem
+                id="menu_ninebox_report"
+                name="Nine Box Report"
+                action="action_ninebox_report"
+                groups="ninebox_employee_performance.group_ninebox_performance_manager"
+                parent="menu_ninebox_report_root"
+                sequence="5"/>
+
+    </data>
+</odoo>

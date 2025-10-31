@@ -1,0 +1,119 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_order_multi_warehouse
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-04 23:14+0000\n"
+"PO-Revision-Date: 2020-11-04 17:19-0600\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_stock_warehouse__alternative_warehouse_ids
+#: model_terms:ir.ui.view,arch_db:sale_order_multi_warehouse.marvelsa_view_form_stock_warehouse_alternative
+msgid "Alternative Warehouses"
+msgstr "Almacenes alternativos"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,help:sale_order_multi_warehouse.field_stock_warehouse__alternative_warehouse_ids
+msgid "Alternative Warehouses for to Search Stock by Priority for the sale order"
+msgstr "Almacenes alternativos para busqueda de stock por prioridad para surtir el  pedido de venta"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__priority
+msgid "Priority"
+msgstr "Prioridad"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model,name:sale_order_multi_warehouse.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model,name:sale_order_multi_warehouse.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model,name:sale_order_multi_warehouse.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model,name:sale_order_multi_warehouse.model_stock_warehouse
+msgid "Stock Warehouse"
+msgstr "Almacen"
+
+#. module: sale_order_multi_warehouse
+#: code:addons/sale_order_multi_warehouse/models/stock.py:24
+#, python-format
+msgid "The priority field can not less to 0"
+msgstr "El campo prioridad no puede ser menor a 0"
+
+#. module: sale_order_multi_warehouse
+#: code:addons/sale_order_multi_warehouse/models/stock.py:30
+#, python-format
+msgid "The warehouse must be different to "
+msgstr "El almacen debe ser diferente al que se esta relacionando"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__warehouse_id
+#: model:ir.model.fields,field_description:sale_order_multi_warehouse.field_alternative_warehouse__warehouse_to_picking_id
+msgid "Warehouse"
+msgstr "Almacén"
+
+#. module: sale_order_multi_warehouse
+#: model:ir.model,name:sale_order_multi_warehouse.model_alternative_warehouse
+msgid "alternative.warehouse"
+msgstr ""
+
+#. module: sale_order_multi_warehouse
+#. odoo-python
+#: code:addons/sale_order_multi_warehouse/models/sale.py:0
+#, python-format
+msgid "To view Stock By Warehouse Table kindly save the Sale Order"
+msgstr "Para ver la existencia por almacén, primero debes guardar la orden de venta"

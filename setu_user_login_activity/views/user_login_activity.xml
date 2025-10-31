@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="user_login_activity_tree" model="ir.ui.view">
+            <field name="name">user.login.activity.tree</field>
+            <field name="model">user.login.activity</field>
+            <field name="arch" type="xml">
+                <list string="User Login Activity" create="false" edit="false">
+                    <field name="user_id" widget="many2one"/>
+                    <field name="login_time" />
+                    <field name="user_ip_address" />
+                    <field name="user_device" />
+                </list>
+            </field>
+        </record>
+
+        <record id="user_login_activity_search" model="ir.ui.view">
+            <field name="name">user.login.activity.search</field>
+            <field name="model">user.login.activity</field>
+            <field name="arch" type="xml">
+                <search string="Forecast product sale search">
+                    <field name="user_id"/>
+                    <field name="login_time"/>
+                    <field name="user_ip_address"/>
+                    <field name="user_device"/>
+                    <separator/>
+
+                    <filter name="today_login" string="Today Login"
+                            domain="[('login_time','&lt;=',datetime.datetime.now().strftime('%Y-%m-%d 23:23:59')),
+                            ('login_time','&gt;=',datetime.datetime.now().strftime('%Y-%m-%d 00:00:00'))]"/>
+<!--                    <filter string="Today"-->
+<!--                            domain="[('login_time', '&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00')),-->
+<!--                                     ('login_time', '&lt;=',datetime.datetime.now().strftime('%Y-%m-%d 23:23:59'))]"/>-->
+
+                    <group expand="0" string="Group By">
+                        <filter string="Login User" name="user_id" context="{'group_by':'user_id'}"/>
+                        <filter string="User IP Address" name="user_ip_address" context="{'group_by':'user_ip_address'}"/>
+                        <filter string="User Device" name="user_device" context="{'group_by':'user_device'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="user_login_activity_action" model="ir.actions.act_window">
+            <field name="name">User Login Activity</field>
+            <field name="res_model">user.login.activity</field>
+            <field name="view_mode">list</field>
+        </record>
+
+        <menuitem id="user_login_activity_main_menu" parent="base.menu_administration" sequence="111"
+                  name="User Login Activity" groups='setu_user_login_activity.group_user_login_activity'/>
+
+        <menuitem id="user_login_activity_menu" action="user_login_activity_action" name="User Login Activity"
+                  parent="setu_user_login_activity.user_login_activity_main_menu" sequence="1" />
+    </data>
+</odoo>

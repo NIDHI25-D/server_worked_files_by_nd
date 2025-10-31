@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="setu_shopify_product_template_act_window" model="ir.actions.act_window">
+			<field name="domain">[('odoo_product_tmpl_id','=',active_id)]</field>
+			<field name="name">Shopify Products</field>
+			<field name="res_model">setu.shopify.product.template</field>
+		</record>
+
+    </data>
+</odoo>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_price_res_config_settings_view" model="ir.ui.view">
+        <field name="name">res.config.settings.view.product.price</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/app[@name='sale_management']" position="inside">
+                <h2>Product Price Update</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label string="Level" for="level"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="mt16">
+                                <field name="level"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label string="Range1" for="range1"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="mt16">
+                                <field name="range1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label string="Range2" for="range2"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="mt16">
+                                <field name="range2"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label string="Import Factor" for="import_factor"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="mt16">
+                                <field name="import_factor"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label string="Responsible" for="responsible_id"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="mt16">
+                                <field name="responsible_id"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label string="Exchange rate" for="exchange_rate"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="mt16">
+                                <field name="exchange_rate"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label string="Discounts" for="discount_ids"/>
+                            <div class="text-muted">
+
+                            </div>
+                            <div class="mt16">
+                                <field name="discount_ids" widget="many2many_tags" options="{'no_create_edit': True,'no_create': True}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

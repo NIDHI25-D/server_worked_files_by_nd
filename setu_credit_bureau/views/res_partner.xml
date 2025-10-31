@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="bureau_hd_em_res_partner_form_view" model="ir.ui.view">
+            <field name="name">bureau.hd.em.res.partner.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="priority">100</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Bureau HD EM" name="bureau_hd_em">
+                        <group>
+                            <group name="em" string="EM">
+                                <field name="identifier2" class="uppercase-field"/>
+                                <field name="dun_number" />
+                                <field name="name1" class="uppercase-field"/>
+                                <field name="name2" class="uppercase-field"/>
+                                <field name="last_name" class="uppercase-field"/>
+                                <field name="mother_last_name" class="uppercase-field"/>
+                                <field name="banxico_qualification" class="uppercase-field"/>
+                                <field name="address2" class="uppercase-field"/>
+                            </group>
+                            <group string="">
+                                <field name="extension" class="uppercase-field"/>
+                                <field name="fax" class="uppercase-field"/>
+                                <field name="foreign_state" class="uppercase-field"/>
+                                <field name="consolidation_code" widget="valid_char"/>
+                                <field name="filler2" class="uppercase-field"/>
+                            </group>
+                        </group>
+                    </page>
+
+                    <page string="Bureau AC CR DE AV" name="bureau_ac_cr_de_av">
+                        <group>
+                            <group name="ac" string="AC">
+                                <field name="ac_name1" class="uppercase-field"/>
+                                <field name="ac_name2" class="uppercase-field"/>
+                                <field name="ac_last_name" class="uppercase-field"/>
+                                <field name="ac_mother_last_name" class="uppercase-field"/>
+                                <field name="percent" class="uppercase-field"/>
+                                <field name="ac_address2" class="uppercase-field"/>
+                                <field name="ac_customer_type" widget="valid_char"/>
+                            </group>
+                            <group string="">
+                                <field name="shareholder_contact_related_id" readonly="1"/>
+                            </group>
+                            <group name="cr" string="CR">
+                                <field name="debt_discount" widget="valid_char"/>
+                                <field name="observations" class="uppercase-field"/>
+                            </group>
+                            <group string="">
+                                <field name="liquidation_date" widget="valid_char"/>
+                                <field name="datio_in_solutum" widget="valid_char"/>
+                                <field name="debt_condonation" widget="valid_char"/>
+                                <field name="special_credit" class="uppercase-field"/>
+                            </group>
+                            <group name="de" string="DE">
+                                <field name="contract" widget="valid_char"/>
+                            </group>
+                            <group>
+                            </group>
+                            <group name="av" string="AV">
+                                <field name="av_name1" class="uppercase-field"/>
+                                <field name="av_name2" class="uppercase-field"/>
+                                <field name="av_last_name" class="uppercase-field"/>
+                                <field name="av_mother_last_name" class="uppercase-field"/>
+                                <field name="av_address2" class="uppercase-field"/>
+                                <field name="av_customer_type" widget="valid_char"/>
+                            </group>
+                            <group string="">
+                                <field name="endorser_contact_related_id" readonly="1"/>
+                            </group>
+
+
+                        </group>
+                    </page>
+
+                </xpath>
+
+                <xpath expr="//field[@name='company_type']" position="after">
+                    <field name="credit_bureau_report_company_type" widget="radio" options="{'horizontal': true}"/>
+
+                    <label for="credit_bureau_report" class="marginleft-creditbureaureport"/>
+                    <field name="credit_bureau_report" class="marginleft-creditbureaureport"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="res_partner_form_view_inherit_for_credit_bureau_2_contact_related_id" model="ir.ui.view">
+            <field name="name">res.partner.form.view.inherit.for.credit.bureau_2.contact.related.id</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base_vat.view_partner_base_vat_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='vat_vies_container']" position="after">
+                    <field name="contact_related_id"
+                           invisible="credit_bureau_report_company_type == False or credit_bureau_report == False"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <record id="payment_voucher_warning_planification_sales" model="ir.ui.view">
+            <field name="name">payment.voucher.warning.planification.sales</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position='before'>
+                    <group>
+                        <field name="is_payment_voucher_warning" readonly="1" invisible="1"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="is_sent_payment_receipt" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="add_field_is_sent_payment_receipt_order_view" model="ir.ui.view">
+            <field name="name">add.field.is_mark_done</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='activity_ids']" position="before">
+                    <field name="is_sent_payment_receipt" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="add_field_is_sent_payment_receipt_quotation_view" model="ir.ui.view">
+            <field name="name">add.field.is_mark_done.quotation.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="is_sent_payment_receipt" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

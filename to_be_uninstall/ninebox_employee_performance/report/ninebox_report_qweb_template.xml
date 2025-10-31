@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="report_ninebox">
+            <t t-set="company" t-value="env.company"/>
+            <t t-call="web.html_container">                
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="mt32 mb32">
+                            <span>Ninebox Performance Report</span>
+                        </h2>
+                        <div id="informations" class="row mt32 mb32">
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Review Period:</strong>
+                                <p class="m-0" t-esc="data['review_period']"/>
+                            </div>
+                        </div>
+
+                        <div class="row mt32 mb32">
+                            <table width="100%" border="0" cellpadding="0" style="border-spacing: 5px; border-collapse: separate;">
+                                <tr>
+                                    <td height="200" align="center" valign="middle" bgcolor="#f2e60e" style="background-color: #f2e60e; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_1x3'] and data['count_1x3'] != '0'">
+                                            <span class="emp_count_circle"  style="width: 36px; height: 36px; padding: 8px; background: #fff; border: 2px solid #f14b6a; color: #666; text-align: center; font: 32px Arial, sans-serif; background-color: #f4f4f4; cursor: pointer; vertical-align: middle;" value="1_3"><t t-esc="data['count_1x3']"/></span>
+                                        </t>
+                                    </td>
+                                    <td align="center" valign="middle" bgcolor="#9ac05d" style="background-color: #9ac05d; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_2x3'] and data['count_2x3'] != '0'">
+                                            <span class="emp_count_circle" value="2_3"><t t-esc="data['count_2x3']"/></span>
+                                        </t>
+                                    </td>
+                                    <td align="center" valign="middle" bgcolor="#0d8537" style="background-color: #0d8537; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_3x3'] and data['count_3x3'] != '0'">
+                                            <span class="emp_count_circle" value="3_3"><t t-esc="data['count_3x3']"/></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="200" align="center" valign="middle" bgcolor="#f7984e" style="background-color: #f7984e; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_1x2'] and data['count_1x2'] != '0'">
+                                            <span class="emp_count_circle" value="1_2"><t t-esc="data['count_1x2']"/></span>
+                                        </t>
+                                    </td>
+                                    <td align="center" valign="middle" bgcolor="#f2e60e" style="background-color: #f2e60e; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_2x2'] and data['count_2x2'] != '0'">
+                                            <span class="emp_count_circle" value="2_2"><t t-esc="data['count_2x2']"/></span>
+                                        </t>
+                                    </td>
+                                    <td align="center" valign="middle" bgcolor="#9ac05d" style="background-color: #9ac05d; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_3x2'] and data['count_3x2'] != '0'">
+                                            <span class="emp_count_circle" value="3_2"><t t-esc="data['count_3x2']"/></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="28%" height="200" align="center" valign="middle" bgcolor="#e51c21" style="background-color: #e51c21; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_1x1'] and data['count_1x1'] != '00'">
+                                            <span class="emp_count_circle" value="1_1"><t t-esc="data['count_1x1']"/></span>
+                                        </t>
+                                    </td>
+                                    <td width="28%" align="center" valign="middle" bgcolor="#f7984e" style="background-color: #f7984e; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_2x1'] and data['count_2x1'] != '00'">
+                                            <span class="emp_count_circle" value="2_1"><t t-esc="data['count_2x1']"/></span>
+                                        </t>
+                                    </td>
+                                    <td width="28%" align="center" valign="middle" bgcolor="#f2e60e" style="background-color: #f2e60e; display: table-cell; vertical-align: middle;">
+                                        <t t-if="data['count_3x1'] and data['count_3x1'] != '00'">
+                                            <span class="emp_count_circle" value="3_1"><t t-esc="data['count_3x1']"/></span>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">                           
+                            <div class="col-4 mb-2">
+                                <strong>Rating 3X3:</strong>                                
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '3_3')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '3_3'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-4 mb-2">
+                                <strong>Rating 3X2:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '3_2')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '3_2'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-4 mb-2">
+                                <strong>Rating 3X1:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '3_1')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '3_1'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+
+                         <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-4 mb-2">
+                                <strong>Rating 2X3:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '2_3')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '2_3'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-4 mb-2">
+                                <strong>Rating 2X2:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '2_2')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '2_2'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-4 mb-2">
+                                <strong>Rating 2X1:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '2_1')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '2_1'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-4 mb-2">
+                                <strong>Rating 1X3:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '1_3')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '1_3'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-4 mb-2">
+                                <strong>Rating 1X2:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '1_2')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '1_2'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-4 mb-2">
+                                <strong>Rating 1X1:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '1_1')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '1_1'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+
+                        <div class="row mt32 mb32" style="page-break-inside: avoid;">
+                            <div class="col-3 mb-2">
+                                <strong>Rating 0X0:</strong>
+                                <t t-foreach="docs.filtered(lambda x: x.pot_per_rate == '0_0')" t-as="o">
+                                    <t t-if="o.pot_per_rate == '0_0'">                                    
+                                        <p class="m-0" t-esc="o.employee_id.name"/>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

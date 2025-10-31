@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View-->
+        <record id="score_conf_form_view" model="ir.ui.view">
+            <field name="name">setu_customer_rating.score_conf.form</field>
+            <field name="model">score.conf</field>
+            <field name="arch" type="xml">
+                <form string="Score Rules" create="false" delete="false">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="company_id"/>
+                        </group>
+                        <group invisible="1">
+                            <group>
+                                <field name="calculation_based_on"/>
+                            </group>
+                        </group>
+                        <notebook invisible="calculation_based_on == False">
+                            <page string="Price Range Rules" invisible="calculation_based_on != 'price'">
+                                <field name="score_conf_line_price_ids">
+                                    <list editable="bottom">
+                                        <field name="from_price"/>
+                                        <field name="to_price"/>
+                                        <field name="pre_score"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Percentage Range Rules" invisible="calculation_based_on != 'percentage'">
+                                <field name="score_conf_line_percentage_ids">
+                                    <list editable="bottom">
+                                        <field name="from_percentage"/>
+                                        <field name="to_percentage"/>
+                                        <field name="pre_score"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Quantity Range Rules" invisible="calculation_based_on != 'quantity'">
+                                <field name="score_conf_line_qty_ids">
+                                    <list editable="bottom">
+                                        <field name="from_quantity"/>
+                                        <field name="to_quantity"/>
+                                        <field name="pre_score"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View-->
+        <record id="score_conf_list_view" model="ir.ui.view">
+            <field name="name">setu_customer_rating.score_conf.list</field>
+            <field name="model">score.conf</field>
+            <field name="arch" type="xml">
+                <list string="Score Rules" create="false" delete="false">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="calculation_based_on" invisible="1"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Search View-->
+        <record id="score_conf_search_view" model="ir.ui.view">
+            <field name="name">setu_customer_rating.score_conf.search</field>
+            <field name="model">score.conf</field>
+            <field name="arch" type="xml">
+                <search string="Score Rules">
+                    <field name="name"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Company" name="group_by_company" domain="[]"
+                                context="{'group_by':'company_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="score_conf_act_window" model="ir.actions.act_window">
+            <field name="name">Score Rules</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">score.conf</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'search_default_group_by_company':1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Score Rules.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

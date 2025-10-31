@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="setu_preorder_purchase_order_form_view" model="ir.ui.view">
+            <field name="name">preorder.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="is_preorder_type"
+                           invisible="1"/>
+                    <field name="is_preorder_type" readonly="1"
+                           invisible="is_preorder_type == False" />
+                    <field name="fulfill_percentage"
+                           widget="progressbar" invisible="is_preorder_type == False"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/list/field[@name='product_qty']"
+                       position="after">
+                    <field name="pre_ordered_qty" readonly="1"
+                           column_invisible="parent.is_preorder_type == False"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="preorder_details_page" string="Pre-order Details"
+                          invisible="is_preorder_type == False">
+                        <field name="preorder_rel_ids" nolabel="1" readonly="1">
+                            <list>
+                                <field name="sale_id"/>
+                                <field name="product_id"/>
+                                <field name="preorder_qty"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="setu_preorder_purchase_order_tree_view" model="ir.ui.view">
+            <field name="name">preorder.purchase.order.tree</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="inside">
+                    <field name="is_preorder_type" column_invisible="1"/>
+                    <field name="fulfill_percentage" widget="progressbar"
+                           column_invisible="not context.get('default_is_preorder_type')"/>
+                </xpath>
+                <xpath expr="//list" position="attributes">
+                    <attribute name="decoration-success">fulfill_percentage>=50 and is_preorder_type</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="setu_pre_order_purchase_form_action" model="ir.actions.act_window">
+            <field name="name">National Pre-Order Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">list,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="domain">[('is_preorder_type','=',True)]</field>
+            <field name="context">{'default_is_preorder_type' : True, 'search_default_draft':True}
+            </field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a National Pre-order Request.
+                </p>
+                <p>
+                    It will be converted into a purchase order.
+                </p>
+            </field>
+        </record>
+
+        <record id="setu_international_preorder_purchase_order_form_view" model="ir.ui.view">
+            <field name="name">setu.international.preorder.purchase.order.form.view</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="is_international_pre_order"
+                           invisible="1"/>
+                    <field name="is_international_pre_order" readonly="1"
+                           invisible="is_international_pre_order == False"/>
+                    <field name="international_fulfill_percentage"
+                           widget="progressbar" invisible="is_international_pre_order == False"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="international_preorder_details_page" string="International Pre-order Details"
+                          invisible="is_international_pre_order == False">
+                        <field name="international_preorder_rel_ids" nolabel="1" readonly="1">
+                            <list>
+                                <field name="sale_id"/>
+                                <field name="product_id"/>
+                                <field name="international_preorder_qty"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/list/field[@name='product_qty']"
+                       position="after">
+                    <field name="international_pre_order_qty" readonly="1"
+                           column_invisible="parent.is_international_pre_order == False"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="setu_inter_national_pre_order_purchase_form_action" model="ir.actions.act_window">
+            <field name="name">International Pre-Order Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">list,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="domain">[('is_international_pre_order','=',True)]</field>
+            <field name="context">{'default_is_international_pre_order': True, 'search_default_draft':True}
+            </field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create an International Pre-order Request.
+                </p>
+                <p>
+                    It will be converted into a purchase order.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_pre_order_purchase_action"
+                  parent="purchase.menu_purchase_root"
+                  name="Pre-Order Requests"
+                  sequence="2"/>
+        <menuitem action="setu_pre_order_purchase_form_action"
+                  id="national_menu_pre_order_purchase_action"
+                  parent="setu_website_preorder.menu_pre_order_purchase_action"
+                  sequence="4"/>
+        <menuitem action="setu_inter_national_pre_order_purchase_form_action"
+                  id="inter_national_menu_pre_order_purchase_action"
+                  parent="setu_website_preorder.menu_pre_order_purchase_action"
+                  sequence="5"/>
+
+        <!-- PRESALE VIEW - MENUS - VIEWS -->
+
+        <record id="setu_presale_purchase_order_form_view" model="ir.ui.view">
+            <field name="name">presale.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="is_presale_type" invisible="1"/>
+                    <field name="is_presale_type" readonly="1"
+                           invisible="is_presale_type == False"/>
+                    <field name="presale_fulfill_percentage"
+                           widget="progressbar" invisible="is_presale_type == False"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/list/field[@name='product_qty']"
+                       position="after">
+                    <field name="pre_sale_qty" readonly="1"
+                           column_invisible="parent.is_presale_type == False"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="presale_details_page" string="Pre-sale Details"
+                          invisible="is_presale_type == False">
+                        <field name="presale_rel_ids" nolabel="1" readonly="1">
+                            <list>
+                                <field name="sale_id"/>
+                                <field name="product_id"/>
+                                <field name="presale_qty"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="setu_presale_purchase_order_tree_view" model="ir.ui.view">
+            <field name="name">presale.purchase.order.tree</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="inside">
+                    <field name="is_presale_type" column_invisible="1"/>
+                    <field name="presale_fulfill_percentage" widget="progressbar"
+                           column_invisible="not context.get('default_is_presale_type')"/>
+                </xpath>
+                <xpath expr="//list" position="attributes">
+                    <attribute name="decoration-success">presale_fulfill_percentage>=50 and is_presale_type
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="setu_pre_sale_purchase_form_action" model="ir.actions.act_window">
+            <field name="name">Pre-Sale Requests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">list,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="domain">[('is_presale_type','=',True)]</field>
+            <field name="context">{'default_is_presale_type' : True,
+                'search_default_purchase':True}
+            </field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a Pre-sale Request.
+                </p>
+                <p>
+                    It will be converted into a purchase order.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="setu_pre_sale_purchase_form_action"
+                  id="menu_pre_sale_purchase_action"
+                  parent="purchase.menu_purchase_root"
+                  sequence="3"/>
+
+        <!-- Add button Convert to Pre-sale -->
+        <record id="setu_convert_to_presale_button" model="ir.ui.view">
+            <field name="name">presale.purchase.order.tree</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='print_quotation']" position="after">
+                    <button name="convert_presale" type="object" string="Convert To Presale"
+                            invisible="is_preorder_type == False or state in ('purchase', 'done', 'cancel')"/>
+                </xpath>
+                <xpath expr="//header/button[@name='print_quotation']" position="after">
+                    <field name="is_international_pre_order"
+                           invisible="1"/>
+
+                    <button name="convert_presale" type="object" string="Convert To Presale"
+                            invisible="is_international_pre_order == False or state in ('purchase', 'done', 'cancel')"/>
+                </xpath>
+                <xpath expr="//header/button[@name='print_quotation']" position="after">
+                    <button name="presale_price_update_as_per_price_changes" type="object" string="Presale Price Calculation"
+                            invisible="is_presale_type == False or state not in ('purchase', 'done')"/>
+                </xpath>
+
+                <xpath expr="//field[@name='date_planned']" position="after">
+                    <button name="update_prices_after_change_date_planned" id="button_update_price"
+                            type="object"
+                            string="Update"
+                            class="btn-link mb-1 px-0" icon="fa-refresh"
+                            invisible="is_presale_type == False"/>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

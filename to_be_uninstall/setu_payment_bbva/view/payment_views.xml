@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="payment_provideracquirer_form_bbva" model="ir.ui.view">
+            <field name="name">payment.provider.form.bbva</field>
+            <field name="model">payment.provider</field>
+            <field name="inherit_id" ref="payment.payment_provider_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//page[@name="credentials"]/group[@name="provider_credentials"]' position='inside'>
+                    <group attrs="{'invisible': [('code', '!=', 'bbva')]}">
+                        <field name="secret_key" attrs="{'required':[ ('code', '=', 'bbva'), ('state', '!=', 'disabled')]}" password="True"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        <record id=""-->
+
+        <record id="payment_promotion_form" model="ir.ui.view">
+            <field name="name">payment.promotion.form</field>
+            <field name="model">payment.promotion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="payment_promotion_tree" model="ir.ui.view">
+            <field name="name">payment.promotion.tree</field>
+            <field name="model">payment.promotion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="payment_promotion_action_window" model="ir.actions.act_window">
+            <field name="name">Payment Promotion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">payment.promotion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_ecommerce_payment_promotion"
+                  action="payment_promotion_action_window"
+                  parent="website_sale.menu_ecommerce_settings" name="Payment Promotions"/>
+
+        <record id="payment_options_form" model="ir.ui.view">
+            <field name="name">payment.options.form</field>
+            <field name="model">payment.options</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="payment_options_tree" model="ir.ui.view">
+            <field name="name">payment.options.tree</field>
+            <field name="model">payment.options</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="payment_options_action_window" model="ir.actions.act_window">
+            <field name="name">Payment Options</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">payment.options</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_ecommerce_payment_options"
+                  action="payment_options_action_window"
+                  parent="website_sale.menu_ecommerce_settings" name="Payment Options"/>
+
+        <record id="monthly_installment_expand_id" model="ir.ui.view">
+            <field name="name">Monthly Installment Expanded</field>
+            <field name="model">payment.provider</field>
+            <field name="inherit_id" ref="setu_payment_acqirers.provider_for_monthly_installment"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='monthly_installment_ids']/tree/field[@name='months']" position="after">
+                    <field name="payment_promotion_id"/>
+                    <field name="payment_options_ids" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

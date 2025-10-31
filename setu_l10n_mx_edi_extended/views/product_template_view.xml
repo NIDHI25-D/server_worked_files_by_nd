@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="l10n_mx_edi_extended_view_extended_for_igi_and_iva">
+            <field name="name">l10n.mx.edi.extended.view.extended.for.igi.and.iva</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product_unspsc.product_template_unspsc"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='unspsc']" position="inside">
+                    <field name="igi"/>
+                    <field name="iva"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_product_template_search_for_igi_and_iva" model="ir.ui.view">
+            <field name="name">product.template.search.igi.and.iva</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <filter string="IGI" name="igi" context="{'group_by':'igi'}"/>
+                    <filter string="IVA" name="iva" context="{'group_by':'iva'}"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

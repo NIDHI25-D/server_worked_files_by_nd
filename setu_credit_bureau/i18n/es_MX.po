@@ -1,0 +1,191 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_credit_bureau
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-22 04:37+0000\n"
+"PO-Revision-Date: 2024-05-22 04:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__ac_address2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__address2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__av_address2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__ac_address2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__address2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__av_address2
+msgid "Address 2"
+msgstr "Direccion 2"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__banxico_qualification
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__banxico_qualification
+msgid "Banxico qualification"
+msgstr "Calificacion Banco de Mex."
+
+#. module: setu_credit_bureau
+#: model_terms:ir.ui.view,arch_db:setu_credit_bureau.bureau_hd_em_res_partner_form_view
+msgid "Bureau HD EM"
+msgstr "Buró HD EM"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__consolidation_code
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__consolidation_code
+msgid "Consolidation code"
+msgstr "Clave de Consolidación"
+
+#. module: setu_credit_bureau
+#: model:ir.model,name:setu_credit_bureau.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__contract
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__contract
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__ac_customer_type
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__av_customer_type
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__ac_customer_type
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__av_customer_type
+msgid "Customer type"
+msgstr "Tipo Cliente"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__datio_in_solutum
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__datio_in_solutum
+msgid "Datio In Solutum"
+msgstr "Dacion"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__debt_condonation
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__debt_condonation
+msgid "Debt Condonation"
+msgstr "Quebranto"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__debt_discount
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__debt_discount
+msgid "Debt discount"
+msgstr "Quita"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__dun_number
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__dun_number
+msgid "Dun number"
+msgstr "Número Dun"
+
+#. module: setu_credit_bureau
+#: model_terms:ir.ui.view,arch_db:setu_credit_bureau.bureau_hd_em_res_partner_form_view
+msgid "EM"
+msgstr ""
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__extension
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__extension
+msgid "Extension"
+msgstr "Extension"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__fax
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__fax
+msgid "Fax"
+msgstr "Fax"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__filler2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__filler2
+msgid "Filler"
+msgstr "Filler"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__foreign_state
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__foreign_state
+msgid "Foreign state"
+msgstr "Estado extranjero"
+
+#. module: setu_credit_bureau
+#: model_terms:ir.ui.view,arch_db:setu_credit_bureau.bureau_hd_em_res_partner_form_view
+msgid "HD"
+msgstr ""
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__identifier2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__identifier2
+msgid "Identifier"
+msgstr "Identificador"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__ac_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__av_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__ac_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__av_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__last_name
+msgid "Last Name"
+msgstr "Paterno"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__liquidation_date
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__liquidation_date
+msgid "Liquidation date"
+msgstr "Fecha Liquidacion"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__ac_mother_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__av_mother_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__mother_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__ac_mother_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__av_mother_last_name
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__mother_last_name
+msgid "Mother's Last Name"
+msgstr "Materno"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__ac_name1
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__av_name1
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__name1
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__ac_name1
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__av_name1
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__name1
+msgid "Name 1"
+msgstr "Nombre 1"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__ac_name2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__av_name2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__name2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__ac_name2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__av_name2
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__name2
+msgid "Name 2"
+msgstr "Nombre 2"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__observations
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__observations
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__percent
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__percent
+msgid "Percent"
+msgstr "Porcentaje"
+
+#. module: setu_credit_bureau
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_partner__special_credit
+#: model:ir.model.fields,field_description:setu_credit_bureau.field_res_users__special_credit
+msgid "Special Credit"
+msgstr "Especiales"
+

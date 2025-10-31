@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>    
+        <record id="action_report_ninebox" model="ir.actions.report">
+            <field name="name">Ninebox Report as PDF</field>
+            <field name="model">employee.performance</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">ninebox_employee_performance.report_ninebox</field>
+            <field name="report_file">ninebox_employee_performance.report_ninebox</field>
+        </record>
+    </data>
+</odoo>

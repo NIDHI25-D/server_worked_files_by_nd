@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--    <data noupdate="0">-->
+        <record id="payment_provider_bbva" model="payment.provider">
+            <field name="name">Bbva</field>
+            <field name="code">bbva</field>
+            <field name="redirect_form_view_id" ref="bbva_form"/>
+            <field name="module_id" ref="base.module_setu_payment_bbva"/>
+        </record>
+
+        <record id="account_payment_method_manual_in" model="account.payment.method">
+            <field name="name">Bbva</field>
+            <field name="code">bbva</field>
+            <field name="payment_type">inbound</field>
+        </record>
+
+
+        <record id="rev_promotion" model="payment.promotion">
+            <field name="code">REV</field>
+            <field name="name">Payment in one exhibition</field>
+        </record>
+
+        <record id="msi_promotion" model="payment.promotion">
+            <field name="code">MSI</field>
+            <field name="name">Payments with Months without interests</field>
+        </record>
+
+        <record id="mci_promotion" model="payment.promotion">
+            <field name="code">MCI</field>
+            <field name="name">Payments with months with Interests</field>
+        </record>
+
+        <record id="sp_promotion" model="payment.promotion">
+            <field name="code">SP</field>
+            <field name="name">Skip and Payment</field>
+        </record>
+
+        <record id="pb_promotion" model="payment.promotion">
+            <field name="code">PB</field>
+            <field name="name">BBVA points</field>
+        </record>
+
+        <record id="visa_mastercard" model="payment.options">
+            <field name="code">TDX</field>
+            <field name="name">Visa/Mastercard</field>
+        </record>
+
+        <record id="electric_bbva_check" model="payment.options">
+            <field name="code">CIE</field>
+            <field name="name"> Cheque electronico BBVA (electronic BBVA check)</field>
+        </record>
+
+        <record id="clabe_interbank" model="payment.options">
+            <field name="code">CLABE</field>
+            <field name="name">CLABE Interbancaria</field>
+        </record>
+
+        <record id="payment_at_branch_office" model="payment.options">
+            <field name="code">SUC</field>
+            <field name="name">Sucursal/practicaja (payment at branch office)</field>
+        </record>
+
+        <record id="american_express" model="payment.options">
+            <field name="code">AMEX</field>
+            <field name="name">American Express</field>
+        </record>
+
+        <record id="interbank_transfer" model="payment.options">
+            <field name="code">CIE_INTER</field>
+            <field name="name">Transferencia interbancaria  (Interbank transfer)</field>
+        </record>
+    </data>
+</odoo>

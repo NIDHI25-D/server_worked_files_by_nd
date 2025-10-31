@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <data>
+        <record id="payment.payment_provider_mercado_pago" model="payment.provider">
+            <field name="redirect_form_view_id"/>
+            <field name="mercado_pago_access_token">dummy</field>
+            <field name="inline_form_view_id" ref="inline_form"/>
+            <field name="state">disabled</field>
+            <field name="pre_msg"><![CDATA[
+                    <p>You will be redirected to the MercadoPago website after cliking on the payment button.</p>]]></field>
+            <field name="allow_tokenization">True</field>
+        </record>
+
+        <!--        For odoo 14 Old records reference-->
+        <record id="payment_acquirer_mercadopago" model="payment.provider">
+            <field name="name">MercadoPago [ Do not Use]</field>
+            <field name="code">mercadopago</field>
+<!--            <field name="display_as">Payment Via Mercado pago</field>-->
+            <field name="state">disabled</field>
+        </record>
+    </data>
+</odoo>

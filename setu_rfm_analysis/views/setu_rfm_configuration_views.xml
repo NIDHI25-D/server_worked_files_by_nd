@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="setu_rfm_configuration_wizard" model="ir.ui.view">
+            <field name="name">setu.rfm.configuration.wizard</field>
+            <field name="model">setu.rfm.configuration</field>
+            <field name="arch" type="xml">
+                <form string="Setu RFM Configuration">
+                    <sheet>
+                            <div>
+                                <strong>Just click on "Extract" button which will add the "RFM with POS" functionality,
+                                    after that please follow below steps,
+                                </strong>
+                                <br/>
+                                <br/>
+                                <field name="install_image" readonly="1" widget="image" nolabel="1"/>
+                            </div>
+                        <footer>
+                            <button name="execute" string="Extract" type="object"
+                                    class="oe_highlight"/>
+                            <button string="Cancel" class="oe_link" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="actions_setu_rfm_configuration" model="ir.actions.act_window">
+            <field name="name">Extract POS</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">setu.rfm.configuration</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

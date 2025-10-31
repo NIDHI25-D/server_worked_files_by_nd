@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="warehouse_efficiency_report_tree_view" model="ir.ui.view" >
+        <field name="name">warehouse.efficiency.report.tree.view</field>
+        <field name="model">warehouse.efficiency.report</field>
+        <field name="arch" type="xml">
+            <list string="Warehouse Efficiency Report">
+               <field name="partner_id" string="Customer"/>
+                <field name="order_id"/>
+                <field name="picking_reference"  string="Picking"/>
+                <field name="product_id"/>
+                <field name="product_type"/>
+                <field name="product_uom_qty" />
+                <field name="qty_delivered" />
+                <field name="unsupplied_qty"/>
+                <field name="warehouse_id" string="Assortment Warehouse"/>
+                <field name="percentage_efficiency_assortment" string="% efficiency assortment"  widget="percentage"/>
+                <field name="warehouse_sugerido_id" string="Suggested Warehouse"/>
+                <field name="source_location_id"/>
+                <field name="destination_location_id"/>
+                <field name="picking_scheduled_date"/>
+                <field name="picking_done_date"/>
+                <field name="total_time_difference" />
+                <field name="picking_type_id" invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="warehouse_efficiency_reports_pivot_view" model="ir.ui.view">
+        <field name="name">warehouse.efficiency.pivots.view</field>
+        <field name="model">warehouse.efficiency.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Picking Efficiency Report">
+                <field name="product_type" type="row"/>
+                <field name="product_uom_qty" type="measure"/>
+                <field name="qty_delivered" type="measure"/>
+                <field name="unsupplied_qty" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+     <record id="warehouse_efficiency_report_search" model="ir.ui.view">
+        <field name="name">warehouse.efficiency.report.search</field>
+        <field name="model">warehouse.efficiency.report</field>
+        <field name="arch" type="xml">
+            <search string="Warehouse Efficiency Report">
+                <field name="warehouse_id"/>
+                <field name="partner_id"/>
+                <field name="order_id"/>
+                <field name="qty_delivered"/>
+                <field name="product_uom_qty"/>
+                <field name="unsupplied_qty"/>
+                <field name="picking_reference"/>
+                <field name="source_location_id"/>
+                <field name="destination_location_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Warehouse" name="warehouse" context="{'group_by':'warehouse_id'}"/>
+                    <filter string="Order" name="order" context="{'group_by':'order_id'}"/>
+                    <filter string="Customer" name="Customer" context="{'group_by':'partner_id'}"/>
+                    <filter string="Product" name="Product" context="{'group_by':'product_id'}"/>
+                    <filter string="Product Type" name="producttype" context="{'group_by':'product_type'}"/>
+                    <separator/>
+                    <filter string="Assortment start date" name="picking_scheduled_date" context="{'group_by':'picking_scheduled_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    
+     <record id="warehouse_efficiency_report_tree_action" model="ir.actions.act_window">
+        <field name="name">Warehouse Efficiency Report</field>
+        <field name="res_model">warehouse.efficiency.report</field>
+        <field name="view_mode">pivot,list</field>
+        <field name="context">{'search_default_producttype':1}</field>
+       	<field name="view_id" ref="warehouse_efficiency_report_tree_view"/>
+       	<field name="search_view_id" ref="warehouse_efficiency_report_search"/>
+    </record>
+    
+	
+    <menuitem id="warehouse_efficiency_report_child_menu" name="Warehouse Efficiency Report"   parent="stock.menu_warehouse_report" action="warehouse_efficiency_report_tree_action"/>
+
+</odoo>
+

@@ -1,0 +1,412 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_sales_time_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-02 11:12+0000\n"
+"PO-Revision-Date: 2024-02-02 11:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_sales_time_dashboard
+#. odoo-python
+#: code:addons/setu_sales_time_dashboard/models/resource_calendar.py:0
+#, python-format
+msgid ""
+"\"%s\" is already selected for sales time report, you must deselect it "
+"before selecting another shift."
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__carrier_id
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Carrier"
+msgstr "Transportista"
+
+#. module: setu_sales_time_dashboard
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_form
+msgid "Choose date range to generate sales time report"
+msgstr "Seleccione el rango de fecha a generar para el reporte"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__cliente_mostrador
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Cliente Mostrador"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__actual_hours_to_confirm_so
+msgid "Confirmation"
+msgstr "Confirmacion"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sale_order__create_confirm_diff
+msgid "Confirmation Duration"
+msgstr "Duración de la confirmación"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__created_user_id
+msgid "Created by User"
+msgstr "Creado por el usuario"
+
+#. module: setu_sales_time_dashboard
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Created from website"
+msgstr "Creado en Sitioweb"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: setu_sales_time_dashboard
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Creation Date"
+msgstr "Fecha de creación"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,help:setu_sales_time_dashboard.field_sales_time_dashboard__create_sale_order_date
+msgid ""
+"Creation date of draft/sent orders,\n"
+"Confirmation date of confirmed orders."
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__partner_id
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__actual_hours_to_confirm_so_by_customer
+#: model:res.groups,name:setu_sales_time_dashboard.customer_confirmation_date
+msgid "Customer Confirmation"
+msgstr "Confirmación del cliente"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sale_order__customer_confirmation_date
+msgid "Customer Confirmation Date"
+msgstr "Fecha de confirmación del cliente"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sale_order__customer_confirmation_diff
+msgid "Customer Confirmation Duration"
+msgstr "Duración de la confirmación del cliente"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sale_order__date_order_received
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__date_order_received
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__date_order_received
+msgid "Date Order Received"
+msgstr "Fecha de recepción del pedido"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_resource_calendar__use_for_sales_time_report
+msgid "Default work shift ?"
+msgstr "Horario de Trabajo por default?"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__actual_hours_to_delivery
+msgid "Delivered (Wait)"
+msgstr "Entregado(en espera)"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__picking_name
+msgid "Delivery Order"
+msgstr "Orden entregada"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__delivery_cost
+msgid "Delivery cost"
+msgstr "Costo de envío"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__detener_envio
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Detener envio"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,help:setu_sales_time_dashboard.field_sale_order__create_confirm_diff
+msgid "Difference in hours between order confirmed and customer confirmed."
+msgstr ""
+"Diferencia en horas entre el Pedido Confirmado y la Confirmación del "
+"cliente."
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,help:setu_sales_time_dashboard.field_sale_order__customer_confirmation_diff
+msgid "Difference in hours between order created and it confirm by customer."
+msgstr ""
+"Diferencia en horas entre el Pedido Confirmado y la Confirmación del "
+"cliente."
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__display_name
+msgid "Display Name"
+msgstr "Nombre en pantalla"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__end_date
+msgid "End date"
+msgstr "Fecha final"
+
+#. module: setu_sales_time_dashboard
+#. odoo-python
+#: code:addons/setu_sales_time_dashboard/models/stock_picking.py:0
+#, python-format
+msgid "Fecha De Envio is lower than Preparation date"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__x_studio_fecha_de_envio
+msgid "Fecha de Envio"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_base_automation__groups_id
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_ir_actions_server__groups_id
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_ir_cron__groups_id
+msgid "Groups"
+msgstr "Grupos"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__id
+msgid "ID"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__actual_hours_to_create_invoice
+msgid "Invoicing"
+msgstr "Facturación"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__date_done_date_invoice_diff
+msgid "Invoicing Duration"
+msgstr "Duracion de facturacion"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model,name:setu_sales_time_dashboard.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__create_sale_order_date
+msgid "Order Date"
+msgstr "Fecha del pedido"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__actual_hours_to_send_order
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__shipping_date_delivery_date_diff
+msgid "Order Sent"
+msgstr "Pedido enviado"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__payment_state
+msgid "Payment State"
+msgstr "Estado de pago"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__payment_status
+msgid "Payment Status"
+msgstr "Estado de pago"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__payment_term_id
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Payment Terms"
+msgstr "Términos de pago"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__actual_hours_to_create_picking
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__confirm_date_done_diff
+msgid "Picking Duration"
+msgstr "Duracion del Albaran"
+
+#. module: setu_sales_time_dashboard
+#. odoo-python
+#: code:addons/setu_sales_time_dashboard/models/sale_order.py:0
+#, python-format
+msgid "Please enter customer confirmation date"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sale_order__preparation_date
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__preparation_date
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__preparation_date
+msgid "Preparation Date"
+msgstr "Fecha Preparacion"
+
+#. module: setu_sales_time_dashboard
+#. odoo-python
+#: code:addons/setu_sales_time_dashboard/models/stock_picking.py:0
+#, python-format
+msgid "Preparation date is lower than Date Order Received"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.actions.server,name:setu_sales_time_dashboard.calculate_total_processing_hours_action_server
+msgid "Re-calculate Sales Time"
+msgstr "Re-calcular tiempo de venta"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model,name:setu_sales_time_dashboard.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "Tiempo de trabajo de recursos"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__team_id
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Sale Team"
+msgstr "Equipo de venta"
+
+#. module: setu_sales_time_dashboard
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_search
+msgid "Sale order"
+msgstr "Pedido de venta"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model,name:setu_sales_time_dashboard.model_sale_order
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__so_name
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.ui.menu,name:setu_sales_time_dashboard.sales_time_dashboard
+msgid "Sales Time Dashboard"
+msgstr "Tablero de tiempo de ventas"
+
+#. module: setu_sales_time_dashboard
+#: model:res.groups,name:setu_sales_time_dashboard.sales_time_dashboard_report
+msgid "Sales Time Report"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#. odoo-python
+#: code:addons/setu_sales_time_dashboard/wizards/sales_time_dashboard.py:0
+#, python-format
+msgid "Sales Time Report from %s to %s"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model,name:setu_sales_time_dashboard.model_sales_time_dashboard
+msgid "SalesTimeDashboard"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model,name:setu_sales_time_dashboard.model_ir_actions_server
+msgid "Server Action"
+msgstr "Acción de servidor"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.actions.act_window,name:setu_sales_time_dashboard.action_sales_time_dashboard_wizard
+msgid "Setu Sales Time Dashboard"
+msgstr "Tablero de Tiempo Ventas"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__actual_hours_to_prepare_picking
+msgid "Shipping (Preparation)"
+msgstr "Envio (Preparacion)"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__date_invoice_preparation_date_diff
+msgid "Shipping (Preparation) Duration"
+msgstr "Envio (Preparacion) Duracion"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__preparation_date_shipping_date_diff
+msgid "Shipping (Wait) Duration"
+msgstr "Duracion de Envio (En espera)"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__x_studio_fecha_de_envio
+msgid "Shipping Date"
+msgstr "Fecha de Envió"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model,name:setu_sales_time_dashboard.model_stock_picking
+msgid "StockPicking"
+msgstr "Traslado"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__actual_total_time_taken
+msgid "Total"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__carrier_tracking_ref
+msgid "Tracking Reference"
+msgstr "Número de seguimiento"
+
+#. module: setu_sales_time_dashboard
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sale_order_diff_view_form
+msgid "Update"
+msgstr "Actualizar"
+
+#. module: setu_sales_time_dashboard
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_form
+msgid "View"
+msgstr "Ver"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__is_created_from_website
+msgid "Website Origin"
+msgstr "Website"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__wizard_id
+msgid "Wizard"
+msgstr "Asistente"
+
+#. module: setu_sales_time_dashboard
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_sales_time_dashboard__x_studio_fecha_de_entrega
+#: model:ir.model.fields,field_description:setu_sales_time_dashboard.field_stock_picking__x_studio_fecha_de_entrega
+msgid "X Studio Fecha De Entrega"
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#. odoo-python
+#: code:addons/setu_sales_time_dashboard/models/stock_picking.py:0
+#, python-format
+msgid "X Studio Fecha De Entrega is lower than Fecha De Envio "
+msgstr ""
+
+#. module: setu_sales_time_dashboard
+#: model_terms:ir.ui.view,arch_db:setu_sales_time_dashboard.sales_time_dashboard_form
+msgid "cancel"
+msgstr "cancelar"

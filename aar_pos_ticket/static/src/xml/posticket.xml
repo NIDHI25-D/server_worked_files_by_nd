@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension"
+       owl="1">
+        <xpath expr="//div[hasclass('after-footer')]" position="after">
+            <div align="center" style="margin-top: 3px;">
+                <t t-debug="pdb"/>
+                <img t-attf-src="/report/barcode/?value={{env.pos.get_order().ean13}}&amp;height=80&amp;width=330&amp;barcode_type=EAN13&amp;humanreadable=1"/>
+            </div>
+            <p style="margin:0.2em 0px"></p>
+        </xpath>
+
+        <xpath expr="//div[hasclass('pos-receipt-contact')]/t[5]" position="after">
+                <t t-if="env.pos.config.name">
+                            <strong>Terminal: <t t-raw="env.pos.config.name"/></strong>
+                        </t>
+            </xpath>
+        <xpath expr="//div[hasclass('pos-receipt-contact')]/t[1]" position="replace">
+                            <t t-esc="env.pos.company.street"/>
+        </xpath>
+
+        <!--        <xpath expr="//WrappedProductNameLines" position="attributes">-->
+
+        <!--                    <attribute name="style">display:none;</attribute>-->
+        <!--                </xpath>-->
+        <xpath expr="//t[@t-foreach='receipt.paymentlines']/div" position="replace">
+                    <div>
+                        <table style="width:100%">
+                        <tr>
+                            <td class="pos-left-align" width='30%'><span t-esc="line.name"/></td>
+                            <td class="pos-right-align" width='15%'><span/></td>
+                            <td class="pos-center-align" width='55%'><span t-esc="env.pos.format_currency_no_symbol(line.amount)"/></td>
+                        </tr>
+                            <tr>
+                            <td class="pos-left-align" width='30%' height="10px"/>
+                                <td class="pos-right-align" width='15%'/>
+                                <td class="pos-center-align" width='55%'/>
+                        </tr>
+                            <tr>
+                            <td class="pos-left-align" width='30%'><span>CHANGE</span></td>
+                                <td class="pos-right-align" width='15%'><span/></td>
+                                <td class="pos-center-align" width='55%'><span t-esc="env.pos.format_currency(receipt.change)"/></td>
+                        </tr>
+                        </table>
+                    </div>
+                </xpath>
+
+
+        <xpath expr="//t[@t-if='!isTaxIncluded']" position="replace">
+                            <t t-if="!isTaxIncluded">
+                            <table style="width:100%">
+                                <tr>
+                                    <td class="pos-left-align" width='30%'>Subtotal</td>
+                                    <td class="pos-right-align" width='15%'><span/></td>
+                                    <td class="pos-center-align" width='55%'><span t-esc="env.pos.format_currency(receipt.subtotal)"/></td>
+                                </tr>
+                                </table>
+                                <p style="margin:0.2em 0px"/>
+                                <t t-foreach="receipt.tax_details" t-as="tax" t-key="tax.name">
+                                <table style="width:100%">
+                                <tr>
+                                    <td class="pos-left-align" width='30%'><span t-esc="tax.name"></span></td>
+                                    <td class="pos-right-align" width='15%'><span></span></td>
+                                    <td class="pos-center-align" width='55%'><span t-esc="env.pos.format_currency_no_symbol(tax.amount)"/></td>
+                                </tr>
+                                </table>
+                            </t>
+                            </t>
+                        </xpath>
+
+
+        <xpath expr="//t[@t-if='receipt.total_discount']" position="replace">
+                            <table style="width:100%">
+                                <tr>
+                                    <td class="pos-left-align" width='30%'>Discounts</td>
+                                    <td class="pos-right-align" width='15%'><span/></td>
+                                    <td class="pos-center-align" width='55%'><span t-esc="env.pos.format_currency(receipt.total_discount)"/></td>
+                                </tr>
+                                </table>
+            <p style="margin:0.2em 0px"/>
+                        </xpath>
+
+        <!--        <xpath expr="//t/div[hasclass('pos-receipt')]/div[2]" position="attributes">-->
+        <!--                    <attribute name="style">display:none;</attribute>-->
+        <!--                </xpath>-->
+
+        <!--        <xpath expr="//div[@class='pos-receipt-right-align']" position="attributes">-->
+        <!--                        <attribute name="style">display:none;</attribute>-->
+        <!--                </xpath>-->
+
+        <xpath expr="//div[hasclass('pos-receipt-amount')]" position="replace">
+                            <div>
+                                <table style="width:100%">
+                                    <tr>
+                                    <td class="pos-left-align" width='30%'><span></span></td>
+                                        <td class="pos-right-align" width='15%'><span></span></td>
+                                        <td class="pos-center-align" width='55%'>--------</td>
+                                </tr>
+                                    <tr>
+                                    <td class="pos-left-align" width='30%'><span>TOTAL</span></td>
+                                        <td class="pos-right-align" width='15%'><span></span></td>
+                                        <td class="pos-center-align" width='55%'><span t-esc="env.pos.format_currency(receipt.total_with_tax)"/></td>
+                                </tr>
+
+                                </table></div>
+                        </xpath>
+
+
+        <xpath expr="//div[hasclass('receipt-change')]" position="attributes">
+                                           <attribute name="style">display:none;</attribute>
+                        </xpath>
+
+        <xpath expr="//t[@t-if='isTaxIncluded']" position="replace">
+                            <t t-if="isTaxIncluded">
+                            <t t-foreach="receipt.tax_details" t-as="tax" t-key="tax.name">
+                                <table style="width:100%">
+                                <tr>
+                                    <td class="pos-left-align" width='30%'><span t-esc="tax.name"></span></td>
+                                    <td class="pos-right-align" width='15%'><span></span></td>
+                                    <td class="pos-center-align" width='55%'><span t-esc="env.pos.format_currency_no_symbol(tax.amount)"/></td>
+                                </tr>
+                                </table>
+                                <p style="margin:0.2em 0px"/>
+                            </t>
+                                <table style="width:100%">
+                                <tr>
+                                    <td class="pos-left-align" width='30%'><span>Total Taxes</span></td>
+                                    <td class="pos-right-align" width='15%'><span></span></td>
+                                    <td class="pos-center-align" width='55%'><span t-esc="env.pos.format_currency(receipt.total_tax)"/></td>
+                                </tr>
+                                </table>
+                            </t>
+                        </xpath>
+
+        <xpath expr="//div[hasclass('orderlines')]" position="replace">
+                            <div class="orderlines">
+                                <t t-debug="pdb"/>
+                                <table class='receipt-orderlines'>
+                                    <tr>
+                                        <th class="pos-left-align" width='30%'>SKU</th>
+                                        <th class="pos-right-align" width='15%'>QTY</th>
+                                        <th class="pos-center-align" width='55%'>Total</th>
+                                    </tr>
+                                    <t t-foreach="receipt.orderlines" t-as="line" t-key="line.id">
+                                            <tr style="height: 1em;">
+                                                <td class="pos-left-align" width='30%'>
+                                                    <d><span t-if="line.default_code">[<t
+                                                            t-esc="line.default_code"/>]</span>
+                                                        -
+                                                        <span t-esc="line.product_name_wrapped[0]"/></d>
+                                                    <!--                                                    <WrappedProductNameLines line="line"-->
+                                                    <!--                                                                             style="display:none"/>-->
+                                                    <div t-if="!line.discount > 0">
+                                                    <span>Unit Price </span>
+                                                        <div t-esc="env.pos.format_currency_no_symbol(line.price)"/>
+                                                        <!--t t-esc="widget.format_currency_no_symbol(line.price - line.get_tax())" /-->
+                                                </div>
+                                                    <div t-if="line.discount > 0">
+                                                    <span>Price </span>
+                                                        <t t-esc='line.price'/>
+                                                        <div class="pos-disc-font">
+                					                    <span>Discount</span>
+                                                            <t t-esc=" line.discount"/>%
+                					                </div>
+                			                    </div>
+                                                </td>
+                                                <td class="pos-right-align" width='15%'>
+                                                    <strong><t t-esc="line.quantity"/></strong>
+                                                </td>
+                                                <td class="pos-center-align" width='55%'>
+                                                    <strong><t t-esc="env.pos.format_currency_no_symbol(line.price_display)" /></strong>
+                                                </td>
+                                            </tr>
+                                    </t>
+                                </table>
+                                <p style="margin:0.2em 0px"/>
+                            </div>
+                        </xpath>
+
+</t>
+
+</templates>

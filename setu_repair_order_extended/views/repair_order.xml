@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_repair_state_ctb_tree" model="ir.ui.view">
+            <field name="name">repair.state.ctb.tree</field>
+            <field name="model">repair.state.ctb</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="sequence"/>
+                    <field name="key"/>
+                    <field name="value"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_repair_state_ctb" model="ir.actions.act_window">
+            <field name="name">Repair State CTB</field>
+            <field name="res_model">repair.state.ctb</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="repair_state_ctb_menu"
+                  name="Repair Status CTB"
+                  action="action_repair_state_ctb"
+                  parent="repair.repair_menu_config"
+                  groups="group_repair_states_ctb_config"/>
+
+        <record id="repair_state_ctb_form_view" model="ir.ui.view">
+            <field name="name">Repair state ctb form</field>
+            <field name="model">repair.order</field>
+            <field name="inherit_id" ref="repair.view_repair_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group/group/field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group/field[@name='address_id']" position="after">
+                    <field name="hr_employee_id" options="{'no_create_edit': True, 'no_open': True}"/>
+                    <field name="model"/>
+                    <field name="serial_number"/>
+                    <field name="reported_failure"/>
+                    <field name="repair_state_ctb_id" invisible="1" widget="selection"/>
+                </xpath>
+
+                <xpath expr="/form/sheet/notebook/page[@name='extra_info']" position="after">
+                    <page string="History" name="repair_state_ctb_history">
+                        <field name="repair_state_ctb_history_ids">
+                            <tree editable="bottom" create="false" delete="false">
+                                <field name="repair_state_ctb_id" readonly="1"/>
+                                <field name="create_uid" string="User" readonly="1"/>
+                                <field name="create_date" string="Date" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Signature" name="signature_page">
+                        <group>
+                            <div>
+                                <label for="client_signature"/>
+                                <field name="client_signature" widget="signature"/>
+                            </div>
+                            <div>
+                                <span style="color:black">
+                                    <h3>Delivery information</h3>
+                                </span>
+                                <br></br>
+                                <div>
+                                    <label for="date_fecha"/>
+                                    <field name="date_fecha"/>
+
+                                </div>
+                                <div>
+                                    <label for="employee_id"/>
+                                    <field name="employee_id"/>
+
+                                </div>
+                                <div>
+                                    <label for="receive_partner_id"/>
+                                    <field name="receive_partner_id"
+                                           domain="['|',('id', '=', partner_id),('id', 'child_of', partner_id)]"/>
+                                </div>
+                            </div>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="repair_state_ctb_kanban_view" model="ir.ui.view">
+            <field name="name">Repair state ctb kanban</field>
+            <field name="model">repair.order</field>
+            <field name="inherit_id" ref="repair.view_repair_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="replace">
+                    <kanban default_group_by="repair_state_ctb_id" class="o_kanban_small_column" quick_create="false"
+                            quick_edit="false">
+                        <field name="company_id" invisible="1"/>
+                        <field name="name"/>
+                        <field name="product_id"/>
+                        <field name="partner_id"/>
+                        <field name="address_id"/>
+                        <field name="guarantee_limit"/>
+                        <field name="state"/>
+                        <field name="activity_state"/>
+                        <templates>
+                            <t t-name="kanban-box">
+                                <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                    <div class="row mb4">
+                                        <div class="col-6">
+                                            <strong>
+                                                <span>
+                                                    <t t-esc="record.name.value"/>
+                                                </span>
+                                            </strong>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <field name="state" widget="label_selection"
+                                                   options="{'classes': {'draft': 'info', 'cancel': 'danger', 'done': 'success', 'under_repair': 'secondary'}}"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 text-muted">
+                                            <span>
+                                                <t t-esc="record.product_id.value"/>
+                                            </span>
+                                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="float-right">
+                                                <field name="partner_id"/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </kanban>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>

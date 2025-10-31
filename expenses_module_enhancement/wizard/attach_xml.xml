@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="attach_xml_wizard_form_view">
+        <field name="name">attach_xml_wizard_form</field>
+        <field name="model">attach.xml</field>
+        <field name="arch" type="xml">
+            <form class="form-xml">
+                <field name="dragndrop"/>
+                <footer>
+                    <button name="action_read_xml" string="Upload" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_delete_option_in_account_move_line" model="ir.ui.view">
+            <field name="name">add_delete_option_in_account_move_line</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@id='invoice_tab']/field[@name='invoice_line_ids']" position="before">
+                    <button name="delete_invoice_lines" type="object" class="fa fa-trash-o pull-right"
+                            style="margin-top:-15px;"
+                            invisible="state in ['posted','cancel'] or move_type not in ['out_invoice','out_refund']"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

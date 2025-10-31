@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<odoo>
+
+		<menuitem id="setu_mirakl_main_menu" name="Mirakl"  groups="setu_mirakl_connector.group_setu_mirakl_connector_user"  sequence="8">
+			<menuitem id="setu_mirakl_dashboard_main_menu" name="Dashboard" action="open_setu_mirakl_dashboard_kanban" sequence="1"/>
+		</menuitem>
+
+		<menuitem id="setu_mirakl_import_export_main_menu" name="Operations" parent="setu_mirakl_connector.setu_mirakl_main_menu"  sequence="5" groups="setu_mirakl_connector.group_setu_mirakl_connector_manager"/>
+		<menuitem id="setu_mirakl_configuration_main_menu" name="Configuration" parent="setu_mirakl_connector.setu_mirakl_main_menu" sequence="8" groups="setu_mirakl_connector.group_setu_mirakl_connector_manager"/>
+		<menuitem id="setu_mirakl_process_history_main_menu" name="Process History" parent="setu_mirakl_connector.setu_mirakl_main_menu"  sequence="7" groups="setu_mirakl_connector.group_setu_mirakl_connector_manager"/>
+
+</odoo>

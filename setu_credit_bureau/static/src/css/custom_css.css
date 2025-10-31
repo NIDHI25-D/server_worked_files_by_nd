@@ -1,0 +1,11 @@
+.uppercase-field input {
+    text-transform: uppercase;
+}
+
+.marginleft-creditbureaureport input {
+    margin-left: 280px;
+}
+
+.invalid input {
+    border: 1px solid red;
+}

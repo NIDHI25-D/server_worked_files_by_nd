@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_enable_minimum_price" model="ir.ui.view">
+            <field name="name">res.config.settings.view.enable_minimum_price</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@id='pricing_setting_container']" position="before">
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box" id="enable_minimum_price">
+                        <div class="o_setting_left_pane">
+                            <field name="enable_minimum_price"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="enable_minimum_price"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

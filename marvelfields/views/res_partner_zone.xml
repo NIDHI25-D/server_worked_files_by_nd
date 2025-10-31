@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="partner_zone_form_view">
+        <field name="name">partner zone form</field>
+        <field name="model">res.partner.zone</field>
+        <field name="arch" type="xml">
+            <form string="Partner zone form">
+                <group>
+                    <field name="name" required="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="partner_zone_list_view">
+        <field name="name">partner zone list</field>
+        <field name="model">res.partner.zone</field>
+        <field name="arch" type="xml">
+            <list string="Partner zone list" editable="bottom">
+                <field name="name" required="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="partner_zone_action">
+        <field name="name">Partner Zone</field>
+        <field name="res_model">res.partner.zone</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="partner_zone_action_menu" name="Zones"
+              parent="sale.menu_sale_config"
+              action="partner_zone_action"
+              sequence="16"/>
+
+</odoo>

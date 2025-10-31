@@ -1,0 +1,35 @@
+<odoo>
+    <record id="action_fsn_dashboard" model="ir.actions.client">
+        <field name="name">FSN Dashboard</field>
+        <field name="tag">setu_fsn_dashboard</field>
+    </record>
+    <record id="action_xyz_inventory_dashboard" model="ir.actions.client">
+        <field name="name">XYZ Dashboard</field>
+        <field name="tag">setu_xyz_dashboard</field>
+    </record>
+    <record id="action_fsn_xyz_inventory_dashboard" model="ir.actions.client">
+        <field name="name">FSN-XYZ Dashboard</field>
+        <field name="tag">setu_fsn_xyz_dashboard</field>
+    </record>
+    <record id="action_overstock_inventory_dashboard" model="ir.actions.client">
+        <field name="name">Overstock Inventory Dashboard</field>
+        <field name="tag">setu_overstock_dashboard</field>
+    </record>
+    <record id="action_outofstock_inventory_dashboard" model="ir.actions.client">
+        <field name="name">OutOfStock Inventory Dashboard</field>
+        <field name="tag">setu_outofstock_dashboard</field>
+    </record>
+    <record id="action_stock_movement_inventory_dashboard" model="ir.actions.client">
+        <field name="name">Stock Movement Inventory Dashboard</field>
+        <field name="tag">setu_stock_movement_dashboard</field>
+    </record>
+    <record id="action_age_breakdown_inventory_dashboard" model="ir.actions.client">
+        <field name="name">Age Breakdown Inventory Dashboard</field>
+        <field name="tag">setu_age_breakdown_analysis_dashboard</field>
+    </record>
+
+    <menuitem id="menu_fsn_dashboard" name="Inventory Dashboard" web_icon="setu_advance_inventory_reports,static/description/icon.png"/>
+    <menuitem id="panel_dashboard" name="Dashboard" parent="setu_advance_inventory_reports.menu_fsn_dashboard" action="action_fsn_dashboard" sequence="1"/>
+    <menuitem id="panel_reports_menu" name="Reporting" parent="setu_advance_inventory_reports.menu_fsn_dashboard" sequence="2"/>
+
+</odoo>

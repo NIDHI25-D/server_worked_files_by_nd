@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="view_wizard_action_form_po" model="ir.ui.view">
+        <field name="name">view.wizard.action.form.po</field>
+        <field name="model">purchase.order.confirm.wizard</field>
+        <field name="arch" type="xml">
+            <form string="CONFIRMATION">
+                <p>Are you sure to confirm the purchase order with currency:  <field name="currency_id" readonly="1" widget="selection"/> ? </p>
+                <footer>
+                    <button string="Yes" class="btn-primary" data-hotkey="q" type="object"
+                            name="action_confirm_purchase_order"/>
+                    <button string="No" class="btn-secondary" data-hotkey="z" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_confirm_po" model="ir.actions.act_window">
+        <field name="name">Confirm Purchase Order</field>
+        <field name="res_model">purchase.order.confirm.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

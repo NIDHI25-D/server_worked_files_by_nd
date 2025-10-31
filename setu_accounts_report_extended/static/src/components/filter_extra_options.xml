@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="setu_accounts_report_extended.AccountReportFilterExtraOptions_extended"
+       t-inherit="account_reports.AccountReportFilterExtraOptions" t-inherit-mode="extension">
+        <xpath expr="//DropdownItem[contains(@class, 'filter_show_all_hook')]" position="after">
+            <t t-if="this.controller.action.xml_id == 'account_reports.action_account_report_pl'">
+                <DropdownItem
+                        class="{ 'selected': controller.options.percentage }"
+                        onSelected="() => this.filterClicked({ optionKey: 'percentage', reload: true})"
+                        closingMode="'none'"
+                >
+                    Show Percentage
+                </DropdownItem>
+                <DropdownItem
+                        class="{ 'selected': controller.options.month13 }"
+                        onSelected="() => this.filterClicked({ optionKey: 'month13', reload: true})"
+                        closingMode="'none'"
+                >
+                    Excluir Polizas de Cierre
+                </DropdownItem>
+            </t>
+        </xpath>
+    </t>
+</templates>

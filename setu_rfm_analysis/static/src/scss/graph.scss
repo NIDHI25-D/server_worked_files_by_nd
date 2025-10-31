@@ -1,0 +1,17 @@
+// Style for the widget "dashboard_graph"
+.rfm_segment_graph {
+    canvas {
+        height: 200px !important;
+    }
+}
+.o_kanban_renderer.o_kanban_dashboard.o_salesteam_kanban.o_kanban_ungrouped {
+	.o_kanban_record {
+        width: unset;
+	}
+}
+
+.o_kanban_renderer.o_segment_kanban.o_kanban_ungrouped{
+    .o_kanban_record{
+        width: 500px !important;
+    }
+}

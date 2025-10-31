@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mirakl_setu_ecommerce_import_export_process_wiz_form_view" model="ir.ui.view">
+        <field name="name">mirakl.setu.ecommerce.import.export.process.wiz.form.view</field>
+        <field name="model">setu.ecommerce.import.export.process.wiz</field>
+        <field name="arch" type="xml">
+            <form string="Import/Export eCommerce Operation">
+                <sheet>
+                    <group name='mirakl_multi_ecommerce_connector_id'>
+                        <group>
+                            <field name='multi_ecommerce_connector_id'
+                                   options="{'no_create':True,'no_create_edit': True,'no_open': True}" required="1"
+                                   domain="[('active','=',True),('state','=','fully_integrated'),('ecommerce_connector', '=', 'mirakl_connector')]"/>
+                        </group>
+                        <group>
+                            <field name='ecommerce_operation_mirakl' string="Operations" required="1"/>
+                        </group>
+                    </group>
+                    <notebook invisible="ecommerce_operation_mirakl not in ['import_specific_order']">
+                        <page string="Sync Option">
+                            <group name="import_specific_order">
+                                <field name="import_specific_order_ids"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button name="ecommerce_perform_operation" string="Perform Operation" class="oe_highlight"
+                                type="object"/>
+                        <button string="Cancel" class="oe_highlight" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="setu_ecommerce_import_export_process_wiz_mirakl_action" model="ir.actions.act_window">
+        <field name="name">Mirakl Operations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">setu.ecommerce.import.export.process.wiz</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="mirakl_setu_ecommerce_import_export_process_wiz_form_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="setu_mirakl_import_export_child_menu" name="Mirakl Operations"
+              parent="setu_mirakl_connector.setu_mirakl_import_export_main_menu"
+              action="setu_ecommerce_import_export_process_wiz_mirakl_action" sequence="2"/>
+
+</odoo>

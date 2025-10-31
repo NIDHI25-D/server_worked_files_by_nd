@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- FROM VEIW AT THE SCHOOL MODEL-->
+    <record id="hr_attendace_reportwizard_form" model="ir.ui.view">
+        <field name="name">hr.attendance.reportwizard.form</field>
+        <field name="model">hr.attendance.reportwizard</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Report">
+                <sheet>
+                    <group string="Filter by employees and departments">
+                        <group>
+                            <field name="department_ids" widget="many2many_tags"
+                                   options="{'no_create': True, 'no_create_edit':True}" groups="setu_employee_attendance_report.module_setu_employee_employee_attandance_group_all_users"/>
+                        </group>
+                        <group>
+                            <field name="employee_ids" widget="many2many_tags"
+                                   options="{'no_create': True, 'no_create_edit':True}" required="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Choose date range to generate attendance report">
+                            <field name="cutover_date" readonly="1"  invisible="enable_start_date"/>
+                            <field name="start_date" invisible="not enable_start_date" required="enable_start_date"/>
+                            <field name="end_date" required="1"/>
+                        </group>
+                        <group string="Filter by worked hours">
+                            <field name="worked_hours_operator" required="worked_hours > 0"/>
+                            <field name="worked_hours"/>
+                            <field name="enable_start_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="attendance_report" string="View" type="object" class="btn-primary"/>
+                    <button string="cancel" class="button-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_hr_attendance_reportwizard" model="ir.actions.act_window">
+        <field name="name">Setu Employee Attendace Reports</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.attendance.reportwizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hr_attendace_reportwizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_attendances" name="Attendances" parent="hr_holidays.menu_hr_holidays_root"
+        sequence="1"/>
+    <menuitem id="setu_attendacne_report" name="Attendance Worked Hours" parent="menu_attendances"
+              action="action_hr_attendance_reportwizard"/>
+
+
+    <record id="hr_attendance_report_tree_view" model="ir.ui.view">
+        <field name="name">hr.attendance.report.tree.view</field>
+        <field name="model">hr.attendance.bi.report</field>
+        <field name="arch" type="xml">
+            <list string="Attendance" create="false" edit="false">
+                <field name="employee_id" widget="many2one" options="{'no_open': 1}"/>
+                <field name="department_id" widget="many2one" options="{'no_open': 1}"/>
+                <field name="expected_working_hours" sum="Total" widget="float_time"/>
+                <field name="holiday_hours" sum="Total" widget="float_time"/>
+                <field name="absence_hours" sum="Total" widget="float_time"/>
+                <field name="real_worked_hours" sum="Total" widget="float_time"/>
+                <field name="over_time_hours" sum="Total" widget="float_time"/>
+                <field name="total_hours" sum="Total" widget="float_time"/>
+                <field name="difference" sum="Total" widget="float_time"/>
+            </list>
+        </field>
+    </record>
+
+    <!--   attendance report search view -->
+    <record id="hr_attendance_bi_report_search_view" model="ir.ui.view">
+        <field name="name">hr.attendance.bi.report.search.view</field>
+        <field name="model">hr.attendance.bi.report</field>
+        <field name="arch" type="xml">
+            <search string="Search data">
+                <field name="employee_id"/>
+                <field name="department_id"/>
+
+                <separator/>
+                <filter string="Employee" context="{'group_by':'employee_id'}" name="group_employee_id"/>
+                <filter string="Department" context="{'group_by':'department_id'}" name="group_department_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_attendance_bi_report_form" model="ir.ui.view">
+        <field name="name">hr.attendance.bi.report.form</field>
+        <field name="model">hr.attendance.bi.report</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Report" create="false" edit="false">
+                <sheet>
+                    <group string="Employees information">
+                        <group>
+                            <field name="employee_id" options="{'no_open': 1}"/>
+                            <field name="department_id" options="{'no_open': 1}"/>
+                        </group>
+                        <group>
+                            <field name="resource_calendar_id" options="{'no_open': 1}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Attendance data">
+                            <field name="attendance_ids" nolabel="1">
+                                <list>
+                                    <field name="check_in"/>
+                                    <field name="check_out"/>
+                                    <field name="worked_hours" sum="Total"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Holidays data">
+                            <field name="leave_ids" nolabel="1">
+
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+
+

@@ -1,0 +1,11 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+compatible_read_all,compatible all,model_marvelfields_compatible,,1,1,1,1
+partner_zones_read_all, partner zones all,model_res_partner_zone,,1,1,1,0
+payment_days_read_all, payment days all,model_payment_days,,1,1,1,0
+access_origin_database,marvelfields.origin.database,model_origin_database,base.group_user,1,1,1,1
+temporary_read_all,temporary all,model_product_temporary,,1,1,1,0
+access_shipping_incident,shipping.incident,model_shipping_incident,,1,1,1,1
+access_marvelfields_clasificaciones,marvelfields.clasificaciones,model_marvelfields_clasificaciones,,1,1,1,1
+access_marvelfields_subclases,marvelfields.subclases,model_marvelfields_subclases,,1,1,1,1
+access_account_journal_approval_manager, Account Journal Approval Manager,account.model_account_journal,approvals.group_approval_manager,1,0,0,0
+access_account_journal_approval_user, Account Journal Approval user,account.model_account_journal,approvals.group_approval_user,1,0,0,0

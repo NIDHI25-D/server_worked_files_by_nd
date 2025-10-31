@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="absence_report_wizard" model="ir.ui.view">
+        <field name="name">absence.report.view</field>
+        <field name="model">absence.report</field>
+        <field name="arch" type="xml">
+            <list string="Absence Report">
+                <field name="employee_id" widget="many2one"/>
+                <field name="absence_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="absence_date_record_search" model="ir.ui.view">
+        <field name="name">absence.date.record.search</field>
+        <field name="model">absence.report</field>
+        <field name="arch" type="xml">
+            <search string="Absence Search">
+                <field name="employee_id"/>
+                <field name="absence_date"/>
+                <separator/>
+                <filter string="Employee" context="{'group_by':'employee_id'}" name="employee_id"/>
+                <filter string="Date" context="{'group_by':'absence_date'}" name="date"/>
+                <separator/>
+            </search>
+        </field>
+    </record>
+
+    <record id="employee_absence_view_form" model="ir.ui.view">
+        <field name="name">employee_absence_view_form</field>
+        <field name="model">employee.absence.report</field>
+        <field name="arch" type="xml">
+            <form string="employee_absence_report">
+                <sheet>
+                    <group>
+                        <field name="all_employee" />
+                        <field name="employee_id" invisible="all_employee" required="not all_employee"/>
+                        <field name="start_date" required="1"/>
+                        <field name="end_date" required="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="absence_list_view" type="object" class="btn-primary" string="View Data" />
+<!--                    <button name="get_absence_report" type="object" class="btn-primary" string="Download Data" />-->
+                    <button string="Cancel" special="cancel" class="oe_highlight" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_absence_report_wizard" model="ir.actions.act_window">
+        <field name="name">Employee Absence Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.absence.report</field>
+        <field name="view_mode">form</field>
+            <field name="view_id" ref="employee_absence_view_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="setu_absence_report" name="Absence Report"
+              parent="root_menu_hr_attendance_report"
+              action="action_absence_report_wizard"/>
+</odoo>

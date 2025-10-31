@@ -1,0 +1,888 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_ecommerce_checkout_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-22 12:37+0000\n"
+"PO-Revision-Date: 2024-10-22 12:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"33\n"
+"                                                                    3283 4940"
+msgstr ""
+"33\n"
+"                                                                3283 4940"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid ""
+"<b>Acumular y consumir los puntos globales de la cuenta maestra</b>\n"
+"                                                    <br/>\n"
+"                                                    Esta función es para que todos los puntos generados de las compras\n"
+"                                                    se\n"
+"                                                    agrupen en la cuenta maestra\n"
+"                                                    <br/>\n"
+"                                                    <br/>\n"
+"                                                    <b>IMPORTANTE:</b>\n"
+"                                                    Esta función une todos los puntos del contacto con la cuenta\n"
+"                                                    maestra,\n"
+"                                                    ésta acción no se puede deshacer."
+msgstr ""
+"<b>Acumular y consumir los puntos globales de la cuenta maestra</b>\n"
+"                                                <br/>\n"
+"                                                Esta función es para que todos los puntos generados de las compras\n"
+"                                                se\n"
+"                                                agrupen en la cuenta maestra\n"
+"                                                <br/>\n"
+"                                                <br/>\n"
+"                                                <b>IMPORTANTE:</b>\n"
+"                                                Esta función une todos los puntos del contacto con la cuenta\n"
+"                                                maestra,\n"
+"                                                ésta acción no se puede deshacer."
+
+#. module: setu_ecommerce_checkout_extended
+#: model:mail.template,body_html:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request_approve
+msgid ""
+"<div>\n"
+"                    Hello\n"
+"                    <t t-out=\"object.name\"></t>\n"
+"                    <br>\n"
+"                    <br>\n"
+"\n"
+"                    Your request for connect with <b><t t-out=\"user.partner_id.parent_id.name\"></t></b> has been approved.\n"
+"                    <a t-att-href=\"'/my/manage-address?steps=2'\">Continue With Your Account Details</a>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"\n"
+"                \n"
+"                Estimad@  <t t-out=\"ctx.get(&#x2018;partner_name&#x2019;)\"/>,<br/><br/>\n"
+"\n"
+"                Su solicitud de vinculación con <b><t t-out=\"ctx.get(&#x2018;company_name&#x2019;)\"/></b> fue aprobada.\n"
+"                <a href=\"%E2%80%9C/my/manage-address?steps=2%E2%80%9D\">Continúe con los datos de su cuenta</a>\n"
+"\n"
+"            \n"
+"            "
+
+#. module: setu_ecommerce_checkout_extended
+#: model:mail.template,body_html:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request
+msgid ""
+"<div>\n"
+"                    Hello\n"
+"                    <t t-out=\"object.name\"></t>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    <t t-out=\"user.name\"></t>\n"
+"                    requested to connect with your company.\n"
+"                    <a t-att-href=\"'/my/manage-address/request/%s/%s/approve' %(object.id, user.partner_id.id)\">Allow\n"
+"                        Request\n"
+"                    </a>\n"
+"                    or\n"
+"                    <a t-att-href=\"'/my/manage-address/request/%s/%s/reject' %(object.id, user.partner_id.id)\">Reject\n"
+"                        Request\n"
+"                    </a>\n"
+"\n"
+"                    <br>\n"
+"                    <br>Thanks\n"
+"                    <br>\n"
+"                    <br>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"\n"
+"                \n"
+"                Estimad@  <t t-out=\"object.name\"/>,<br/><br/>\n"
+"\n"
+"                <t t-out=\"&#x2018;request_company_name&#x2019; in ctx and ctx[&#x2018;request_company_name&#x2019;] or &#x2018;&#x2019;\"/> solicitó vincularse con su empresa.\n"
+"\n"
+"                <a href=\"%E2%80%9C/my/manage-address/request/%24%7B%E2%80%98request_company%E2%80%99\" in=\"\" ctx=\"\" and=\"\">Permitir solicitud</a> Or\n"
+"                <a href=\"%E2%80%9C/my/manage-address/request/%24%7B%E2%80%98request_company%E2%80%99\" in=\"\" ctx=\"\" and=\"\">Rechazar solicitud</a>\n"
+"\n"
+"                <br/><br/>Gracias.<br/><br/>\n"
+"\n"
+"            \n"
+"            "
+
+#. module: setu_ecommerce_checkout_extended
+#: model:mail.template,body_html:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request_reject
+msgid ""
+"<div>\n"
+"                    Hello\n"
+"                    <t t-out=\"object.name\"></t>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    Your request for connect with <b><t t-out=\"user.partner_id.parent_id.name\"></t></b> has been Rejected.\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"\n"
+"                \n"
+"                Estimad@  <t t-out=\"ctx.get(&#x2018;partner_name&#x2019;)\"/>,<br/><br/>\n"
+"\n"
+"                Su solicitud de vinculación con   <b><t t-out=\"ctx.get(&#x2018;company_name&#x2019;)\"/></b> fue rechazada.\n"
+"            \n"
+"            "
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"<i class=\"fa fa-arrow-right mr-1\"/>\n"
+"                                                                    Click here for request"
+msgstr ""
+"<i class=\"fa fa-arrow-right me-1\"/>\n"
+"                                                                Click here for request"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"<i class=\"fa fa-arrow-right mr-1\"/>\n"
+"                                    Click Here"
+msgstr ""
+"<i class=\"fa fa-arrow-right me-1\"/>\n"
+"                                Click Here"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"<i class=\"fa fa-plus\"/>\n"
+"                                                            <span>Add Address</span>"
+msgstr ""
+"<i class=\"fa fa-plus\"/>\n"
+"                                                        <span>Añadir dirección</span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "<option value=\"\">State / Province...</option>"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "<span class=\"badge bg-success\">Budgets</span>"
+msgstr "<span class=\"badge text-bg-primary\">Budgets</span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "<span class=\"badge bg-success\">Claims</span>"
+msgstr "<span class=\"badge text-bg-primary\">Claims</span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid ""
+"<span class=\"badge bg-success\">Consume Loyalty Points\n"
+"                                                                </span>"
+msgstr ""
+"<span class=\"badge text-bg-primary\">Consume Loyalty Points\n"
+"                                                            </span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+msgid ""
+"<span class=\"badge bg-success\">Consume Loyalty Points\n"
+"                                                            </span>"
+msgstr ""
+"<span class=\"badge text-bg-primary\">Consume Loyalty Points\n"
+"                                                        </span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "<span class=\"badge bg-success\">Invoices</span>"
+msgstr "<span class=\"badge text-bg-primary\">Invoices</span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "<span class=\"badge bg-success\">Purchase Orders</span>"
+msgstr "<span class=\"badge text-bg-primary\">Purchase Orders</span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+msgid "<span class=\"badge bg-success\">Sale Orders</span>"
+msgstr "<span class=\"badge text-bg-primary\">Sale Orders</span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "<span class=\"badge bg-success\">Sales Orders</span>"
+msgstr "<span class=\"badge text-bg-primary\">Sales Orders</span>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "<strong>Account Information</strong>"
+msgstr "<strong>Información de la cuenta</strong>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "<strong>Billing Information</strong>"
+msgstr "<strong>Información de facturación</strong>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "<strong>Shipping Address</strong>"
+msgstr "<strong>Dirección de envío</strong>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "<strong>The Company Information</strong>"
+msgstr "<strong>Información de la empresa</strong>"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Account Information:"
+msgstr "Información de la cuenta:"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid ""
+"Add A\n"
+"                                                Contact"
+msgstr ""
+"Añadir un \n"
+"                                            Contacto"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+msgid "Add A Contact"
+msgstr "Añadir un Contacto"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_layout
+msgid "Add Contacts"
+msgstr "Añadir Contactos"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_home_contact
+msgid "Attach your Fiscal situation certificate."
+msgstr "Adjunte su constancia de situación fiscal."
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Billing Details:"
+msgstr "Detalles de facturación:"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_budgets_permission
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_budgets_permission
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Budgets"
+msgstr "Presupuestos"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_website__hcategory_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "City"
+msgstr "Ciudad"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "City: *"
+msgstr "Ciudad: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_claims_permission
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_claims_permission
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Claims"
+msgstr "Reclamos"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Colony"
+msgstr "Colonia"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Colony: *"
+msgstr "Colonia: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Company Details:"
+msgstr "Detalles de la Compañía:"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Company Name"
+msgstr "Nombre de la Compañía"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Company Name: *"
+msgstr "Nombre de la Compañía: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__setu_company_type
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__setu_company_type
+msgid "Company Type"
+msgstr "Tipo de Compañía"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Company type: *"
+msgstr "Tipo de Compañía: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Confirm"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_consume_loyalty_points
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_consume_loyalty_points
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Consume the global points of the master company"
+msgstr "Consumir los puntos de lealtad Globales de la Compañía"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model,name:setu_ecommerce_checkout_extended.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_layout
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_home_contact
+msgid "Contacts"
+msgstr "Contactos"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.res_partner_view_form
+msgid "Contacts Permissions"
+msgstr "Permisos de los Contactos"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Continue To Cart"
+msgstr "Continuar al Carrito"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Country: *"
+msgstr "País: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "Currently there are not any contacts available."
+msgstr "Actualmente no existen contactos vinculados."
+
+#. module: setu_ecommerce_checkout_extended
+#: model:mail.template,name:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request
+#: model:mail.template,subject:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request
+msgid "Customer Contact Link Request"
+msgstr "Solicitud de vinculación de contacto con el cliente"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:mail.template,name:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request_approve
+msgid "Customer Contact Link Request Approve"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model:mail.template,subject:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request_approve
+msgid "Customer Contact Link Request Approved"
+msgstr "Solicitud de vinculación de contacto con el cliente Aprobada"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:mail.template,name:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request_reject
+#: model:mail.template,subject:setu_ecommerce_checkout_extended.email_template_customer_contact_link_request_reject
+msgid "Customer Contact Link Request Reject"
+msgstr "Solicitud de vinculación de contacto con el cliente Rechazada"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_home_contact
+msgid ""
+"Dear distributor, thank you for being part of Marvelsa family, we remind you that in case of not\n"
+"                        registering any purchase in the next seven business days your new account will be removed"
+msgstr ""
+"Estimado Distribuidor, gracias por formar parte de la familia marvelsa, te recordamos que la cuenta nueva se dará de baja si no\n"
+"                        se realiza un pedido en los primeros 7 días hábiles de la fecha de creación de la cuenta"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Default Address"
+msgstr "Dirección Predeterminada"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Descripción del permiso"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"Did You Required an\n"
+"                                                                    invoice:\n"
+"                                                                    *"
+msgstr ""
+"Por favor marque esta casilla si necesita factura:\n"
+"                                                                *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Edit"
+msgstr "Editar"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "Edit / Delete"
+msgstr "Editar / Eliminar"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Edit Contact"
+msgstr "Editar Contacto"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_layout
+msgid "Edit Contacts"
+msgstr "Editar Contactos"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "Edit Your Account"
+msgstr "Editar su Cuenta"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Email"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Email: *"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Enviar invitacion"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "First Name"
+msgstr "Nombre"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__fiscal_position_id
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__fiscal_position_id
+msgid "Fiscal Position"
+msgstr "Posición Fiscal"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Fiscal Position: *"
+msgstr "Posición Fiscal: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.auth_signup_login_inherited
+msgid "If you are a service workshop, register here!"
+msgstr "Si es un taller de servicio, ¡regístrese aquí!"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Ingresa la direccion de correo electrónico del nuevo contacto."
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Invitar a los miembros del equipo"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_invoices_permission
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_invoices_permission
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_company_data
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_company_data
+msgid "Is Company Data"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_company_user
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_company_user
+msgid "Is Company User"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_main_partner
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_main_partner
+msgid "Is Main Partner"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_owner
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_owner
+msgid "Is Owner"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_required_invoice
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_required_invoice
+msgid "Is Required an invoice"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "Last Login"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields.selection,name:setu_ecommerce_checkout_extended.selection__res_partner__setu_company_type__legal
+msgid "Legal"
+msgstr "Moral"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Manage Address"
+msgstr "Administrar direcciones"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "Manage Contacts"
+msgstr "Administrar contactos"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "Member"
+msgstr "Socio"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Name"
+msgstr "Nombre"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Name: *"
+msgstr "Nombre: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "New Shipping Address:"
+msgstr "Nueva dirección de envío:"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Next"
+msgstr "Siguiente"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Payment Way: *"
+msgstr "Forma de Pago: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_contacts_from_portal
+msgid "Permits"
+msgstr "Permisos"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields.selection,name:setu_ecommerce_checkout_extended.selection__res_partner__setu_company_type__pisical
+msgid "Pisical"
+msgstr "Física"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model,name:setu_ecommerce_checkout_extended.model_portal_wizard_user
+msgid "Portal User Config"
+msgstr "Configuración usuario portal"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Postal Code"
+msgstr "Código Postal"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Postal Code: *"
+msgstr "Código Postal: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Previous"
+msgstr "Anterior"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_purchase_permission
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_purchase_permission
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Purchase Orders"
+msgstr "Ordenes de Compra"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "RFC"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "RFC : *"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Remove"
+msgstr "Eliminar"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__requested_company_id
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__requested_company_id
+msgid "Requested Company"
+msgstr "Empresa solicitada"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.auth_signup_login_inherited
+msgid "Reset Password"
+msgstr "Restablecer contraseña"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_partner__is_sale_orders_permission
+#: model:ir.model.fields,field_description:setu_ecommerce_checkout_extended.field_res_users__is_sale_orders_permission
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Sale Orders"
+msgstr "Ordenes de Ventas"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.add_contacts
+msgid "Set As Admin User"
+msgstr "Establecer como Administrador"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Set As Default Address"
+msgstr "Establecer como Dirección Predeterminada"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Shipping Address :"
+msgstr "Dirección de envío:"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "State: *"
+msgstr "Estado: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Step 1 - 4"
+msgstr "Paso 1 - 4"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Step 2 - 4"
+msgstr "Paso 2 - 4"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Step 3 - 4"
+msgstr "Paso 3 - 4"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Step 4 - 4"
+msgstr "Paso 4 - 4"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Street #2"
+msgstr "Entre Calles"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Street #2:"
+msgstr "Entre Calles:"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Street And Number"
+msgstr "Calle y Número"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Street And Number: *"
+msgstr "Calle y Número: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Street2 :"
+msgstr "Entre Calles:"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Submit"
+msgstr "Enviar"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Telephone"
+msgstr "Teléfono"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Telephone: *"
+msgstr "Teléfono: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"This RFC and related company already exists in our\n"
+"                                                                portal,"
+msgstr "Este RFC y la empresa relacionada ya existen en nuestro portal,"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_partner__is_budgets_permission
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_users__is_budgets_permission
+msgid "This permission allows you to view budgets."
+msgstr "Este permiso le permite ver los presupuestos."
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_partner__is_invoices_permission
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_users__is_invoices_permission
+msgid "This permission allows you to view invoices."
+msgstr "Este permiso le permite ver facturas."
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_partner__is_purchase_permission
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_users__is_purchase_permission
+msgid "This permission allows you to view purchase orders."
+msgstr "Este permiso le permite ver las órdenes de compra."
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_partner__is_sale_orders_permission
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_users__is_sale_orders_permission
+msgid "This permission allows you to view sales orders."
+msgstr "Este permiso le permite ver las ordenes de ventas."
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_partner__is_claims_permission
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_users__is_claims_permission
+msgid "This permission is for filing claims."
+msgstr "Este permiso es para presentar reclamos."
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_partner__is_consume_loyalty_points
+#: model:ir.model.fields,help:setu_ecommerce_checkout_extended.field_res_users__is_consume_loyalty_points
+msgid ""
+"This permission is so that all\n"
+"            the contact's purchases are accumulated in the master company and the contact can\n"
+"            use the loyalty points of said company."
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.portal_my_home_contact
+msgid ""
+"To have your account updated and active, it is required to upload your fiscal situation\n"
+"                        certificate with an antiquity minor than two months."
+msgstr ""
+"Para poder tener tu cuenta activa y actualizada es necesario subir en formato PDF la constancia de situación fiscal\n"
+"                        no mayor a 2 meses."
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "Use Of CFDI: *"
+msgstr "Uso del CFDI: *"
+
+#. module: setu_ecommerce_checkout_extended
+#: model:ir.model,name:setu_ecommerce_checkout_extended.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"You already requested for some company.If you\n"
+"                                                            think anything wrong please contact info@bolder.com"
+msgstr ""
+"Usted ya ha solicitado vincularse con alguna empresa. Si Usted\n"
+"                                                        cree que algo va mal, pongase en contacto con info@marvelsa.com"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "You have active order in your cart to continue"
+msgstr "Tiene un pedido activo en su carrito para continuar"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"Your account link under company and set billing details\n"
+"                                                                as\n"
+"                                                                per company address, you can't modify billing address.If\n"
+"                                                                you\n"
+"                                                                face any issue please contact info@marvelsa.com"
+msgstr ""
+"Your account link under company and set billing details as\n"
+"                                                            per company address, you can't modify billing address.If you\n"
+"                                                            face any issue please contact info@marvelsa.com"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid ""
+"Your data has been saved, if you need to modify it\n"
+"                                                                    please contact to"
+msgstr ""
+"Sus datos han sido guardados, si necesita modificarlos\n"
+"                                                                 póngase en contacto al número"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "connection."
+msgstr "conexión."
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "contacto@marvelsa.com"
+msgstr ""
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "or send an email"
+msgstr "o envíe un correo electrónico"
+
+#. module: setu_ecommerce_checkout_extended
+#: model_terms:ir.ui.view,arch_db:setu_ecommerce_checkout_extended.manage_address
+msgid "street2"
+msgstr "Entre Calles"

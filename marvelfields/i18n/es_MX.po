@@ -1,0 +1,1089 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* marvelfields
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-14 06:11+0000\n"
+"PO-Revision-Date: 2024-08-14 06:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.add_billing_general_public_boolean
+msgid "<b>Billing general public</b>"
+msgstr "<b>Facturación público en general</b>"
+
+#. module: marvelfields
+#: model:mail.template,body_html:marvelfields.email_template_for_product_information
+msgid ""
+"<div>\n"
+"               Dear Provider<p><br></p><p>I hope you are well.</p><p>In our continuous quest to provide the best service to our customers, we periodically carry out updates to our systems and product prices. This is why we inform you that we will be updating the prices of the products you provide us with, this update is necessary to keep us competitive in the market and to ensure the quality of our services.</p><p>If your prices are updated please ignore this email, if we do not receive a reply to this email and there are any changes in the prices of your products, we will understand that the prices indicated in the document attached in this email are still applicable and will be considered for our purchases of the current month.</p><p>We thank you in advance for your cooperation and understanding in this process.</p><p><strong><font style=\"color: rgb(255, 0, 0);\">*</font><font class=\"text-black\">NOTE:</font></strong> The only column that you will have to modify/complet in the attached document is the column <font class=\"text-black\"><strong>F</strong></font> named <strong><font class=\"text-black\">\"Vendors/Precio\",</font></strong> in this column you will have to add the prices corresponding to each attached product.</p><p><br></p><p>If you have any questions or need more information, please do not hesitate to contact us. We are at your disposal for any questions that may arise.\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div>\n"
+"                    Estimado/a Proveedor/a,<p><br></p><p>Espero que se encuentre bien.</p><p>En nuestra continua búsqueda por ofrecer el mejor servicio a nuestros clientes, periódicamente llevamos a cabo actualizaciones en nuestros sistemas y precios de productos. Es por ello que le informamos que estaremos actualizando los precios de los productos que nos proveen, esta actualización es necesaria para mantenernos competitivos en el mercado y asegurar la calidad de nuestros servicios.</p><p>si sus precios se encuentran actualizados favor de hacer caso omiso de este correo, en caso de no recibir respuesta a este correo y de producirse modificaciones en los precios de sus productos, entenderemos que los precios indicados en el documento que anexamos en este correo siguen siendo aplicables y serán considerados para nuestras adquisiciones del mes en curso.</p><p>Agradecemos de antemano su colaboración y comprensión en este proceso.</p><p><strong><font style=\"color: rgb(255, 0, 0);\">*</font><font class=\"text-black\">NOTA:</font></strong> La única columna que usted deberá modificar/llenar en el documento que le anexamos, es la columna <font class=\"text-black\"><strong>F</strong></font> que tiene por nombre <strong><font class=\"text-black\">“Vendors/Precio”,</font></strong> en esta columna deberá agregar los precios correspondientes a cada producto anexado.</p><p><br></p><p>Si tiene alguna pregunta o necesita más información, no dude en ponerse en contacto con nosotros. Estamos a su disposición para cualquier consulta que pueda surgir.</p><br>&nbsp;<br></div>\n"
+"            "
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.marvel_product_template_form_view_inherit
+msgid "<span>m</span>"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__abreviatura
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__abreviatura
+msgid "Abreviatura"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__product_template__product_type_marvelsa__2
+msgid "Accessory"
+msgstr "Accesorio"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_mail_activity
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: marvelfields
+#: model:ir.model.fields,help:marvelfields.field_res_partner__warehouse_sugerido_id
+#: model:ir.model.fields,help:marvelfields.field_res_users__warehouse_sugerido_id
+#: model:ir.model.fields,help:marvelfields.field_sale_order__warehouse_sugerido_id
+msgid "Almacen sugerido del cual se ba a surtir el pedido del cliente"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee__antiquity
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_base__antiquity
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_public__antiquity
+msgid "Antiquity"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_approval_category
+msgid "Approval Category"
+msgstr "Categoría de aprobación"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_approval_request
+msgid "Approval Request"
+msgstr "Solicitud de aprobación"
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.marvelfields_inherited_view_account_move_reversal
+msgid ""
+"<span style=\"font-weight:bold; font-size: 15px;\">\n"
+"                        Are you sure you want to add a credit note to the customer with the bonus type Marvelsa\n"
+"                        Wallet assigned?\n"
+"                        </span>"
+msgstr ""
+"<span style=\"font-weight:bold; font-size: 15px;\">\n"
+"¿Estás seguro de agregar una nota de crédito al cliente que tiene asignado "
+"el tipo de bonificación “Monedero Marvelsa”?"
+"                        </span>"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__authorized_shipment_date
+msgid "Authorized Shipment"
+msgstr "Envío autorizado"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__bank_id
+msgid "Bank"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "Empleado básico"
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.add_billing_general_public_boolean
+msgid "Billing"
+msgstr "Facturación"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__billing_general_public_id
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__billing_general_public_id
+msgid "Billing General Public"
+msgstr "Facturación público en general"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__bonus_type
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__bonus_type
+msgid "Bonus Type"
+msgstr "Tipo de Bonificación"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__is_ci
+msgid "CI"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee__curp
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_base__curp
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_public__curp
+msgid "CURP"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__category_manager
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__category_manager
+msgid "Category Manager"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_crm_claim
+msgid "Claim"
+msgstr "Reclamo"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__name
+msgid "Clasificacion"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__clasificaciones_ids
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__clasificaciones_ids
+msgid "Clasificaciones"
+msgstr ""
+
+#. module: marvelfields
+#: model:res.groups,name:marvelfields.group_clasmanager
+msgid "Clasificaciones / Manager"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.clasificaciones_form_view
+msgid "Clasificaciones Form"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.clasificaciones_tree_view
+msgid "Clasificaciones Tree"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_account_bank_statement_line__mostrador
+#: model:ir.model.fields,field_description:marvelfields.field_account_move__mostrador
+#: model:ir.model.fields,field_description:marvelfields.field_account_payment__mostrador
+#: model:ir.model.fields,field_description:marvelfields.field_sale_order__mostrador
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__cliente_mostrador
+msgid "Cliente Mostrador"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__collection_executive_id
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__collection_executive_id
+msgid "Collection executive"
+msgstr "Ejecutivo de cobro"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident__color
+msgid "Color"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__color
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible__color
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__color
+msgid "Color Index"
+msgstr "Índice de Colores"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__comments
+msgid "Comments"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible__name
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__compatible_product_ids
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__compatible_product_ids
+msgid "Compatible"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.compatible_form_view
+msgid "Compatible Form"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.compatible_tree_view
+msgid "Compatible Tree"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__compatible_ids
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__compatible_ids
+msgid "Compatibles"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: marvelfields
+#: model:ir.actions.act_window,name:marvelfields.clasificaciones_list_action
+#: model:ir.ui.menu,name:marvelfields.clasificaciones_menu
+msgid "Contacto Clasificaciones"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.actions.act_window,name:marvelfields.subclases_list_action
+#: model:ir.ui.menu,name:marvelfields.subclases_menu
+msgid "Contacto Subclases"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__is_cot_imp
+msgid "Cot.IMP"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__create_uid
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible__create_uid
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__create_uid
+#: model:ir.model.fields,field_description:marvelfields.field_origin_database__create_uid
+#: model:ir.model.fields,field_description:marvelfields.field_payment_days__create_uid
+#: model:ir.model.fields,field_description:marvelfields.field_product_temporary__create_uid
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner_zone__create_uid
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__create_date
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible__create_date
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__create_date
+#: model:ir.model.fields,field_description:marvelfields.field_origin_database__create_date
+#: model:ir.model.fields,field_description:marvelfields.field_payment_days__create_date
+#: model:ir.model.fields,field_description:marvelfields.field_product_temporary__create_date
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner_zone__create_date
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__account_move_reversal__wallet_type__credit_note
+#: model:ir.model.fields.selection,name:marvelfields.selection__res_partner__bonus_type__credit_note
+msgid "Credit Note"
+msgstr "Nota de Crédito"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__data_to_export
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__data_to_export
+msgid "Data to export"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,help:marvelfields.field_stock_picking__date_done
+msgid "Date at which the transfer has been processed or cancelled."
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__delivery_cost
+msgid "Delivery cost"
+msgstr "Costo de envio"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_category__has_department_id
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__department_id
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__has_department_id
+msgid "Department"
+msgstr "Departamento"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_account_bank_statement_line__dfactura_invoice
+#: model:ir.model.fields,field_description:marvelfields.field_account_move__dfactura_invoice
+#: model:ir.model.fields,field_description:marvelfields.field_account_payment__dfactura_invoice
+#: model:ir.model.fields,field_description:marvelfields.field_sale_order__dfactura
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__x_studio_detener_factura
+msgid "Detener Factura"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.view_detener_factura_inherit
+msgid "Detener envio"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__discontinued
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__discontinued
+msgid "Discontinued"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__display_name
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible__display_name
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__display_name
+#: model:ir.model.fields,field_description:marvelfields.field_origin_database__display_name
+#: model:ir.model.fields,field_description:marvelfields.field_payment_days__display_name
+#: model:ir.model.fields,field_description:marvelfields.field_product_temporary__display_name
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner_zone__display_name
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__email_cc
+msgid "Email Cc"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_mail_thread
+msgid "Email Thread"
+msgstr "Hilo de mensajes"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__date_done
+#: model_terms:ir.ui.view,arch_db:marvelfields.marvelsa_packages_pallets_picking_form
+msgid "Fecha de surtido"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_config_settings__hr_tracking_field_ids
+msgid "Fields To Track"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__freight_cost
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__freight_cost
+msgid "Freight Cost"
+msgstr "Costo del Flete"
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__stock_picking__payment_state__gscli
+msgid "GSCLI"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_category__has_currency
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__has_currency
+msgid "Has Currency"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_category__has_bank_id
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__has_bank_id
+msgid "Has bank"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_category__has_payment_limit_date
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__has_payment_limit_date
+msgid "Has payment limit date"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_category__has_payment_state
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__has_payment_state
+msgid "Has payment state"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__high
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__high
+#: model_terms:ir.ui.view,arch_db:marvelfields.marvel_product_template_form_view_inherit
+msgid "High"
+msgstr "Alto"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__id
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible__id
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__id
+#: model:ir.model.fields,field_description:marvelfields.field_origin_database__id
+#: model:ir.model.fields,field_description:marvelfields.field_payment_days__id
+#: model:ir.model.fields,field_description:marvelfields.field_product_temporary__id
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner_zone__id
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident__id
+msgid "ID"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.ui.menu,name:marvelfields.shipping_incident_menu
+#: model_terms:ir.ui.view,arch_db:marvelfields.shipping_incident_view_tree
+msgid "Incidents"
+msgstr "Incidentes"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee__incom_date
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_base__incom_date
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_public__incom_date
+msgid "Incom Date"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_stock_location
+msgid "Inventory Locations"
+msgstr "Ubicaciones de inventario"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__invoice_number
+msgid "Invoice Number"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_delivery_carrier__is_mostrador_delivery
+msgid "Is Mostrador Delivery"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__is_on_catalogue
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__is_on_catalogue
+msgid "Is on Catalogue"
+msgstr "en catalogo"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_category__has_job_id
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__has_job_id
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__job_id
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones____last_update
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible____last_update
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases____last_update
+#: model:ir.model.fields,field_description:marvelfields.field_origin_database____last_update
+#: model:ir.model.fields,field_description:marvelfields.field_payment_days____last_update
+#: model:ir.model.fields,field_description:marvelfields.field_product_temporary____last_update
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner_zone____last_update
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__write_uid
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible__write_uid
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__write_uid
+#: model:ir.model.fields,field_description:marvelfields.field_origin_database__write_uid
+#: model:ir.model.fields,field_description:marvelfields.field_payment_days__write_uid
+#: model:ir.model.fields,field_description:marvelfields.field_product_temporary__write_uid
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner_zone__write_uid
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_clasificaciones__write_date
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_compatible__write_date
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__write_date
+#: model:ir.model.fields,field_description:marvelfields.field_origin_database__write_date
+#: model:ir.model.fields,field_description:marvelfields.field_payment_days__write_date
+#: model:ir.model.fields,field_description:marvelfields.field_product_temporary__write_date
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner_zone__write_date
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__length
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__length
+#: model_terms:ir.ui.view,arch_db:marvelfields.marvel_product_template_form_view_inherit
+msgid "Length"
+msgstr "Largo"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__is_mbl
+msgid "MBL"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.ir_setting_extend_form
+msgid "Mail for Product Information"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_sale_order__is_mark_done
+msgid "Mark Done"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_marvelfields_clasificaciones
+msgid "Marvelfields Clasificaciones"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_marvelfields_compatible
+msgid "Marvelfields Compatible"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_marvelfields_subclases
+msgid "Marvelfields Subclases"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_account_move_reversal__is_marvelsa_wallet
+#: model:ir.model.fields.selection,name:marvelfields.selection__account_move_reversal__wallet_type__marvelsa_wallet
+#: model:ir.model.fields.selection,name:marvelfields.selection__res_partner__bonus_type__marvelsa_wallet
+msgid "Marvelsa Wallet"
+msgstr "Monedero Marvelsa"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee__nss
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_base__nss
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_public__nss
+msgid "NSS"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_payment_days__name
+#: model:ir.model.fields,field_description:marvelfields.field_product_temporary__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_bank_id__no
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_currency__no
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_department_id__no
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_job_id__no
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_payment_limit_date__no
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_payment_state__no
+msgid "None"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__is_notified
+msgid "Notified"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__ncliente
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__ncliente
+#: model_terms:ir.ui.view,arch_db:marvelfields.view_nocliente_form_inherit
+msgid "Numero de Cliente"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_bank_id__optional
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_currency__optional
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_department_id__optional
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_job_id__optional
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_payment_limit_date__optional
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_payment_state__optional
+msgid "Optional"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,help:marvelfields.field_product_product__compatible_product_ids
+#: model:ir.model.fields,help:marvelfields.field_product_template__compatible_product_ids
+msgid ""
+"Optional Products are suggested whenever the customer hits *Add to Cart* "
+"(cross-sell strategy, e.g. for computers: warranty, software, etc.)."
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_origin_database__origin
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__origin_id
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__origin_id
+#: model:ir.ui.menu,name:marvelfields.origin_menus
+msgid "Origin"
+msgstr "Origen"
+
+#. module: marvelfields
+#: model:ir.actions.act_window,name:marvelfields.origin_action
+#: model:ir.model,name:marvelfields.model_origin_database
+msgid "Origin Database"
+msgstr "Origen"
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.origin_database_tree_view
+msgid "Origin Tree"
+msgstr "Origen"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "Correos salientes"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__is_proforma
+msgid "P.Proforma"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__is_pl
+msgid "PL"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__packages_confirmed
+msgid "Packages"
+msgstr "Bultos"
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_request__payment_state__paid
+#: model:ir.model.fields.selection,name:marvelfields.selection__stock_picking__payment_state__paid
+msgid "Paid"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__paid_invoice
+msgid "Paid Invoice"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__pallets_confirmed
+msgid "Pallets"
+msgstr "Tarimas"
+
+#. module: marvelfields
+#: model:ir.actions.act_window,name:marvelfields.partner_zone_action
+msgid "Partner Zone"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.partner_zone_tree_view
+msgid "Partner zone Tree"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.partner_zone_form_view
+msgid "Partner zone form"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_payment_days
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__payment_days_ids
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__payment_days_ids
+msgid "Payment Days"
+msgstr "Dias de cobro"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__payment_description
+msgid "Payment Description"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__payment_state
+msgid "Payment State"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.actions.act_window,name:marvelfields.payment_days_action
+#: model:ir.ui.menu,name:marvelfields.payment_days_menu
+msgid "Payment days"
+msgstr "Dias de cobro"
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.payment_days_form_view
+msgid "Payment days Form"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.payment_days_tree_view
+msgid "Payment days Tree"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_approval_request__payment_limit_date
+msgid "Payment limit date"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__payment_state
+msgid "Payment state"
+msgstr "Estado de pago"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_sale_order__portal
+msgid "Pedido Portal"
+msgstr ""
+
+#. module: marvelfields
+#. odoo-python
+#: code:addons/marvelfields/models/product_template.py:0
+#, python-format
+msgid "Please add supplier information in product."
+msgstr ""
+
+#. module: marvelfields
+#. odoo-python
+#: code:addons/marvelfields/models/res_partner.py:0
+#, python-format
+msgid "Please mention user in 'Mail for Product Information' of Settings"
+msgstr ""
+
+#. module: marvelfields
+#. odoo-python
+#: code:addons/marvelfields/models/product_template.py:0
+#, python-format
+msgid "Price in supplier information should be greater than zero."
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_product_template
+msgid "Product"
+msgstr "Plantilla de producto"
+
+#. module: marvelfields
+#: model:ir.actions.act_window,name:marvelfields.compatible_list_action
+#: model:ir.ui.menu,name:marvelfields.compatible_menu
+msgid "Product Compatible"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__product_template__product_type_marvelsa__1
+msgid "Product Done"
+msgstr "Producto Terminado"
+
+#. module: marvelfields
+#: model:mail.template,name:marvelfields.email_template_for_product_information
+#: model:mail.template,subject:marvelfields.email_template_for_product_information
+msgid "Product Information"
+msgstr "Informacion de producto"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_product_temporary
+msgid "Product Temporary"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__product_type_marvelsa
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__product_type_marvelsa
+msgid "Product Type Marvelsa"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_product_product
+msgid "Product Variant"
+msgstr "Producto"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de compra"
+
+#. module: marvelfields
+#: model:res.groups,name:marvelfields.group_package_pallets
+msgid "Register packages and pallets confirmed before to send"
+msgstr "Registrar paquetes y tarimas confirmadas antes de enviar"
+
+#. module: marvelfields
+#. odoo-python
+#: code:addons/marvelfields/models/res_partner.py:0
+#, python-format
+msgid "Report for Due Invoices %s"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_bank_id__required
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_currency__required
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_department_id__required
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_job_id__required
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_payment_limit_date__required
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_category__has_payment_state__required
+msgid "Required"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_res_partner_zone
+msgid "Res Partner Zone"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__is_revalidate
+msgid "Revalidate"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__rutav
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__rutav
+msgid "Ruta"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.view_rutav_form_inherit
+msgid "Ruta Vendedor de Campo"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: marvelfields
+#. odoo-python
+#: code:addons/marvelfields/models/product_template.py:0
+#, python-format
+msgid "Sales price should be greater than zero."
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__temporary_id
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__temporary_id
+msgid "Season"
+msgstr "Temporada"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__send_mail_child
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__send_mail_child
+msgid "Send Mail"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_config_settings__send_mail_to_id
+msgid "Send Mail To:"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.actions.server,name:marvelfields.send_product_information_to_vendor_ir_actions_server
+#: model:ir.cron,cron_name:marvelfields.send_product_information_to_vendor
+msgid "Send Product Information To Vendor"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__send_product_data_update_template
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__send_product_data_update_template
+msgid "Send product data update template"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__shipping_incident_ids
+msgid "Shipping Incident"
+msgstr "Incidente de envío"
+
+#. module: marvelfields
+#: model:ir.actions.act_window,name:marvelfields.shipping_incident_action
+msgid "Shipping Incidents"
+msgstr "Incidencias de envío"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_delivery_carrier
+msgid "Shipping Methods"
+msgstr "Método de envío"
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__product_template__product_type_marvelsa__3
+msgid "Spare Part"
+msgstr "Refacción"
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__product_template__product_type_marvelsa__4
+msgid "Spare Part Service"
+msgstr "Refacción para Servicio"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_stock_picking
+msgid "StockPicking"
+msgstr "Traslado"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_marvelfields_subclases__name
+msgid "Subclase"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__subclases_ids
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__subclases_ids
+msgid "Subclases"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.subclases_form_view
+msgid "Subclases Form"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.subclases_tree_view
+msgid "Subclases Tree"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__warehouse_sugerido_id
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__warehouse_sugerido_id
+#: model:ir.model.fields,field_description:marvelfields.field_sale_order__warehouse_sugerido_id
+#: model:ir.model.fields,field_description:marvelfields.field_stock_warehouse__sugerido
+msgid "Surtido Sugerido"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_purchase_order__is_telex
+msgid "TELEX"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__stock_picking__payment_state__tm
+msgid "TM"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.actions.act_window,name:marvelfields.temporary_action
+#: model:ir.ui.menu,name:marvelfields.temporary_menu
+msgid "Temporary"
+msgstr "Temporada"
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.temporary_form_view
+msgid "Temporary Form"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.temporary_tree_view
+msgid "Temporary Tree"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__stock_picking__payment_state__to_pay
+msgid "To Pay"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.approval_request_tree_view
+msgid "Total"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.ir_setting_extend_form
+msgid "Track Fields"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.purchase_order_view_add_tracking_page
+msgid "Tracking"
+msgstr ""
+
+#. module: marvelfields
+#: model:res.groups,name:marvelfields.group_transfer_unlock
+msgid "Transfer Unlock"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields.selection,name:marvelfields.selection__approval_request__payment_state__unpaid
+msgid "Unpaid"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee__vat
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_base__vat
+#: model:ir.model.fields,field_description:marvelfields.field_hr_employee_public__vat
+msgid "VAT"
+msgstr "RFC"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__seller_ids
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__seller_ids
+msgid "Vendors"
+msgstr "Proveedores"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_location__volume
+msgid "Volume m³"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_account_move_reversal__wallet_type
+msgid "Wallet Type"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Almacén"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__descriptive_website_products
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__descriptive_website_products
+msgid "Website description"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_product_product__whidth
+#: model:ir.model.fields,field_description:marvelfields.field_product_template__whidth
+#: model_terms:ir.ui.view,arch_db:marvelfields.marvel_product_template_form_view_inherit
+msgid "Whidth"
+msgstr "Ancho"
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_account_followup_manual_reminder
+msgid "Wizard for sending manual reminders to clients"
+msgstr "Asistente para enviar recordatorios manuales a los clientes"
+
+#. module: marvelfields
+#. odoo-python
+#: code:addons/marvelfields/models/hr_employee_base.py:0
+#, python-format
+msgid "Years"
+msgstr ""
+
+#. module: marvelfields
+#: model_terms:ir.ui.view,arch_db:marvelfields.add_billing_general_public_boolean
+msgid ""
+"You selected the \"General public billing\" option, please verify this is the right\n"
+"                                    choice. Once you click the \"Pay now\" button you can't modify data or rebill."
+msgstr ""
+"Seleccionaste que tu factura sea público en general, por favor verifica que esto es\n"
+"                                    correcto. Una vez haciendo click en la opción de \"Pagar ahora\" no se podrá modificar\n"
+"                                    la factura ni hacer refacturaciones."
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner__zone_id
+#: model:ir.model.fields,field_description:marvelfields.field_res_partner_zone__name
+#: model:ir.model.fields,field_description:marvelfields.field_res_users__zone_id
+msgid "Zone"
+msgstr "Zona"
+
+#. module: marvelfields
+#: model:ir.ui.menu,name:marvelfields.partner_zone_action_menu
+msgid "Zones"
+msgstr "Zonas"
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_shipping_incident__name
+msgid "name"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model,name:marvelfields.model_shipping_incident
+msgid "shipping.incident"
+msgstr ""
+
+#. module: marvelfields
+#: model:ir.model.fields,field_description:marvelfields.field_stock_picking__res_person_id
+msgid "Responsible For The Shipment"
+msgstr "Responsable de Envio"

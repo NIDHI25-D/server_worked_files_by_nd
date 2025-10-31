@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_warehouse_efficiency_report,access_warehouse_efficiency_report,model_warehouse_efficiency_report,,1,0,0,0
+access_warehouse_picking_efficiency_report,access_warehouse_picking_efficiency_report,model_warehouse_picking_efficiency_report,,1,0,0,0

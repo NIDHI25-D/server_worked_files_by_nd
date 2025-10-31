@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="stock_inv_ext_inherited_purchase_order_form" model="ir.ui.view">
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_view_invoice']" position="before">
+                    <field name="landed_cost_count" invisible="1"/>
+                    <button string="Landed Costs" type="object"
+                        name="action_view_landed_costs"
+                        class="oe_stat_button" icon="fa-plus-square"
+                        invisible="landed_cost_count == 0">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="landed_cost_count" widget="statinfo" nolabel="1"/>
+                            </span>
+                            <span class="o_stat_text">Landed Cost</span>
+                        </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

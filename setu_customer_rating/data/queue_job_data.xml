@@ -1,0 +1,19 @@
+                               <odoo>
+    <data noupdate="0">
+
+        <!-- Job function for customer score batch -->
+        <record id="job_function_customer_score_batch" model="queue.job.function">
+            <field name="model_id" ref="setu_customer_rating.model_res_partner"/>
+            <field name="method">_process_customer_score_batch</field>
+        </record>
+
+        <!-- Job Queue Channel -->
+        <record model="queue.job.channel" id="customer_score_channel">
+            <field name="name">Customer Score Channel</field>
+            <field name="parent_id" ref="queue_job.channel_root"/>
+            <field name="removal_interval">30</field>
+            <field name="job_function_ids" eval="[(4, ref('setu_customer_rating.job_function_customer_score_batch'))]"/>
+        </record>
+
+    </data>
+</odoo>

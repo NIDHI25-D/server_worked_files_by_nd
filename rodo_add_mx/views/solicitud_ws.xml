@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="list_solicitud_ws_view" model="ir.ui.view">
+        <field name="name">solicitud.ws.list.view</field>
+        <field name="model">solicitud.ws</field>
+        <field name="arch" type="xml">
+        <list string="Faltas">
+            <field name="fecha"/>
+            <field name="id_solicitud"/>
+            <field name="cod_estatus" optional="hide"/>
+            <field name="mensaje"/>
+            <field name="state_zip" widget="state_selection" readonly="1" force_save="1"/>
+            <field name="fecha_inicio"/>
+            <field name="fecha_fin"/>
+            <field name="state"/>
+         </list> 
+       </field>
+    </record>
+
+   <record id="form_solicitud_ws_view" model="ir.ui.view">
+        <field name="name">solicitud.ws.form.view</field>
+        <field name="model">solicitud.ws</field>
+        <field name="arch" type="xml">
+        <form string="Solicitudes WS">
+             <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_ir_attachment"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o"
+                            invisible="ir_attachment_count == 0">
+                            <field name="ir_attachment_count" widget="statinfo" string="Adjuntos"/>
+                        </button>
+                </div>
+
+                 <div class="oe_title">
+                     <h1>
+                         <field name="id_solicitud" readonly="1"/>
+                     </h1>
+                 </div>
+                 <group>
+                     <group string="Solicitud">
+                         <field name="fecha"/>
+                         <field name="id_solicitud"/>
+                         <field name="cod_estatus"/>
+                         <field name="mensaje"/>
+                         <field name="fecha_inicio"/>
+                         <field name="fecha_fin"/>
+                     </group>
+                     <group>
+                         <field name="rfc_receptor"/>
+                         <field name="rfc_emisor"/>
+                         <field name="state"/>
+                         <field name="company_id"/>
+                     </group>
+                     <group string="Verificación">
+                         <field name="cod_verifica"/>
+                         <field name="estado_solicitud"/>
+                         <field name="mensaje_ver"/>
+                     </group>
+                     <group string="Datos">
+                         <field name="content_zip" filename="content_zip_name"/>
+                        <field name="content_zip_name" invisible="1"/>
+                        <field name="state_zip" widget="state_selection" readonly="1" force_save="1"/>
+                     </group>
+                 </group>
+             </sheet>
+            <chatter/>
+         </form> 
+       </field>
+    </record>
+
+    <record id="search_solicitud_ws_view" model="ir.ui.view">
+        <field name="name">solicitud.ws.search.view</field>
+        <field name="model">solicitud.ws</field>
+        <field name="arch" type="xml">
+            <search string="Solicitudes WS">
+               <field name="id_solicitud"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_list_solicitud_ws" model="ir.actions.act_window">
+        <field name="name">Solicitud WS TOM</field>
+        <field name="res_model">solicitud.ws</field>
+        <!-- <field name="view_type">form</field> -->
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="list_solicitud_ws_view" />
+        <field name="search_view_id" ref="search_solicitud_ws_view" />
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+          name="Solicitud WS TOM"
+          parent="main_manu_attachment_cfdi_invoices"
+          id="menu_action_list_solicitud_ws"
+          action="action_list_solicitud_ws"
+          sequence="20"
+      />
+
+</odoo>

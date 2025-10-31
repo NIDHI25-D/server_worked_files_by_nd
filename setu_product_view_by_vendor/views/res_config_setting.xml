@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_for_mail_of_refresh_view" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.for.mail.of.refresh.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="mass_mailing.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='mass_mailing']/block" position="inside">
+                    <div class="app_settings_block" groups="setu_product_view_by_vendor.refresh_view_id">
+                        <h2>Email of refresh view</h2>
+                        <div class="row mt16 o_settings_container" name="information_tracking_via_log">
+                            <div class="col-12 col-lg-6 o_setting_box" id="information_tracking_via_log_id">
+                                <div class="o_setting_right_pane">
+                                    <label for="mail_to"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="mail_to" widget="many2many_tags"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="information_tracking_via_log_id">
+                                <div class="o_setting_right_pane">
+                                    <label for="interval_time_to_send_mail"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="interval_time_to_send_mail"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+        </field>
+    </record>
+
+</odoo>

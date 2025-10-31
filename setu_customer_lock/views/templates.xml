@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="not_elegible_customer_address" inherit_id="website.layout" customize_show="False"
+                active="True" name="See Warning Messages">
+        <xpath expr="//header" position="inside">
+                <div id="not_elegible_customer_div" t-if="website.check_not_elegible_customer_error_session()" style="text-align: center !important;margin: auto;width: max-content;">
+                      <div class="card bg-danger text-white mt16">
+                          <div class="card-header clearfix">
+                              <span class="float-left">
+                                  <t t-out="website.get_not_elegible_customer_error()"/>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+        </xpath>
+    </template>
+</odoo>

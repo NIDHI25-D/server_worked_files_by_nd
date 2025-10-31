@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="update_price_for_monthly_proposal_order" model="ir.ui.view">
+        <field name="name">Update.price</field>
+        <field name="model">update.so.price</field>
+        <field name="arch" type="xml">
+            <form string="Update Price">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="sale_order_ids" options="{'no_create':True,'no_create_edit':True}">
+<!--                                <tree>-->
+<!--                                    <field name="state" invisible="1"/>-->
+<!--                                    <field name="name"/>-->
+<!--                                    <field name="date_order"/>-->
+<!--                                    <field name="partner_id"/>-->
+<!--                                </tree>-->
+                            </field>
+                        </group>
+                        <group>
+                            <field name="pricelist_id" options="{'no_create':True,'no_create_edit':True}" required="True"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="update_so_price" string="Update Price" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_highlight" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

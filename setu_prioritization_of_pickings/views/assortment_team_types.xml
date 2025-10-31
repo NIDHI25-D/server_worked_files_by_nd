@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="assortment_team_types_tree_view" model="ir.ui.view">
+            <field name="name">assortment.team.types.tree.view</field>
+            <field name="model">assortment.team.types</field>
+            <field name="arch" type="xml">
+                <list string="assortment Team">
+                    <field name="name"/>
+                    <field name="operation_types_ids" widget="many2many_tags"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="assortment_team_types_form_view" model="ir.ui.view">
+            <field name="name">assortment.team.types.form.view</field>
+            <field name="model">assortment.team.types</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="operation_types_ids" domain="[('code','in', ['internal', 'outgoing'])]" widget="many2many_tags" options="{'no_create': True}"/>
+                                <field name="maximum_lines"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="complexity_assortment_team_type_ids" readonly="1">
+                                <list string="Complexity Assortment Team Types">
+                                    <field name="complexity_levels_id"/>
+                                    <field name="stock_picking_ids" widget="many2many_tags"/>
+                                </list>
+                                <form string="Complexity Assortment Team Type">
+                                    <group>
+                                        <field name="complexity_levels_id"/>
+                                        <field name="stock_picking_ids" widget="many2many_tags"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_assortment_team_types" model="ir.actions.act_window">
+            <field name="name">Assortment Team Types</field>
+            <field name="res_model">assortment.team.types</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="sub_menu_assortment_team_types"
+                  name="Assortment team types"
+                  parent="setu_prioritization_of_pickings.menu_assortment_team"
+                  action="action_assortment_team_types"
+                  sequence="2"/>
+
+    </data>
+</odoo>

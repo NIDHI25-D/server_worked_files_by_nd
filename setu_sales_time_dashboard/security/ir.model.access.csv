@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sales_time_dashboard_user,Sales Time Dashboard User,model_sales_time_dashboard,sales_time_dashboard_report,1,1,1,1

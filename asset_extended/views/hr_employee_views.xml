@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hr_employee_form_view_extended" model="ir.ui.view">
+        <field name="name">hr.employee.form.view.extended</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="assets" string="Assets">
+                    <field name="asset_ids">
+                        <list editable="bottom">
+                            <field name="state" optional="hide"/>
+                            <field name="name"/>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="serial_number"/>
+                            <field name="status"/>
+                            <field name="is_responsive_letter" widget="boolean_toggle"/>
+                            <field name="comments"/>
+                        </list>
+                    </field>
+                </page>
+
+                <!-- https://app.clickup.com/t/865cy10mq -->
+                <page name="signature" string="Electronic Signature">
+                    <label for="employee_signature"/>
+                    <field name="employee_signature" widget="signature"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_employee_form_view_for_authorizer_and_issuer" model="ir.ui.view">
+        <field name="name">hr.employee.form.view.for.authorizer.and.issuer</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="coach_id" position="after">
+                <field name="setu_authorizer_id"/>
+                <field name="setu_issuer_id"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sale_order_cost_change_wizard_view_form" model="ir.ui.view">
+            <field name="name">sale.order.cost.change.wizard.view.form</field>
+            <field name="model">sale.order.cost.change.wizard</field>
+            <field name="arch" type="xml">
+                <form string="sale_order_cost_change_wizard_form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="from_date"/>
+                            </group>
+                            <group>
+                                <field name="to_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="sale_order_ids" widget="many2many_tags" readonly="1" force_save = "1"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                    <button name="change_product_cost" string="Change" type="object" class="btn-primary"/>
+                    <button string="cancel" class="button-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sale_order_cost_change_wizard" model="ir.actions.act_window">
+            <field name="name">Recalculate Sale Order Cost</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order.cost.change.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sale_order_cost_change_wizard_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+
+
+
+<!--        <menuitem id="sale_order_cost_change_menu" name="Sale order cost change" parent="root_menu_hr_attendance_report"-->
+<!--              action="action_sale_order_cost_change_wizard"/>-->
+
+
+        <menuitem id="sale_order_cost_change_menu"
+            name="Recalculate Sale Order Cost"
+            parent="sale.sale_order_menu"
+            sequence="11"
+            action="action_sale_order_cost_change_wizard"/>
+<!--        groups="sales_team.group_sale_manager"-->
+    </data>
+</odoo>

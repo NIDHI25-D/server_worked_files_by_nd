@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<odoo>
+  <data>
+      <record id="mail_template_sale_confirmation_overwrite" model="mail.template">
+          <field name="name">Sales Order: Email With Payment Way</field>
+          <field name="model_id" ref="sale.model_sale_order"/>
+
+          <field name="subject">
+              {{ object.company_id.name }}
+              {{ 'Pending Order' if object.get_portal_last_transaction().state == 'pending' else 'Order' }}
+              (Ref {{ object.name or 'n/a' }})
+          </field>
+
+          <field name="email_from">{{ object.user_id.email_formatted or '' }}</field>
+          <field name="partner_to">{{ object.partner_id.id }}</field>
+
+          <field name="body_html" type="html">
+              <div style="margin: 0px; padding: 0px;">
+                  <p style="margin: 0px; padding: 0px; font-size: 12px;">
+                      Hello,
+                      <br/>
+                      <br/>
+                      <t t-set="transaction" t-value="object.get_portal_last_transaction()"/>
+<!--                      % set transaction = object.get_portal_last_transaction()-->
+                      Your order <strong><t t-out="object.name or ''"/></strong> amounting in
+                      <strong><t t-out="format_amount(object.amount_total, object.currency_id) or ''"/></strong>
+                      <t t-if="object.state == 'sale' or (transaction and transaction.state in ('done', 'authorized'))">
+                          has been confirmed.<br/>Thank you for your trust!
+                      </t>
+                      <t t-elif="transaction and transaction.state == 'pending'">
+                          is pending. It will be confirmed when the payment is received.
+                          <t t-if="object.reference">
+                              Your payment reference is
+                              <strong>
+                                  <t t-out="object.reference"/>
+                              </strong>
+                              .
+                          </t>
+                      </t>
+                      <br/><br/>
+                      Do not hesitate to contact us if you have any questions.
+                  </p>
+                  <t t-if="object.website_id">
+                      <table width="100%" style="color: #454748; font-size: 12px; border-collapse: collapse;">
+                          <tr style="border-bottom: 2px solid #dee2e6;">
+                              <td style="width: 150px;">
+                                  <strong>Products</strong>
+                              </td>
+                              <td></td>
+                              <td width="15%" align="center">
+                                  <strong>Quantity</strong>
+                              </td>
+                              <td width="20%" align="right">
+                                  <strong>
+                                      <t t-if="object.user_id and object.user_id.has_group('account.group_show_line_subtotals_tax_excluded')">
+                                          VAT Excl.
+                                      </t>
+                                      <t t-else="">VAT Incl.</t>
+                                  </strong>
+                              </td>
+                          </tr>
+                      </table>
+                      <t t-set="row_index" t-value="0"/>
+<!--                    <t t-foreach="object.order_line" t-as="line">-->
+                    <t t-set="row_index" t-value="row_index + 1"/>
+                      <table width="100%" style="color: #454748; font-size: 12px; border-collapse: collapse;">
+                          <t t-set="row_index" t-value="0"/>
+                          <t t-foreach="object.order_line" t-as="line">
+                              <t t-set="row_index" t-value="row_index + 1"/>
+
+                              <t t-if="not line.is_delivery and line.display_type in ['line_section', 'line_note']">
+
+                                  <tr t-attf-style="background-color: #{'#f2f2f2' if row_index % 2 == 0 else '#ffffff'};">
+                                      <td colspan="4">
+                                          <t t-if="line.display_type == 'line_section'">
+                                              <strong>
+                                                  <t t-out="line.name"/>
+                                              </strong>
+                                          </t>
+                                          <t t-elif="line.display_type == 'line_note'">
+                                              <i>
+                                                  <t t-out="line.name"/>
+                                              </i>
+                                          </t>
+                                      </td>
+                                  </tr>
+                              </t>
+
+                              <t t-elif="not line.is_delivery">
+
+                                  <tr t-attf-style="background-color: #{'#f2f2f2' if row_index % 2 == 0 else '#ffffff'};">
+                                      <td style="width: 150px;">
+<!--                                          <t t-set="product_id" t-value="line.product_id.id"/>-->
+                                          <img t-att-src="'/web/image/product.product/%s/image_128' % line.product_id.id"
+                                               style="width: 64px; height: 64px; object-fit: contain;"
+                                               alt="Product image"/>                                      </td>
+                                      <td align="left">
+                                          <t t-out="line.product_id.name"/>
+                                      </td>
+                                      <td width="15%" align="center">
+                                          <t t-out="line.product_uom_qty"/>
+                                      </td>
+                                      <td width="20%" align="right">
+                                          <strong>
+                                              <t t-if="object.user_id and object.user_id.has_group('account.group_show_line_subtotals_tax_excluded')">
+                                                  <t t-out="format_amount(line.price_reduce_taxexcl, object.currency_id)"/>
+                                              </t>
+                                              <t t-else="">
+                                                  <t t-out="format_amount(line.price_reduce_taxinc, object.currency_id)"/>
+                                              </t>
+                                          </strong>
+                                      </td>
+                                  </tr>
+                              </t>
+                          </t>
+                      </table>
+
+                      <t t-if="object.carrier_id">
+                          <div style="margin: 0px; padding: 0px;">
+                              <table width="100%" style="color: #454748; font-size: 12px; border-spacing: 0px 4px;" align="right">
+                                  <tr>
+                                      <td style="width: 60%"/>
+                                      <td style="width: 30%; border-top: 1px solid #dee2e6;" align="right">
+                                          <strong>Delivery:</strong>
+                                      </td>
+                                      <td style="width: 10%; border-top: 1px solid #dee2e6;" align="right">
+                                          <t t-out="format_amount(object.amount_delivery, object.currency_id)"/>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td style="width: 60%"/>
+                                      <td style="width: 30%;" align="right">
+                                          <strong>SubTotal:</strong>
+                                      </td>
+                                      <td style="width: 10%;" align="right">
+                                          <t t-out="format_amount(object.amount_untaxed, object.currency_id)"/>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </t>
+                      <t t-else="">
+                          <div style="margin: 0px; padding: 0px;">
+                              <table width="100%" style="color: #454748; font-size: 12px; border-spacing: 0px 4px;" align="right">
+                                  <tr>
+                                      <td style="width: 60%"/>
+                                      <td style="width: 30%; border-top: 1px solid #dee2e6;" align="right">
+                                          <strong>SubTotal:</strong>
+                                      </td>
+                                      <td style="width: 10%; border-top: 1px solid #dee2e6;" align="right">
+                                          <t t-out="format_amount(object.amount_untaxed, object.currency_id)"/>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </t>
+                    <div style="margin: 0px; padding: 0px;">
+                      <table width="100%" style="color: #454748; font-size: 12px; border-spacing: 0px 4px;" align="right">
+                          <tr>
+                              <td style="width: 60%"/>
+                              <td style="width: 30%;" align="right">
+                                  <strong>Taxes:</strong>
+                              </td>
+                              <td style="width: 10%;" align="right">
+                                  <t t-out="format_amount(object.amount_tax, object.currency_id)"/>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style="width: 60%"/>
+                              <td style="width: 30%; border-top: 1px solid #dee2e6;" align="right"><strong>Total:</strong></td>
+                              <td style="width: 10%; border-top: 1px solid #dee2e6;" align="right">
+                                  <t t-out="format_amount(object.amount_total, object.currency_id)"/>
+                              </td>
+                          </tr>
+                      </table>
+                    </div>
+                      <t t-if="object.partner_invoice_id">
+                          <div style="margin: 0px; padding: 0px;">
+                              <table width="100%" style="color: #454748; font-size: 12px;">
+                                  <tr>
+                                      <td style="padding-top: 10px;">
+                                          <strong>Bill to:</strong>
+                                          <t t-out="object.partner_invoice_id.street or ''"/>,
+                                          <t t-out="object.partner_invoice_id.city or ''"/>,
+                                          <t t-out="object.partner_invoice_id.state_id.name or ''"/>,
+                                          <t t-out="object.partner_invoice_id.zip or ''"/>,
+                                          <t t-out="object.partner_invoice_id.country_id.name or ''"/>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <strong>Payment Method:</strong>
+                                          <t t-if="transaction and transaction.provider_id">
+                                              <t t-out="transaction.provider_id.name"/>
+                                          </t>
+                                          (<t t-out="format_amount(transaction.amount, object.currency_id)"/>)
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </t>
+
+
+                      <t t-if="object.partner_shipping_id and not object.only_services">
+                          <div style="margin: 0px; padding: 0px;">
+                          <table width="100%" style="color: #454748; font-size: 12px;">
+                              <tr>
+                                  <td>
+                                      <br/>
+                                      <strong>Ship to:</strong>
+                                      <t t-out="object.partner_shipping_id.street or ''"/>,
+                                      <t t-out="object.partner_shipping_id.city or ''"/>,
+                                      <t t-out="object.partner_shipping_id.state_id.name or ''"/>,
+                                      <t t-out="object.partner_shipping_id.zip or ''"/>,
+                                      <t t-out="object.partner_shipping_id.country_id.name or ''"/>
+                                  </td>
+                              </tr>
+                          </table>
+
+                          <t t-if="object.carrier_id">
+                              <table width="100%" style="color: #454748; font-size: 12px;">
+                                  <tr>
+                                      <td>
+                                          <strong>Shipping Method:</strong>
+                                          <t t-out="object.carrier_id.name"/>
+                                          <t t-if="object.carrier_id.fixed_price == 0.0">(Free)</t>
+                                          <t t-else="">(<t
+                                                  t-out="format_amount(object.carrier_id.fixed_price, object.currency_id)"/>
+                                              )
+                                          </t>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </t>
+                          <br/>
+                          <t t-if="object.l10n_mx_edi_payment_method_id">
+                              <table width="100%" style="color: #454748; font-size: 12px;">
+                                  <tr>
+                                      <td>
+                                          <strong>Payment Way:</strong>
+                                          <t t-out="object.l10n_mx_edi_payment_method_id.name"/>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <strong>Usage:</strong>
+                                          <t t-out="object.get_sale_l10n_mx_edi_usage()"/>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </t>
+                          </div>
+                      </t>
+
+                  </t>
+              </div>
+          </field>
+
+          <field name="report_template_ids" eval="[(4, ref('sale.action_report_saleorder'))]"/>
+          <field name="lang">{{ object.partner_id.lang or '' }}</field>
+          <field name="auto_delete" eval="True"/>
+      </record>
+  </data>
+</odoo>

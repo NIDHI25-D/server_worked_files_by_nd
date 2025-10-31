@@ -1,0 +1,197 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_customer_statistics_on_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-15 04:18+0000\n"
+"PO-Revision-Date: 2024-07-15 04:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid ""
+"<i class=\"fa fa-hand-o-right\">\n"
+"                    <span>In this chart you will see a comparison between your purchase\n"
+"                        history for the current month in\n"
+"                        the last year, the current month in the current year, and your purchases for the last month, the\n"
+"                        values are shown in product quantities and money.\n"
+"                    </span>\n"
+"                </i>"
+msgstr ""
+"<i class=\"fa fa-hand-o-right\">\n"
+"En este gráfico verá una comparación entre  su historial de compras del mes en curso del año pasado, el mes actual  del año en curso y sus compras del mes pasado, los valores se muestran  en Unidades y Dinero.                </i>"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid ""
+"<i class=\"fa fa-hand-o-right\">\n"
+"                    <span>This graph displays the percentage of products purchased grouped by Categories, the graphs\n"
+"                        show your purchases for the last month and the last quarter.\n"
+"                    </span>\n"
+"                </i>"
+msgstr ""
+"<i class=\"fa fa-hand-o-right\">\n"
+"Este gráfico muestra el porcentaje de productos comprados agrupados por Categorías, los gráficos muestran sus compras del último mes y del último trimestre.                </i>"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid ""
+"<i class=\"mt-3 fa fa-hand-o-right\">\n"
+"                            <span>In this section, we present the Top 20 best-selling products in your area. The\n"
+"                                information is categorized by product type: Finished Products, Spare Parts, and\n"
+"                                Accessories. You can access each product by clicking on the corresponding link.\n"
+"                            </span>\n"
+"                        </i>"
+msgstr ""
+"<i class=\"fa fa-hand-o-right\">\n"
+"En esta sección te mostramos el Top 20 de los productos más vendidos en tu zona. La información está organizada según el tipo de producto: Producto terminado, Refacciones y Accesorios. Puedes acceder a cada producto haciendo clic en el enlace correspondiente.                </i>"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid ""
+"<i class=\"mt-3 fa fa-hand-o-right\">\n"
+"                        <span>In this section, we display the invoice payment percentages. These percentages are\n"
+"                            calculated considering the invoices paid before and after their due date and reflect the\n"
+"                            payments made during the current month.\n"
+"                        </span>\n"
+"                    </i>"
+msgstr ""
+"<i class=\"fa fa-hand-o-right\">\n"
+"En esta sección, te mostramos los porcentajes de pago de las facturas. Estos porcentajes se calculan considerando las facturas pagadas antes y después de su fecha de vencimiento, y reflejan los pagos realizados durante el mes actual.                </i>"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid ""
+"<i class=\"mt-3 fa fa-hand-o-right\">\n"
+"                        <span>The next table displays the invoices pending payment and the\n"
+"                            days remaining to\n"
+"                            maturity, those marked in red are invoices that are already past due.\n"
+"                        </span>\n"
+"                    </i>"
+msgstr ""
+"<i class=\"fa fa-hand-o-right\">\n"
+"En la siguiente tabla se muestran las facturas pendientes de pago y los días que faltan para su vencimiento, las marcadas en rojo son facturas ya vencidas.                </i>"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid ""
+"<i class=\"mt-3 fa fa-hand-o-right\">\n"
+"                    <span>In this section, you can see the delivery time statistics for your orders. The results are\n"
+"                        distributed according to day ranges, and the graph shows the current and previous month data.\n"
+"                    </span>\n"
+"                </i>"
+msgstr ""
+"<i class=\"fa fa-hand-o-right\">\n"
+"En esta sección se presentan las estadísticas de tiempo de entrega de tus pedidos. Los resultados están distribuidos según rangos de días y la gráfica muestra los datos del mes actual y del mes anterior.                </i>"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Accessory Products"
+msgstr "Accesorios"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Amount"
+msgstr "Monto"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Best-selling products in your area"
+msgstr "Productos más vendidos en tu zona"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Delivery Time Statistics"
+msgstr "Estadisticas de Tiempo de Entrega"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Due Date"
+msgstr "Fecha de Vencimiento"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Due Days"
+msgstr "Dias de Vencimiento"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Finished Products"
+msgstr "Producto Terminado"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Invoice Date"
+msgstr "Fecha de la Factura"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid ""
+"Invoice Paid After Due Date :\n"
+"                            <span id=\"invoice_after_due\"/>"
+msgstr ""
+"Facturas Pagadas Despues de la Fecha de Vencimiento:\n"
+" <span id=\"invoice_after_due\"/>"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid ""
+"Invoice Paid On Time :\n"
+"                            <span id=\"invoice_on_time\"/>"
+msgstr ""
+"Facturas Pagadas a Tiempo:\n"
+" <span id=\"invoice_on_time\"/>"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_templated_extended_for_my_statistics
+msgid "My Statistics"
+msgstr "Mis Estadisticas"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Payment Statistics"
+msgstr "Estadisticas de Pago"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Product Link"
+msgstr "Consultar Productos"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "SKU"
+msgstr "SKU"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "Spare Part Products"
+msgstr "Refacciones"
+
+#. module: setu_customer_statistics_on_portal
+#: model_terms:ir.ui.view,arch_db:setu_customer_statistics_on_portal.portal_my_charts
+msgid "View Product"
+msgstr "Consultar el producto"

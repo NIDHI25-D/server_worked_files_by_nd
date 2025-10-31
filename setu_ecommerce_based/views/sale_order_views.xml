@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherited sale.order Form View -->
+    <record id="setu_ecommerce_based_sale_order_form_view_extended" model="ir.ui.view">
+        <field name="name">setu.ecommerce.based.sale.order.form.view.extended</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Added automation ref field -->
+            <field name="client_order_ref" options="{'no_create': True}" position="after">
+                <field name="setu_sale_order_automation_id"/>
+                <field name="multi_ecommerce_connector_id"/>
+            </field>
+            <!-- Added button for view stock moves -->
+            <xpath expr="//button[@name='action_view_invoice']" position="before">
+                <button type="object" name="action_view_stock_move" class="oe_stat_button" icon="fa-truck"
+                        invisible="stock_move_count in [False]"
+                        groups="base.group_user">
+                    <field name="stock_move_count" widget="statinfo" string="Stock Move"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

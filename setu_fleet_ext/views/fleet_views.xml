@@ -1,0 +1,118 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+
+        <record id="setu_fleet_vehical_extended" model="ir.ui.view">
+            <field name="name">setu.fleet.vehical.form.view.extended</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group/field[@name='acquisition_date']" position="before">
+                    <field name="economic_number" required="1"/>
+                    <field name="last_location" required="1"/>
+                </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='driver_id']" position="before">
+                    <field string="Vehicle type" name="tag_ids" widget="many2many_tags"
+                           options="{'color_field': 'color', 'no_create_edit': True}"/>
+                </xpath>
+                <xpath expr="//form/sheet/div/field[@name='tag_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/div/label[@for='tag_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group[2]" position="after">
+                     <group string="Combustible Card" id="combustible">
+                            <field name="combustible_card_type_id" widget="selection"/>
+                            <field name="combustible_card_number"/>
+                        </group>
+                </xpath>
+                <xpath expr="//group[@id='combustible']" position="after">
+                     <group string="Vehicle Setup" id="vehicle_setup">
+                             <field name="vehicle_config"/>
+                             <field name="transport_perm_sct"/>
+                             <field name="sct_permit_number"/>
+                             <field name="transport_insurer"/>
+                             <field name="transport_insurance_policy"/>
+                        </group>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="setu_fleet_for_combustible_pin" model="ir.ui.view">
+            <field name="name">setu.fleet.vehical.for.combustible.pin</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='combustible_card_type_id']/.." position="after">
+                     <group string="Combustible Pin" id="combustible_pin">
+                            <field name="combustible_pin_type_id" widget="selection"/>
+                            <field name="combustible_pin_number"/>
+                        </group>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                    <label for="vehicle_setup_id" class="oe_edit_only"/>
+                    <h2>
+                        <field name="vehicle_setup_id"/>
+                    </h2>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="setu_fleet_vehical_list_view_extended" model="ir.ui.view">
+            <field name="name">setu.fleet.vehical.list.view.extended</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='future_driver_id']" position="after">
+                    <field name="economic_number"/>
+                    <field name="last_location"/>
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="attributes">
+                    <attribute name="string">Vehicle Type</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!--  Add field Pase Tags into Fleet Form View-->
+        <record id="setu_fleet_vehical_extended_for_pase_tag" model="ir.ui.view">
+            <field name="name">setu.fleet.vehical.form.view.extended</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@id='combustible']" position="after">
+                    <group string="Pase Tags">
+                        <field name="pase_tag_id" widget="selection"/>
+                        <field name="pase_tag_number"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Invisible field Vehicle type (Many2many)-->
+        <record id="invisible_field_tag_ids_from_base" model="ir.ui.view">
+            <field name="name">invisible.field.tag_ids.from.base</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='tag_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add field vehicle_type_id(many2one)-->
+        <record id="add_field_vehicle_type_id" model="ir.ui.view">
+            <field name="name">add.field.vehicle.type.id</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='tag_ids']" position="after">
+                    <field name="vehicle_type_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

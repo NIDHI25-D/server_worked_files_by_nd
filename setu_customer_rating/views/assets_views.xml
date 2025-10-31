@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="setu_customer_rating_assets_backend" name="setu_customer_rating assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/setu_customer_rating/static/src/css/color_for_field_lable.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

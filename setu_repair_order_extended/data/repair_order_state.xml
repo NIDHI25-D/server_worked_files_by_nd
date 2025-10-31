@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <data>
+        <record forcecreate="True" id="repair_state_new" model="repair.state.ctb">
+            <field name="sequence">1</field>
+            <field name="key">new</field>
+            <field name="value">Nuevo</field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_diagnostic" model="repair.state.ctb">
+            <field name="sequence">2</field>
+            <field name="key">diagnostic</field>
+            <field name="value">Diagnostico</field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_quotation" model="repair.state.ctb">
+            <field name="sequence">3</field>
+            <field name="key">quotation</field>
+            <field name="value">Cotizacion</field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_authorization" model="repair.state.ctb">
+            <field name="sequence">4</field>
+            <field name="key">authorization</field>
+            <field name="value">Autorizacion </field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_unfinished" model="repair.state.ctb">
+            <field name="sequence">5</field>
+            <field name="key">unfinished</field>
+            <field name="value">Inconcluso</field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_on_waiting" model="repair.state.ctb">
+            <field name="sequence">6</field>
+            <field name="key">on_waiting</field>
+            <field name="value">En Espera</field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_received" model="repair.state.ctb">
+            <field name="sequence">7</field>
+            <field name="key">received</field>
+            <field name="value">Recibido</field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_repair" model="repair.state.ctb">
+            <field name="sequence">8</field>
+            <field name="key">on_repair</field>
+            <field name="value">En reparacion</field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_repaired" model="repair.state.ctb">
+            <field name="sequence">9</field>
+            <field name="key">repaired</field>
+            <field name="value">Reparado</field>
+            <field name="description"></field>
+        </record>
+
+        <record forcecreate="True" id="repair_state_delivered" model="repair.state.ctb">
+            <field name="sequence">10</field>
+            <field name="key">delivered</field>
+            <field name="value">Entregado</field>
+            <field name="description"></field>
+        </record>
+
+    </data>
+</odoo>

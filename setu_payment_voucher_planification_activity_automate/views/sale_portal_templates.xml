@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="sale_order_portal_inherit_template_payment_voucher" inherit_id="sale.sale_order_portal_content"
+                  name="Payment Voucher">
+            <xpath expr="//span[@t-field='sale_order.payment_term_id.note']" position="after">
+                <t t-if="sale_order.is_payment_voucher_warning">
+                    <br/>
+                    <br/>
+                    <h4>Attach payment receipt</h4>
+                   <form action="/my/attach_payment_receipt/submit" method="post" id="formid" enctype="multipart/form-data">
+                       <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                       <input type="hidden" name="order" t-att-value="sale_order.id"/>
+                       <div>
+                            <input type="file" id="payment_voucher_receipt" name="payment_voucher"
+                                   class="form-control" style="width:30%;"
+                                   required="1"/>
+                       </div>
+
+                        <h4>
+                            <button class="btn btn-primary mt-2">
+                                Submit
+                            </button>
+                        </h4>
+
+
+                    </form>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+{
+    "name": "Setu POS Extened",
+    "summary": "To use the other partner address at the time of exporting invoice for approvals",
+    "version": "18.0.0.1",
+    "author": "Setu Consulting Services Pvt. Ltd.",
+    "website": "https://www.setuconsulting.com",
+    "category": "Warehouse Management",
+    "depends": ["point_of_sale", "account_edi", "pos_sale", "pos_hr", "partner_category_hierarchy",
+                "l10n_mx_edi_extended"],
+    "data": [
+        'views/report_templates.xml',
+        'views/res_config_settings_view.xml',
+        'views/facturx_templates_inherit.xml',
+        'views/pos_order.xml',
+        'data/res_partner_data.xml',
+    ],
+    'assets': {
+        'point_of_sale._assets_pos': [
+            "setu_pos_extended/static/src/models/pos_order.js",
+            "setu_pos_extended/static/src/overrides/components/product_screen/product_screen.js",
+            "setu_pos_extended/static/src/overrides/components/order_widget/order_widget.js",
+            "setu_pos_extended/static/src/overrides/components/order_widget/order_widget.xml",
+            "setu_pos_extended/static/src/app/screens/product_screen/control_buttons/controll_button.js",
+            "setu_pos_extended/static/src/app/screens/product_screen/control_buttons/controll_button.xml",
+        ],
+    },
+    "license": "OPL-1",
+    "installable": True,
+    "application": False,
+    # 'pre_init_hook': 'pre_init',
+}

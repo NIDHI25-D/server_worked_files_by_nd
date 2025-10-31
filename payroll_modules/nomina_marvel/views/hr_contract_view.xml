@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+   <record id="hr_contract_view_days_ext" model="ir.ui.view">
+        <field name="name">hr.contract.days</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="nomina_cfdi_ee.hr_contract_view_form_nomina_cfdi"/>
+        <field name="arch" type="xml">
+          <field name="sueldo_base_cotizacion" position="after">
+              <field name="sueldo_diario_real"/>
+          </field>
+          <field name="deduccion_adicional" position="after">
+              <field name="seguro_gmm"/>
+              <field name="seguro_gmm_monto"/>
+          </field>
+        </field>
+    </record>
+
+</odoo>

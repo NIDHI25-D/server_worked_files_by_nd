@@ -1,0 +1,175 @@
+<odoo>
+    <data>
+        <record id="res_config_settings_api_form" model="ir.ui.view">
+            <field name="name">res.config.settings.api.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="100"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="API" string="API" name="api">
+                        <block title = "API">
+                            <setting string="Payment Ways For REST API">
+                                <field name="payment_method_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True}"/>
+                            </setting>
+                            <setting string="Product Category">
+                                <field name="product_category_id" options="{'no_create': True, 'no_open': True}"/>
+                            </setting>
+                            <setting string="Get Product Prices" help="Enable this boolean api_get_product_prices">
+                                <field name="api_get_product_prices"/>
+                                <div class="content-group" invisible = "not api_get_product_prices">
+                                    <div class="row mt16">
+                                        <label for="limit_for_api_get_product_prices" string="Limit for API" class="col-lg-3"/>
+                                        <field name="limit_for_api_get_product_prices"/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label for="minutes_for_api_get_product_prices" string="Minutes for API" class="col-lg-3"/>
+                                        <field name="minutes_for_api_get_product_prices"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Get Available Stock" help="Enable this boolean get_available_stock">
+                                <field name="api_get_available_stock"/>
+                                <div class="content-group" invisible = "not api_get_available_stock">
+                                    <div class="row mt16">
+                                        <label for="limit_for_api_get_available_stock" string="Limit for API" class="col-lg-3"/>
+                                        <field name="limit_for_api_get_available_stock"/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label for="minutes_for_api_get_available_stock" string="Minutes for API" class="col-lg-3"/>
+                                        <field name="minutes_for_api_get_available_stock"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Get Category Hierarchy" help="Enable this boolean get_category_hierarchy">
+                                <field name="api_get_category_hierarchy"/>
+                                <div class="content-group" invisible = "not api_get_category_hierarchy">
+                                    <div class="row mt16">
+                                        <label for="limit_for_api_get_category_hierarchy" string="Limit for API" class="col-lg-3"/>
+                                        <field name="limit_for_api_get_category_hierarchy"/>
+                                    </div>
+                                    <div class="row mt16">
+                                        <label for="minutes_for_api_get_category_hierarchy" string="Minutes for API" class="col-lg-3"/>
+                                        <field name="minutes_for_api_get_category_hierarchy"/>
+                                    </div>
+                                </div>
+                            </setting>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+<!--                    <div class="app_settings_block o_documents_block"-->
+<!--                         data-string="API"-->
+<!--                         string="API"-->
+<!--                         data-key="API">-->
+<!--                        <h2>API</h2>-->
+<!--                        <div class="information_payment_way_block">-->
+<!--&lt;!&ndash;                        <h2>Payment Ways For Api User</h2>&ndash;&gt;-->
+<!--                        <div class="row mt16 o_settings_container" name="information_payment_way">-->
+<!--                            <div class="col-12 col-lg-6 o_setting_box" id="iinformation_payment_way_id">-->
+<!--                                <div class="o_setting_right_pane">-->
+<!--                                    <label for="payment_method_ids"/>-->
+<!--                                    <div class="content-group" style="width : 100%;">-->
+<!--                                        <div class="mt16">-->
+<!--                                            <field name="payment_method_ids"-->
+<!--                                                   widget="many2many_tags"-->
+<!--                                                   options="{'no_open':True,'no_create':1,'no_create_edit':1}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-12 col-lg-6 o_setting_box" id="product_category_list">-->
+<!--                                <div class="o_setting_right_pane">-->
+<!--                                    <label for="product_category_id"/>-->
+<!--                                    <div class="content-group" style="width: 100%;">-->
+<!--                                        <div class="mt16">-->
+<!--                                            <field name="product_category_id"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="row mt16 o_settings_container">-->
+<!--                            <div class="col-xs-12 col-md-6 o_setting_box">-->
+<!--                                <div class="o_setting_left_pane">-->
+<!--                                    <field name="api_get_product_prices"/>-->
+<!--                                </div>-->
+<!--                                <div class="o_setting_right_pane">-->
+<!--                                    <span class="o_form_label">get_product_prices</span>-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="text-muted col-md-12">-->
+<!--                                            Enable this boolean api_get_product_prices-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="content-group"-->
+<!--                                         attrs="{'invisible' : [('api_get_product_prices', '=', False)]}">-->
+<!--                                        <div class="row mt16">-->
+<!--                                            <label class="o_form_label col-lg-3" for="limit_for_api_get_product_prices"-->
+<!--                                                   string="Limit for API"/>-->
+<!--                                            <field name="limit_for_api_get_product_prices"-->
+<!--                                                   attrs="{'required' : [('api_get_product_prices', '=', True)]}"/>-->
+<!--                                        </div>-->
+<!--                                        <div class="row">-->
+<!--                                            <label class="o_form_label col-lg-3" for="minutes_for_api_get_product_prices"-->
+<!--                                                   string="Minutes for API"/>-->
+<!--                                            <field name="minutes_for_api_get_product_prices"-->
+<!--                                                   attrs="{'required' : [('api_get_product_prices', '=', True)]}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row mt16 o_settings_container">-->
+<!--                            <div class="col-xs-12 col-md-6 o_setting_box">-->
+<!--                                <div class="o_setting_left_pane">-->
+<!--                                    <field name="api_get_available_stock"/>-->
+<!--                                </div>-->
+<!--                                <div class="o_setting_right_pane">-->
+<!--                                    <span class="o_form_label">get_available_stock</span>-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="text-muted col-md-12">-->
+<!--                                            Enable this boolean aget_available_stock-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="content-group"-->
+<!--                                         attrs="{'invisible' : [('api_get_available_stock', '=', False)]}">-->
+<!--                                        <div class="row mt16">-->
+<!--                                            <label class="o_form_label col-lg-3" for="limit_for_api_get_available_stock"-->
+<!--                                                   string="Limit for API"/>-->
+<!--                                            <field name="limit_for_api_get_available_stock"-->
+<!--                                                   attrs="{'required' : [('api_get_available_stock', '=', True)]}"/>-->
+<!--                                        </div>-->
+<!--                                        <div class="row">-->
+<!--                                            <label class="o_form_label col-lg-3" for="minutes_for_api_get_available_stock"-->
+<!--                                                   string="Minutes for API"/>-->
+<!--                                            <field name="minutes_for_api_get_available_stock"-->
+<!--                                                   attrs="{'required' : [('api_get_available_stock', '=', True)]}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="odoo_rest_api_config_settings" model="ir.actions.act_window">-->
+<!--        <field name="name">Settings</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">res.config.settings</field>-->
+<!--        <field name="view_id" ref="res_config_settings_api_form"/>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="target">inline</field>-->
+<!--        <field name="context">{'module': 'odoo_rest_api'}</field>-->
+<!--    </record>-->
+
+
+<!--    <menuitem sequence="1" name="Settings" id="odoo_rest_api_settings_menu"-->
+<!--              parent="setu_customer_rating.score_conf_menu" action="odoo_rest_api_config_settings"/>-->
+
+<!--</data>-->
+<!--        </odoo>-->

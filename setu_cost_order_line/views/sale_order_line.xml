@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="add_field_stock_picking_ids_to_sale_order_line" model="ir.ui.view">
+            <field name="name">add.field.stock_picking_ids.to.sale.order.line</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/list/field[@name='qty_delivered']" position="after">
+                    <field name="stock_picking_ids" widget="many2many_tags" invisible="parent.state not in ['sale', 'done']"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

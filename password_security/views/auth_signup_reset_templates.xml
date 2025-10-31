@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="auth_signup_reset_inherit" inherit_id="auth_signup.reset_password">
+         <xpath expr="//t[@t-call='auth_signup.fields']" position="after">
+            <t t-if="token and not invalid_token">
+                <!-- Password meter component -->
+                <t t-component="auth_password_policy.password_meter"
+                   t-props='{
+                       "passwordNode": document.querySelector("input[name=password]"),
+                       "confirmNode": document.querySelector("input[name=confirm_password]")
+                   }'/>
+
+                <!-- Warning box below confirm password -->
+                <div id="password_warning_box"
+                     style="background-color: #fff3cd;
+                            border: 1px solid #ffeeba;
+                            color: #856404;
+                            padding: 8px;
+                            border-radius: 4px;
+                            font-size:0.9rem;
+                            margin-top:5px;">
+                </div>
+            </t>
+        </xpath>
+
+        <!-- Hide submit button until password is valid -->
+        <xpath expr="//button[@type='submit']" position="attributes">
+            <attribute name="t-att-class">
+                (token and not invalid_token) and 'btn btn-primary d-none' or 'btn btn-primary'
+            </attribute>
+            <attribute name="id">reset_password_submit</attribute>
+        </xpath>
+    </template>
+</odoo>

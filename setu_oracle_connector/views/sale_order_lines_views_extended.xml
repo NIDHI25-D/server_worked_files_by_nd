@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="add_oracle_upc_to_sales_order_line" model="ir.ui.view">
+        <field name="name">add_oracle_upc_to_sales_order_line</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="////field[@name='order_line']/form//field[@name='price_unit']" position="before">
+                <field name="oracle_upc" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <template id="report_invoice_with_payments" inherit_id="account.report_invoice_document">
+        <xpath expr="//t[@t-call='web.external_layout']" position="attributes">
+            <attribute name="t-call">setu_accounts_report_extended.invoice_cfdi_40_custom_header</attribute>
+        </xpath>
+        <xpath expr="//div[@name='address_not_same_as_shipping']/t[@t-set='address']" position="inside">
+            <div class="col-6">
+                <span t-field="o.partner_id.l10n_mx_edi_fiscal_regime"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='address_same_as_shipping']/t[@t-set='address']" position="inside">
+            <div class="col-6">
+                <span t-field="o.partner_id.l10n_mx_edi_fiscal_regime"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='no_shipping']/t[@t-set='address']" position="inside">
+            <div class="col-6">
+                <span t-field="o.partner_id.l10n_mx_edi_fiscal_regime"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='due_date']" position="after">
+            <div class="col-auto col-3 mw-100 mb-2"
+                 t-if="o.move_type == 'out_invoice' and o.state == 'posted' and o.currency_id.id != o.company_id.currency_id.id"
+                 name="curreny">
+                <strong>Currency:</strong>
+                <p class="m-0" t-field="o.currency_id.name"/>
+            </div>
+            <div class="col-auto col-3 mw-100 mb-2"
+                 t-if="o.move_type in ('out_invoice','out_refund') and o.state == 'posted' and o.currency_id.id != o.company_id.currency_id.id"
+                 name="exchange_rate">
+                <strong>Exchange Rate:</strong>
+                <br/>
+                <span>
+                    <t t-esc="o.l10n_mx_currency_rate"/>
+                </span>
+            </div>
+        </xpath>
+        <xpath expr="//table/thead/tr/th[@name='th_taxes']" position="before">
+            <th>
+                <span>Objetolmp</span>
+            </th>
+        </xpath>
+        <xpath expr="//tbody[hasclass('invoice_tbody')]//span[@id='line_tax_ids']/.." position="before">
+            <td>
+                <span t-esc="o._l10n_mx_edi_get_tax_objected()"/>
+            </td>
+        </xpath>
+        <xpath expr="//div[@name='customer_code']/div[@t-field='o.partner_id.ref']" position="replace">
+            <div class="m-0" t-field="o.partner_id.ncliente"/>
+        </xpath>
+        <xpath expr="//p[@name='payment_communication']/span[@t-field='o.payment_reference']" position="replace">
+            <span t-field="o.partner_id.ref"/>
+        </xpath>
+    </template>
+</odoo>

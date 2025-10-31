@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="ship_order_wizard_form_view" model="ir.ui.view">
+        <field name="name">ship.order.wizard.form.view</field>
+        <field name="model">ship.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="transport_route_id"/>
+                        <field name="transport_via"/>
+                        <field name="vehicle_id" domain="[('transporter_id', '=', transport_via)]"/>
+                        <field name="driver_id"/>
+                    </group>
+                    <group>
+                        <field name="pickup_date"/>
+                        <field name="delivery_date"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Create Shipping" name="generate_shipping_order" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="ship_order_wizard_action" model="ir.actions.act_window">
+        <field name="name">Generate Shipping Order</field>
+        <field name="res_model">ship.order</field>
+        <field name="view_id" ref="ship_order_wizard_form_view"/>
+    </record>
+</odoo>

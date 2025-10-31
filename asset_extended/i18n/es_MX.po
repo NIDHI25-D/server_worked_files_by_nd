@@ -1,0 +1,283 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* asset_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-22 03:47+0000\n"
+"PO-Revision-Date: 2023-08-22 03:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid ""
+", Así mismo, hacemos de su\n"
+"                                conocimiento que no podrá modificar la configuración y/o instalar software sin ser\n"
+"                                previamente autorizado."
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid ""
+". El cual se entrega para el mejor desarrollo de\n"
+"                                sus\n"
+"                                funciones, quién se compromete a cuidarlo y darle un uso estrictamente laboral."
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "<b>AUTORIZA</b>"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "<b>EMISOR</b>"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "<b>RECEPTOR</b>"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "<b>Responsiva de equipos</b>"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee__setu_authorizer_id
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee_base__setu_authorizer_id
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee_public__setu_authorizer_id
+msgid "AUTORIZA"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields.selection,name:asset_extended.selection__account_asset__status__active
+msgid "Active In Use"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories__asset_id
+msgid "Asset"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.view_account_asset_form_extended
+msgid "Asset Labels"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__status
+msgid "Asset Status"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model,name:asset_extended.model_asset_subcategories
+msgid "Asset subcategories"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model,name:asset_extended.model_account_asset
+msgid "Asset/Revenue Recognition"
+msgstr "Aceptación de pagos/Ingresos"
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee__asset_ids
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee_base__asset_ids
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee_public__asset_ids
+#: model_terms:ir.ui.view,arch_db:asset_extended.hr_employee_form_view_extended
+msgid "Assets"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model,name:asset_extended.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "Empleado básico"
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__brand
+msgid "Brand"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields.selection,name:asset_extended.selection__account_asset__status__current
+msgid "Current Assets"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee__setu_issuer_id
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee_base__setu_issuer_id
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee_public__setu_issuer_id
+msgid "EMISOR"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "EQUIPO"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid ""
+"El usuario deberá responder por los daños ocasionados por mal manejo o\n"
+"                                imprudencia, será su responsabilidad devolver el equipo en buenas\n"
+"                                condiciones, el usuario asume las consecuencias que esto deriven."
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.hr_employee_form_view_extended
+msgid "Electronic Signature"
+msgstr "Firma Electrónica"
+
+#. module: asset_extended
+#: model:ir.model,name:asset_extended.model_hr_employee
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_hr_employee__employee_signature
+msgid "Employee Signature"
+msgstr "Firma del Empleado"
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories__id
+msgid "ID"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "IMEI / SERIE"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "MARCA"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "MODELO"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__model
+msgid "Model"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_asset_subcategories__name
+msgid "Name"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields.selection,name:asset_extended.selection__account_asset__status__obsolete
+msgid "Obsolete"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid ""
+"Por este medio hago constar que el equipo que se detalla a continuación se encuentra en\n"
+"                                calidad de préstamo a partir del día"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.actions.report,name:asset_extended.responsive_letter_pdf_report
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__is_responsive_letter
+msgid "Responsive Letter"
+msgstr "Carta Responsiva"
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__serial_number
+msgid "Serial Number"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid ""
+"Sirva este como comprobante de entrega de dicho equipo, el cual pertenece a "
+"la"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__subcategories_ids
+msgid "Subcategories"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields.selection,name:asset_extended.selection__account_asset__status__to_find
+msgid "To Find"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__warranty
+msgid "Warranty"
+msgstr ""
+
+#. module: asset_extended
+#: model:ir.model.fields,field_description:asset_extended.field_account_asset__warranty_period
+msgid "Warranty period"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "___________________________"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "______________________________"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "del departamento de"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "que está bajo resguardo de"
+msgstr ""
+
+#. module: asset_extended
+#: model_terms:ir.ui.view,arch_db:asset_extended.responsive_letter
+msgid "sucursal"
+msgstr ""

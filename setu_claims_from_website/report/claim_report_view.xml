@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="claim_report" model="ir.actions.report">
+            <field name="name">Claim</field>
+            <field name="model">crm.claim</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">setu_claims_from_website.report_claim_report</field>
+            <field name="report_file">setu_claims_from_website.report_claim_report</field>
+            <field name="binding_model_id" ref="model_crm_claim"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

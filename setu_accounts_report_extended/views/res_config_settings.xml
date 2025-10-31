@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="res_setting_extend_for_bonus_product_customer_credit_notes">
+            <field name="name">res.setting.extend.for.bonus.product.customer.credit.notes</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref='account.res_config_settings_view_form'/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@id='invoicing_settings']" position="after">
+                    <div class="app_settings_block" id="customer_credit_notes_for_products">
+                        <h2>Customer Credit Notes</h2>
+                        <div class="row mt16 o_settings_container" name="bonus_products_inv_based">
+                            <div class="col-12 col-lg-6 o_setting_box" id="bonus_product_id">
+                                <div class="o_setting_right_pane mt16">
+                                    <div>
+                                        <span class="o_form_label">Bonus Products</span>
+                                    </div>
+
+                                    <div class="row mt8">
+                                        <label for="product_id_for_iva_16_percentage" class="col-lg-4 o_light_label"/>
+                                        <field name="product_id_for_iva_16_percentage"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="product_id_for_iva_0_percentage" class="col-lg-4 o_light_label"/>
+                                        <field name="product_id_for_iva_0_percentage"/>
+                                    </div>
+
+                                    <div class="row mt8">
+                                        <label for="vat_configuration" class="col-lg-4 o_light_label"/>
+                                        <field name="vat_configuration"/>
+                                    </div>
+
+                                    <div class="row mt8">
+                                        <label for="iva_sixteen_percentage_tax_id" class="col-lg-4 o_light_label"/>
+                                        <field name="iva_sixteen_percentage_tax_id"/>
+                                    </div>
+
+                                    <div class="row mt8">
+                                        <label for="iva_zero_percentage_tax_id" class="col-lg-4 o_light_label"/>
+                                        <field name="iva_zero_percentage_tax_id"/>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="configuration_part_for_bonus_prod">
+                                <div class="o_setting_right_pane mt16">
+                                    <div class="row mt8">
+                                        <label for="cancel_reason_conf_id" class="col-lg-4 o_light_label"/>
+                                        <field name="cancel_reason_conf_id"/>
+                                    </div>
+
+
+                                    <div class="row mt8">
+                                        <label for="country_conf_id" class="col-lg-4 o_light_label"/>
+                                        <field name="country_conf_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="l10n_mx_edi_payment_method_conf_id" class="col-lg-4 o_light_label"/>
+                                        <field name="l10n_mx_edi_payment_method_conf_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="journal_id_for_16_percent_id" class="col-lg-4 o_light_label"/>
+                                        <field name="journal_id_for_16_percent_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="journal_id_for_0_percent_id" class="col-lg-4 o_light_label"/>
+                                        <field name="journal_id_for_0_percent_id"/>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </xpath>
+                <xpath expr="//block[@id='account_reports_settings']" position="after">
+                    <block>
+                        <setting help="Whichever journal is selected, it will filter the records accordingly and send emails during the “Account Report Follow-up: Execute Follow-up” scheduled action.">
+                            <field name="selected_journal_ids" widget="many2many_tags"/>
+                        </setting>
+                    </block>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

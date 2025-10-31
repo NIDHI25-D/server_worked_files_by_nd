@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="setu_shopify_account_move_form_view_extended" model="ir.ui.view">
+        <field name="name">setu.shopify.account.move.form.view.extended</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+        	<field name="partner_id" position="after">
+                <field name='is_refund_invoice_in_shopify' invisible="1" />
+                <field name="multi_ecommerce_connector_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="setu_shopify_account_move_refund_action" model="ir.actions.act_window">
+        <field name="name">Shopify Credit Note</field>
+        <field name="res_model">account.move</field>
+        <field name="context">{'no_create': True, 'shopify_invoice': True}</field>
+        <field name="domain">[('move_type','=','out_refund'),('multi_ecommerce_connector_id','!=',False)]</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+    </record>
+    
+    <record id="setu_shopify_account_move_commerce_refund_action" model="ir.actions.act_window">
+        <field name="name">Shopify Credit Note</field>
+        <field name="res_model">account.move</field>
+        <field name="context">{'no_create': True}</field>
+        <field name="domain">[('move_type','=','out_refund'),('multi_ecommerce_connector_id','=',active_id)]</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+    </record>
+    
+    <record id="setu_shopify_account_move_action" model="ir.actions.act_window">
+        <field name="name">Shopify Invoices</field>
+        <field name="res_model">account.move</field>
+        <field name="domain">[('move_type','=','out_invoice'),('multi_ecommerce_connector_id','!=',False)] </field>
+        <field name="context">{'default_type':'out_invoice', 'move_type':'out_invoice', 'journal_type': 'sale','create': False, 'shopify_invoice': True}</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+    </record>
+
+    <record id="setu_shopify_account_move_commerce_invoice_action" model="ir.actions.act_window">
+        <field name="name">Shopify Invoices</field>
+        <field name="res_model">account.move</field>
+        <field name="domain">[('move_type','=','out_invoice'),('multi_ecommerce_connector_id','=',active_id)] </field>
+        <field name="context">{'default_type':'out_invoice', 'move_type':'out_invoice', 'journal_type': 'sale','create': False}</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+    </record>
+
+    <menuitem id="setu_shopify_account_move_customer_invoice_menu" name="Customer Invoices"  parent="setu_shopify_connector.setu_shopify_account_move_main_menu"  action="setu_shopify_account_move_action" sequence="5"/>
+    <menuitem id="setu_shopify_account_move_customer_refund_menu" name="Customer Credit Notes"   parent="setu_shopify_connector.setu_shopify_account_move_main_menu" action="setu_shopify_account_move_refund_action" sequence="7"/>
+
+</odoo>

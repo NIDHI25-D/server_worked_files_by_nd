@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* setu_discount_and_loyalty_enhancment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-25 03:26+0000\n"
+"PO-Revision-Date: 2023-09-25 03:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model:ir.model,name:setu_discount_and_loyalty_enhancment.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model:ir.model.fields,field_description:setu_discount_and_loyalty_enhancment.field_res_config_settings__df_unspsc_code_id
+msgid "Default SAT Code"
+msgstr ""
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model_terms:ir.ui.view,arch_db:setu_discount_and_loyalty_enhancment.add_default_unspsc_code_id_form_inherit
+msgid "Loyalty Product SAT Code"
+msgstr ""
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model:ir.model,name:setu_discount_and_loyalty_enhancment.model_loyalty_program
+msgid "Loyalty Program"
+msgstr "Programa de lealtad"
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model:ir.model,name:setu_discount_and_loyalty_enhancment.model_loyalty_reward
+msgid "Loyalty Reward"
+msgstr "Recompensa de lealtad"
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model:ir.model,name:setu_discount_and_loyalty_enhancment.model_loyalty_rule
+msgid "Loyalty Rule"
+msgstr "Regla de fidelidad"
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model:ir.model.fields,field_description:setu_discount_and_loyalty_enhancment.field_loyalty_rule__sale_domain
+msgid "Sale Domain"
+msgstr ""
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model:ir.model,name:setu_discount_and_loyalty_enhancment.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model_terms:ir.ui.view,arch_db:setu_discount_and_loyalty_enhancment.add_default_unspsc_code_id_form_inherit
+msgid "Set default SAT Code for Loyalty Reward Product"
+msgstr ""
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model_terms:ir.ui.view,arch_db:setu_discount_and_loyalty_enhancment.electronic_wallet
+msgid "Electronic wallet"
+msgstr "Monedero electrónico"
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model_terms:ir.ui.view,arch_db:setu_discount_and_loyalty_enhancment.hide_loyalty_points_button
+msgid "Use electronic wallet"
+msgstr "Utilizar Monedero"
+
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model_terms:ir.ui.view,arch_db:setu_discount_and_loyalty_enhancment.electronic_wallet
+msgid "You Have"
+msgstr "Tiene "
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model_terms:ir.ui.view,arch_db:setu_discount_and_loyalty_enhancment.electronic_wallet
+msgid "Points"
+msgstr "Punto(s)"
+
+#. module: setu_discount_and_loyalty_enhancment
+#: model_terms:ir.ui.view,arch_db:setu_discount_and_loyalty_enhancment.hide_loyalty_points_button
+msgid "<u>Terms and Conditions</u>"
+msgstr "<u>Términos y Condiciones</u>"

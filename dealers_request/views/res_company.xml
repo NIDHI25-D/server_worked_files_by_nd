@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_company_credit_docs_view" model="ir.ui.view">
+            <field name="name">res.company.credit.docs.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook" position="inside">
+                    <page name="credit_docs" string="Credit Dealer Documents" groups="dealers_request.credit_upload_documents">
+                        <group>
+                            <field name="credit_registration_doc_name" invisible="1"/>
+                            <field name="credit_registration_doc_name_help" invisible="1"/>
+
+                            <field name="credit_request_doc_name" invisible="1"/>
+                            <field name="credit_request_doc_name_help" invisible="1"/>
+
+                            <field name="promissary_note_doc_name" invisible="1"/>
+                             <field name="promissary_note_doc_name_help" invisible="1"/>
+
+                            <field name="credit_registration_doc"
+                                   string="Credit Registration Document"
+                                   help="Upload your PDF file."
+                                   filename="credit_registration_doc_name"/>
+                            <field name="credit_registration_doc_help"
+                                   string="Credit Registration Help Document"
+                                   help="Upload your PDF file for help purpose."
+                                   filename="credit_registration_doc_name_help"/>
+
+                            <field name="credit_request_doc"
+                                   string="Credit Request Document"
+                                   help="Upload your PDF file."
+                                   filename="credit_request_doc_name"/>
+                            <field name="credit_request_doc_help"
+                                   string="Credit Request Help Document"
+                                   help="Upload your PDF file for help purpose."
+                                   filename="credit_request_doc_name_help" />
+
+                            <field name="promissary_note_doc"
+                                   string="Promissary Note Document"
+                                   help="Upload your PDF file."
+                                   filename="promissary_note_doc_name"/>
+                            <field name="promissary_note_doc_help"
+                                   string="Promissary Note Help Document"
+                                   help="Upload your PDF file for help purpose."
+                                   filename="promissary_note_doc_name_help"/>
+
+                            <field name="credit_general_address"
+                                   string="Credit Address"/>
+<!--                            <field name="documents_dealer_settings"/>-->
+<!--                            <field name="documents_dealer_folder"/>-->
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

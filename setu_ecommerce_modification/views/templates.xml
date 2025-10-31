@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="res_partner_verified" name="User Verification Page">
+            <t t-call="website.layout">
+                <!--This Templates is called when token is verified-->
+                <t t-if="status == True">
+                    <t t-if="request.env['res.lang']._get_code(lang) == 'en_US'">
+                        <div class="text-center">
+                            <h1 class="display-3">Thank You!</h1>
+                            <p class="lead">
+                                <strong>Your Profile Successfully Verified.</strong>
+                                Please Login With Your <a href="/web/login">Login</a> Credentials.
+                            </p>
+                            <hr/>
+                            <p>
+                                Having trouble?
+                                <a href="/contactus">Contact us</a>
+                            </p>
+                        </div>
+                    </t>
+                    <t t-if="request.env['res.lang']._get_code(lang) == 'es_MX'">
+                        <div class="text-center">
+                            <h1 class="display-3">¡Excelente!</h1>
+                            <p class="lead">
+                                Su correo ha sido verificado,
+                                <a href="/web/login">Iniciar sesión.</a>
+                            </p>
+                            <hr/>
+                            <p>
+                                ¿Tiene un problema para ingresar?
+                                <a href="/contactus">Contáctenos</a>
+                            </p>
+                        </div>
+                    </t>
+                </t>
+                <!--This Templates is called when token is not verified-->
+                <t t-else="">
+                    <t t-if="request.env['res.lang']._get_code(lang)== 'en_US'">
+                        <div class="text-center">
+                            <p class="lead mt-5">
+                                <strong>Your Profile Is Not Verified Yet.</strong>
+                                <span t-if="is_status_page and is_status_page == 'True'">We have sent you email for
+                                    verification process.
+                                </span>
+                                <span t-if="not is_status_page">Please Contact Administrative For Your Login
+                                    Credentials.
+                                    <a href="/contactus">Contact us</a>
+                                </span>
+                            </p>
+                            <br/>
+                            <p>
+                                Having trouble,Don't Hesitate to contact us.We are happy to help you?
+                                <a href="/contactus">Contact us</a>
+                            </p>
+                        </div>
+                    </t>
+                    <t t-if="request.env['res.lang']._get_code(lang) == 'es_MX'">
+                        <div class="text-center">
+                            <h1 class="display-3">Revise su correo!</h1>
+                            <p class="lead">
+                                El registro requiere una verificación de correo, por favor revise su buzón de correo
+                                electrónico y siga las instrucciones enviadas.<br/>Él correo fue enviado a:
+                                <t t-esc="partner.email"/>
+                            </p>
+                            <hr/>
+                            <p>
+                                ¿Tiene un problema para ingresar?
+                                <a href="/contactus">Contáctenos</a>
+                            </p>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

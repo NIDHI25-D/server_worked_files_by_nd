@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="transport_route_search_view_extended" model="ir.ui.view">
+            <field name="name">transport.route.search.view.extended</field>
+            <field name="model">transport.route</field>
+            <field name="inherit_id" ref="transport_management.transport_route_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
