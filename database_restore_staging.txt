@@ -1,0 +1,384 @@
+|====================================================================|
+|TASK  PURPOSE  : Procedure to restore database in staging of master |
+|====================================================================|
+
+Dump in master : 
+-----------------
+cat /opt/odoo16/conf/odoo16-server.conf
+---pswd :  !2B04gkCoz!5
+														 (new db_name 👇️)	
+pg_dump -h 10.77.160.199 -U odoo16 mdh_prod_06_feb --exclude-schema=datastudio_reports --verbose | gzip -9 > 19_feb_2024_mdh_staging_dumps.sql.gz
+
+|=====================================================|
+|Procedure to restore database in staging from master |
+|=====================================================|
+
+In staging server : 
+----------
+sudo scp -i ~/.ssh/odoo_16 odoo16@dealers.mdhsports.com:/tmp/dec_04_2023_mdh_production.sql.gz /tmp/
+ 
+To enter Postgres : 
+=================
+👉️Cntrl postgres :
+	PGPASSWORD="S3tuT34m2021." psql -h 10.77.160.199 -U odoo16 -d postgres
+	postgres ==> createdb -dbname owner odoo16 or create database bolder_prod_11_mar with owner odoo16;
+	\l
+	cntrl D
+	
+	--> cat conf/odoo16-server.conf (db_user = odoo16 db_pswd)
+	odoo16@us1alx010 ==> gunzip < /tmp/feb_06_2024_mdh_production.sql.gz | psql -h 10.77.160.199 -U odoo16 -d mdh_prod_06_feb    (restore process)
+	pswd : odoo16 (for bolder)
+
+Login to the database by : 
+=======================
+	-----------------------------------------------------------------------------------------------------------------------
+👉️	update setu_multi_ecommerce_connector set state='draft',shopify_api_key='dummy';     ----Comment in bolder
+	update res_company set password_expiration=100000 where id=1;   --- if needed (MDH)
+	-----------------------------------------------------------------------------------------------------------------------
+	
+👉️	odoo16@us1alx010 ==> PGPASSWORD="S3tuT34m2021." psql -h 10.77.160.199 -U odoo16 -d mdh_prod_06_feb
+	Execute whole query :
+		set search_path=public;
+		Update ir_cron set active='f';
+		Update ir_config_parameter set value='backup_db' where key='database.uuid';
+		update ir_config_parameter set value='' where key='recaptcha_private_key';
+		update ir_config_parameter set value='' where key='recaptcha_public_key';
+		Delete from ir_mail_server;
+		Delete from fetchmail_server;
+		UPDATE res_partner SET email = (select 'anonymized-' || (select floor(random() * 1000000) + 1 where res_partner.id = res_partner.id) || '@gmail.com');
+		Update res_company set l10n_mx_edi_pac_test_env = 't';
+		update delivery_carrier set active=False;
+		update res_users set password='Kishan@setu19' where login='kishan@setuconsulting.com';
+		ALTER TABLE account_journal ALTER COLUMN code TYPE varchar(100);
+		update res_company set l10n_mx_edi_pac_test_env = 't';
+		update account_journal set code = 'LOCAL-' || code where type in ('sale','purchase') and active = 't';
+		delete from l10n_mx_edi_certificate_res_company_rel;
+		with test_journal as (select journal_id,max(invoice_date) as invoice_date,name,id,row_number() over(partition by journal_id order by invoice_date desc) as row_id
+		from account_move where state not in ('draft') and move_type in ('out_invoice','out_refund','in_invoice','in_refund') and invoice_date is not null group by journal_id,id,name,invoice_date)
+		update account_move  set name = 'LOCAL-' || name where id in (select id from test_journal where row_id=1);
+		update res_company set mercadolibre_access_token='';
+		update setu_multi_ecommerce_connector set state='draft',shopify_api_key='dummy';
+		delete from ir_config_parameter where key='recaptcha_private_key';
+		delete from ir_config_parameter  where key='recaptcha_public_key';
+		update website set domain = '' where id=1;
+		
+
+cd (to exit from db mdh_prod_06_feb)
+
+EXTRA PASSWORD : 
+	
+	update res_users set password='TESTtest@#$%123' where login='kishan@setuconsulting.com';
+	update res_users set active='t' where login='kishan@setuconsulting.com';
+
+Addons and enterprise :
+=======================
+(if required pull addons and origin )
+👉️If there are any changes than just stash the changes
+cd /opt/odoo16/ ----> ls
+odoo16@us1alx010:/opt/odoo16/odoo(16.0) git pull origin 16.0
+odoo16@us1alx010:/opt/odoo16/enterprise(16.0) git pull origin 16.0
+
+Change dbname in the conf file :
+===============================
+vim /opt/odoo16/conf/odoo16-server.conf
+i         (👉️to insert)
+	  (👉️ALSO CHECK CURRENT DB)
+dbname=mdh_prod_06_feb
+esc :wq   (👉️to save and exit)
+esc :q!   (👉️to exit)  
+
+
+UPGRADE ALL MODULES :
+===================
+odoo16@us1alx007 ~/custom_addons/agrobolder_v16
+	sudo killall python3.8
+	python3 /opt/odoo16/odoo/odoo-bin -c /opt/odoo16/conf/odoo16-server.conf -d mdh_prod_06_feb -u all --stop-after-init --logfile=
+
+	👉️(if hr payroll issue arrise than first restart, uninstall payroll_community and install the modules
+
+	python3 /opt/odoo16/odoo/odoo-bin -c /opt/odoo16/conf/odoo16-server.conf -d mdh_prod_06_feb -u all -i nomina_cfdi_bancos,nomina_cfdi_ee,om_hr_payroll_account_ee,report_xlsx --stop-after-init --logfile=
+
+
+TO KILL ANY PROCESS 
+-------------------
+ps aux | grep odoo
+sudo kill -9 599817
+
+for continue log of a string
+-----------------------------
+tail -f /opt/odoo18/logs/odoo18-server.log | grep "data_with_uuid:"
+2025-08-07 04:12:47,100 192607 INFO mvsa_production data_with_uuid: 0F742917-2A36-5ADE-B9
+
+Execute queries :
+===============
+---PGPASSWORD="S3tuT34m2021." psql -h 10.77.160.199 -U odoo16 -d mdh_prod_06_feb
+	PGPASSWORD='M4rv3l123$' psql -h 10.54.160.63 -U odoo14_datastudio -d may_31_2024_mvsa_production
+	\d
+	 if there are no materialized view then only execute the execute queries part 
+
+STEP 1:  PGPASSWORD="S3tuT34m2021." psql -h 10.77.160.199 -U odoo16 -d mdh_prod_06_feb
+------
+👉️owner odoo16  ---  CREATE SCHEMA IF NOT EXISTS datastudio_reports AUTHORIZATION odoo14_datastudio;
+      	        ---  grant USAGE on SCHEMA datastudio_reports to odoo14_datastudio;
+                ---  grant SELECT ON ALL tables in schema public TO odoo14_datastudio;
+
+
+STEP 2:  PGPASSWORD="S3tuT34m2021." psql -h 10.77.160.199 -U postgres -d mdh_prod_06_feb
+------
+👉️owner postgres-- alter role odoo14_datastudio set search_path=datastudio_reports;       		 
+
+
+STEP 3:  PGPASSWORD="M4rv3l123$" psql -h 10.77.160.199 -U odoo14_datastudio -d mdh_prod_06_feb  
+------
+	(👉️JUST CHANGE NAME ACCORIDING TO THE INSTEAD OVER HERE MDH_V16 TO mvsa_v16, IF THERE IS ANY ERROR THAN GIVE PATH AS PER THE INSTANCE AND FROM NEXT ONWARDS (MATERIALIZED VIEW)
+	 PERFROM \i)
+	 
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/product_template_stock_info.sql 
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/sale_order_line_view.sql 
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/product_view_by_vendor.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/transfer_view.sql 
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/get_employees_info.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/get_journal_items_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/get_attendance_log_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/get_recruitments_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/purchase_order_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/purchase_order_line_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/account_move.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/invoice_line_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/stock_quant.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/claims.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/pos_order.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/pos_order_line.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/pos_order_payment.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/stock_valuation_layer.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/sales_time_dashboard_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/get_fleet_odometer.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/fleet_services_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/fleet_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/hr_applicant.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/hr_job.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/get_crdit_note_invoice_line.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/account_credit_notes.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/pre_sale_details_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/landed_cost_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/landed_costs_transfers.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/vendor_bills.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/vendor_bills_lines.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/vendors_refund_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/vendor_refund_line_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/landed_cost_lines.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/landed_cost_related_po.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/pre_order_details.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/inventory_count_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/inventory_count_lines_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/inventory_session_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/inventory_session_lines.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/inventory_adjustment.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/inventory_adjustment_lines.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/budgetory_lines.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/budget_items_tab_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/analytic_plan_applicability.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/analytic_plan.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/analytic_account_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/transfer_operation_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/journal_entries.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/journal_item_analytic_distribution_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/product_tmpl_basic_info_view.sql 
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/transfer_line_view.sql
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/sale_order_view.sql 
+\i /opt/odoo16/custom_addons/mdh_v16/setu_product_view_by_vendor/db_function/contact_view.sql
+
+MVSA:
+-------
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/account_credit_notes.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/account_move.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/analytic_account_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/analytic_plan.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/analytic_plan_applicability.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/budget_items_tab_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/budgetory_lines.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/claims.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/contact_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/customers_invoice_payments.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/fleet_services_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/fleet_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/get_attendance_log_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/get_crdit_note_invoice_line.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/get_employees_info.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/get_fleet_odometer.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/get_journal_items_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/get_recruitments_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/hr_applicant.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/hr_job.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/inventory_adjustment.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/inventory_adjustment_lines.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/inventory_count_lines_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/inventory_count_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/inventory_session_lines.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/inventory_session_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/invoice_line_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/journal_entries.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/journal_item_analytic_distribution_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/landed_cost_lines.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/landed_cost_related_po.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/landed_cost_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/landed_costs_transfers.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/mail_activity.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/pos_order.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/pos_order_line.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/pos_order_payment.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/pre_order_details.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/pre_sale_details_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/product_template_stock_info.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/product_tmpl_basic_info_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/product_view_by_vendor.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/purchase_order_line_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/purchase_order_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/queries.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/sale_order_line_invoice_rel_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/sale_order_line_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/sale_order_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/sales_time_dashboard_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/shipping_materialized_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/stock_location.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/stock_quant.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/stock_valuation_layer.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/transfer_line_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/transfer_operation_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/transfer_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/transport_delivery_order.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/vendor_bills.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/vendor_bills_lines.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/vendor_refund_line_view.sql
+\i /opt/odoo16/custom_addons/mvsa_v16/setu_product_view_by_vendor/db_function/vendors_refund_view.sql
+
+BOLDER
+-----
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/product_template_stock_info.sql 
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/sale_order_line_view.sql 
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/product_view_by_vendor.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/transfer_view.sql 
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/get_employees_info.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/get_journal_items_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/get_attendance_log_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/get_recruitments_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/purchase_order_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/purchase_order_line_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/account_move.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/invoice_line_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/stock_quant.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/claims.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/pos_order.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/pos_order_line.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/pos_order_payment.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/stock_valuation_layer.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/sales_time_dashboard_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/get_fleet_odometer.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/fleet_services_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/fleet_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/hr_applicant.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/hr_job.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/get_crdit_note_invoice_line.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/account_credit_notes.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/pre_sale_details_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/landed_cost_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/landed_costs_transfers.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/vendor_bills.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/vendor_bills_lines.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/vendors_refund_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/vendor_refund_line_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/landed_cost_lines.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/landed_cost_related_po.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/pre_order_details.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/inventory_count_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/inventory_count_lines_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/inventory_session_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/inventory_session_lines.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/inventory_adjustment.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/inventory_adjustment_lines.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/budgetory_lines.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/budget_items_tab_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/analytic_plan_applicability.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/analytic_plan.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/analytic_account_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/transfer_operation_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/journal_entries.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/journal_item_analytic_distribution_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/product_tmpl_basic_info_view.sql 
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/transfer_line_view.sql
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/sale_order_view.sql 
+\i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/contact_view.sql
+
+
+DROP database :
+==============
+PGPASSWORD="S3tuT34m2021." psql -h 10.77.160.199 -U odoo16 -d postgres
+(👉️if need to delete current db than need to stop the server by stop command : happend in Homologation)
+DROP database mdh_prod_03_oct;
+DROP database mdh_prod_07_aug;
+DROP database mdh_prod_22_aug;
+DROP database mdh_prod_30_oct;
+
+👉️To remove particular file from the /tmp
+----------------
+sudo rm -rf .sql.gz
+
+👉️For upgrade all modules
+---------------------------------------
+-u all --stop-after-init --logfile=
+
+
+To check logs:
+odoo16@us1alx008a ~$ cd /opt/odoo16/logs/
+odoo16@us1alx008a ~/logs$ vim odoo16-server.log
+/ for search
+
+
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%past_x_days_sales%' and model='res.config.settings';
+
+👉️RENAME FILE IN LINUX : 
+====================
+odoo16@us1alx008 ~/custom_addons$ ls
+mvsa_v16  mvsa_v16_hgm  mvsa_v16_old
+
+odoo16@us1alx008 ~/custom_addons$ mv mvsa_v16 mvsa_v16_old_2025
+				   ls
+				   SYNTAX: git clone -b <branch> --single-branch <url> --depth <number of commits>
+				   git clone -b staging --single-branch git@bitbucket.org:setuconsulting/mvsa_v16.git  --depth 1
+				   cd mvsa_v16
+odoo16@us1alx008 ~/custom_addons/mvsa_v16 (staging)$ ls
+				   
+----EXTRA WAY --------------------
+Syntax : rename 's/^[expression]$/[replacemnet]/' [current_name]
+
+setu20@setu20:~/workspace/odoo18$ sudo apt install rename
+
+				   rename 's/^mvsa_v18$/mvsa_v18_old/' mvsa_v18
+
+				   git clone git@github.com:setuconsulting/mvsa_v18.git
+				
+				-------------------ODOO 16---------------------------   
+
+				rename 's/^mvsa_v16$/mvsa_v16_old_2025/' mvsa_v16
+				git@bitbucket.org:setuconsulting/mvsa_v16.git
+				
+
+Size of DB
+-----------
+SELECT
+    d.datname AS database_name,
+    pg_size_pretty(pg_database_size(d.datname)) AS size
+FROM
+    pg_database d
+WHERE
+    d.datistemplate = false
+ORDER BY
+    pg_database_size(d.datname) DESC;				
+				
+-------------------ODOO 18--------------------------- 				
+
+take in tmp first
+gcloud compute scp --project="marvelsa-odoo" --zone="us-central1-a" /opt/odoo18/logs/odoo18-server.log-2025_09_02_00_01_01.gz us1alx002:/tmp
+
+---------In local system------------
+setu20@setu20:~$ gcloud compute scp --zone "us-central1-a" us1alx002a:/tmp/sept_29th_2025_mvsa_production.sql.gz  /home/setu20/workspace/odoo16/_dump --project "marvelsa-odoo"
