@@ -1,0 +1,39 @@
+#odoo server
+upstream odoo {
+  server 127.0.0.1:8069;
+}
+upstream odoochat {
+  server 127.0.0.1:8072;
+}
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  ''      close;
+}
+server {
+    listen 80;
+    server_name 35.209.254.184;   # your server’s IP
+ 
+    client_max_body_size 100M;
+ 
+    # ---------- normal HTTP requests ----------
+    location / {
+        proxy_pass http://odoo;
+        proxy_set_header Host               $host;
+        proxy_set_header X-Real-IP          $remote_addr;
+        proxy_set_header X-Forwarded-For    $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto  $scheme;
+    }
+ 
+    # ---------- WebSocket / real‑time ----------
+    location /websocket {
+        proxy_pass http://odoochat;
+        proxy_set_header Upgrade            $http_upgrade;
+        proxy_set_header Connection         $connection_upgrade;
+        proxy_set_header X-Real-IP          $remote_addr;
+        proxy_set_header X-Forwarded-For    $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto  $scheme;
+    }
+ 
+    access_log /var/log/nginx/odoo18-access.log;
+    error_log  /var/log/nginx/odoo18-error.log;
+}
