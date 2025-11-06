@@ -1,0 +1,39 @@
+-------DEBUG IN STAGING-------------
+In Staging branch : 
+ssh -i /home/setu20/.ssh/odoo_16 odoo16@tod16.marvelsa.com
+
+doo16@us1alx008 ~/custom_addons/mvsa_v16 (staging) vim odoo_rest_api/controllers/rate_limiter.py
+
+in file
+-------
+esc 
+shift : 56 (colon) to find line number
+i (insert)
+import ipdb
+
+(set where u need to put debug point)
+--------------------------------------
+ipdb.set_trace()
+esc wq
+
+sudo killall python3
+python3 /opt/odoo16/odoo/odoo-bin -c /opt/odoo16/conf/odoo16-server.conf
+ps aux | grep python3 or tail -f /opt/odoo16/logs/odoo16-server.log | grep "Requests:"
+
+To move in next line : n
+To go inside the method : s
+To complete the method (that is F8) : c
+
+
+in staging branch : 
+			ssh -i /home/setu20/.ssh/odoo_16 odoo16@testing16.agrobolder.com
+			cd /opt/odoo16/custom_addons/agrobolder_v16/
+			git status
+			vim  setu_log_note/models/ir_model.py
+			esc :wq (to save)
+			ps aux | grep python3
+			python3 /opt/odoo16/odoo/odoo-bin -c /opt/odoo16/conf/odoo16-server.conf
+			sudo killall python3
+			odoo16@us1alx007 ~/custom_addons/agrobolder_v16 (staging)$ python3 /opt/odoo16/odoo/odoo-bin -c /opt/odoo16/conf/odoo16-server.conf
+
+git checkout setu_log_note/models/ir_model.py (to delete all the things)
