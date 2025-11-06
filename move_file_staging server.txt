@@ -1,0 +1,25 @@
+ssh -i /home/setu20/.ssh/odoo_16 odoo16@tod16.marvelsa.com
+
+odoo16@us1alx008 cd /opt/odoo16/filestore/filestore/
+
+odoo16@us1alx008 /filestore$ ls
+odoo16@us1alx008 /filestore$ mv cd /opt/odoo16/filestore/filestore/nov_04_2024_mvsa_production/ filestore/
+
+
+odoo16@us1alx008 ~$ cd /etc/nginx/sites-enabled/
+		  odoo16@us1alx008 /etc/nginx/sites-enabled$ ls
+		  					      sudo vi odoo     (a text editor that is the default on most Linux systems
+		  					      File : 
+		  					       location /web/filestore {
+								internal;
+							        alias /opt/odoo16/filestore;
+  							  	}
+							    Change file to 
+							   location /web/filestore {
+							    internal;
+							    alias /filestore;
+							  }
+
+
+
+/filestore/filestore/filestore/nov_04_2024_mvsa_production  							  	

@@ -1,0 +1,91 @@
+sudo killall python3
+odoo14@us1alx002:~/custom_addons/mdh_14$ sudo /etc/init.d/odoo14-server restart 
+
+database : march_15_2023_mdh_production
+           feb_06_2023_mvsa_production
+
+TO CONNECT SERVER: 
+setu20@setu20:~/workspace/odoo_14/mdh_14(staging)$ ssh -i /home/setu20/.ssh/mdh_odoo_14 odoo14@testing.mdhbikes.com
+                                                   ssh -i /home/setu20/.ssh/mdh_odoo_14 odoo14@tod14.mdhbikes.com
+
+setu20@setu20:~/workspace/odoo_14/mvsa_14(staging)$ ssh -i /home/setu20/.ssh/mdh_odoo_14 odoo14@testing.marvelsa.com
+                                                    ssh -i /home/setu20/.ssh/mdh_odoo_14 odoo14@tod14.marvelsa.com
+                                                     
+setu20@setu20:~/workspace/odoo_16/agrobold_14/agrobolder_v16(staging)$  ssh -i /home/setu20/.ssh/odoo_16 odoo16@testing16.agrobolder.com
+setu20@setu20:~/workspace/odoo16/mvsa_v16(staging)$                     ssh -i /home/setu20/.ssh/odoo_16 odoo16@tod16.marvelsa.com
+cntrl r "custom" : cd /opt/odoo16/custom_addons/agrobolder_v16/
+
+                                                psql -h 10.13.48.19 -U odoo14_datastudio -d agrobolder_migrated_10_march 
+                                                agrobolder_migrated_10_march                                               
+
+(ctrl r custom to reach the path)
+odoo14@us1alx002:~$  cd /opt/odoo14/custom_addons/mdh_14/
+odoo14@us1alx004:/opt/odoo14/custom_addons/mvsa_v14$ 
+                     git status
+(for pycache)        find . -type d -name  "__pycache__" -exec rm -r {} +
+                     git pull origin staging 
+                     
+skype : Restarting Bolder 16 staging
+        restarting mvsa 14 staging
+       Restarting MDH 14 staging.
+       Restarting MVSA 16 staging.
+
+when change is to be taken by me and code is pushed to staging ::    in mvsa start : sudo /etc/init.d/odoo14-server start
+                    git pull origin staging 
+                    sudo killall python3
+                   sudo /etc/init.d/odoo14-server restart 
+                   sudo service odoo16-server restart
+                   
+db of mdh 16 ::: psql -h 10.77.160.199 -U odoo14_datastudio -d mdh_prod_07_aug                   
+if logs are not seen : cntrl r : tail                  
+                                   
+when just want to connect to database just connect to
+cntrl r : \i
+                  ssh -i /home/setu20/.ssh/mdh_odoo_14 odoo14@testing.mdhbikes.com                              
+
+                  
+(MDH)             psql -h 10.77.160.5 -U odoo14_datastudio -d march_15_2023_mdh_production
+(MVSA)            psql -h 10.54.160.16 -U odoo14_datastudio -d april_17_2023_mvsa_production
+(bolder_16)       psql -h 10.13.48.19 -U odoo14_datastudio -d agrobolder_migrated_10_march
+                 pswd : M4rv3l123$  same for master
+                 S3tuT34m2021.
+in psql : \d
+
+if view is not created then only :   \i /opt/odoo14/custom_addons/mdh_14/setu_product_view_by_vendor/db_function/hr_applicant.sql 
+				      \i /opt/odoo16/custom_addons/agrobolder_v16/setu_product_view_by_vendor/db_function/sale_order_view.sql
+				      
+To drop : cntrl drop or              drop materialized view materialized_view_of_sale_order_line;
+\x
+                                    refresh materialized view materialized_view_of_hr_applicant_view;
+
+========================================================================================
+to give rights 
+setu20@setu20:~/.ssh$ sudo chmod 600 mdh_odoo_14
+setu20@setu20:/etc/nginx$ sudo chmod 600 sites-enabled
+
+========================================================================================
+To create shortcuts from linux i.e. alias :
+ 
+terminal : sudo nano ~/.bashrc
+(at the end: pagedown, enter)
+alias mvsa_v16="cd /home/setu20/workspace/odoo16/mvsa_v16/"
+(Cntrl X Cntrl S)
+========================================================================================
+CSV file from query 
+
+sudo su postgres
+
+new_31_may_2024_mvsa_production=# \COPY (SELECT DISTINCT move_line_id, stock_picking_id FROM (SELECT sp.id as stock_picking_id, COUNT(sml.id) as move_line_id, spt.code as code FROM stock_move_line sml LEFT JOIN stock_picking sp ON sp.id = sml.picking_id LEFT JOIN stock_picking_type spt ON spt.id = sp.picking_type_id WHERE spt.code IN ('internal', 'outgoing') AND
+ sp.state = 'done' GROUP BY sp.id, spt.code ORDER BY spt.code LIMIT 10) NID) TO '/home/setu20/Documents/prioritization_of_pickings.csv' CSV HEADER;
+ 
+or 
+
+new_31_may_2024_mvsa_production=#  \o /tmp/monthly_sales_order_locked_custmores.csv
+new_31_may_2024_mvsa_production=# select * from sale_order limit=1 ;
+
+cd /tmp/
+ls
+scp from server to local system.
+ 
+ 
+

@@ -1,0 +1,135 @@
+pg_dump -h 10.77.160.23 --verbose --exclude-schema=datastudio_reports -U odoo14 -F c -f /tmp/mdh_prod.dump mdh_prod -W
+python3 <(curl -s https://upgrade.odoo.com/upgrade) test -i /tmp/mdh_prod.dump -c M20011714111009 -t 16.0 -x
+
+
+MDH migration
+
+
+update ir_module_module set state='uninstalled' where name in ('auto_backup','deltatech_simple_crm_claim','demand_fullfill_by_highest_fillfiller_wh','gandalf','label_zebra_printer','mandrake','pos_product_available','setu_cfdi4_invoice_report','setu_promotion_extended','setu_website_advance_search','stock_by_warehouse','stock_by_warehouse_sale','to_base','web_digital_sign','web_disable_export_group','website_sale_add_to_cart','website_sale_default_code','website_sale_pricelist_visibility','pos_set_default_customer','setu_pos_customer_lock','setu_product_view_by_vendor','l10n_mx_edi_customer_bills','l10n_mx_edi_addendas','l10n_mx_edi_factoring','l10n_mx_edi_reports','l10n_mx_edi_transfer','l10n_mx_edi_transfer_external_trade','l10n_mx_import_taxes','l10n_mx_portal','pos_set_default_customer'
+,'dem-module-master');
+
+update ir_ui_view set active='f' where arch_db::jsonb::text like '%products_grid_before%';
+update ir_ui_view set active='f' where arch_db::jsonb::text like '%global_cost_per_point%';
+update ir_model_data set name='111' where module = 'setu_rfm_analysis' and model='setu.rfm.score' and name='rfm_segment_champions';
+update ir_ui_view set active='f' where arch_db::jsonb::text like '%turnover_ratio%' and model = 'product.product';
+update setu_process_history_line set setu_shopify_product_chain_line_id = null;
+update ir_ui_view set active='f' where arch_db::jsonb::text like '%is_redeem_journal%';
+update ir_ui_view set active='f' where arch_db::jsonb::text like '%css_quantity input-group%' and name ilike 'product_quantity_ext';
+update ir_ui_view set active='f' where arch_db::jsonb::text like '%Exchange Rate:%' and name like '%report_payment_receipt_add_account_customer_information%';
+update ir_ui_view set active='f' where arch_db::jsonb::text like '%enable_exclude_products%' and model like '%res.config.settings%';
+update ir_ui_view set active='f' where name like '%Remove Sale Orders Picking From Portal View%';
+delete from ir_asset  where name ilike '%website_sale_add_to_cart%';
+update ir_ui_view set active ='f' where arch_db::jsonb::text ilike '%get_note%' and type='qweb';
+delete from ir_asset  where name ilike '%setu_website_advance_search%';
+delete from ir_ui_view where key like '%setu_website_preorder%';
+delete from ir_asset  where name ilike '%l10n_mx_edi_customer_bills%';
+delete from ir_asset  where name ilike '%pos_product_available%';
+delete from ir_asset  where name ilike '%web_digital_sign%';
+delete from ir_asset  where name ilike '%web_disable_export_group%';
+delete from  ir_asset where name like '%queue_job%';
+delete from ir_asset where name like '%field_image_editor%';
+delete from ir_asset where name like '%web_image_webcam%';
+--update ir_ui_view set active='f' where key like '%setu_website_preorder.setu_pre_orders_portal_order_page%';
+delete from ir_ui_view where inherit_id  = 2499 and website_id is not null;
+delete from ir_ui_view where id  = 2499;
+delete from ir_asset where name like '%setu_website_preorder%';
+delete from ir_asset where name like '%label_zebra_printer%';  
+update ir_ui_view set active='t' where id= 2193;
+delete from ir_asset where name like '%website_sale_pricelist_visibility%';
+delete from ir_asset where name like '%l10n_mx_portal%';
+delete from ir_asset where name like '%stock_by_warehouse%';
+delete from  ir_asset where name like '%l10n_mx_edi_reports%';
+delete from  ir_asset where name like '%setu_payment_acqirers%';
+delete from  ir_asset where name like '%setu_pos_customer_lock%';
+delete from  ir_asset where name like '%setu_pos_lot_extended%';
+delete from  ir_asset where name like '%pos_set_default_customer%';
+delete from  ir_asset where name like '%setu_pos_loyalty%';
+delete from  ir_asset where name like '%setu_block_product_pricelist%';
+delete from  ir_asset where name like '%l10n_mx_portal%';
+delete from  ir_asset where name like '%setu_customer_lock%';
+delete from  ir_asset where name like '%pos_stocks%';
+	delete from  ir_asset where name like '%setu_hr_attendance%'; 
+
+
+
+
+
+
+
+
+update ir_module_module set state='installed' where name in ('auto_backup','deltatech_simple_crm_claim','demand_fullfill_by_highest_fillfiller_wh','gandalf','label_zebra_printer','mandrake','pos_product_available','setu_cfdi4_invoice_report','setu_promotion_extended','setu_website_advance_search','stock_by_warehouse',
+'stock_by_warehouse_sale','to_base','web_digital_sign','web_disable_export_group','website_sale_add_to_cart','website_sale_default_code','website_sale_pricelist_visibility',
+'pos_set_default_customer','setu_pos_customer_lock','setu_product_view_by_vendor','l10n_mx_edi_customer_bills','l10n_mx_edi_addendas','l10n_mx_edi_factoring','l10n_mx_edi_reports',
+'l10n_mx_edi_transfer','l10n_mx_edi_transfer_external_trade','l10n_mx_import_taxes','l10n_mx_portal','pos_set_default_customer','dem-module-master');
+
+python3 /opt/odoo16/odoo/odoo-bin shell -c /opt/odoo16/conf/odoo16-server.conf -d mdh_prod_22_aug
+/usr/bin/python3.8 /home/setu-kishan/workspace/16/odoo/odoo-bin shell -c /home/setu-kishan/workspace/16/config/mdh.conf -d mdh_16_august 
+
+
+
+mod = self.env['ir.module.module'].search(
+[('state','=','installed'), ('name','in', ['auto_backup','deltatech_simple_crm_claim','demand_fullfill_by_highest_fillfiller_wh','gandalf','label_zebra_printer','mandrake','pos_product_available','setu_cfdi4_invoice_report','setu_promotion_extended','setu_website_advance_search','stock_by_warehouse',
+'stock_by_warehouse_sale','to_base','web_digital_sign','web_disable_export_group','website_sale_add_to_cart','website_sale_default_code','website_sale_pricelist_visibility',
+'pos_set_default_customer','setu_pos_customer_lock','setu_product_view_by_vendor','l10n_mx_edi_customer_bills','l10n_mx_edi_addendas','l10n_mx_edi_factoring','l10n_mx_edi_reports',
+'l10n_mx_edi_transfer','l10n_mx_edi_transfer_external_trade','l10n_mx_import_taxes','l10n_mx_portal','pos_set_default_customer','dem-module-master'])])
+mod.button_immediate_uninstall()
+
+mod = self.env['ir.module.module'].search([('name','in'['website_sale_product_configurator','setu_login_as_any_user','setu_python_editor','setu_abc_analysis_reports_extended,'setu_discount_and_loyalty_enhancment','setu_inventory_count_management','demand_fullfill_by_highest_fillfiller_wh',])])
+mod.button_immediate_install()
+
+
+kishan
+
+
+update ir_ui_view set active = 'f' where id in (3607,5493)
+
+
+
+
+
+jay
+
+
+update ir_ui_view set active='t' where id in (5474,2763,2782,5571,3536,5585,5107,5759,5053,2782,5054);
+l10n_mx_edi.manage_invoice_negative_lines == True system para ma
+
+--------------------------------------------------------------------------------------------------------
+nidhi madam
+
+UPDATE ir_ui_view
+SET active = True
+WHERE id in (5671,1643,5640,4977);
+--------------------------------------------------------------------------------------------------------
+sagar
+
+update ir_ui_view set active='t' where id in (5759,5053,3438,5571,5707,5881,5559,5616, 5623, 5744, 5740, 4950, 5705, 5059, 5657,5614 ,2763, 3536 )
+
+
+
+Sales: Order Confirmation - Email template
+
+Have to change the acquire_id to provider_id in production environment.
+
+
+-------------------------------------------------------------------------------------------------------
+sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+sudo apt install -f ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+
+
+
+
+
+at last
+
+update ir_ui_view set active='t' where id in (5740,5744,5493,5049)
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+update stock_cycle_count set state='cancel' where state='draft';
+
+
+
+
+need to depercate setu_invoice_cancellation and merge with any account_extended
+need to depercate setu_send_recipet_by_email and merge with any account_extended
+
+
+
+need to depercate website_sale_pricelist_visibility and merge with  partner_category_hierarchy (sagar)
+need to depercate responsible_person_fields_add_in_picking and merge with stock_inv_ext (sagar) (done)
+need to depercate setu_cfdi4_invoice_report and merge with setu_report_account_extended & setu_auto_validate_invoice (sagar) (done)
+
+need to depercate setu_block_product_pricelist and merge with setu_pos_extended (jay)
+need to depercate pos_set_default_customer and merge with setu_pos_extended (jay)
+need to depercate setu_ecommerce_checkout_extended and merge with setu_ecomerce_emodification (jay)
+
+need to depercate setu_custom_sale_report and merge with sale_marvelsa (nidhi)
+need to depercate seach_compitible and merge with product_catalogue_product (nidhi)
+
+
+
+Need to teset modules
+
+marvelfields
+gnerate_delivery_guide
+minimum _price
+
+pg_dump --verbose --exclude-schema=datastudio_reports -h 10.54.160.19 -U odoo14 -F c -f mvsa_production.dump mvsa_production
+
+update ir_module_module set state='uninstalled' where name in ('deltatech_simple_crm_claim', 'l10n_mx_portal', 'setu_block_product_pricelist', 'setu_pos_customer_lock', 'stock_by_warehouse', 'website_sale_pricelist_visibility', 'demand_fullfill_by_highest_fillfiller_wh', 'pos_set_default_customer', 'setu_cfdi4_invoice_report', 'setu_promotion_extended', 'stock_by_warehouse_sale', 'website_sale_stock_product', 'l10n_mx_edi_pos', 'responsible_person_fields_add_in_picking', 'setu_custom_sale_report', 'setu_python_executer', 'website_sale_add_to_cart', 'l10n_mx_import_taxes', 'search_compatible', 'setu_inventory_warehouse_report', 'setu_website_advance_search', 'website_sale_default_code');
+
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%past_x_days_sales%' and model='res.config.settings';
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%abc_classification%' and model='product.product';
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%turnover_ratio%' and model='product.product';
+update ir_ui_view set active='t' where arch_db::jsonb::text ilike '%x_studio_fecha_de_alta%';
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%global_cost_per_point%' and model='res.config.settings';
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%can_be_used_for_advance_reordering%' and model='product.template';
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%presale_fulfill_percentage%' and model='purchase.order';
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%subclases_ids%' and model='res.partner';
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%real_cost%' and model='product.product';
+update ir_ui_view set active='f' where arch_db::jsonb::text ilike '%is_redeem_journal%' and model='account.journal';
+update ir_model_data set name='111' where module = 'setu_rfm_analysis' and model='setu.rfm.score' and name='rfm_segment_champions';
+update ir_ui_view set active ='f' where arch_db::jsonb::text ilike '%get_note%' and type='qweb';
+delete from ir_ui_view where key like '%setu_website_preorder%';
+delete from ir_asset  where name ilike '%queue_job%';
+delete from ir_asset  where name ilike '%website_sale_add_to_cart%';
+delete from ir_asset where name like '%l10n_mx_edi_customer_bills%';
+delete from ir_asset where name like '%queue_job_fields%';
+delete from ir_asset where name like '%field_image_editor%';
+delete from ir_asset where name like '%web_image_webcam%';
+delete from ir_asset where name like '%website_sale_stock_product%';
+delete from ir_asset where name like '%l10n_mx_portal%';
+delete from ir_asset where name like '%stock_by_warehouse%';
+delete from ir_asset where name like '%responsible_person_fields_add_in_picking%';
+delete from ir_asset where name like '%website_sale_pricelist_visibility%';
+delete from ir_asset where name like '%setu_pos_customer_lock%';
+delete from ir_asset where name like '%setu_block_product_pricelist%';
+delete from ir_asset where name like '%pos_set_default_customer%';
+delete from base_automation where id=65;
+update base_automation set active='f' where id=39;
+delete from base_automation_ir_model_fields_rel where base_automation_id =65;
+update product_template set show_availability ='f';
+delete from ir_ui_view where name='payment.acquirer.for.monthly.installment';
+update ir_ui_view set active='f' where key='website_sale.product_quantity';
+update ir_ui_view set active='t' where name='res.company.form.meli';
+delete from ir_asset  where name ilike '%setu_payment_mercadopago%';
+delete from ir_asset  where name ilike '%website_sale_default_code%';
+delete from ir_asset  where name ilike '%setu_website_advance_search%';
+update ir_ui_view set active='t' where name='res.config.settings.view.form.inherit.website.pre.order';	
+
+
+
+update ir_module_module set state='installed' where name in ('deltatech_simple_crm_claim', 'l10n_mx_portal', 'setu_block_product_pricelist', 'setu_pos_customer_lock', 'stock_by_warehouse', 'website_sale_pricelist_visibility', 'demand_fullfill_by_highest_fillfiller_wh', 'pos_set_default_customer', 'setu_cfdi4_invoice_report', 'setu_promotion_extended', 'stock_by_warehouse_sale', 'website_sale_stock_product', 'l10n_mx_edi_pos', 'responsible_person_fields_add_in_picking', 'setu_custom_sale_report', 'setu_python_executer', 'website_sale_add_to_cart', 'l10n_mx_import_taxes', 'search_compatible', 'setu_inventory_warehouse_report', 'setu_website_advance_search', 'website_sale_default_code');
+mod = self.env['ir.module.module'].search(
+[('state','=','installed'), ('name','in', ['marvelsa_stock','setu_product_view_by_vendor','website_sale_add_to_cart','setu_promotion_extended','setu_inventory_warehouse_report',
+	'l10n_mx_edi_customer_bills','setu_python_executor','setu_checkout_extended'	,'setu_website_advance_search','deltatech_simple_crm_claim','pos_set_default_customer','setu_block_product_pricelist',
+	'website_sale_default_code','website_sale_stock_product','setu_pos_customer_lock','auto_backup','l10n_mx_edi_pos','l10n_mx_portal','setu_python_executer',
+	'gandalf','setu_developer_tools','to_base','hr_contract_types','demand_fullfill_by_highest_fillfiller_wh','stock_by_warehouse','stock_by_warehouse_sale','responsible_person_fields_add_in_picking','setu_cfdi4_invoice_report','account_predictive_bills'])])
+mod.button_immediate_uninstall()
+
+
+update product_template set available_for_preorder ='f', available_for_presale='f';
+update product_product set available_for_preorder ='f', available_for_presale='f',presale_qty=0,preorder_qty=0;
+
+
+
+update ir_ui_view set active='f' where id in (2617, 2989,2990,2991,2992,3154,3153,7135,5393,5920,5596,3694,5961,5922,5389,5848,5961);
+update ir_ui_view set active = 'f' where id = 5619;
+update ir_ui_view set active='f' where id=2293;
+delete from ir_ui_view where id in (5440,3712);
+update ir_ui_view set active='f' where id=2994;
+update ir_ui_view set active='f' where id=5622;
+update ir_ui_view set active='f' where id=5623;
+update ir_ui_view set active='t' where id=5939;
+update ir_ui_view set active='t' where id=3017;
+update ir_ui_view set active='t' where id=5286;
+UPDATE ir_ui_view SET active = True WHERE id in (3319);
+update ir_ui_view set active = 't' where id = 5916;
