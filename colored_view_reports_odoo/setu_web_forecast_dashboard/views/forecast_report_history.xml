@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_forecast_report_history_tree" model="ir.ui.view">
+        <field name="name">forecast.report.history.tree</field>
+        <field name="model">forecast.report.history</field>
+        <field name="arch" type="xml">
+            <tree string="Forecast History" create="false">
+                <field name="name"/>
+                <field name="run_date"/>
+            </tree>
+        </field>
+    </record>
+    <!-- Forecast Runs Form -->
+    <!-- FORM -->
+    <record id="view_forecast_report_history_form" model="ir.ui.view">
+        <field name="name">forecast.report.history.form</field>
+        <field name="model">forecast.report.history</field>
+        <field name="arch" type="xml">
+            <form string="Forecast History" create="false">
+                <header>
+                    <button name="action_view_history_lines"
+                            class="btn-primary" data-hotkey="q"
+                            type="object"
+                            icon="fa-history"
+                            string="View Report Lines"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" readonly="1"/>
+                        <field name="run_date" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="history_forecast_type" readonly="1"/>
+                        <field name="history_region" readonly="1"/>
+                        <field name="history_periods_ids" widget="many2many_tags" readonly="1"/>
+                        <field name="history_is_exclude_oos_days" readonly="1"/>
+                        <field name="history_product_status_filter_ids" widget="many2many_tags" readonly="1"/>
+                        <field name="history_amazon_product_status_filter_ids" widget="many2many_tags" readonly="1"/>
+                        <field name="history_use_constant_lead_time" readonly="1"/>
+                        <field name="history_delivery_lead_time" readonly="1"/>
+                        <field name="history_purchase_order_based_on_doi_id" readonly="1"/>
+                    </group>
+                    <group string="Applied Filters">
+                        <field name="history_filters_ids" readonly="1">
+                            <tree string="Filters">
+                                <field name="is_used"/>
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="from_filter"/>
+                                <field name="to_filter"/>
+                                <field name="periods" widget="many2many_tags"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_forecast_report_history" model="ir.actions.act_window">
+        <field name="name">Forecast History</field>
+        <field name="res_model">forecast.report.history</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

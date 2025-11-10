@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Search View -->
+    <record id="view_forecast_report_line_search" model="ir.ui.view">
+        <field name="name">forecast.report.line.search</field>
+        <field name="model">forecast.report.line</field>
+        <field name="arch" type="xml">
+            <search string="Forecast Report Search">
+                <!-- Filters -->
+                <filter name="filter_fba_inbound" string="FBA Inbound > 0" domain="[('fba_inbound','>',0)]"/>
+                <filter name="filter_on_order" string="On Order > 0" domain="[('on_order','>',0)]"/>
+                <filter name="filter_unit_cost" string="Unit Cost > 0" domain="[('unit_cost','>',0)]"/>
+
+                <!-- Group By -->
+                <group string="Group By">
+                    <filter name="group_by_category" string="Category" context="{'group_by':'product_category_id'}"/>
+                    <filter name="group_by_supplier" string="Supplier" context="{'group_by':'supplier_id'}"/>
+                    <filter name="group_by_product" string="Product" context="{'group_by':'product_id'}"/>
+                    <filter name="group_by_rules" string="Rules" context="{'group_by': 'applied_threshold_name'}"/>
+                </group>
+
+                <!-- Search fields -->
+                <field name="name"/>
+                <field name="sku"/>
+                <field name="supplier_id"/>
+                <field name="product_category_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_forecast_report_line_tree" model="ir.ui.view">
+        <field name="name">forecast.report.line.tree</field>
+        <field name="model">forecast.report.line</field>
+        <field name="arch" type="xml">
+            <tree string="Forecast Report"
+                  editable="bottom"
+                  create="false"
+                  class="setu_forecast_tree_view"
+            >
+                <field name="history_id" optional="hide" column_invisible="1"/>
+                <!-- Basic Info -->
+                <field name="name" readonly="1"/>
+                <field name="sku" readonly="1"/>
+                <field name="supplier_id" readonly="1"/>
+                <field name="margin" readonly="1"/>
+                <field name="b2b" readonly="1"/>
+                <field name="product_category_id" string="Category" readonly="1"/>
+                <field name="shipments_in_transit" readonly="1"/>
+                <field name="fba_inbound" readonly="1"/>
+                <field name="on_order" readonly="1"/>
+                <field name="on_hand" readonly="1"/>
+                <field name="overall_total_units" readonly="1"/>
+                <field name="unit_cost" readonly="1"/>
+
+                <!-- Total Daily Rate -->
+                <field name="total_daily_rate_180" string="TDR(180)" readonly="1" optional="hide"/>
+                <field name="total_daily_rate_120" string="TDR(120)" readonly="1" optional="hide"/>
+                <field name="total_daily_rate_90" string="TDR(90)" readonly="1" optional="hide"/>
+                <field name="total_daily_rate_60" string="TDR(60)" readonly="1" optional="hide"/>
+                <field name="total_daily_rate_45" string="TDR(45)" readonly="1" optional="hide"/>
+                <field name="total_daily_rate_30" string="TDR(30)" readonly="1" optional="hide"/>
+                <field name="total_daily_rate_15" string="TDR(15)" readonly="1" optional="hide"/>
+                <field name="total_daily_rate_7" string="TDR(7)" readonly="1" optional="hide"/>
+
+                <!-- DOI -->
+                <field name="doi_180" string="DOI(180)" readonly="1" optional="hide"/>
+                <field name="doi_120" string="DOI(120)" readonly="1" optional="hide"/>
+                <field name="doi_90" string="DOI(90)" readonly="1" optional="hide"/>
+                <field name="doi_60" string="DOI(60)" readonly="1" optional="hide"/>
+                <field name="doi_45" string="DOI(45)" readonly="1" optional="hide"/>
+                <field name="doi_30" string="DOI(30)" readonly="1" optional="hide"/>
+                <field name="doi_15" string="DOI(15)" readonly="1" optional="hide"/>
+                <field name="doi_7" string="DOI(7)" readonly="1" optional="hide"/>
+
+                <!-- Quantity to Buy -->
+                <field name="quantity_to_buy_180" string="QTB(180)" readonly="1" optional="hide"/>
+                <field name="quantity_to_buy_120" string="QTB(120)" readonly="1" optional="hide"/>
+                <field name="quantity_to_buy_90" string="QTB(90)" readonly="1" optional="hide"/>
+                <field name="quantity_to_buy_60" string="QTB(60)" readonly="1" optional="hide"/>
+                <field name="quantity_to_buy_45" string="QTB(45)" readonly="1" optional="hide"/>
+                <field name="quantity_to_buy_30" string="QTB(30)" readonly="1" optional="hide"/>
+                <field name="quantity_to_buy_15" string="QTB(15)" readonly="1" optional="hide"/>
+                <field name="quantity_to_buy_7" string="QTB(7)" readonly="1" optional="hide"/>
+
+                <field name="total_sales_180" string="TS(180)" readonly="1" optional="hide"/>
+                <field name="total_sales_120" string="TS(120)" readonly="1" optional="hide"/>
+                <field name="total_sales_90" string="TS(90)" readonly="1" optional="hide"/>
+                <field name="total_sales_60" string="TS(60)" readonly="1" optional="hide"/>
+                <field name="total_sales_45" string="TS(45)" readonly="1" optional="hide"/>
+                <field name="total_sales_30" string="TS(30)" readonly="1" optional="hide"/>
+                <field name="total_sales_15" string="TS(15)" readonly="1" optional="hide"/>
+                <field name="total_sales_7" string="TS(7)" readonly="1" optional="hide"/>
+
+                <field name="applied_threshold_name" string="Threshold Name" readonly="1"/>
+                <field name="warning_msg" readonly="1"/>
+                <field name="remark" string="Remark" readonly="0"/>
+
+                <field name="active_qtb_for_a_period" string="Quantity To Buy" readonly="1"/>
+                <button name="action_open_po_period_wizard"
+                        type="object"
+                        icon="fa-shopping-cart"
+                        string="Create PO"
+                        class="btn-primary"/>
+                 <field name="trigger_row_color" class="trigger-color-hidden"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action with Search View -->
+    <record id="action_forecast_report_line_search" model="ir.actions.act_window">
+        <field name="name">All Forecast History</field>
+        <field name="res_model">forecast.report.line</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_forecast_report_line_tree"/>
+        <field name="search_view_id" ref="view_forecast_report_line_search"/>
+        <field name="context">{'group_by':'history_id'}</field>
+    </record>
+
+    <!-- Action to open lines (optional: latest history) -->
+    <record id="action_forecast_report_line" model="ir.actions.act_window">
+        <field name="name">All Forecast History</field>
+        <field name="res_model">forecast.report.line</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'group_by':'history_id'}</field> <!-- MOD -->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click "View in Odoo" to generate new forecast lines.
+            </p>
+        </field>
+    </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_forecast_report_root"
+              name="Forecast Reports"
+              parent="web_forecast_dashboard.menu_forecast_dashboard"
+              sequence="10"/>
+
+    <menuitem id="menu_forecast_report_line"
+              name="Forecast History"
+              parent="menu_forecast_report_root"
+              action="action_forecast_report_history" sequence="2"/>
+
+
+</odoo>
+

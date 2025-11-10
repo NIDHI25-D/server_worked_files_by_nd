@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_forecast_report_import_amz_file_wizard_form" model="ir.ui.view">
+        <field name="name">forecast_report_import_amz_file_wizard</field>
+        <field name="model">forecast.report.import.amz.file.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Trigger File" create="false" edit="false">
+                <group string="Import Forecast File" colspan="2">
+                    <group>
+                        <field name="import_file_forecast_wizard_for_margin"
+                               filename="import_filename_forecast_wizard_for_margin"
+                               widget="binary"
+                               options="{'accepted_file_extensions': '.xlsx'}"
+                               class="me-3"
+                               placeholder="Upload your .xlsx file here"/>
+                        <button name="action_import_forecast_file"
+                                type="object"
+                                string="Import XLSX"
+                                class="btn btn-primary"
+                                icon="fa-upload"
+                                style="display:inline-flex; align-items:center; justify-content:center; gap:6px; white-space:nowrap; width:115px;"
+                        />
+                    </group>
+                </group>
+                <footer>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_amz_file_wizard" model="ir.actions.act_window">
+        <field name="name">Import File</field>
+        <field name="res_model">forecast.report.import.amz.file.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_import_amz_file_wizard_main"
+              name="Import AMZ Margin File"
+              parent="web_forecast_dashboard.menu_forecast_configuration"
+              action="action_import_amz_file_wizard"/>
+</odoo>

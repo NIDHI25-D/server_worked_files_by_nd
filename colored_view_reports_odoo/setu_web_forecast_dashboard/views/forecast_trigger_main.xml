@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tree View for Trigger Main -->
+    <record id="view_trigger_main_tree" model="ir.ui.view">
+        <field name="name">trigger.main.tree</field>
+        <field name="model">trigger.main</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Trigger Main -->
+    <record id="view_trigger_main_form" model="ir.ui.view">
+        <field name="name">trigger.main.form</field>
+        <field name="model">trigger.main</field>
+        <field name="arch" type="xml">
+            <form string="Trigger Main">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="trigger_main_domain"
+                               widget="domain"
+                               options="{'model': 'forecast.report.line', 'in_dialog': true}"
+                        />
+                        <field name="trigger_color"/>
+                        <field name="row_color" widget="color"/>
+                    </group>
+                    <notebook>
+                        <page string="Threshold Lines">
+                            <!-- Threshold Lines List -->
+                            <field name="threshold_line_ids">
+                                <tree string="Threshold Lines" editable="bottom">
+                                    <field name="sequence" widget='handle'/>
+                                    <field name="threshold_name"/>
+                                    <button name="action_open_threshold_line_form"
+                                            type="object"
+                                            string="Rules"
+                                            class="btn btn-sm btn-primary"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Rule view opened via Button   -->
+    <record id="view_trigger_threshold_popup_form" model="ir.ui.view">
+        <field name="name">trigger.threshold.popup.form</field>
+        <field name="model">trigger.threshold</field>
+        <field name="arch" type="xml">
+            <form string="Threshold Details">
+                <sheet>
+                    <group>
+                        <field name="threshold_name"/>
+                        <field name="condition_type_forecast" widget="radio"/>
+                        <field name="threshold_domain"
+                               widget="domain"
+                               options="{'model': 'forecast.report.line', 'in_dialog': true}"
+                               invisible="condition_type_forecast != 'rules_by_domain'"/>
+                    </group>
+
+                    <notebook invisible="condition_type_forecast != 'rules'">
+                        <page string="Rules">
+                            <field name="threshold_line_ids">
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="field_1"/>
+                                    <field name="operator"/>
+                                    <field name="change_type"/>
+                                    <field name="percentage" widget="percentage" class="o_col_2"/>
+                                    <field name="field_2"/>
+                                    <field name="trigger_value" invisible="operator == False"/>
+                                    <field name="logical"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_trigger_main" model="ir.actions.act_window">
+        <field name="name">Trigger Logic</field>
+        <field name="res_model">trigger.main</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_trigger_main"
+              name="Trigger Logic"
+              parent="web_forecast_dashboard.menu_forecast_configuration"
+              action="action_trigger_main"/>
+
+</odoo>

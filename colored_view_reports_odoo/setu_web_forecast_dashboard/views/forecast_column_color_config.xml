@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_forecast_column_color_config" model="ir.actions.act_window">
+        <field name="name">Column Header Colors</field>
+        <field name="res_model">forecast.column.color.config</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="view_forecast_column_color_config_tree" model="ir.ui.view">
+        <field name="name">forecast.column.color.config.tree</field>
+        <field name="model">forecast.column.color.config</field>
+        <field name="arch" type="xml">
+            <tree string="Header Colors" editable="bottom">
+                <field name="field_id"/>
+                <field name="bg_color" />
+                <field name="fg_color" widget="color_picker"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_forecast_column_color_config"
+              name="Column Header Colors"
+              parent="web_forecast_dashboard.menu_forecast_dashboard"
+              action="action_forecast_column_color_config"
+              sequence="12"/>
+
+</odoo>

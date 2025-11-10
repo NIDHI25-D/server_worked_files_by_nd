@@ -1,0 +1,10 @@
+/* Hide Trigger Row Color column (header + cells) but keep it in DOM */
+.o_list_table th[data-name="trigger_row_color"],
+.o_list_table td[name="trigger_row_color"] {
+    display: none !important;
+}
+
+/*.setu_forecast_tree_view .o_list_table tbody tr.o_data_row td {
+    background-color: #deb1dc !important;
+}
+*/

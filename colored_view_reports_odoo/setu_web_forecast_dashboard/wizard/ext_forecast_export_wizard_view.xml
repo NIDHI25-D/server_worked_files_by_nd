@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_export_forecast_wizard_form_custom" model="ir.ui.view">
+        <field name="name">forecast.export.wizard.form.custom</field>
+        <field name="model">forecast.export.wizard</field>
+        <field name="inherit_id" ref="web_forecast_dashboard.export_forecast_wizard_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/notebook/page/group/field[@name='delivery_lead_time']" position="after">
+                <field name="purchase_order_based_on_doi_id" required="1"/>
+            </xpath>
+            <xpath expr="//footer/button[@name='export_data']" position="after">
+                <button name="action_show_list_view"
+                        string="View in Odoo"
+                        type="object"
+                        class="btn-primary"
+                        invisible="type != 'reordering'"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,150 @@
+/* ===== Enhanced Forecast List View (Scoped to Forecast Tree) ===== */
+
+.setu_forecast_tree_view .o_list_table {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* === Header Styling === */
+.setu_forecast_tree_view .o_list_table thead th {
+    background-color: #f8fafc;
+    color: #2e3a59;
+    font-weight: 600;
+    padding: 10px;
+    border-bottom: 2px solid #e5e7eb;
+    text-transform: capitalize;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+/* === Sticky Header Glow === */
+.setu_forecast_tree_view .o_list_table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.setu_forecast_tree_view .o_list_table thead::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(0,123,255,0.3), rgba(0,255,255,0.2));
+}
+
+/* === Row Effects === */
+.setu_forecast_tree_view .o_list_table tbody tr {
+    background-color: #fff;
+    border-radius: 8px;
+    transition: all 0.25s ease-in-out;
+    position: relative;
+}
+
+.setu_forecast_tree_view .o_list_table tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+/* === Strong Hover Highlight === */
+.setu_forecast_tree_view .o_list_table tbody tr:hover {
+    background: linear-gradient(90deg, #e6f0ff 0%, #f5faff 100%);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.25);
+    transform: scale(1.01);
+    border-left: 6px solid #007bff;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.setu_forecast_tree_view .o_list_table tbody tr:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.35);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* === Selected Row === */
+.setu_forecast_tree_view .o_list_table tbody tr.o_data_row.o_selected_row {
+    background: linear-gradient(90deg, #cde2ff 0%, #e6f0ff 100%) !important;
+    border-left: 6px solid #004bb7;
+    box-shadow: 0 4px 10px rgba(0, 75, 183, 0.3);
+    transform: scale(1.008);
+}
+
+/* === Smooth Animation === */
+@keyframes smoothFadeIn {
+    from { opacity: 0; transform: translateY(3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.setu_forecast_tree_view .o_list_table tbody tr {
+    animation: smoothFadeIn 0.25s ease-in;
+}
+
+/* === Cell Padding === */
+.setu_forecast_tree_view .o_list_table tbody td {
+    padding: 8px 10px;
+    border-top: 1px solid #f1f1f1;
+}
+
+/* === Metric Column Colors === */
+.setu_forecast_tree_view .o_list_table td[name="fba_inbound"] {
+    background-color: #fff099 !important;
+}
+
+.setu_forecast_tree_view .o_list_table td[name^="total_daily_rate_"] {
+    background-color: #99fff1 !important;
+    font-weight: 600;
+}
+
+.setu_forecast_tree_view .o_list_table td[name^="doi_"] {
+    background-color: #dcc3eb !important;
+}
+
+.setu_forecast_tree_view .o_list_table td[name^="quantity_to_buy_"] {
+    background-color: #eda59a !important;
+}
+
+/* === Sticky Columns === */
+.setu_forecast_tree_view .sticky-column {
+    position: sticky !important;
+    background-color: white;
+    z-index: 3;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.setu_forecast_tree_view .o_list_view .o_list_table th.sticky-column,
+.setu_forecast_tree_view .o_list_view .o_list_table td.sticky-column {
+    z-index: 4;
+    background-color: #fff;
+}
+
+/* === Attractive Pin Icon === */
+.setu_forecast_tree_view .fa-thumb-tack {
+    display: none;
+    color: #007bff;
+    font-size: 15px;
+    margin-left: 4px;
+    transition: all 0.25s ease-in-out;
+    opacity: 0.6;
+}
+
+.setu_forecast_tree_view th:hover .fa-thumb-tack {
+    display: inline-block;
+    transform: rotate(-20deg) scale(1.2);
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.setu_forecast_tree_view th.clicked-header .fa-thumb-tack {
+    display: inline-block;
+    transform: rotate(0deg) scale(1.1);
+    color: #004bb7;
+}
+

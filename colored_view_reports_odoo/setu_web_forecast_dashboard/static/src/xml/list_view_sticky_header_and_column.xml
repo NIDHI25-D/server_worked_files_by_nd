@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="sticky_header_and_column_in_list_view.RowListView"
+       t-inherit="web.ListRenderer" t-inherit-mode="extension"
+       owl="1"
+       t-if="props.list and props.list.resModel == 'forecast.report.line'">
+            <xpath expr="//div[hasclass('o_list_renderer')]/table/thead/tr/t/th/t/div/span"
+                   position="after">
+                <t t-if="props.list and props.list.resModel == 'forecast.report.line'">
+                    <i class="fa fa-thumb-tack"
+                       style="color:#27ae60;font-size:16px;margin-right:5px;"
+                       t-on-click="(ev) => this._onClickIcon(ev, record)"/>
+                </t>
+            </xpath>
+    </t>
+</templates>

@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_forecast_report_line,forecast.report.line,model_forecast_report_line,stock.group_stock_manager,1,1,1,1
+access_forecast_report_history,forecast.report.history,model_forecast_report_history,stock.group_stock_manager,1,1,1,1
+
+access_trigger_main,trigger.main,model_trigger_main,stock.group_stock_manager,1,1,1,1
+access_trigger_threshold,trigger.threshold,model_trigger_threshold,stock.group_stock_manager,1,1,1,1
+access_trigger_threshold_line,trigger.threshold.line,model_trigger_threshold_line,stock.group_stock_manager,1,1,1,1
+
+access_forecast_create_po_wizard,forecast.create.po.wizard,model_forecast_create_po_wizard,stock.group_stock_manager,1,1,1,1
+access_forecast_create_po_line_wizard,forecast.create.po.line.wizard,model_forecast_create_po_line_wizard,stock.group_stock_manager,1,1,1,1
+
+access_forecast_report_amz_margin,forecast.report.amz.margin,model_forecast_report_amz_margin,stock.group_stock_manager,1,1,1,1
+accessforecast_report_import_amz_file_wizard,forecast.report.import.amz.file.wizard,model_forecast_report_import_amz_file_wizard,stock.group_stock_manager,1,1,1,1

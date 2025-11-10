@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_forecast_create_po_wizard_form" model="ir.ui.view">
+        <field name="name">forecast.create.po.wizard.form</field>
+        <field name="model">forecast.create.po.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Purchase Order">
+                <header>
+                    <button name="action_view_related_pos"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-shopping-cart"
+                            invisible="po_count ==  0">
+                        <field name="po_count" widget="statinfo" string="  Purchase Orders"/>
+                    </button>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="po_product_id"/>
+                        <field name="po_vendor_id"/>
+                        <field name="po_selection_type" widget="radio"/>
+                        <field name="po_quantity_to_buy_as_per_selected_doi"/>
+                    </group>
+                    <separator string="Warehouse QTB Details"/>
+                    <field name="po_line_ids">
+                        <tree editable="bottom">
+                            <field name="po_line_warehouse_code" readonly="1"/>
+                            <field name="po_line_warehouse_id" domain="[('id', 'in', available_warehouse_ids)]"/>
+                            <field name="po_line_qtb_value"/>
+                            <field name="po_line_vendor_id"/>
+                            <field name="related_po_ids" widget="many2many_tags" string="Related POs" readonly="1"/>
+                            <field name="available_warehouse_ids" invisible="1" optional="hide"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="action_create_po" string="Create PO" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
